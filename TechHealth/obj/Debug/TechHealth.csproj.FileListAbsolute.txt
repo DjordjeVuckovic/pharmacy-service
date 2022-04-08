@@ -1,0 +1,15 @@
+C:\projekat_sims\PharmacyService\TechHealth\bin\Debug\TechHealth.exe.config
+C:\projekat_sims\PharmacyService\TechHealth\bin\Debug\TechHealth.exe
+C:\projekat_sims\PharmacyService\TechHealth\bin\Debug\TechHealth.pdb
+C:\projekat_sims\PharmacyService\TechHealth\obj\Debug\TechHealth.csproj.AssemblyReference.cache
+C:\projekat_sims\PharmacyService\TechHealth\obj\Debug\MainWindow.g.cs
+C:\projekat_sims\PharmacyService\TechHealth\obj\Debug\App.g.cs
+C:\projekat_sims\PharmacyService\TechHealth\obj\Debug\TechHealth_MarkupCompile.cache
+C:\projekat_sims\PharmacyService\TechHealth\obj\Debug\TechHealth_MarkupCompile.lref
+C:\projekat_sims\PharmacyService\TechHealth\obj\Debug\MainWindow.baml
+C:\projekat_sims\PharmacyService\TechHealth\obj\Debug\TechHealth.g.resources
+C:\projekat_sims\PharmacyService\TechHealth\obj\Debug\TechHealth.Properties.Resources.resources
+C:\projekat_sims\PharmacyService\TechHealth\obj\Debug\TechHealth.csproj.GenerateResource.cache
+C:\projekat_sims\PharmacyService\TechHealth\obj\Debug\TechHealth.csproj.CoreCompileInputs.cache
+C:\projekat_sims\PharmacyService\TechHealth\obj\Debug\TechHealth.exe
+C:\projekat_sims\PharmacyService\TechHealth\obj\Debug\TechHealth.pdb
