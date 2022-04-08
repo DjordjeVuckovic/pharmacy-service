@@ -9,9 +9,9 @@ namespace CaduceusHealth.Model
 {
    public class Allergen
    {
-      private String iD;
-      private String naziv;
-      private String desription;
+      public String Id{ get; set; }
+      public String Name { get; set; }
+      public String Desription { get; set; }
    
    }
 }

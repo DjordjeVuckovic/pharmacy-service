@@ -26,3 +26,6 @@ C:\projekat_sims\PharmacyService\CaduceusHealth\CaduceusHealth\obj\Debug\Caduceu
 C:\projekat_sims\PharmacyService\CaduceusHealth\CaduceusHealth\obj\Debug\CaduceusHealth.csproj.CoreCompileInputs.cache
 C:\projekat_sims\PharmacyService\CaduceusHealth\CaduceusHealth\obj\Debug\CaduceusHealth.exe
 C:\projekat_sims\PharmacyService\CaduceusHealth\CaduceusHealth\obj\Debug\CaduceusHealth.pdb
+C:\projekat_sims\PharmacyService\CaduceusHealth\CaduceusHealth\bin\Debug\Newtonsoft.Json.dll
+C:\projekat_sims\PharmacyService\CaduceusHealth\CaduceusHealth\bin\Debug\Newtonsoft.Json.xml
+C:\projekat_sims\PharmacyService\CaduceusHealth\CaduceusHealth\obj\Debug\CaduceusHealth.csproj.CopyComplete
