@@ -34,7 +34,7 @@
                                      Height="35" VerticalAlignment="Top" Margin="0,0,0,33" FontSize="14"
                                      FontFamily="Candara" Foreground="White" ToolTip="Unesite lozinku"
                                      VerticalContentAlignment="Center" Padding="5,0,0,0" />
-                        <Button Content="Sign in" Width="200" Height="45" Margin="98.4,0" Background="#FFE0E0FF" />
+                        <Button Content="Sign in" Width="200" Height="45" Margin="98.4,0" Background="#FFE0E0FF" Click="ButtonBase_OnClick" />
 
 
                     </StackPanel>

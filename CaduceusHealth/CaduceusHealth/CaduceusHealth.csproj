@@ -68,6 +68,46 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Controller\AccountController.cs" />
+    <Compile Include="Controller\AppointmentController.cs" />
+    <Compile Include="Controller\RoomController.cs" />
+    <Compile Include="Model\Address.cs" />
+    <Compile Include="Model\Allergen.cs" />
+    <Compile Include="Model\Appointment.cs" />
+    <Compile Include="Model\AppointmentType.cs" />
+    <Compile Include="Model\Bloodtype.cs" />
+    <Compile Include="Model\Doctor.cs" />
+    <Compile Include="Model\Equipment.cs" />
+    <Compile Include="Model\Excuse.cs" />
+    <Compile Include="Model\Gender.cs" />
+    <Compile Include="Model\HealthRecord.cs" />
+    <Compile Include="Model\Hospitalization.cs" />
+    <Compile Include="Model\Manager.cs" />
+    <Compile Include="Model\Medicine.cs" />
+    <Compile Include="Model\Note.cs" />
+    <Compile Include="Model\Patient.cs" />
+    <Compile Include="Model\Person.cs" />
+    <Compile Include="Model\Prescription.cs" />
+    <Compile Include="Model\ReferralRequest.cs" />
+    <Compile Include="Model\Room.cs" />
+    <Compile Include="Model\RoomTypes.cs" />
+    <Compile Include="Model\Secretary.cs" />
+    <Compile Include="Model\Specialist.cs" />
+    <Compile Include="Model\Specialization.cs" />
+    <Compile Include="Model\User.cs" />
+    <Compile Include="Model\Warehouse.cs" />
+    <Compile Include="Repository\AccountRepository.cs" />
+    <Compile Include="Repository\AppointmentRepository.cs" />
+    <Compile Include="Repository\DoctorRepository.cs" />
+    <Compile Include="Repository\FileHandler.cs" />
+    <Compile Include="Repository\PatientRepository.cs" />
+    <Compile Include="Repository\RoomRepository.cs" />
+    <Compile Include="Repository\SecretaryRepository.cs" />
+    <Compile Include="Service\AccountService.cs" />
+    <Compile Include="Service\AppointmentService.cs" />
+    <Compile Include="Service\DoctorService.cs" />
+    <Compile Include="Service\PatientService.cs" />
+    <Compile Include="Service\RoomService.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
