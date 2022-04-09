@@ -7,6 +7,7 @@ using System;
 
 namespace TechHealth.Model
 {
+   [Serializable]
    public class User
    {
       public string Username { get; set; }

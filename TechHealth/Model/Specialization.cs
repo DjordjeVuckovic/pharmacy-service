@@ -9,8 +9,8 @@ namespace TechHealth.Model
 {
    public class Specialization
    {
-      public string idSpecialization;
-      public string nameSpecialization;
+      public string IdSpecialization{ get; set; }
+      public string NameSpecialization{ get; set; }
    
    }
 }

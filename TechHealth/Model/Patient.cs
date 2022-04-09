@@ -9,10 +9,10 @@ namespace TechHealth.Model
 {
    public class Patient : Person
    {
-      public bool guest;
-      public Doctor chosenDoctor;
-      public int lbo;
-      public bool isBanned;
+      public bool Guest{ get; set; }
+      public Doctor ChosenDoctor{ get; set; }
+      public int Lbo{ get; set; }
+      public bool IsBanned{ get; set; }
    
    }
 }

@@ -9,31 +9,18 @@ namespace TechHealth.Model
 {
    public class Appointment
    {
-      private DateTime date;
-      private DateTime startTime;
-      private DateTime finishTime;
-      private string idAppointment;
+      private DateTime Date{ get; set; }
+      private DateTime StartTime{ get; set; }
+      private DateTime FinishTime{ get; set; }
+      private string IdAppointment{ get; set; }
       
-      public Room room;
-      public Patient patient;
-      public AppointmentType appointmentType;
-      public Doctor doctor;
+      public Room Room{ get; set; }
+      public Patient Patient{ get; set; }
+      public AppointmentType AppointmentType{ get; set; }
+      public Doctor Doctor{ get; set; }
       
-      /// <summary>
-      /// Property for Doctor
-      /// </summary>
-      /// <pdGenerated>Default opposite class property</pdGenerated>
-      public Doctor Doctor
-      {
-         get
-         {
-            return doctor;
-         }
-         set
-         {
-            this.doctor = value;
-         }
-      }
+   
+     
    
    }
 }

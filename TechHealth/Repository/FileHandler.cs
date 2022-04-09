@@ -11,12 +11,12 @@ namespace TechHealth.Repository
    {
       private string filePath;
       
-      public void Save(string path)
+      public void Serialize(string path, object data)
       {
          throw new NotImplementedException();
       }
       
-      public void Load(string path)
+      public object Deserialize(string path)
       {
          throw new NotImplementedException();
       }

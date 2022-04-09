@@ -7,21 +7,22 @@ using System;
 
 namespace TechHealth.Model
 {
+   [Serializable]
    public class Person : User
    {
-      private Address address;
+      public Address Address { get; set; }
       
       public void LogIn()
       {
          throw new NotImplementedException();
       }
       
-      public string name;
-      public string surname;
-      public int email;
-      public string jmbg;
-      public string phone;
-      public bool employed;
+      public string Name{ get; set; }
+      public string Surname{ get; set; }
+      public string Email{ get; set; }
+      public string Jmbg{ get; set; }
+      public string Phone{ get; set; }
+      public bool Employed{ get; set; }
    
    }
 }

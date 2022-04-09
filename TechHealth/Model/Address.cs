@@ -9,11 +9,11 @@ namespace TechHealth.Model
 {
    public class Address
    {
-      public string city;
-      public string number;
-      public string country;
-      public string street;
-      public int postcode;
+      public string City { get; set; }
+      public string StreetNumber{ get; set; }
+      public string Country{ get; set; }
+      public string Street{ get; set; }
+      public int Postcode{ get; set; }
    
    }
 }

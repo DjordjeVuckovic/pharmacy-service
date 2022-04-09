@@ -50,7 +50,7 @@ namespace TechHealth
         {
             
             new LoginWindow().Show();
-            //this.Close();
+            this.Close();
 
         }
     }

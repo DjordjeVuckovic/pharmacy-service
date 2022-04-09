@@ -9,7 +9,7 @@ namespace TechHealth.Model
 {
    public class Specialist : Doctor
    {
-      public Specialization specialization;
+      public Specialization Specialization{ get; set; }
    
    }
 }

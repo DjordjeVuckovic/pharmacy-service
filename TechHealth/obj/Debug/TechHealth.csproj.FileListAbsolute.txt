@@ -16,3 +16,8 @@ C:\projekat_sims\PharmacyService\TechHealth\obj\Debug\MainWindow.baml
 C:\projekat_sims\PharmacyService\TechHealth\obj\Debug\TechHealth.g.resources
 C:\projekat_sims\PharmacyService\TechHealth\obj\Debug\LoginWindow.g.cs
 C:\projekat_sims\PharmacyService\TechHealth\obj\Debug\LoginWindow.baml
+C:\projekat_sims\PharmacyService\TechHealth\obj\Debug\View\DoctorView\DoctorMainWindow.g.cs
+C:\projekat_sims\PharmacyService\TechHealth\obj\Debug\View\DoctorView\DoctorMainWindow.baml
+C:\projekat_sims\PharmacyService\TechHealth\bin\Debug\Newtonsoft.Json.dll
+C:\projekat_sims\PharmacyService\TechHealth\bin\Debug\Newtonsoft.Json.xml
+C:\projekat_sims\PharmacyService\TechHealth\obj\Debug\TechHealth.csproj.CopyComplete

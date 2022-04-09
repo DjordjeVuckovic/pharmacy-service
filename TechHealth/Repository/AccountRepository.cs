@@ -23,9 +23,28 @@ namespace TechHealth.Repository
          throw new NotImplementedException();
       }
       
-      public bool Create(Person person)
+      public void Create()
       {
-         throw new NotImplementedException();
+         Address address1 = new Address
+         {
+            City = "Novi Sad",
+            StreetNumber = "21",
+            Country = "Srbija",
+            Street = "Puse Pusica",
+            Postcode = 21000
+         };
+         Doctor doctor = new Doctor()
+         {
+            Username = "doc",
+            Password = "doc",
+            Email = "doctor@doctor",
+            Name = "Jack",
+            Surname = "White",
+            Jmbg = "1312",
+            Employed = true,
+            Phone = "061341",
+            Address = address1
+         };
       }
       
       public bool Update(Person person)
