@@ -21,45 +21,44 @@ namespace TechHealth
     {
         public MainWindow()
         {
-            Equipment eq = new Equipment()
+            //InitializeComponent();
+            /*Secretary secretary = new Secretary()
             {
-                name = "bandazeri",
-                id = "101",
-                quantity = 30,
-                type = "staticka"
+                Email = "adsa@adsa",
+                Address = null,
+                Employed = true,
+                Jmbg = "13443",
+                Name = "igor",
+                Surname = "Miskic",
+                Password = "11",
+                Phone = "05111331",
+                Username = "igor"
             };
-
-            Equipment eq1 = new Equipment()
+            Secretary secretary1 = new Secretary()
             {
-                name = "gaze",
-                id = "200",
-                quantity = 30,
-                type = "staticka"
-            };
-
-            List<Equipment> equip = new List<Equipment>();
-            equip.Add(eq);         
-            Room room = new Room()
+                Email = "adsa@adsa",
+                Address = null,
+                Employed = true,
+                Jmbg = "13456",
+                Name = "miki",
+                Surname = "Miskic",
+                Password = "111",
+                Phone = "05111331",
+                Username = "miki"
+            };*/
+            Patient patient = new Patient()
             {
-                roomId = "soba1",
-                floor = 1,
-                availability = true,
-                roomTypes = RoomTypes.rest,
-                
+                Email = "dsa@adsa",
+                Address = null,
+                Employed = false,
+                Jmbg = "13456",
+                Name = "miki",
+                Surname = "Djuricic",
+                Password = "1311",
+                Phone = "06105111331",
+                Username = "Djura"
             };
-
-            Room room1 = new Room()
-            {
-                roomId = "soba2",
-                floor = 1,
-                availability = true,
-                roomTypes = RoomTypes.operation
-
-            };
-            room1.Add(eq);
-            room1.Add(eq1);
-            RoomRepository.Instance.Create(room);
-            RoomRepository.Instance.Create(room1);
+            PatientRepository.Instance.Create(patient);
 
         }
 

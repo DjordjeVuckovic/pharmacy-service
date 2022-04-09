@@ -27,9 +27,9 @@
 
                     <StackPanel Orientation="Vertical" VerticalAlignment="Center">
 
-                        <TextBox VerticalAlignment="Center" Text="Username" x:Name="username" Width="250"
+                        <TextBox VerticalAlignment="Center" Text="Username" x:Name="Username" Width="250"
                                  Background="{x:Null}" Height="35" Margin="0,0,0,15" FontSize="14" FontFamily="Roboto" />
-                        <PasswordBox Password="Password" x:Name="password" Width="250" Background="{x:Null}"
+                        <PasswordBox Password="Password" x:Name="Password" Width="250" Background="{x:Null}"
                                      Height="35" VerticalAlignment="Top" Margin="0,0,0,33" FontSize="14"
                                      FontFamily="Roboto" Foreground="White" 
                                      VerticalContentAlignment="Center" Padding="5,0,0,0" />

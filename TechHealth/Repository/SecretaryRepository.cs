@@ -9,21 +9,34 @@ using TechHealth.Model;
 
 namespace TechHealth.Repository
 {
-   public class SecretaryRepository
+   public class SecretaryRepository:GenericRepository<string,Secretary>
    {
-      private List<Secretary> secretaries;
-      
-      public Secretary GetById(string secretaryId)
+      private static readonly SecretaryRepository instance = new SecretaryRepository();
+
+      // Explicit static constructor to tell C# compiler
+      // not to mark type as beforefieldinit
+      static SecretaryRepository()
+      {
+      }
+
+      private SecretaryRepository()
+      {
+      }
+
+      public static SecretaryRepository Instance => instance;
+      protected override string GetPath()
+      {
+         return @"../../Json/secretary.json";
+      }
+
+      protected override string GetKey(Secretary entity)
+      {
+         return entity.Jmbg;
+      }
+
+      protected override void RemoveAllReference(string key)
       {
          throw new NotImplementedException();
       }
-      
-      public List<Secretary> GetAll()
-      {
-         throw new NotImplementedException();
-      }
-      
-      public FileHandler fileHandler;
-   
    }
 }

@@ -188,6 +188,8 @@
     <Content Include="favicon.ico" />
     <Content Include="Json\doctor.json" />
     <Content Include="Json\manager.json" />
+    <Content Include="Json\patient.json" />
+    <Content Include="Json\secretary.json" />
     <Content Include="resources\caduceus_ico.png" />
     <Resource Include="resources\caduceus_logo.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

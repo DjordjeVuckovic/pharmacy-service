@@ -9,8 +9,8 @@ using TechHealth.Model;
 
 namespace TechHealth.Repository
 {
-   public class RoomRepository : GenericRepository<string, Room>
-   {
+    public class RoomRepository : GenericRepository<string, Room>
+    {
         private static readonly RoomRepository instance = new RoomRepository();
 
         // Explicit static constructor to tell C# compiler
@@ -40,7 +40,5 @@ namespace TechHealth.Repository
             throw new NotImplementedException();
         }
 
-        public FileHandler fileHandler;
-   
-   }
+    }
 }

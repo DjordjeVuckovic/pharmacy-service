@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Windows;
 using TechHealth.Model;
+using TechHealth.Repository;
 using TechHealth.View.DoctorView;
 
 namespace TechHealth
@@ -15,27 +16,22 @@ namespace TechHealth
 
         private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
         {
-            if (password.Password.SequenceEqual("doc") && password.Password.SequenceEqual("doc"))
+            DoctorLog();
+        }
+
+        private void DoctorLog()
+        {
+            string user = Username.Text;
+            string pass = Password.Password;
+            Doctor doctor = DoctorRepository.Instance.GetDoctor(user);
+            if (doctor != null && pass.Equals(doctor.Password))
             {
-                new DoctorMainWindow().Show();
+                DoctorMainWindow window = new DoctorMainWindow();
+                window.Show();
                 Close();
             }
-            else if (password.Password.SequenceEqual("sec") && password.Password.SequenceEqual("sec"))
-            {
-                //
-            }
-            if (password.Password.SequenceEqual("pat") && password.Password.SequenceEqual("pat"))
-            {
-                //
-            }
-            if (password.Password.SequenceEqual("mng") && password.Password.SequenceEqual("mng"))
-            {
-                //
-            }
-            else
-            {
-                MessageBox.Show("User doesnt exist!");
-            }
+            
+            
         }
     }
 }

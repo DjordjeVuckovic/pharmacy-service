@@ -24,11 +24,7 @@ namespace TechHealth.Repository
       }
 
       public static DoctorRepository Instance => instance;
-
-      public Doctor GetById(string doctorId)
-      {
-         throw new NotImplementedException();
-      }
+      
 
         protected override string GetPath()
         {
@@ -45,22 +41,18 @@ namespace TechHealth.Repository
          throw new NotImplementedException();
       }
 
-      public List<Doctor> GetAll()
+      public Doctor GetDoctor(String user)
       {
-         throw new NotImplementedException();
+         foreach (var doc in DictionaryValuesToList())
+         {
+            if (doc.Username.Equals(user))
+            {
+               return doc;
+            }
+         }
+
+         return null;
       }
-      
-      public List<Doctor> GetAllGeneral()
-      {
-         throw new NotImplementedException();
-      }
-      
-      public List<Doctor> GetAllSpecialist()
-      {
-         throw new NotImplementedException();
-      }
-      
-      public FileHandler fileHandler;
    
    }
 }

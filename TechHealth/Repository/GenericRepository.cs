@@ -11,12 +11,13 @@ namespace TechHealth.Repository
         protected abstract TKey GetKey(TEntity entity);
         protected abstract void RemoveAllReference(TKey key);
 
-        public Dictionary<TKey, TEntity> Deserialize()
+        private Dictionary<TKey, TEntity> Deserialize()
         {
+            
             string path = GetPath();
             if (!File.Exists(path))
             {
-                File.Create(path).Close();
+                File.Create(path);
                 return new Dictionary<TKey, TEntity>();
             }
 
@@ -24,10 +25,14 @@ namespace TechHealth.Repository
             return JsonSerializer.Deserialize<Dictionary<TKey, TEntity>>(jsonRead);
         }
 
-        public void Serialize(Dictionary<TKey, TEntity> entities)
+        private void Serialize(Dictionary<TKey, TEntity> entities)
         {
             string path = GetPath();
-            string jsonWrite = JsonSerializer.Serialize(entities);
+            var option = new JsonSerializerOptions()
+            {
+                WriteIndented = true
+            };
+            string jsonWrite = JsonSerializer.Serialize(entities,option);
             File.WriteAllText(path,jsonWrite);
         }
         public bool Create(TEntity entity)
@@ -88,21 +93,37 @@ namespace TechHealth.Repository
         public bool Delete(TKey key)
         {
             Dictionary<TKey, TEntity> entities = Deserialize();
+            
+            if (!entities.ContainsKey(key))
+            {
+                return false;
+            }
 
-            bool remove = entities.Remove(key);
+            entities.Remove(key);
 
             RemoveAllReference(key);
 
             Serialize(entities);
 
-            return remove;
+            return true;
         }
 
-        public List<TEntity> DictionaryToList()
+        public List<TEntity> DictionaryValuesToList()
         {
-            return Deserialize().Values.ToList();
+            return GetAll().Values.ToList();
         }
+        public List<TKey> DictionaryKeysToList()
+        {
+            List<TKey> entities = new List<TKey>();
+            Dictionary<TKey, TEntity>.KeyCollection keyCollection = GetAll().Keys;
+            foreach (var key in keyCollection)
+            {
+                entities.Add(key);
+            }
 
+            return entities;
+        }
+        
         
 
     }
