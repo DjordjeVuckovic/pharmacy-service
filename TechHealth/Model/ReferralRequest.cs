@@ -5,12 +5,12 @@
 
 using System;
 
-namespace CaduceusHealth.Model
+namespace TechHealth.Model
 {
    public class ReferralRequest
    {
-      private DateTime refferalDate;
-      private String refferalId;
+      public DateTime refferalDate;
+      public String refferalId;
       
       public Patient patient;
       public Doctor doctor;

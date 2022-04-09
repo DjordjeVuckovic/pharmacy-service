@@ -5,7 +5,7 @@
 
 using System;
 
-namespace CaduceusHealth.Repository
+namespace TechHealth.Repository
 {
    public class FileHandler
    {

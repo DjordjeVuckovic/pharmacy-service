@@ -5,16 +5,16 @@
 
 using System;
 
-namespace CaduceusHealth.Model
+namespace TechHealth.Model
 {
    public class Prescription
    {
-      private string medicineId;
-      private string medicineName;
-      private string patientLbo;
-      private int quantity;
-      private string sideEffects;
-      private string diganosis;
+      public string medicineId;
+      public string medicineName;
+      public string patientLbo;
+      public int quantity;
+      public string sideEffects;
+      public string diganosis;
       
       public Doctor doctor;
       public Patient patient;

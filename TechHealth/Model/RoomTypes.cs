@@ -5,7 +5,7 @@
 
 using System;
 
-namespace CaduceusHealth.Model
+namespace TechHealth.Model
 {
    public enum RoomTypes
    {

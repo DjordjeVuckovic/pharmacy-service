@@ -5,13 +5,13 @@
 
 using System;
 
-namespace CaduceusHealth.Model
+namespace TechHealth.Model
 {
    public class Allergen
    {
-      private String iD;
-      private String naziv;
-      private String desription;
+      public String iD;
+      public String naziv;
+      public String desription;
    
    }
 }

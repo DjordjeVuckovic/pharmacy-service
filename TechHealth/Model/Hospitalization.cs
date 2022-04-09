@@ -5,13 +5,13 @@
 
 using System;
 
-namespace CaduceusHealth.Model
+namespace TechHealth.Model
 {
    public class Hospitalization
    {
-      private DateTime startDate;
-      private DateTime finishDate;
-      private String hospitalizationId;
+      public DateTime startDate;
+      public DateTime finishDate;
+      public String hospitalizationId;
       
       public Specialist specialist;
       public Patient patient;

@@ -5,12 +5,12 @@
 
 using System;
 
-namespace CaduceusHealth.Model
+namespace TechHealth.Model
 {
    public class Note
    {
-      private string noteId;
-      private string content;
+      public string noteId;
+      public string content;
       
       public Patient patient;
    

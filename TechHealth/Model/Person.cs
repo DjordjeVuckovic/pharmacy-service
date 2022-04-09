@@ -5,23 +5,23 @@
 
 using System;
 
-namespace CaduceusHealth.Model
+namespace TechHealth.Model
 {
    public class Person : User
    {
-      private string name;
-      private string surname;
-      private int email;
-      private string jmbg;
-      private string phone;
-      private bool employed;
-      
       private Address address;
       
       public void LogIn()
       {
          throw new NotImplementedException();
       }
+      
+      public string name;
+      public string surname;
+      public int email;
+      public string jmbg;
+      public string phone;
+      public bool employed;
    
    }
 }

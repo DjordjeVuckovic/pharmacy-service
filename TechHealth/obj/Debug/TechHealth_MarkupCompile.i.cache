@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\projekat_sims\PharmacyService\TechHealth\App.xaml
-22037783069
-4-312914127
-47733868532
+31636377429
+3518262506
+491984126492
 13-1505183044
-LoginWindow.xaml;MainWindow.xaml;
+LoginWindow.xaml;MainWindow.xaml;View\DoctorView\Window1.xaml;
 
 True
 

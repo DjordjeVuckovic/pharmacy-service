@@ -5,13 +5,13 @@
 
 using System;
 
-namespace CaduceusHealth.Model
+namespace TechHealth.Model
 {
    public class Warehouse
    {
-      private string id;
-      private string name;
-      private int capacity;
+      public string id;
+      public string name;
+      public int capacity;
       
       public System.Collections.Generic.List<Equipment> equipment;
       

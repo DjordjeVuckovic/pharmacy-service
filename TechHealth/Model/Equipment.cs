@@ -5,14 +5,14 @@
 
 using System;
 
-namespace CaduceusHealth.Model
+namespace TechHealth.Model
 {
    public class Equipment
    {
-      private string name;
-      private string id;
-      private string type;
-      private int quantity;
+      public string name;
+      public string id;
+      public string type;
+      public int quantity;
    
    }
 }

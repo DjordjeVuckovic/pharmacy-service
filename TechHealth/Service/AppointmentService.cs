@@ -5,10 +5,10 @@
 
 using System;
 using System.Collections.Generic;
-using CaduceusHealth.Model;
-using CaduceusHealth.Repository;
+using TechHealth.Model;
+using TechHealth.Repository;
 
-namespace CaduceusHealth.Service
+namespace TechHealth.Service
 {
    public class AppointmentService
    {

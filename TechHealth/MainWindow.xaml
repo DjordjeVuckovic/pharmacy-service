@@ -6,13 +6,14 @@
         xmlns:local="clr-namespace:TechHealth"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+        
 
     <Grid>
+        
         <Button Content="Doctor" Width="200" Margin="81,85,512.6,245" Background="#FFE0E0FF" Click="Button_Click"/>
         <Button Content="Secretary" Width="200" Margin="346,93,247.6,237" Background="#FFE0E0FF" Click="Button_Click_1"/>
         <Button Content="Patient" Width="200" Margin="84,278,509.6,52" Background="#FFE0E0FF" Click="Button_Click_2"/>
         <Button Content="Manager" Width="200" Margin="343,281,250.6,49" Background="#FFE0E0FF" Click="Button_Click_3"/>
         <Button Content="Login" Width="200" Margin="562,181,31.6,149" Background="#FFE0E0FF" Click="Button_Click_4"/>
-
     </Grid>
 </Window>

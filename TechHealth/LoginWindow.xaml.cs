@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.Linq;
+using System.Windows;
 
 namespace TechHealth
 {
@@ -11,7 +12,8 @@ namespace TechHealth
 
         private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
         {
-            throw new System.NotImplementedException();
+           if(password.Password.SequenceEqual("doctor") && password.Password.SequenceEqual("doctor")){}
+           
         }
     }
 }

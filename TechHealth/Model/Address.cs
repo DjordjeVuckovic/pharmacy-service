@@ -5,15 +5,15 @@
 
 using System;
 
-namespace CaduceusHealth.Model
+namespace TechHealth.Model
 {
    public class Address
    {
-      private string city;
-      private string number;
-      private string country;
-      private string street;
-      private int postcode;
+      public string city;
+      public string number;
+      public string country;
+      public string street;
+      public int postcode;
    
    }
 }

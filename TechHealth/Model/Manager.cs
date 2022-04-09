@@ -5,11 +5,9 @@
 
 using System;
 
-namespace CaduceusHealth.Model
+namespace TechHealth.Model
 {
    public class Manager : Person
    {
-      private int vacationDays;
-   
    }
 }

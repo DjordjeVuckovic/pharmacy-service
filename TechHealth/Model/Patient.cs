@@ -5,14 +5,14 @@
 
 using System;
 
-namespace CaduceusHealth.Model
+namespace TechHealth.Model
 {
    public class Patient : Person
    {
-      private bool guest;
-      private Doctor chosenDoctor;
-      private int lbo;
-      private bool isBanned;
+      public bool guest;
+      public Doctor chosenDoctor;
+      public int lbo;
+      public bool isBanned;
    
    }
 }

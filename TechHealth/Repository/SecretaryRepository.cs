@@ -5,9 +5,9 @@
 
 using System;
 using System.Collections.Generic;
-using CaduceusHealth.Model;
+using TechHealth.Model;
 
-namespace CaduceusHealth.Repository
+namespace TechHealth.Repository
 {
    public class SecretaryRepository
    {

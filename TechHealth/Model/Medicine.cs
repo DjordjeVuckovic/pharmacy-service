@@ -6,18 +6,18 @@
 using System;
 using System.Collections.Generic;
 
-namespace CaduceusHealth.Model
+namespace TechHealth.Model
 {
    public class Medicine
    {
-      private string medicineId;
-      private List<String> composition;
-      private int quantity;
-      private string sideEffects;
-      private string mainSupsance;
-      private bool harmful;
-      private double price;
-      private double medineName;
+      public string medicineId;
+      public List<String> composition;
+      public int quantity;
+      public string sideEffects;
+      public string mainSupsance;
+      public bool harmful;
+      public double price;
+      public double medineName;
       
       public System.Collections.Generic.List<Allergen> allergen;
       

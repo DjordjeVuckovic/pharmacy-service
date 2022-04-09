@@ -5,12 +5,12 @@
 
 using System;
 
-namespace CaduceusHealth.Model
+namespace TechHealth.Model
 {
    public class Specialization
    {
-      private string idSpecialization;
-      private string nameSpecialization;
+      public string idSpecialization;
+      public string nameSpecialization;
    
    }
 }

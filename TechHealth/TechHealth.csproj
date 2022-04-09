@@ -65,6 +65,10 @@
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Repository\AccountRepository.cs" />
     <Compile Include="Repository\AppointmentRepository.cs" />
     <Compile Include="Repository\DoctorRepository.cs" />
@@ -77,10 +81,6 @@
     <Compile Include="Service\DoctorService.cs" />
     <Compile Include="Service\PatientService.cs" />
     <Compile Include="Service\RoomService.cs" />
-    <Compile Include="App.xaml.cs">
-      <DependentUpon>App.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\Address.cs" />
@@ -107,6 +107,7 @@
     <Compile Include="Model\Specialist.cs" />
     <Compile Include="Model\Specialization.cs" />
     <Compile Include="Model\User.cs" />
+    <Compile Include="Model\Vacation.cs" />
     <Compile Include="Model\Warehouse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -136,7 +137,9 @@
   <ItemGroup>
     <Content Include="favicon.ico" />
     <Content Include="resources\caduceus_ico.png" />
-    <Content Include="resources\caduceus_logo.png" />
+    <Resource Include="resources\caduceus_logo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Content Include="resources\favicon.ico" />
   </ItemGroup>
   <ItemGroup>

@@ -5,10 +5,10 @@
 
 using System;
 using System.Collections.Generic;
-using CaduceusHealth.Model;
-using CaduceusHealth.Service;
+using TechHealth.Model;
+using TechHealth.Service;
 
-namespace CaduceusHealth.Controller
+namespace TechHealth.Controller
 {
    public class AccountController
    {

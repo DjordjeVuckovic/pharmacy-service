@@ -5,16 +5,16 @@
 
 using System;
 
-namespace CaduceusHealth.Model
+namespace TechHealth.Model
 {
    public class Room
    {
-      private string roomId;
-      private int floor;
-      private Boolean availablity;
-      private string name;
-      
       private RoomTypes roomTypes;
+      
+      public string roomId;
+      public int floor;
+      public Boolean availablity;
+      public string name;
       
       public System.Collections.Generic.List<Equipment> equipment;
       

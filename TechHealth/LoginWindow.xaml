@@ -46,6 +46,7 @@
 
         <Grid Grid.Column="1">
             <Grid>
+                <av:Image Source="resources/caduceus_logo.png" Stretch="Fill"/>
             </Grid>
         </Grid>
 

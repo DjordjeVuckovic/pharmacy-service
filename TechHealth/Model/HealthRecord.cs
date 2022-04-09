@@ -5,11 +5,11 @@
 
 using System;
 
-namespace CaduceusHealth.Model
+namespace TechHealth.Model
 {
    public class HealthRecord
    {
-      private string recordId;
+      public string recordId;
       
       public System.Collections.Generic.List<Bloodtype> bloodtype;
       

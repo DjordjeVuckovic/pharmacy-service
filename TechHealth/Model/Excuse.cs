@@ -5,13 +5,13 @@
 
 using System;
 
-namespace CaduceusHealth.Model
+namespace TechHealth.Model
 {
    public class Excuse
    {
-      private int idExcuse;
-      private DateTime startDate;
-      private DateTime finishDate;
+      public int idExcuse;
+      public DateTime startDate;
+      public DateTime finishDate;
       
       public Patient patient;
       public Doctor doctor;
