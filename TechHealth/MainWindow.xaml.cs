@@ -21,45 +21,7 @@ namespace TechHealth
     {
         public MainWindow()
         {
-            //InitializeComponent();
-            /*Secretary secretary = new Secretary()
-            {
-                Email = "adsa@adsa",
-                Address = null,
-                Employed = true,
-                Jmbg = "13443",
-                Name = "igor",
-                Surname = "Miskic",
-                Password = "11",
-                Phone = "05111331",
-                Username = "igor"
-            };
-            Secretary secretary1 = new Secretary()
-            {
-                Email = "adsa@adsa",
-                Address = null,
-                Employed = true,
-                Jmbg = "13456",
-                Name = "miki",
-                Surname = "Miskic",
-                Password = "111",
-                Phone = "05111331",
-                Username = "miki"
-            };*/
-            Patient patient = new Patient()
-            {
-                Email = "dsa@adsa",
-                Address = null,
-                Employed = false,
-                Jmbg = "13456",
-                Name = "miki",
-                Surname = "Djuricic",
-                Password = "1311",
-                Phone = "06105111331",
-                Username = "Djura"
-            };
-            PatientRepository.Instance.Create(patient);
-
+           InitializeComponent();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
