@@ -9,22 +9,38 @@ using TechHealth.Model;
 
 namespace TechHealth.Repository
 {
-   public class RoomRepository
+   public class RoomRepository : GenericRepository<string, Room>
    {
-      private List<Room> rooms;
-      
-      public Room GetById(string roomId)
-      {
-         throw new NotImplementedException();
-      }
-      
-      public List<Room> GetAll()
-      {
-         throw new NotImplementedException();
-      }
-      
-      
-      public FileHandler fileHandler;
+        private static readonly RoomRepository instance = new RoomRepository();
+
+        // Explicit static constructor to tell C# compiler
+        // not to mark type as beforefieldinit
+        static RoomRepository()
+        {
+        }
+
+        private RoomRepository()
+        {
+        }
+
+        public static RoomRepository Instance => instance;
+
+        protected override string GetPath()
+        {
+            return @"../../Json/room.json";
+        }
+
+        protected override string GetKey(Room entity)
+        {
+            return entity.roomId;
+        }
+
+        protected override void RemoveAllReference(string key)
+        {
+            throw new NotImplementedException();
+        }
+
+        public FileHandler fileHandler;
    
    }
 }

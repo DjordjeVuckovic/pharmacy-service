@@ -17,34 +17,49 @@ using TechHealth.Repository;
 
 namespace TechHealth
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
-            Address address1 = new Address
+            Equipment eq = new Equipment()
             {
-                City = "Novi Sad",
-                StreetNumber = "21",
-                Country = "Srbija",
-                Street = "Puse Pusica",
-                Postcode = 21000
+                name = "bandazeri",
+                id = "101",
+                quantity = 30,
+                type = "staticka"
             };
-            Manager manager = new Manager()
+
+            Equipment eq1 = new Equipment()
             {
-                Username = "Nenad",
-                Password = "1",
-                Email = "Nenad@Nenad",
-                Name = "Nenad",
-                Surname = "11",
-                Jmbg = "1313",
-                Employed = true,
-                Phone = "0613412313",
-                Address = address1
+                name = "gaze",
+                id = "200",
+                quantity = 30,
+                type = "staticka"
             };
-            ManagerRepository.Instance.Create(manager);
+
+            List<Equipment> equip = new List<Equipment>();
+            equip.Add(eq);         
+            Room room = new Room()
+            {
+                roomId = "soba1",
+                floor = 1,
+                availability = true,
+                roomTypes = RoomTypes.rest,
+                
+            };
+
+            Room room1 = new Room()
+            {
+                roomId = "soba2",
+                floor = 1,
+                availability = true,
+                roomTypes = RoomTypes.operation
+
+            };
+            room1.Add(eq);
+            room1.Add(eq1);
+            RoomRepository.Instance.Create(room);
+            RoomRepository.Instance.Create(room1);
 
         }
 

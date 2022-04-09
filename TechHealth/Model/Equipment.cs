@@ -13,6 +13,12 @@ namespace TechHealth.Model
       public string id;
       public string type;
       public int quantity;
-   
-   }
+
+
+        public string ToString()
+        {
+            return name.ToString() + ", " + id.ToString() + ", " + type.ToString() + ", " + quantity.ToString();
+        }
+
+    }
 }
