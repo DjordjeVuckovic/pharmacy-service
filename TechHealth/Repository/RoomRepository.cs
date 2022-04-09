@@ -23,20 +23,6 @@ namespace TechHealth.Repository
          throw new NotImplementedException();
       }
       
-      public bool Create(Room room)
-      {
-         throw new NotImplementedException();
-      }
-      
-      public bool Update(Room room)
-      {
-         throw new NotImplementedException();
-      }
-      
-      public bool Delete(string roomId)
-      {
-         throw new NotImplementedException();
-      }
       
       public FileHandler fileHandler;
    

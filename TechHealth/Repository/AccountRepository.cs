@@ -5,7 +5,12 @@
 
 using System;
 using System.Collections.Generic;
+using System.IO;
+using Newtonsoft.Json;
+using System.Text.Json;
+using System.Windows.Documents;
 using TechHealth.Model;
+using JsonSerializer = Newtonsoft.Json.JsonSerializer;
 
 namespace TechHealth.Repository
 {
@@ -45,6 +50,34 @@ namespace TechHealth.Repository
             Phone = "061341",
             Address = address1
          };
+         Doctor doctor1 = new Doctor()
+         {
+            Username = "doctor",
+            Password = "doctor",
+            Email = "doctor@doctor11",
+            Name = "Slavica",
+            Surname = "Cukteras",
+            Jmbg = "1315",
+            Employed = true,
+            Phone = "061341",
+            Address = address1
+         };
+         List<Doctor> doctors = new List<Doctor>();
+         doctors.Add(doctor);
+         doctors.Add(doctor1);
+         string path = @"../../Json/doctor.json";
+         string path1 = @"../../Json/sec.json";
+         string jsonToWrite = System.Text.Json.JsonSerializer.Serialize(doctors);
+         if (!File.Exists(path1))
+         {
+            File.Create(path1);
+         }
+         File.WriteAllText(path1,jsonToWrite);
+         // using (StreamWriter writer = new StreamWriter(@".\..\..\..\JsonData\doctor.json"))
+         //    
+         // {
+         //    writer.Write(jsonToWrite);
+         // }
       }
       
       public bool Update(Person person)

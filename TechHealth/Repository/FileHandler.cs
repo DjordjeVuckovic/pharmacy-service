@@ -4,6 +4,9 @@
 // Purpose: Definition of Class FileHandler
 
 using System;
+using System.IO;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace TechHealth.Repository
 {
@@ -13,12 +16,28 @@ namespace TechHealth.Repository
       
       public void Serialize(string path, object data)
       {
-         throw new NotImplementedException();
+         JsonSerializer jsonSerializer = new JsonSerializer();
+         StreamWriter sw = new StreamWriter(path);
+         JsonWriter jsonWriter = new JsonTextWriter(sw);
+         jsonSerializer.Serialize(jsonWriter, data);
+         jsonWriter.Close();
+         sw.Close();
       }
       
-      public object Deserialize(string path)
+      public object Deserialize(string path,Type dataType)
       {
-         throw new NotImplementedException();
+         JObject jObject = null;
+         JsonSerializer jsonSerializer = new JsonSerializer();
+         if (File.Exists(path))
+         {
+            StreamReader sr = new StreamReader(filePath);
+            JsonReader jsonReader = new JsonTextReader(sr);
+            jObject = jsonSerializer.Deserialize(jsonReader) as JObject;
+            jsonReader.Close();
+            sr.Close();
+         }
+
+         return jObject.ToObject(dataType);
       }
    
    }

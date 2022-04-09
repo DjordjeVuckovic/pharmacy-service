@@ -9,15 +9,42 @@ using TechHealth.Model;
 
 namespace TechHealth.Repository
 {
-   public class DoctorRepository
+   public class DoctorRepository:GenericRepository<string,Doctor>
    {
-      private List<Doctor> doctors;
-      
+      private static readonly DoctorRepository instance = new DoctorRepository();
+
+      // Explicit static constructor to tell C# compiler
+      // not to mark type as beforefieldinit
+      static DoctorRepository()
+      {
+      }
+
+      private DoctorRepository()
+      {
+      }
+
+      public static DoctorRepository Instance => instance;
+
       public Doctor GetById(string doctorId)
       {
          throw new NotImplementedException();
       }
-      
+
+        protected override string GetPath()
+        {
+            return @"../../Json/doctor.json";
+        }
+
+      protected override string GetKey(Doctor entity)
+      {
+         return entity.Jmbg;
+      }
+
+      protected override void RemoveAllReference(string key)
+      {
+         throw new NotImplementedException();
+      }
+
       public List<Doctor> GetAll()
       {
          throw new NotImplementedException();

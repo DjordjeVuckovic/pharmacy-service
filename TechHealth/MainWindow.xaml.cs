@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,6 +12,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using TechHealth.Model;
+using TechHealth.Repository;
 
 namespace TechHealth
 {
@@ -21,14 +24,34 @@ namespace TechHealth
     {
         public MainWindow()
         {
-            InitializeComponent();
+            Address address1 = new Address
+            {
+                City = "Novi Sad",
+                StreetNumber = "21",
+                Country = "Srbija",
+                Street = "Puse Pusica",
+                Postcode = 21000
+            };
+            Manager manager = new Manager()
+            {
+                Username = "Nenad",
+                Password = "1",
+                Email = "Nenad@Nenad",
+                Name = "Nenad",
+                Surname = "11",
+                Jmbg = "1313",
+                Employed = true,
+                Phone = "0613412313",
+                Address = address1
+            };
+            ManagerRepository.Instance.Create(manager);
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
             
         {
-            Console.Write("Hello");
-
+            
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -52,6 +75,13 @@ namespace TechHealth
             new LoginWindow().Show();
             this.Close();
 
+        }
+
+        private void MainWindow_OnClosing(object sender, CancelEventArgs e)
+        {
+            
+
+            InitializeComponent();
         }
     }
 }
