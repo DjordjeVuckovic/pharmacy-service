@@ -115,3 +115,9 @@ C:\projekat_sims\PharmacyService\TechHealth\bin\Debug\Microsoft.Web.WebView2.Wpf
 C:\projekat_sims\PharmacyService\TechHealth\bin\Debug\Scar.Common.WPF.Controls.Behaviors.pdb
 C:\projekat_sims\PharmacyService\TechHealth\bin\Debug\System.Windows.Interactivity.xml
 C:\projekat_sims\PharmacyService\TechHealth\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\projekat_sims\PharmacyService\TechHealth\obj\Debug\View\ManagerView\AddForm.g.cs
+C:\projekat_sims\PharmacyService\TechHealth\obj\Debug\View\ManagerView\ManagerMainWindow.g.cs
+C:\projekat_sims\PharmacyService\TechHealth\obj\Debug\View\ManagerView\UpdateForm.g.cs
+C:\projekat_sims\PharmacyService\TechHealth\obj\Debug\View\ManagerView\AddForm.baml
+C:\projekat_sims\PharmacyService\TechHealth\obj\Debug\View\ManagerView\ManagerMainWindow.baml
+C:\projekat_sims\PharmacyService\TechHealth\obj\Debug\View\ManagerView\UpdateForm.baml
