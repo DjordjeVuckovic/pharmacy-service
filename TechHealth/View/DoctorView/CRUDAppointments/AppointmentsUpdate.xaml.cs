@@ -58,7 +58,6 @@ namespace TechHealth.View.DoctorView.CRUDAppointments
             }
 
             PatentCombo.SelectedIndex = cnt;
-            int cnt1 = 0;
             foreach (var r in rooms)
             {
                 if (r.roomId.Equals(appointment.Room.roomId))
@@ -66,10 +65,9 @@ namespace TechHealth.View.DoctorView.CRUDAppointments
                     break;
                 }
 
-                cnt1++;
+                cnt++;
             }
-
-            RoomCombo.SelectedIndex = cnt1;
+            RoomCombo.SelectedIndex = cnt;
 
         }
 
@@ -93,20 +91,18 @@ namespace TechHealth.View.DoctorView.CRUDAppointments
             }
             else
             {
-                Appointment entity = new Appointment()
-                {
-                    AppointmentType = AppointmentType.examination,
-                    Date = DateTime.Parse(Picker.Text),
-                    Doctor = doctor,
-                    Emergent = false,
-                    FinishTime = FinishTxt.Text,
-                    StartTime = StartTxt.Text,
-                    IdAppointment = DateTime.Now.ToString("f"),
-                    Patient = patients[PatentCombo.SelectedIndex],
-                    Room = rooms[RoomCombo.SelectedIndex]
-                };
-                AppointmentRepository.Instance.Update(entity);
+
+                appointment.AppointmentType = AppointmentType.examination;
+                appointment.Date = DateTime.Parse(Picker.Text);
+                appointment.Doctor = doctor;
+                appointment.FinishTime = FinishTxt.Text;
+                appointment.StartTime = StartTxt.Text;
+                appointment.Patient = patients[PatentCombo.SelectedIndex];
+                appointment.Room = rooms[RoomCombo.SelectedIndex];
+                
+                AppointmentRepository.Instance.Update(appointment);
                 MessageBox.Show("You are successfully update appointment");
+                DoctorMainWindow.GetInstance().UpdateView();
                 Close();
             }
         }

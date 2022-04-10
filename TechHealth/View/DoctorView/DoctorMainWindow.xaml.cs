@@ -48,10 +48,7 @@ namespace TechHealth.View.DoctorView
             }
         }
         
-        private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
-        {
-            throw new System.NotImplementedException();
-        }
+        
 
         private void Examination_OnClick(object sender, RoutedEventArgs e)
         {
@@ -59,14 +56,12 @@ namespace TechHealth.View.DoctorView
             UpdateView();
 
         }
-        // private void UpdateSurgery_OnClick(object sender, RoutedEventArgs e)
-        // {
-        //     //new UpdateExamination().ShowDialog();
-        // }
+       
 
         private void Surgery_OnClick(object sender, RoutedEventArgs e)
         {
-            new CreateSurgery().ShowDialog();
+            new CreateSurgery(doctorId).ShowDialog();
+            UpdateView();
         }
 
         private void UpdateExamination_OnClick(object sender, RoutedEventArgs e)
@@ -78,6 +73,17 @@ namespace TechHealth.View.DoctorView
             }
 
             UpdateView();
+        }
+
+        private void Delete_OnClick(object sender, RoutedEventArgs e)
+        {
+            if (dataAppointment.SelectedIndex != -1)
+            {
+                Appointment appointment = (Appointment) dataAppointment.SelectedItem;
+                AppointmentRepository.Instance.Delete(appointment.IdAppointment);
+                MessageBox.Show("You are successfully deleted an appointment");
+                UpdateView();
+            }
         }
     }
 }

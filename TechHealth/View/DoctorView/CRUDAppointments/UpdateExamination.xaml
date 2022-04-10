@@ -20,7 +20,7 @@
         <ComboBox HorizontalAlignment="Left" Height="30" Margin="205.3,127.033,0,0" VerticalAlignment="Top" Width="205.2"/>
         <ComboBox HorizontalAlignment="Left" Height="30" Margin="205.3,276.233,0,0" VerticalAlignment="Top" Width="205.2"/>
         <DatePicker HorizontalAlignment="Left" Height="30" Margin="205.3,167.7,0,0" VerticalAlignment="Top" Width="205.2"/>
-        <ListBox HorizontalAlignment="Left" Height="30" Margin="205.3,241.233,0,0" VerticalAlignment="Top" Width="205.2"/>
-        <ListBox HorizontalAlignment="Left" Height="30" Margin="205.3,202.7,0,0" VerticalAlignment="Top" Width="205.2"/>
+        <TextBox HorizontalAlignment="Left" Height="30" Margin="205.3,202.7,0,0" VerticalAlignment="Top" Width="205.2"/>
+        <TextBox HorizontalAlignment="Left" Height="30" Margin="205.3,241.233,0,0" VerticalAlignment="Top" Width="205.2"/>
     </Grid>
 </Window>

@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\View",
+    "\\View\\DoctorView"
   ],
-  "SelectedNode": "\\TechHealth.sln",
+  "SelectedNode": "\\View\\DoctorView\\DoctorMainWindow.xaml",
   "PreviewInSolutionExplorer": false
 }
