@@ -11,10 +11,11 @@ namespace TechHealth.Model
    [NotifyPropertyChanged]
    public class Appointment
    {
-      private DateTime Date{ get; set; }
-      private DateTime StartTime{ get; set; }
-      private DateTime FinishTime{ get; set; }
-      private string IdAppointment{ get; set; }
+      public DateTime Date{ get; set; }
+      public DateTime StartTime{ get; set; }
+      public DateTime FinishTime{ get; set; }
+      public string IdAppointment{ get; set; }
+      public bool Emergent { get; set; }
       
       public Room Room{ get; set; }
       public Patient Patient{ get; set; }
