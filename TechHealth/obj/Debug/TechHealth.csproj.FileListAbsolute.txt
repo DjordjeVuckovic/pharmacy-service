@@ -81,3 +81,17 @@ C:\Users\nsred\Documents\GitHub\PharmacyService\TechHealth\obj\Debug\TechHealth.
 C:\Users\nsred\Documents\GitHub\PharmacyService\TechHealth\obj\Debug\TechHealth.csproj.CopyComplete
 C:\Users\nsred\Documents\GitHub\PharmacyService\TechHealth\obj\Debug\TechHealth.exe
 C:\Users\nsred\Documents\GitHub\PharmacyService\TechHealth\obj\Debug\TechHealth.pdb
+C:\projekat_sims\PharmacyService\TechHealth\obj\Debug\View\DoctorView\CRUDAppointments\AppointmentsUpdate.g.cs
+C:\projekat_sims\PharmacyService\TechHealth\obj\Debug\View\DoctorView\CRUDAppointments\CreateExamination.g.cs
+C:\projekat_sims\PharmacyService\TechHealth\obj\Debug\View\DoctorView\CRUDAppointments\CreateSurgery.g.cs
+C:\projekat_sims\PharmacyService\TechHealth\obj\Debug\View\DoctorView\CRUDAppointments\AppointmentsUpdate.baml
+C:\projekat_sims\PharmacyService\TechHealth\obj\Debug\View\DoctorView\CRUDAppointments\CreateExamination.baml
+C:\projekat_sims\PharmacyService\TechHealth\obj\Debug\View\DoctorView\CRUDAppointments\CreateSurgery.baml
+C:\projekat_sims\PharmacyService\TechHealth\bin\Debug\PostSharp.dll
+C:\projekat_sims\PharmacyService\TechHealth\bin\Debug\PostSharp.Patterns.Aggregation.dll
+C:\projekat_sims\PharmacyService\TechHealth\bin\Debug\PostSharp.Patterns.Common.dll
+C:\projekat_sims\PharmacyService\TechHealth\bin\Debug\PostSharp.Patterns.Model.dll
+C:\projekat_sims\PharmacyService\TechHealth\bin\Debug\PostSharp.xml
+C:\projekat_sims\PharmacyService\TechHealth\bin\Debug\PostSharp.Patterns.Aggregation.xml
+C:\projekat_sims\PharmacyService\TechHealth\bin\Debug\PostSharp.Patterns.Common.xml
+C:\projekat_sims\PharmacyService\TechHealth\bin\Debug\PostSharp.Patterns.Model.xml
