@@ -20,43 +20,105 @@ namespace TechHealth.Repository
       
       public User GetByUsername(string username)
       {
-         throw new NotImplementedException();
+            for (User u : users)
+            {
+                if (users.Username == username)
+                {
+                    return u;
+                }
+            }
       }
       
       public List<User> GetAll()
       {
-         throw new NotImplementedException();
+         return users;
       }
 
-      public void Create()
+      public void Create(Person person)
       {
-         throw new NotImplementedException();
-      }
+            for (Person p : users)
+            {
+                if (p.Username == person.Username)
+                {
+                    return false;
+                }
+            }
+            users.add(person);
+            return true;
+        }
 
       public bool Update(Person person)
       {
-         throw new NotImplementedException();
-      }
+            for (Person p : users)
+            {
+                if (p.Username == person.Username)
+                {
+                    p.Address = person.Address;
+                    p.Name = person.Name;
+                    p.Surname = person.Surname;
+                    p.Jmbg = person.Jmbg;
+                    p.Address = person.Address;
+                    p.Phone = person.Phone;
+                    p.Employed = person.Employed;
+                    p.Email = person.Email;
+                    p.FullName = person.FullName;
+                    return true;
+                }
+            }
+            return false;
+        }
       
       public bool Delete(string username)
       {
-         throw new NotImplementedException();
-      }
+            for (Person p : users)
+            {
+                if (p.Username == username)
+                {
+                    users.remove(u);
+                    return true;
+                }
+            }
+            return false;
+        }
       
       public bool CreateGuest(User user)
       {
-         throw new NotImplementedException();
-      }
+            for (User u : users)
+            {
+                if (u.Username == user.Username)
+                {
+                    return false;
+                }
+            }
+            users.add(user);
+            return true;
+        }
       
       public bool DeleteGuest(string userId)
       {
-         throw new NotImplementedException();
+            for (User u : users)
+            {
+                if (u.Username == userId)
+                {
+                    users.remove(u);
+                    return true;
+                }
+            }
+            return false;
       }
       
-      public int UpdateGuest(User user)
+      public bool UpdateGuest(User user)
       {
-         throw new NotImplementedException();
-      }
+            for (User u : users)
+            {
+                if (u.Username == user.Username)
+                {
+                    u.Password = user.Password;
+                    return true;
+                }
+            }
+            return false;
+        }
       
       public FileHandler fileHandler;
    
