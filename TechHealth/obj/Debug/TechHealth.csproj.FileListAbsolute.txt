@@ -115,3 +115,5 @@ C:\projekat_sims\PharmacyService\TechHealth\bin\Debug\Microsoft.Web.WebView2.Wpf
 C:\projekat_sims\PharmacyService\TechHealth\bin\Debug\Scar.Common.WPF.Controls.Behaviors.pdb
 C:\projekat_sims\PharmacyService\TechHealth\bin\Debug\System.Windows.Interactivity.xml
 C:\projekat_sims\PharmacyService\TechHealth\obj\Debug\GeneratedInternalTypeHelper.g.cs
+E:\fax\3\SIMS\PharmacyService\TechHealth\obj\Debug\TechHealth.exe
+E:\fax\3\SIMS\PharmacyService\TechHealth\obj\Debug\TechHealth.pdb

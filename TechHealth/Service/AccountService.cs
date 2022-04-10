@@ -16,42 +16,42 @@ namespace TechHealth.Service
       
       public User GetByUsername(string username)
       {
-         throw new NotImplementedException();
+            return accountRepository.GetByUsername(username);
       }
       
       public List<User> GetAll()
       {
-         throw new NotImplementedException();
+            return accountRepository.GetAll();
       }
       
       public bool Create(Person person)
       {
-         throw new NotImplementedException();
+            return accountRepository.Create(person);
       }
       
       public bool Update(Person person)
       {
-         throw new NotImplementedException();
+         return accountRepository.Update(person);
       }
       
       public bool Delete(string username)
       {
-         throw new NotImplementedException();
+            return accountRepository.Delete(username);
       }
       
       public bool CreateGuest(User user)
       {
-         throw new NotImplementedException();
+            return accountRepository.CreateGuest(user);
       }
       
       public bool DeleteGuest(string userId)
       {
-         throw new NotImplementedException();
+            return accountRepository.DeleteGuest(userId);
       }
       
-      public int UpdateGuest(User user)
+      public bool UpdateGuest(User user)
       {
-         throw new NotImplementedException();
+            return accountRepository.UpdateGuest(user);
       }
    
    }

@@ -16,12 +16,12 @@ namespace TechHealth.Controller
       
       public User GetByUsername(string username)
       {
-         throw new NotImplementedException();
+            return accountService.GetByUsername(username);
       }
       
       public List<User> GetAll()
       {
-         throw new NotImplementedException();
+            return accountService.GetAll();
       }
       
       public bool Create(string username, string password, string jmbg, string phone, string email, bool employed)
