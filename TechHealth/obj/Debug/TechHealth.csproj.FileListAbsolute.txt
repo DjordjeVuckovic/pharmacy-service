@@ -123,3 +123,5 @@ C:\projekat_sims\PharmacyService\TechHealth\obj\Debug\View\ManagerView\ManagerMa
 C:\projekat_sims\PharmacyService\TechHealth\obj\Debug\View\ManagerView\UpdateForm.baml
 E:\fax\3\SIMS\PharmacyService\TechHealth\obj\Debug\TechHealth.exe
 E:\fax\3\SIMS\PharmacyService\TechHealth\obj\Debug\TechHealth.pdb
+C:\Users\KrecimStanove\Documents\GitHub\PharmacyService\TechHealth\obj\Debug\TechHealth.exe
+C:\Users\KrecimStanove\Documents\GitHub\PharmacyService\TechHealth\obj\Debug\TechHealth.pdb
