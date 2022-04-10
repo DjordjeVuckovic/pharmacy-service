@@ -59,14 +59,10 @@ namespace TechHealth.View.DoctorView
             UpdateView();
 
         }
-        public static string CurentDoctor()
-        {
-            return doctorId;
-        }
-        private void UpdateSurgery_OnClick(object sender, RoutedEventArgs e)
-        {
-            new UpdateExamination().ShowDialog();
-        }
+        // private void UpdateSurgery_OnClick(object sender, RoutedEventArgs e)
+        // {
+        //     //new UpdateExamination().ShowDialog();
+        // }
 
         private void Surgery_OnClick(object sender, RoutedEventArgs e)
         {
@@ -75,7 +71,13 @@ namespace TechHealth.View.DoctorView
 
         private void UpdateExamination_OnClick(object sender, RoutedEventArgs e)
         {
-            new UpdateExamination().ShowDialog();
+            if (dataAppointment.SelectedIndex != -1)
+            {
+                AppointmentsUpdate updateAppointment = new AppointmentsUpdate((Appointment) dataAppointment.SelectedItem);
+                updateAppointment.ShowDialog();
+            }
+
+            UpdateView();
         }
     }
 }

@@ -56,8 +56,11 @@
         </Grid>
         <Button x:Name="NewExamination" Content="New Examination" Margin="261.364,164.494,0,10" HorizontalAlignment="Left" Width="115.2" Grid.Column="1" Grid.Row="3" Click="Examination_OnClick"/>
         <Button x:Name="Surgery" Content="New Surgery" Margin="0,164.494,0,10" HorizontalAlignment="Left" Width="111.2" Grid.Column="1" Grid.Row="3" Click="Surgery_OnClick"/>
+        <!--
         <Button x:Name="UpdateSurgery" Content="Update Surgery" Margin="135.964,164.494,0,10" HorizontalAlignment="Left" Width="102.4" Grid.Column="1" Grid.Row="3" Click="UpdateSurgery_OnClick"/>
+        -->
         <Button x:Name="Delete" Content="Delete" Margin="522.4,164.494,0,10" HorizontalAlignment="Left" Width="111.2" Grid.Column="1" Grid.Row="3" />
-        <Button x:Name="UpdateExamination" Content="Update Examination" Margin="400.164,164.494,0,10" HorizontalAlignment="Left" Width="115" Grid.Column="1" Grid.Row="3" Click="UpdateExamination_OnClick" />
+        <!--<Button x:Name="UpdateExamination" Content="Update Examination" Margin="400.164,164.494,0,10" HorizontalAlignment="Left" Width="115" Grid.Column="1" Grid.Row="3" Click="UpdateExamination_OnClick" />-->
+        <Button x:Name="UpdateExamination" Content="Update Appointment" Margin="400.164,164.494,0,10" HorizontalAlignment="Left" Width="120" Grid.Column="1" Grid.Row="3" Click="UpdateExamination_OnClick" />
     </Grid>
 </Window>
