@@ -142,6 +142,15 @@
     <Compile Include="Service\DoctorService.cs" />
     <Compile Include="Service\PatientService.cs" />
     <Compile Include="Service\RoomService.cs" />
+    <Compile Include="View\DoctorView\CRUDAppointments\AppointmentsUpdate.xaml.cs">
+      <DependentUpon>AppointmentsUpdate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DoctorView\CRUDAppointments\CreateExamination.xaml.cs">
+      <DependentUpon>CreateExamination.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DoctorView\CRUDAppointments\CreateSurgery.xaml.cs">
+      <DependentUpon>CreateSurgery.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\DoctorView\DoctorMainWindow.xaml.cs">
       <DependentUpon>DoctorMainWindow.xaml</DependentUpon>
     </Compile>
@@ -220,6 +229,18 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\DoctorView\CRUDAppointments\AppointmentsUpdate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DoctorView\CRUDAppointments\CreateExamination.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DoctorView\CRUDAppointments\CreateSurgery.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\DoctorView\DoctorMainWindow.xaml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
@@ -229,7 +250,5 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105.The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('packages\System.Text.Json.7.0.0-preview.2.22152.2\build\System.Text.Json.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\System.Text.Json.7.0.0-preview.2.22152.2\build\System.Text.Json.targets'))" />
-    <Error Condition="!Exists('packages\Fody.6.5.1\build\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Fody.6.5.1\build\Fody.targets'))" />
   </Target>
-  <Import Project="packages\Fody.6.5.1\build\Fody.targets" Condition="Exists('packages\Fody.6.5.1\build\Fody.targets')" />
 </Project>
