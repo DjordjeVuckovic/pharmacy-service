@@ -13,6 +13,7 @@ namespace TechHealth.View.DoctorView
         private static DoctorMainWindow _instance;
         private ObservableCollection<Appointment> appointments;
         private static string doctorId;
+       
 
         public static DoctorMainWindow GetInstance(string id)
         {
@@ -35,10 +36,12 @@ namespace TechHealth.View.DoctorView
             _instance = this;
             appointments = new ObservableCollection<Appointment>();
             UpdateView();
+            dataAppointment.ItemsSource = appointments;
         }
 
-        private void UpdateView()
+        public void UpdateView()
         {
+            appointments.Clear();
             foreach (var t in AppointmentRepository.Instance.GetByDoctorId(doctorId))
             {
                 appointments.Add(t);
@@ -53,6 +56,8 @@ namespace TechHealth.View.DoctorView
         private void Examination_OnClick(object sender, RoutedEventArgs e)
         {
             new CreateExamination(doctorId).ShowDialog();
+            UpdateView();
+
         }
         public static string CurentDoctor()
         {
