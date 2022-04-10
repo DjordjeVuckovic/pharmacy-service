@@ -1,0 +1,28 @@
+﻿<Window x:Class="TechHealth.View.ManagerView.ManagerMainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TechHealth.View.ManagerView"
+        mc:Ignorable="d"
+        Title="ManagerMainWindow" Height="450" Width="800">
+    <Grid Background="LightGreen">
+        <Menu Margin="0,49,648,0"/>
+        <Label Content="ZDRAVO" HorizontalAlignment="Left" Margin="30,7,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="20" RenderTransformOrigin="0.182,0.168"/>
+        <Button Content="Add" HorizontalAlignment="Left" Margin="254,14,0,0" VerticalAlignment="Top" Height="30" Width="80" RenderTransformOrigin="-0.234,-0.696" Click="Button_Click_Add"/>
+        <Button Content="View/Modify" HorizontalAlignment="Left" Margin="446,14,0,0" VerticalAlignment="Top" Height="30" Width="80" Click="Button_Click_View"/>
+        <Button Content="Delete" HorizontalAlignment="Left" Margin="630,14,0,0" VerticalAlignment="Top" Height="30" Width="80" Click="Button_Click_Delete"/>
+
+        <ListView Margin="240,72,77,44" Name="lvUsers">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="ID" Width="120" DisplayMemberBinding="{Binding roomId}" />
+                    <GridViewColumn Header="Floor" Width="50" DisplayMemberBinding="{Binding floor}" />
+                    <GridViewColumn Header="Availability" Width="150" DisplayMemberBinding="{Binding availability}" />
+                    <GridViewColumn Header="Type" Width="150" DisplayMemberBinding="{Binding roomTypes}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+    </Grid>
+</Window>
