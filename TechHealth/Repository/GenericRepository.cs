@@ -106,7 +106,7 @@ namespace TechHealth.Repository
 
             entities.Remove(key);
 
-            RemoveAllReference(key);
+            //RemoveAllReference(key);
 
             Serialize(entities);
 

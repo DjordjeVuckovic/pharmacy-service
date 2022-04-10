@@ -12,7 +12,7 @@ namespace TechHealth.Controller
 {
    public class RoomController
    {
-      private RoomService roomService;
+        private RoomService roomService = new RoomService();
       
       public Room GetById(string roomId)
       {
@@ -24,19 +24,31 @@ namespace TechHealth.Controller
          throw new NotImplementedException();
       }
       
-      public bool Create(string roomId, string name, bool available, RoomTypes type)
+      public bool Create(string roomId, int floor, bool available, RoomTypes type)
       {
-         throw new NotImplementedException();
+            var room = new Room();
+            room.roomId = roomId;
+            room.floor = floor;
+            room.availability = available;
+            room.roomTypes = type;
+
+            return roomService.Create(room);
       }
       
-      public bool Update(string roomId, string name, bool available, RoomTypes type)
+      public bool Update(string roomId, int floor, bool available, RoomTypes type)
       {
-         throw new NotImplementedException();
-      }
+            var room = new Room();
+            room.roomId = roomId;
+            room.floor = floor;
+            room.availability = available;
+            room.roomTypes = type;
+
+            return roomService.Update(room);
+        }
       
       public bool Delete(string roomId)
       {
-         throw new NotImplementedException();
+            return roomService.Delete(roomId);
       }
    
    }
