@@ -36,20 +36,20 @@
             <Button x:Name="Appointments" Content="Appointments" Margin="0,-24.34,10,55.6" Grid.ColumnSpan="2" />
         </Grid>
         <Grid Grid.Column="1">
-            <DataGrid x:Name="dataGridTermini"  IsReadOnly="True"
+            <DataGrid x:Name="dataAppointment"  IsReadOnly="True" 
                                   SelectionMode="Single" AutoGenerateColumns="False" FontSize="15" FontWeight="Bold"
                                   FontStyle="Normal"
                                   DataGrid.CanUserResizeRows="False" Margin="-2.835,10,11.339,-287.464">
 
                 <DataGrid.Columns>
 
-                    <DataGridTextColumn Header="Date" Binding="{Binding Date}" Width="*"  DataGridColumn.CanUserResize="False"/>
-                    <DataGridTextColumn Header="StartTime" Binding="{Binding StartTime}" Width="*"  DataGridColumn.CanUserResize="False"/>
-                    <DataGridTextColumn Header="FinishTime" Binding="{Binding FinishTime}" Width="*"  DataGridColumn.CanUserResize="False"/>
-                    <DataGridTextColumn Header="Room" Binding="{Binding Room}" Width="*"  DataGridColumn.CanUserResize="False"/>
-                    <DataGridTextColumn Header="Patient" Binding="{Binding Patient}" Width="*"  DataGridColumn.CanUserResize="False"/>
-                    <DataGridTextColumn Header="Type" Binding="{Binding AppointmentType}" Width="*"  DataGridColumn.CanUserResize="False"/>
-                    <DataGridTextColumn Header="Emergent" Binding="{Binding Emergent}" Width="*"  DataGridColumn.CanUserResize="False"/>
+                    <DataGridTextColumn Header="Date" Binding="{Binding Date}" Width="*"  CanUserResize="False"/>
+                    <DataGridTextColumn Header="StartTime" Binding="{Binding StartTime}" Width="*"  CanUserResize="False"/>
+                    <DataGridTextColumn Header="FinishTime" Binding="{Binding FinishTime}" Width="*"  CanUserResize="False"/>
+                    <DataGridTextColumn Header="Room" Binding="{Binding Room.roomId}" Width="*"  CanUserResize="False"/>
+                    <DataGridTextColumn Header="Patient" Binding="{Binding Patient.FullName}" Width="*"  CanUserResize="False"/>
+                    <DataGridTextColumn Header="Type" Binding="{Binding AppointmentType}" Width="*"  CanUserResize="False"/>
+                    <DataGridTextColumn Header="Emergent" Binding="{Binding Emergent}" Width="*"  CanUserResize="False"/>
                 </DataGrid.Columns>
 
             </DataGrid>

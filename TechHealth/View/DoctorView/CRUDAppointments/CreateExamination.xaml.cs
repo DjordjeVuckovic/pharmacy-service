@@ -62,6 +62,8 @@ namespace TechHealth.View.DoctorView.CRUDAppointments
                     Room = rooms[RoomCombo.SelectedIndex]
                 };
                 AppointmentRepository.Instance.Create(appointment);
+                MessageBox.Show("You are successfully create new examination");
+                Close();
 
             }
         }
@@ -70,7 +72,7 @@ namespace TechHealth.View.DoctorView.CRUDAppointments
 
         private void ButtonBase_OnClick1(object sender, RoutedEventArgs e)
         {
-            MessageBoxResult dialogResult = MessageBox.Show("title", "text", MessageBoxButton.YesNo);
+            MessageBoxResult dialogResult = MessageBox.Show("Are you sure about that?", "Cancel appointment", MessageBoxButton.YesNo);
             if(dialogResult==MessageBoxResult.Yes)
             {
                 Close();
