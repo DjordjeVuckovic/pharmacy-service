@@ -3,6 +3,7 @@ using System.Linq;
 using System.Windows;
 using TechHealth.Model;
 using TechHealth.View.DoctorView;
+using TechHealth.View.ManagerView;
 
 namespace TechHealth
 {
@@ -30,7 +31,8 @@ namespace TechHealth
             }
             if (password.Password.SequenceEqual("mng") && password.Password.SequenceEqual("mng"))
             {
-                //
+                new ManagerMainWindow().Show();
+                this.Close();
             }
             else
             {

@@ -6,12 +6,13 @@
 using System;
 using System.Collections.Generic;
 using TechHealth.Model;
+using TechHealth.Repository;
 
 namespace TechHealth.Service
 {
    public class RoomService
    {
-      private RoomService roomRepository;
+      //private RoomRepository roomRepository;
       
       public Room GetById(string roomId)
       {
@@ -25,17 +26,17 @@ namespace TechHealth.Service
       
       public bool Create(Room room)
       {
-         throw new NotImplementedException();
+            return RoomRepository.Instance.Create(room);
       }
       
       public bool Update(Room room)
       {
-         throw new NotImplementedException();
+            return RoomRepository.Instance.Update(room);
       }
       
       public bool Delete(string roomId)
       {
-         throw new NotImplementedException();
+            return RoomRepository.Instance.Delete(roomId);
       }
    
    }

@@ -91,7 +91,7 @@ namespace TechHealth.Repository
 
             bool remove = entities.Remove(key);
 
-            RemoveAllReference(key);
+            //RemoveAllReference(key);
 
             Serialize(entities);
 

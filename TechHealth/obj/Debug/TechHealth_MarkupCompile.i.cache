@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\nsred\Documents\GitHub\PharmacyService\TechHealth\App.xaml
-31750563159
+6-1906928316
 5-1097657368
-51-1207354099
+54-2133837056
 24-1614744532
-LoginWindow.xaml;MainWindow.xaml;View\DoctorView\DoctorMainWindow.xaml;
+LoginWindow.xaml;MainWindow.xaml;View\DoctorView\DoctorMainWindow.xaml;View\ManagerView\AddForm.xaml;View\ManagerView\ManagerMainWindow.xaml;View\ManagerView\UpdateForm.xaml;
 
-False
+True
 

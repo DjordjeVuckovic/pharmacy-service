@@ -81,3 +81,9 @@ C:\Users\nsred\Documents\GitHub\PharmacyService\TechHealth\obj\Debug\TechHealth.
 C:\Users\nsred\Documents\GitHub\PharmacyService\TechHealth\obj\Debug\TechHealth.csproj.CopyComplete
 C:\Users\nsred\Documents\GitHub\PharmacyService\TechHealth\obj\Debug\TechHealth.exe
 C:\Users\nsred\Documents\GitHub\PharmacyService\TechHealth\obj\Debug\TechHealth.pdb
+C:\Users\nsred\Documents\GitHub\PharmacyService\TechHealth\obj\Debug\View\ManagerView\AddForm.g.cs
+C:\Users\nsred\Documents\GitHub\PharmacyService\TechHealth\obj\Debug\View\ManagerView\ManagerMainWindow.g.cs
+C:\Users\nsred\Documents\GitHub\PharmacyService\TechHealth\obj\Debug\View\ManagerView\AddForm.baml
+C:\Users\nsred\Documents\GitHub\PharmacyService\TechHealth\obj\Debug\View\ManagerView\ManagerMainWindow.baml
+C:\Users\nsred\Documents\GitHub\PharmacyService\TechHealth\obj\Debug\View\ManagerView\UpdateForm.g.cs
+C:\Users\nsred\Documents\GitHub\PharmacyService\TechHealth\obj\Debug\View\ManagerView\UpdateForm.baml
