@@ -16,20 +16,31 @@ namespace TechHealth.Repository
 {
    public class AccountRepository:GenericRepository<string,Person>
    {
-      
-      public User GetByUsername(string username)
+        private static readonly AccountRepository instance = new AccountRepository();
+
+        static AccountRepository()
+        { 
+        }
+
+        private AccountRepository()
+        { 
+        }
+
+        public static AccountRepository Instance => instance;
+
+        public User GetByUsername(string username)
       {
          throw new NotImplementedException();
       }
       
       protected override string GetPath()
       {
-         throw new NotImplementedException();
-      }
+            return @"../../Json/account.json";
+        }
 
       protected override string GetKey(Person entity)
       {
-         throw new NotImplementedException();
+            return entity.Jmbg;
       }
 
       protected override void RemoveAllReference(string key)
