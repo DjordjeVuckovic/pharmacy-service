@@ -14,34 +14,29 @@ using JsonSerializer = Newtonsoft.Json.JsonSerializer;
 
 namespace TechHealth.Repository
 {
-   public class AccountRepository
+   public class AccountRepository:GenericRepository<string,Person>
    {
-      private List<User> users;
       
       public User GetByUsername(string username)
       {
          throw new NotImplementedException();
       }
       
-      public List<User> GetAll()
+      protected override string GetPath()
       {
          throw new NotImplementedException();
       }
 
-      public void Create()
+      protected override string GetKey(Person entity)
       {
          throw new NotImplementedException();
       }
 
-      public bool Update(Person person)
+      protected override void RemoveAllReference(string key)
       {
          throw new NotImplementedException();
       }
       
-      public bool Delete(string username)
-      {
-         throw new NotImplementedException();
-      }
       
       public bool CreateGuest(User user)
       {
