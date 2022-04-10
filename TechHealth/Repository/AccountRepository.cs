@@ -20,7 +20,7 @@ namespace TechHealth.Repository
       
       public User GetByUsername(string username)
       {
-            for (User u : users)
+            foreach (User u in users)
             {
                 if (users.Username == username)
                 {
@@ -36,7 +36,7 @@ namespace TechHealth.Repository
 
       public void Create(Person person)
       {
-            for (Person p : users)
+            foreach (Person p in users)
             {
                 if (p.Username == person.Username)
                 {
@@ -49,7 +49,7 @@ namespace TechHealth.Repository
 
       public bool Update(Person person)
       {
-            for (Person p : users)
+            foreach (Person p in users)
             {
                 if (p.Username == person.Username)
                 {
@@ -70,7 +70,7 @@ namespace TechHealth.Repository
       
       public bool Delete(string username)
       {
-            for (Person p : users)
+            foreach (Person p in users)
             {
                 if (p.Username == username)
                 {
@@ -83,7 +83,7 @@ namespace TechHealth.Repository
       
       public bool CreateGuest(User user)
       {
-            for (User u : users)
+            foreach (User u in users)
             {
                 if (u.Username == user.Username)
                 {
@@ -96,7 +96,7 @@ namespace TechHealth.Repository
       
       public bool DeleteGuest(string userId)
       {
-            for (User u : users)
+            foreach (User u in users)
             {
                 if (u.Username == userId)
                 {
@@ -109,7 +109,7 @@ namespace TechHealth.Repository
       
       public bool UpdateGuest(User user)
       {
-            for (User u : users)
+            foreach (User u in users)
             {
                 if (u.Username == user.Username)
                 {
