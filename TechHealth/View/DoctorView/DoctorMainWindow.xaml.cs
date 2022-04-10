@@ -1,17 +1,50 @@
-﻿using System.Windows;
+﻿using System.Collections.ObjectModel;
+using System.Windows;
 using System.Windows.Threading;
+using TechHealth.Controller;
+using TechHealth.Model;
+using TechHealth.Repository;
 using TechHealth.View.DoctorView.CRUDAppointments;
 
 namespace TechHealth.View.DoctorView
 {
     public partial class DoctorMainWindow : Window
     {
-        public DoctorMainWindow()
+        private static DoctorMainWindow _instance;
+        private ObservableCollection<Appointment> appointments;
+        private static string doctorId;
+
+        public static DoctorMainWindow GetInstance(string id)
         {
-            DispatcherTimer dispatcherTimer = new DispatcherTimer();
+            
+                if (_instance == null)
+                {
+                     doctorId = id;
+                    _instance = new DoctorMainWindow();
+                }
+                return _instance;
+        }
+        public static DoctorMainWindow GetInstance()
+        {
+            return _instance;
+        }
+        private DoctorMainWindow()
+        {
+            //DispatcherTimer dispatcherTimer = new DispatcherTimer();
             InitializeComponent();
+            _instance = this;
+            appointments = new ObservableCollection<Appointment>();
+            UpdateView();
         }
 
+        private void UpdateView()
+        {
+            foreach (var t in AppointmentRepository.Instance.GetByDoctorId(doctorId))
+            {
+                appointments.Add(t);
+            }
+        }
+        
         private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
         {
             throw new System.NotImplementedException();
@@ -19,17 +52,25 @@ namespace TechHealth.View.DoctorView
 
         private void Examination_OnClick(object sender, RoutedEventArgs e)
         {
-            new CreateSurgery().ShowDialog();
+            new CreateExamination(doctorId).ShowDialog();
         }
-
+        public static string CurentDoctor()
+        {
+            return doctorId;
+        }
         private void UpdateSurgery_OnClick(object sender, RoutedEventArgs e)
         {
-            new CreateSurgery().ShowDialog();
+            new UpdateExamination().ShowDialog();
         }
 
         private void Surgery_OnClick(object sender, RoutedEventArgs e)
         {
             new CreateSurgery().ShowDialog();
+        }
+
+        private void UpdateExamination_OnClick(object sender, RoutedEventArgs e)
+        {
+            new UpdateExamination().ShowDialog();
         }
     }
 }

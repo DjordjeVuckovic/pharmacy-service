@@ -41,11 +41,24 @@ namespace TechHealth.Repository
          throw new NotImplementedException();
       }
 
-      public Doctor GetDoctor(String user)
+      public Doctor GetDoctorByUser(string user)
       {
          foreach (var doc in DictionaryValuesToList())
          {
             if (doc.Username.Equals(user))
+            {
+               return doc;
+            }
+         }
+
+         return null;
+      }
+
+      public Doctor GetDoctorbyId(string id)
+      {
+         foreach (var doc in DictionaryValuesToList())
+         {
+            if (doc.Jmbg.Equals(id))
             {
                return doc;
             }

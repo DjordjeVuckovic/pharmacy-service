@@ -5,6 +5,7 @@
 
 using System;
 using PostSharp.Patterns.Model;
+using Scar.Common.WPF.Controls;
 
 namespace TechHealth.Model
 {
@@ -12,17 +13,18 @@ namespace TechHealth.Model
    public class Appointment
    {
       public DateTime Date{ get; set; }
-      public DateTime StartTime{ get; set; }
-      public DateTime FinishTime{ get; set; }
+      public string StartTime{ get; set; }
+      public string FinishTime{ get; set; }
       public string IdAppointment{ get; set; }
       public bool Emergent { get; set; }
+      
       
       public Room Room{ get; set; }
       public Patient Patient{ get; set; }
       public AppointmentType AppointmentType{ get; set; }
       public Doctor Doctor{ get; set; }
       
-   
+      
      
    
    }

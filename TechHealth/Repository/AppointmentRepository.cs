@@ -24,9 +24,17 @@ namespace TechHealth.Repository
       }
       public static AppointmentRepository Instance => instance;
       
-      public List<Appointment> GetByDoctorId(string doctorId)
+      public List<Appointment> GetByDoctorId(string id)
       {
-         throw new NotImplementedException();
+         List<Appointment> appointments = new List<Appointment>();
+         foreach (var t in DictionaryValuesToList())
+         {
+            if (id.Equals(t.Doctor.Jmbg))
+            {
+               appointments.Add(t);
+            }
+         }
+         return appointments;
       }
       
       public List<Appointment> GetByPatientId(string patientId)
@@ -38,9 +46,6 @@ namespace TechHealth.Repository
       {
          throw new NotImplementedException();
       }
-      
-      public FileHandler fileHandler;
-
       protected override string GetPath()
       {
          return @"../../Json/appointment.json";
