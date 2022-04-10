@@ -4,9 +4,11 @@
 // Purpose: Definition of Class Appointment
 
 using System;
+using PostSharp.Patterns.Model;
 
 namespace TechHealth.Model
 {
+   [NotifyPropertyChanged]
    public class Appointment
    {
       private DateTime Date{ get; set; }

@@ -45,6 +45,22 @@
       <HintPath>packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="PostSharp, Version=6.10.9.0, Culture=neutral, PublicKeyToken=b13fd38b8f9c99d7">
+      <HintPath>packages\PostSharp.Redist.6.10.9\lib\net45\PostSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PostSharp.Patterns.Aggregation, Version=6.10.9.0, Culture=neutral, PublicKeyToken=e7f631e6ce13f078">
+      <HintPath>packages\PostSharp.Patterns.Aggregation.Redist.6.10.9\lib\net45\PostSharp.Patterns.Aggregation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PostSharp.Patterns.Common, Version=6.10.9.0, Culture=neutral, PublicKeyToken=e7f631e6ce13f078">
+      <HintPath>packages\PostSharp.Patterns.Common.Redist.6.10.9\lib\net47\PostSharp.Patterns.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PostSharp.Patterns.Model, Version=6.10.9.0, Culture=neutral, PublicKeyToken=e7f631e6ce13f078">
+      <HintPath>packages\PostSharp.Patterns.Model.Redist.6.10.9\lib\net45\PostSharp.Patterns.Model.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51">
       <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
@@ -111,6 +127,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Repository\AccountRepository.cs" />
     <Compile Include="Repository\AppointmentRepository.cs" />
     <Compile Include="Repository\DoctorRepository.cs" />
@@ -211,5 +228,7 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105.The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('packages\System.Text.Json.7.0.0-preview.2.22152.2\build\System.Text.Json.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\System.Text.Json.7.0.0-preview.2.22152.2\build\System.Text.Json.targets'))" />
+    <Error Condition="!Exists('packages\Fody.6.5.1\build\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Fody.6.5.1\build\Fody.targets'))" />
   </Target>
+  <Import Project="packages\Fody.6.5.1\build\Fody.targets" Condition="Exists('packages\Fody.6.5.1\build\Fody.targets')" />
 </Project>

@@ -27,59 +27,12 @@ namespace TechHealth.Repository
       {
          throw new NotImplementedException();
       }
-      
+
       public void Create()
       {
-         Address address1 = new Address
-         {
-            City = "Novi Sad",
-            StreetNumber = "21",
-            Country = "Srbija",
-            Street = "Puse Pusica",
-            Postcode = 21000
-         };
-         Doctor doctor = new Doctor()
-         {
-            Username = "doc",
-            Password = "doc",
-            Email = "doctor@doctor",
-            Name = "Jack",
-            Surname = "White",
-            Jmbg = "1312",
-            Employed = true,
-            Phone = "061341",
-            Address = address1
-         };
-         Doctor doctor1 = new Doctor()
-         {
-            Username = "doctor",
-            Password = "doctor",
-            Email = "doctor@doctor11",
-            Name = "Slavica",
-            Surname = "Cukteras",
-            Jmbg = "1315",
-            Employed = true,
-            Phone = "061341",
-            Address = address1
-         };
-         List<Doctor> doctors = new List<Doctor>();
-         doctors.Add(doctor);
-         doctors.Add(doctor1);
-         string path = @"../../Json/doctor.json";
-         string path1 = @"../../Json/sec.json";
-         string jsonToWrite = System.Text.Json.JsonSerializer.Serialize(doctors);
-         if (!File.Exists(path1))
-         {
-            File.Create(path1);
-         }
-         File.WriteAllText(path1,jsonToWrite);
-         // using (StreamWriter writer = new StreamWriter(@".\..\..\..\JsonData\doctor.json"))
-         //    
-         // {
-         //    writer.Write(jsonToWrite);
-         // }
+         throw new NotImplementedException();
       }
-      
+
       public bool Update(Person person)
       {
          throw new NotImplementedException();

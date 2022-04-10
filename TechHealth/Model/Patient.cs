@@ -4,9 +4,11 @@
 // Purpose: Definition of Class Patient
 
 using System;
+using PostSharp.Patterns.Model;
 
 namespace TechHealth.Model
 {
+   [NotifyPropertyChanged]
    public class Patient : Person
    {
       public bool Guest{ get; set; }

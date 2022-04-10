@@ -5,9 +5,11 @@
 
 using System;
 using System.Collections.Generic;
+using PostSharp.Patterns.Model;
 
 namespace TechHealth.Model
 {
+    [NotifyPropertyChanged]
     public class Room
     {
         public RoomTypes roomTypes { get; set; }

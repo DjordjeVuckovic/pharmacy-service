@@ -4,19 +4,14 @@
 // Purpose: Definition of Class Person
 
 using System;
+using PostSharp.Patterns.Model;
 
 namespace TechHealth.Model
 {
-   [Serializable]
+   [NotifyPropertyChanged]
    public class Person : User
    {
       public Address Address { get; set; }
-      
-      public void LogIn()
-      {
-         throw new NotImplementedException();
-      }
-      
       public string Name{ get; set; }
       public string Surname{ get; set; }
       public string Email{ get; set; }

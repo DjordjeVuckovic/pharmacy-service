@@ -4,9 +4,11 @@
 // Purpose: Definition of Class Address
 
 using System;
-
+using PostSharp.Patterns.Model;
+using TechHealth.Controller;
 namespace TechHealth.Model
 {
+   [NotifyPropertyChanged] 
    public class Address
    {
       public string City { get; set; }

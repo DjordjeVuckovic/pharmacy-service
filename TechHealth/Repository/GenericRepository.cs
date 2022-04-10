@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.Json;
@@ -10,6 +11,10 @@ namespace TechHealth.Repository
         protected abstract string GetPath();
         protected abstract TKey GetKey(TEntity entity);
         protected abstract void RemoveAllReference(TKey key);
+        public virtual TEntity Search(string search)
+        {
+            throw new NotImplementedException();
+        }
 
         private Dictionary<TKey, TEntity> Deserialize()
         {
@@ -123,7 +128,6 @@ namespace TechHealth.Repository
 
             return entities;
         }
-        
         
 
     }
