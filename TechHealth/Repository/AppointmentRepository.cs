@@ -9,34 +9,20 @@ using TechHealth.Model;
 
 namespace TechHealth.Repository
 {
-   public class AppointmentRepository
+   public class AppointmentRepository:GenericRepository<string,Appointment>
    {
-      private List<Appointment> appointments;
-      
-      public Appointment GetById(string idAppointment)
+      private static readonly AppointmentRepository instance = new AppointmentRepository();
+
+      // Explicit static constructor to tell C# compiler
+      // not to mark type as beforefieldinit
+      static AppointmentRepository()
       {
-         throw new NotImplementedException();
       }
-      
-      public List<Appointment> GetAll()
+
+      private AppointmentRepository()
       {
-         throw new NotImplementedException();
       }
-      
-      public bool Create(Appointment appointment)
-      {
-         throw new NotImplementedException();
-      }
-      
-      public bool Update(Appointment appointment)
-      {
-         throw new NotImplementedException();
-      }
-      
-      public bool Delete(string idAppointment)
-      {
-         throw new NotImplementedException();
-      }
+      public static AppointmentRepository Instance => instance;
       
       public List<Appointment> GetByDoctorId(string doctorId)
       {
@@ -54,6 +40,20 @@ namespace TechHealth.Repository
       }
       
       public FileHandler fileHandler;
-   
+
+      protected override string GetPath()
+      {
+         return @"../../Json/appointment.json";
+      }
+
+      protected override string GetKey(Appointment entity)
+      {
+         return entity.IdAppointment;
+      }
+
+      protected override void RemoveAllReference(string key)
+      {
+         throw new NotImplementedException();
+      }
    }
 }

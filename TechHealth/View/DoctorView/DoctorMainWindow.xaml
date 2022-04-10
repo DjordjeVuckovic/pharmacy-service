@@ -7,7 +7,20 @@
         mc:Ignorable="d"
         Title="DoctorMainWindow" Height="450" Width="800">
     <Grid>
-        <Button Content="Appointments" Width="200" Height="45" Margin="98.4,0" Background="#FFE0E0FF" Click="ButtonBase_OnClick" />
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70" />
+            <RowDefinition Height="70" />
+            <RowDefinition Height="70" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Image Source="/resources/caduceus_logo.png"  Width="auto" Height="auto"/>
+        </Grid>
+        <Gr
 
     </Grid>
 </Window>
