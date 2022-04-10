@@ -16,6 +16,7 @@ using Scar.Common.WPF.Controls;
 using TechHealth.Model;
 using TechHealth.Repository;
 using TechHealth.View.ManagerView;
+using TechHealth.View.PatientView;
 
 namespace TechHealth
 {
@@ -52,7 +53,7 @@ namespace TechHealth
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-
+            new PatientMainWindow().Show();
         }
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
