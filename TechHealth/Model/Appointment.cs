@@ -13,6 +13,8 @@ namespace TechHealth.Model
    public class Appointment
    {
       public DateTime Date{ get; set; }
+      public DateTime StartTimeD{ get; set; }
+      public DateTime FinishTimeD{ get; set; }
       public string StartTime{ get; set; }
       public string FinishTime{ get; set; }
       public string IdAppointment{ get; set; }
