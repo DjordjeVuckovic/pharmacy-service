@@ -23,15 +23,14 @@ namespace TechHealth
         {
             string user = Username.Text;
             string pass = Password.Password;
-            Doctor doctor = DoctorRepository.Instance.GetDoctor(user);
+            Doctor doctor = DoctorRepository.Instance.GetDoctorByUser(user);
             if (doctor != null && pass.Equals(doctor.Password))
             {
-                DoctorMainWindow window = new DoctorMainWindow();
-                window.Show();
+                DoctorMainWindow.GetInstance(doctor.Jmbg).Show();
                 Close();
             }
-            
-            
         }
+
+        
     }
 }

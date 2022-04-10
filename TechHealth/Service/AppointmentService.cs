@@ -12,8 +12,6 @@ namespace TechHealth.Service
 {
    public class AppointmentService
    {
-      private AppointmentRepository appointmentRepository;
-      
       public Appointment GetById(string idAppointment)
       {
          throw new NotImplementedException();
@@ -21,7 +19,7 @@ namespace TechHealth.Service
       
       public List<Appointment> GetAll()
       {
-         throw new NotImplementedException();
+        return AppointmentRepository.Instance.DictionaryValuesToList();
       }
       
       public bool Create(Appointment appointment)

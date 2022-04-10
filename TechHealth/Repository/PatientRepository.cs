@@ -24,11 +24,6 @@ namespace TechHealth.Repository
       }
 
       public static PatientRepository Instance => instance;
-      
-      public Patient GetById(string patientId)
-      {
-         throw new NotImplementedException();
-      }
 
       protected override string GetPath()
       {
@@ -44,13 +39,6 @@ namespace TechHealth.Repository
       {
          throw new NotImplementedException();
       }
-
-      public List<Patient> GetAll()
-      {
-         throw new NotImplementedException();
-      }
       
-      public FileHandler fileHandler;
-   
    }
 }

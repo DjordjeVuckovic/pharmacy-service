@@ -9,7 +9,8 @@ namespace TechHealth.Model
 {
    public enum AppointmentType
    {
-      examination,
-      operation
+      examination=0,
+      operation=1
    }
+   
 }

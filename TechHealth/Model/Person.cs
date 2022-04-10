@@ -18,6 +18,6 @@ namespace TechHealth.Model
       public string Jmbg{ get; set; }
       public string Phone{ get; set; }
       public bool Employed{ get; set; }
-   
+      public string FullName => Name + " " + Surname;
    }
 }

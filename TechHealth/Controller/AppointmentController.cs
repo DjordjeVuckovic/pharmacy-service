@@ -12,9 +12,12 @@ namespace TechHealth.Controller
 {
    public class AppointmentController
    {
+      private static AppointmentController _instance;
       private AppointmentService appointmentService;
       private DoctorService doctorService;
       private PatientService patientService;
+
+      public static AppointmentController Instance => _instance;
       
       public Appointment GetById(string idAppointment)
       {
@@ -23,7 +26,7 @@ namespace TechHealth.Controller
       
       public List<Appointment> GetAll()
       {
-         throw new NotImplementedException();
+         return appointmentService.GetAll();
       }
       
       public bool Create(string doctorId, string patientId, DateTime date, DateTime startTime, DateTime finishTime, string roomId, AppointmentType type)
