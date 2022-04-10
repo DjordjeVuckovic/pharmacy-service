@@ -255,5 +255,268 @@
       "Username": "Djordje",
       "Password": "1"
     }
+  },
+  "Sunday, April 10, 2022 8:09 PM": {
+    "Date": "2022-04-13T00:00:00",
+    "StartTime": "11:00",
+    "FinishTime": "09:00",
+    "IdAppointment": "Sunday, April 10, 2022 8:09 PM",
+    "Emergent": false,
+    "Room": {
+      "roomTypes": 1,
+      "roomId": "soba2",
+      "floor": 1,
+      "availability": true,
+      "Equipments": ""
+    },
+    "Patient": {
+      "Guest": false,
+      "ChosenDoctor": null,
+      "Lbo": 0,
+      "IsBanned": false,
+      "Address": {
+        "City": "Novi Sad",
+        "StreetNumber": "21",
+        "Country": "Srbija",
+        "Street": "Puse Pusica",
+        "Postcode": 21000
+      },
+      "Name": "Dusan",
+      "Surname": "Vukovic",
+      "Email": "dusan@dusan",
+      "Jmbg": "2456",
+      "Phone": "0613411123",
+      "Employed": false,
+      "FullName": "Dusan Vukovic",
+      "Username": "dusan",
+      "Password": "dusan"
+    },
+    "AppointmentType": 0,
+    "Doctor": {
+      "Address": {
+        "City": "Novi Sad",
+        "StreetNumber": "21",
+        "Country": "Srbija",
+        "Street": "Puse Pusica",
+        "Postcode": 21000
+      },
+      "Name": "Djordje",
+      "Surname": "Vuckovic",
+      "Email": "doctor@doctor11",
+      "Jmbg": "1313",
+      "Phone": "0613412312332",
+      "Employed": true,
+      "FullName": "Djordje Vuckovic",
+      "Username": "Djordje",
+      "Password": "1"
+    }
+  },
+  "Sunday, April 10, 2022 8:48 PM": {
+    "Date": "2022-04-05T00:00:00",
+    "StartTime": "20:00",
+    "FinishTime": "17:00",
+    "IdAppointment": "Sunday, April 10, 2022 8:48 PM",
+    "Emergent": false,
+    "Room": {
+      "roomTypes": 1,
+      "roomId": "soba2",
+      "floor": 1,
+      "availability": true,
+      "Equipments": ""
+    },
+    "Patient": {
+      "Guest": false,
+      "ChosenDoctor": null,
+      "Lbo": 0,
+      "IsBanned": false,
+      "Address": {
+        "City": "Novi Sad",
+        "StreetNumber": "21",
+        "Country": "Srbija",
+        "Street": "Puse Pusica",
+        "Postcode": 21000
+      },
+      "Name": "Dusan",
+      "Surname": "Vukovic",
+      "Email": "dusan@dusan",
+      "Jmbg": "2456",
+      "Phone": "0613411123",
+      "Employed": false,
+      "FullName": "Dusan Vukovic",
+      "Username": "dusan",
+      "Password": "dusan"
+    },
+    "AppointmentType": 0,
+    "Doctor": {
+      "Address": {
+        "City": "Novi Sad",
+        "StreetNumber": "21",
+        "Country": "Srbija",
+        "Street": "Puse Pusica",
+        "Postcode": 21000
+      },
+      "Name": "Djordje",
+      "Surname": "Vuckovic",
+      "Email": "doctor@doctor11",
+      "Jmbg": "1313",
+      "Phone": "0613412312332",
+      "Employed": true,
+      "FullName": "Djordje Vuckovic",
+      "Username": "Djordje",
+      "Password": "1"
+    }
+  },
+  "Sunday, April 10, 2022 8:58 PM": {
+    "Date": "2022-04-12T00:00:00",
+    "StartTime": "13:00",
+    "FinishTime": "11:00",
+    "IdAppointment": "Sunday, April 10, 2022 8:58 PM",
+    "Emergent": false,
+    "Room": {
+      "roomTypes": 1,
+      "roomId": "soba2",
+      "floor": 1,
+      "availability": true,
+      "Equipments": ""
+    },
+    "Patient": {
+      "Guest": false,
+      "ChosenDoctor": null,
+      "Lbo": 0,
+      "IsBanned": false,
+      "Address": null,
+      "Name": "miki",
+      "Surname": "Djuricic",
+      "Email": "dsa@adsa",
+      "Jmbg": "13456",
+      "Phone": "06105111331",
+      "Employed": false,
+      "FullName": "miki Djuricic",
+      "Username": "Djura",
+      "Password": "1311"
+    },
+    "AppointmentType": 0,
+    "Doctor": {
+      "Address": {
+        "City": "Novi Sad",
+        "StreetNumber": "21",
+        "Country": "Srbija",
+        "Street": "Puse Pusica",
+        "Postcode": 21000
+      },
+      "Name": "Djordje",
+      "Surname": "Vuckovic",
+      "Email": "doctor@doctor11",
+      "Jmbg": "1313",
+      "Phone": "0613412312332",
+      "Employed": true,
+      "FullName": "Djordje Vuckovic",
+      "Username": "Djordje",
+      "Password": "1"
+    }
+  },
+  "Sunday, April 10, 2022 9:00 PM": {
+    "Date": "2022-04-15T00:00:00",
+    "StartTime": "12:00",
+    "FinishTime": "11:00",
+    "IdAppointment": "Sunday, April 10, 2022 9:00 PM",
+    "Emergent": false,
+    "Room": {
+      "roomTypes": 1,
+      "roomId": "soba2",
+      "floor": 1,
+      "availability": true,
+      "Equipments": ""
+    },
+    "Patient": {
+      "Guest": false,
+      "ChosenDoctor": null,
+      "Lbo": 0,
+      "IsBanned": false,
+      "Address": null,
+      "Name": "miki",
+      "Surname": "Djuricic",
+      "Email": "dsa@adsa",
+      "Jmbg": "13456",
+      "Phone": "06105111331",
+      "Employed": false,
+      "FullName": "miki Djuricic",
+      "Username": "Djura",
+      "Password": "1311"
+    },
+    "AppointmentType": 0,
+    "Doctor": {
+      "Address": {
+        "City": "Novi Sad",
+        "StreetNumber": "21",
+        "Country": "Srbija",
+        "Street": "Puse Pusica",
+        "Postcode": 21000
+      },
+      "Name": "Djordje",
+      "Surname": "Vuckovic",
+      "Email": "doctor@doctor11",
+      "Jmbg": "1313",
+      "Phone": "0613412312332",
+      "Employed": true,
+      "FullName": "Djordje Vuckovic",
+      "Username": "Djordje",
+      "Password": "1"
+    }
+  },
+  "Sunday, April 10, 2022 9:08 PM": {
+    "Date": "2022-04-06T00:00:00",
+    "StartTime": "17:00",
+    "FinishTime": "15:00",
+    "IdAppointment": "Sunday, April 10, 2022 9:08 PM",
+    "Emergent": false,
+    "Room": {
+      "roomTypes": 1,
+      "roomId": "soba2",
+      "floor": 1,
+      "availability": true,
+      "Equipments": ""
+    },
+    "Patient": {
+      "Guest": false,
+      "ChosenDoctor": null,
+      "Lbo": 0,
+      "IsBanned": false,
+      "Address": {
+        "City": "Novi Sad",
+        "StreetNumber": "21",
+        "Country": "Srbija",
+        "Street": "Puse Pusica",
+        "Postcode": 21000
+      },
+      "Name": "Dusan",
+      "Surname": "Vukovic",
+      "Email": "dusan@dusan",
+      "Jmbg": "2456",
+      "Phone": "0613411123",
+      "Employed": false,
+      "FullName": "Dusan Vukovic",
+      "Username": "dusan",
+      "Password": "dusan"
+    },
+    "AppointmentType": 0,
+    "Doctor": {
+      "Address": {
+        "City": "Novi Sad",
+        "StreetNumber": "21",
+        "Country": "Srbija",
+        "Street": "Puse Pusica",
+        "Postcode": 21000
+      },
+      "Name": "Djordje",
+      "Surname": "Vuckovic",
+      "Email": "doctor@doctor11",
+      "Jmbg": "1313",
+      "Phone": "0613412312332",
+      "Employed": true,
+      "FullName": "Djordje Vuckovic",
+      "Username": "Djordje",
+      "Password": "1"
+    }
   }
 }
