@@ -195,6 +195,15 @@
     <Compile Include="View\ManagerView\UpdateForm.xaml.cs">
       <DependentUpon>UpdateForm.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\PatientView\CreateAppointment.xaml.cs">
+      <DependentUpon>CreateAppointment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PatientView\PatientMainWindow.xaml.cs">
+      <DependentUpon>PatientMainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PatientView\UpdateAppointment.xaml.cs">
+      <DependentUpon>UpdateAppointment.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\Address.cs" />
@@ -293,6 +302,18 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\ManagerView\UpdateForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PatientView\CreateAppointment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PatientView\PatientMainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PatientView\UpdateAppointment.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
