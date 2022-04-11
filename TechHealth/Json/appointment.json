@@ -1,6 +1,8 @@
 {
   "1": {
     "Date": "2022-04-10T14:35:47.9147904+02:00",
+    "StartTimeD": "0001-01-01T00:00:00",
+    "FinishTimeD": "0001-01-01T00:00:00",
     "StartTime": "13:15:00",
     "FinishTime": "14:15:00",
     "IdAppointment": "1",
@@ -56,6 +58,8 @@
   },
   "2": {
     "Date": "2022-03-30T00:00:00",
+    "StartTimeD": "0001-01-01T00:00:00",
+    "FinishTimeD": "0001-01-01T00:00:00",
     "StartTime": "03:00AM",
     "FinishTime": "05:00AM",
     "IdAppointment": "2",
@@ -105,6 +109,8 @@
   },
   "Monday, April 11, 2022 12:04 AM": {
     "Date": "2022-04-06T00:00:00",
+    "StartTimeD": "0001-01-01T00:00:00",
+    "FinishTimeD": "0001-01-01T00:00:00",
     "StartTime": "90:00",
     "FinishTime": "12:12",
     "IdAppointment": "Monday, April 11, 2022 12:04 AM",
@@ -154,6 +160,8 @@
   },
   "Monday, April 11, 2022 12:15 AM": {
     "Date": "2022-04-07T00:00:00",
+    "StartTimeD": "0001-01-01T00:00:00",
+    "FinishTimeD": "0001-01-01T00:00:00",
     "StartTime": "12:00",
     "FinishTime": "13:00",
     "IdAppointment": "Monday, April 11, 2022 12:15 AM",
@@ -203,6 +211,8 @@
   },
   "Monday, April 11, 2022 12:19 AM": {
     "Date": "2022-04-13T00:00:00",
+    "StartTimeD": "0001-01-01T00:00:00",
+    "FinishTimeD": "0001-01-01T00:00:00",
     "StartTime": "11:00",
     "FinishTime": "12:00",
     "IdAppointment": "Monday, April 11, 2022 12:19 AM",
@@ -258,6 +268,8 @@
   },
   "Monday, April 11, 2022 12:20 AM": {
     "Date": "2022-04-05T00:00:00",
+    "StartTimeD": "0001-01-01T00:00:00",
+    "FinishTimeD": "0001-01-01T00:00:00",
     "StartTime": "13:00",
     "FinishTime": "14:00",
     "IdAppointment": "Monday, April 11, 2022 12:20 AM",
@@ -307,6 +319,8 @@
   },
   "Monday, April 11, 2022 12:21 AM": {
     "Date": "2022-04-07T00:00:00",
+    "StartTimeD": "0001-01-01T00:00:00",
+    "FinishTimeD": "0001-01-01T00:00:00",
     "StartTime": "11:00",
     "FinishTime": "14:00",
     "IdAppointment": "Monday, April 11, 2022 12:21 AM",
