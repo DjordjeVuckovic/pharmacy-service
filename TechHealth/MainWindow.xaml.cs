@@ -25,7 +25,7 @@ namespace TechHealth
         public MainWindow()
         {
            InitializeComponent();
-           /*Appointment appointment = new Appointment
+           Appointment appointment = new Appointment
            {
                AppointmentType = AppointmentType.operation,
                Date = DateTime.Now,
@@ -37,7 +37,7 @@ namespace TechHealth
                FinishTime = "04:00AM",
                IdAppointment = "2",
            };
-           AppointmentRepository.Instance.Create(appointment);*/
+           AppointmentRepository.Instance.Create(appointment);
         
         }
         private void Button_Click(object sender, RoutedEventArgs e)
