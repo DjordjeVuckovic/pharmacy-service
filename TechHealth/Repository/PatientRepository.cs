@@ -39,6 +39,10 @@ namespace TechHealth.Repository
       {
          throw new NotImplementedException();
       }
-      
+
+      public Patient GetPatientbyId(string patientId)
+      {
+         throw new NotImplementedException();
+      }
    }
 }
