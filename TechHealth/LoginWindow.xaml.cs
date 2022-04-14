@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Linq;
 using System.Windows;
+using TechHealth.DoctorView;
 using TechHealth.Model;
 using TechHealth.Repository;
-using TechHealth.View.DoctorView;
 
 namespace TechHealth
 {
