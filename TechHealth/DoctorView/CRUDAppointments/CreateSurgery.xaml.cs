@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows;
+using TechHealth.IgnoreMeJson;
 using TechHealth.Model;
 using TechHealth.Repository;
 
@@ -45,7 +46,7 @@ namespace TechHealth.DoctorView.CRUDAppointments
             }
             else
             {
-                Appointment appointment = new Appointment()
+                Appointment appointment = new Appointment
                 {
                     AppointmentType = AppointmentType.operation,
                     Date = DateTime.Parse(Picker.Text),
@@ -53,16 +54,22 @@ namespace TechHealth.DoctorView.CRUDAppointments
                     Emergent = false,
                     FinishTime = FinishTxt.Text,
                     StartTime = StartTxt.Text,
-                    IdAppointment = DateTime.Now.ToString("f"),
+                    IdAppointment = Guid.NewGuid().ToString("N"),
                     Patient = patients[PatentCombo.SelectedIndex],
                     Room = rooms[RoomCombo.SelectedIndex]
                 };
-                AppointmentRepository.Instance.Create(appointment);
                 DoctorMainWindow.GetInstance().Appointments.Add(appointment);
+                AppointmentIgnore ignore = new AppointmentIgnore(appointment);
+                ignore.IgnoreMeDoctor(appointment);
+                ignore.IgnoreMePatient(appointment);
+                ignore.IgnoreMeRoom(appointment);
+                AppointmentRepository.Instance.Create(appointment);
                 MessageBox.Show("You are successfully create new examination");
                 Close();
 
             }
         }
+
+       
     }
 }

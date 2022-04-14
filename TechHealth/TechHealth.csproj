@@ -161,6 +161,7 @@
     </Compile>
     <Compile Include="DoctorView\ViewModel\ViewModelAppointment.cs" />
     <Compile Include="DoctorView\ViewModel\ViewModelBase.cs" />
+    <Compile Include="IgnoreMeJson\AppointmentIgnore.cs" />
     <Compile Include="LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
     </Compile>
@@ -172,6 +173,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Model\Anamnesis.cs" />
+    <Compile Include="Model\MainIssue.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Repository\AccountRepository.cs" />
     <Compile Include="Repository\AppointmentRepository.cs" />
@@ -297,6 +299,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="JsonConverters" />
     <Folder Include="View\PatientView" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

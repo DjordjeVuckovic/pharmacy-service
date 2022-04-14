@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Windows;
 using TechHealth.DoctorView.ViewModel;
+using TechHealth.IgnoreMeJson;
 using TechHealth.Model;
 using TechHealth.Repository;
 using MessageBox = System.Windows.MessageBox;
@@ -47,11 +48,14 @@ namespace TechHealth.DoctorView.CRUDAppointments
                     Emergent = false,
                     FinishTime = FinishTxt.Text,
                     StartTime = StartTxt.Text,
-                    IdAppointment = DateTime.Now.ToString("f"),
+                    IdAppointment = Guid.NewGuid().ToString("N"),
                     Patient = patients[PatentCombo.SelectedIndex],
                     Room = rooms[RoomCombo.SelectedIndex]
                 };
                 DoctorMainWindow.GetInstance().Appointments.Add(appointment);
+                AppointmentIgnore ignore = new AppointmentIgnore(appointment);
+                ignore.IgnoreMePatient(appointment);
+                AppointmentRepository.Instance.Create(appointment);
                 MessageBox.Show("You are successfully create new examination");
                 Close();
 

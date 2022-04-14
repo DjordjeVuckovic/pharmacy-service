@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace TechHealth.Repository
 {
@@ -35,7 +36,8 @@ namespace TechHealth.Repository
             string path = GetPath();
             var option = new JsonSerializerOptions()
             {
-                WriteIndented = true
+                WriteIndented = true,
+                DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingDefault
             };
             string jsonWrite = JsonSerializer.Serialize(entities,option);
             File.WriteAllText(path,jsonWrite);
