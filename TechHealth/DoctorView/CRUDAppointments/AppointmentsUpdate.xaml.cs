@@ -1,20 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using TechHealth.Model;
 using TechHealth.Repository;
 
-namespace TechHealth.View.DoctorView.CRUDAppointments
+namespace TechHealth.DoctorView.CRUDAppointments
 {
     /// <summary>
     /// Interaction logic for AppointmentsUpdate.xaml
@@ -84,6 +74,7 @@ namespace TechHealth.View.DoctorView.CRUDAppointments
 
         private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
         {
+            Appointment app1 = appointment;
             if (PatentCombo.SelectionBoxItem == null || Picker.SelectedDate == null ||
                 PatentCombo.SelectionBoxItem == null || RoomCombo.SelectionBoxItem == null)
             {
@@ -99,12 +90,18 @@ namespace TechHealth.View.DoctorView.CRUDAppointments
                 appointment.StartTime = StartTxt.Text;
                 appointment.Patient = patients[PatentCombo.SelectedIndex];
                 appointment.Room = rooms[RoomCombo.SelectedIndex];
-                
+                UpdateList(app1);
                 AppointmentRepository.Instance.Update(appointment);
                 MessageBox.Show("You are successfully update appointment");
-                DoctorMainWindow.GetInstance().UpdateView();
                 Close();
             }
+            
         }
+        private void UpdateList(Appointment app1)
+        {
+            int index=DoctorMainWindow.GetInstance().Appointments.IndexOf(app1);
+            DoctorMainWindow.GetInstance().Appointments.Remove(app1);
+            DoctorMainWindow.GetInstance().Appointments.Insert(index, appointment);   
+        } 
     }
 }

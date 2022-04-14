@@ -1,20 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using TechHealth.Model;
 using TechHealth.Repository;
 
-namespace TechHealth.View.DoctorView.CRUDAppointments
+namespace TechHealth.DoctorView.CRUDAppointments
 {
     /// <summary>
     /// Interaction logic for CreateSurgery.xaml
@@ -68,6 +58,7 @@ namespace TechHealth.View.DoctorView.CRUDAppointments
                     Room = rooms[RoomCombo.SelectedIndex]
                 };
                 AppointmentRepository.Instance.Create(appointment);
+                DoctorMainWindow.GetInstance().Appointments.Add(appointment);
                 MessageBox.Show("You are successfully create new examination");
                 Close();
 

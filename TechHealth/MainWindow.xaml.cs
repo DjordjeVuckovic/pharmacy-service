@@ -24,21 +24,8 @@ namespace TechHealth
     {
         public MainWindow()
         {
-           InitializeComponent();
-           /*Appointment appointment = new Appointment
-           {
-               AppointmentType = AppointmentType.operation,
-               Date = DateTime.Now,
-               Doctor = DoctorRepository.Instance.GetById("1313"),
-               Emergent = false,
-               Room = RoomRepository.Instance.GetById("soba1"),
-               Patient = PatientRepository.Instance.GetById("2456"),
-               StartTime = "03:00AM",
-               FinishTime = "04:00AM",
-               IdAppointment = "2",
-           };
-           AppointmentRepository.Instance.Create(appointment);*/
-        
+            InitializeComponent();
+
         }
         private void Button_Click(object sender, RoutedEventArgs e)
             

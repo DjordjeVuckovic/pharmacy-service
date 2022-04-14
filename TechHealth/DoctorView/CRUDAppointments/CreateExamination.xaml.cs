@@ -1,22 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Forms;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+using TechHealth.DoctorView.ViewModel;
 using TechHealth.Model;
 using TechHealth.Repository;
 using MessageBox = System.Windows.MessageBox;
 
-namespace TechHealth.View.DoctorView.CRUDAppointments
+namespace TechHealth.DoctorView.CRUDAppointments
 {
     /// <summary>
     /// Interaction logic for CreateExamination.xaml
@@ -26,6 +16,7 @@ namespace TechHealth.View.DoctorView.CRUDAppointments
         private Doctor doctor;
         private List<Patient> patients;
         private List<Room> rooms;
+        private string doctorId;
         public CreateExamination(string doctorId)
         {
             InitializeComponent();
@@ -36,12 +27,11 @@ namespace TechHealth.View.DoctorView.CRUDAppointments
             DoctorTxt.Text = doctor.ToString();
             PatentCombo.ItemsSource = patients;
             RoomCombo.ItemsSource = rooms;
-
+            this.doctorId = doctorId;
         }
 
         private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
         {
-            
             if (PatentCombo.SelectionBoxItem == null || Picker.SelectedDate == null ||
                 PatentCombo.SelectionBoxItem == null || RoomCombo.SelectionBoxItem == null)
             {
@@ -61,15 +51,12 @@ namespace TechHealth.View.DoctorView.CRUDAppointments
                     Patient = patients[PatentCombo.SelectedIndex],
                     Room = rooms[RoomCombo.SelectedIndex]
                 };
-                AppointmentRepository.Instance.Create(appointment);
+                DoctorMainWindow.GetInstance().Appointments.Add(appointment);
                 MessageBox.Show("You are successfully create new examination");
                 Close();
 
             }
         }
-        
-
-
         private void ButtonBase_OnClick1(object sender, RoutedEventArgs e)
         {
             MessageBoxResult dialogResult = MessageBox.Show("Are you sure about that?", "Cancel appointment", MessageBoxButton.YesNo);
