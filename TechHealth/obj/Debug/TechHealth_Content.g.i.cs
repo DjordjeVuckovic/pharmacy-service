@@ -14,13 +14,8 @@
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("json/manager.json")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("json/patient.json")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("json/secretary.json")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("json/specialization.json")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/caduceus_ico.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/favicon.ico")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("packages/microsoft.web.webview2.1.0.1018-prerelease/runtimes/win-x86/native/webvi" +
-    "ew2loader.dll")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("packages/microsoft.web.webview2.1.0.1018-prerelease/runtimes/win-x64/native/webvi" +
-    "ew2loader.dll")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("packages/microsoft.web.webview2.1.0.1018-prerelease/runtimes/win-arm64/native/web" +
-    "view2loader.dll")]
 
 

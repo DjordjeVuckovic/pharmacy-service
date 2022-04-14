@@ -25,6 +25,22 @@ namespace TechHealth
         public MainWindow()
         {
             InitializeComponent();
+            /*Doctor specialist = new Doctor
+            {
+                Address = null,
+                Email = "spec@spec.com",
+                Employed = true,
+                Jmbg = "131213121111",
+                Name = "John",
+                Surname = "Black",
+                Password = "1",
+                Username = "1",
+                Phone = "06123111114",
+                Specialization = specialization
+            };*/
+            //DoctorRepository.Instance.Create(specialist);
+            //Doctor doctor = DoctorRepository.Instance.GetById("1313");
+            
 
         }
         private void Button_Click(object sender, RoutedEventArgs e)

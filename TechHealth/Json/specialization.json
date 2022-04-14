@@ -1,0 +1,22 @@
+{
+  "0": {
+    "IdSpecialization": 0,
+    "NameSpecialization": "General"
+  },
+  "1": {
+    "IdSpecialization": 1,
+    "NameSpecialization": "Anesthesiologist"
+  },
+  "2": {
+    "IdSpecialization": 2,
+    "NameSpecialization": "Dermatologist"
+  },
+  "3": {
+    "IdSpecialization": 3,
+    "NameSpecialization": "Dermatologist"
+  },
+  "4": {
+    "IdSpecialization": 4,
+    "NameSpecialization": "Neurologist"
+  }
+}

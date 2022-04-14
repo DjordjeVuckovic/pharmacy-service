@@ -4,6 +4,7 @@
 // Purpose: Definition of Class Person
 
 using System;
+using System.Text.Json.Serialization;
 using PostSharp.Patterns.Model;
 
 namespace TechHealth.Model
@@ -18,6 +19,7 @@ namespace TechHealth.Model
       public string Jmbg{ get; set; }
       public string Phone{ get; set; }
       public bool Employed{ get; set; }
+      [JsonIgnore]
       public string FullName => Name + " " + Surname;
    }
 }
