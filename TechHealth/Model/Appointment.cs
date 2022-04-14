@@ -15,16 +15,15 @@ namespace TechHealth.Model
       public DateTime Date{ get; set; }
       public DateTime StartTimeD{ get; set; }
       public DateTime FinishTimeD{ get; set; }
+      public bool Emergent { get; set; }
       public string StartTime{ get; set; }
       public string FinishTime{ get; set; }
       public string IdAppointment{ get; set; }
-      public bool Emergent { get; set; }
-      
-      
       public Room Room{ get; set; }
       public Patient Patient{ get; set; }
       public AppointmentType AppointmentType{ get; set; }
       public Doctor Doctor{ get; set; }
+      
       
       
      

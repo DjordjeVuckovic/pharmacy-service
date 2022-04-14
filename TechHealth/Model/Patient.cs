@@ -4,6 +4,7 @@
 // Purpose: Definition of Class Patient
 
 using System;
+using System.Text.Json.Serialization;
 using PostSharp.Patterns.Model;
 
 namespace TechHealth.Model
@@ -15,6 +16,8 @@ namespace TechHealth.Model
       public Doctor ChosenDoctor{ get; set; }
       public int Lbo{ get; set; }
       public bool IsBanned{ get; set; }
+      [JsonIgnore]
+      public string FullName => $"{Name} {Surname}";
    
    }
 }
