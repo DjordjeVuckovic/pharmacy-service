@@ -45,7 +45,14 @@
 					<DataGridTextColumn Header="Room" Binding="{Binding Room.roomId}" Width="*"  CanUserResize="False"/>
 					<DataGridTextColumn Header="Patient" Binding="{Binding Patient.FullName}" Width="*"  CanUserResize="False"/>
 					<DataGridTextColumn Header="Type" Binding="{Binding AppointmentType}" Width="*"  CanUserResize="False"/>
-					<DataGridTextColumn Header="Emergent" Binding="{Binding Emergent}" Width="*"  CanUserResize="False"/>
+					<!--<DataGridTextColumn Header="Emergent?"  Binding="{Binding Emergent}"  Width="*"  CanUserResize="False"/>-->
+					<DataGridTemplateColumn Header="Emergent?">
+						<DataGridTemplateColumn.CellTemplate>
+							<DataTemplate>
+								<CheckBox IsChecked="{Binding Emergent}" IsEnabled="False" />
+							</DataTemplate>
+						</DataGridTemplateColumn.CellTemplate>
+					</DataGridTemplateColumn>
 				</DataGrid.Columns>
 
 			</DataGrid>

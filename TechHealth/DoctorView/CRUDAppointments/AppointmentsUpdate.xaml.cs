@@ -26,7 +26,7 @@ namespace TechHealth.DoctorView.CRUDAppointments
 
             PatentCombo.ItemsSource = patients;
             RoomCombo.ItemsSource = rooms;
-            DoctorTxt.Text = doctor.ToString();
+            DoctorTxt.Text = doctor.FullSpecialization;
             SetUpValues();
 
         }

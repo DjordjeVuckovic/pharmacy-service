@@ -1,1 +1,59 @@
-{"2315":{"Address":{"City":"Novi Sad","StreetNumber":"21","Country":"Srbija","Street":"Puse Pusica","Postcode":21000},"Name":"Slavica","Surname":"Cukteras","Email":"doctor@doctor11","Jmbg":"2315","Phone":"061341","Employed":true,"Username":"doctor","Password":"doctor"},"1313":{"Address":{"City":"Novi Sad","StreetNumber":"21","Country":"Srbija","Street":"Puse Pusica","Postcode":21000},"Name":"Djordje","Surname":"Vuckovic","Email":"doctor@doctor11","Jmbg":"1313","Phone":"0613412312332","Employed":true,"Username":"Djordje","Password":"1"}}
+{
+  "2315": {
+    "Specialization": {
+      "IdSpecialization": 2,
+      "NameSpecialization": "Dermatologist"
+    },
+    "Address": {
+      "City": "Novi Sad",
+      "StreetNumber": "21",
+      "Country": "Srbija",
+      "Street": "Puse Pusica",
+      "Postcode": 21000
+    },
+    "Name": "Slavica",
+    "Surname": "Cukteras",
+    "Email": "doctor@doctor11",
+    "Jmbg": "2315",
+    "Phone": "061341",
+    "Employed": true,
+    "Username": "doctor",
+    "Password": "doctor"
+  },
+  "1313": {
+    "Specialization": {
+      "IdSpecialization": 0,
+      "NameSpecialization": "General"
+    },
+    "Address": {
+      "City": "Novi Sad",
+      "StreetNumber": "21",
+      "Country": "Srbija",
+      "Street": "Puse Pusica",
+      "Postcode": 21000
+    },
+    "Name": "Djordje",
+    "Surname": "Vuckovic",
+    "Email": "doctor@doctor11",
+    "Jmbg": "1313",
+    "Phone": "0613412312332",
+    "Employed": true,
+    "Username": "Djordje",
+    "Password": "1"
+  },
+  "131213121111": {
+    "Specialization": {
+      "IdSpecialization": 1,
+      "NameSpecialization": "Anesthesiology"
+    },
+    "Address": null,
+    "Name": "John",
+    "Surname": "Black",
+    "Email": "spec@spec.com",
+    "Jmbg": "131213121111",
+    "Phone": "06123111114",
+    "Employed": true,
+    "Username": "1",
+    "Password": "1"
+  }
+}

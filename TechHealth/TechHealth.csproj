@@ -171,6 +171,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Model\Anamnesis.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Repository\AccountRepository.cs" />
     <Compile Include="Repository\AppointmentRepository.cs" />
@@ -181,6 +182,7 @@
     <Compile Include="Repository\PatientRepository.cs" />
     <Compile Include="Repository\RoomRepository.cs" />
     <Compile Include="Repository\SecretaryRepository.cs" />
+    <Compile Include="Repository\SpecializationRepository.cs" />
     <Compile Include="Service\AccountService.cs" />
     <Compile Include="Service\AppointmentService.cs" />
     <Compile Include="Service\DoctorService.cs" />
@@ -258,6 +260,7 @@
     <Content Include="Json\manager.json" />
     <Content Include="Json\patient.json" />
     <Content Include="Json\secretary.json" />
+    <Content Include="Json\specialization.json" />
     <Content Include="resources\caduceus_ico.png" />
     <Resource Include="resources\caduceus_logo.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

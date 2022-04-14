@@ -24,7 +24,7 @@ namespace TechHealth.DoctorView.CRUDAppointments
             patients = PatientRepository.Instance.DictionaryValuesToList();
             rooms = RoomRepository.Instance.DictionaryValuesToList();
 
-            DoctorTxt.Text = doctor.ToString();
+            DoctorTxt.Text = doctor.FullSpecialization;
             PatentCombo.ItemsSource = patients;
             RoomCombo.ItemsSource = rooms;
             this.doctorId = doctorId;

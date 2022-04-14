@@ -15,7 +15,7 @@ namespace TechHealth.Model
       public int quantity;
 
 
-        public string ToString()
+        public override string ToString()
         {
             return name.ToString() + ", " + id.ToString() + ", " + type.ToString() + ", " + quantity.ToString();
         }
