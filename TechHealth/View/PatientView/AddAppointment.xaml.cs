@@ -55,7 +55,7 @@ namespace TechHealth.View.PatientView       //dodati IDappointment
             appointmentController.Create(appointment.Date, appointment.StartTime, appointment.AppointmentType, appointment.Doctor, appointment.IdAppointment);
 
 
-            //AppointmentRepository.Instance.Create(appointment); //izmeniti ovo da se radi sa kontrolerom
+            //AppointmentRepository.Instance.Create(appointment); 
             this.Close();
 
         }

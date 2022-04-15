@@ -245,11 +245,10 @@
       "Password": "doctor"
     }
   },
-  "628b9cf7f58544749b76afcbe23eeb68": {
-    "Date": "2022-04-16T00:00:00",
-    "StartTime": "12:20",
-    "IdAppointment": "628b9cf7f58544749b76afcbe23eeb68",
-    "AppointmentType": 1,
+  "45d675fce8ee4be49418ce8f81bd8ea2": {
+    "Date": "2022-04-24T00:00:00",
+    "StartTime": "daa",
+    "IdAppointment": "45d675fce8ee4be49418ce8f81bd8ea2",
     "Doctor": {
       "Specialization": {
         "NameSpecialization": "General"
