@@ -3,7 +3,6 @@
     "roomTypes": 3,
     "roomId": "soba3",
     "floor": 2,
-    "availability": false,
     "Equipments": ""
   },
   "soba4": {
@@ -24,28 +23,18 @@
     "roomTypes": 2,
     "roomId": "sobicaMALA",
     "floor": 2,
-    "availability": false,
     "Equipments": ""
   },
   "SOBA1234": {
     "roomTypes": 3,
     "roomId": "SOBA1234",
     "floor": 2,
-    "availability": false,
     "Equipments": ""
   },
   "adsas": {
     "roomTypes": 3,
     "roomId": "adsas",
     "floor": 1,
-    "availability": false,
-    "Equipments": ""
-  },
-  "1312": {
-    "roomTypes": 3,
-    "roomId": "1312",
-    "floor": 2,
-    "availability": true,
     "Equipments": ""
   }
 }

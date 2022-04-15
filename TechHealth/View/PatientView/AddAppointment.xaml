@@ -1,0 +1,30 @@
+﻿<Window x:Class="TechHealth.View.PatientView.AddAppointment"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TechHealth.View.PatientView"
+        mc:Ignorable="d"
+        Title="AddAppointment" Height="450" Width="400">
+    <Grid Background="AliceBlue">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Date:" HorizontalAlignment="Left" Margin="38,78,0,0" VerticalAlignment="Top" FontSize="14" Height="29" Width="42"/>
+        <Label Content="Time:" HorizontalAlignment="Left" Margin="38,137,0,0" VerticalAlignment="Top" FontSize="14" Height="29" Width="43"/>
+        <Label Content="Type:" HorizontalAlignment="Left" Margin="38,195,0,195" VerticalAlignment="Center" FontSize="14" Height="29" Width="42"/>
+        <Label Content="Doctor:" HorizontalAlignment="Left" Margin="38,268,0,0" VerticalAlignment="Top" FontSize="14" Height="29" Width="55"/>
+        <DatePicker HorizontalAlignment="Left" Margin="13,78,0,0" VerticalAlignment="Top" Width="147" Height="29" Background="#FFDC4242" Foreground="#FFD12A2A" FontSize="14" x:Name="Date" Grid.Column="1"/>
+        <TextBox HorizontalAlignment="Left" Height="29" Margin="13,137,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="147" x:Name="TxtTime" Grid.Column="1"/>
+        <ComboBox HorizontalAlignment="Left" Margin="13,195,0,0" VerticalAlignment="Top" Width="147" Height="29" x:Name="CbType" Grid.Column="1">
+            <ComboBoxItem Content="Operation"/>
+            <ComboBoxItem Content="Examination"/>
+        </ComboBox>
+        <ComboBox HorizontalAlignment="Left" Margin="13,268,0,0" VerticalAlignment="Top" Width="147" Height="29" x:Name="CbDoctor" Grid.Column="1" DisplayMemberPath="Doctor"/>
+        <Button Content="Confirm" HorizontalAlignment="Left" Margin="91,357,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal" Height="30" Width="70" RenderTransformOrigin="-0.291,0.467" Background="#FF42C130" Click="Button_Click_Confirm" />
+        <Button Content="Close" HorizontalAlignment="Left" Margin="36,357,0,0" VerticalAlignment="Top" Width="70" Height="30" FontSize="16" Background="#FFEA9292" Click="Button_Click_Close" Grid.Column="1" />
+        <Label Content="Add appointment" HorizontalContentAlignment="Center" Margin="91,10,90,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="18" Grid.ColumnSpan="2" Height="34"/>
+
+    </Grid>
+</Window>
