@@ -15,7 +15,9 @@
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("json/patient.json")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("json/secretary.json")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("json/specialization.json")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/ph.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/caduceus_ico.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/dash.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/favicon.ico")]
 
 

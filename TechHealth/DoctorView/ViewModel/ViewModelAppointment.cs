@@ -6,7 +6,7 @@ using TechHealth.Repository;
 namespace TechHealth.DoctorView.ViewModel
 {
     
-    public class ViewModelAppointment:ViewModelBase
+    public class ViewModelAppointment
     {
         private ObservableCollection<Appointment> _appointments;
         public Appointment selectedItem;

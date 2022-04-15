@@ -4,6 +4,12 @@
              xmlns:local="clr-namespace:TechHealth"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Theme/MenuStyle.xaml"/>
+                <ResourceDictionary Source="Theme/SearchTheme.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
          
     </Application.Resources>
 </Application>

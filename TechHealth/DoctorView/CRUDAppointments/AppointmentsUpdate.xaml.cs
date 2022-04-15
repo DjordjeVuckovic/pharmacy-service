@@ -99,9 +99,9 @@ namespace TechHealth.DoctorView.CRUDAppointments
         }
         private void UpdateList(Appointment app1)
         {
-            int index=DoctorMainWindow.GetInstance().Appointments.IndexOf(app1);
-            DoctorMainWindow.GetInstance().Appointments.Remove(app1);
-            DoctorMainWindow.GetInstance().Appointments.Insert(index, appointment);   
+            int index=AppointmentsWindow.GetInstance().Appointments.IndexOf(app1);
+            AppointmentsWindow.GetInstance().Appointments.Remove(app1);
+            AppointmentsWindow.GetInstance().Appointments.Insert(index, appointment);   
         } 
     }
 }

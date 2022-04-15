@@ -146,7 +146,8 @@
     <Compile Include="Controller\AccountController.cs" />
     <Compile Include="Controller\AppointmentController.cs" />
     <Compile Include="Controller\RoomController.cs" />
-    <Compile Include="DoctorView\Command\RelayCommand.cs" />
+    <Compile Include="Core\RelayCommand.cs" />
+    <Compile Include="Core\ViewModelBase.cs" />
     <Compile Include="DoctorView\CRUDAppointments\AppointmentsUpdate.xaml.cs">
       <DependentUpon>AppointmentsUpdate.xaml</DependentUpon>
     </Compile>
@@ -156,12 +157,24 @@
     <Compile Include="DoctorView\CRUDAppointments\CreateSurgery.xaml.cs">
       <DependentUpon>CreateSurgery.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DoctorView\AppointmentsWindow.xaml.cs">
+      <DependentUpon>AppointmentsWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DoctorView\DoctorMainWindow.xaml.cs">
       <DependentUpon>DoctorMainWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DoctorView\MedicalHistory\NewAnamnesis.xaml.cs">
+      <DependentUpon>NewAnamnesis.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DoctorView\MedicalHistory\ReportView.xaml.cs">
+      <DependentUpon>ReportView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DoctorView\MedicalHistory\ReviewAnamnesis.xaml.cs">
+      <DependentUpon>ReviewAnamnesis.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DoctorView\ViewModel\MainViewModel.cs" />
+    <Compile Include="DoctorView\ViewModel\HomeViewModel.cs" />
     <Compile Include="DoctorView\ViewModel\ViewModelAppointment.cs" />
-    <Compile Include="DoctorView\ViewModel\ViewModelBase.cs" />
-    <Compile Include="IgnoreMeJson\AppointmentIgnore.cs" />
     <Compile Include="LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
     </Compile>
@@ -272,10 +285,22 @@
     <Content Include="Json\patient.json" />
     <Content Include="Json\secretary.json" />
     <Content Include="Json\specialization.json" />
+    <Resource Include="resources\appoint.png" />
+    <Resource Include="resources\1a.png" />
+    <Resource Include="resources\1c.png" />
+    <Resource Include="resources\1d.png" />
+    <Resource Include="resources\1e.png" />
+    <Resource Include="resources\1f.png" />
+    <Content Include="resources\ph.png" />
+    <Resource Include="resources\hospital.png" />
+    <Resource Include="resources\ambulance.png" />
+    <Resource Include="resources\ambulancee.png" />
     <Content Include="resources\caduceus_ico.png" />
+    <Resource Include="resources\mylogo.png" />
     <Resource Include="resources\caduceus_logo.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Content Include="resources\dash.png" />
     <Content Include="resources\favicon.ico" />
   </ItemGroup>
   <ItemGroup>
@@ -288,9 +313,30 @@
     <Page Include="DoctorView\CRUDAppointments\CreateSurgery.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="DoctorView\AppointmentsWindow.xaml" />
     <Page Include="DoctorView\DoctorMainWindow.xaml" />
+    <Page Include="DoctorView\MedicalHistory\NewAnamnesis.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DoctorView\MedicalHistory\ReportView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DoctorView\MedicalHistory\ReviewAnamnesis.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="LoginWindow.xaml" />
     <Page Include="MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Theme\MenuStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Theme\SearchTheme.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -320,7 +366,13 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+
     <Folder Include="JsonConverters\" />
+
+    <Folder Include="Fonts\" />
+    <Folder Include="JsonConverters\" />
+    <Folder Include="View\PatientView\" />
+
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\System.Text.Json.7.0.0-preview.2.22152.2\build\System.Text.Json.targets" Condition="Exists('packages\System.Text.Json.7.0.0-preview.2.22152.2\build\System.Text.Json.targets')" />
