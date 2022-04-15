@@ -13,7 +13,7 @@ namespace TechHealth.Controller
    public class AppointmentController
    {
       private static AppointmentController _instance;
-      private AppointmentService appointmentService;
+      private AppointmentService appointmentService = new AppointmentService();
       private DoctorService doctorService;
       private PatientService patientService;
 
@@ -31,18 +31,41 @@ namespace TechHealth.Controller
       
       public bool Create(string doctorId, string patientId, DateTime date, DateTime startTime, DateTime finishTime, string roomId, AppointmentType type)
       {
-         throw new NotImplementedException();
-      }
-      
-      public bool Update(string doctorId, string patientId, DateTime date, DateTime startTime, DateTime finishTime, string roomId, AppointmentType type)
+            throw new NotImplementedException();
+        }
+
+      public bool Create(DateTime date, string startTime, AppointmentType appointmentType, Doctor doctor)
       {
-         throw new NotImplementedException();
-      }
-      
-      public bool Delete(string idAppointment)
+            var appointment = new Appointment();
+            appointment.Date = date;
+            appointment.StartTime = startTime;
+            appointment.AppointmentType = appointmentType;
+            appointment.Doctor = doctor;
+
+            return appointmentService.Create(appointment);
+        }
+
+        public bool Update(string doctorId, string patientId, DateTime date, DateTime startTime, DateTime finishTime, string roomId, AppointmentType type)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool Update(DateTime date, string startTime, AppointmentType appointmentType, Doctor doctor)
+        {
+            var appointment = new Appointment();
+            appointment.Date = date;
+            appointment.StartTime = startTime;
+            appointment.AppointmentType = appointmentType;
+            appointment.Doctor = doctor;
+
+            return appointmentService.Create(appointment);
+        }
+
+        public bool Delete(string idAppointment)
       {
-         throw new NotImplementedException();
+            return appointmentService.Delete(idAppointment);
       }
-   
-   }
+
+    
+    }
 }
