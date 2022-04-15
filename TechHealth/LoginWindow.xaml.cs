@@ -27,7 +27,7 @@ namespace TechHealth
             if (doctor != null && pass.Equals(doctor.Password))
             {
                 //AppointmentsWindow.GetInstance(doctor.Jmbg).Show();
-                new DoctorMainWindow().Show();
+                new DoctorWindow().Show();
                 Close();
             }
         }

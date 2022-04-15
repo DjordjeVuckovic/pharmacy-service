@@ -160,8 +160,8 @@
     <Compile Include="DoctorView\AppointmentsWindow.xaml.cs">
       <DependentUpon>AppointmentsWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DoctorView\DoctorMainWindow.xaml.cs">
-      <DependentUpon>DoctorMainWindow.xaml</DependentUpon>
+    <Compile Include="DoctorView\DoctorWindow.xaml.cs">
+      <DependentUpon>DoctorWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="DoctorView\MedicalHistory\NewAnamnesis.xaml.cs">
       <DependentUpon>NewAnamnesis.xaml</DependentUpon>
@@ -172,9 +172,12 @@
     <Compile Include="DoctorView\MedicalHistory\ReviewAnamnesis.xaml.cs">
       <DependentUpon>ReviewAnamnesis.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DoctorView\ViewModel\DashBoardViewModel.cs" />
     <Compile Include="DoctorView\ViewModel\MainViewModel.cs" />
-    <Compile Include="DoctorView\ViewModel\HomeViewModel.cs" />
     <Compile Include="DoctorView\ViewModel\ViewModelAppointment.cs" />
+    <Compile Include="DoctorView\View\DashBoardView.xaml.cs">
+      <DependentUpon>DashBoardView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
     </Compile>
@@ -305,7 +308,7 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="DoctorView\AppointmentsWindow.xaml" />
-    <Page Include="DoctorView\DoctorMainWindow.xaml" />
+    <Page Include="DoctorView\DoctorWindow.xaml" />
     <Page Include="DoctorView\MedicalHistory\NewAnamnesis.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -318,6 +321,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="DoctorView\View\DashBoardView.xaml" />
     <Page Include="LoginWindow.xaml" />
     <Page Include="MainWindow.xaml">
       <SubType>Designer</SubType>
@@ -346,7 +350,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Fonts\" />
-    <Folder Include="JsonConverters\" />
     <Folder Include="View\PatientView\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
