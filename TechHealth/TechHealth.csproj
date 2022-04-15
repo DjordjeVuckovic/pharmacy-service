@@ -174,10 +174,18 @@
     </Compile>
     <Compile Include="DoctorView\ViewModel\DashBoardViewModel.cs" />
     <Compile Include="DoctorView\ViewModel\MainViewModel.cs" />
+    <Compile Include="DoctorView\ViewModel\RecordViewModel.cs" />
     <Compile Include="DoctorView\ViewModel\ViewModelAppointment.cs" />
     <Compile Include="DoctorView\View\DashBoardView.xaml.cs">
       <DependentUpon>DashBoardView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DoctorView\View\PatientsView.xaml.cs">
+      <DependentUpon>PatientsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DoctorView\View\RecordView.xaml.cs">
+      <DependentUpon>RecordView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="JsonIgnore\AppointmentIgnore.cs" />
     <Compile Include="LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
     </Compile>
@@ -190,8 +198,10 @@
     </Compile>
     <Compile Include="Model\Anamnesis.cs" />
     <Compile Include="Model\MainIssue.cs" />
+    <Compile Include="Model\RandomGenerator.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Repository\AccountRepository.cs" />
+    <Compile Include="Repository\AnamnesisRepository.cs" />
     <Compile Include="Repository\AppointmentRepository.cs" />
     <Compile Include="Repository\DoctorRepository.cs" />
     <Compile Include="Repository\FileHandler.cs" />
@@ -282,6 +292,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
+    <Content Include="Json\anamnesis.json" />
     <Content Include="Json\appointment.json" />
     <Content Include="Json\doctor.json" />
     <Content Include="Json\manager.json" />
@@ -331,6 +342,8 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="DoctorView\View\DashBoardView.xaml" />
+    <Page Include="DoctorView\View\PatientsView.xaml" />
+    <Page Include="DoctorView\View\RecordView.xaml" />
     <Page Include="LoginWindow.xaml" />
     <Page Include="MainWindow.xaml">
       <SubType>Designer</SubType>

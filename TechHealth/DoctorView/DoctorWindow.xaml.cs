@@ -11,5 +11,11 @@ namespace TechHealth.DoctorView
             //DataContext = new MainViewModel();
             InitializeComponent();
         }
+
+        public DoctorWindow(string doctorJmbg)
+        {
+            DataContext = new MainViewModel(doctorJmbg);
+            InitializeComponent();
+        }
     }
 }

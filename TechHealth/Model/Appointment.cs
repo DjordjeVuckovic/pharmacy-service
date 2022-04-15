@@ -23,6 +23,7 @@ namespace TechHealth.Model
       public Patient Patient{ get; set; }
       public AppointmentType AppointmentType{ get; set; }
       public Doctor Doctor{ get; set; }
+      public bool Evident { get; set; }
       
       
       

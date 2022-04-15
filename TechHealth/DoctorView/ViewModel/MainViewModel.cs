@@ -1,17 +1,22 @@
 ﻿using TechHealth.Core;
+using TechHealth.DoctorView.View;
 
 namespace TechHealth.DoctorView.ViewModel
 {
     public class MainViewModel:ViewModelBase
     {
         private object _currentView;
-        public DashBoardViewModel DashBoardViewModel { get; set; }
+        public DashBoardView DashBoardViewModel { get; set; }
+        public RecordView RecordView { get; set; }
+        public RelayCommand DashCommand { get; set; }
+        public RelayCommand RecordCommand { get; set; }
+        public RelayCommand AppointmentCommand { get; set; }
+        public string DoctorId { get; set; }
+        //public AppointmentsWindow AppointmentsWindow { get; set; }
+        
         public object CurrentView
         {
-            get
-            {
-                return _currentView;
-            }
+            get => _currentView;
             set
             {
                 _currentView = value;
@@ -21,7 +26,51 @@ namespace TechHealth.DoctorView.ViewModel
 
         public MainViewModel()
         {
-            DashBoardViewModel = new DashBoardViewModel();
+            DashBoardViewModel = new DashBoardView();
+            RecordView = new RecordView();
+            //AppointmentsWindow = AppointmentsWindow.GetInstance();
+
+            CurrentView = DashBoardViewModel;
+            DashCommand = new RelayCommand(o =>
+                {
+                    CurrentView = DashBoardViewModel;
+                }
+            );
+            RecordCommand = new RelayCommand(o =>
+                {
+                    CurrentView = RecordView;
+                }
+            );
+            AppointmentCommand = new RelayCommand(o =>
+                {
+                    //
+                }
+            );
+        }
+
+        public MainViewModel(string doctorJmbg)
+        {
+            DoctorId = doctorJmbg;
+            DashBoardViewModel = new DashBoardView();
+            RecordView = new RecordView(doctorJmbg);
+            //AppointmentsWindow = AppointmentsWindow.GetInstance();
+
+            CurrentView = DashBoardViewModel;
+            DashCommand = new RelayCommand(o =>
+                {
+                    CurrentView = DashBoardViewModel;
+                }
+            );
+            RecordCommand = new RelayCommand(o =>
+                {
+                    CurrentView = RecordView;
+                }
+            );
+            AppointmentCommand = new RelayCommand(o =>
+                {
+                    
+                }
+            );
         }
     }
 }
