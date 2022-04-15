@@ -18,8 +18,8 @@
                     <GridViewColumn Header="Date" Width="150" DisplayMemberBinding="{Binding Date}" />
                     <GridViewColumn Header="StartTime" Width="120" DisplayMemberBinding="{Binding StartTime}"/>
                     <GridViewColumn Header="Type" Width="150" DisplayMemberBinding="{Binding AppointmentType}" />
-                    <GridViewColumn Header="Doctor" Width="150" DisplayMemberBinding="{Binding Doctor.Name}"/>
-                    <GridViewColumn/>
+                    <GridViewColumn Header="Doctor" Width="150" DisplayMemberBinding="{Binding Doctor.FullName}"/>
+                    
                 </GridView>
             </ListView.View>
         </ListView>

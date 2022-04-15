@@ -34,7 +34,8 @@
   "adsas": {
     "roomTypes": 3,
     "roomId": "adsas",
-    "floor": 1,
+    "floor": 2,
+    "availability": true,
     "Equipments": ""
   }
 }
