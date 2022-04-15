@@ -15,13 +15,14 @@ using TechHealth.Model;
 using TechHealth.Controller;
 using TechHealth.Repository;
 
-namespace TechHealth.View.PatientView
+namespace TechHealth.View.PatientView       //dodati IDappointment
 {
     /// <summary>
     /// Interaction logic for AddAppointment.xaml
     /// </summary>
     public partial class AddAppointment : Window
     {
+        
         private Appointment appointment;
         private AppointmentController appointmentController = new AppointmentController();
         private List<Doctor> doctors;
@@ -30,19 +31,9 @@ namespace TechHealth.View.PatientView
         {
 
             InitializeComponent();
+            TxtType.Text = nameof(AppointmentType.examination);
             doctors = DoctorRepository.Instance.DictionaryValuesToList();
             CbDoctor.ItemsSource = doctors;
-        }
-
-        public AppointmentType StringToType(string t)
-        {
-            switch (t)
-            {
-                case "Operation":
-                    return AppointmentType.operation;
-                default:
-                    return AppointmentType.examination;
-            }
         }
 
 
@@ -57,13 +48,20 @@ namespace TechHealth.View.PatientView
 
             appointment.Date = DateTime.Parse(Date.Text);
             appointment.StartTime = TxtTime.Text;
-            appointment.AppointmentType = StringToType(CbType.Text);
-            appointment.Doctor = doctors[CbDoctor.SelectedIndex]; //ovde je greska verovatno
+            appointment.AppointmentType = AppointmentType.examination;
+            appointment.Doctor = doctors[CbDoctor.SelectedIndex]; 
+            appointment.IdAppointment = Guid.NewGuid().ToString("N");
 
-            appointmentController.Create(appointment.Date, appointment.StartTime, appointment.AppointmentType, appointment.Doctor);
+            appointmentController.Create(appointment.Date, appointment.StartTime, appointment.AppointmentType, appointment.Doctor, appointment.IdAppointment);
 
+
+            //AppointmentRepository.Instance.Create(appointment); //izmeniti ovo da se radi sa kontrolerom
             this.Close();
 
         }
     }
 }
+
+//Resource dictionary
+
+//Koristiti radiobutton

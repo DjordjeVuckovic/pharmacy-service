@@ -1,50 +1,4 @@
 {
-  "1": {
-    "Date": "2022-04-10T14:35:47.9147904+02:00",
-    "StartTime": "13:15:00",
-    "FinishTime": "14:15:00",
-    "IdAppointment": "1",
-    "Room": {
-      "roomId": "soba1",
-      "floor": 1,
-      "availability": true,
-      "Equipments": ""
-    },
-    "Patient": {
-      "Address": {
-        "City": "Novi Sad",
-        "StreetNumber": "21",
-        "Country": "Srbija",
-        "Street": "Puse Pusica",
-        "Postcode": 21000
-      },
-      "Name": "Dusan",
-      "Surname": "Vukovic",
-      "Email": "dusan@dusan",
-      "Jmbg": "2456",
-      "Phone": "0613411123",
-      "Username": "dusan",
-      "Password": "dusan"
-    },
-    "AppointmentType": 1,
-    "Doctor": {
-      "Address": {
-        "City": "Novi Sad",
-        "StreetNumber": "21",
-        "Country": "Srbija",
-        "Street": "Puse Pusica",
-        "Postcode": 21000
-      },
-      "Name": "Slavica",
-      "Surname": "Cukteras",
-      "Email": "doctor@doctor11",
-      "Jmbg": "2315",
-      "Phone": "061341",
-      "Employed": true,
-      "Username": "doctor",
-      "Password": "doctor"
-    }
-  },
   "2": {
     "Date": "2022-03-30T00:00:00",
     "StartTime": "03:00AM",
@@ -67,6 +21,7 @@
       "Password": "1311"
     },
     "Doctor": {
+      "FullName": "Djordje Vuckovic",
       "Address": {
         "City": "Novi Sad",
         "StreetNumber": "21",
@@ -100,6 +55,7 @@
     },
     "AppointmentType": 1,
     "Doctor": {
+      "FullName": " ",
       "Jmbg": "1313"
     }
   },
@@ -124,6 +80,7 @@
       "Specialization": {
         "NameSpecialization": "General"
       },
+      "FullName": "Djordje Vuckovic",
       "Address": {
         "City": "Novi Sad",
         "StreetNumber": "21",
@@ -157,6 +114,7 @@
     },
     "AppointmentType": 1,
     "Doctor": {
+      "FullName": " ",
       "Jmbg": "1313"
     }
   },
@@ -176,26 +134,142 @@
     },
     "AppointmentType": 1,
     "Doctor": {
+      "FullName": " ",
       "Jmbg": "1313"
     }
   },
-  "1de4cd8bda124704a229a9091bcb2312": {
-    "Date": "2022-04-07T00:00:00",
-    "StartTime": "11",
-    "FinishTime": "12",
-    "IdAppointment": "1de4cd8bda124704a229a9091bcb2312",
-    "Room": {
-      "roomId": "soba4",
-      "Equipments": ""
-    },
-    "Patient": {
-      "Name": "miki",
-      "Surname": "Djuricic",
-      "Jmbg": "13456"
-    },
+  "59a957f513c240358a09521145bc1848": {
+    "Date": "2022-04-08T00:00:00",
+    "StartTime": "123",
+    "IdAppointment": "59a957f513c240358a09521145bc1848",
+    "Doctor": {
+      "Specialization": {
+        "IdSpecialization": 2,
+        "NameSpecialization": "Dermatologist"
+      },
+      "FullName": "Slavica Cukteras",
+      "Address": {
+        "City": "Novi Sad",
+        "StreetNumber": "21",
+        "Country": "Srbija",
+        "Street": "Puse Pusica",
+        "Postcode": 21000
+      },
+      "Name": "Slavica",
+      "Surname": "Cukteras",
+      "Email": "doctor@doctor11",
+      "Jmbg": "2315",
+      "Phone": "061341",
+      "Employed": true,
+      "Username": "doctor",
+      "Password": "doctor"
+    }
+  },
+  "8ba054f2f1be4551abf641777c04243d": {
+    "Date": "2022-04-09T00:00:00",
+    "StartTime": "12:30AM",
+    "IdAppointment": "8ba054f2f1be4551abf641777c04243d",
     "AppointmentType": 1,
     "Doctor": {
-      "Jmbg": "1313"
+      "Specialization": {
+        "NameSpecialization": "General"
+      },
+      "FullName": "Djordje Vuckovic",
+      "Address": {
+        "City": "Novi Sad",
+        "StreetNumber": "21",
+        "Country": "Srbija",
+        "Street": "Puse Pusica",
+        "Postcode": 21000
+      },
+      "Name": "Djordje",
+      "Surname": "Vuckovic",
+      "Email": "doctor@doctor11",
+      "Jmbg": "1313",
+      "Phone": "0613412312332",
+      "Employed": true,
+      "Username": "Djordje",
+      "Password": "1"
+    }
+  },
+  "d4af4f73ca484d7eb392db98410bd443": {
+    "Date": "2022-04-09T00:00:00",
+    "StartTime": "12:30AM",
+    "IdAppointment": "d4af4f73ca484d7eb392db98410bd443",
+    "Doctor": {
+      "Specialization": {
+        "NameSpecialization": "General"
+      },
+      "FullName": "Djordje Vuckovic",
+      "Address": {
+        "City": "Novi Sad",
+        "StreetNumber": "21",
+        "Country": "Srbija",
+        "Street": "Puse Pusica",
+        "Postcode": 21000
+      },
+      "Name": "Djordje",
+      "Surname": "Vuckovic",
+      "Email": "doctor@doctor11",
+      "Jmbg": "1313",
+      "Phone": "0613412312332",
+      "Employed": true,
+      "Username": "Djordje",
+      "Password": "1"
+    }
+  },
+  "499b77b9021345659ed3097cbe295e43": {
+    "Date": "2022-04-09T00:00:00",
+    "StartTime": "12:30AM",
+    "IdAppointment": "499b77b9021345659ed3097cbe295e43",
+    "Doctor": {
+      "Specialization": {
+        "IdSpecialization": 2,
+        "NameSpecialization": "Dermatologist"
+      },
+      "FullName": "Slavica Cukteras",
+      "Address": {
+        "City": "Novi Sad",
+        "StreetNumber": "21",
+        "Country": "Srbija",
+        "Street": "Puse Pusica",
+        "Postcode": 21000
+      },
+      "Name": "Slavica",
+      "Surname": "Cukteras",
+      "Email": "doctor@doctor11",
+      "Jmbg": "2315",
+      "Phone": "061341",
+      "Employed": true,
+      "Username": "doctor",
+      "Password": "doctor"
+    }
+  },
+  "628b9cf7f58544749b76afcbe23eeb68": {
+    "Date": "2022-04-16T00:00:00",
+    "StartTime": "12:20",
+    "IdAppointment": "628b9cf7f58544749b76afcbe23eeb68",
+    "AppointmentType": 1,
+    "Doctor": {
+      "Specialization": {
+        "NameSpecialization": "General"
+      },
+      "FullName": "Djordje Vuckovic",
+      "Address": {
+        "City": "Novi Sad",
+        "StreetNumber": "21",
+        "Country": "Srbija",
+        "Street": "Puse Pusica",
+        "Postcode": 21000
+      },
+      "Name": "Djordje",
+      "Surname": "Vuckovic",
+      "Email": "doctor@doctor11",
+      "Jmbg": "1313",
+      "Phone": "0613412312332",
+      "Employed": true,
+      "Username": "Djordje",
+      "Password": "1"
     }
   }
 }
