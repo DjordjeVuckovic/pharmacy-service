@@ -33,12 +33,12 @@ namespace TechHealth.View.PatientView
             selected = AppointmentRepository.Instance.GetById(newAppointment.IdAppointment);
             InitializeComponent();
             doctors = DoctorRepository.Instance.DictionaryValuesToList();
-            this.DataContext = this;
+            DataContext = this;
 
 
             CbDoctor.ItemsSource = doctors;
             TxtTime.Text = selected.StartTime;
-            CbType.Text = TypeToString(selected.AppointmentType);
+            TxtType.Text = TypeToString(selected.AppointmentType);
             Date.SelectedDate = selected.Date;
 
         }
@@ -54,7 +54,7 @@ namespace TechHealth.View.PatientView
             }
         }
 
-        public AppointmentType StringToType(string s)
+        /*public AppointmentType StringToType(string s)
         {
             switch (s)
             {
@@ -63,17 +63,19 @@ namespace TechHealth.View.PatientView
                 default:
                     return AppointmentType.operation;
             }
-        }
+        }*/
 
 
         private void Button_Click_Confirm(object sender, RoutedEventArgs e)
         {
             selected.Date = DateTime.Parse(Date.Text);
             selected.StartTime = TxtTime.Text;
-            selected.AppointmentType = StringToType(CbType.Text);
+            selected.AppointmentType = AppointmentType.examination;
             selected.Doctor = doctors[CbDoctor.SelectedIndex];
 
-            appointmentController.Update(selected.Date, selected.StartTime, selected.AppointmentType, selected.Doctor);
+            
+            AppointmentRepository.Instance.Update(selected);
+            //appointmentController.Update(selected.Date, selected.StartTime, selected.AppointmentType, selected.Doctor, selected.IdAppointment);
 
             this.Close();
         }

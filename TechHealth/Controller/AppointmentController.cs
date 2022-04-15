@@ -34,13 +34,14 @@ namespace TechHealth.Controller
             throw new NotImplementedException();
         }
 
-      public bool Create(DateTime date, string startTime, AppointmentType appointmentType, Doctor doctor)
+      public bool Create(DateTime date, string startTime, AppointmentType appointmentType, Doctor doctor, string idApointment)
       {
             var appointment = new Appointment();
             appointment.Date = date;
             appointment.StartTime = startTime;
             appointment.AppointmentType = appointmentType;
             appointment.Doctor = doctor;
+            appointment.IdAppointment = idApointment;
 
             return appointmentService.Create(appointment);
         }
@@ -50,13 +51,14 @@ namespace TechHealth.Controller
             throw new NotImplementedException();
         }
 
-        public bool Update(DateTime date, string startTime, AppointmentType appointmentType, Doctor doctor)
+        public bool Update(DateTime date, string startTime, AppointmentType appointmentType, Doctor doctor, string idApointment)
         {
             var appointment = new Appointment();
             appointment.Date = date;
             appointment.StartTime = startTime;
             appointment.AppointmentType = appointmentType;
             appointment.Doctor = doctor;
+            appointment.IdAppointment = idApointment;
 
             return appointmentService.Create(appointment);
         }

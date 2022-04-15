@@ -11,5 +11,6 @@ namespace TechHealth.Model
       public Specialization Specialization{ get; set; }
       [JsonIgnore]
       public string FullSpecialization => $"{Name} {Surname} - {Specialization.NameSpecialization} ";
-   }
+      public string FullName => $"{Name} {Surname}";
+    }
 }
