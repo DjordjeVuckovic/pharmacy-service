@@ -1,24 +1,24 @@
 ﻿using System;
 using System.Windows.Input;
 
-namespace TechHealth.DoctorView.Command
+namespace TechHealth.Core
 {
     public class RelayCommand:ICommand
     {
-        readonly Action<object> _execute;
-        private readonly Predicate<object> _predicate;
+        private Action<object> _execute;
+        private Func<object,bool> _canExecute;
 
-        public RelayCommand(Action<object> execute, Predicate<object> predicate)
+        public RelayCommand(Action<object> execute, Func<object,bool> canExecute)
         {
             _execute = execute;
-            _predicate = predicate;
+            _canExecute = canExecute;
         }
 
         public RelayCommand(Action<object> execute) : this(execute, null) { }
 
         public bool CanExecute(object parameters)
         {
-            return _predicate == null ? true : _predicate(parameters);
+            return _canExecute == null ||  _canExecute(parameters);
         }
 
         public event EventHandler CanExecuteChanged
@@ -29,7 +29,7 @@ namespace TechHealth.DoctorView.Command
 
         public void Execute(object parameters)
         {
-            _execute.Invoke(parameters);
+            _execute(parameters);
         }
     }
 }

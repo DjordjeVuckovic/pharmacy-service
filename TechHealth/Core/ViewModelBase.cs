@@ -3,7 +3,7 @@ using System.Runtime.CompilerServices;
 using JetBrains.Annotations;
 using PostSharp.Patterns.Model;
 
-namespace TechHealth.DoctorView.ViewModel
+namespace TechHealth.Core
 {
     public abstract class ViewModelBase:INotifyPropertyChanged
     {

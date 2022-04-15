@@ -26,7 +26,8 @@ namespace TechHealth
             Doctor doctor = DoctorRepository.Instance.GetDoctorByUser(user);
             if (doctor != null && pass.Equals(doctor.Password))
             {
-                DoctorMainWindow.GetInstance(doctor.Jmbg).Show();
+                //AppointmentsWindow.GetInstance(doctor.Jmbg).Show();
+                new DoctorMainWindow().Show();
                 Close();
             }
         }
