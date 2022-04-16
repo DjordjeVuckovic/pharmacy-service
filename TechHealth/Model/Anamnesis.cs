@@ -7,9 +7,12 @@ namespace TechHealth.Model
     public class Anamnesis
     {
         public Appointment Appointment { get; set; }
-        public MainIssue MainIssue { get; set; }
+        //public MainIssue MainIssue { get; set; }
+        public string MainIssue { get; set; }
         public DateTime AnamnesisDate { get; set; }
         public string AnamnesisId { get; set; }
+        public string OtherSymptoms { get; set; }
+        public string GeneralAmnesis { get; set; }
         public string Cns { get; set; }
         public string Eye { get; set; }
         public string Neck { get; set; }
@@ -22,6 +25,5 @@ namespace TechHealth.Model
         public string Respiratory { get; set; }
         public string Mouth { get; set; }
         public string Gi { get; set; }
-        public string OverallAnamnesis { get; set; }
     }
 }

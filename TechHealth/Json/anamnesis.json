@@ -1,0 +1,151 @@
+{
+  "8570de6ec8254b82ab8dc38adb45c410": {
+    "MainIssue": "aaa",
+    "AnamnesisDate": "2022-04-17T01:18:11.337905+02:00",
+    "AnamnesisId": "8570de6ec8254b82ab8dc38adb45c410",
+    "OtherSymptoms": "aa",
+    "GeneralAmnesis": "aa",
+    "Cns": "aa",
+    "Eye": "aa",
+    "Neck": "a",
+    "Mss": "a",
+    "Skin": "a",
+    "Ear": "a",
+    "Cus": "a",
+    "Infectious": "a",
+    "Ugs": "a",
+    "Respiratory": "a",
+    "Mouth": "a",
+    "Gi": "a"
+  },
+  "0b3c4b4b1d0e4b00bfe52348915202d3": {
+    "Appointment": {
+      "Date": "2022-04-06T00:00:00",
+      "StartTimeD": "0001-01-01T00:00:00",
+      "FinishTimeD": "0001-01-01T00:00:00",
+      "Emergent": false,
+      "StartTime": "11-00",
+      "FinishTime": "12-00",
+      "IdAppointment": "252798fdb0654135bc371fbde9e137f9",
+      "Room": {
+        "roomTypes": 3,
+        "roomId": "soba4",
+        "floor": 3,
+        "availability": true,
+        "Equipments": ""
+      },
+      "Patient": {
+        "Guest": false,
+        "Lbo": 0,
+        "IsBanned": false,
+        "Name": "miki",
+        "Surname": "Djuricic",
+        "Email": "dsa@adsa",
+        "Jmbg": "13456",
+        "Phone": "06105111331",
+        "Employed": false,
+        "Username": "Djura",
+        "Password": "1311"
+      },
+      "AppointmentType": 0,
+      "Doctor": {
+        "Specialization": {
+          "IdSpecialization": 1,
+          "NameSpecialization": "Anesthesiology"
+        },
+        "FullName": "John Black",
+        "Name": "John",
+        "Surname": "Black",
+        "Email": "spec@spec.com",
+        "Jmbg": "131213121111",
+        "Phone": "06123111114",
+        "Employed": true,
+        "Username": "1",
+        "Password": "1"
+      },
+      "Evident": false
+    },
+    "MainIssue": "aa",
+    "AnamnesisDate": "2022-04-17T01:21:50.1678955+02:00",
+    "AnamnesisId": "0b3c4b4b1d0e4b00bfe52348915202d3",
+    "OtherSymptoms": "aa",
+    "GeneralAmnesis": "aa",
+    "Cns": "a",
+    "Eye": "a",
+    "Neck": "a",
+    "Mss": "a",
+    "Skin": "a",
+    "Ear": "a",
+    "Cus": "a",
+    "Infectious": "a",
+    "Ugs": "a",
+    "Respiratory": "a",
+    "Mouth": "a",
+    "Gi": "a"
+  },
+  "8bee3083e18e4146917dc215585f9861": {
+    "Appointment": {
+      "Date": "2022-04-06T00:00:00",
+      "StartTimeD": "0001-01-01T00:00:00",
+      "FinishTimeD": "0001-01-01T00:00:00",
+      "Emergent": false,
+      "StartTime": "11-00",
+      "FinishTime": "12-00",
+      "IdAppointment": "252798fdb0654135bc371fbde9e137f9",
+      "Room": {
+        "roomTypes": 3,
+        "roomId": "soba4",
+        "floor": 3,
+        "availability": true,
+        "Equipments": ""
+      },
+      "Patient": {
+        "Guest": false,
+        "Lbo": 0,
+        "IsBanned": false,
+        "Name": "miki",
+        "Surname": "Djuricic",
+        "Email": "dsa@adsa",
+        "Jmbg": "13456",
+        "Phone": "06105111331",
+        "Employed": false,
+        "Username": "Djura",
+        "Password": "1311"
+      },
+      "AppointmentType": 0,
+      "Doctor": {
+        "Specialization": {
+          "IdSpecialization": 1,
+          "NameSpecialization": "Anesthesiology"
+        },
+        "FullName": "John Black",
+        "Name": "John",
+        "Surname": "Black",
+        "Email": "spec@spec.com",
+        "Jmbg": "131213121111",
+        "Phone": "06123111114",
+        "Employed": true,
+        "Username": "1",
+        "Password": "1"
+      },
+      "Evident": false
+    },
+    "MainIssue": "a",
+    "AnamnesisDate": "2022-04-17T01:24:12.3462783+02:00",
+    "AnamnesisId": "8bee3083e18e4146917dc215585f9861",
+    "OtherSymptoms": "a",
+    "GeneralAmnesis": "a",
+    "Cns": "a",
+    "Eye": "a",
+    "Neck": "a",
+    "Mss": "a",
+    "Skin": "a",
+    "Ear": "a",
+    "Cus": "a",
+    "Infectious": "a",
+    "Ugs": "a",
+    "Respiratory": "a",
+    "Mouth": "a",
+    "Gi": "a"
+  }
+}

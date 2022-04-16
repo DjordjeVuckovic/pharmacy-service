@@ -6,16 +6,12 @@ namespace TechHealth.DoctorView.View
 {
     public partial class RecordView : UserControl
     {
-        public RecordView(string doctorId)
+        public RecordView(string id)
         {
             InitializeComponent();
-            DataContext = new RecordViewModel(doctorId);
+            DataContext = new RecordViewModel(id);
 
         }
-
-        public RecordView()
-        {
-            InitializeComponent();
-        }
+        
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows;
+using TechHealth.DoctorView.View;
 using TechHealth.Model;
 using TechHealth.Repository;
 
@@ -48,6 +49,7 @@ namespace TechHealth.DoctorView.CRUDAppointments
             }
 
             PatentCombo.SelectedIndex = cnt;
+            cnt = 0;
             foreach (var r in rooms)
             {
                 if (r.roomId.Equals(appointment.Room.roomId))
@@ -99,9 +101,9 @@ namespace TechHealth.DoctorView.CRUDAppointments
         }
         private void UpdateList(Appointment app1)
         {
-            int index=AppointmentsWindow.GetInstance().Appointments.IndexOf(app1);
-            AppointmentsWindow.GetInstance().Appointments.Remove(app1);
-            AppointmentsWindow.GetInstance().Appointments.Insert(index, appointment);   
+            int index=AppointmentsView.GetInstance().Appointments.IndexOf(app1);
+            AppointmentsView.GetInstance().Appointments.Remove(app1);
+            AppointmentsView.GetInstance().Appointments.Insert(index, appointment);   
         } 
     }
 }

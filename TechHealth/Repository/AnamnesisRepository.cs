@@ -41,5 +41,19 @@ namespace TechHealth.Repository
             }
             return anamneses;
         }
+
+        public Anamnesis GetByAppointmentId(string id)
+        {
+            foreach (var t in DictionaryValuesToList())
+            {
+                if (id.Equals(t.Appointment.IdAppointment))
+                {
+                    return t;
+                }
+            }
+
+            return null;
+        }
+        
     }
 }

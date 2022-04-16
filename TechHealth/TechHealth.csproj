@@ -166,9 +166,6 @@
     <Compile Include="DoctorView\MedicalHistory\NewAnamnesis.xaml.cs">
       <DependentUpon>NewAnamnesis.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DoctorView\MedicalHistory\ReportView.xaml.cs">
-      <DependentUpon>ReportView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="DoctorView\MedicalHistory\ReviewAnamnesis.xaml.cs">
       <DependentUpon>ReviewAnamnesis.xaml</DependentUpon>
     </Compile>
@@ -176,6 +173,12 @@
     <Compile Include="DoctorView\ViewModel\MainViewModel.cs" />
     <Compile Include="DoctorView\ViewModel\RecordViewModel.cs" />
     <Compile Include="DoctorView\ViewModel\ViewModelAppointment.cs" />
+    <Compile Include="DoctorView\View\AddAnamnesis.xaml.cs">
+      <DependentUpon>AddAnamnesis.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DoctorView\View\AppointmentsView.xaml.cs">
+      <DependentUpon>AppointmentsView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DoctorView\View\DashBoardView.xaml.cs">
       <DependentUpon>DashBoardView.xaml</DependentUpon>
     </Compile>
@@ -333,14 +336,12 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="DoctorView\MedicalHistory\ReportView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="DoctorView\MedicalHistory\ReviewAnamnesis.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="DoctorView\View\AddAnamnesis.xaml" />
+    <Page Include="DoctorView\View\AppointmentsView.xaml" />
     <Page Include="DoctorView\View\DashBoardView.xaml" />
     <Page Include="DoctorView\View\PatientsView.xaml" />
     <Page Include="DoctorView\View\RecordView.xaml" />

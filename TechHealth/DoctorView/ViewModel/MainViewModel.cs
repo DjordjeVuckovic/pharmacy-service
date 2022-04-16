@@ -12,7 +12,7 @@ namespace TechHealth.DoctorView.ViewModel
         public RelayCommand RecordCommand { get; set; }
         public RelayCommand AppointmentCommand { get; set; }
         public string DoctorId { get; set; }
-        //public AppointmentsWindow AppointmentsWindow { get; set; }
+        public AppointmentsView AppointmentsView { get; set; }
         
         public object CurrentView
         {
@@ -24,10 +24,11 @@ namespace TechHealth.DoctorView.ViewModel
             }
         }
 
+        /*
         public MainViewModel()
         {
             DashBoardViewModel = new DashBoardView();
-            RecordView = new RecordView();
+            //RecordView = new RecordView();
             //AppointmentsWindow = AppointmentsWindow.GetInstance();
 
             CurrentView = DashBoardViewModel;
@@ -46,14 +47,14 @@ namespace TechHealth.DoctorView.ViewModel
                     //
                 }
             );
-        }
+        }*/
 
         public MainViewModel(string doctorJmbg)
         {
             DoctorId = doctorJmbg;
             DashBoardViewModel = new DashBoardView();
             RecordView = new RecordView(doctorJmbg);
-            //AppointmentsWindow = AppointmentsWindow.GetInstance();
+            AppointmentsView = new AppointmentsView(doctorJmbg);
 
             CurrentView = DashBoardViewModel;
             DashCommand = new RelayCommand(o =>
@@ -68,9 +69,14 @@ namespace TechHealth.DoctorView.ViewModel
             );
             AppointmentCommand = new RelayCommand(o =>
                 {
-                    
+                    CurrentView = AppointmentsView;
                 }
             );
+        }
+
+        protected MainViewModel()
+        {
+            
         }
     }
 }

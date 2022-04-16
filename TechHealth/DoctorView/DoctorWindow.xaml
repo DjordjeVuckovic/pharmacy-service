@@ -31,7 +31,7 @@
                 </Grid.RowDefinitions>
                 <Image Source="C:\Users\djord\OneDrive\Documents\GitHub\PharmacyService\TechHealth\resources\mylogo.png" Margin="5.2,0,4.8,0"/>
                 <StackPanel Grid.Row="1" Grid.Column="0">
-                    <RadioButton Height="70" Content="DashBoard" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="20" Foreground="#f8f8f2" Style="{StaticResource ResourceKey=MenuButtonTheme}" Width="210" Command="{Binding DashCommand}" />
+                    <RadioButton Height="60" Content="DashBoard" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="20" Foreground="#f8f8f2" Style="{StaticResource ResourceKey=MenuButtonTheme}" Width="210" Command="{Binding DashCommand}" />
                     <RadioButton Height="60" Content="Appointments" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="20" Foreground="#f8f8f2" Style="{StaticResource ResourceKey=MenuButtonTheme}" Width="210" Command="{Binding AppointmentCommand}" />
                     <RadioButton Height="60" Content="Medical report" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="20" Foreground="#f8f8f2" Style="{StaticResource ResourceKey=MenuButtonTheme}" Width="210" Command="{Binding RecordCommand}" />
                     <RadioButton Height="60" Content="Patients" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="20" Foreground="#f8f8f2" Style="{StaticResource ResourceKey=MenuButtonTheme}" Width="210"/>
