@@ -143,7 +143,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Controller\AccountController.cs" />
+    <Compile Include="Controller\PatientController.cs" />
     <Compile Include="Controller\AppointmentController.cs" />
     <Compile Include="Controller\RoomController.cs" />
     <Compile Include="DoctorView\Command\RelayCommand.cs" />
@@ -175,7 +175,6 @@
     <Compile Include="Model\Anamnesis.cs" />
     <Compile Include="Model\MainIssue.cs" />
     <Compile Include="Properties\Annotations.cs" />
-    <Compile Include="Repository\AccountRepository.cs" />
     <Compile Include="Repository\AppointmentRepository.cs" />
     <Compile Include="Repository\DoctorRepository.cs" />
     <Compile Include="Repository\FileHandler.cs" />
@@ -185,7 +184,6 @@
     <Compile Include="Repository\RoomRepository.cs" />
     <Compile Include="Repository\SecretaryRepository.cs" />
     <Compile Include="Repository\SpecializationRepository.cs" />
-    <Compile Include="Service\AccountService.cs" />
     <Compile Include="Service\AppointmentService.cs" />
     <Compile Include="Service\DoctorService.cs" />
     <Compile Include="Service\PatientService.cs" />
@@ -198,6 +196,21 @@
     </Compile>
     <Compile Include="View\ManagerView\UpdateForm.xaml.cs">
       <DependentUpon>UpdateForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SecretaryView\AddGuest.xaml.cs">
+      <DependentUpon>AddGuest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SecretaryView\AddPatient.xaml.cs">
+      <DependentUpon>AddPatient.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SecretaryView\SecretaryMainWindow.xaml.cs">
+      <DependentUpon>SecretaryMainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SecretaryView\UpdateGuest.xaml.cs">
+      <DependentUpon>UpdateGuest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SecretaryView\UpdatePatient.xaml.cs">
+      <DependentUpon>UpdatePatient.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -297,10 +310,30 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\SecretaryView\AddGuest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SecretaryView\AddPatient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SecretaryView\SecretaryMainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SecretaryView\UpdateGuest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SecretaryView\UpdatePatient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="JsonConverters" />
-    <Folder Include="View\PatientView" />
+    <Folder Include="JsonConverters\" />
+    <Folder Include="View\PatientView\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\System.Text.Json.7.0.0-preview.2.22152.2\build\System.Text.Json.targets" Condition="Exists('packages\System.Text.Json.7.0.0-preview.2.22152.2\build\System.Text.Json.targets')" />

@@ -16,6 +16,7 @@ using Scar.Common.WPF.Controls;
 using TechHealth.Model;
 using TechHealth.Repository;
 using TechHealth.View.ManagerView;
+using TechHealth.View.SecretaryView;
 
 
 namespace TechHealth
@@ -35,7 +36,7 @@ namespace TechHealth
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-
+            new SecretaryMainWindow().Show();
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)

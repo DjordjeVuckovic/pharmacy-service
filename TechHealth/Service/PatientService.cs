@@ -12,8 +12,6 @@ namespace TechHealth.Service
 {
    public class PatientService
    {
-      private PatientRepository patientRepository;
-      
       public Patient GetById(string patientId)
       {
          throw new NotImplementedException();
@@ -23,6 +21,20 @@ namespace TechHealth.Service
       {
          throw new NotImplementedException();
       }
-   
+
+      public bool Create(Patient patient)
+      {
+            return PatientRepository.Instance.Create(patient);
+      }
+      
+      public bool Update(Patient patient)
+      {
+            return PatientRepository.Instance.Update(patient);
+      }
+      
+      public bool Delete(string jmbg)
+      {
+            return PatientRepository.Instance.Delete(jmbg);
+      }
    }
 }

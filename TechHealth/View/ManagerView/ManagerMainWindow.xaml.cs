@@ -63,5 +63,15 @@ namespace TechHealth.View.ManagerView
                 rooms.Add(r);
             }
         }
+
+        private void lvUsers_SelectionChanged()
+        {
+
+        }
+
+        private void lvUsers_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

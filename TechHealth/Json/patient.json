@@ -1,9 +1,5 @@
 {
   "2456": {
-    "Guest": false,
-    "ChosenDoctor": null,
-    "Lbo": 0,
-    "IsBanned": false,
     "Address": {
       "City": "Novi Sad",
       "StreetNumber": "21",
@@ -16,23 +12,36 @@
     "Email": "dusan@dusan",
     "Jmbg": "2456",
     "Phone": "0613411123",
-    "Employed": false,
     "Username": "dusan",
     "Password": "dusan"
   },
   "13456": {
-    "Guest": false,
-    "ChosenDoctor": null,
-    "Lbo": 0,
-    "IsBanned": false,
-    "Address": null,
     "Name": "miki",
     "Surname": "Djuricic",
     "Email": "dsa@adsa",
     "Jmbg": "13456",
     "Phone": "06105111331",
-    "Employed": false,
     "Username": "Djura",
     "Password": "1311"
+  },
+  "2312300123": {
+    "Lbo": 3123,
+    "Name": "Pera",
+    "Surname": "Peric",
+    "Email": "perap@gmail.com",
+    "Jmbg": "2312300123",
+    "Phone": "0652314221",
+    "Username": "peraperic",
+    "Password": "pera123"
+  },
+  "guest1": {
+    "Guest": true,
+    "Name": "",
+    "Surname": "",
+    "Email": "",
+    "Jmbg": "guest1",
+    "Phone": "",
+    "Username": "Guest1",
+    "Password": "guest1"
   }
 }
