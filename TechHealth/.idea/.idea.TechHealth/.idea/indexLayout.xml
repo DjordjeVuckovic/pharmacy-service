@@ -3,6 +3,7 @@
   <component name="UserContentModel">
     <attachedFolders />
     <explicitIncludes>
+      <Path>.gitignore</Path>
       <Path>DoctorView/View</Path>
     </explicitIncludes>
     <explicitExcludes />
