@@ -14,7 +14,9 @@ namespace TechHealth.DoctorView.ViewModel
         private object _currentView;
         private static RecordViewModel _instance;
         public RelayCommand NewCommand { get; set; }
+        public RelayCommand ReviewCommand { get; set; }
         public NewAnamnesis AddAnamnesisView { get; set; }
+        public ReviewAnamnesis ReviewAnamnesis { get; set; }
         public object CurrentView
         {
             get => _currentView;
@@ -56,11 +58,12 @@ namespace TechHealth.DoctorView.ViewModel
             get
             {
                 return _appointments;
+
             }
             set
             {
                 _appointments = value;
-                OnPropertyChanged();
+                OnPropertyChanged(nameof(Appointments));
             }
             
         }
@@ -80,7 +83,7 @@ namespace TechHealth.DoctorView.ViewModel
             set
             {
                 _selectedItem = value;
-                OnPropertyChanged();
+                OnPropertyChanged(nameof(SelectedItem));
             }
         }
            
@@ -90,7 +93,8 @@ namespace TechHealth.DoctorView.ViewModel
             _instance = this;
             _appointments = new ObservableCollection<Appointment>(AppointmentRepository.Instance.GetByDoctorId(_doctorId));
             NewCommand = new RelayCommand(param => Execute(), param => CanExecute());
-            
+            ReviewCommand = new RelayCommand(param => Execute1(), param => CanExecute1());
+
         }
 
         private bool CanExecute()
@@ -107,6 +111,21 @@ namespace TechHealth.DoctorView.ViewModel
         {
             AddAnamnesisView = new NewAnamnesis(_selectedItem);
             AddAnamnesisView.ShowDialog();
+        }
+        private bool CanExecute1()
+        {
+            if (SelectedItem == null || !SelectedItem.Evident)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        private void Execute1()
+        {
+            ReviewAnamnesis = new ReviewAnamnesis(_selectedItem);
+            ReviewAnamnesis.ShowDialog();
         }
         
     }

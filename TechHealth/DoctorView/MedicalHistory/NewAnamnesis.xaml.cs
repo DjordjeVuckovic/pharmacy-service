@@ -23,6 +23,7 @@ namespace TechHealth.DoctorView.MedicalHistory
     public partial class NewAnamnesis : Window
     {
         private Appointment myappointment;
+        private Appointment app;
         public NewAnamnesis()
         {
             InitializeComponent();
@@ -31,28 +32,28 @@ namespace TechHealth.DoctorView.MedicalHistory
         public NewAnamnesis(Appointment appointment)
         {
             InitializeComponent();
-            DataContext = this;
-            myappointment = appointment;
+            //DataContext = this;
+            myappointment = AppointmentRepository.Instance.GetById(appointment.IdAppointment);
+            app = appointment;
 
         }
 
         private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
         {
             //Finish
-            Anamnesis anamnesis = CreateAnamnesis();
-            AnamnesisRepository.Instance.Create(anamnesis);
+            CreateAnamnesis();
+            app.Evident = true;
+            //UpdateList(myappointment);
+            AppointmentRepository.Instance.Update(app);
             Close();
-            myappointment.Evident = true;
-            UpdateList(myappointment);
-            AppointmentRepository.Instance.Update(myappointment);
         }
 
-        private Anamnesis CreateAnamnesis()
+        private void CreateAnamnesis()
         {
             RandomGenerator randomGenerator = new RandomGenerator();
             Anamnesis anamnesis = new Anamnesis
             {
-                Appointment = myappointment,
+                AnmnesisAppointment = myappointment,
                 MainIssue = Txt1.Text,
                 AnamnesisDate = DateTime.Now,
                 AnamnesisId = randomGenerator.GenerateRandHash(),
@@ -71,14 +72,9 @@ namespace TechHealth.DoctorView.MedicalHistory
                 Mouth = txt14.Text,
                 Gi = txt15.Text,
             };
-            return anamnesis;
+            AnamnesisRepository.Instance.Create(anamnesis);
         }
-        private void UpdateList(Appointment app1)
-        {
-            int index=RecordViewModel.GetInstance().Appointments.IndexOf(app1);
-            RecordViewModel.GetInstance().Appointments.Remove(app1);
-            RecordViewModel.GetInstance().Appointments.Insert(index, myappointment);   
-        }
+        
         private void ButtonBase_OnClick1(object sender, RoutedEventArgs e)
         {
             throw new NotImplementedException();

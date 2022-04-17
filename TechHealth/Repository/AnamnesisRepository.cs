@@ -34,7 +34,7 @@ namespace TechHealth.Repository
             List<Anamnesis> anamneses = new List<Anamnesis>();
             foreach (var t in DictionaryValuesToList())
             {
-                if (id.Equals(t.Appointment.Doctor.Jmbg))
+                if (id.Equals(t.AnmnesisAppointment.Doctor.Jmbg))
                 {
                     anamneses.Add(t);
                 }
@@ -42,17 +42,18 @@ namespace TechHealth.Repository
             return anamneses;
         }
 
-        public Anamnesis GetByAppointmentId(string id)
+        public Anamnesis GetByAppointmentId(Appointment appointment)
         {
+            Anamnesis retval=null;
             foreach (var t in DictionaryValuesToList())
             {
-                if (id.Equals(t.Appointment.IdAppointment))
+                if (appointment.IdAppointment == t.AnmnesisAppointment.IdAppointment)
                 {
-                    return t;
+                    retval = t;
                 }
             }
 
-            return null;
+            return retval;
         }
         
     }

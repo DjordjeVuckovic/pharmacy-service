@@ -76,7 +76,7 @@ namespace TechHealth.DoctorView.CRUDAppointments
 
         private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
         {
-            Appointment app1 = appointment;
+            
             if (PatentCombo.SelectionBoxItem == null || Picker.SelectedDate == null ||
                 PatentCombo.SelectionBoxItem == null || RoomCombo.SelectionBoxItem == null)
             {
@@ -92,18 +92,12 @@ namespace TechHealth.DoctorView.CRUDAppointments
                 appointment.StartTime = StartTxt.Text;
                 appointment.Patient = patients[PatentCombo.SelectedIndex];
                 appointment.Room = rooms[RoomCombo.SelectedIndex];
-                UpdateList(app1);
                 AppointmentRepository.Instance.Update(appointment);
                 MessageBox.Show("You are successfully update appointment");
                 Close();
             }
             
         }
-        private void UpdateList(Appointment app1)
-        {
-            int index=AppointmentsView.GetInstance().Appointments.IndexOf(app1);
-            AppointmentsView.GetInstance().Appointments.Remove(app1);
-            AppointmentsView.GetInstance().Appointments.Insert(index, appointment);   
-        } 
+        
     }
 }

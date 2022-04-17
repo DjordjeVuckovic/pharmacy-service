@@ -38,6 +38,7 @@ namespace TechHealth.DoctorView.View
             set
             {
                 _appointments = value;
+                //OnPropertyChanged();
             }
         }
         private void Examination_OnClick(object sender, RoutedEventArgs e)
@@ -66,7 +67,7 @@ namespace TechHealth.DoctorView.View
             {
                 Appointment appointment = (Appointment) dataAppointment.SelectedItem;
                 AppointmentRepository.Instance.Delete(appointment.IdAppointment);
-                Appointments.Remove(appointment);
+                //Appointments.Remove(appointment);
                 MessageBox.Show("You are successfully deleted an appointment");
             }
         }

@@ -53,11 +53,8 @@ namespace TechHealth.DoctorView.CRUDAppointments
                     Patient = patients[PatentCombo.SelectedIndex],
                     Room = rooms[RoomCombo.SelectedIndex]
                 };
-                //AppointmentsWindow.GetInstance().Appointments.Add(appointment);
-                AppointmentsView.GetInstance().Appointments.Add(appointment);
-                RecordViewModel.GetInstance().Appointments.Add(appointment);
-                //AppointmentIgnore ignore = new AppointmentIgnore(appointment);
-                //ignore.IgnoreMePatient(appointment);
+                //AppointmentsView.GetInstance().Appointments.Add(appointment);
+                //RecordViewModel.GetInstance().Appointments.Add(appointment);
                 AppointmentRepository.Instance.Create(appointment);
                 MessageBox.Show("You are successfully create new examination");
                 Close();

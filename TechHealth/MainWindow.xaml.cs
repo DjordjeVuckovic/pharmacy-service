@@ -25,21 +25,7 @@ namespace TechHealth
         public MainWindow()
         {
             InitializeComponent();
-            Appointment appointment = new Appointment
-            {
-                Date = default,
-                StartTimeD = default,
-                FinishTimeD = default,
-                Emergent = true,
-                StartTime = null,
-                FinishTime = null,
-                IdAppointment = "1312222",
-                Room = null,
-                Patient = null,
-                AppointmentType = AppointmentType.examination,
-                Doctor = null,
-                Evident = true,
-            };
+           
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

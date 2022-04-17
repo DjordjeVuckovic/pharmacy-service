@@ -1,25 +1,6 @@
 {
-  "8570de6ec8254b82ab8dc38adb45c410": {
-    "MainIssue": "aaa",
-    "AnamnesisDate": "2022-04-17T01:18:11.337905+02:00",
-    "AnamnesisId": "8570de6ec8254b82ab8dc38adb45c410",
-    "OtherSymptoms": "aa",
-    "GeneralAmnesis": "aa",
-    "Cns": "aa",
-    "Eye": "aa",
-    "Neck": "a",
-    "Mss": "a",
-    "Skin": "a",
-    "Ear": "a",
-    "Cus": "a",
-    "Infectious": "a",
-    "Ugs": "a",
-    "Respiratory": "a",
-    "Mouth": "a",
-    "Gi": "a"
-  },
-  "0b3c4b4b1d0e4b00bfe52348915202d3": {
-    "Appointment": {
+  "4856f67ea39b4d6e8e5e5e2b69049f08": {
+    "AnmnesisAppointment": {
       "Date": "2022-04-06T00:00:00",
       "StartTimeD": "0001-01-01T00:00:00",
       "FinishTimeD": "0001-01-01T00:00:00",
@@ -66,10 +47,10 @@
       "Evident": false
     },
     "MainIssue": "aa",
-    "AnamnesisDate": "2022-04-17T01:21:50.1678955+02:00",
-    "AnamnesisId": "0b3c4b4b1d0e4b00bfe52348915202d3",
-    "OtherSymptoms": "aa",
-    "GeneralAmnesis": "aa",
+    "AnamnesisDate": "2022-04-17T03:11:32.1282461+02:00",
+    "AnamnesisId": "4856f67ea39b4d6e8e5e5e2b69049f08",
+    "OtherSymptoms": "a",
+    "GeneralAmnesis": "a",
     "Cns": "a",
     "Eye": "a",
     "Neck": "a",
@@ -83,15 +64,80 @@
     "Mouth": "a",
     "Gi": "a"
   },
-  "8bee3083e18e4146917dc215585f9861": {
-    "Appointment": {
-      "Date": "2022-04-06T00:00:00",
+  "0c86fc32cdd34b94b22725fab4ee31bb": {
+    "AnmnesisAppointment": {
+      "Date": "2022-04-08T00:00:00",
       "StartTimeD": "0001-01-01T00:00:00",
       "FinishTimeD": "0001-01-01T00:00:00",
       "Emergent": false,
-      "StartTime": "11-00",
-      "FinishTime": "12-00",
-      "IdAppointment": "252798fdb0654135bc371fbde9e137f9",
+      "StartTime": "11:00",
+      "FinishTime": "12:00",
+      "IdAppointment": "aa46e7dce42c476aa7c58a04e2cd6c01",
+      "Room": {
+        "roomTypes": 3,
+        "roomId": "soba3",
+        "floor": 2,
+        "availability": false,
+        "Equipments": ""
+      },
+      "Patient": {
+        "Guest": false,
+        "Lbo": 0,
+        "IsBanned": false,
+        "Name": "miki",
+        "Surname": "Djuricic",
+        "Email": "dsa@adsa",
+        "Jmbg": "13456",
+        "Phone": "06105111331",
+        "Employed": false,
+        "Username": "Djura",
+        "Password": "1311"
+      },
+      "AppointmentType": 0,
+      "Doctor": {
+        "Specialization": {
+          "IdSpecialization": 1,
+          "NameSpecialization": "Anesthesiology"
+        },
+        "FullName": "John Black",
+        "Name": "John",
+        "Surname": "Black",
+        "Email": "spec@spec.com",
+        "Jmbg": "131213121111",
+        "Phone": "06123111114",
+        "Employed": true,
+        "Username": "1",
+        "Password": "1"
+      },
+      "Evident": false
+    },
+    "MainIssue": "a",
+    "AnamnesisDate": "2022-04-17T04:31:21.3791569+02:00",
+    "AnamnesisId": "0c86fc32cdd34b94b22725fab4ee31bb",
+    "OtherSymptoms": "a",
+    "GeneralAmnesis": "a",
+    "Cns": "a",
+    "Eye": "a",
+    "Neck": "a",
+    "Mss": "a",
+    "Skin": "",
+    "Ear": "",
+    "Cus": "",
+    "Infectious": "",
+    "Ugs": "",
+    "Respiratory": "",
+    "Mouth": "",
+    "Gi": ""
+  },
+  "a641233e627b48c5ab444b25abf0d9be": {
+    "AnmnesisAppointment": {
+      "Date": "2022-04-07T00:00:00",
+      "StartTimeD": "0001-01-01T00:00:00",
+      "FinishTimeD": "0001-01-01T00:00:00",
+      "Emergent": false,
+      "StartTime": "11:00",
+      "FinishTime": "12:00",
+      "IdAppointment": "0e445276cd7146178bf273e59d9dee81",
       "Room": {
         "roomTypes": 3,
         "roomId": "soba4",
@@ -130,22 +176,22 @@
       },
       "Evident": false
     },
-    "MainIssue": "a",
-    "AnamnesisDate": "2022-04-17T01:24:12.3462783+02:00",
-    "AnamnesisId": "8bee3083e18e4146917dc215585f9861",
-    "OtherSymptoms": "a",
-    "GeneralAmnesis": "a",
-    "Cns": "a",
-    "Eye": "a",
-    "Neck": "a",
-    "Mss": "a",
-    "Skin": "a",
-    "Ear": "a",
-    "Cus": "a",
-    "Infectious": "a",
-    "Ugs": "a",
-    "Respiratory": "a",
-    "Mouth": "a",
-    "Gi": "a"
+    "MainIssue": "11",
+    "AnamnesisDate": "2022-04-17T04:37:48.7122708+02:00",
+    "AnamnesisId": "a641233e627b48c5ab444b25abf0d9be",
+    "OtherSymptoms": "11",
+    "GeneralAmnesis": "11",
+    "Cns": "11",
+    "Eye": "11",
+    "Neck": "aa",
+    "Mss": "",
+    "Skin": "",
+    "Ear": "",
+    "Cus": "",
+    "Infectious": "",
+    "Ugs": "",
+    "Respiratory": "",
+    "Mouth": "",
+    "Gi": ""
   }
 }

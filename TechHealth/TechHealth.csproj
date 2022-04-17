@@ -308,6 +308,7 @@
     <Resource Include="resources\1d.png" />
     <Resource Include="resources\1e.png" />
     <Resource Include="resources\1f.png" />
+    <Content Include="Json\therapy.json" />
     <Content Include="resources\ph.png" />
     <Resource Include="resources\hospital.png" />
     <Resource Include="resources\ambulance.png" />

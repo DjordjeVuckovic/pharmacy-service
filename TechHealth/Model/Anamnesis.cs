@@ -6,7 +6,7 @@ namespace TechHealth.Model
     [NotifyPropertyChanged]
     public class Anamnesis
     {
-        public Appointment Appointment { get; set; }
+        public Appointment AnmnesisAppointment { get; set; }
         //public MainIssue MainIssue { get; set; }
         public string MainIssue { get; set; }
         public DateTime AnamnesisDate { get; set; }
