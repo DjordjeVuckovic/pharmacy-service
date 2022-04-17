@@ -208,6 +208,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Model\Anamnesis.cs" />
+    <Compile Include="Model\Substance.cs" />
     <Compile Include="Model\EmlpoymentData.cs" />
     <Compile Include="Model\MainIssue.cs" />
     <Compile Include="Model\RandomGenerator.cs" />
@@ -217,9 +218,9 @@
     <Compile Include="Repository\AnamnesisRepository.cs" />
     <Compile Include="Repository\AppointmentRepository.cs" />
     <Compile Include="Repository\DoctorRepository.cs" />
-    <Compile Include="Repository\FileHandler.cs" />
     <Compile Include="Repository\GenericRepository.cs" />
     <Compile Include="Repository\ManagerRepository.cs" />
+    <Compile Include="Repository\MedicineRepository.cs" />
     <Compile Include="Repository\PatientRepository.cs" />
     <Compile Include="Repository\RoomRepository.cs" />
     <Compile Include="Repository\SecretaryRepository.cs" />

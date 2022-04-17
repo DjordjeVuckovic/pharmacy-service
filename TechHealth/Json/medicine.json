@@ -1,2 +1,56 @@
 {
+  "4e39d97e9ef24dea899335d58c4fa534": {
+    "MedicineId": "4e39d97e9ef24dea899335d58c4fa534",
+    "Composition": [
+      {
+        "SubstanceId": "113",
+        "SubstanceName": "ibuprofen"
+      },
+      {
+        "SubstanceId": "114",
+        "SubstanceName": "laktoza"
+      },
+      {
+        "SubstanceId": "115",
+        "SubstanceName": "calcijum"
+      }
+    ],
+    "Quantity": 50,
+    "Units": "sirup",
+    "SideEffects": "/",
+    "MainSubstance": {
+      "SubstanceId": "113",
+      "SubstanceName": "ibuprofen"
+    },
+    "HarmfulRate": 0,
+    "Price": 300,
+    "MedicineName": "Brufen",
+    "Allergens": "/",
+    "Approved": true
+  },
+  "a636652d860b4fd79c9a7948cb8bad22": {
+    "MedicineId": "a636652d860b4fd79c9a7948cb8bad22",
+    "Composition": [
+      {
+        "SubstanceId": "116",
+        "SubstanceName": "paracetamol"
+      },
+      {
+        "SubstanceId": "115",
+        "SubstanceName": "calcijum"
+      }
+    ],
+    "Quantity": 70,
+    "Units": "pill",
+    "SideEffects": "/",
+    "MainSubstance": {
+      "SubstanceId": "116",
+      "SubstanceName": "paracetamol"
+    },
+    "HarmfulRate": 0,
+    "Price": 100,
+    "MedicineName": "Paracetamol Uno",
+    "Allergens": "/",
+    "Approved": false
+  }
 }
