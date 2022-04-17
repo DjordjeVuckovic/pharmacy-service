@@ -17,9 +17,10 @@
     <Grid>
         <!--WindowStyle="None"
             Background="Transparent"
-            AllowsTransparency="True"-->
+            AllowsTransparency="True"
+            CornerRadius="5"-->
 
-        <Border Background="#282a36" CornerRadius="5">
+        <Border Background="#282a36" >
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="210"/>
@@ -34,7 +35,7 @@
                     <RadioButton Height="60" Content="DashBoard" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="20" Foreground="#f8f8f2" Style="{StaticResource ResourceKey=MenuButtonTheme}" Width="210" Command="{Binding DashCommand}" />
                     <RadioButton Height="60" Content="Appointments" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="20" Foreground="#f8f8f2" Style="{StaticResource ResourceKey=MenuButtonTheme}" Width="210" Command="{Binding AppointmentCommand}" />
                     <RadioButton Height="60" Content="Medical report" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="20" Foreground="#f8f8f2" Style="{StaticResource ResourceKey=MenuButtonTheme}" Width="210" Command="{Binding RecordCommand}" />
-                    <RadioButton Height="60" Content="Patients" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="20" Foreground="#f8f8f2" Style="{StaticResource ResourceKey=MenuButtonTheme}" Width="210"/>
+                    <RadioButton Height="60" Content="Patients" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="20" Foreground="#f8f8f2" Style="{StaticResource ResourceKey=MenuButtonTheme}" Width="210" Command="{Binding PateintCommand}"/>
                     <RadioButton Height="60" Content="Medicine" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="20" Foreground="#f8f8f2" Style="{StaticResource ResourceKey=MenuButtonTheme}" Width="210" />
                     <RadioButton Height="60" Content="Account" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="20" Foreground="#f8f8f2" Style="{StaticResource ResourceKey=MenuButtonTheme}" Width="210" />
                 </StackPanel>

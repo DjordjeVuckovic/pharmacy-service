@@ -1,2 +1,46 @@
 {
+  "a6cb515f617b465c91ea919568f677d6": {
+    "TherapyId": "a6cb515f617b465c91ea919568f677d6",
+    "Patient": {
+      "Guest": false,
+      "Lbo": 0,
+      "IsBanned": false,
+      "Address": {
+        "City": "Novi Sad",
+        "StreetNumber": "21",
+        "Country": "Srbija",
+        "Street": "Puse Pusica",
+        "Postcode": 21000
+      },
+      "Name": "Dusan",
+      "Surname": "Vukovic",
+      "Email": "dusan@dusan",
+      "Jmbg": "2456",
+      "Phone": "0613411123",
+      "Employed": false,
+      "Birthday": "0001-01-01T00:00:00",
+      "Username": "dusan",
+      "Password": "dusan"
+    },
+    "Doctor": {
+      "Specialization": {
+        "IdSpecialization": 1,
+        "NameSpecialization": "Anesthesiology"
+      },
+      "FullName": "John Black",
+      "Name": "John",
+      "Surname": "Black",
+      "Email": "spec@spec.com",
+      "Jmbg": "131213121111",
+      "Phone": "06123111114",
+      "Employed": true,
+      "Birthday": "0001-01-01T00:00:00",
+      "Username": "1",
+      "Password": "1"
+    },
+    "StartDate": "2022-04-12T00:00:00",
+    "FinishDate": "2022-04-12T00:00:00",
+    "Frequency": "11",
+    "Description": "111"
+  }
 }

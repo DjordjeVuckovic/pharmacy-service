@@ -510,6 +510,52 @@
       "Username": "1",
       "Password": "1"
     },
+    "Evident": true
+  },
+  "1d7ef792634b459e9e6ff595aa7ce648": {
+    "Date": "2022-04-14T00:00:00",
+    "StartTimeD": "0001-01-01T00:00:00",
+    "FinishTimeD": "0001-01-01T00:00:00",
+    "Emergent": false,
+    "StartTime": "11",
+    "FinishTime": "12",
+    "IdAppointment": "1d7ef792634b459e9e6ff595aa7ce648",
+    "Room": {
+      "roomTypes": 1,
+      "roomId": "SOBA23",
+      "floor": 3,
+      "availability": true,
+      "Equipments": ""
+    },
+    "Patient": {
+      "Guest": false,
+      "Lbo": 0,
+      "IsBanned": false,
+      "Name": "miki",
+      "Surname": "Djuricic",
+      "Email": "dsa@adsa",
+      "Jmbg": "13456",
+      "Phone": "06105111331",
+      "Employed": false,
+      "Username": "Djura",
+      "Password": "1311"
+    },
+    "AppointmentType": 0,
+    "Doctor": {
+      "Specialization": {
+        "IdSpecialization": 1,
+        "NameSpecialization": "Anesthesiology"
+      },
+      "FullName": "John Black",
+      "Name": "John",
+      "Surname": "Black",
+      "Email": "spec@spec.com",
+      "Jmbg": "131213121111",
+      "Phone": "06123111114",
+      "Employed": true,
+      "Username": "1",
+      "Password": "1"
+    },
     "Evident": false
   }
 }
