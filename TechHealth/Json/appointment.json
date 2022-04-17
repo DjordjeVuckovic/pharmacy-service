@@ -24,6 +24,7 @@
       "Jmbg": "13456",
       "Phone": "06105111331",
       "Employed": false,
+      "Birthday": "0001-01-01T00:00:00",
       "Username": "Djura",
       "Password": "1311"
     },
@@ -43,6 +44,7 @@
       "Jmbg": "1313",
       "Phone": "0613412312332",
       "Employed": true,
+      "Birthday": "0001-01-01T00:00:00",
       "Username": "Djordje",
       "Password": "1"
     },
@@ -70,13 +72,15 @@
       "Name": "Dusan",
       "Surname": "Vukovic",
       "Jmbg": "2456",
-      "Employed": false
+      "Employed": false,
+      "Birthday": "0001-01-01T00:00:00"
     },
     "AppointmentType": 1,
     "Doctor": {
       "FullName": " ",
       "Jmbg": "1313",
-      "Employed": false
+      "Employed": false,
+      "Birthday": "0001-01-01T00:00:00"
     },
     "Evident": false
   },
@@ -102,7 +106,8 @@
       "Name": "miki",
       "Surname": "Djuricic",
       "Jmbg": "13456",
-      "Employed": false
+      "Employed": false,
+      "Birthday": "0001-01-01T00:00:00"
     },
     "AppointmentType": 0,
     "Doctor": {
@@ -124,6 +129,7 @@
       "Jmbg": "1313",
       "Phone": "0613412312332",
       "Employed": true,
+      "Birthday": "0001-01-01T00:00:00",
       "Username": "Djordje",
       "Password": "1"
     },
@@ -151,13 +157,15 @@
       "Name": "Dusan",
       "Surname": "Vukovic",
       "Jmbg": "2456",
-      "Employed": false
+      "Employed": false,
+      "Birthday": "0001-01-01T00:00:00"
     },
     "AppointmentType": 1,
     "Doctor": {
       "FullName": " ",
       "Jmbg": "1313",
-      "Employed": false
+      "Employed": false,
+      "Birthday": "0001-01-01T00:00:00"
     },
     "Evident": false
   },
@@ -183,13 +191,15 @@
       "Name": "miki",
       "Surname": "Djuricic",
       "Jmbg": "13456",
-      "Employed": false
+      "Employed": false,
+      "Birthday": "0001-01-01T00:00:00"
     },
     "AppointmentType": 1,
     "Doctor": {
       "FullName": " ",
       "Jmbg": "1313",
-      "Employed": false
+      "Employed": false,
+      "Birthday": "0001-01-01T00:00:00"
     },
     "Evident": false
   },
@@ -220,6 +230,7 @@
       "Jmbg": "1313",
       "Phone": "0613412312332",
       "Employed": true,
+      "Birthday": "0001-01-01T00:00:00",
       "Username": "Djordje",
       "Password": "1"
     },
@@ -252,6 +263,7 @@
       "Jmbg": "1313",
       "Phone": "0613412312332",
       "Employed": true,
+      "Birthday": "0001-01-01T00:00:00",
       "Username": "Djordje",
       "Password": "1"
     },
@@ -284,6 +296,7 @@
       "Jmbg": "2315",
       "Phone": "061341",
       "Employed": true,
+      "Birthday": "0001-01-01T00:00:00",
       "Username": "doctor",
       "Password": "doctor"
     },
@@ -316,6 +329,7 @@
       "Jmbg": "1313",
       "Phone": "0613412312332",
       "Employed": true,
+      "Birthday": "0001-01-01T00:00:00",
       "Username": "Djordje",
       "Password": "1"
     },
@@ -353,6 +367,7 @@
       "Jmbg": "2456",
       "Phone": "0613411123",
       "Employed": false,
+      "Birthday": "0001-01-01T00:00:00",
       "Username": "dusan",
       "Password": "dusan"
     },
@@ -369,6 +384,7 @@
       "Jmbg": "131213121111",
       "Phone": "06123111114",
       "Employed": true,
+      "Birthday": "0001-01-01T00:00:00",
       "Username": "1",
       "Password": "1"
     },
@@ -399,6 +415,7 @@
       "Jmbg": "13456",
       "Phone": "06105111331",
       "Employed": false,
+      "Birthday": "0001-01-01T00:00:00",
       "Username": "Djura",
       "Password": "1311"
     },
@@ -415,6 +432,7 @@
       "Jmbg": "131213121111",
       "Phone": "06123111114",
       "Employed": true,
+      "Birthday": "0001-01-01T00:00:00",
       "Username": "1",
       "Password": "1"
     },
@@ -445,6 +463,7 @@
       "Jmbg": "13456",
       "Phone": "06105111331",
       "Employed": false,
+      "Birthday": "0001-01-01T00:00:00",
       "Username": "Djura",
       "Password": "1311"
     },
@@ -461,6 +480,7 @@
       "Jmbg": "131213121111",
       "Phone": "06123111114",
       "Employed": true,
+      "Birthday": "0001-01-01T00:00:00",
       "Username": "1",
       "Password": "1"
     },
@@ -491,6 +511,7 @@
       "Jmbg": "13456",
       "Phone": "06105111331",
       "Employed": false,
+      "Birthday": "0001-01-01T00:00:00",
       "Username": "Djura",
       "Password": "1311"
     },
@@ -507,6 +528,7 @@
       "Jmbg": "131213121111",
       "Phone": "06123111114",
       "Employed": true,
+      "Birthday": "0001-01-01T00:00:00",
       "Username": "1",
       "Password": "1"
     },
@@ -537,6 +559,7 @@
       "Jmbg": "13456",
       "Phone": "06105111331",
       "Employed": false,
+      "Birthday": "0001-01-01T00:00:00",
       "Username": "Djura",
       "Password": "1311"
     },
@@ -553,6 +576,110 @@
       "Jmbg": "131213121111",
       "Phone": "06123111114",
       "Employed": true,
+      "Birthday": "0001-01-01T00:00:00",
+      "Username": "1",
+      "Password": "1"
+    },
+    "Evident": false
+  },
+  "8631cbffe5f5421c8cc48374e402762c": {
+    "Date": "2022-04-13T00:00:00",
+    "StartTimeD": "0001-01-01T00:00:00",
+    "FinishTimeD": "0001-01-01T00:00:00",
+    "Emergent": false,
+    "StartTime": "11",
+    "FinishTime": "12",
+    "IdAppointment": "8631cbffe5f5421c8cc48374e402762c",
+    "Room": {
+      "roomTypes": 1,
+      "roomId": "SOBA23",
+      "floor": 3,
+      "availability": true,
+      "Equipments": ""
+    },
+    "Patient": {
+      "Guest": false,
+      "Lbo": 0,
+      "IsBanned": false,
+      "Name": "miki",
+      "Surname": "Djuricic",
+      "Email": "dsa@adsa",
+      "Jmbg": "13456",
+      "Phone": "06105111331",
+      "Employed": false,
+      "Birthday": "0001-01-01T00:00:00",
+      "Username": "Djura",
+      "Password": "1311"
+    },
+    "AppointmentType": 1,
+    "Doctor": {
+      "Specialization": {
+        "IdSpecialization": 1,
+        "NameSpecialization": "Anesthesiology"
+      },
+      "FullName": "John Black",
+      "Name": "John",
+      "Surname": "Black",
+      "Email": "spec@spec.com",
+      "Jmbg": "131213121111",
+      "Phone": "06123111114",
+      "Employed": true,
+      "Birthday": "0001-01-01T00:00:00",
+      "Username": "1",
+      "Password": "1"
+    },
+    "Evident": false
+  },
+  "e75996572e2146a5b82204081cb5b0a5": {
+    "Date": "2022-04-06T00:00:00",
+    "StartTimeD": "0001-01-01T00:00:00",
+    "FinishTimeD": "0001-01-01T00:00:00",
+    "Emergent": false,
+    "StartTime": "11",
+    "FinishTime": "12",
+    "IdAppointment": "e75996572e2146a5b82204081cb5b0a5",
+    "Room": {
+      "roomTypes": 1,
+      "roomId": "SOBA23",
+      "floor": 3,
+      "availability": true,
+      "Equipments": ""
+    },
+    "Patient": {
+      "Guest": false,
+      "Lbo": 0,
+      "IsBanned": false,
+      "Address": {
+        "City": "Novi Sad",
+        "StreetNumber": "21",
+        "Country": "Srbija",
+        "Street": "Puse Pusica",
+        "Postcode": 21000
+      },
+      "Name": "Dusan",
+      "Surname": "Vukovic",
+      "Email": "dusan@dusan",
+      "Jmbg": "2456",
+      "Phone": "0613411123",
+      "Employed": false,
+      "Birthday": "0001-01-01T00:00:00",
+      "Username": "dusan",
+      "Password": "dusan"
+    },
+    "AppointmentType": 0,
+    "Doctor": {
+      "Specialization": {
+        "IdSpecialization": 1,
+        "NameSpecialization": "Anesthesiology"
+      },
+      "FullName": "John Black",
+      "Name": "John",
+      "Surname": "Black",
+      "Email": "spec@spec.com",
+      "Jmbg": "131213121111",
+      "Phone": "06123111114",
+      "Employed": true,
+      "Birthday": "0001-01-01T00:00:00",
       "Username": "1",
       "Password": "1"
     },

@@ -1,4 +1,5 @@
 ﻿using System.Collections.ObjectModel;
+using System.Windows.Controls;
 using TechHealth.Core;
 using TechHealth.DoctorView.View;
 using TechHealth.DoctorView.Windows;
@@ -10,7 +11,7 @@ namespace TechHealth.DoctorView.ViewModel
     public class PatientsViewModel:ViewModelBase
     {
         public RelayCommand TherapyCommand { get; set; }
-        public RelayCommand RecordCommand { get; set; }
+        public RelayCommand MedicineRecordCommand { get; set; }
         private ObservableCollection<Patient> patients;
         private Patient selectedItem;
         private TherapyWindow therapyWindow;
@@ -55,6 +56,7 @@ namespace TechHealth.DoctorView.ViewModel
         {
             patients = new ObservableCollection<Patient>(PatientRepository.Instance.DictionaryValuesToList());
             TherapyCommand= new RelayCommand(param => Execute(), param => CanExecute());
+            MedicineRecordCommand = new RelayCommand(param => Execute1(), param => CanExecute1());
         }
 
         private bool CanExecute()
@@ -71,6 +73,20 @@ namespace TechHealth.DoctorView.ViewModel
         {
             therapyWindow = new TherapyWindow(selectedItem);
             therapyWindow.ShowDialog();
+        }
+        private bool CanExecute1()
+        {
+            if (selectedItem == null)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        private void Execute1()
+        {
+           // ContentControl control = new MedicalRecordView();
         }
     }
 }

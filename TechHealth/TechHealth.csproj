@@ -171,6 +171,7 @@
     </Compile>
     <Compile Include="DoctorView\ViewModel\DashBoardViewModel.cs" />
     <Compile Include="DoctorView\ViewModel\MainViewModel.cs" />
+    <Compile Include="DoctorView\ViewModel\MedicineViewModel.cs" />
     <Compile Include="DoctorView\ViewModel\PatientsViewModel.cs" />
     <Compile Include="DoctorView\ViewModel\RecordViewModel.cs" />
     <Compile Include="DoctorView\ViewModel\TherapyViewModel.cs" />
@@ -192,6 +193,9 @@
     </Compile>
     <Compile Include="DoctorView\View\RecordView.xaml.cs">
       <DependentUpon>RecordView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DoctorView\Windows\PrescribtionWindow.xaml.cs">
+      <DependentUpon>PrescribtionWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="DoctorView\Windows\TherapyWindow.xaml.cs">
       <DependentUpon>TherapyWindow.xaml</DependentUpon>
@@ -222,6 +226,7 @@
     <Compile Include="Repository\ManagerRepository.cs" />
     <Compile Include="Repository\MedicineRepository.cs" />
     <Compile Include="Repository\PatientRepository.cs" />
+    <Compile Include="Repository\PrescribeMedicineRepository.cs" />
     <Compile Include="Repository\RoomRepository.cs" />
     <Compile Include="Repository\SecretaryRepository.cs" />
     <Compile Include="Repository\SpecializationRepository.cs" />
@@ -313,6 +318,7 @@
     <Content Include="Json\manager.json" />
     <Content Include="Json\medicine.json" />
     <Content Include="Json\patient.json" />
+    <Content Include="Json\prescription.json" />
     <Content Include="Json\secretary.json" />
     <Content Include="Json\specialization.json" />
     <Resource Include="resources\appoint.png" />
@@ -360,6 +366,7 @@
     <Page Include="DoctorView\View\MedicalRecordView.xaml" />
     <Page Include="DoctorView\View\PatientView.xaml" />
     <Page Include="DoctorView\View\RecordView.xaml" />
+    <Page Include="DoctorView\Windows\PrescribtionWindow.xaml" />
     <Page Include="DoctorView\Windows\TherapyWindow.xaml" />
     <Page Include="LoginWindow.xaml" />
     <Page Include="MainWindow.xaml">
