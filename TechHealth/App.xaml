@@ -8,6 +8,8 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Theme/MenuStyle.xaml"/>
                 <ResourceDictionary Source="Theme/SearchTheme.xaml"/>
+                <ResourceDictionary Source="Theme/TextBoxUsername.xaml"/>
+                <ResourceDictionary Source="Theme/TextBoxPass.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
          

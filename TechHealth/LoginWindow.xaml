@@ -13,6 +13,7 @@
     <!--
     <DataTemplate DataType="{x:Type viewModel:HomeViewModel}"></DataTemplate>
     -->
+ 
     <Grid Background="#1b4141">
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
@@ -31,14 +32,27 @@
 
                     <StackPanel Orientation="Vertical" VerticalAlignment="Center">
 
-                        <TextBox VerticalAlignment="Center" Text="Username" x:Name="Username" Width="250"
-                                 Background="{x:Null}" Height="35" Margin="0,0,0,15" FontSize="14" FontFamily="Roboto" />
-                        <PasswordBox Password="Password" x:Name="Password" Width="250" Background="{x:Null}"
-                                     Height="35" VerticalAlignment="Top" Margin="0,0,0,33" FontSize="14"
-                                     FontFamily="Roboto" Foreground="White" 
-                                     VerticalContentAlignment="Center" Padding="5,0,0,0" />
-                        <Button Content="Sign in" Width="200" Height="45" Margin="98.4,0" Background="#FFE0E0FF" Click="ButtonBase_OnClick" />
-
+                        <TextBox VerticalContentAlignment="Center"
+                                 x:Name="Username"
+                                 Width="250"
+                                 Height="40"
+                                 HorizontalAlignment="Left"
+                                 Margin="5"                     
+                                 Style="{StaticResource ModernTextBox}"/>
+                        <PasswordBox
+                                 Password="password"
+                                 x:Name="Password"
+                                 Width="250"
+                                 Height="40"
+                                 HorizontalAlignment="Left"
+                                 Margin="5" />
+                        <Button Content="Sign in" 
+                                Width="200" 
+                                Height="45" 
+                                Margin="0,0, 0, 0" 
+                                Background="LightGray"
+                                Click="ButtonBase_OnClick"/>
+                              
 
                     </StackPanel>
 
@@ -50,7 +64,7 @@
 
         <Grid Grid.Column="1">
             <Grid>
-                <av:Image Source="resources/caduceus_logo.png" Stretch="Fill"/>
+                <av:Image Source="resources/caduceus_logo.png" Stretch="Fill" Margin="0,0,0,20"/>
             </Grid>
         </Grid>
 

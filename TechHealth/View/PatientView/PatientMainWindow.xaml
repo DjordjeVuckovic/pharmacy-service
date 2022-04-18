@@ -12,7 +12,7 @@
         <Button Content="New Appointment" HorizontalAlignment="Left" Margin="163,355,0,0" VerticalAlignment="Top" Width="120" Height="36" Click="Button_Click_Add"/>
         <Button Content="Update Appointment" HorizontalAlignment="Left" Margin="391,355,0,0" VerticalAlignment="Top" Width="120" Height="36" Click="Button_Click_Update"/>
         <Button Content="Delete Appointment" HorizontalAlignment="Left" Margin="610,355,0,0" VerticalAlignment="Top" Width="120" Height="36" Click="Button_Click_Delete"/>
-        <ListView Name="lvAppointments" HorizontalAlignment="Left" Height="321" Margin="163,10,0,0" VerticalAlignment="Top" Width="567">
+        <ListView Name="lvAppointments" HorizontalAlignment="Left" Height="321" Margin="163,10,0,0" VerticalAlignment="Top" Width="567" >
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Date" Width="150" DisplayMemberBinding="{Binding Date}" />
