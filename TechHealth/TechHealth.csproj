@@ -236,6 +236,7 @@
     <Compile Include="Service\DoctorService.cs" />
     <Compile Include="Service\PatientService.cs" />
     <Compile Include="Service\RoomService.cs" />
+    <Compile Include="Theme\DusanDateTime.cs" />
     <Compile Include="View\ManagerView\AddForm.xaml.cs">
       <DependentUpon>AddForm.xaml</DependentUpon>
     </Compile>
@@ -407,12 +408,8 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-
-    <Folder Include="JsonConverters\" />
-
     <Folder Include="Fonts\" />
-    <Folder Include="View\PatientView\" />
-
+    <Folder Include="JsonConverters\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\System.Text.Json.7.0.0-preview.2.22152.2\build\System.Text.Json.targets" Condition="Exists('packages\System.Text.Json.7.0.0-preview.2.22152.2\build\System.Text.Json.targets')" />

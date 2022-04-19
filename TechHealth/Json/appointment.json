@@ -487,7 +487,7 @@
     "Evident": true
   },
   "09b455935f624e899aa52e691e14552a": {
-    "Date": "2022-04-05T00:00:00",
+    "Date": "2022-04-07T00:00:00",
     "StartTimeD": "0001-01-01T00:00:00",
     "FinishTimeD": "0001-01-01T00:00:00",
     "Emergent": false,
@@ -518,18 +518,25 @@
     "AppointmentType": 0,
     "Doctor": {
       "Specialization": {
-        "IdSpecialization": 1,
-        "NameSpecialization": "Anesthesiology"
+        "IdSpecialization": 0,
+        "NameSpecialization": "General"
       },
-      "FullName": "John Black",
-      "Name": "John",
-      "Surname": "Black",
-      "Email": "spec@spec.com",
-      "Jmbg": "131213121111",
-      "Phone": "06123111114",
+      "FullName": "Djordje Vuckovic",
+      "Address": {
+        "City": "Novi Sad",
+        "StreetNumber": "21",
+        "Country": "Srbija",
+        "Street": "Puse Pusica",
+        "Postcode": 21000
+      },
+      "Name": "Djordje",
+      "Surname": "Vuckovic",
+      "Email": "doctor@doctor11",
+      "Jmbg": "1313",
+      "Phone": "0613412312332",
       "Employed": true,
       "Birthday": "0001-01-01T00:00:00",
-      "Username": "1",
+      "Username": "Djordje",
       "Password": "1"
     },
     "Evident": true
@@ -681,6 +688,39 @@
       "Employed": true,
       "Birthday": "0001-01-01T00:00:00",
       "Username": "1",
+      "Password": "1"
+    },
+    "Evident": false
+  },
+  "8c2d207af6134bfe9714ecc075f25f6f": {
+    "Date": "2022-03-30T00:00:00",
+    "StartTimeD": "0001-01-01T00:00:00",
+    "FinishTimeD": "0001-01-01T00:00:00",
+    "Emergent": false,
+    "StartTime": "da",
+    "IdAppointment": "8c2d207af6134bfe9714ecc075f25f6f",
+    "AppointmentType": 0,
+    "Doctor": {
+      "Specialization": {
+        "IdSpecialization": 0,
+        "NameSpecialization": "General"
+      },
+      "FullName": "Djordje Vuckovic",
+      "Address": {
+        "City": "Novi Sad",
+        "StreetNumber": "21",
+        "Country": "Srbija",
+        "Street": "Puse Pusica",
+        "Postcode": 21000
+      },
+      "Name": "Djordje",
+      "Surname": "Vuckovic",
+      "Email": "doctor@doctor11",
+      "Jmbg": "1313",
+      "Phone": "0613412312332",
+      "Employed": true,
+      "Birthday": "0001-01-01T00:00:00",
+      "Username": "Djordje",
       "Password": "1"
     },
     "Evident": false

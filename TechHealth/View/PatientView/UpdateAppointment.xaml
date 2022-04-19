@@ -11,18 +11,16 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Label Content="Date:" HorizontalAlignment="Left" Margin="39,78,0,0" VerticalAlignment="Top" FontSize="14" Height="29" Width="42"/>
-        <Label Content="Time:" HorizontalAlignment="Left" Margin="39,137,0,0" VerticalAlignment="Top" FontSize="14" Height="29" Width="43"/>
-        <Label Content="Type:" HorizontalAlignment="Left" Margin="39,204,0,186" VerticalAlignment="Center" FontSize="14" Height="29" Width="42"/>
-        <Label Content="Doctor:" HorizontalAlignment="Left" Margin="39,268,0,0" VerticalAlignment="Top" FontSize="14" Height="29" Width="55"/>
+        <Label Content="Date:" HorizontalAlignment="Left" Margin="22,78,0,0" VerticalAlignment="Top" FontSize="14" Height="29" Width="42"/>
+        <Label Content="Doctor:" HorizontalAlignment="Left" Margin="22,183,0,0" VerticalAlignment="Top" FontSize="14" Height="29" Width="55"/>
         <DatePicker HorizontalAlignment="Left" Margin="0,78,0,0" VerticalAlignment="Top" Width="147" Height="29" Background="#FF42C7DC" Foreground="#FFD12A2A" FontSize="14" x:Name="Date" Grid.Column="1"/>
-        <TextBox HorizontalAlignment="Left" Height="29" Margin="0,137,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="147" x:Name="TxtTime" Grid.Column="1"/>
-        <TextBox HorizontalAlignment="Left" Margin="0,204,0,0" VerticalAlignment="Top" Width="147" Height="29" x:Name="TxtType" Grid.Column="1" IsReadOnly = "True" />
-        <ComboBox HorizontalAlignment="Left" Margin="0,268,0,0" VerticalAlignment="Top" Width="147" Height="29" x:Name="CbDoctor" DisplayMemberPath="FullName" Grid.Column="1" />
+        <ComboBox HorizontalAlignment="Left" Margin="0,183,0,0" VerticalAlignment="Top" Width="147" Height="29" x:Name="CbDoctor" DisplayMemberPath="FullName" Grid.Column="1" />
 
         <Button Content="Confirm" HorizontalAlignment="Left" Margin="91,357,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal" Height="30" Width="70" RenderTransformOrigin="-0.291,0.467" Background="#FF42C130" Click="Button_Click_Confirm" />
         <Button Content="Close" HorizontalAlignment="Left" Margin="36,357,0,0" VerticalAlignment="Top" Width="70" Height="30" FontSize="16" Background="#FFEA9292" Click="Button_Click_Close" Grid.Column="1" />
         <Label Content="Update appointment" HorizontalContentAlignment="Center" Margin="91,10,90,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="18" Grid.ColumnSpan="2" Height="34"/>
+        <Label Content="Appointments:" HorizontalAlignment="Left" Margin="22,279,0,0" VerticalAlignment="Top" FontSize="14" Height="29" Width="164"/>
+        <ComboBox HorizontalAlignment="Left" Margin="0,279,0,0" VerticalAlignment="Top" Width="147" Height="29" x:Name="CbAppointment" DisplayMemberPath="FullName" Grid.Column="1" />
 
     </Grid>
 </Window>

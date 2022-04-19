@@ -29,9 +29,7 @@ namespace TechHealth.View.PatientView       //dodati IDappointment
 
         public AddAppointment()
         {
-
             InitializeComponent();
-            TxtType.Text = nameof(AppointmentType.examination);
             doctors = DoctorRepository.Instance.DictionaryValuesToList();
             CbDoctor.ItemsSource = doctors;
         }
@@ -47,15 +45,12 @@ namespace TechHealth.View.PatientView       //dodati IDappointment
             appointment = new Appointment();
 
             appointment.Date = DateTime.Parse(Date.Text);
-            appointment.StartTime = TxtTime.Text;
-            appointment.AppointmentType = AppointmentType.examination;
             appointment.Doctor = doctors[CbDoctor.SelectedIndex]; 
             appointment.IdAppointment = Guid.NewGuid().ToString("N");
 
-            appointmentController.Create(appointment.Date, appointment.StartTime, appointment.AppointmentType, appointment.Doctor, appointment.IdAppointment);
 
-
-            //AppointmentRepository.Instance.Create(appointment); 
+            //appointmentController.Create(appointment.Date, appointment.StartTime, appointment.AppointmentType, appointment.Doctor, appointment.IdAppointment);
+            AppointmentRepository.Instance.Create(appointment); 
             this.Close();
 
         }
