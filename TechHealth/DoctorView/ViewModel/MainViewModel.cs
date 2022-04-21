@@ -15,6 +15,8 @@ namespace TechHealth.DoctorView.ViewModel
         public AppointmentsView AppointmentsView { get; set; }
         public PatientView PatientsView { get; set; }
         public RelayCommand PateintCommand { get; set; }
+        private MedicineView MedicineView { get; set; }
+        public RelayCommand MedicineCommand { get; set; }
         
         
         public object CurrentView
@@ -51,21 +53,14 @@ namespace TechHealth.DoctorView.ViewModel
                 }
             );
         }*/
-        private static MainViewModel _instance;
-
-        public static MainViewModel GetInstance()
-        {
-            return _instance;
-        }
-
         public MainViewModel(string doctorJmbg)
         {
-            _instance = this;
             DoctorId = doctorJmbg;
             DashBoardViewModel = new DashBoardView();
             RecordView = new RecordView(doctorJmbg);
             AppointmentsView = new AppointmentsView(doctorJmbg);
             PatientsView = new PatientView();
+            MedicineView = new MedicineView();
 
             CurrentView = DashBoardViewModel;
             DashCommand = new RelayCommand(o =>
@@ -84,8 +79,12 @@ namespace TechHealth.DoctorView.ViewModel
                 }
             );
             PateintCommand = new RelayCommand(o =>
+            {
+                CurrentView = PatientsView;
+            });
+            MedicineCommand= new RelayCommand(o =>
                 {
-                    CurrentView = PatientsView;
+                    CurrentView = MedicineView;
                 }
             );
            

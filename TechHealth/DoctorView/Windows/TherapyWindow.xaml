@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:TechHealth.DoctorView.Windows"
         xmlns:viewModel="clr-namespace:TechHealth.DoctorView.ViewModel"
         mc:Ignorable="d"
-        Title="TherapyWindow" Height="450" Width="350">
+        Title="TherapyWindow" Height="450" Width="600">
     <Window.DataContext>
         <viewModel:TherapyViewModel/>
     </Window.DataContext>
@@ -38,15 +38,15 @@
             </Grid.RowDefinitions>
 
             <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="240"/>
+                <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             
             <Label Content="Start Date :" HorizontalAlignment="Left" Margin="10,0,10,0" Grid.Column="0" Grid.Row="0" VerticalAlignment="Center"/>
             <Label Content="Finish Date:" HorizontalAlignment="Left" Margin="10,0,10,0" Grid.Column="0" Grid.Row="1" VerticalAlignment="Center"/>
             <Label Content="Frequency:" HorizontalAlignment="Left" Margin="10,0,10,0" Grid.Column="0" Grid.Row="2" VerticalAlignment="Center"/>
             <Label Content="Description:" HorizontalAlignment="Left" Margin="10,0,10,0" Grid.Column="0" Grid.Row="3" VerticalAlignment="Center"/>
-            <DatePicker x:Name="DatePicker" Grid.Row="0" Grid.Column="1" Margin="10,0,10,0" VerticalAlignment="Center"></DatePicker>
+            <DatePicker x:Name="DatePicker" Grid.Row="0" Grid.Column="1" Margin="10,0,10,0" VerticalAlignment="Center" ></DatePicker>
             <DatePicker x:Name="DatePicker1" Grid.Row="1" Grid.Column="1" Margin="10,0,10,0" VerticalAlignment="Center"></DatePicker>
             <TextBox x:Name="TextBox" Grid.Row="2" Grid.Column="1" Margin="10,0,10,0" VerticalAlignment="Center"></TextBox>
             <TextBox x:Name="TextBox1" Grid.Row="3" Grid.Column="1" Margin="10,0,10,0" ></TextBox>

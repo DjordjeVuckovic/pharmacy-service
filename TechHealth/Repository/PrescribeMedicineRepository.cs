@@ -4,7 +4,7 @@ namespace TechHealth.Repository
 {
     public class PrescribeMedicineRepository:GenericRepository<string,Prescription>
     {
-        private static PrescribeMedicineRepository instance;
+        private static readonly PrescribeMedicineRepository instance= new PrescribeMedicineRepository();
         static PrescribeMedicineRepository()
         {
         }

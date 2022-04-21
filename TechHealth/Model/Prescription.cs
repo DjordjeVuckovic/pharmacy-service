@@ -11,10 +11,11 @@ namespace TechHealth.Model
    {
       public string PrescriptionId { get; set; }
       public Medicine Medicine{ get; set; }
-      public string Quantity{ get; set; }
+      public string Frequency{ get; set; }
       public string SideEffects{ get; set; }
       public string Usage{ get; set; }
-      public DateTime PrescriptionDate { get; set; } 
+      public DateTime StartDate { get; set; }
+      public DateTime FinishDate { get; set; } 
       
       public Doctor Doctor{ get; set; }
       public Patient Patient{ get; set; }

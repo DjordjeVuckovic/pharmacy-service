@@ -188,14 +188,17 @@
     <Compile Include="DoctorView\View\MedicalRecordView.xaml.cs">
       <DependentUpon>MedicalRecordView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DoctorView\View\MedicineView.xaml.cs">
+      <DependentUpon>MedicineView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DoctorView\View\PatientView.xaml.cs">
       <DependentUpon>PatientView.xaml</DependentUpon>
     </Compile>
     <Compile Include="DoctorView\View\RecordView.xaml.cs">
       <DependentUpon>RecordView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DoctorView\Windows\PrescribtionWindow.xaml.cs">
-      <DependentUpon>PrescribtionWindow.xaml</DependentUpon>
+    <Compile Include="DoctorView\Windows\PrescriptionWindow.xaml.cs">
+      <DependentUpon>PrescriptionWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="DoctorView\Windows\TherapyWindow.xaml.cs">
       <DependentUpon>TherapyWindow.xaml</DependentUpon>
@@ -364,9 +367,10 @@
     <Page Include="DoctorView\View\AppointmentsView.xaml" />
     <Page Include="DoctorView\View\DashBoardView.xaml" />
     <Page Include="DoctorView\View\MedicalRecordView.xaml" />
+    <Page Include="DoctorView\View\MedicineView.xaml" />
     <Page Include="DoctorView\View\PatientView.xaml" />
     <Page Include="DoctorView\View\RecordView.xaml" />
-    <Page Include="DoctorView\Windows\PrescribtionWindow.xaml" />
+    <Page Include="DoctorView\Windows\PrescriptionWindow.xaml" />
     <Page Include="DoctorView\Windows\TherapyWindow.xaml" />
     <Page Include="LoginWindow.xaml" />
     <Page Include="MainWindow.xaml">

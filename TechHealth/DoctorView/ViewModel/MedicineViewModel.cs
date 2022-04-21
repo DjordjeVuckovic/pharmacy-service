@@ -11,7 +11,7 @@ namespace TechHealth.DoctorView.ViewModel
         public RelayCommand PrescribeCommand { get; set; }
         private ObservableCollection<Medicine> medicines;
         private Medicine selectedItem;
-        private TherapyWindow therapyWindow;
+        private PrescriptionWindow prescriptionWindow;
         public Medicine SelectedItem
         {
             get
@@ -41,13 +41,12 @@ namespace TechHealth.DoctorView.ViewModel
         public MedicineViewModel()
         {
             medicines = new ObservableCollection<Medicine>(MedicineRepository.Instance.DictionaryValuesToList());
-            //TherapyCommand= new RelayCommand(param => Execute(), param => CanExecute());
-            //MedicineRecordCommand = new RelayCommand(param => Execute1(), param => CanExecute1());
+            PrescribeCommand= new RelayCommand(param => Execute(), param => CanExecute());
         }
 
         private bool CanExecute()
         {
-            if (selectedItem == null)
+            if (selectedItem == null || !SelectedItem.Approved)
             {
                 return false;
             }
@@ -57,17 +56,8 @@ namespace TechHealth.DoctorView.ViewModel
 
         private void Execute()
         {
-            //therapyWindow = new TherapyWindow(selectedItem);
-            therapyWindow.ShowDialog();
-        }
-        private bool CanExecute1()
-        {
-            if (selectedItem == null)
-            {
-                return false;
-            }
-
-            return true;
+            prescriptionWindow = new PrescriptionWindow(selectedItem);
+            prescriptionWindow.ShowDialog();
         }
     }
 }
