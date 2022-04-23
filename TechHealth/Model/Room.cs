@@ -12,12 +12,12 @@ namespace TechHealth.Model
     [NotifyPropertyChanged]
     public class Room
     {
-        public RoomTypes roomTypes { get; set; }
+        public RoomTypes RoomTypes { get; set; }
         public string roomId { get; set; }
         public int floor { get; set; }
         public bool availability { get; set; }
 
-        private List<Equipment> equipment = new List<Equipment>();
+        public List<Equipment> equipment = new List<Equipment>();
 
         public string Equipments
         {
@@ -32,7 +32,7 @@ namespace TechHealth.Model
             equipment.Add(eq);
         }
 
-        public string ToString()
+        public override string ToString()
         {
             string str = "";
             foreach (Equipment eq in equipment)

@@ -1,9 +1,8 @@
-﻿<Window x:Class="TechHealth.View.ManagerView.ManagerMainWindow"
+﻿<Window x:Class="TechHealth.View.ManagerView.CRUDRooms.RoomWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:TechHealth.View.ManagerView"
         mc:Ignorable="d"
         Title="ManagerMainWindow" Height="450" Width="800">
     <Grid Background="LightGreen">
@@ -13,13 +12,13 @@
         <Button Content="View/Modify" HorizontalAlignment="Left" Margin="446,14,0,0" VerticalAlignment="Top" Height="30" Width="80" Click="Button_Click_View"/>
         <Button Content="Delete" HorizontalAlignment="Left" Margin="630,14,0,0" VerticalAlignment="Top" Height="30" Width="80" Click="Button_Click_Delete"/>
 
-        <ListView Margin="240,72,77,44" Name="lvUsers">
+        <ListView Margin="240,72,77,44" Name="lvUsers" ItemsSource="{Binding Rooms}">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="ID" Width="120" DisplayMemberBinding="{Binding roomId}" />
                     <GridViewColumn Header="Floor" Width="50" DisplayMemberBinding="{Binding floor}" />
                     <GridViewColumn Header="Availability" Width="150" DisplayMemberBinding="{Binding availability}" />
-                    <GridViewColumn Header="Type" Width="150" DisplayMemberBinding="{Binding roomTypes}" />
+                    <GridViewColumn Header="Type" Width="150" DisplayMemberBinding="{Binding RoomTypes}" />
                 </GridView>
             </ListView.View>
         </ListView>

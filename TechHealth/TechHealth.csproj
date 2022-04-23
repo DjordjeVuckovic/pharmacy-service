@@ -15,6 +15,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <ApplicationIcon>favicon.ico</ApplicationIcon>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -203,15 +204,23 @@
     <Compile Include="Service\DoctorService.cs" />
     <Compile Include="Service\PatientService.cs" />
     <Compile Include="Service\RoomService.cs" />
-    <Compile Include="View\ManagerView\AddForm.xaml.cs">
+    <Compile Include="View\ManagerView\CRUDRooms\AddForm.xaml.cs">
       <DependentUpon>AddForm.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\ManagerView\ManagerMainWindow.xaml.cs">
-      <DependentUpon>ManagerMainWindow.xaml</DependentUpon>
+    <Compile Include="View\ManagerView\CRUDRooms\RoomWindow.xaml.cs">
+      <DependentUpon>RoomWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\ManagerView\UpdateForm.xaml.cs">
+    <Compile Include="View\ManagerView\CRUDRooms\UpdateForm.xaml.cs">
       <DependentUpon>UpdateForm.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\ManagerView\VieW\HomeView.xaml.cs">
+      <DependentUpon>HomeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ManagerView\MainManagerWindow.xaml.cs">
+      <DependentUpon>MainManagerWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ManagerView\ViewModel\HomeViewModel.cs" />
+    <Compile Include="View\ManagerView\ViewModel\MainVM.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\Address.cs" />
@@ -331,15 +340,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\ManagerView\AddForm.xaml">
+    <Page Include="View\ManagerView\CRUDRooms\AddForm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\ManagerView\ManagerMainWindow.xaml">
+    <Page Include="View\ManagerView\CRUDRooms\RoomWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\ManagerView\UpdateForm.xaml">
+    <Page Include="View\ManagerView\CRUDRooms\UpdateForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ManagerView\VieW\HomeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ManagerView\MainManagerWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

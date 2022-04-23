@@ -14,7 +14,7 @@ using System.Windows.Shapes;
 using TechHealth.Model;
 using TechHealth.Controller;
 
-namespace TechHealth.View.ManagerView
+namespace TechHealth.View.ManagerView.CRUDRooms
 {
     public partial class AddForm : Window
     {
@@ -71,12 +71,29 @@ namespace TechHealth.View.ManagerView
 
             room.roomId = TxtRoomId.Text;
             room.floor = StringToFloor(CbFloor.Text);
-            room.roomTypes = StringToRoomType(CbType.Text);
+            room.RoomTypes = StringToRoomType(CbType.Text);
             room.availability = StringToAvailability(CbAvailability.Text);
+            room.equipment = new List<Equipment>
+                {
+                    new Equipment
+                    {
+                        name = "bandazer",
+                        id = "1",
+                        type = "potrosna oprema",
+                        quantity = 30
+                    },
 
-            roomController.Create(room.roomId, room.floor, room.availability, room.roomTypes);
+                    new Equipment
+                    {
+                        name = "gaze",
+                        id = "2",
+                        type = "potrosna oprema",
+                        quantity = 80
+                    },
+                };
 
-            //ManagerMainWindow mmw = new ManagerMainWindow().Show();
+            //roomController.Create(room.roomId, room.floor, room.availability, room.RoomTypes);
+            roomController.Create(room);
 
             this.Close();
         }       

@@ -1,51 +1,56 @@
 {
   "soba3": {
-    "roomTypes": 3,
+    "RoomTypes": 1,
     "roomId": "soba3",
     "floor": 2,
-    "availability": false,
     "Equipments": ""
   },
   "soba4": {
-    "roomTypes": 3,
+    "RoomTypes": 2,
     "roomId": "soba4",
     "floor": 3,
     "availability": true,
     "Equipments": ""
   },
   "SOBA23": {
-    "roomTypes": 1,
     "roomId": "SOBA23",
     "floor": 3,
     "availability": true,
     "Equipments": ""
   },
   "sobicaMALA": {
-    "roomTypes": 2,
+    "RoomTypes": 3,
     "roomId": "sobicaMALA",
     "floor": 2,
-    "availability": false,
     "Equipments": ""
   },
   "SOBA1234": {
-    "roomTypes": 3,
     "roomId": "SOBA1234",
     "floor": 2,
-    "availability": false,
     "Equipments": ""
   },
   "adsas": {
-    "roomTypes": 3,
+    "RoomTypes": 1,
     "roomId": "adsas",
     "floor": 1,
-    "availability": false,
     "Equipments": ""
   },
-  "1312": {
-    "roomTypes": 3,
-    "roomId": "1312",
+  "bubbubu": {
+    "RoomTypes": 3,
+    "roomId": "bubbubu",
     "floor": 2,
-    "availability": true,
     "Equipments": ""
+  },
+  "grrrr": {
+    "RoomTypes": 2,
+    "roomId": "grrrr",
+    "floor": 1,
+    "Equipments": ""
+  },
+  "sobicak": {
+    "RoomTypes": 3,
+    "roomId": "sobicak",
+    "floor": 2,
+    "Equipments": "bandazer, 1, potrosna oprema, 30;gaze, 2, potrosna oprema, 80;"
   }
 }

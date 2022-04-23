@@ -16,7 +16,7 @@ using TechHealth.Controller;
 using TechHealth.Repository;
 using TechHealth.View.ManagerView;
 
-namespace TechHealth.View.ManagerView
+namespace TechHealth.View.ManagerView.CRUDRooms
 {
     public partial class UpdateForm : Window
     {
@@ -27,11 +27,11 @@ namespace TechHealth.View.ManagerView
             selected = RoomRepository.Instance.GetById(room.roomId);
             InitializeComponent();
 
-            this.DataContext = this;
+            //this.DataContext = this;
 
             TxtRoomId.Text = selected.roomId;
             CbFloor.Text = FloorToString(selected.floor);
-            CbType.Text = RoomTypesToString(selected.roomTypes);
+            CbType.Text = RoomTypesToString(selected.RoomTypes);
             CbAvailability.Text = AvailabilityToString(selected.availability);
             
         }
@@ -113,10 +113,10 @@ namespace TechHealth.View.ManagerView
         private void Button_Click_Confirm(object sender, RoutedEventArgs e)
         {
             selected.floor = StringToFloor(CbFloor.Text);
-            selected.roomTypes = StringToRoomType(CbType.Text);
+            selected.RoomTypes = StringToRoomType(CbType.Text);
             selected.availability = StringToAvailability(CbAvailability.Text);
 
-            roomController.Update(selected.roomId, selected.floor, selected.availability,selected.roomTypes);
+            roomController.Update(selected.roomId, selected.floor, selected.availability,selected.RoomTypes);
             this.Close();
         }
 
