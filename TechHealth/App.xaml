@@ -2,34 +2,24 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:TechHealth"
-             xmlns:viewModel="clr-namespace:TechHealth.DoctorView.ViewModel"
-             xmlns:view="clr-namespace:TechHealth.DoctorView.View"
-             xmlns:mainview="clr-namespace:TechHealth.DoctorView"
+             xmlns:viewModel="clr-namespace:TechHealth.View.ManagerView.ViewModel"
+             xmlns:view="clr-namespace:TechHealth.View.ManagerView.VieW"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Theme/MenuStyle.xaml"/>
                 <ResourceDictionary Source="Theme/SearchTheme.xaml"/>
-                <ResourceDictionary Source="Theme/DataGridTheme.xaml"/>
             </ResourceDictionary.MergedDictionaries>
-            <DataTemplate DataType="{x:Type viewModel:DashBoardViewModel}">
-                <view:DashBoardView/>
+
+            <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">
+                <view:HomeView/>
             </DataTemplate>
-            <DataTemplate DataType="{x:Type viewModel:PatientsViewModel}">
-                <view:PatientView/>
+
+            <DataTemplate DataType="{x:Type viewModel:EquipmentViewModel}">
+                <view:EquipmentView/>
             </DataTemplate>
-            <DataTemplate DataType="{x:Type viewModel:RecordViewModel}">
-                <view:RecordView/>
-            </DataTemplate>
-            <DataTemplate DataType="{x:Type viewModel:MedicineViewModel}">
-                <view:MedicineView/>
-            </DataTemplate>
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>
-<!--PatientsViewModel = new PatientsViewModel();
-AppointmentsView = new AppointmentsView(doctorJmbg);
-RecordViewModel = new RecordViewModel(doctorJmbg);
-MedicineViewModel = new MedicineViewModel();
-DashBoardViewModel = new DashBoardViewModel();-->

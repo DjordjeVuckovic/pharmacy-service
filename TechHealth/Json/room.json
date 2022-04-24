@@ -1,41 +1,73 @@
 {
-  "soba3": {
-    "roomTypes": 3,
-    "roomId": "soba3",
-    "floor": 2,
-    "Equipments": ""
+  "krkr": {
+    "RoomTypes": "examination",
+    "roomId": "krkr",
+    "equipment": [
+      {
+        "name": "bandazer",
+        "id": "1",
+        "type": "potrosna oprema",
+        "quantity": 30
+      },
+      {
+        "name": "gaze",
+        "id": "2",
+        "type": "potrosna oprema",
+        "quantity": 80
+      }
+    ]
   },
-  "soba4": {
-    "roomTypes": 3,
-    "roomId": "soba4",
+  "rkrk": {
+    "RoomTypes": "rest",
+    "roomId": "rkrk",
+    "equipment": [
+      {
+        "name": "bandazer",
+        "id": "1",
+        "type": "potrosna oprema",
+        "quantity": 30
+      },
+      {
+        "name": "gaze",
+        "id": "2",
+        "type": "potrosna oprema",
+        "quantity": 80
+      }
+    ]
+  },
+  "ffff": {
+    "RoomTypes": "operation",
+    "roomId": "ffff",
+    "floor": 2
+  },
+  "sobara": {
+    "RoomTypes": "office",
+    "roomId": "sobara",
+    "floor": 1
+  },
+  "asdas": {
+    "RoomTypes": "office",
+    "roomId": "asdas",
+    "floor": 3
+  },
+  "adidas": {
+    "RoomTypes": "examination",
+    "roomId": "adidas",
+    "floor": 1,
+    "availability": true,
+    "equipment": []
+  },
+  "dadada": {
+    "RoomTypes": "operation",
+    "roomId": "dadada",
     "floor": 3,
-    "availability": true,
-    "Equipments": ""
+    "equipment": []
   },
-  "SOBA23": {
-    "roomTypes": 1,
-    "roomId": "SOBA23",
-    "floor": 3,
-    "availability": true,
-    "Equipments": ""
-  },
-  "sobicaMALA": {
-    "roomTypes": 2,
-    "roomId": "sobicaMALA",
-    "floor": 2,
-    "Equipments": ""
-  },
-  "SOBA1234": {
-    "roomTypes": 3,
-    "roomId": "SOBA1234",
-    "floor": 2,
-    "Equipments": ""
-  },
-  "adsas": {
-    "roomTypes": 3,
-    "roomId": "adsas",
+  "bubibu": {
+    "RoomTypes": "operation",
+    "roomId": "bubibu",
     "floor": 2,
     "availability": true,
-    "Equipments": ""
+    "equipment": []
   }
 }
