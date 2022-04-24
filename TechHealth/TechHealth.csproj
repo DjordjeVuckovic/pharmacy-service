@@ -154,6 +154,7 @@
     <Compile Include="Controller\AccountController.cs" />
     <Compile Include="Controller\AppointmentController.cs" />
     <Compile Include="Controller\RoomController.cs" />
+    <Compile Include="Conversions\ManagerConversions.cs" />
     <Compile Include="Core\RelayCommand.cs" />
     <Compile Include="Core\ViewModelBase.cs" />
     <Compile Include="DoctorView\CRUDAppointments\AppointmentsUpdate.xaml.cs">
@@ -247,13 +248,13 @@
     <Compile Include="ValidationRules\FutureDateValidationRule.cs" />
     <Compile Include="ValidationRules\NotEmptyValidationRule.cs" />
     <Compile Include="ValidationRules\SimpleDateValidationRule.cs" />
-    <Compile Include="View\ManagerView\AddForm.xaml.cs">
+    <Compile Include="View\ManagerView\CRUDRooms\AddForm.xaml.cs">
       <DependentUpon>AddForm.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\ManagerView\ManagerMainWindow.xaml.cs">
-      <DependentUpon>ManagerMainWindow.xaml</DependentUpon>
+    <Compile Include="View\ManagerView\CRUDRooms\RoomWindow.xaml.cs">
+      <DependentUpon>RoomWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\ManagerView\UpdateForm.xaml.cs">
+    <Compile Include="View\ManagerView\CRUDRooms\UpdateForm.xaml.cs">
       <DependentUpon>UpdateForm.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\PatientView\AddAppointment.xaml.cs">
@@ -393,15 +394,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\ManagerView\AddForm.xaml">
+    <Page Include="View\ManagerView\CRUDRooms\AddForm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\ManagerView\ManagerMainWindow.xaml">
+    <Page Include="View\ManagerView\CRUDRooms\RoomWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\ManagerView\UpdateForm.xaml">
+    <Page Include="View\ManagerView\CRUDRooms\UpdateForm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -419,12 +420,8 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-
-    <Folder Include="JsonConverters\" />
-
     <Folder Include="Fonts\" />
-    <Folder Include="View\PatientView\" />
-
+    <Folder Include="JsonConverters\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\System.Text.Json.7.0.0-preview.2.22152.2\build\System.Text.Json.targets" Condition="Exists('packages\System.Text.Json.7.0.0-preview.2.22152.2\build\System.Text.Json.targets')" />

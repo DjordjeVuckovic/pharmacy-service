@@ -3,22 +3,34 @@
 // Created: Saturday, April 2, 2022 8:55:43 PM
 // Purpose: Definition of Class Equipment
 
+using Newtonsoft.Json;
 using System;
 
 namespace TechHealth.Model
 {
    public class Equipment
    {
-      public string name;
-      public string id;
-      public string type;
-      public int quantity;
+        public string name { get; set; }
+        public string id { get; set; }
+        [JsonIgnore]
+        public string type { get; set; }
+        [JsonIgnore]
+        public int quantity { get; set; }
 
-
-        public override string ToString()
+        public Equipment() { }
+        public Equipment(string name, string id, string type, int quantity)
         {
-            return name.ToString() + ", " + id.ToString() + ", " + type.ToString() + ", " + quantity.ToString();
+            this.name = name;
+            this.id = id;
+            this.type = type;
+            this.quantity = quantity;
         }
+
+
+        //public override string ToString()
+        //{
+        //    return name.ToString() + ", " + id.ToString() + ", " + type.ToString() + ", " + quantity.ToString();
+        //}
 
     }
 }
