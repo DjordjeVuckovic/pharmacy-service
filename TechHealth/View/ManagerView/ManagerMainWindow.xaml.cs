@@ -15,46 +15,33 @@ using System.Windows.Shapes;
 using TechHealth.Model;
 using TechHealth.Repository;
 using TechHealth.Controller;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
 
-namespace TechHealth.View.ManagerView.CRUDRooms
+namespace TechHealth.View.ManagerView
 {
-    public partial class RoomWindow : Window
+    public partial class ManagerMainWindow : Window
     {
         private ObservableCollection<Room> rooms;
-        
         private RoomController roomController = new RoomController();
-
-        public ObservableCollection<Room> Rooms { get => rooms; set => rooms = value; }
-
-        public RoomWindow()
+        public ManagerMainWindow()
         {
             InitializeComponent();
-            this.DataContext = this;
             rooms = new ObservableCollection<Room>(RoomRepository.Instance.GetAll().Values);
-            //lvUsers.ItemsSource = rooms;
+            lvUsers.ItemsSource = rooms;
         }
-        
+
         private void Button_Click_Add(object sender, RoutedEventArgs e)
         {
             new AddForm().ShowDialog();
             UpdateView();
+
         }
 
         private void Button_Click_Delete(object sender, RoutedEventArgs e)
         {
-            if (lvUsers.SelectedIndex == -1)
-            {
-                MessageBox.Show("You have to select a room before viewing it!");
-            }
-            else
-            {
-                Room selected = (Room)lvUsers.SelectedItems[0];
-                roomController.Delete(selected.roomId);
-                rooms = new ObservableCollection<Room>(RoomRepository.Instance.GetAll().Values);
-                lvUsers.ItemsSource = rooms;
-            }        
+            Room selected = (Room)lvUsers.SelectedItems[0];
+            roomController.Delete(selected.roomId);
+            rooms = new ObservableCollection<Room>(RoomRepository.Instance.GetAll().Values);
+            lvUsers.ItemsSource = rooms;
         }
 
         private void Button_Click_View(object sender, RoutedEventArgs e)
@@ -63,13 +50,9 @@ namespace TechHealth.View.ManagerView.CRUDRooms
             {
                 MessageBox.Show("You have to select a room before viewing it!");
             }
-            else
-            {
-                Room room = (Room)lvUsers.SelectedItems[0];
-                new UpdateForm(room).ShowDialog();
-                UpdateView();
-            }
-                
+            Room room = (Room)lvUsers.SelectedItems[0];
+            new UpdateForm(room).ShowDialog();
+            UpdateView();
         }
 
         public void UpdateView()
