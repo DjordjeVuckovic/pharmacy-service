@@ -6,9 +6,9 @@ namespace TechHealth.Core
     public class RelayCommand:ICommand
     {
         private Action<object> _execute;
-        private Func<object,bool> _canExecute;
+        private Predicate<object> _canExecute;
 
-        public RelayCommand(Action<object> execute, Func<object,bool> canExecute)
+        public RelayCommand(Action<object> execute, Predicate<object> canExecute)
         {
             _execute = execute;
             _canExecute = canExecute;

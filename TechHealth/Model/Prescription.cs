@@ -9,15 +9,16 @@ namespace TechHealth.Model
 {
    public class Prescription
    {
-      public string medicineId;
-      public string medicineName;
-      public string patientLbo;
-      public int quantity;
-      public string sideEffects;
-      public string diganosis;
+      public string PrescriptionId { get; set; }
+      public Medicine Medicine{ get; set; }
+      public string Frequency{ get; set; }
+      public string SideEffects{ get; set; }
+      public string Usage{ get; set; }
+      public DateTime StartDate { get; set; }
+      public DateTime FinishDate { get; set; } 
       
-      public Doctor doctor;
-      public Patient patient;
+      public Doctor Doctor{ get; set; }
+      public Patient Patient{ get; set; }
    
    }
 }

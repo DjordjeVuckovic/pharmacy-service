@@ -6,8 +6,11 @@
         xmlns:model="clr-namespace:TechHealth.Model"
         mc:Ignorable="d"
         Title="CreateExamination" Height="450" Width="450">
+    <Window.DataContext>
+        <model:Appointment/>
+    </Window.DataContext>
     <Grid>
-        <TextBlock HorizontalAlignment="Left" Height="36.316" Margin="138.268,26.405,0,0" TextWrapping="Wrap" Text="New Examination" VerticalAlignment="Top" Width="193.116" FontSize="22"/>
+        <TextBlock HorizontalAlignment="Left" Height="36.316" Margin="138.268,26.405,0,0" TextWrapping="Wrap" Text="New Examination" VerticalAlignment="Top" Width="193.116" FontSize="22" />
         <Label Content="Doctor:" HorizontalAlignment="Left" Height="30" Margin="31.6,85.833,0,0" VerticalAlignment="Top" Width="124.8" FontSize="16" FontFamily="Roboto" />
         <Label Content="Date:" HorizontalAlignment="Left" Height="30" Margin="31.6,167.7,0,0" VerticalAlignment="Top" Width="124.8" RenderTransformOrigin="0.548,2.84" FontSize="16" FontFamily="Roboto" />
         <Label Content="Patient:" HorizontalAlignment="Left" Height="30" Margin="31.6,127.033,0,0" VerticalAlignment="Top" Width="124.8" FontSize="16" FontFamily="Roboto"/>

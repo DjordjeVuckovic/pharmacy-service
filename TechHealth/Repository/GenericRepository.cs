@@ -37,7 +37,7 @@ namespace TechHealth.Repository
             var option = new JsonSerializerOptions()
             {
                 WriteIndented = true,
-                DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingDefault
+                DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull
             };
             string jsonWrite = JsonSerializer.Serialize(entities,option);
             File.WriteAllText(path,jsonWrite);

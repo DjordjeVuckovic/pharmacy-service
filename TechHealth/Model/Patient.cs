@@ -18,6 +18,7 @@ namespace TechHealth.Model
       public bool IsBanned{ get; set; }
       [JsonIgnore]
       public string FullName => $"{Name} {Surname}";
+      
    
    }
 }

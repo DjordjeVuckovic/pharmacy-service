@@ -9,12 +9,16 @@
 //------------------------------------------------------------------------------
 
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("favicon.ico")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("json/anamnesis.json")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("json/appointment.json")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("json/doctor.json")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("json/manager.json")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("json/medicine.json")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("json/patient.json")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("json/prescription.json")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("json/secretary.json")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("json/specialization.json")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("json/therapy.json")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/ph.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/caduceus_ico.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/dash.png")]

@@ -64,7 +64,6 @@ namespace TechHealth.Repository
          throw new NotImplementedException();
       }
       
-      public FileHandler fileHandler;
    
    }
 }
