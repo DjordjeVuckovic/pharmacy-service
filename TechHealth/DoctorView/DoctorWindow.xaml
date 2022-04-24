@@ -10,10 +10,21 @@
         Height="768" Width="1024"
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
+        WindowStyle="ThreeDBorderWindow"
 >
     <!--<Window.DataContext>
         <vm:MainViewModel />
     </Window.DataContext>-->
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Dark.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/materialdesigncolor.bluegrey.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
     <Grid>
         <!--WindowStyle="None"
             Background="Transparent"
@@ -30,7 +41,7 @@
                     <RowDefinition Height="65"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <Image Source="C:\Users\djord\OneDrive\Documents\GitHub\PharmacyService\TechHealth\resources\mylogo.png" Margin="5.2,0,4.8,0"/>
+                <Image  Source="C:\Users\djord\OneDrive\Documents\GitHub\PharmacyService\TechHealth\resources\mylogo.png" Margin="5.2,0,4.8,0"/>
                 <StackPanel Grid.Row="1" Grid.Column="0">
                     <RadioButton Height="60" Content="DashBoard" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="20" Foreground="#f8f8f2" Style="{StaticResource ResourceKey=MenuButtonTheme}" Width="210" Command="{Binding DashCommand}" />
                     <RadioButton Height="60" Content="Appointments" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="20" Foreground="#f8f8f2" Style="{StaticResource ResourceKey=MenuButtonTheme}" Width="210" Command="{Binding AppointmentCommand}" />
@@ -39,14 +50,14 @@
                     <RadioButton Height="60" Content="Medicine" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="20" Foreground="#f8f8f2" Style="{StaticResource ResourceKey=MenuButtonTheme}" Width="210" Command="{Binding MedicineCommand}"/>
                     <RadioButton Height="60" Content="Account" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="20" Foreground="#f8f8f2" Style="{StaticResource ResourceKey=MenuButtonTheme}" Width="210" />
                 </StackPanel>
-                <Image Source="C:\Users\djord\OneDrive\Documents\GitHub\PharmacyService\TechHealth\resources\1a.png" Margin="0,21.533,151.8,624.867" RenderTransformOrigin="0.467,0.803"
-                   Grid.Column="0" Grid.Row="1" />
+                <Image Source="C:\Users\djord\OneDrive\Documents\GitHub\PharmacyService\TechHealth\resources\1a.png" Margin="0,15.533,151.8,624.867" RenderTransformOrigin="0.467,0.803"
+                   Grid.Column="0" Grid.Row="1" Width="40" />
                 <Image Source="C:\Users\djord\OneDrive\Documents\GitHub\PharmacyService\TechHealth\resources\appoint.png" Margin="13.067,86.333,156.6,559.267" Grid.Row="1"
-                   Grid.Column="0"/>
+                   Grid.Column="0" Width="50"/>
                 <Image Source="C:\Users\djord\OneDrive\Documents\GitHub\PharmacyService\TechHealth\resources\1c.png" Margin="13.067,144.733,167,500.867" Grid.Row="1"
-                   Grid.Column="0" RenderTransformOrigin="0.442,0.857" />
+                   Grid.Column="0" RenderTransformOrigin="0.442,0.857" Width="40"/>
                 <Image Source="C:\Users\djord\OneDrive\Documents\GitHub\PharmacyService\TechHealth\resources\1d.png" Margin="11.2,202.904,153.267,432.173" Grid.Row="1"
-                   Grid.Column="0" RenderTransformOrigin="0.5,0.5" >
+                   Grid.Column="0" RenderTransformOrigin="0.5,0.5" Width="40">
                     <Image.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
@@ -57,9 +68,9 @@
                     </Image.RenderTransform>
                 </Image>
                 <Image Source="C:\Users\djord\OneDrive\Documents\GitHub\PharmacyService\TechHealth\resources\1e.png"  Margin="5.2,264.533,143.267,376.134" Grid.Row="1"
-                   Grid.Column="0" />
+                   Grid.Column="0" Width="40"/>
                 <Image Source="C:\Users\djord\OneDrive\Documents\GitHub\PharmacyService\TechHealth\resources\1f.png" RenderTransformOrigin="0.467,0.792" Margin="5.2,327.6,156.6,319.2" Grid.Row="1"
-                   Grid.Column="0" />
+                   Grid.Column="0" Width="40"/>
                 <Image Source="C:\Users\djord\OneDrive\Documents\GitHub\PharmacyService\TechHealth\resources\notification.png"
                    Grid.Row="0" Grid.Column="1" Margin="631.4,24.6,127.8,12.2"/>
                 <Image Source="C:\Users\djord\OneDrive\Documents\GitHub\PharmacyService\TechHealth\resources\help.png"

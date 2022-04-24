@@ -2,6 +2,7 @@
 using System.Windows;
 using System.Windows.Controls;
 using TechHealth.DoctorView.CRUDAppointments;
+using TechHealth.DoctorView.ViewModel;
 using TechHealth.Model;
 using TechHealth.Repository;
 
@@ -67,7 +68,7 @@ namespace TechHealth.DoctorView.View
             {
                 Appointment appointment = (Appointment) dataAppointment.SelectedItem;
                 AppointmentRepository.Instance.Delete(appointment.IdAppointment);
-                //Appointments.Remove(appointment);
+                Appointments.Remove(appointment);
                 MessageBox.Show("You are successfully deleted an appointment");
             }
         }

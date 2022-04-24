@@ -8,7 +8,7 @@
              d:DesignHeight="500" d:DesignWidth="800">
     <Grid>
         <Grid.ColumnDefinitions>
-			<ColumnDefinition Width="150" />
+			<ColumnDefinition Width="50" />
 			<ColumnDefinition Width="*" />
 		</Grid.ColumnDefinitions>
 		<Grid.RowDefinitions>
@@ -30,11 +30,11 @@
 			<DataGrid x:Name="dataAppointment" ItemsSource="{Binding Path=Appointments}"   IsReadOnly="True" 
                                   SelectionMode="Single" AutoGenerateColumns="False" FontSize="15" FontWeight="Bold"
                                   FontStyle="Normal"
-                                  DataGrid.CanUserResizeRows="False" Margin="-2.835,10,11.339,-287.464">
+                                  CanUserResizeRows="False" Margin="-2.835,10,11.339,-287.464" Background="#333545">
 
 				<DataGrid.Columns>
 
-					<DataGridTextColumn Header="Date" Binding="{Binding Date}" Width="*"  CanUserResize="False"/>
+					<DataGridTextColumn Header="Date" Binding="{Binding Date,StringFormat=d}" Width="*"  CanUserResize="False" />
 					<DataGridTextColumn Header="StartTime" Binding="{Binding StartTime}" Width="*"  CanUserResize="False"/>
 					<DataGridTextColumn Header="FinishTime" Binding="{Binding FinishTime}" Width="*"  CanUserResize="False"/>
 					<DataGridTextColumn Header="Room" Binding="{Binding Room.roomId}" Width="*"  CanUserResize="False"/>
@@ -52,13 +52,13 @@
 
 			</DataGrid>
 		</Grid>
-		<Button x:Name="NewExamination" Content="New Examination" Margin="330.964,164.494,0,10" HorizontalAlignment="Left" Width="115.2" Grid.Column="1" Grid.Row="3" Click="Examination_OnClick"/>
-		<Button x:Name="Surgery" Content="New Surgery" Margin="171.2,164.494,0,10" HorizontalAlignment="Left" Width="111.2" Grid.Column="1" Grid.Row="3" Click="Surgery_OnClick"/>
+		<Button x:Name="NewExamination" Content="New Examination" Margin="330.964,164.494,0,10" HorizontalAlignment="Left" Width="150" Height="50" Grid.Column="1" Grid.Row="3" Click="Examination_OnClick"/>
+		<Button x:Name="Surgery" Content="New Surgery" Margin="171.2,164.494,0,10" HorizontalAlignment="Left" Width="150" Height="50" Grid.Column="1" Grid.Row="3" Click="Surgery_OnClick"/>
 		<!--
         <Button x:Name="UpdateSurgery" Content="Update Surgery" Margin="135.964,164.494,0,10" HorizontalAlignment="Left" Width="102.4" Grid.Column="1" Grid.Row="3" Click="UpdateSurgery_OnClick"/>
         -->
-		<Button x:Name="Delete" Content="Delete" Margin="10,164.494,0,10" HorizontalAlignment="Left" Width="111.2" Grid.Row="3" Click="Delete_OnClick" Grid.Column="1"/>
+		<Button x:Name="Delete" Content="Delete" Margin="10,164.494,0,10" HorizontalAlignment="Left" Width="150" Height="50"  Grid.Row="3" Click="Delete_OnClick" Grid.Column="1" Background="Red"/>
 		<!--<Button x:Name="UpdateExamination" Content="Update Examination" Margin="400.164,164.494,0,10" HorizontalAlignment="Left" Width="115" Grid.Column="1" Grid.Row="3" Click="UpdateExamination_OnClick" />-->
-		<Button x:Name="UpdateExamination" Content="Update Appointment" Margin="485.764,164.494,0,10" HorizontalAlignment="Left" Width="120" Grid.Column="1" Grid.Row="3" Click="UpdateExamination_OnClick" />
+		<Button x:Name="UpdateExamination" Content="Update" Margin="495.764,164.494,0,10" HorizontalAlignment="Left" Width="150" Height="50" Grid.Column="1" Grid.Row="3" Click="UpdateExamination_OnClick" />
     </Grid>
 </UserControl>

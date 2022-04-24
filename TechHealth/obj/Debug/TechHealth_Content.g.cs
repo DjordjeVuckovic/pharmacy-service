@@ -15,6 +15,7 @@
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("json/manager.json")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("json/medicine.json")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("json/patient.json")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("json/prescription.json")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("json/secretary.json")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("json/specialization.json")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("json/therapy.json")]

@@ -5,26 +5,26 @@ namespace TechHealth.DoctorView.ViewModel
 {
     public class MainViewModel:ViewModelBase
     {
-        private object _currentView;
-        public DashBoardView DashBoardViewModel { get; set; }
-        public RecordView RecordView { get; set; }
+        private object currentView;
+        public RecordViewModel RecordViewModel { get; set; }
         public RelayCommand DashCommand { get; set; }
         public RelayCommand RecordCommand { get; set; }
         public RelayCommand AppointmentCommand { get; set; }
         public string DoctorId { get; set; }
         public AppointmentsView AppointmentsView { get; set; }
-        public PatientView PatientsView { get; set; }
+        public PatientsViewModel PatientsViewModel { get; set; }
         public RelayCommand PateintCommand { get; set; }
-        private MedicineView MedicineView { get; set; }
+        private MedicineViewModel MedicineViewModel { get; set; }
         public RelayCommand MedicineCommand { get; set; }
+        public DashBoardViewModel DashBoardViewModel { get; set; }
         
         
         public object CurrentView
         {
-            get => _currentView;
+            get => currentView;
             set
             {
-                _currentView = value;
+                currentView = value;
                 OnPropertyChanged(nameof(CurrentView));
             }
         }
@@ -56,11 +56,12 @@ namespace TechHealth.DoctorView.ViewModel
         public MainViewModel(string doctorJmbg)
         {
             DoctorId = doctorJmbg;
-            DashBoardViewModel = new DashBoardView();
-            RecordView = new RecordView(doctorJmbg);
+            PatientsViewModel = new PatientsViewModel();
             AppointmentsView = new AppointmentsView(doctorJmbg);
-            PatientsView = new PatientView();
-            MedicineView = new MedicineView();
+            RecordViewModel = new RecordViewModel();
+            MedicineViewModel = new MedicineViewModel();
+            DashBoardViewModel = new DashBoardViewModel();
+            //RecordViewModel.DoctorId = doctorJmbg;
 
             CurrentView = DashBoardViewModel;
             DashCommand = new RelayCommand(o =>
@@ -70,7 +71,8 @@ namespace TechHealth.DoctorView.ViewModel
             );
             RecordCommand = new RelayCommand(o =>
                 {
-                    CurrentView = RecordView;
+                    CurrentView = RecordViewModel;
+                    
                 }
             );
             AppointmentCommand = new RelayCommand(o =>
@@ -80,20 +82,13 @@ namespace TechHealth.DoctorView.ViewModel
             );
             PateintCommand = new RelayCommand(o =>
             {
-                CurrentView = PatientsView;
+                CurrentView = PatientsViewModel;
             });
             MedicineCommand= new RelayCommand(o =>
                 {
-                    CurrentView = MedicineView;
+                    CurrentView = MedicineViewModel;
                 }
             );
-           
-            
-            
-        }
-
-        protected MainViewModel()
-        {
             
         }
     }

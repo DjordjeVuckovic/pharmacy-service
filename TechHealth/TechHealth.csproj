@@ -40,6 +40,14 @@
       <HintPath>packages\JetBrains.Annotations.2018.2.1\lib\net20\JetBrains.Annotations.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="MaterialDesignColors, Version=2.0.6.0, Culture=neutral, PublicKeyToken=df2a72020bd7962a">
+      <HintPath>packages\MaterialDesignColors.2.0.6-ci153\lib\net452\MaterialDesignColors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MaterialDesignThemes.Wpf, Version=4.5.0.0, Culture=neutral, PublicKeyToken=df2a72020bd7962a">
+      <HintPath>packages\MaterialDesignThemes.4.5.0-ci153\lib\net452\MaterialDesignThemes.Wpf.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51">
       <HintPath>packages\Microsoft.Bcl.AsyncInterfaces.7.0.0-preview.2.22152.2\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
       <Private>True</Private>
@@ -157,9 +165,6 @@
     <Compile Include="DoctorView\CRUDAppointments\CreateSurgery.xaml.cs">
       <DependentUpon>CreateSurgery.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DoctorView\AppointmentsWindow.xaml.cs">
-      <DependentUpon>AppointmentsWindow.xaml</DependentUpon>
-    </Compile>
     <Compile Include="DoctorView\DoctorWindow.xaml.cs">
       <DependentUpon>DoctorWindow.xaml</DependentUpon>
     </Compile>
@@ -239,6 +244,9 @@
     <Compile Include="Service\DoctorService.cs" />
     <Compile Include="Service\PatientService.cs" />
     <Compile Include="Service\RoomService.cs" />
+    <Compile Include="ValidationRules\FutureDateValidationRule.cs" />
+    <Compile Include="ValidationRules\NotEmptyValidationRule.cs" />
+    <Compile Include="ValidationRules\SimpleDateValidationRule.cs" />
     <Compile Include="View\ManagerView\AddForm.xaml.cs">
       <DependentUpon>AddForm.xaml</DependentUpon>
     </Compile>
@@ -353,7 +361,6 @@
     <Page Include="DoctorView\CRUDAppointments\CreateSurgery.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="DoctorView\AppointmentsWindow.xaml" />
     <Page Include="DoctorView\DoctorWindow.xaml" />
     <Page Include="DoctorView\MedicalHistory\NewAnamnesis.xaml">
       <SubType>Designer</SubType>
@@ -377,6 +384,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Theme\DataGridTheme.xaml" />
     <Page Include="Theme\MenuStyle.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -423,4 +431,11 @@
   <Import Project="packages\Microsoft.Web.WebView2.1.0.1018-prerelease\build\Microsoft.Web.WebView2.targets" Condition="Exists('packages\Microsoft.Web.WebView2.1.0.1018-prerelease\build\Microsoft.Web.WebView2.targets')" />
   <Import Project="packages\System.Runtime.WindowsRuntime.4.6.0\build\net461\System.Runtime.WindowsRuntime.targets" Condition="Exists('packages\System.Runtime.WindowsRuntime.4.6.0\build\net461\System.Runtime.WindowsRuntime.targets')" />
   <Import Project="packages\System.Runtime.WindowsRuntime.UI.Xaml.4.6.0\build\net461\System.Runtime.WindowsRuntime.UI.Xaml.targets" Condition="Exists('packages\System.Runtime.WindowsRuntime.UI.Xaml.4.6.0\build\net461\System.Runtime.WindowsRuntime.UI.Xaml.targets')" />
+  <Import Project="packages\MaterialDesignThemes.4.5.0-ci153\build\MaterialDesignThemes.targets" Condition="Exists('packages\MaterialDesignThemes.4.5.0-ci153\build\MaterialDesignThemes.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105.The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\MaterialDesignThemes.4.5.0-ci153\build\MaterialDesignThemes.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\MaterialDesignThemes.4.5.0-ci153\build\MaterialDesignThemes.targets'))" />
+  </Target>
 </Project>

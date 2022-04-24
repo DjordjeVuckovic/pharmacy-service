@@ -12,7 +12,7 @@ namespace TechHealth.DoctorView.Windows
         public TherapyWindow(Patient selectedItem)
         {
             InitializeComponent();
-            string doctorId = LoginWindow.GetDoctorId();
+            string doctorId = DoctorWindow.GetDoctorId();
             doctor = DoctorRepository.Instance.GetById(doctorId);
             patient = PatientRepository.Instance.GetById(selectedItem.Jmbg);
         }

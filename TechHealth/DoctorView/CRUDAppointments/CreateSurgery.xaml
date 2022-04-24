@@ -3,8 +3,26 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:model="clr-namespace:TechHealth.Model"
+        xmlns:validationRules="clr-namespace:TechHealth.ValidationRules"
         mc:Ignorable="d"
         Title="CreateSurgery" Height="450" Width="450">
+    <Window.DataContext>
+        <model:Appointment/>
+    </Window.DataContext>
+    <Window.Resources>
+        
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Dark.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/materialdesigncolor.bluegrey.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Border Background="#282a36" >
     <Grid>
         <TextBlock HorizontalAlignment="Left" Height="36.316" Margin="160.268,26.405,0,0" TextWrapping="Wrap" Text="New Surgery" VerticalAlignment="Top" Width="193.116" FontSize="22"/>
         <Label Content="Doctor:" HorizontalAlignment="Left" Height="30" Margin="31.6,85.833,0,0" VerticalAlignment="Top" Width="124.8" FontSize="16" FontFamily="Roboto" />
@@ -21,6 +39,24 @@
         <DatePicker x:Name="Picker" HorizontalAlignment="Left" Height="30" Margin="205.3,167.7,0,0" VerticalAlignment="Top" Width="205.2"/>
         <TextBox x:Name="StartTxt" HorizontalAlignment="Left" Height="30" Margin="205.3,206.233,0,0" VerticalAlignment="Top" Width="205.2"/>
         <TextBox x:Name="FinishTxt" HorizontalAlignment="Left" Height="30" Margin="205.3,241.233,0,0" VerticalAlignment="Top" Width="205.2"/>
+        <materialDesign:TimePicker Margin="205.3,240.233,0,0"
+                                   x:Name="Timepicker1"
+            materialDesign:HintAssist.Hint="Validates"
+            IsInvalidTextAllowed="True"
+            Is24Hours="{Binding IsChecked, ElementName=Is24HourCheckbox}"
+            Width="100">
+            <materialDesign:TimePicker.Text>
+                <Binding
+                    Path="FinishTime"
+                    UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <validationRules:SimpleDateValidationRule
+                            ValidatesOnTargetUpdated="True" />
+                    </Binding.ValidationRules>
+                </Binding>
+            </materialDesign:TimePicker.Text>
+        </materialDesign:TimePicker>
 
     </Grid>
+        </Border>
 </Window>

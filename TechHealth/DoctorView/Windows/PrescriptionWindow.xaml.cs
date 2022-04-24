@@ -39,7 +39,7 @@ namespace TechHealth.DoctorView.Windows
             DateTime date = DateTime.Parse(DatePicker.Text);
             DateTime date1 = DateTime.Parse(DatePicker1.Text);
             
-            Doctor doctor = DoctorRepository.Instance.GetById(LoginWindow.GetDoctorId());
+            Doctor doctor = DoctorRepository.Instance.GetById(DoctorWindow.GetDoctorId());
             //DateTime dateTime = new DateTime(DatePicker.Day);
             Prescription prescription = new Prescription
             {

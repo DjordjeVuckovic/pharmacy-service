@@ -58,7 +58,8 @@ namespace TechHealth.DoctorView.CRUDAppointments
                     StartTime = StartTxt.Text,
                     IdAppointment = Guid.NewGuid().ToString("N"),
                     Patient = patients[PatentCombo.SelectedIndex],
-                    Room = rooms[RoomCombo.SelectedIndex]
+                    Room = rooms[RoomCombo.SelectedIndex],
+                    FinishTimeD = DateTime.Parse(Timepicker1.Text)
                 };
                 //AppointmentsWindow.GetInstance().Appointments.Add(appointment);
                 AppointmentsView.GetInstance().Appointments.Add(appointment);

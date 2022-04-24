@@ -72,5 +72,72 @@
       "Username": "dusan",
       "Password": "dusan"
     }
+  },
+  "c4398223b3a241518a446c7822e2863a": {
+    "PrescriptionId": "c4398223b3a241518a446c7822e2863a",
+    "Medicine": {
+      "MedicineId": "4e39d97e9ef24dea899335d58c4fa534",
+      "Composition": [
+        {
+          "SubstanceId": "113",
+          "SubstanceName": "ibuprofen"
+        },
+        {
+          "SubstanceId": "114",
+          "SubstanceName": "laktoza"
+        },
+        {
+          "SubstanceId": "115",
+          "SubstanceName": "calcijum"
+        }
+      ],
+      "Quantity": 50,
+      "Units": "sirup",
+      "SideEffects": "/",
+      "MainSubstance": {
+        "SubstanceId": "113",
+        "SubstanceName": "ibuprofen"
+      },
+      "HarmfulRate": 0,
+      "Price": 300,
+      "MedicineName": "Brufen",
+      "Allergens": "/",
+      "Approved": true
+    },
+    "Frequency": "aa",
+    "SideEffects": "aa",
+    "Usage": "aa",
+    "StartDate": "2022-04-07T00:00:00",
+    "FinishDate": "2022-04-22T00:00:00",
+    "Doctor": {
+      "Specialization": {
+        "IdSpecialization": 1,
+        "NameSpecialization": "Anesthesiology"
+      },
+      "FullName": "John Black",
+      "Name": "John",
+      "Surname": "Black",
+      "Email": "spec@spec.com",
+      "Jmbg": "131213121111",
+      "Phone": "06123111114",
+      "Employed": true,
+      "Birthday": "0001-01-01T00:00:00",
+      "Username": "1",
+      "Password": "1"
+    },
+    "Patient": {
+      "Guest": false,
+      "Lbo": 0,
+      "IsBanned": false,
+      "Name": "miki",
+      "Surname": "Djuricic",
+      "Email": "dsa@adsa",
+      "Jmbg": "13456",
+      "Phone": "06105111331",
+      "Employed": false,
+      "Birthday": "0001-01-01T00:00:00",
+      "Username": "Djura",
+      "Password": "1311"
+    }
   }
 }

@@ -6,16 +6,22 @@ namespace TechHealth.DoctorView
 {
     public partial class DoctorWindow : Window
     {
-        public DoctorWindow()
-        {
-            //DataContext = new MainViewModel();
-            InitializeComponent();
-        }
+        private static string _doctorId;
+        // public DoctorWindow()
+        // {
+        //     //DataContext = new MainViewModel();
+        //     InitializeComponent();
+        // }
 
         public DoctorWindow(string doctorJmbg)
         {
-            DataContext = new MainViewModel(doctorJmbg);
             InitializeComponent();
+            DataContext = new MainViewModel(doctorJmbg);
+            _doctorId = doctorJmbg;
+        }
+        public static string GetDoctorId()
+        {
+            return _doctorId;
         }
     }
 }

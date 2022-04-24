@@ -48,7 +48,7 @@ namespace TechHealth.DoctorView.ViewModel
             set
             {
                 _doctorId = value;
-                OnPropertyChanged();
+                OnPropertyChanged(nameof(DoctorId));
             }
         }
         private ObservableCollection<Appointment> _appointments;
@@ -87,9 +87,9 @@ namespace TechHealth.DoctorView.ViewModel
             }
         }
            
-        public RecordViewModel(string doctorId)
+        public RecordViewModel()
         {
-            _doctorId = doctorId;
+            _doctorId = LoginWindow.GetDoctorId();
             _instance = this;
             _appointments = new ObservableCollection<Appointment>(AppointmentRepository.Instance.GetByDoctorId(_doctorId));
             NewCommand = new RelayCommand(param => Execute(), param => CanExecute());
