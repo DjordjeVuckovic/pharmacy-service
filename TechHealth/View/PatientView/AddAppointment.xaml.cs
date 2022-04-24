@@ -31,7 +31,6 @@ namespace TechHealth.View.PatientView       //dodati IDappointment
         {
 
             InitializeComponent();
-            TxtType.Text = nameof(AppointmentType.examination);
             doctors = DoctorRepository.Instance.DictionaryValuesToList();
             CbDoctor.ItemsSource = doctors;
         }
