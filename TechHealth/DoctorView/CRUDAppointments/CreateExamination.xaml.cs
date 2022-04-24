@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows;
+using TechHealth.DoctorView.MedicalHistory;
+using TechHealth.DoctorView.View;
+using TechHealth.DoctorView.ViewModel;
 using TechHealth.Model;
 using TechHealth.Repository;
 using MessageBox = System.Windows.MessageBox;
@@ -50,9 +53,8 @@ namespace TechHealth.DoctorView.CRUDAppointments
                     Patient = patients[PatentCombo.SelectedIndex],
                     Room = rooms[RoomCombo.SelectedIndex]
                 };
-                AppointmentsWindow.GetInstance().Appointments.Add(appointment);
-                //AppointmentIgnore ignore = new AppointmentIgnore(appointment);
-                //ignore.IgnoreMePatient(appointment);
+                AppointmentsView.GetInstance().Appointments.Add(appointment);
+                RecordViewModel.GetInstance().Appointments.Add(appointment);
                 AppointmentRepository.Instance.Create(appointment);
                 MessageBox.Show("You are successfully create new examination");
                 Close();

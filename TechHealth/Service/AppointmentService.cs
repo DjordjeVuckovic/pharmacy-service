@@ -24,18 +24,18 @@ namespace TechHealth.Service
       
       public bool Create(Appointment appointment)
       {
-         throw new NotImplementedException();
+            return AppointmentRepository.Instance.Create(appointment);
       }
       
       public bool Update(Appointment appointment)
       {
-         throw new NotImplementedException();
-      }
+            return AppointmentRepository.Instance.Update(appointment);
+        }
       
       public bool Delete(string idAppointment)
       {
-         throw new NotImplementedException();
-      }
+            return AppointmentRepository.Instance.Delete(idAppointment);
+        }
       
       public List<Appointment> GetByDoctorId(string doctorId)
       {

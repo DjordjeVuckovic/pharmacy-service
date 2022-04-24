@@ -1,0 +1,89 @@
+﻿<Window x:Class="TechHealth.DoctorView.Windows.TherapyWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:TechHealth.DoctorView.Windows"
+        xmlns:viewModel="clr-namespace:TechHealth.DoctorView.ViewModel"
+        mc:Ignorable="d"
+        Title="TherapyWindow" Height="450" Width="600"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="14"
+        TextElement.FontFamily="Roboto"
+        TextOptions.TextFormattingMode="Ideal"
+        WindowStartupLocation="CenterScreen"
+        TextOptions.TextRenderingMode="Auto">
+    <Window.DataContext>
+        <viewModel:TherapyViewModel/>
+    </Window.DataContext>
+    <Window.Resources>
+        
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Dark.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/materialdesigncolor.bluegrey.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Border Background="#282a36" >
+    <Grid>
+    
+       <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="70"/>
+           
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0" Content="New Therapy"  HorizontalAlignment="Center" FontSize="32"  FontWeight="Light" Foreground="MediumSpringGreen"/>
+
+        <StackPanel Grid.Row="1" VerticalAlignment="Center" Margin="20,0,0,0">
+            <Label Content="Doctor: " Name="LabelDoktor" HorizontalAlignment="Left"   />
+            <Label Content="Patient: "  HorizontalAlignment="Left" Padding="5,10,5,0"/>
+        </StackPanel>
+
+        <Grid Grid.Row="2"  Margin="10,0,0,0">
+
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+               
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="240"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            
+            <Label Content="Start Date :" HorizontalAlignment="Left" Margin="10,0,10,0" Grid.Column="0" Grid.Row="0" VerticalAlignment="Center" />
+            <Label Content="Finish Date :" HorizontalAlignment="Left" Margin="10,0,10,0" Grid.Column="0" Grid.Row="1" VerticalAlignment="Center"/>
+            <Label Content="Frequency:" HorizontalAlignment="Left" Margin="10,0,10,0" Grid.Column="0" Grid.Row="2" VerticalAlignment="Center"/>
+            <Label Content="Description:" HorizontalAlignment="Left" Margin="10,0,10,0" Grid.Column="0" Grid.Row="3" VerticalAlignment="Center"/>
+            <DatePicker x:Name="DatePicker" Grid.Row="0" Grid.Column="1" Margin="20,0,10,0" VerticalAlignment="Center" ></DatePicker>
+            <DatePicker x:Name="DatePicker1" Grid.Row="1" Grid.Column="1" Margin="20,0,10,0" VerticalAlignment="Center"></DatePicker>
+            <TextBox x:Name="TextBox" Grid.Row="2" Grid.Column="1" Margin="20,0,10,0" VerticalAlignment="Center"></TextBox>
+            <TextBox x:Name="TextBox1" Grid.Row="3" Grid.Column="1" Margin="20,0,10,0" ></TextBox>
+            <Border Grid.Row="0" Grid.RowSpan="4" Grid.Column="0" BorderThickness="0,0,2,0" BorderBrush="MediumSpringGreen" />
+
+        </Grid>
+
+
+        <Button Grid.Row="3" Content="Cancel"  HorizontalAlignment="Left"  Width="80"
+                Margin="100,10,0,10"   Click="ButtonBase_OnClick"/>
+        <Button Grid.Row="3" Content="Finish"  HorizontalAlignment="Right"  Width="80"
+                Margin="0,10,100,10" Click="ButtonBase_OnClick1" />
+
+        
+
+
+        
+
+    </Grid>
+        </Border>
+</Window>

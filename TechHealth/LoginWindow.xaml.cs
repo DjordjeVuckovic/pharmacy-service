@@ -9,10 +9,15 @@ namespace TechHealth
 {
     public partial class LoginWindow : Window
     {
+        private static string _doctorId;
+        private static LoginWindow _instance;
+        
         public LoginWindow()
         {
             InitializeComponent();
         }
+
+        
 
         private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
         {
@@ -27,9 +32,15 @@ namespace TechHealth
             if (doctor != null && pass.Equals(doctor.Password))
             {
                 //AppointmentsWindow.GetInstance(doctor.Jmbg).Show();
-                new DoctorMainWindow().Show();
+                _doctorId = doctor.Jmbg;
+                new DoctorWindow(doctor.Jmbg).Show();
                 Close();
             }
+        }
+
+        public static string GetDoctorId()
+        {
+            return _doctorId;
         }
 
         

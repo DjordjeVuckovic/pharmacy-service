@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows;
+using TechHealth.DoctorView.View;
+using TechHealth.DoctorView.ViewModel;
 using TechHealth.Model;
 using TechHealth.Repository;
 
@@ -56,9 +58,12 @@ namespace TechHealth.DoctorView.CRUDAppointments
                     StartTime = StartTxt.Text,
                     IdAppointment = Guid.NewGuid().ToString("N"),
                     Patient = patients[PatentCombo.SelectedIndex],
-                    Room = rooms[RoomCombo.SelectedIndex]
+                    Room = rooms[RoomCombo.SelectedIndex],
+                    FinishTimeD = DateTime.Parse(Timepicker1.Text)
                 };
-                AppointmentsWindow.GetInstance().Appointments.Add(appointment);
+                //AppointmentsWindow.GetInstance().Appointments.Add(appointment);
+                AppointmentsView.GetInstance().Appointments.Add(appointment);
+                RecordViewModel.GetInstance().Appointments.Add(appointment);
                 //AppointmentIgnore ignore = new AppointmentIgnore(appointment);
                 //ignore.IgnoreMeDoctor(appointment);
                // ignore.IgnoreMePatient(appointment);

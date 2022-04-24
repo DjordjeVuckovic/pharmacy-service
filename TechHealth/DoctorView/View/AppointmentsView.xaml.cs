@@ -1,41 +1,47 @@
 ﻿using System.Collections.ObjectModel;
 using System.Windows;
+using System.Windows.Controls;
 using TechHealth.DoctorView.CRUDAppointments;
-using TechHealth.DoctorView.MedicalHistory;
 using TechHealth.DoctorView.ViewModel;
 using TechHealth.Model;
 using TechHealth.Repository;
 
-namespace TechHealth.DoctorView
+namespace TechHealth.DoctorView.View
 {
-    public partial class AppointmentsWindow : Window
+    public partial class AppointmentsView : UserControl
     {
-        private static AppointmentsWindow _instance;
+        // public AppointmentsView()
+        // {
+        //     InitializeComponent();
+        // }
+        private static AppointmentsView _instance;
         private static string doctorId;
         private ObservableCollection<Appointment> _appointments;
-        public static AppointmentsWindow GetInstance(string id)
-        {
-                
-                if (_instance == null)
-                {
-                     doctorId = id;
-                    _instance = new AppointmentsWindow();
-                }
-                return _instance;
-        }
-        public static AppointmentsWindow GetInstance()
+        public static AppointmentsView GetInstance()
         {
             return _instance;
         }
-        private AppointmentsWindow()
+        public AppointmentsView(string id)
         {
             InitializeComponent();
             _instance = this;
+            doctorId = id;
             DataContext = this;
+            _appointments = new ObservableCollection<Appointment>(AppointmentRepository.Instance.GetByDoctorId(doctorId));
         }
-        public ObservableCollection<Appointment> Appointments =>
-            _appointments ?? (_appointments =
-                new ObservableCollection<Appointment>(AppointmentRepository.Instance.GetByDoctorId(doctorId)));
+
+        public ObservableCollection<Appointment> Appointments
+        {
+            get
+            {
+                return _appointments;
+            }
+            set
+            {
+                _appointments = value;
+                //OnPropertyChanged();
+            }
+        }
         private void Examination_OnClick(object sender, RoutedEventArgs e)
         {
             new CreateExamination(doctorId).ShowDialog();
@@ -66,11 +72,6 @@ namespace TechHealth.DoctorView
                 MessageBox.Show("You are successfully deleted an appointment");
             }
         }
-
-        private void MedicalRecord_OnClick(object sender, RoutedEventArgs e)
-        {
-            new ReportView().Show();
-            Close();
-        }
+        
     }
-}
+    }

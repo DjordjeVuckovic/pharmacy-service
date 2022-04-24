@@ -1,6 +1,6 @@
 ﻿namespace TechHealth.DoctorView.ViewModel
 {
-    public class HomeViewModel
+    public class DashBoardViewModel
     {
         
     }
