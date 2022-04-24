@@ -34,16 +34,14 @@ namespace TechHealth.View.PatientView
             InitializeComponent();
             doctors = DoctorRepository.Instance.DictionaryValuesToList();
             DataContext = this;
-
-
             CbDoctor.ItemsSource = doctors;
+            BlackoutDates();
             TxtTime.Text = selected.StartTime;
-            TxtType.Text = TypeToString(selected.AppointmentType);
             Date.SelectedDate = selected.Date;
 
         }
 
-        public string TypeToString(AppointmentType type)
+        /*public string TypeToString(AppointmentType type)
         {
             switch (type)
             {
@@ -52,7 +50,7 @@ namespace TechHealth.View.PatientView
                 default:
                     return "Operation";
             }
-        }
+        }*/
 
         /*public AppointmentType StringToType(string s)
         {
@@ -65,6 +63,28 @@ namespace TechHealth.View.PatientView
             }
         }*/
 
+        private void BlackoutDates()
+        {
+            CalendarDateRange d1 = new CalendarDateRange(DateTime.MinValue, selected.Date.AddDays(-4));
+            CalendarDateRange d2 = new CalendarDateRange(selected.Date.AddDays(4), DateTime.MaxValue);
+            Date.BlackoutDates.Add(d1);
+            Date.BlackoutDates.Add(d2);
+        }
+
+        private bool ValidateDate()
+        {
+            return (Date.SelectedDate.Value > selected.StartTimeD.AddDays(3)) || (Date.SelectedDate.Value < selected.StartTimeD.AddDays(-4));
+        }
+
+        private bool Validate()
+        {
+            if (ValidateDate())
+            {
+                MessageBox.Show("Moguce je pomeriti termin za maksimalo 3 dana unapred ili unazad!");
+                return false;
+            }
+            return true; //fali jos validacija za sve ostalo
+        }
 
         private void Button_Click_Confirm(object sender, RoutedEventArgs e)
         {
@@ -73,6 +93,10 @@ namespace TechHealth.View.PatientView
             selected.AppointmentType = AppointmentType.examination;
             selected.Doctor = doctors[CbDoctor.SelectedIndex];
 
+            if (!Validate())
+            {
+                return;
+            }
             
             AppointmentRepository.Instance.Update(selected);
             //appointmentController.Update(selected.Date, selected.StartTime, selected.AppointmentType, selected.Doctor, selected.IdAppointment);
