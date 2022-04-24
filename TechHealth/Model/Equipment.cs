@@ -12,16 +12,25 @@ namespace TechHealth.Model
    {
       public string name { get; set; }
       public string id { get; set; }
-        [JsonIgnore]
+      [JsonIgnore]
       public string type { get; set; }
-        [JsonIgnore]
+      [JsonIgnore]
       public int quantity { get; set; }
 
-
-        public override string ToString()
+        public Equipment() { }
+        public Equipment(string name, string id, string type, int quantity)
         {
-            return name.ToString() + ", " + id.ToString() + ", " + type.ToString() + ", " + quantity.ToString();
-        }
+            this.name = name;
+            this.id = id;
+            this.type = type;
+            this.quantity = quantity;
+        } 
+
+
+        //public override string ToString()
+        //{
+        //    return name.ToString() + ", " + id.ToString() + ", " + type.ToString() + ", " + quantity.ToString();
+        //}
 
     }
 }
