@@ -7,8 +7,8 @@
         xmlns:viewModel="clr-namespace:TechHealth.View.ManagerView.ViewModel"
         mc:Ignorable="d"
         Title="MainManagerWindow" Height="600" Width="920"
-        WindowStyle="None"
         ResizeMode="NoResize"
+        WindowStyle="None"
         Background="Transparent"
         AllowsTransparency="True">
 
@@ -41,7 +41,9 @@
                              Height="50"
                              Foreground="White"
                              FontSize="14"
-                             Style="{StaticResource MenuButtonTheme}"/>
+                             Style="{StaticResource MenuButtonTheme}"
+                             IsChecked="True"
+                             Command="{Binding HomeViewCommand}"/>
 
                 <RadioButton Content="Rooms"
                              Height="50"
@@ -59,7 +61,8 @@
                              Height="50"
                              Foreground="White"
                              FontSize="14"
-                             Style="{StaticResource MenuButtonTheme}"/>
+                             Style="{StaticResource MenuButtonTheme}"
+                             Command="{Binding EquipmentViewCommand}"/>
 
                 <RadioButton Content="Employees"
                              Height="50"

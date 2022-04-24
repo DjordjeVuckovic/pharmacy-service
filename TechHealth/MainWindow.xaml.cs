@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using Scar.Common.WPF.Controls;
 using TechHealth.Model;
 using TechHealth.Repository;
+using TechHealth.View.ManagerView;
 using TechHealth.View.ManagerView.CRUDRooms;
 
 namespace TechHealth
@@ -45,6 +46,7 @@ namespace TechHealth
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
             new RoomWindow().Show();
+            //new MainManagerWindow().Show();
             this.Close();
         }
 

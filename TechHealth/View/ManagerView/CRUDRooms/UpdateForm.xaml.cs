@@ -15,6 +15,7 @@ using TechHealth.Model;
 using TechHealth.Controller;
 using TechHealth.Repository;
 using TechHealth.View.ManagerView;
+using TechHealth.Conversions;
 
 namespace TechHealth.View.ManagerView.CRUDRooms
 {
@@ -30,91 +31,17 @@ namespace TechHealth.View.ManagerView.CRUDRooms
             //this.DataContext = this;
 
             TxtRoomId.Text = selected.roomId;
-            CbFloor.Text = FloorToString(selected.floor);
-            CbType.Text = RoomTypesToString(selected.RoomTypes);
-            CbAvailability.Text = AvailabilityToString(selected.availability);
+            CbFloor.Text = ManagerConversions.FloorToString(selected.floor);
+            CbType.Text = ManagerConversions.RoomTypesToString(selected.RoomTypes);
+            CbAvailability.Text = ManagerConversions.AvailabilityToString(selected.availability);
             
-        }
-
-        public string RoomTypesToString(RoomTypes type)
-        {
-            switch (type)
-            {
-                case RoomTypes.operation:
-                    return "Operation";
-                case RoomTypes.examination:
-                    return "Examination";
-                case RoomTypes.rest:
-                    return "Rest";
-                default:
-                    return "Office";
-            }
-        }
-
-        public string FloorToString(int floor)
-        {
-            switch (floor)
-            {
-                case 1:
-                    return "1";
-                case 2:
-                    return "2";
-                case 3:
-                    return "3";
-                default:
-                    return "0";
-            }
-        }
-
-        public string AvailabilityToString(bool availability)
-        {
-            if (availability)
-                return "In function";
-            else
-                return "Not in function";
-            
-        }
-
-        public RoomTypes StringToRoomType(string str)
-        {
-            switch (str)
-            {
-                case "Operation":
-                    return RoomTypes.operation;
-                case "Examination":
-                    return RoomTypes.examination;
-                case "Rest":
-                    return RoomTypes.rest;
-                default:
-                    return RoomTypes.office;
-            }
-        }
-
-        public int StringToFloor(string str)
-        {
-            switch (str)
-            {
-                case "1":
-                    return 1;
-                case "2":
-                    return 2;
-                case "3":
-                    return 3;
-                default:
-                    return 0;
-            }
-        }
-
-        public bool StringToAvailability(string str)
-        {
-            return str.Equals("In function");
         }
 
         private void Button_Click_Confirm(object sender, RoutedEventArgs e)
         {
-            selected.floor = StringToFloor(CbFloor.Text);
-            selected.RoomTypes = StringToRoomType(CbType.Text);
-            selected.availability = StringToAvailability(CbAvailability.Text);
+            selected.floor = ManagerConversions.StringToFloor(CbFloor.Text);
+            selected.RoomTypes = ManagerConversions.StringToRoomType(CbType.Text);
+            selected.availability = ManagerConversions.StringToAvailability(CbAvailability.Text);
 
             roomController.Update(selected.roomId, selected.floor, selected.availability,selected.RoomTypes);
             this.Close();

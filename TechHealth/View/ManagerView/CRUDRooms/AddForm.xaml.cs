@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using TechHealth.Model;
 using TechHealth.Controller;
+using TechHealth.Conversions;
 
 namespace TechHealth.View.ManagerView.CRUDRooms
 {
@@ -30,69 +31,34 @@ namespace TechHealth.View.ManagerView.CRUDRooms
             this.Close();
         }
 
-        public RoomTypes StringToRoomType(string str)
-        {
-            switch (str)
-            {
-                case "Operation":
-                    return RoomTypes.operation;
-                case "Examination":
-                    return RoomTypes.examination;
-                case "Rest":
-                    return RoomTypes.rest;
-                default:
-                    return RoomTypes.office;
-            }
-        }
-
-        public int StringToFloor(string str)
-        {
-            switch (str)
-            {
-                case "1":
-                    return 1;
-                case "2":
-                    return 2;
-                case "3":
-                    return 3;
-                default:
-                    return 0;
-            }
-        }
-
-        public bool StringToAvailability(string str)
-        {
-            return str.Equals("In function");
-        }
-
         private void Button_Click_Confirm(object sender, RoutedEventArgs e)
         {
-             room = new Room();
+            room = new Room();
 
             room.roomId = TxtRoomId.Text;
-            room.floor = StringToFloor(CbFloor.Text);
-            room.RoomTypes = StringToRoomType(CbType.Text);
-            room.availability = StringToAvailability(CbAvailability.Text);
-            room.equipment = new List<Equipment>
-                {
-                    new Equipment
-                    {
-                        name = "bandazer",
-                        id = "1",
-                        type = "potrosna oprema",
-                        quantity = 30
-                    },
+            room.floor = ManagerConversions.StringToFloor(CbFloor.Text);
+            room.RoomTypes = ManagerConversions.StringToRoomType(CbType.Text);
+            room.availability = ManagerConversions.StringToAvailability(CbAvailability.Text);
+            //room.equipment = new List<Equipment>
+            //    {
+            //        new Equipment
+            //        {
+            //            name = "bandazer",
+            //            id = "1",
+            //            type = "potrosna oprema",
+            //            quantity = 30
+            //        },
 
-                    new Equipment
-                    {
-                        name = "gaze",
-                        id = "2",
-                        type = "potrosna oprema",
-                        quantity = 80
-                    },
-                };
+            //        new Equipment
+            //        {
+            //            name = "gaze",
+            //            id = "2",
+            //            type = "potrosna oprema",
+            //            quantity = 80
+            //        },
+            //    };
+            room.equipment = new List<Equipment>();
 
-            //roomController.Create(room.roomId, room.floor, room.availability, room.RoomTypes);
             roomController.Create(room);
 
             this.Close();
