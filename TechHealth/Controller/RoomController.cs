@@ -30,15 +30,10 @@ namespace TechHealth.Controller
             room.roomId = roomId;
             room.floor = floor;
             room.availability = available;
-            room.RoomTypes = type;
+            room.roomTypes = type;
 
             return roomService.Create(room);
       }
-
-        public bool Create(Room room)
-        {
-            return roomService.Create(room);
-        }
       
       public bool Update(string roomId, int floor, bool available, RoomTypes type)
       {
@@ -46,7 +41,7 @@ namespace TechHealth.Controller
             room.roomId = roomId;
             room.floor = floor;
             room.availability = available;
-            room.RoomTypes = type;
+            room.roomTypes = type;
 
             return roomService.Update(room);
         }

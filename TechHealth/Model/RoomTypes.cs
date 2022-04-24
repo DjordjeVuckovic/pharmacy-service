@@ -9,7 +9,7 @@ namespace TechHealth.Model
 {
    public enum RoomTypes
    {
-      rest = 1,
+      rest,
       operation,
       office,
       examination
