@@ -62,5 +62,12 @@
     "roomId": "dadada",
     "floor": 3,
     "equipment": []
+  },
+  "bubibu": {
+    "RoomTypes": "operation",
+    "roomId": "bubibu",
+    "floor": 2,
+    "availability": true,
+    "equipment": []
   }
 }
