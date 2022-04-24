@@ -5,6 +5,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 using PostSharp.Patterns.Model;
 
 namespace TechHealth.Model
@@ -12,19 +13,29 @@ namespace TechHealth.Model
     [NotifyPropertyChanged]
     public class Room
     {
+        [JsonConverter(typeof(JsonStringEnumConverter))]
         public RoomTypes roomTypes { get; set; }
         public string roomId { get; set; }
         public int floor { get; set; }
         public bool availability { get; set; }
+        public List<Equipment> equipment { get; set; }
 
-        private List<Equipment> equipment = new List<Equipment>();
+        //public string Equipments
+        //{
+        //    get
+        //    {
+        //        return ToString();
+        //    }
+        //}
 
-        public string Equipments
+        public Room() { }
+        public Room(RoomTypes rt, string id, int flr, bool available, List<Equipment> list)
         {
-            get
-            {
-                return ToString();
-            }
+            roomTypes = rt;
+            roomId = id;
+            floor = flr;
+            availability = available;
+            equipment = list;
         }
 
         public void Add(Equipment eq)
@@ -32,15 +43,15 @@ namespace TechHealth.Model
             equipment.Add(eq);
         }
 
-        public string ToString()
-        {
-            string str = "";
-            foreach (Equipment eq in equipment)
-            {
-                str += eq.ToString();
-                str += ";";
-            }
-            return str;
-        }
+        //public string ToString()
+        //{
+        //    string str = "";
+        //    foreach (Equipment eq in equipment)
+        //    {
+        //        str += eq.ToString();
+        //        str += ";";
+        //    }
+        //    return str;
+        //}
     }
 }

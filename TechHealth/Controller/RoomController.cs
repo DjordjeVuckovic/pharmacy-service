@@ -34,7 +34,12 @@ namespace TechHealth.Controller
 
             return roomService.Create(room);
       }
-      
+
+      public bool Create(Room room)
+      {
+          return roomService.Create(room);
+      }
+
       public bool Update(string roomId, int floor, bool available, RoomTypes type)
       {
             var room = new Room();
@@ -44,7 +49,7 @@ namespace TechHealth.Controller
             room.roomTypes = type;
 
             return roomService.Update(room);
-        }
+      }
       
       public bool Delete(string roomId)
       {
