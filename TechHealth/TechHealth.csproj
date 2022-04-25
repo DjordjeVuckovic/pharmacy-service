@@ -257,6 +257,14 @@
     <Compile Include="View\ManagerView\CRUDRooms\UpdateForm.xaml.cs">
       <DependentUpon>UpdateForm.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\ManagerView\ManagerMainWindow.xaml.cs">
+      <DependentUpon>ManagerMainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ManagerView\ViewModel\HomeViewModel.cs" />
+    <Compile Include="View\ManagerView\ViewModel\MainViewModel.cs" />
+    <Compile Include="View\ManagerView\VieW\HomeView.xaml.cs">
+      <DependentUpon>HomeView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\PatientView\AddAppointment.xaml.cs">
       <DependentUpon>AddAppointment.xaml</DependentUpon>
     </Compile>
@@ -333,6 +341,7 @@
     <Content Include="Json\prescription.json" />
     <Content Include="Json\secretary.json" />
     <Content Include="Json\specialization.json" />
+    <Resource Include="resources\ZDRAVOicon.png" />
     <Resource Include="resources\appoint.png" />
     <Resource Include="resources\1a.png" />
     <Resource Include="resources\1c.png" />
@@ -403,6 +412,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\ManagerView\CRUDRooms\UpdateForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ManagerView\ManagerMainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ManagerView\VieW\HomeView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
