@@ -5,7 +5,6 @@ using TechHealth.DoctorView.View;
 using TechHealth.DoctorView.Windows;
 using TechHealth.Model;
 using TechHealth.Repository;
-
 namespace TechHealth.DoctorView.ViewModel
 {
     public class PatientsViewModel:ViewModelBase
