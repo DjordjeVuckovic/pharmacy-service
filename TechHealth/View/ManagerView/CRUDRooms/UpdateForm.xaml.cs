@@ -43,7 +43,7 @@ namespace TechHealth.View.ManagerView.CRUDRooms
             selected.roomTypes = ManagerConversions.StringToRoomType(CbType.Text);
             selected.availability = ManagerConversions.StringToAvailability(CbAvailability.Text);
 
-            roomController.Update(selected.roomId, selected.floor, selected.availability,selected.roomTypes);
+            roomController.Update(selected.roomId, selected.floor, selected.availability,selected.roomTypes, selected.equipment);
             this.Close();
         }
 

@@ -221,6 +221,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Model\Anamnesis.cs" />
+    <Compile Include="Model\EquipmentType.cs" />
     <Compile Include="Model\Substance.cs" />
     <Compile Include="Model\EmlpoymentData.cs" />
     <Compile Include="Model\MainIssue.cs" />

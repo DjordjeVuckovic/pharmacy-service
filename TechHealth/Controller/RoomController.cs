@@ -40,18 +40,23 @@ namespace TechHealth.Controller
           return roomService.Create(room);
       }
 
-      public bool Update(string roomId, int floor, bool available, RoomTypes type)
+      public bool Update(string roomId, int floor, bool available, RoomTypes type, List<Equipment> eq)
       {
             var room = new Room();
             room.roomId = roomId;
             room.floor = floor;
             room.availability = available;
             room.roomTypes = type;
+            room.equipment = eq;
 
             return roomService.Update(room);
       }
-      
-      public bool Delete(string roomId)
+      public bool Update(Room room)
+      {
+            return roomService.Update(room);
+      }
+
+        public bool Delete(string roomId)
       {
             return roomService.Delete(roomId);
       }

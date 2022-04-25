@@ -45,16 +45,18 @@ namespace TechHealth.View.ManagerView.CRUDRooms
                     {
                         name = "bandazer",
                         id = "1",
-                        type = "potrosna oprema",
-                        quantity = 30
+                        type = EquipmentType.statical,
+                        quantity = 30,
+                        roomID = "sobica"
                     },
 
                     new Equipment
                     {
                         name = "gaze",
                         id = "2",
-                        type = "potrosna oprema",
-                        quantity = 80
+                        type = EquipmentType.statical,
+                        quantity = 80,
+                        roomID = "sobaa"
                     },
                 };
 
