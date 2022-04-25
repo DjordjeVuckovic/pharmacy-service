@@ -5,7 +5,6 @@ using TechHealth.DoctorView.View;
 using TechHealth.DoctorView.Windows;
 using TechHealth.Model;
 using TechHealth.Repository;
-
 namespace TechHealth.DoctorView.ViewModel
 {
     public class PatientsViewModel:ViewModelBase
@@ -16,6 +15,8 @@ namespace TechHealth.DoctorView.ViewModel
         private Patient selectedItem;
         private TherapyWindow therapyWindow;
         private  object currentViewPatient;
+        private MedicalRecordViewModel MedicalRecordViewModel;
+        private readonly MainViewModel mainViewModel;
         public string DoctorId { get; set; }
         public object CurrentViewPatient
         {
@@ -55,8 +56,10 @@ namespace TechHealth.DoctorView.ViewModel
         public PatientsViewModel()
         {
             patients = new ObservableCollection<Patient>(PatientRepository.Instance.DictionaryValuesToList());
+            //currentViewPatient = this;
             TherapyCommand= new RelayCommand(param => Execute(), param => CanExecute());
             MedicineRecordCommand = new RelayCommand(param => Execute1(), param => CanExecute1());
+            
         }
 
         private bool CanExecute()
@@ -76,17 +79,13 @@ namespace TechHealth.DoctorView.ViewModel
         }
         private bool CanExecute1()
         {
-            if (selectedItem == null)
-            {
-                return false;
-            }
-
             return true;
         }
 
         private void Execute1()
         {
-           // ContentControl control = new MedicalRecordView();
+            MedicalRecordViewModel = new MedicalRecordViewModel(selectedItem);
+            MainViewModel.Instance.CurrentView = MedicalRecordViewModel;
         }
     }
 }

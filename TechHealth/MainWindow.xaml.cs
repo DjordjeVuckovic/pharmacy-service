@@ -26,7 +26,30 @@ namespace TechHealth
         public MainWindow()
         {
             InitializeComponent();
-            
+            RandomGenerator randomGenerator = new RandomGenerator();
+            Patient patient = PatientRepository.Instance.GetById("2456");
+            EmlpoymentData emlpoymentData = new EmlpoymentData
+            {
+                Our = "1345",
+                Profession = "moler",
+                Workplace = "Duga",
+                Job = "kasir"
+            };
+            MedicalRecord medicalRecord = new MedicalRecord
+            {
+                RecordId = randomGenerator.GenerateRandHash(),
+                BloodType = Bloodtype.ab,
+                Patient = patient,
+                Weight = "80 kg",
+                Height = "170 cm",
+                ChronicDiseases = "asma",
+                Allergens = "polen,prasina",
+                ParentDiseases = "plucna maramica",
+                EmlpoymentData = emlpoymentData
+            };
+            MedicalRecordRepository.Instance.Create(medicalRecord);
+
+
 
         }
 

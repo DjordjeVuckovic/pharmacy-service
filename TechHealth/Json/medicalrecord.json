@@ -1,0 +1,146 @@
+{
+  "89e9c4a8f9e24f6b8255380ebd174475": {
+    "RecordId": "89e9c4a8f9e24f6b8255380ebd174475",
+    "BloodType": 0,
+    "Patient": {
+      "Guest": false,
+      "Lbo": 0,
+      "IsBanned": false,
+      "Address": {
+        "City": "Novi Sad",
+        "StreetNumber": "21",
+        "Country": "Srbija",
+        "Street": "Puse Pusica",
+        "Postcode": 21000
+      },
+      "Name": "Dusan",
+      "Surname": "Vukovic",
+      "Email": "dusan@dusan",
+      "Jmbg": "2456",
+      "Phone": "0613411123",
+      "Employed": false,
+      "Birthday": "0001-01-01T00:00:00",
+      "Username": "dusan",
+      "Password": "dusan"
+    },
+    "Weight": "80 kg",
+    "Height": "170 cm",
+    "ChronicDiseases": "asma",
+    "Allergens": "polen,prasina",
+    "ParentDiseases": "plucna maramica",
+    "EmlpoymentData": {
+      "Our": "1345",
+      "Profession": "moler",
+      "Workplace": "Duga",
+      "Job": "kasir"
+    }
+  },
+  "91272655294d4caab6b3620d7b11f953": {
+    "RecordId": "91272655294d4caab6b3620d7b11f953",
+    "BloodType": 0,
+    "Patient": {
+      "Guest": false,
+      "Lbo": 0,
+      "IsBanned": false,
+      "Address": {
+        "City": "Novi Sad",
+        "StreetNumber": "21",
+        "Country": "Srbija",
+        "Street": "Puse Pusica",
+        "Postcode": 21000
+      },
+      "Name": "Dusan",
+      "Surname": "Vukovic",
+      "Email": "dusan@dusan",
+      "Jmbg": "2456",
+      "Phone": "0613411123",
+      "Employed": false,
+      "Birthday": "0001-01-01T00:00:00",
+      "Username": "dusan",
+      "Password": "dusan"
+    },
+    "Weight": "80 kg",
+    "Height": "170 cm",
+    "ChronicDiseases": "asma",
+    "Allergens": "polen,prasina",
+    "ParentDiseases": "plucna maramica",
+    "EmlpoymentData": {
+      "Our": "1345",
+      "Profession": "moler",
+      "Workplace": "Duga",
+      "Job": "kasir"
+    }
+  },
+  "6966685673fd40d3a8816d11a2823ab3": {
+    "RecordId": "6966685673fd40d3a8816d11a2823ab3",
+    "BloodType": 0,
+    "Patient": {
+      "Guest": false,
+      "Lbo": 0,
+      "IsBanned": false,
+      "Address": {
+        "City": "Novi Sad",
+        "StreetNumber": "21",
+        "Country": "Srbija",
+        "Street": "Puse Pusica",
+        "Postcode": 21000
+      },
+      "Name": "Dusan",
+      "Surname": "Vukovic",
+      "Email": "dusan@dusan",
+      "Jmbg": "2456",
+      "Phone": "0613411123",
+      "Employed": false,
+      "Birthday": "0001-01-01T00:00:00",
+      "Username": "dusan",
+      "Password": "dusan"
+    },
+    "Weight": "80 kg",
+    "Height": "170 cm",
+    "ChronicDiseases": "asma",
+    "Allergens": "polen,prasina",
+    "ParentDiseases": "plucna maramica",
+    "EmlpoymentData": {
+      "Our": "1345",
+      "Profession": "moler",
+      "Workplace": "Duga",
+      "Job": "kasir"
+    }
+  },
+  "0ada3d0e476f4b8a96ce2905f16dfa78": {
+    "RecordId": "0ada3d0e476f4b8a96ce2905f16dfa78",
+    "BloodType": 0,
+    "Patient": {
+      "Guest": false,
+      "Lbo": 0,
+      "IsBanned": false,
+      "Address": {
+        "City": "Novi Sad",
+        "StreetNumber": "21",
+        "Country": "Srbija",
+        "Street": "Puse Pusica",
+        "Postcode": 21000
+      },
+      "Name": "Dusan",
+      "Surname": "Vukovic",
+      "Email": "dusan@dusan",
+      "Jmbg": "2456",
+      "Phone": "0613411123",
+      "Employed": false,
+      "Birthday": "0001-01-01T00:00:00",
+      "Username": "dusan",
+      "Password": "dusan"
+    },
+    "Weight": "80 kg",
+    "Height": "170 cm",
+    "ChronicDiseases": "asma",
+    "Allergens": "polen,prasina",
+    "ParentDiseases": "plucna maramica",
+    "EmlpoymentData": {
+      "Our": "1345",
+      "Profession": "moler",
+      "Workplace": "Duga",
+      "Job": "kasir"
+    }
+  }
+}
