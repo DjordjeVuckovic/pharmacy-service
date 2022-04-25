@@ -1,2 +1,23 @@
 {
+  "sobica": {
+    "name": "bandazer",
+    "id": "sobica",
+    "type": "statical",
+    "quantity": 222,
+    "roomID": "soba23"
+  },
+  "111": {
+    "name": "bandazerrrr",
+    "id": "111",
+    "type": "dynamical",
+    "quantity": 57,
+    "roomID": "bibibi"
+  },
+  "1234": {
+    "name": "gfddfgd",
+    "id": "1234",
+    "type": "dynamical",
+    "quantity": 90,
+    "roomID": "dasdasd"
+  }
 }
