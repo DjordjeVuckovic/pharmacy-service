@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
         Title="ManagerMainWindow" Height="450" Width="800">
+
     <Grid Background="LightGreen">
         <Menu Margin="0,49,648,0"/>
         <Label Content="ZDRAVO" HorizontalAlignment="Left" Margin="30,7,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="20" RenderTransformOrigin="0.182,0.168"/>

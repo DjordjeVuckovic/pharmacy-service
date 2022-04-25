@@ -9,6 +9,31 @@ namespace TechHealth.Conversions
 {
     public class ManagerConversions
     {
+        public static EquipmentType StringToEquipmentType(string str)
+        {
+            switch (str)
+            {
+                case "Static":
+                    return EquipmentType.statical;
+                case "Dynamic":
+                    return EquipmentType.dynamical;
+                default:
+                    return EquipmentType.statical;
+            }
+        }
+        public static string EquipmentTypeToString(EquipmentType type)
+        {
+            switch (type)
+            {
+                case EquipmentType.statical:
+                    return "Static";
+                case EquipmentType.dynamical:
+                    return "Dynamic";
+                default:
+                    return "";
+            }
+        }
+
         public static string RoomTypesToString(RoomTypes type)
         {
             switch (type)
