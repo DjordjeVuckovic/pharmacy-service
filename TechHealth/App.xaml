@@ -27,9 +27,14 @@
             <DataTemplate DataType="{x:Type viewModel:MedicineViewModel}">
                 <view:MedicineView/>
             </DataTemplate>
+            
             <DataTemplate DataType="{x:Type viewmodel:HomeViewModel}">
                 <vieW:HomeView/>
             </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodel:EquipmentViewModel}">
+                <vieW:EquipmentView/>
+            </DataTemplate>
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>
