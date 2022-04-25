@@ -29,11 +29,15 @@ namespace TechHealth.Repository
          List<Appointment> appointments = new List<Appointment>();
          foreach (var t in DictionaryValuesToList())
          {
-            if (id.Equals(t.Doctor.Jmbg))
+            if (t.Doctor != null)
             {
-               appointments.Add(t);
+               if (id.Equals(t.Doctor.Jmbg))
+               {
+                  appointments.Add(t);
+               }
             }
          }
+
          return appointments;
       }
       
@@ -60,5 +64,6 @@ namespace TechHealth.Repository
       {
          throw new NotImplementedException();
       }
+      
    }
 }

@@ -154,6 +154,7 @@
     <Compile Include="Controller\AccountController.cs" />
     <Compile Include="Controller\AppointmentController.cs" />
     <Compile Include="Controller\RoomController.cs" />
+    <Compile Include="Core\CommandBase.cs" />
     <Compile Include="Core\RelayCommand.cs" />
     <Compile Include="Core\ViewModelBase.cs" />
     <Compile Include="DoctorView\CRUDAppointments\AppointmentsUpdate.xaml.cs">
@@ -174,8 +175,10 @@
     <Compile Include="DoctorView\MedicalHistory\ReviewAnamnesis.xaml.cs">
       <DependentUpon>ReviewAnamnesis.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DoctorView\NavigateCommand.cs" />
     <Compile Include="DoctorView\ViewModel\DashBoardViewModel.cs" />
     <Compile Include="DoctorView\ViewModel\MainViewModel.cs" />
+    <Compile Include="DoctorView\ViewModel\MedicalRecordViewModel.cs" />
     <Compile Include="DoctorView\ViewModel\MedicineViewModel.cs" />
     <Compile Include="DoctorView\ViewModel\PatientsViewModel.cs" />
     <Compile Include="DoctorView\ViewModel\RecordViewModel.cs" />
@@ -232,6 +235,7 @@
     <Compile Include="Repository\DoctorRepository.cs" />
     <Compile Include="Repository\GenericRepository.cs" />
     <Compile Include="Repository\ManagerRepository.cs" />
+    <Compile Include="Repository\MedicalRecordRepository.cs" />
     <Compile Include="Repository\MedicineRepository.cs" />
     <Compile Include="Repository\PatientRepository.cs" />
     <Compile Include="Repository\PrescribeMedicineRepository.cs" />
@@ -244,6 +248,7 @@
     <Compile Include="Service\DoctorService.cs" />
     <Compile Include="Service\PatientService.cs" />
     <Compile Include="Service\RoomService.cs" />
+    <Compile Include="Store\NavigationStore.cs" />
     <Compile Include="ValidationRules\FutureDateValidationRule.cs" />
     <Compile Include="ValidationRules\NotEmptyValidationRule.cs" />
     <Compile Include="ValidationRules\SimpleDateValidationRule.cs" />
@@ -327,6 +332,7 @@
     <Content Include="Json\appointment.json" />
     <Content Include="Json\doctor.json" />
     <Content Include="Json\manager.json" />
+    <Content Include="Json\medicalrecord.json" />
     <Content Include="Json\medicine.json" />
     <Content Include="Json\patient.json" />
     <Content Include="Json\prescription.json" />
