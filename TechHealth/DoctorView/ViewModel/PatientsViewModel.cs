@@ -14,7 +14,7 @@ namespace TechHealth.DoctorView.ViewModel
         private ObservableCollection<Patient> patients;
         private Patient selectedItem;
         private TherapyWindow therapyWindow;
-        private  object currentViewPatient;
+        private object currentViewPatient;
         private MedicalRecordViewModel MedicalRecordViewModel;
         private readonly MainViewModel mainViewModel;
         public string DoctorId { get; set; }
