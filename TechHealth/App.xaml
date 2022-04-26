@@ -5,6 +5,8 @@
              xmlns:viewModel="clr-namespace:TechHealth.DoctorView.ViewModel"
              xmlns:view="clr-namespace:TechHealth.DoctorView.View"
              xmlns:mainview="clr-namespace:TechHealth.DoctorView"
+             xmlns:viewmodel="clr-namespace:TechHealth.View.ManagerView.ViewModel"
+             xmlns:vieW="clr-namespace:TechHealth.View.ManagerView.VieW"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
@@ -15,7 +17,7 @@
             </ResourceDictionary.MergedDictionaries>
             <DataTemplate DataType="{x:Type viewModel:DashBoardViewModel}">
                 <view:DashBoardView/>
-            </DataTemplate> 
+            </DataTemplate>
             <DataTemplate DataType="{x:Type viewModel:PatientsViewModel}">
                 <view:PatientView/>
             </DataTemplate>
@@ -25,9 +27,14 @@
             <DataTemplate DataType="{x:Type viewModel:MedicineViewModel}">
                 <view:MedicineView/>
             </DataTemplate>
-            <DataTemplate DataType="{x:Type viewModel:MedicalRecordViewModel}">
-                <view:MedicalRecordView/>
+            
+            <DataTemplate DataType="{x:Type viewmodel:HomeViewModel}">
+                <vieW:HomeView/>
             </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodel:EquipmentViewModel}">
+                <vieW:EquipmentView/>
+            </DataTemplate>
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>

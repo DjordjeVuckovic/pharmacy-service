@@ -10,9 +10,9 @@ namespace TechHealth.View.ManagerView.ViewModel
     public class MainViewModel : ViewModelBase
     {
         public RelayCommand HomeViewCommand { get; set; }
-        //public RelayCommand EquipmentViewCommand { get; set; }
+        public RelayCommand EquipmentViewCommand { get; set; }
         public HomeViewModel HomeVm { get; set; }
-        //public EquipmentViewModel EquipmentVm { get; set; }
+        public EquipmentViewModel EquipmentVm { get; set; }
 
         private object currentView;
 
@@ -29,7 +29,7 @@ namespace TechHealth.View.ManagerView.ViewModel
         public MainViewModel()
         {
             HomeVm = new HomeViewModel();
-            //EquipmentVm = new EquipmentViewModel();
+            EquipmentVm = new EquipmentViewModel();
 
             CurrentView = HomeVm;
 
@@ -38,10 +38,10 @@ namespace TechHealth.View.ManagerView.ViewModel
                 CurrentView = HomeVm;
             });
 
-            //EquipmentViewCommand = new RelayCommand(o =>
-            //{
-            //    CurrentView = EquipmentVm;
-            //});
+            EquipmentViewCommand = new RelayCommand(o =>
+            {
+                CurrentView = EquipmentVm;
+            });
 
 
         }
