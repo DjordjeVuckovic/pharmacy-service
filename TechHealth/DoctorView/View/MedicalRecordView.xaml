@@ -3,22 +3,69 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:local="clr-namespace:TechHealth.DoctorView.View"
+             xmlns:convert="clr-namespace:TechHealth.Conversions"
              mc:Ignorable="d"
-             d:DesignHeight="450" d:DesignWidth="300">
-    
-    <Grid>
-        
-        <Border  BorderBrush="MediumSpringGreen" BorderThickness="1">
-            <StackPanel> 
-                <TextBlock Text="Welcome back" Foreground="#f8f8f2" FontSize="24" HorizontalAlignment="Left" Margin="300,0,0,0" />
-                <TextBlock Text="Welcome back"  FontSize="14" HorizontalAlignment="Left" Margin="100,0,0,0" />
-                <StackPanel Orientation="Horizontal">
-                    <Border Width="400" Height="200"/>
-                </StackPanel>
+             d:DesignHeight="500" d:DesignWidth="800">
+    <Grid >
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="320"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="400"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Row="0" Grid.Column="0"  Content="Medical record for:"  VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="32" Foreground="#f1fa8c" />
+        <Label Grid.Row="0" Grid.Column="1"  Content="{Binding LabelFullName}"  VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="32" Foreground="#f1fa8c" Margin="10,0,0,0"/>
+        <Rectangle Grid.Column="0" Grid.Row="1" RadiusX="30" RadiusY="30" Fill="#FF3A475F" Margin="10,0"/>
+        <Grid Grid.Column="0"  Grid.Row="1">
+            <StackPanel    Margin="20,0,0,0" >
+                <TextBlock Text="Personal data" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center"   Foreground="#f1fa8c"/>
+                <Label Content="{Binding LabelName}"  HorizontalAlignment="Left" FontSize="16"/>
+                <Label Content="{Binding LabelSurName}"  HorizontalAlignment="Left" FontSize="16"/>
+                <Label Content="{Binding LabelId}"  HorizontalAlignment="Left" FontSize="16"/>
+                <Label Content="{Binding LabelLbo}"  HorizontalAlignment="Left" FontSize="16"/>
+                <Label Content="{Binding LabelGender}"  HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16"/>
+                <Label Content="{Binding LabelBirth}"  HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16"/>
+                <Label Content="{Binding LabelPhone}" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16"/>
+                <Label Content="{Binding LabelEmail}" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" />
+                <Label Content="{Binding LabelAddress}" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16"/>
             </StackPanel>
-        </Border>
+        </Grid>
+        <Rectangle Grid.Column="0" Grid.Row="2" RadiusX="30" RadiusY="30" Fill="#FF3A475F" Margin="10,10,10,0"  />
+        <Grid Grid.Column="0"  Grid.Row="2">
+            <StackPanel    Margin="20,10,10,0" >
+                <TextBlock Text="Emloyment data" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#f1fa8c"   />
+                <Label Content="{Binding LabelOur}"  HorizontalAlignment="Left" FontSize="16" />
+                <Label Content="{Binding LabelProfession}"  HorizontalAlignment="Left" FontSize="16"/>
+                <Label Content="{Binding LabelJob}"  HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16"/>
+                <Label Content="{Binding LabelWork}"  HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16"/>
+                
+            </StackPanel>
+        </Grid>
+        <Rectangle Grid.Column="1" Grid.Row="1" RadiusX="30" RadiusY="30" Fill="#FF3A475F" Margin="0,0" />
+        <Grid Grid.Column="1"  Grid.Row="1">
+            <StackPanel    Margin="10,0" >
+                <TextBlock Text="Medical data" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center"  Foreground="#f1fa8c" />
+                <Label Content="{Binding LabelWeight}"  HorizontalAlignment="Left" FontSize="16"/>
+                <Label Content="{Binding LabelHeight}"  HorizontalAlignment="Left" FontSize="16"/>
+                <Label Content="{Binding LabelBloodType}"  HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16"/>
+                <Label Content="{Binding LabelHronical}"  HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16"/>
+                <Label Content="{Binding LabelAllergens}" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16"/>
+                <Label Content="{Binding LabelParentDiseases}" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16"/>
+            </StackPanel>
+        </Grid>
+        
+        <Grid Grid.Column="1"  Grid.Row="2" Margin="10,10,0,0">
+            <Image Source="C:\Users\djord\OneDrive\Documents\GitHub\PharmacyService\TechHealth\resources\health-check.png" Margin="0,0,0,10"></Image>
+        </Grid>
+
+
+
+
     </Grid>
-    
-    
+
 </UserControl>

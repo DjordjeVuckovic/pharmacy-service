@@ -21,12 +21,27 @@ namespace TechHealth.Repository
 
         protected override string GetKey(MedicalRecord entity)
         {
-           return entity.RecordId;
+            return entity.RecordId;
         }
 
         protected override void RemoveAllReference(string key)
         {
             throw new System.NotImplementedException();
+        }
+        public MedicalRecord GetByPatientId(string id)
+        {
+            foreach (var med in DictionaryValuesToList())
+            {
+                if (med.Patient != null)
+                {
+                    if (med.Patient.Jmbg.Equals(id))
+                    {
+                        return med;
+                    }
+                }
+            }
+
+            return null;
         }
     }
 }

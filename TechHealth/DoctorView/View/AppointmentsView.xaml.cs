@@ -8,7 +8,7 @@ using TechHealth.Repository;
 
 namespace TechHealth.DoctorView.View
 {
-    public partial class AppointmentsView : UserControl
+    public partial class AppointmentsView 
     {
         // public AppointmentsView()
         // {

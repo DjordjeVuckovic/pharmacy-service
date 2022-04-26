@@ -154,7 +154,9 @@
     <Compile Include="Controller\AccountController.cs" />
     <Compile Include="Controller\AppointmentController.cs" />
     <Compile Include="Controller\RoomController.cs" />
+    <Compile Include="Conversions\AddressConverter.cs" />
     <Compile Include="Conversions\ManagerConversions.cs" />
+    <Compile Include="Core\CommandBase.cs" />
     <Compile Include="Core\RelayCommand.cs" />
     <Compile Include="Core\ViewModelBase.cs" />
     <Compile Include="DoctorView\CRUDAppointments\AppointmentsUpdate.xaml.cs">
@@ -177,6 +179,7 @@
     </Compile>
     <Compile Include="DoctorView\ViewModel\DashBoardViewModel.cs" />
     <Compile Include="DoctorView\ViewModel\MainViewModel.cs" />
+    <Compile Include="DoctorView\ViewModel\MedicalRecordViewModel.cs" />
     <Compile Include="DoctorView\ViewModel\MedicineViewModel.cs" />
     <Compile Include="DoctorView\ViewModel\PatientsViewModel.cs" />
     <Compile Include="DoctorView\ViewModel\RecordViewModel.cs" />
@@ -229,11 +232,13 @@
     <Compile Include="Model\Therapy.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Repository\AccountRepository.cs" />
+    <Compile Include="Repository\AllergensRepository.cs" />
     <Compile Include="Repository\AnamnesisRepository.cs" />
     <Compile Include="Repository\AppointmentRepository.cs" />
     <Compile Include="Repository\DoctorRepository.cs" />
     <Compile Include="Repository\GenericRepository.cs" />
     <Compile Include="Repository\ManagerRepository.cs" />
+    <Compile Include="Repository\MedicalRecordRepository.cs" />
     <Compile Include="Repository\MedicineRepository.cs" />
     <Compile Include="Repository\PatientRepository.cs" />
     <Compile Include="Repository\PrescribeMedicineRepository.cs" />
@@ -246,6 +251,7 @@
     <Compile Include="Service\DoctorService.cs" />
     <Compile Include="Service\PatientService.cs" />
     <Compile Include="Service\RoomService.cs" />
+    <Compile Include="Store\NavigationStore.cs" />
     <Compile Include="ValidationRules\FutureDateValidationRule.cs" />
     <Compile Include="ValidationRules\NotEmptyValidationRule.cs" />
     <Compile Include="ValidationRules\SimpleDateValidationRule.cs" />
@@ -333,6 +339,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
+    <Content Include="Json\allergens.json" />
     <Content Include="Json\anamnesis.json" />
     <Content Include="Json\appointment.json" />
     <Content Include="Json\doctor.json" />

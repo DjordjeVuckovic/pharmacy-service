@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:TechHealth.DoctorView.MedicalHistory"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="ReviewAnamnesis" Height="800" Width="500">
+        Title="ReviewAnamnesis" Height="750" Width="500">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="60"/>

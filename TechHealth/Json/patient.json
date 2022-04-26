@@ -25,7 +25,13 @@
     "ChosenDoctor": null,
     "Lbo": 0,
     "IsBanned": false,
-    "Address": null,
+    "Address": {
+      "City": "Novi Sad",
+      "StreetNumber": "21a",
+      "Country": "Srbija",
+      "Street": "Vojvode Bojovica",
+      "Postcode": 21000
+    },
     "Name": "miki",
     "Surname": "Djuricic",
     "Email": "dsa@adsa",

@@ -79,6 +79,11 @@ namespace TechHealth.DoctorView.ViewModel
         }
         private bool CanExecute1()
         {
+            if (selectedItem == null)
+            {
+                return false;
+            }
+
             return true;
         }
 

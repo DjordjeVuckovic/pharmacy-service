@@ -9,13 +9,44 @@ using PostSharp.Patterns.Model;
 
 namespace TechHealth.Model
 {
-   [NotifyPropertyChanged]
+   
    public class Person : User
    {
+      private string name;
+      private string surname;
+      private string email;
       public Address Address { get; set; }
-      public string Name{ get; set; }
-      public string Surname{ get; set; }
-      public string Email{ get; set; }
+
+      public string Name
+      {
+         get => name;
+         set
+         {
+            name = value;
+            OnPropertyChanged(nameof(Name));
+         }
+      }
+
+      public string Surname
+      {
+         get => surname;
+         set
+         {
+            surname = value; 
+            OnPropertyChanged(nameof(Surname));
+         }
+      }
+
+      public string Email
+      {
+         get => email;
+         set
+         {
+            email = value;
+            OnPropertyChanged(nameof(Email));
+         }
+      }
+
       public string Jmbg{ get; set; }
       public string Phone{ get; set; }
       public bool Employed{ get; set; }

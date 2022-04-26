@@ -4,7 +4,14 @@
     <attachedFolders />
     <explicitIncludes>
       <Path>.gitignore</Path>
+      <Path>Core/CommandBase.cs</Path>
+      <Path>DoctorView/NavigateCommand.cs</Path>
       <Path>DoctorView/View</Path>
+      <Path>DoctorView/ViewModel/MedicalRecordViewModel.cs</Path>
+      <Path>Json/medicalrecord.json</Path>
+      <Path>Repository/EquipmentRepository.cs</Path>
+      <Path>Repository/MedicalRecordRepository.cs</Path>
+      <Path>Store</Path>
     </explicitIncludes>
     <explicitExcludes />
   </component>

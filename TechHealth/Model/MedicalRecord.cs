@@ -21,8 +21,9 @@ namespace TechHealth.Model
       private string weight;
       private string height;
       private string chronicDiseases;
-      private string allergens;
+      private List<Allergen> allergens;
       private string parentDiseases;
+      private string martialStatus;
       private EmlpoymentData emlpoymentData;
 
       public string RecordId
@@ -77,12 +78,12 @@ namespace TechHealth.Model
             OnPropertyChanged(nameof(ChronicDiseases));
          }
       }
-      public string Allergens{
+      public List<Allergen> Allergens{
          get => allergens;
          set
          {
             allergens = value;
-            OnPropertyChanged(nameof(allergens));
+            OnPropertyChanged(nameof(Allergens));
          }
       }
       public string ParentDiseases{
@@ -100,6 +101,71 @@ namespace TechHealth.Model
             emlpoymentData = value;
             OnPropertyChanged(nameof(EmlpoymentData));
          }
+      }
+
+      public string MartialStatus
+      {
+         get => martialStatus;
+         set
+         {
+            martialStatus = value;
+            OnPropertyChanged(nameof(MartialStatus));
+         }
+      }
+      public Gender Gender { get; set; }
+
+      public string GenderToString()
+      {
+         string ret="";
+         switch (Gender)
+         {
+            case Gender.Female:
+               ret= "Female";
+               break;
+            case Gender.Male:
+               ret= "Male";
+               break;
+            case Gender.None:
+               ret= "None";
+               break;
+            
+         }
+         return ret;
+      }
+      public String BloodTypeToString()
+      {
+         string ret="";
+         switch (BloodType)
+         {
+            case Bloodtype.An:
+               ret = "A-";
+               break;
+            case Bloodtype.Ap:
+               ret = "A+";
+               break;
+            case Bloodtype.ABn:
+               ret = "AB-";
+               break;
+            case Bloodtype.ABp:
+               ret = "AB+";
+               break;
+            case Bloodtype.Bn:
+               ret = "B-";
+               break;
+            case Bloodtype.Bp:
+               ret = "B+";
+               break;
+            case Bloodtype.On:
+               ret = "0-";
+               break;
+            case Bloodtype.Op:
+               ret = "0+";
+               break;
+
+         }
+
+         return ret;
+
       }
    
    }

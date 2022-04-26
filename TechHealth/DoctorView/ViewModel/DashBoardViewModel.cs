@@ -1,6 +1,8 @@
-﻿namespace TechHealth.DoctorView.ViewModel
+﻿using TechHealth.Core;
+
+namespace TechHealth.DoctorView.ViewModel
 {
-    public class DashBoardViewModel
+    public class DashBoardViewModel:ViewModelBase
     {
         
     }

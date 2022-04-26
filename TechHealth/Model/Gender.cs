@@ -9,8 +9,8 @@ namespace TechHealth.Model
 {
    public enum Gender
    {
-      m,
-      f,
-      none
+      Male,
+      Female,
+      None
    }
 }

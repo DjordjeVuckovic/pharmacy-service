@@ -4,14 +4,35 @@
 // Purpose: Definition of Class User
 
 using System;
+using TechHealth.Core;
 
 namespace TechHealth.Model
 {
-   [Serializable]
-   public class User
-   {
-      public string Username { get; set; }
-      public string Password { get; set; }
    
+   public class User:ViewModelBase
+   {
+      private string password;
+      private string username;
+
+      public string Username
+      {
+         get => username;
+         set
+         {
+            username = value;
+            OnPropertyChanged(nameof(Username));
+         }
+      }
+
+
+      public string Password
+      {
+         get => password;
+         set
+         {
+            password = value; 
+            OnPropertyChanged(nameof(Password));
+         }
+      }
    }
 }

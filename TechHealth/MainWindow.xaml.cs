@@ -26,30 +26,7 @@ namespace TechHealth
         public MainWindow()
         {
             InitializeComponent();
-            RandomGenerator randomGenerator = new RandomGenerator();
-            Patient patient = PatientRepository.Instance.GetById("2456");
-            EmlpoymentData emlpoymentData = new EmlpoymentData
-            {
-                Our = "1345",
-                Profession = "moler",
-                Workplace = "Duga",
-                Job = "kasir"
-            };
-            MedicalRecord medicalRecord = new MedicalRecord
-            {
-                RecordId = randomGenerator.GenerateRandHash(),
-                BloodType = Bloodtype.ab,
-                Patient = patient,
-                Weight = "80 kg",
-                Height = "170 cm",
-                ChronicDiseases = "asma",
-                Allergens = "polen,prasina",
-                ParentDiseases = "plucna maramica",
-                EmlpoymentData = emlpoymentData
-            };
-            MedicalRecordRepository.Instance.Create(medicalRecord);
-
-
+            
 
         }
 
@@ -146,6 +123,83 @@ namespace TechHealth
             };
             MedicineRepository.Instance.Create(medicine);
             MedicineRepository.Instance.Create(medicine1);*/
+             
+             /*RandomGenerator randomGenerator = new RandomGenerator();
+            Patient patient = PatientRepository.Instance.GetById("2456");
+            Patient patient1 = PatientRepository.Instance.GetById("13456");
+            Allergen allergen1 = new Allergen
+            {
+                Id = "1",
+                Name = "dust",
+                Description = "Fine powdery material such as dry earth or pollen that can be blown about in the air."
+            };
+            Allergen allergen2 = new Allergen
+            {
+                Id = "2",
+                Name = "animal dander",
+                Description = "/"
+            };
+            Allergen allergen3 = new Allergen
+            {
+                Id = "3",
+                Name = "ibuprofen",
+                Description = "/"
+            };
+            Allergen allergen4 = new Allergen
+            {
+                Id = "4",
+                Name = "paracetamol",
+                Description = "/"
+            };
+            List<Allergen> allergens = new List<Allergen>();
+            allergens.Add(allergen1);
+            allergens.Add(allergen2);
+            List<Allergen> allergens1 = new List<Allergen>();
+            allergens1.Add(allergen3);
+            allergens1.Add(allergen4);
+            EmlpoymentData emlpoymentData = new EmlpoymentData
+            {
+                Our = "1345",
+                Profession = "moler",
+                Workplace = "Duga",
+                Job = "kasir"
+            };
+            MedicalRecord medicalRecord = new MedicalRecord
+            {
+                RecordId = randomGenerator.GenerateRandHash(),
+                BloodType = Bloodtype.Ap,
+                Patient = patient,
+                Weight = "80 kg",
+                Height = "170 cm",
+                ChronicDiseases = "asma",
+                Allergens = allergens1,
+                ParentDiseases = "plucna maramica",
+                EmlpoymentData = emlpoymentData,
+                Gender = Gender.Male
+            };
+            EmlpoymentData emlpoymentData1 = new EmlpoymentData
+            {
+                Our = "1675",
+                Profession = "Inzinjer elektrotehnike",
+                Workplace = "FTN",
+                Job = "asistent"
+            };
+            MedicalRecord medicalRecord1 = new MedicalRecord
+            {
+                RecordId = randomGenerator.GenerateRandHash(),
+                BloodType = Bloodtype.Op,
+                Patient = patient1,
+                Weight = "80 kg",
+                Height = "170 cm",
+                ChronicDiseases = "asma",
+                Allergens = allergens,
+                ParentDiseases = "plucna maramica",
+                EmlpoymentData = emlpoymentData1,
+                Gender = Gender.Male
+            };
+            MedicalRecordRepository.Instance.Create(medicalRecord1);
+            AllergensRepository.Instance.Create(allergen3);
+            AllergensRepository.Instance.Create(allergen4);*/
 
         }
     }

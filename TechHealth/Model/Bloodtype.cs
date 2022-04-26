@@ -9,9 +9,13 @@ namespace TechHealth.Model
 {
    public enum Bloodtype
    {
-      ab,
-      zero,
-      a,
-      b
+      Op,
+      On,
+      Ap,
+      An,
+      Bp,
+      Bn,
+      ABp,
+      ABn
    }
 }

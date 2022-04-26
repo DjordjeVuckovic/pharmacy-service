@@ -1,4 +1,5 @@
-﻿using TechHealth.Core;
+﻿using System;
+using TechHealth.Core;
 using TechHealth.DoctorView.View;
 
 namespace TechHealth.DoctorView.ViewModel
@@ -56,7 +57,6 @@ namespace TechHealth.DoctorView.ViewModel
         private static MainViewModel _instance;
 
         public static MainViewModel Instance => _instance;
-
         public MainViewModel(string doctorJmbg)
         {
             _instance = this;

@@ -9,9 +9,9 @@ namespace TechHealth.Model
 {
    public class Allergen
    {
-      public String iD;
-      public String naziv;
-      public String desription;
+      public String Id { get; set; }
+      public String Name { get; set; }
+      public String Description { get; set; }
    
    }
 }

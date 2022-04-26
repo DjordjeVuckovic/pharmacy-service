@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:TechHealth.DoctorView.MedicalHistory"
         xmlns:model="clr-namespace:TechHealth.Model"
         mc:Ignorable="d"
-        Title="NewAnamnesis" Height="800" Width="500">
+        WindowStartupLocation="CenterScreen"
+        Title="NewAnamnesis" Height="750" Width="500">
     <Window.DataContext>
         <model:Appointment/>
     </Window.DataContext>
@@ -28,7 +29,7 @@
             <RowDefinition/>
             <RowDefinition Height="43.4"/>
         </Grid.RowDefinitions>
-        <Label Grid.Row="0" Content="New Anamnesis" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="32" Margin="0,5,0,1" Foreground="Aqua"/>
+        <Label Grid.Row="0" Content="New Anamnesis" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="32" Margin="0,5,0,1" Foreground="#50fa7b"/>
         <StackPanel Grid.Row="1" HorizontalAlignment="Left" Margin="41.578,10,0,10" Width="179.169">
             <Label Content="Doctor: " x:Name="LabelDoctor1" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="5,0,5,0" FontSize="16" />
             <Label Content="Date: " x:Name="LabelDate1" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="5,0,5,0" FontSize="16"/>
@@ -116,7 +117,7 @@
             <TextBox Name="txt14" Grid.Column="1" Grid.Row="13" Margin="30,4.292,10,3.253" VerticalContentAlignment="Center" Padding="5,0,10,0" FontSize="14" FontFamily="Candara" ToolTip="Ostavite prazno ukoliko ne postoji."/>
             <Label Content="GI:" HorizontalAlignment="Left" Margin="0,0,10,0" Grid.Column="0" Grid.Row="14" VerticalAlignment="Center"/>
             <TextBox Name="txt15" Grid.Column="1" Grid.Row="14" Margin="30,4.292,10,3.253" VerticalContentAlignment="Center" Padding="5,0,10,0" FontSize="14" FontFamily="Candara" ToolTip="Ostavite prazno ukoliko ne postoji."/>
-            <Border Grid.Row="0" Grid.RowSpan="15" BorderThickness="0,0,1,0" BorderBrush="#FF292C3B"/>
+            <Border Grid.Row="0" Grid.RowSpan="15" BorderThickness="0,0,1,0" BorderBrush="#50fa7b"/>
         </Grid>
         <Button Grid.Row="3" Content="Finish"  HorizontalAlignment="Right" VerticalAlignment="Stretch" Width="100" Margin="0,0,85.53,10" Click="ButtonBase_OnClick"/>
         <Button Grid.Row="3" Content="Cancel"  HorizontalAlignment="Left" VerticalAlignment="Stretch" Width="100" Margin="83.947,0,0,10" Click="ButtonBase_OnClick1"/>

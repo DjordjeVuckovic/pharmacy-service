@@ -19,6 +19,7 @@ namespace TechHealth.Model
       [JsonIgnore]
       public string FullName => $"{Name} {Surname}";
       
+      
    
    }
 }
