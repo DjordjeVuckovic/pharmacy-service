@@ -8,9 +8,7 @@
         mc:Ignorable="d"
         Title="ManagerMainWindow" Height="600" Width="920"
         ResizeMode="NoResize"
-        WindowStyle="None"
-        Background="Transparent"
-        AllowsTransparency="True">
+        Background="Transparent">
 
     <Window.DataContext>
         <viewModel:MainViewModel/>
@@ -49,7 +47,8 @@
                              Height="50"
                              Foreground="White"
                              FontSize="14"
-                             Style="{StaticResource MenuButtonTheme}"/>
+                             Style="{StaticResource MenuButtonTheme}"
+                             Command="{Binding RoomViewCommand}"/>
 
                 <RadioButton Content="Medicines"
                              Height="50"

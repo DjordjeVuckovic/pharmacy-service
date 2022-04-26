@@ -41,7 +41,6 @@ namespace TechHealth.View.ManagerView.VieW
         public EquipmentView()
         {
             InitializeComponent();
-            DataContext = this;
             eqlist = new ObservableCollection<Equipment>(EquipmentRepository.Instance.DictionaryValuesToList());
         }
 
