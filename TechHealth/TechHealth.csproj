@@ -256,8 +256,14 @@
     <Compile Include="ValidationRules\FutureDateValidationRule.cs" />
     <Compile Include="ValidationRules\NotEmptyValidationRule.cs" />
     <Compile Include="ValidationRules\SimpleDateValidationRule.cs" />
+    <Compile Include="View\ManagerView\CRUDRooms\AddEquipment.xaml.cs">
+      <DependentUpon>AddEquipment.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\ManagerView\CRUDRooms\AddForm.xaml.cs">
       <DependentUpon>AddForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ManagerView\CRUDRooms\RoomInventory.xaml.cs">
+      <DependentUpon>RoomInventory.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ManagerView\CRUDRooms\RoomWindow.xaml.cs">
       <DependentUpon>RoomWindow.xaml</DependentUpon>
@@ -420,7 +426,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\ManagerView\CRUDRooms\AddEquipment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\ManagerView\CRUDRooms\AddForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ManagerView\CRUDRooms\RoomInventory.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

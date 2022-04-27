@@ -46,7 +46,6 @@ namespace TechHealth
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-            //new RoomWindow().Show();
             new ManagerMainWindow().Show();
             this.Close();
         }

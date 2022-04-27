@@ -21,6 +21,7 @@ using TechHealth.Conversions;
 using TechHealth.Core;
 using TechHealth.Model;
 using TechHealth.Repository;
+using TechHealth.View.ManagerView.CRUDRooms;
 
 namespace TechHealth.View.ManagerView.VieW
 {
@@ -36,6 +37,8 @@ namespace TechHealth.View.ManagerView.VieW
         public event PropertyChangedEventHandler PropertyChanged;
         public RelayCommand AddRoomCommand { get; set; }
         public RelayCommand DeleteRoomCommand { get; set; }
+        public RelayCommand UpdateRoomCommand { get; set; }
+        public RelayCommand InventoryCommand { get; set; }
         public Room SelectedItem
         {
             get 
@@ -67,11 +70,13 @@ namespace TechHealth.View.ManagerView.VieW
             InitializeComponent();
             DataContext = this;
             rooms = new ObservableCollection<Room>(RoomRepository.Instance.GetAll().Values);
-            AddRoomCommand = new RelayCommand(param => Execute(), param => CanExecute());
-            DeleteRoomCommand = new RelayCommand(param => Execute1(), param => CanExecute1());
+            AddRoomCommand = new RelayCommand(param => ExecuteAdd(), param => CanExecuteAdd());
+            DeleteRoomCommand = new RelayCommand(param => ExecuteDel(), param => CanExecuteDel());
+            UpdateRoomCommand = new RelayCommand(param => ExecuteUpdate(), param => CanExecuteUpdate());
+            InventoryCommand = new RelayCommand(param => ExecuteInventory(), param => CanExecuteInventory());
         }
 
-        private bool CanExecute1()
+        private bool CanExecuteInventory()
         {
             if (selectedItem == null)
             {
@@ -81,34 +86,51 @@ namespace TechHealth.View.ManagerView.VieW
             return true;
         }
 
-        private void Execute1()
+        private void ExecuteInventory()
+        {
+            new RoomInventory(selectedItem).ShowDialog();
+        }
+
+        private bool CanExecuteUpdate()
+        {
+            if (selectedItem == null)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        private void ExecuteUpdate()
+        {
+            new UpdateForm(selectedItem).ShowDialog();
+        }
+
+        private bool CanExecuteDel()
+        {
+            if (selectedItem == null)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        private void ExecuteDel()
         {
             roomController.Delete(selectedItem.roomId);
             rooms.Remove(selectedItem);
             MessageBox.Show("You have successfully deleted the room");
         }
 
-        private bool CanExecute()
+        private bool CanExecuteAdd()
         {
             return true;
         }
 
-        private void Execute()
+        private void ExecuteAdd()
         {
-            //prescriptionWindow = new PrescriptionWindow(selectedItem);
-            //prescriptionWindow.ShowDialog();
-
-            //test da li radi add room preko komande
-            Room room = new Room
-            {
-                roomId = "102",
-                floor = 2,
-                availability = true,
-                roomTypes = RoomTypes.office,
-                equipment = new List<Equipment>()
-            };
-            roomController.Create(room);
-            rooms.Add(room);
+            new AddForm().ShowDialog();
         }
 
         [NotifyPropertyChangedInvocator]

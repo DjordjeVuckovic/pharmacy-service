@@ -16,6 +16,13 @@ namespace TechHealth.View.ManagerView.ViewModel
         public EquipmentViewModel EquipmentVm { get; set; }
         public RoomViewModel RoomVm { get; set; }
 
+        //private static MainViewModel _instance;
+
+        //public static MainViewModel Instance()
+        //{
+        //    return _instance;
+        //}
+
         private object currentView;
 
         public object CurrentView
@@ -30,6 +37,7 @@ namespace TechHealth.View.ManagerView.ViewModel
 
         public MainViewModel()
         {
+            //_instance = this;
             HomeVm = new HomeViewModel();
             EquipmentVm = new EquipmentViewModel();
             RoomVm = new RoomViewModel();
