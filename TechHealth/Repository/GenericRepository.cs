@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text.Json;
-using System.Text.Json.Serialization;
+using Newtonsoft.Json;
 
 namespace TechHealth.Repository
 {
@@ -12,6 +11,7 @@ namespace TechHealth.Repository
         protected abstract string GetPath();
         protected abstract TKey GetKey(TEntity entity);
         protected abstract void RemoveAllReference(TKey key);
+        protected abstract void ShouldSerialize(TEntity entity);
         public virtual TEntity Search(string search)
         {
             throw new NotImplementedException();
@@ -28,23 +28,21 @@ namespace TechHealth.Repository
             }
 
             string jsonRead = File.ReadAllText(path);
-            return JsonSerializer.Deserialize<Dictionary<TKey, TEntity>>(jsonRead);
+            return JsonConvert.DeserializeObject<Dictionary<TKey, TEntity>>(jsonRead);
         }
 
         private void Serialize(Dictionary<TKey, TEntity> entities)
         {
             string path = GetPath();
-            var option = new JsonSerializerOptions()
-            {
-                WriteIndented = true,
-                DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull
-            };
-            string jsonWrite = JsonSerializer.Serialize(entities,option);
+            
+            string jsonWrite = JsonConvert.SerializeObject(entities,Formatting.Indented);
             File.WriteAllText(path,jsonWrite);
         }
         public bool Create(TEntity entity)
         {
+            
             Dictionary<TKey, TEntity> entities = Deserialize();
+            ShouldSerialize(entity);
 
             TKey key = GetKey(entity);
 
@@ -81,6 +79,7 @@ namespace TechHealth.Repository
         public bool Update(TEntity entity)
         {
             Dictionary<TKey, TEntity> entities = Deserialize();
+            ShouldSerialize(entity);
 
             TKey key = GetKey(entity);
 

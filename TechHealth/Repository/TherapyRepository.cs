@@ -33,5 +33,10 @@ namespace TechHealth.Repository
         {
             throw new NotImplementedException();
         }
+
+        protected override void ShouldSerialize(Therapy entity)
+        {
+            //skip
+        }
     }
 }

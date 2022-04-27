@@ -28,6 +28,12 @@ namespace TechHealth.Repository
         {
             throw new System.NotImplementedException();
         }
+
+        protected override void ShouldSerialize(MedicalRecord entity)
+        {
+            throw new System.NotImplementedException();
+        }
+
         public MedicalRecord GetByPatientId(string id)
         {
             foreach (var med in DictionaryValuesToList())

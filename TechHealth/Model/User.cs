@@ -4,6 +4,7 @@
 // Purpose: Definition of Class User
 
 using System;
+using Newtonsoft.Json;
 using TechHealth.Core;
 
 namespace TechHealth.Model
@@ -34,5 +35,17 @@ namespace TechHealth.Model
             OnPropertyChanged(nameof(Password));
          }
       }
+      [JsonIgnore]
+      public bool ShouldSerialize { get; set; }
+
+      public bool ShouldSerializeUsername()
+      {
+         return ShouldSerialize;
+      }
+      public bool ShouldSerializePassword()
+      {
+         return ShouldSerialize;
+      }
+      
    }
 }

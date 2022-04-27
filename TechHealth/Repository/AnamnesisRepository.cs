@@ -29,6 +29,12 @@ namespace TechHealth.Repository
         {
             throw new System.NotImplementedException();
         }
+
+        protected override void ShouldSerialize(Anamnesis entity)
+        {
+            entity.AnmnesisAppointment.ShouldSerialize = false;
+        }
+
         public List<Anamnesis> GetByDoctorId(string id)
         {
             List<Anamnesis> anamneses = new List<Anamnesis>();

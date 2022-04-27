@@ -40,6 +40,11 @@ namespace TechHealth.Repository
          throw new NotImplementedException();
       }
 
+      protected override void ShouldSerialize(Patient entity)
+      {
+         throw new NotImplementedException();
+      }
+
       public Patient GetPatientbyId(string patientId)
       {
          throw new NotImplementedException();

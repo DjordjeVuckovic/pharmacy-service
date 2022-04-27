@@ -5,29 +5,22 @@
 
 using System;
 using System.Collections.Generic;
-using System.Text.Json.Serialization;
+using Newtonsoft.Json;
 using PostSharp.Patterns.Model;
 
 namespace TechHealth.Model
 {
-    [NotifyPropertyChanged]
+    
     public class Room
     {
-        [JsonConverter(typeof(JsonStringEnumConverter))]
+        
         public RoomTypes roomTypes { get; set; }
         public string roomId { get; set; }
         public int floor { get; set; }
         public bool availability { get; set; }
         public List<Equipment> equipment { get; set; }
-
-        //public string Equipments
-        //{
-        //    get
-        //    {
-        //        return ToString();
-        //    }
-        //}
-
+        [JsonIgnore]
+        public bool ShouldSerialize { get; set; }
         public Room() { }
         public Room(RoomTypes rt, string id, int flr, bool available, List<Equipment> list)
         {
@@ -42,16 +35,23 @@ namespace TechHealth.Model
         {
             equipment.Add(eq);
         }
+        public bool ShouldSerializeroomTypes()
+        {
+            return ShouldSerialize;
+        }
+        public bool ShouldSerializefloor()
+        {
+            return ShouldSerialize;
+        }
+        public bool ShouldSerializeavailability()
+        {
+            return ShouldSerialize;
+        }
+        public bool ShouldSerializeequipment()
+        {
+            return ShouldSerialize;
+        }
 
-        //public string ToString()
-        //{
-        //    string str = "";
-        //    foreach (Equipment eq in equipment)
-        //    {
-        //        str += eq.ToString();
-        //        str += ";";
-        //    }
-        //    return str;
-        //}
+       
     }
 }

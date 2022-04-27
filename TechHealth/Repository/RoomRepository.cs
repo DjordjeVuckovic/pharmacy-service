@@ -40,5 +40,9 @@ namespace TechHealth.Repository
             throw new NotImplementedException();
         }
 
+        protected override void ShouldSerialize(Room entity)
+        {
+            entity.ShouldSerialize = true;
+        }
     }
 }

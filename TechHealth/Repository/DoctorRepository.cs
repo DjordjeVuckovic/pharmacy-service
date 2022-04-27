@@ -41,6 +41,11 @@ namespace TechHealth.Repository
          throw new NotImplementedException();
       }
 
+      protected override void ShouldSerialize(Doctor entity)
+      {
+         throw new NotImplementedException();
+      }
+
       public Doctor GetDoctorByUser(string user)
       {
          foreach (var doc in DictionaryValuesToList())
