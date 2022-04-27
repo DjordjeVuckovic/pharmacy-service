@@ -1,23 +1,23 @@
 {
-  "sobica": {
-    "name": "bandazer",
-    "id": "sobica",
+  "bc9df54d80134703a123a23c6d39cfd3": {
+    "name": "skalpel",
+    "id": "bc9df54d80134703a123a23c6d39cfd3",
     "type": "statical",
-    "quantity": 222,
-    "roomID": "soba23"
+    "quantity": 10,
+    "roomID": "101"
   },
-  "111": {
-    "name": "bandazerrrr",
-    "id": "111",
-    "type": "dynamical",
-    "quantity": 57,
-    "roomID": "bibibi"
+  "0b9c940a760042a1b66e00bd446869b3": {
+    "name": "bandazer",
+    "id": "0b9c940a760042a1b66e00bd446869b3",
+    "type": "statical",
+    "quantity": 50,
+    "roomID": "soba1"
   },
-  "1234": {
-    "name": "gfddfgd",
-    "id": "1234",
-    "type": "dynamical",
-    "quantity": 90,
-    "roomID": "dasdasd"
+  "de7b8b5777c2488d8f6bb4a14597b758": {
+    "name": "gaza",
+    "id": "de7b8b5777c2488d8f6bb4a14597b758",
+    "type": "statical",
+    "quantity": 115,
+    "roomID": "soba1"
   }
 }

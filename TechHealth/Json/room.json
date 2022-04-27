@@ -6,18 +6,11 @@
     "availability": false,
     "equipment": [
       {
-        "name": "bandazer",
-        "id": "1",
+        "name": "gaza",
+        "id": "de7b8b5777c2488d8f6bb4a14597b758",
         "type": "statical",
-        "quantity": 30,
-        "roomID": "sobica"
-      },
-      {
-        "name": "gaze",
-        "id": "2",
-        "type": "statical",
-        "quantity": 80,
-        "roomID": "sobaa"
+        "quantity": 115,
+        "roomID": "soba1"
       }
     ]
   },
@@ -26,28 +19,21 @@
     "roomId": "soba2",
     "floor": 3,
     "availability": true,
-    "equipment": [
-      {
-        "name": "bandazer",
-        "id": "1",
-        "type": "statical",
-        "quantity": 30,
-        "roomID": "sobica"
-      },
-      {
-        "name": "gaze",
-        "id": "2",
-        "type": "statical",
-        "quantity": 80,
-        "roomID": "sobaa"
-      }
-    ]
+    "equipment": []
   },
   "101": {
     "roomTypes": "office",
     "roomId": "101",
     "floor": 2,
     "availability": true,
-    "equipment": []
+    "equipment": [
+      {
+        "name": "skalpel",
+        "id": "bc9df54d80134703a123a23c6d39cfd3",
+        "type": "statical",
+        "quantity": 10,
+        "roomID": "101"
+      }
+    ]
   }
 }

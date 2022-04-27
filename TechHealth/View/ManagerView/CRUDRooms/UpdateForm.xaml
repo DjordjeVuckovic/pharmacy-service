@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:TechHealth.View.ManagerView.CRUDRooms"
         mc:Ignorable="d"
         Title="UpdateForm" Height="450" Width="400">
-    <Grid Background="Aquamarine">
+    <Grid Background="#272537">
         <Label Content="RoomID:" HorizontalAlignment="Left" Margin="51,78,0,0" VerticalAlignment="Top" FontSize="14"/>
         <Label Content="Floor:" HorizontalAlignment="Left" Margin="51,137,0,0" VerticalAlignment="Top" FontSize="14"/>
         <Label Content="Type:" HorizontalAlignment="Left" Margin="51,0,0,0" VerticalAlignment="Center" FontSize="14"/>

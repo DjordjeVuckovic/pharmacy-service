@@ -40,5 +40,26 @@ namespace TechHealth.Repository
             throw new NotImplementedException();
         }
 
+        public List<String> GetRoomIDs()
+        {
+            List<String> roomIDs = new List<String>();
+
+            foreach (var room in DictionaryValuesToList())
+            {
+                roomIDs.Add(room.roomId);
+            }
+            return roomIDs;
+        }
+
+        public List<String> GetRoomNames()
+        {
+            List<String> roomNames = new List<String>();
+
+            foreach (var room in DictionaryValuesToList())
+            {
+                roomNames.Add(room.roomId);
+            }
+            return roomNames;
+        }
     }
 }

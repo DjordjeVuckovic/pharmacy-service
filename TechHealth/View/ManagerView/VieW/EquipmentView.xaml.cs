@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -13,8 +15,11 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TechHealth.Annotations;
+using TechHealth.Core;
 using TechHealth.Model;
 using TechHealth.Repository;
+using TechHealth.View.ManagerView.CRUDRooms;
 using TechHealth.View.ManagerView.ViewModel;
 
 namespace TechHealth.View.ManagerView.VieW
@@ -22,9 +27,27 @@ namespace TechHealth.View.ManagerView.VieW
     /// <summary>
     /// Interaction logic for EquipmentView.xaml
     /// </summary>
-    public partial class EquipmentView : UserControl
+    public partial class EquipmentView : UserControl, INotifyPropertyChanged
     {
         private ObservableCollection<Equipment> eqlist;
+        private Equipment selectedItem;
+        public event PropertyChangedEventHandler PropertyChanged;
+        public RelayCommand AddEquipmentCommand { get; set; }
+        public RelayCommand DeleteEquipmentCommand { get; set; }
+
+        public Equipment SelectedItem
+        {
+            get
+            {
+                return selectedItem;
+            }
+
+            set
+            {
+                selectedItem = value;
+                OnPropertyChanged();
+            }
+        }
         public ObservableCollection<Equipment> Equipment
         {
             get
@@ -41,41 +64,43 @@ namespace TechHealth.View.ManagerView.VieW
         public EquipmentView()
         {
             InitializeComponent();
+            DataContext = this;
             eqlist = new ObservableCollection<Equipment>(EquipmentRepository.Instance.DictionaryValuesToList());
+            AddEquipmentCommand = new RelayCommand(param => ExecuteAdd());
+            DeleteEquipmentCommand = new RelayCommand(param => ExecuteDelete(), param => CanExecuteDelete());
         }
 
-        private void Add_Click(object sender, RoutedEventArgs e)
+        private bool CanExecuteDelete()
         {
-            Equipment eq = new Equipment
+            if (selectedItem == null)
             {
-                name = "jjyjyj",
-                id = "4321",
-                type = EquipmentType.dynamical,
-                quantity = 1221,
-                roomID = "gdfgdfg",
-            };
-
-            if (EquipmentRepository.Instance.Create(eq))
-            {
-                Equipment.Add(eq);
-                MessageBox.Show("Uspesno dodata oprema!");
+                return false;
             }
-            else MessageBox.Show("Nije uspelo dodavanje!");
+
+            return true;
         }
 
-        private void Delete_Click(object sender, RoutedEventArgs e)
+        private void ExecuteDelete()
         {
-            if (dataEquipment.SelectedIndex == -1)
-            {
-                MessageBox.Show("You have to select an item first!");
-            }
-            else
-            {
-                Equipment eq = (Equipment)dataEquipment.SelectedItem;
-                EquipmentRepository.Instance.Delete(eq.id);
-                Equipment.Remove(eq);
-                MessageBox.Show("You have successfully deleted an equipment");
-            }
+            //roomController.Delete(selectedItem.roomId);
+            //rooms.Remove(selectedItem);
+            //MessageBox.Show("You have successfully deleted the room");
+
+            Equipment eq = (Equipment)dataEquipment.SelectedItem;
+            EquipmentRepository.Instance.Delete(eq.id);
+            Equipment.Remove(eq);
+            MessageBox.Show("You have successfully deleted the equipment");
+        }
+
+        private void ExecuteAdd()
+        {
+            new AddEquipment().ShowDialog();
+        }
+
+        [NotifyPropertyChangedInvocator]
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }
