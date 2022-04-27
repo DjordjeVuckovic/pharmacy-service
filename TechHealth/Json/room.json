@@ -42,5 +42,12 @@
         "roomID": "sobaa"
       }
     ]
+  },
+  "101": {
+    "roomTypes": "office",
+    "roomId": "101",
+    "floor": 2,
+    "availability": true,
+    "equipment": []
   }
 }

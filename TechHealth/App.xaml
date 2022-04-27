@@ -38,6 +38,9 @@
             <DataTemplate DataType="{x:Type viewmodel:EquipmentViewModel}">
                 <vieW:EquipmentView/>
             </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodel:RoomViewModel}">
+                <vieW:RoomView/>
+            </DataTemplate>
 
         </ResourceDictionary>
     </Application.Resources>
