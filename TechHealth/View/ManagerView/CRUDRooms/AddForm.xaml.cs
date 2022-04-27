@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using TechHealth.Model;
 using TechHealth.Controller;
 using TechHealth.Conversions;
+using TechHealth.View.ManagerView.VieW;
 
 namespace TechHealth.View.ManagerView.CRUDRooms
 {
@@ -33,36 +34,17 @@ namespace TechHealth.View.ManagerView.CRUDRooms
 
         private void Button_Click_Confirm(object sender, RoutedEventArgs e)
         {
-             room = new Room();
+            room = new Room();
 
             room.roomId = TxtRoomId.Text;
             room.floor = ManagerConversions.StringToFloor(CbFloor.Text);
             room.roomTypes = ManagerConversions.StringToRoomType(CbType.Text);
             room.availability = ManagerConversions.StringToAvailability(CbAvailability.Text);
-            room.equipment = new List<Equipment>
-                {
-                    new Equipment
-                    {
-                        name = "bandazer",
-                        id = "1",
-                        type = EquipmentType.statical,
-                        quantity = 30,
-                        roomID = "sobica"
-                    },
+            room.equipment = new List<Equipment>();
 
-                    new Equipment
-                    {
-                        name = "gaze",
-                        id = "2",
-                        type = EquipmentType.statical,
-                        quantity = 80,
-                        roomID = "sobaa"
-                    },
-                };
-
-            //roomController.Create(room.roomId, room.floor, room.availability, room.roomTypes);
             roomController.Create(room);
-
+            RoomView roomView = new RoomView();
+            roomView.Rooms.Add(room);
 
             this.Close();
         }       

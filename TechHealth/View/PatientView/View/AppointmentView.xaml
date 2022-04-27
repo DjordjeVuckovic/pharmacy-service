@@ -1,0 +1,68 @@
+﻿<UserControl x:Class="TechHealth.View.PatientView.View.AppointmentView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:TechHealth.View.PatientView.View"
+             mc:Ignorable="d"
+             d:DesignHeight="500" d:DesignWidth="700">
+    <Grid>
+        <Grid.ColumnDefinitions>
+			<ColumnDefinition Width="50" />
+			<ColumnDefinition Width="*" />
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="70" />
+			<RowDefinition Height="70" />
+			<RowDefinition Height="70" />
+			<RowDefinition Height="*" />
+		</Grid.RowDefinitions>
+		<Grid Grid.Row="0">
+		</Grid>
+		<Grid Grid.Row="1">
+		</Grid>
+		<Grid Grid.Row="2">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="83*"/>
+			</Grid.ColumnDefinitions>
+		</Grid>
+		<Grid Grid.Row="0" Grid.Column="1">
+            <DataGrid x:Name="dataAppointment"
+                      ItemsSource="{Binding Appointment, UpdateSourceTrigger=PropertyChanged}"   IsReadOnly="True" 
+                      SelectionMode="Single"
+                      AutoGenerateColumns="False" 
+                      FontSize="15" 
+                      FontWeight="Bold"
+                      FontStyle="Normal"
+                      CanUserResizeRows="False" Margin="-2.835,10,11.339,-287.464"
+                      Background="#333545">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Date"
+                                        Binding="{Binding Date,StringFormat=d}" Width="*"
+                                        CanUserResize="False" />
+                    <DataGridTextColumn Header="Time"
+                                        Binding="{Binding StartTime}" Width="*"
+                                        CanUserResize="False"/>
+                    <DataGridTextColumn Header="Doctor"
+                                        Binding="{Binding Doctor.FullName}" Width="*"
+                                        CanUserResize="False"/>
+                    <DataGridTextColumn Header="Room"
+                                        Binding="{Binding Room.roomId}" Width="*"
+                                        CanUserResize="False"/>
+                    <DataGridTextColumn Header="Type"
+                                        Binding="{Binding AppointmentType}" Width="*"
+                                        CanUserResize="False"/>
+                </DataGrid.Columns>
+            </DataGrid>
+		</Grid>
+        <Button x:Name="Add" Content="New Appointment"
+                Margin="0,197,0,43" HorizontalAlignment="Left" Width="150" Height="50"
+                Grid.Column="1" Grid.Row="3" Click="Button_Click_Add"/>
+        <Button x:Name="Edit" Content="Update Appointment"
+                Margin="238,197,0,43" HorizontalAlignment="Left" Width="150" Height="50"
+                Grid.Column="1" Grid.Row="3" Click="Button_Click_Update"/>
+        <Button x:Name="Delete" Content="Delete Appointment"
+                Margin="490,197,0,43" HorizontalAlignment="Left" Width="150" Height="50"
+                Grid.Row="3" Click="Button_Click_Delete" Grid.Column="1" Background="Red"/>
+    </Grid>
+</UserControl>

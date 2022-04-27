@@ -20,6 +20,7 @@
                 <RowDefinition Height="70"/>
             </Grid.RowDefinitions>
             <DataGrid x:Name="dataEquipment" ItemsSource="{Binding Equipment, UpdateSourceTrigger=PropertyChanged}"
+                      SelectedItem="{Binding SelectedItem}"
                       CanUserAddRows="False"
                       SelectionMode="Extended"
                       AutoGenerateColumns="False"
@@ -33,9 +34,11 @@
                 </DataGrid.Columns>
             </DataGrid>
 
-            <Button x:Name="Add" Content="Add" Margin="80,0,10,10" HorizontalAlignment="Left" Width="120" Height="50"  Grid.Row="3" Background="Green" Click="Add_Click"/>
+            <Button x:Name="Add" Content="Add" Margin="80,0,10,10" HorizontalAlignment="Left" Width="120" Height="50"  Grid.Row="3" Background="Green"
+                    Command="{Binding AddEquipmentCommand}"/>
             <Button x:Name="View" Content="View/Modify" Margin="0,0,0,10" HorizontalAlignment="Center"  Width="120" Height="50"  Grid.Row="3"/>
-            <Button x:Name="Delete" Content="Delete" Margin="0,0,80,10" HorizontalAlignment="Right" Width="120" Height="50"  Grid.Row="3" Background="OrangeRed" Click="Delete_Click"/>
+            <Button x:Name="Delete" Content="Delete" Margin="0,0,80,10" HorizontalAlignment="Right" Width="120" Height="50"  Grid.Row="3" Background="OrangeRed"
+                    Command="{Binding DeleteEquipmentCommand}"/>
         </Grid>
     </StackPanel>
 </UserControl>

@@ -10,16 +10,17 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace TechHealth.View.PatientView
+namespace TechHealth.View.PatientView.View
 {
     /// <summary>
-    /// Interaction logic for PatientMainWindow.xaml
+    /// Interaction logic for HomeViewP.xaml
     /// </summary>
-    public partial class PatientMainWindow : Window
+    public partial class HomeViewP : UserControl
     {
-        public PatientMainWindow()
+        public HomeViewP()
         {
             InitializeComponent();
         }
