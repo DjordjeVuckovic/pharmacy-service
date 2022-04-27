@@ -14,19 +14,9 @@ namespace TechHealth.DoctorView.ViewModel
         private ObservableCollection<Patient> patients;
         private Patient selectedItem;
         private TherapyWindow therapyWindow;
-        private object currentViewPatient;
         private MedicalRecordViewModel MedicalRecordViewModel;
         private readonly MainViewModel mainViewModel;
         public string DoctorId { get; set; }
-        public object CurrentViewPatient
-        {
-            get => currentViewPatient;
-            set
-            {
-                currentViewPatient = value;
-                OnPropertyChanged(nameof(currentViewPatient));
-            }
-        }
         public Patient SelectedItem
         {
             get
@@ -74,12 +64,12 @@ namespace TechHealth.DoctorView.ViewModel
 
         private void Execute()
         {
-            therapyWindow = new TherapyWindow(selectedItem);
+            therapyWindow = new TherapyWindow(SelectedItem);
             therapyWindow.ShowDialog();
         }
         private bool CanExecute1()
         {
-            if (selectedItem == null)
+            if (SelectedItem == null)
             {
                 return false;
             }
@@ -89,8 +79,8 @@ namespace TechHealth.DoctorView.ViewModel
 
         private void Execute1()
         {
-            MedicalRecordViewModel = new MedicalRecordViewModel(selectedItem);
-            MainViewModel.Instance.CurrentView = MedicalRecordViewModel;
+            MedicalRecordViewModel = new MedicalRecordViewModel(SelectedItem);
+            MainViewModel.GetInstance().CurrentView = MedicalRecordViewModel;
         }
     }
 }

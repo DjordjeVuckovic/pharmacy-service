@@ -16,7 +16,7 @@ namespace TechHealth.DoctorView
         public DoctorWindow(string doctorJmbg)
         {
             InitializeComponent();
-            DataContext = new MainViewModel(doctorJmbg);
+            DataContext = MainViewModel.GetInstance(doctorJmbg);
             _doctorId = doctorJmbg;
         }
         public static string GetDoctorId()
