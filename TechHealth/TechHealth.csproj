@@ -274,11 +274,20 @@
     <Compile Include="View\PatientView\AddAppointment.xaml.cs">
       <DependentUpon>AddAppointment.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\PatientView\View\AppointmentView.xaml.cs">
+      <DependentUpon>AppointmentView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\PatientView\PatientMainWindow.xaml.cs">
       <DependentUpon>PatientMainWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\PatientView\UpdateAppointment.xaml.cs">
       <DependentUpon>UpdateAppointment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PatientView\ViewModel\AppointmentViewModel.cs" />
+    <Compile Include="View\PatientView\ViewModel\HomeViewModelP.cs" />
+    <Compile Include="View\PatientView\ViewModel\MainViewModel.cs" />
+    <Compile Include="View\PatientView\View\HomeViewP.xaml.cs">
+      <DependentUpon>HomeViewP.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -437,11 +446,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\PatientView\View\AppointmentView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\PatientView\PatientMainWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\PatientView\UpdateAppointment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PatientView\View\HomeViewP.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
