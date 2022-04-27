@@ -28,6 +28,10 @@ namespace TechHealth.Repository
         {
             throw new System.NotImplementedException();
         }
-        
+
+        protected override void ShouldSerialize(Prescription entity)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

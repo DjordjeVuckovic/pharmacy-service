@@ -38,6 +38,10 @@ namespace TechHealth.Repository
       {
          throw new NotImplementedException();
       }
-      
+
+      protected override void ShouldSerialize(Secretary entity)
+      {
+         throw new NotImplementedException();
+      }
    }
 }

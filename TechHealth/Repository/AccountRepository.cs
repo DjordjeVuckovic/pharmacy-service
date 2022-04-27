@@ -47,8 +47,13 @@ namespace TechHealth.Repository
       {
          throw new NotImplementedException();
       }
-      
-      
+
+      protected override void ShouldSerialize(Person entity)
+      {
+         throw new NotImplementedException();
+      }
+
+
       public bool CreateGuest(User user)
       {
          throw new NotImplementedException();

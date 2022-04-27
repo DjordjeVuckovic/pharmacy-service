@@ -57,8 +57,4 @@
         </ResourceDictionary>
     </Application.Resources>
 </Application>
-<!--PatientsViewModel = new PatientsViewModel();
-AppointmentsView = new AppointmentsView(doctorJmbg);
-RecordViewModel = new RecordViewModel(doctorJmbg);
-MedicineViewModel = new MedicineViewModel();
-DashBoardViewModel = new DashBoardViewModel();-->
+

@@ -4,8 +4,7 @@
 // Purpose: Definition of Class Appointment
 
 using System;
-using PostSharp.Patterns.Model;
-using Scar.Common.WPF.Controls;
+using Newtonsoft.Json;
 using TechHealth.Core;
 
 namespace TechHealth.Model
@@ -23,6 +22,8 @@ namespace TechHealth.Model
       private AppointmentType appointmentType;
       private Doctor doctor;
       private bool evident;
+      [JsonIgnore]
+      public bool ShouldSerialize { get; set; }
 
       public DateTime Date
       {
@@ -143,6 +144,50 @@ namespace TechHealth.Model
             OnPropertyChanged(nameof(Evident));
          }
       }
+      public bool ShouldSerializeDate()
+      {
+         return ShouldSerialize;
+      }
+
+      public bool ShouldSerializeStartTimeD()
+      {
+         return ShouldSerialize;
+      }
+        
+      public bool ShouldSerializeFinishTimeD()
+      {
+         return ShouldSerialize;
+      }
+
+      public bool ShouldSerializeAppointmentType()
+      {
+         return ShouldSerialize;
+      }
+
+      public bool ShouldSerializeDoctor()
+      {
+         return ShouldSerialize;
+      }
+
+      public bool ShouldSerializePatient()
+      {
+         return ShouldSerialize;
+      }
+      public bool ShouldSerializeRoom()
+      {
+         return ShouldSerialize;
+      }
+      public bool ShouldSerializeEvident()
+      {
+         return ShouldSerialize;
+      }
+      
+      
+      
+
+     
+
+      
       
       
       

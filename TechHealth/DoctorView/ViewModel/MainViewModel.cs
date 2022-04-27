@@ -56,13 +56,26 @@ namespace TechHealth.DoctorView.ViewModel
         }*/
         private static MainViewModel _instance;
 
-        public static MainViewModel Instance => _instance;
-        public MainViewModel(string doctorJmbg)
+        public static MainViewModel GetInstance(string doctorId)
+        {
+            if (_instance == null)
+            {
+                DoctorId = doctorId;
+                _instance = new MainViewModel();
+            }
+            return _instance;
+        }
+
+        public static MainViewModel GetInstance()
+        {
+            return _instance;
+        }
+        private MainViewModel()
         {
             _instance = this;
-            DoctorId = doctorJmbg;
+            //DoctorId = doctorJmbg;
             PatientsViewModel = new PatientsViewModel();
-            AppointmentsView = new AppointmentsView(doctorJmbg);
+            AppointmentsView = new AppointmentsView(DoctorId);
             RecordViewModel = new RecordViewModel();
             MedicineViewModel = new MedicineViewModel();
             DashBoardViewModel = new DashBoardViewModel();

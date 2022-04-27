@@ -4,20 +4,30 @@
 // Purpose: Definition of Class Patient
 
 using System;
-using System.Text.Json.Serialization;
+using Newtonsoft.Json;
 using PostSharp.Patterns.Model;
 
 namespace TechHealth.Model
 {
-   [NotifyPropertyChanged]
+   
    public class Patient : Person
    {
       public bool Guest{ get; set; }
       public Doctor ChosenDoctor{ get; set; }
       public int Lbo{ get; set; }
       public bool IsBanned{ get; set; }
-      [JsonIgnore]
-      public string FullName => $"{Name} {Surname}";
+      public bool ShouldSerializeGuest()
+      {
+         return ShouldSerialize;
+      }
+      public bool ShouldSerializeChosenDoctor()
+      {
+         return ShouldSerialize;
+      }
+      public bool ShouldSerializeIsBanned()
+      {
+         return ShouldSerialize;
+      }
       
       
    

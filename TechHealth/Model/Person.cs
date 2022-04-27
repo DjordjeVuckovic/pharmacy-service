@@ -4,8 +4,8 @@
 // Purpose: Definition of Class Person
 
 using System;
-using System.Text.Json.Serialization;
-using PostSharp.Patterns.Model;
+using Newtonsoft.Json;
+
 
 namespace TechHealth.Model
 {
@@ -51,7 +51,36 @@ namespace TechHealth.Model
       public string Phone{ get; set; }
       public bool Employed{ get; set; }
       public DateTime Birthday { get; set; }
-      // [JsonIgnore]
-      // public string FullName => $"{Name} {Surname}";
+      [JsonIgnore]
+      public string FullName => $"{Name} {Surname}";
+      public bool ShouldSerializeAddress()
+      {
+         return ShouldSerialize;
+      }
+      public bool ShouldSerializeName()
+      {
+         return ShouldSerialize;
+      }
+      public bool ShouldSerializeSurname()
+      {
+         return ShouldSerialize;
+      }
+      public bool ShouldSerializeEmail()
+      {
+         return ShouldSerialize;
+      }
+      public bool ShouldSerializeEmployed()
+      {
+         return ShouldSerialize;
+      }
+      public bool ShouldSerializePhone()
+      {
+         return ShouldSerialize;
+      }
+     
+      public bool ShouldSerializeBirthday()
+      {
+         return ShouldSerialize;
+      }
    }
 }
