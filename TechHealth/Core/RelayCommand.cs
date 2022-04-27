@@ -3,7 +3,7 @@ using System.Windows.Input;
 
 namespace TechHealth.Core
 {
-    public class RelayCommand:ICommand
+    public class RelayCommand : ICommand
     {
         private Action<object> _execute;
         private Predicate<object> _canExecute;
