@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows;
+using TechHealth.Controller;
 using TechHealth.DoctorView.View;
 using TechHealth.DoctorView.ViewModel;
 using TechHealth.Model;
@@ -13,6 +14,7 @@ namespace TechHealth.DoctorView.CRUDAppointments
     /// </summary>
     public partial class CreateSurgery : Window
     {
+        private AppointmentController controller = new AppointmentController();
         private Doctor doctor;
         private List<Patient> patients;
         private List<Room> rooms;
@@ -63,12 +65,10 @@ namespace TechHealth.DoctorView.CRUDAppointments
                 };
                 //AppointmentsWindow.GetInstance().Appointments.Add(appointment);
                 AppointmentsView.GetInstance().Appointments.Add(appointment);
-                RecordViewModel.GetInstance().Appointments.Add(appointment);
+                //RecordViewModel.GetInstance().Appointments.Add(appointment);
                 //AppointmentIgnore ignore = new AppointmentIgnore(appointment);
-                //ignore.IgnoreMeDoctor(appointment);
-               // ignore.IgnoreMePatient(appointment);
-               // ignore.IgnoreMeRoom(appointment);
-                AppointmentRepository.Instance.Create(appointment);
+                //AppointmentRepository.Instance.Create(appointment);
+                controller.Create(appointment);
                 MessageBox.Show("You are successfully create new examination");
                 Close();
 

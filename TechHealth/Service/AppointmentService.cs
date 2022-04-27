@@ -12,6 +12,7 @@ namespace TechHealth.Service
 {
    public class AppointmentService
    {
+      
       public Appointment GetById(string idAppointment)
       {
          throw new NotImplementedException();
@@ -20,6 +21,30 @@ namespace TechHealth.Service
       public List<Appointment> GetAll()
       {
         return AppointmentRepository.Instance.DictionaryValuesToList();
+      }
+
+      public void CreateA(Appointment appointment)
+      {
+         Doctor doctor = new Doctor
+         {
+            Jmbg = appointment.Doctor.Jmbg
+         };
+         Appointment appointment1 = new Appointment
+         {
+            Date = appointment.Date,
+            Emergent = appointment.Emergent,
+            StartTime = appointment.StartTime,
+            FinishTime = null,
+            IdAppointment = null,
+            Room = null,
+            Patient = null,
+            AppointmentType = AppointmentType.examination,
+            Doctor = doctor,
+            Evident = false,
+            StartTimeD = default,
+            FinishTimeD = default
+         };
+         AppointmentRepository.Instance.Create(appointment);
       }
       
       public bool Create(Appointment appointment)

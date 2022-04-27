@@ -6,59 +6,52 @@
              xmlns:local="clr-namespace:TechHealth.DoctorView.View"
              mc:Ignorable="d"
              d:DesignHeight="500" d:DesignWidth="800">
-    <Grid>
-        <Grid.ColumnDefinitions>
-			<ColumnDefinition Width="50" />
-			<ColumnDefinition Width="*" />
-		</Grid.ColumnDefinitions>
-		<Grid.RowDefinitions>
-			<RowDefinition Height="70" />
-			<RowDefinition Height="70" />
-			<RowDefinition Height="70" />
-			<RowDefinition Height="*" />
-		</Grid.RowDefinitions>
-		<Grid Grid.Row="0">
-		</Grid>
-		<Grid Grid.Row="1">
-		</Grid>
-		<Grid Grid.Row="2">
-			<Grid.ColumnDefinitions>
-				<ColumnDefinition Width="83*"/>
-			</Grid.ColumnDefinitions>
-		</Grid>
-		<Grid Grid.Row="0" Grid.Column="1">
-			<DataGrid x:Name="dataAppointment" ItemsSource="{Binding Path=Appointments}"   IsReadOnly="True" 
-                                  SelectionMode="Single" AutoGenerateColumns="False" FontSize="15" FontWeight="Bold"
-                                  FontStyle="Normal"
-                                  CanUserResizeRows="False" Margin="-2.835,10,11.339,-287.464" Background="#333545">
+      <Grid>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="300*"/>
+                        <RowDefinition Height="57*"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <TextBox Style="{StaticResource SearchText}" VerticalAlignment="Stretch" HorizontalAlignment="Right" Margin="0,0,10,0"></TextBox>
+                    </Grid>
+                    <DataGrid x:Name="dataAppointment" Grid.Row="2" ItemsSource="{Binding Path=Appointments}"   IsReadOnly="True" 
+                              SelectionMode="Single" AutoGenerateColumns="False" FontSize="15" FontWeight="Bold"
+                              FontStyle="Normal"
+                              CanUserResizeRows="False"  Background="#333545">
 
-				<DataGrid.Columns>
+                        <DataGrid.Columns>
 
-					<DataGridTextColumn Header="Date" Binding="{Binding Date,StringFormat=d}" Width="*"  CanUserResize="False" />
-					<DataGridTextColumn Header="StartTime" Binding="{Binding StartTime}" Width="*"  CanUserResize="False"/>
-					<DataGridTextColumn Header="FinishTime" Binding="{Binding FinishTime}" Width="*"  CanUserResize="False"/>
-					<DataGridTextColumn Header="Room" Binding="{Binding Room.roomId}" Width="*"  CanUserResize="False"/>
-					<DataGridTextColumn Header="Patient" Binding="{Binding Patient.FullName}" Width="*"  CanUserResize="False"/>
-					<DataGridTextColumn Header="Type" Binding="{Binding AppointmentType}" Width="*"  CanUserResize="False"/>
-					<!--<DataGridTextColumn Header="Emergent?"  Binding="{Binding Emergent}"  Width="*"  CanUserResize="False"/>-->
-					<DataGridTemplateColumn Header="Emergent?">
-						<DataGridTemplateColumn.CellTemplate>
-							<DataTemplate>
-								<CheckBox IsChecked="{Binding Emergent}" IsEnabled="False" />
-							</DataTemplate>
-						</DataGridTemplateColumn.CellTemplate>
-					</DataGridTemplateColumn>
-				</DataGrid.Columns>
+                            <DataGridTextColumn Header="Date" Binding="{Binding Date,StringFormat=d}" Width="*"  CanUserResize="False" />
+                            <DataGridTextColumn Header="StartTime" Binding="{Binding StartTime}" Width="*"  CanUserResize="False"/>
+                            <DataGridTextColumn Header="FinishTime" Binding="{Binding FinishTime}" Width="*"  CanUserResize="False"/>
+                            <DataGridTextColumn Header="Room" Binding="{Binding Room.roomId}" Width="*"  CanUserResize="False"/>
+                            <DataGridTextColumn Header="Patient" Binding="{Binding Patient.FullName}" Width="*"  CanUserResize="False"/>
+                            <DataGridTextColumn Header="Type" Binding="{Binding AppointmentType}" Width="*"  CanUserResize="False"/>
+                            <!--<DataGridTextColumn Header="Emergent?"  Binding="{Binding Emergent}"  Width="*"  CanUserResize="False"/>-->
+                            <DataGridTemplateColumn Header="Emergent?">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <CheckBox IsChecked="{Binding Emergent}" IsEnabled="False" />
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
 
-			</DataGrid>
-		</Grid>
-		<Button x:Name="NewExamination" Content="New Examination" Margin="330.964,164.494,0,10" HorizontalAlignment="Left" Width="150" Height="50" Grid.Column="1" Grid.Row="3" Click="Examination_OnClick"/>
-		<Button x:Name="Surgery" Content="New Surgery" Margin="171.2,164.494,0,10" HorizontalAlignment="Left" Width="150" Height="50" Grid.Column="1" Grid.Row="3" Click="Surgery_OnClick"/>
-		<!--
+                    </DataGrid>
+
+                    <Button x:Name="NewExamination" Content="New Examination"  HorizontalAlignment="Left"  Margin="30,0,0,0" Width="150" Height="50"  Grid.Row="3" Click="Examination_OnClick"/>
+                    <Button x:Name="Surgery" Content="New Surgery" HorizontalAlignment="Center" Margin="0,0,150,0" Width="150" Height="50" Grid.Row="3" Click="Surgery_OnClick"/>
+                    <!--
         <Button x:Name="UpdateSurgery" Content="Update Surgery" Margin="135.964,164.494,0,10" HorizontalAlignment="Left" Width="102.4" Grid.Column="1" Grid.Row="3" Click="UpdateSurgery_OnClick"/>
         -->
-		<Button x:Name="Delete" Content="Delete" Margin="10,164.494,0,10" HorizontalAlignment="Left" Width="150" Height="50"  Grid.Row="3" Click="Delete_OnClick" Grid.Column="1" Background="Red"/>
-		<!--<Button x:Name="UpdateExamination" Content="Update Examination" Margin="400.164,164.494,0,10" HorizontalAlignment="Left" Width="115" Grid.Column="1" Grid.Row="3" Click="UpdateExamination_OnClick" />-->
-		<Button x:Name="UpdateExamination" Content="Update" Margin="495.764,164.494,0,10" HorizontalAlignment="Left" Width="150" Height="50" Grid.Column="1" Grid.Row="3" Click="UpdateExamination_OnClick" />
-    </Grid>
+                    <Button Grid.Row="3"  x:Name="Delete" Content="Delete"  HorizontalAlignment="Right" Width="150" Height="50"  Click="Delete_OnClick" Background="Red"/>
+                    <!--<Button x:Name="UpdateExamination" Content="Update Examination" Margin="400.164,164.494,0,10" HorizontalAlignment="Left" Width="115" Grid.Column="1" Grid.Row="3" Click="UpdateExamination_OnClick" />-->
+                    <Button x:Name="UpdateExamination" Content="Update"  HorizontalAlignment="Center" Margin="200,0,0,0" Width="150" Height="50"  Grid.Row="3" Click="UpdateExamination_OnClick" />
+                    
+                </Grid>
+                       
+            </Grid>
 </UserControl>

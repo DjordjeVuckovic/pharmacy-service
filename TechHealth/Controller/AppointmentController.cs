@@ -13,7 +13,7 @@ namespace TechHealth.Controller
    public class AppointmentController
    {
       private static AppointmentController _instance;
-      private AppointmentService appointmentService = new AppointmentService();
+      private readonly AppointmentService appointmentService = new AppointmentService();
       private DoctorService doctorService;
       private PatientService patientService;
 
@@ -33,6 +33,11 @@ namespace TechHealth.Controller
       {
             throw new NotImplementedException();
         }
+
+      public void Create(Appointment appointment)
+      {
+          appointmentService.CreateA(appointment);
+      }
 
       public bool Create(DateTime date, string startTime, AppointmentType appointmentType, Doctor doctor, string idApointment)
       {

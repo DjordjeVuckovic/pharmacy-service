@@ -9,6 +9,7 @@ namespace TechHealth.Model
 {
    public class Excuse
    {
+      
       public int idExcuse;
       public DateTime startDate;
       public DateTime finishDate;
