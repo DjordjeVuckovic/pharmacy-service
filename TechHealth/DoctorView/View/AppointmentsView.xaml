@@ -18,7 +18,7 @@
                         <TextBox Style="{StaticResource SearchText}" VerticalAlignment="Stretch" HorizontalAlignment="Right" Margin="0,0,10,0"></TextBox>
                     </Grid>
                     <DataGrid x:Name="dataAppointment" Grid.Row="2" ItemsSource="{Binding Path=Appointments}"   IsReadOnly="True" 
-                              SelectionMode="Single" AutoGenerateColumns="False" FontSize="15" FontWeight="Bold"
+                              SelectionMode="Single" AutoGenerateColumns="False" FontSize="15" 
                               FontStyle="Normal"
                               CanUserResizeRows="False"  Background="#333545">
 

@@ -7,6 +7,17 @@
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         Title="ReviewAnamnesis" Height="750" Width="500">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Dark.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/materialdesigncolor.bluegrey.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Border Background="#282a36" >
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="60"/>
@@ -14,7 +25,7 @@
             <RowDefinition/>
             <RowDefinition Height="43.4"/>
         </Grid.RowDefinitions>
-        <Label Grid.Row="0" Content="Review Anamnesis" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="32" Margin="0,5,0,1"/>
+        <Label Grid.Row="0" Content="Review Anamnesis" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="32" Margin="0,5,0,1" Foreground="#50fa7b"/>
         <StackPanel Grid.Row="1" HorizontalAlignment="Left" Margin="41.578,10,0,10" Width="179.169">
             <Label Content="Doctor: " x:Name="LabelDoctor1" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="5,0,5,0" FontSize="16" />
             <Label Content="Date: " x:Name="LabelDate1" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="5,0,5,0" FontSize="16"/>
@@ -107,4 +118,5 @@
         <Button Grid.Row="3" Content="Close"  HorizontalAlignment="Right" VerticalAlignment="Stretch" Width="100" Margin="0,0,85.53,10"/>
         <Button Grid.Row="3" Content="Print"  HorizontalAlignment="Left" VerticalAlignment="Stretch" Width="100" Margin="83.947,0,0,10"/>
     </Grid>
+    </Border>
 </Window>

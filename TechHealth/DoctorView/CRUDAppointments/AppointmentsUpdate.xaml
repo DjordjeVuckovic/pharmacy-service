@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:model="clr-namespace:TechHealth.Model"
         mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
         Title="AppointmentsUpdate" Height="450" Width="450">
     <Window.DataContext>
         <model:Appointment/>
