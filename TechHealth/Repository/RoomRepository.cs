@@ -89,11 +89,5 @@ namespace TechHealth.Repository
             }
             return false;
         }
-
-        protected override void ShouldSerialize(Room entity)
-        {
-            //entity.ShouldSerialize = true;
-            return;
-        }
     }
 }
