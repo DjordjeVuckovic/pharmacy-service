@@ -4,7 +4,7 @@
 // Purpose: Definition of Class Equipment
 
 using System;
-using System.Text.Json.Serialization;
+
 
 namespace TechHealth.Model
 {
@@ -12,10 +12,11 @@ namespace TechHealth.Model
    {
         public string name { get; set; }
         public string id { get; set; }
-        [JsonConverter(typeof(JsonStringEnumConverter))]
+        
         public EquipmentType type { get; set; }
         public int quantity { get; set; }
         public string roomID { get; set; }
+        
 
         public Equipment() { }
         public Equipment(string name, string id, EquipmentType type, int quantity, string roomID)

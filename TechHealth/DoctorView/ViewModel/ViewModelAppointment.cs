@@ -18,7 +18,7 @@ namespace TechHealth.DoctorView.ViewModel
         public RelayCommand NewSurgeryCommand { get; set; }
         public RelayCommand UpdateCommand { get; set; }
         public RelayCommand DeleteCommand { get; set; }
-        private AppointmentController appointmentController;
+        private readonly  AppointmentController appointmentController = new AppointmentController();
         public string DoctorId
         {
             get => doctorId;
@@ -38,10 +38,6 @@ namespace TechHealth.DoctorView.ViewModel
             }
             
         }
-
-        // public ObservableCollection<Appointment> Appointments =>
-        //     _appointments ?? (_appointments =
-        //         new ObservableCollection<Appointment>(AppointmentRepository.Instance.GetByDoctorId(DoctorId)));
         private Appointment selectedItem;
         public Appointment SelectedItem
         {
@@ -55,7 +51,7 @@ namespace TechHealth.DoctorView.ViewModel
 
         public ViewModelAppointment()
         {
-            appointmentController = new AppointmentController();
+            
             doctorId = LoginWindow.GetDoctorId();
             Appointments = new ObservableCollection<Appointment>(AppointmentRepository.Instance.GetByDoctorId(doctorId));
             NewExaminationCommand = new RelayCommand(param => Execute(),param => CanExecute());
@@ -111,9 +107,9 @@ namespace TechHealth.DoctorView.ViewModel
 
         private void Execute3()
         {
-            Appointments.Remove(SelectedItem);
             appointmentController.Delete(SelectedItem.IdAppointment);
-            MessageBox.Show(@"You are successfully deleted an appointment");
+            Appointments.Remove(SelectedItem);
+            MessageBox.Show("You are successfully deleted an appointment");
 
         }
     }

@@ -14,8 +14,8 @@ namespace TechHealth.Controller
    {
       
       private readonly AppointmentService appointmentService = new AppointmentService();
-      private DoctorService doctorService;
-      private PatientService patientService;
+      private readonly  DoctorService doctorService = new DoctorService();
+      private readonly  PatientService patientService = new PatientService();
 
       
       

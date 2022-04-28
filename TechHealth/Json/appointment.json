@@ -1,52 +1,4 @@
 {
-  "65c49af64f5d45dab432c3b34e431483": {
-    "ShouldSerialize": true,
-    "Date": "2022-04-21T00:00:00",
-    "StartTimeD": "0001-01-01T00:00:00",
-    "FinishTimeD": "0001-01-01T00:00:00",
-    "Emergent": false,
-    "StartTime": "11",
-    "FinishTime": "12",
-    "IdAppointment": "65c49af64f5d45dab432c3b34e431483",
-    "Room": {
-      "roomId": "soba2"
-    },
-    "Patient": {
-      "Lbo": 0,
-      "Jmbg": "13456",
-      "ShouldSerialize": false
-    },
-    "AppointmentType": 0,
-    "Doctor": {
-      "Jmbg": "131213121111",
-      "ShouldSerialize": false
-    },
-    "Evident": true
-  },
-  "92d9aede6ea545bdabeab7d055e6589e": {
-    "ShouldSerialize": true,
-    "Date": "2022-04-12T00:00:00",
-    "StartTimeD": "0001-01-01T00:00:00",
-    "FinishTimeD": "2022-04-28T03:05:00",
-    "Emergent": false,
-    "StartTime": "11",
-    "FinishTime": "12",
-    "IdAppointment": "92d9aede6ea545bdabeab7d055e6589e",
-    "Room": {
-      "roomId": "soba1"
-    },
-    "Patient": {
-      "Lbo": 0,
-      "Jmbg": "2456",
-      "ShouldSerialize": false
-    },
-    "AppointmentType": 1,
-    "Doctor": {
-      "Jmbg": "131213121111",
-      "ShouldSerialize": false
-    },
-    "Evident": false
-  },
   "13411eb404174849b60ddc01d4a193f0": {
     "ShouldSerialize": true,
     "Date": "2022-04-06T00:00:00",
@@ -57,7 +9,8 @@
     "FinishTime": "14",
     "IdAppointment": "13411eb404174849b60ddc01d4a193f0",
     "Room": {
-      "roomId": "soba2"
+      "roomId": "soba2",
+      "ShouldSerialize": false
     },
     "Patient": {
       "Lbo": 0,
