@@ -9,7 +9,7 @@ namespace TechHealth.DoctorView.View
         public RecordView()
         {
             InitializeComponent();
-            DataContext = new RecordViewModel();
+            //DataContext = new RecordViewModel();
 
         }
         

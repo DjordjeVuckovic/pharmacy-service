@@ -1,2 +1,28 @@
 {
+  "9a506a2ddc284e94971f4993c159e031": {
+    "AnmnesisAppointment": {
+      "ShouldSerialize": false,
+      "Emergent": false,
+      "StartTime": "11",
+      "FinishTime": "12",
+      "IdAppointment": "65c49af64f5d45dab432c3b34e431483"
+    },
+    "MainIssue": "a",
+    "AnamnesisDate": "2022-04-28T05:29:21.3855275+02:00",
+    "AnamnesisId": "9a506a2ddc284e94971f4993c159e031",
+    "OtherSymptoms": "a",
+    "GeneralAmnesis": "a",
+    "Cns": "a",
+    "Eye": "a",
+    "Neck": "",
+    "Mss": "",
+    "Skin": "",
+    "Ear": "",
+    "Cus": "",
+    "Infectious": "",
+    "Ugs": "",
+    "Respiratory": "",
+    "Mouth": "",
+    "Gi": ""
+  }
 }

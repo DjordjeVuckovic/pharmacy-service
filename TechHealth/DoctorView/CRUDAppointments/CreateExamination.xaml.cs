@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Windows;
 using TechHealth.DoctorView.MedicalHistory;
 using TechHealth.DoctorView.View;
@@ -19,12 +20,15 @@ namespace TechHealth.DoctorView.CRUDAppointments
         private List<Patient> patients;
         private List<Room> rooms;
         private string doctorId;
-        public CreateExamination(string doctorId)
+        private ObservableCollection<Appointment> Appointments { get; set; }
+        public CreateExamination(string doctorId, ObservableCollection<Appointment> observableCollection)
         {
             InitializeComponent();
+            DataContext = this;
             doctor = DoctorRepository.Instance.GetDoctorbyId(doctorId);
             patients = PatientRepository.Instance.DictionaryValuesToList();
             rooms = RoomRepository.Instance.DictionaryValuesToList();
+            Appointments = observableCollection;
 
             DoctorTxt.Text = doctor.FullSpecialization;
             PatentCombo.ItemsSource = patients;
@@ -51,10 +55,10 @@ namespace TechHealth.DoctorView.CRUDAppointments
                     StartTime = StartTxt.Text,
                     IdAppointment = Guid.NewGuid().ToString("N"),
                     Patient = patients[PatentCombo.SelectedIndex],
-                    Room = rooms[RoomCombo.SelectedIndex]
+                    Room = rooms[RoomCombo.SelectedIndex],
+                    ShouldSerialize = true
                 };
-                AppointmentsView.GetInstance().Appointments.Add(appointment);
-                RecordViewModel.GetInstance().Appointments.Add(appointment);
+                Appointments.Add(appointment);
                 AppointmentRepository.Instance.Create(appointment);
                 MessageBox.Show("You are successfully create new examination");
                 Close();

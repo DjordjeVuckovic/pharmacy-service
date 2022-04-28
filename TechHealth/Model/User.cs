@@ -35,7 +35,7 @@ namespace TechHealth.Model
             OnPropertyChanged(nameof(Password));
          }
       }
-      [JsonIgnore]
+      
       public bool ShouldSerialize { get; set; }
 
       public bool ShouldSerializeUsername()

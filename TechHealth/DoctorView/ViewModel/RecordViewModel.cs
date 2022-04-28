@@ -17,27 +17,6 @@ namespace TechHealth.DoctorView.ViewModel
         public RelayCommand ReviewCommand { get; set; }
         public NewAnamnesis AddAnamnesisView { get; set; }
         public ReviewAnamnesis ReviewAnamnesis { get; set; }
-        public object CurrentView
-        {
-            get => _currentView;
-            set
-            {
-                _currentView = value;
-                OnPropertyChanged();
-            }
-        }
-        public string Ics
-        {
-            get
-            {
-                return ics;
-            }
-            set
-            {
-                ics = value;
-                OnPropertyChanged();
-            }
-        }
         
         public string DoctorId
         {

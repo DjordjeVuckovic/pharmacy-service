@@ -8,7 +8,6 @@ namespace TechHealth.DoctorView.View
         public MedicineView()
         {
             InitializeComponent();
-            DataContext = new MedicineViewModel();
         }
     }
 }

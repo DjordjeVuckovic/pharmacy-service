@@ -9,9 +9,7 @@
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         Title="CreateSurgery" Height="450" Width="450">
-    <Window.DataContext>
-        <model:Appointment/>
-    </Window.DataContext>
+    
     <Window.Resources>
         
         <ResourceDictionary>

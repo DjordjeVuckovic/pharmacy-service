@@ -37,6 +37,11 @@ namespace TechHealth.Repository
             throw new NotImplementedException();
         }
 
+        protected override void ShouldSerialize(Equipment entity)
+        {
+            //skip
+        }
+
         public List<String> GetEqNames()
         {
             List<String> eqNames = new List<String>();

@@ -7,9 +7,6 @@ using TechHealth.Repository;
 
 namespace TechHealth.DoctorView.CRUDAppointments
 {
-    /// <summary>
-    /// Interaction logic for AppointmentsUpdate.xaml
-    /// </summary>
     public partial class AppointmentsUpdate : Window
     {
         private Appointment appointment;
@@ -20,6 +17,7 @@ namespace TechHealth.DoctorView.CRUDAppointments
         public AppointmentsUpdate(Appointment dataAppointmentSelectedItem)
         {
             InitializeComponent();
+            DataContext = this;
             appointment = dataAppointmentSelectedItem;
             doctor = DoctorRepository.Instance.GetDoctorbyId(appointment.Doctor.Jmbg);
             patients = PatientRepository.Instance.DictionaryValuesToList();
@@ -84,8 +82,7 @@ namespace TechHealth.DoctorView.CRUDAppointments
             }
             else
             {
-
-                appointment.AppointmentType = AppointmentType.examination;
+                
                 appointment.Date = DateTime.Parse(Picker.Text);
                 appointment.Doctor = doctor;
                 appointment.FinishTime = FinishTxt.Text;

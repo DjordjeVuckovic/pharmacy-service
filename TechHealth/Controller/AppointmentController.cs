@@ -12,12 +12,12 @@ namespace TechHealth.Controller
 {
    public class AppointmentController
    {
-      private static AppointmentController _instance;
+      
       private readonly AppointmentService appointmentService = new AppointmentService();
       private DoctorService doctorService;
       private PatientService patientService;
 
-      public static AppointmentController Instance => _instance;
+      
       
       public Appointment GetById(string idAppointment)
       {
@@ -36,7 +36,7 @@ namespace TechHealth.Controller
 
       public void Create(Appointment appointment)
       {
-          appointmentService.CreateA(appointment);
+          appointmentService.Create(appointment);
       }
 
       public bool Create(DateTime date, string startTime, AppointmentType appointmentType, Doctor doctor, string idApointment)
@@ -72,6 +72,7 @@ namespace TechHealth.Controller
       {
             return appointmentService.Delete(idAppointment);
       }
+        
 
     
     }

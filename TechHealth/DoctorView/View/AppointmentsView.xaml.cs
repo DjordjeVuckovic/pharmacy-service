@@ -10,18 +10,18 @@ namespace TechHealth.DoctorView.View
 {
     public partial class AppointmentsView 
     {
-        // public AppointmentsView()
-        // {
-        //     InitializeComponent();
-        // }
+        public AppointmentsView()
+        {
+            InitializeComponent();
+        }
         private static AppointmentsView _instance;
         private static string doctorId;
         private ObservableCollection<Appointment> _appointments;
-        public static AppointmentsView GetInstance()
-        {
-            return _instance;
-        }
-        public AppointmentsView(string id)
+        // public static AppointmentsView GetInstance()
+        // {
+        //     return _instance;
+        // }
+        /*public AppointmentsView(string id)
         {
             InitializeComponent();
             _instance = this;
@@ -71,7 +71,7 @@ namespace TechHealth.DoctorView.View
                 Appointments.Remove(appointment);
                 MessageBox.Show("You are successfully deleted an appointment");
             }
-        }
+        }*/
         
     }
     }

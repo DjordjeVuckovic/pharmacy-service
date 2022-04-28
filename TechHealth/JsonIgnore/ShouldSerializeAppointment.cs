@@ -19,7 +19,7 @@ namespace TechHealth.JsonIgnore
                     instance =>
                     {
                         Doctor doc = (Doctor)instance;
-                        return true;
+                        return false;
                     };
                 
             }

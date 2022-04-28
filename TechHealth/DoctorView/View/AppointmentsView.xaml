@@ -17,7 +17,7 @@
                     <Grid Grid.Row="0">
                         <TextBox Style="{StaticResource SearchText}" VerticalAlignment="Stretch" HorizontalAlignment="Right" Margin="0,0,10,0"></TextBox>
                     </Grid>
-                    <DataGrid x:Name="dataAppointment" Grid.Row="2" ItemsSource="{Binding Path=Appointments}"   IsReadOnly="True" 
+                    <DataGrid x:Name="dataAppointment" Grid.Row="2" ItemsSource="{Binding Path=Appointments}" SelectedItem="{Binding SelectedItem }"  IsReadOnly="True" 
                               SelectionMode="Single" AutoGenerateColumns="False" FontSize="15" 
                               FontStyle="Normal"
                               CanUserResizeRows="False"  Background="#333545">
@@ -42,14 +42,14 @@
 
                     </DataGrid>
 
-                    <Button x:Name="NewExamination" Content="New Examination"  HorizontalAlignment="Left"  Margin="30,0,0,0" Width="150" Height="50"  Grid.Row="3" Click="Examination_OnClick"/>
-                    <Button x:Name="Surgery" Content="New Surgery" HorizontalAlignment="Center" Margin="0,0,150,0" Width="150" Height="50" Grid.Row="3" Click="Surgery_OnClick"/>
+                    <Button x:Name="NewExamination" Content="New Examination"  HorizontalAlignment="Left"  Margin="30,0,0,0" Width="150" Height="50"  Grid.Row="3" Command="{Binding NewExaminationCommand}" />
+                    <Button x:Name="Surgery" Content="New Surgery" HorizontalAlignment="Center" Margin="0,0,150,0" Width="150" Height="50" Grid.Row="3" Command="{Binding NewSurgeryCommand}"/>
                     <!--
         <Button x:Name="UpdateSurgery" Content="Update Surgery" Margin="135.964,164.494,0,10" HorizontalAlignment="Left" Width="102.4" Grid.Column="1" Grid.Row="3" Click="UpdateSurgery_OnClick"/>
         -->
-                    <Button Grid.Row="3"  x:Name="Delete" Content="Delete"  HorizontalAlignment="Right" Width="150" Height="50"  Click="Delete_OnClick" Background="Red"/>
+                    <Button Grid.Row="3"  x:Name="Delete" Content="Delete"  HorizontalAlignment="Right" Width="150" Height="50"  Command="{Binding DeleteCommand}" Background="Red"/>
                     <!--<Button x:Name="UpdateExamination" Content="Update Examination" Margin="400.164,164.494,0,10" HorizontalAlignment="Left" Width="115" Grid.Column="1" Grid.Row="3" Click="UpdateExamination_OnClick" />-->
-                    <Button x:Name="UpdateExamination" Content="Update"  HorizontalAlignment="Center" Margin="200,0,0,0" Width="150" Height="50"  Grid.Row="3" Click="UpdateExamination_OnClick" />
+                    <Button x:Name="UpdateExamination" Content="Update"  HorizontalAlignment="Center" Margin="200,0,0,0" Width="150" Height="50"  Grid.Row="3" Command="{Binding UpdateCommand}" />
                     
                 </Grid>
                        

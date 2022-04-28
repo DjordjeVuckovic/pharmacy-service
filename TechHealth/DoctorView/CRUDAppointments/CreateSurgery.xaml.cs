@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Windows;
 using TechHealth.Controller;
 using TechHealth.DoctorView.View;
@@ -14,13 +15,16 @@ namespace TechHealth.DoctorView.CRUDAppointments
     /// </summary>
     public partial class CreateSurgery : Window
     {
-        private AppointmentController controller = new AppointmentController();
+        private readonly AppointmentController controller = new AppointmentController();
         private Doctor doctor;
         private List<Patient> patients;
         private List<Room> rooms;
-        public CreateSurgery(string doctorId)
+        private ObservableCollection<Appointment> Appointments { get; set; }
+        public CreateSurgery(string doctorId, ObservableCollection<Appointment> appointments)
         {
             InitializeComponent();
+            DataContext = this;
+            Appointments = appointments;
             doctor = DoctorRepository.Instance.GetDoctorbyId(doctorId);
             patients = PatientRepository.Instance.DictionaryValuesToList();
             rooms = RoomRepository.Instance.DictionaryValuesToList();
@@ -61,13 +65,15 @@ namespace TechHealth.DoctorView.CRUDAppointments
                     IdAppointment = Guid.NewGuid().ToString("N"),
                     Patient = patients[PatentCombo.SelectedIndex],
                     Room = rooms[RoomCombo.SelectedIndex],
-                    FinishTimeD = DateTime.Parse(Timepicker1.Text)
+                    FinishTimeD = DateTime.Parse(Timepicker1.Text),
+                    ShouldSerialize = true
                 };
                 //AppointmentsWindow.GetInstance().Appointments.Add(appointment);
-                AppointmentsView.GetInstance().Appointments.Add(appointment);
+                //AppointmentsView.GetInstance().Appointments.Add(appointment);
                 //RecordViewModel.GetInstance().Appointments.Add(appointment);
                 //AppointmentIgnore ignore = new AppointmentIgnore(appointment);
                 //AppointmentRepository.Instance.Create(appointment);
+                Appointments.Add(appointment);
                 controller.Create(appointment);
                 MessageBox.Show("You are successfully create new examination");
                 Close();

@@ -40,6 +40,11 @@ namespace TechHealth.Repository
             throw new NotImplementedException();
         }
 
+        protected override void ShouldSerialize(Room entity)
+        {
+            entity.ShouldSerialize = true;
+        }
+
         public List<String> GetRoomIDs()
         {
             List<String> roomIDs = new List<String>();

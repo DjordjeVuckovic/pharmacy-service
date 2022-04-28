@@ -22,7 +22,7 @@ namespace TechHealth.Model
       private AppointmentType appointmentType;
       private Doctor doctor;
       private bool evident;
-      [JsonIgnore]
+      
       public bool ShouldSerialize { get; set; }
 
       public DateTime Date
