@@ -61,5 +61,10 @@ namespace TechHealth.Repository
             }
             return roomNames;
         }
+
+        protected override void ShouldSerialize(Room entity)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

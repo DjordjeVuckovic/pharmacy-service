@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:TechHealth.View.PatientView.View"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800"
+             d:DesignHeight="450" d:DesignWidth="600"
              Background="Transparent">
     <StackPanel>
         <TextBlock Text="HOME PAGE"
@@ -14,9 +14,9 @@
                    HorizontalAlignment="Left"
                    Margin="0,0,0,20"/>
         <StackPanel Orientation="Horizontal" Height="253">
-            <Border Width="400"
+            <Border Width="275"
                     Height="200"
-                    Margin="10">
+                    Margin="20,26,10,27">
 
                 <Border.Background>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
@@ -28,7 +28,7 @@
                 <Border.Clip>
                     <RectangleGeometry RadiusX="10"
                                        RadiusY="10"
-                                       Rect="0,0,400,200"/>
+                                       Rect="0,0,275,200"/>
                 </Border.Clip>
                 <Grid>
                     <StackPanel>
@@ -38,12 +38,12 @@
                                    Margin="20,10,10,0"/>
                     </StackPanel>
 
-                    <Image Width="228"
+                    <Image Width="201"
                            Height="231"
                            Source="C:\Users\KrecimStanove\Documents\GitHub\PharmacyService\TechHealth\resources\dash.png"
                            HorizontalAlignment="Right"
                            VerticalAlignment="Bottom"
-                           Margin="0,0,-15,-52" RenderTransformOrigin="0.5,0.5">
+                           Margin="0,0,10,-56" RenderTransformOrigin="0.5,0.5">
                         <Image.RenderTransform>
                             <TransformGroup>
                                 <ScaleTransform/>
@@ -56,8 +56,9 @@
 
                 </Grid>
             </Border>
-            <Border Width="373"
-                    CornerRadius="10" Margin="0,26,10,27"
+            <Border Width="275"
+                    
+                    CornerRadius="10" Margin="0,26,20,27"
                     >
 
                 <Border.Background>
@@ -69,9 +70,10 @@
 
                 <TextBlock
                            Foreground="White"
+                           HorizontalAlignment="Right"
                            FontSize="28"
-                           Margin="20,10,20,0"
-                           TextAlignment="Right"><Run Text="Favorite&#xA;Doct"/><Run Text="or"/><Run Text=" "/></TextBlock>
+                           Margin="10,10,10,0"
+                           TextAlignment="Right"><Run Text="Favorite&#xA;Doctor"/></TextBlock>
             </Border>
         </StackPanel>
     </StackPanel>
