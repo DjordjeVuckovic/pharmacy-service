@@ -15,6 +15,7 @@ using TechHealth.Model;
 using TechHealth.Controller;
 using TechHealth.Conversions;
 using TechHealth.View.ManagerView.VieW;
+using TechHealth.Repository;
 
 namespace TechHealth.View.ManagerView.CRUDRooms
 {
@@ -42,9 +43,15 @@ namespace TechHealth.View.ManagerView.CRUDRooms
             room.availability = ManagerConversions.StringToAvailability(CbAvailability.Text);
             room.equipment = new List<Equipment>();
 
+            if (RoomRepository.Instance.WarehouseExists() && room.roomTypes == RoomTypes.warehouse)
+            {
+                MessageBox.Show("There can only be one warehouse!");
+                this.Close();
+                return;               
+            }
             roomController.Create(room);
-            RoomView roomView = new RoomView();
-            roomView.Rooms.Add(room);
+            //RoomView roomView = new RoomView();
+            //roomView.Rooms.Add(room);
 
             this.Close();
         }       
