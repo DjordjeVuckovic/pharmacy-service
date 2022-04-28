@@ -68,15 +68,7 @@ namespace TechHealth.Repository
             return roomNames;
         }
 
-        //public List<string> GetRoomTypes()
-        //{
-        //    List<string> roomTypes = new List<string>();
-        //    foreach (var room in DictionaryValuesToList())
-        //    {
-        //        roomTypes.Add(ManagerConversions.RoomTypesToString(room.roomTypes));
-        //    }
-        //    return roomTypes;
-        //}
+
 
         public bool WarehouseExists()
         {
@@ -88,6 +80,11 @@ namespace TechHealth.Repository
                 }
             }
             return false;
+
+        protected override void ShouldSerialize(Room entity)
+        {
+            throw new NotImplementedException();
+
         }
     }
 }
