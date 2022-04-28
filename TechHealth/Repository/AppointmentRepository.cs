@@ -68,7 +68,7 @@ namespace TechHealth.Repository
       protected override void ShouldSerialize(Appointment entity)
       {
          entity.ShouldSerialize = true;
-         entity.Patient.ShouldSerialize = false;
+         entity.Patient.ShouldSerialize = true;
          entity.Doctor.ShouldSerialize = false;
          entity.Room.ShouldSerialize = false;
       }

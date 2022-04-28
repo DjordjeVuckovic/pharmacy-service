@@ -68,11 +68,18 @@ namespace TechHealth.View.PatientView.View
 
         private void ExecuteDelete()
         {
-
-            Appointment ap = (Appointment)dataAppointments.SelectedItem;
-            AppointmentRepository.Instance.Delete(ap.IdAppointment);
-            Appointment.Remove(ap);
-            MessageBox.Show("You have successfully deleted selected appointment");
+            if (dataAppointments.SelectedIndex == -1)
+            {
+                MessageBox.Show("You must select an appointment that you want to delete!");
+            }
+            else
+            {
+                Appointment ap = (Appointment)dataAppointments.SelectedItem;
+                AppointmentRepository.Instance.Delete(ap.IdAppointment);
+                Appointment.Remove(ap);
+                MessageBox.Show("You have successfully deleted selected appointment");
+            }
+                
         }
 
         private void ExecuteAdd()
@@ -82,7 +89,11 @@ namespace TechHealth.View.PatientView.View
 
         private void ExecuteUpdate(Appointment selected)
         {
-            if(dataAppointments.SelectedIndex != -1)
+            if(dataAppointments.SelectedIndex == -1)
+            {
+                MessageBox.Show("You must select an appointment that you want to change");
+            }
+            else
             {
                 UpdateAppointment updateap = new UpdateAppointment((Appointment)dataAppointments.SelectedItem);
                 updateap.ShowDialog();
