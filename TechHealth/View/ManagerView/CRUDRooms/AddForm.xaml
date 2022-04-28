@@ -22,6 +22,7 @@
             <ComboBoxItem Content="Examination"/>
             <ComboBoxItem Content="Rest"/>
             <ComboBoxItem Content="Office"/>
+            <ComboBoxItem Content="Warehouse"/>
         </ComboBox>
         <ComboBox HorizontalAlignment="Left" Margin="207,275,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.033,0.608" x:Name="CbAvailability">
             <ComboBoxItem Content="In function"/>

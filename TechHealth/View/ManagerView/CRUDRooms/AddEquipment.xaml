@@ -10,7 +10,6 @@
         <Label Content="Name:" HorizontalAlignment="Left" Margin="51,78,0,0" VerticalAlignment="Top" FontSize="14"/>
         <Label Content="Type:" HorizontalAlignment="Left" Margin="51,137,0,0" VerticalAlignment="Top" FontSize="14"/>
         <Label Content="Quantity:" HorizontalAlignment="Left" Margin="51,0,0,0" VerticalAlignment="Center" FontSize="14"/>
-        <Label Content="RoomID:" HorizontalAlignment="Left" Margin="51,268,0,0" VerticalAlignment="Top" FontSize="14"/>
         <TextBox HorizontalAlignment="Left" Margin="207,82,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="21.96" x:Name="TxtName"/>
         <ComboBox HorizontalAlignment="Left" Margin="207,144,0,0" VerticalAlignment="Top" Width="120" x:Name="CbEqType">
             <ComboBoxItem Content="Statical"/>
@@ -18,10 +17,7 @@
         </ComboBox>
         <TextBox HorizontalAlignment="Left" Margin="207,209,0,0" VerticalAlignment="Top" Width="120" x:Name="TxtQuantity">
         </TextBox>
-        <ComboBox HorizontalAlignment="Left" Margin="207,275,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.033,0.608" x:Name="CbRoomID">
-            <!--<ComboBoxItem Content="In function"/>
-            <ComboBoxItem Content="Not in function"/>-->
-        </ComboBox>
+ 
         <Label Content="Add an equipment" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="20"/>
         <Button Content="Confirm" HorizontalAlignment="Left" Margin="91,357,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal" Height="30" Width="70" RenderTransformOrigin="-0.291,0.467" Background="#FF42C130" Click="Button_Click_Confirm"/>
         <Button Content="Close" HorizontalAlignment="Left" Margin="232,357,0,0" VerticalAlignment="Top" Width="70" Height="30" FontSize="16" Background="#FFEA9292" Click="Button_Click_Close"/>

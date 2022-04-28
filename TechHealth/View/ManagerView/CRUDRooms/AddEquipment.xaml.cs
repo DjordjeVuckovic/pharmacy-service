@@ -25,7 +25,7 @@ namespace TechHealth.View.ManagerView.CRUDRooms
     public partial class AddEquipment : Window
     {
         private Equipment equipment;
-        private List<String> roomIDs;
+        //private List<String> roomIDs;
         private List<String> eqNames;
         private List<Room> rooms;
         private List<Equipment> eqList;
@@ -35,9 +35,9 @@ namespace TechHealth.View.ManagerView.CRUDRooms
             InitializeComponent();
             eqList = EquipmentRepository.Instance.DictionaryValuesToList();
             rooms = RoomRepository.Instance.DictionaryValuesToList();
-            roomIDs = RoomRepository.Instance.GetRoomIDs();
+            //roomIDs = RoomRepository.Instance.GetRoomIDs();
             eqNames = EquipmentRepository.Instance.GetEqNames();
-            CbRoomID.ItemsSource = roomIDs;
+            //CbRoomID.ItemsSource = roomIDs;
         }
 
         private void Button_Click_Confirm(object sender, RoutedEventArgs e)
@@ -48,42 +48,76 @@ namespace TechHealth.View.ManagerView.CRUDRooms
             equipment.id = Guid.NewGuid().ToString("N");
             equipment.type = ManagerConversions.StringToEquipmentType(CbEqType.Text);
             equipment.quantity = Int32.Parse(TxtQuantity.Text);
-            equipment.roomID = CbRoomID.Text;
+            equipment.roomID = ManagerConversions.RoomTypesToString(RoomTypes.warehouse);
 
             //parametri treba da se proslede kontroleru pa zatim servisu i tamo treba da se premeste ove funkcije
             //treba popraviti da kad se doda isti tip opreme u drugu sobu, da se lepo azuriraju fajlovi s podacima i tabele
-            foreach (var room in rooms)     //provera da li vec postoji oprema u istoj sobi, ako postoji, azurira se kolicina u tabeli opreme i sobi
+            //provera da li vec postoji oprema u magacinu, ako postoji, azurira se kolicina u tabeli opreme i sobi
+            //foreach (var room in rooms)    
+            //{
+            //    foreach (var eq in eqList)
+            //    {
+            //        if (eq.name == equipment.name && room.roomId == eq.roomID)
+            //        {
+            //            eq.quantity += equipment.quantity;
+            //            EquipmentRepository.Instance.Update(eq);
+
+            //            int index = EquipmentRepository.Instance.GetEqIndex(eq.name, room.equipment);
+            //            room.equipment[index] = eq;
+            //            roomController.Update(room);
+            //            this.Close();
+            //            return;
+            //        }
+            //    }
+            //}
+            foreach (var room in rooms)     
             {
-                foreach (var eq in eqList)
+                if (room.roomTypes == RoomTypes.warehouse)
                 {
-                    if (eq.name == equipment.name && room.roomId == eq.roomID)
+                    List<Equipment> eqListWarehouse = EquipmentRepository.Instance.GetEqListByRoomID(equipment.roomID);
+                    foreach (var eq in eqListWarehouse)
                     {
-                        eq.quantity += equipment.quantity;
-                        EquipmentRepository.Instance.Update(eq);
+                        if (eq.name == equipment.name)
+                        {
+                            eq.quantity += equipment.quantity;
+                            EquipmentRepository.Instance.Update(eq);
 
-                        int index = EquipmentRepository.Instance.GetEqIndex(eq.name, room.equipment);
-                        room.equipment[index] = eq;
-                        roomController.Update(room);
-                        this.Close();
-                        return;
+                            int index = EquipmentRepository.Instance.GetEqIndex(eq.name, eqListWarehouse);
+                            eqListWarehouse[index] = eq;
+                            room.equipment = eqListWarehouse;
+                            roomController.Update(room);
+                            this.Close();
+                            return;
+                        }
                     }
-                }
-            }
-
-            foreach (var room in rooms)     //dodavanje kreirane opreme u odgovarajucu sobu
-            {
-                if (room.roomId == equipment.roomID)
-                {
+                    EquipmentRepository.Instance.Create(equipment);
                     room.equipment.Add(equipment);
                     roomController.Update(room);
+                    this.Close();
+                    return;
+
+                }
+                else
+                {
+                    continue;
                 }
             }
+            MessageBox.Show("Warehouse doesn't exist!");
 
-            EquipmentRepository.Instance.Create(equipment);
-            EquipmentView eqView = new EquipmentView();
-            eqView.Equipment.Add(equipment);
-            this.Close();
- 
+            //foreach (var room in rooms)     //dodavanje kreirane opreme u magacin
+            //{
+            //    if (room.roomTypes == RoomTypes.warehouse)
+            //    {
+            //        room.equipment.Add(equipment);
+            //        roomController.Update(room);
+            //    }
+            //}
+
+            //EquipmentRepository.Instance.Create(equipment);
+            ////EquipmentView eqView = new EquipmentView();
+            ////eqView.Equipment.Add(equipment);
+            //this.Close();
+
         }
 
         private void Button_Click_Close(object sender, RoutedEventArgs e)
