@@ -152,6 +152,7 @@
     </ApplicationDefinition>
     <Compile Include="Controller\AccountController.cs" />
     <Compile Include="Controller\AppointmentController.cs" />
+    <Compile Include="Controller\EquipmentController.cs" />
     <Compile Include="Controller\EquipmentReallocationController.cs" />
     <Compile Include="Controller\RoomController.cs" />
     <Compile Include="Conversions\AddressConverter.cs" />
@@ -253,6 +254,7 @@
     <Compile Include="Service\AppointmentService.cs" />
     <Compile Include="Service\DoctorService.cs" />
     <Compile Include="Service\EquipmentReallocationService.cs" />
+    <Compile Include="Service\EquipmentService.cs" />
     <Compile Include="Service\PatientService.cs" />
     <Compile Include="Service\RoomService.cs" />
     <Compile Include="Store\NavigationStore.cs" />

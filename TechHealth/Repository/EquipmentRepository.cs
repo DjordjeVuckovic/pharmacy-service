@@ -65,7 +65,7 @@ namespace TechHealth.Repository
                 }
                 i++;
             }
-            return index;
+            return index;     
         }
 
         public List<Equipment> GetEqListByRoomID(string roomID)

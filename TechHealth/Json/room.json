@@ -9,7 +9,7 @@
         "name": "skalpel",
         "id": "35c9d35390b44f7e8987c8a9ad3fdfed",
         "type": 0,
-        "quantity": 100,
+        "quantity": 114,
         "roomID": "Warehouse"
       },
       {
@@ -30,7 +30,7 @@
         "name": "krevet",
         "id": "8a30ea9ab35f4868a7e387755e93972e",
         "type": 0,
-        "quantity": 7,
+        "quantity": 12,
         "roomID": "Warehouse"
       }
     ]
@@ -39,14 +39,14 @@
     "roomTypes": 3,
     "roomId": "S1",
     "floor": 1,
-    "availability": false,
+    "availability": true,
     "equipment": []
   },
   "S2": {
-    "roomTypes": 2,
+    "roomTypes": 1,
     "roomId": "S2",
     "floor": 3,
-    "availability": true,
+    "availability": false,
     "equipment": []
   }
 }
