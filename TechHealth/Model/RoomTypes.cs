@@ -12,6 +12,7 @@ namespace TechHealth.Model
       rest,
       operation,
       office,
-      examination
+      examination,
+      warehouse,
    }
 }

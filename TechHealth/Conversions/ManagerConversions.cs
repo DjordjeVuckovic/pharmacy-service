@@ -46,6 +46,8 @@ namespace TechHealth.Conversions
                     return "Rest";
                 case RoomTypes.office:
                     return "Office";
+                case RoomTypes.warehouse:
+                    return "Warehouse";
                 default:
                     return "";
             }
@@ -87,8 +89,10 @@ namespace TechHealth.Conversions
                     return RoomTypes.rest;
                 case "Office":
                     return RoomTypes.office;
+                case "Warehouse":
+                    return RoomTypes.warehouse;
                 default:
-                    return RoomTypes.rest;
+                    return RoomTypes.office;
             }
         }
 

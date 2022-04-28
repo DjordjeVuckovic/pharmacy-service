@@ -73,8 +73,11 @@ namespace TechHealth.Repository
                     eqList.Add(eq);
                 }
             }
-
             return eqList;
+        }
+
+        protected override void ShouldSerialize(Equipment entity)
+        { 
         }
     }
 }

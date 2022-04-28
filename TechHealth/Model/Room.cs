@@ -19,8 +19,8 @@ namespace TechHealth.Model
         public int floor { get; set; }
         public bool availability { get; set; }
         public List<Equipment> equipment { get; set; }
-        [JsonIgnore]
-        public bool ShouldSerialize { get; set; }
+        //[JsonIgnore]
+        //public bool ShouldSerialize { get; set; }
         public Room() { }
         public Room(RoomTypes rt, string id, int flr, bool available, List<Equipment> list)
         {
@@ -35,22 +35,22 @@ namespace TechHealth.Model
         {
             equipment.Add(eq);
         }
-        public bool ShouldSerializeroomTypes()
-        {
-            return ShouldSerialize;
-        }
-        public bool ShouldSerializefloor()
-        {
-            return ShouldSerialize;
-        }
-        public bool ShouldSerializeavailability()
-        {
-            return ShouldSerialize;
-        }
-        public bool ShouldSerializeequipment()
-        {
-            return ShouldSerialize;
-        }
+        //public bool ShouldSerializeroomTypes()
+        //{
+        //    return ShouldSerialize;
+        //}
+        //public bool ShouldSerializefloor()
+        //{
+        //    return ShouldSerialize;
+        //}
+        //public bool ShouldSerializeavailability()
+        //{
+        //    return ShouldSerialize;
+        //}
+        //public bool ShouldSerializeequipment()
+        //{
+        //    return ShouldSerialize;
+        //}
 
        
     }

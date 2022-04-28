@@ -5,6 +5,7 @@
 
 using System;
 using System.Collections.Generic;
+using TechHealth.Conversions;
 using TechHealth.Model;
 
 namespace TechHealth.Repository
@@ -60,6 +61,34 @@ namespace TechHealth.Repository
                 roomNames.Add(room.roomId);
             }
             return roomNames;
+        }
+
+        //public List<string> GetRoomTypes()
+        //{
+        //    List<string> roomTypes = new List<string>();
+        //    foreach (var room in DictionaryValuesToList())
+        //    {
+        //        roomTypes.Add(ManagerConversions.RoomTypesToString(room.roomTypes));
+        //    }
+        //    return roomTypes;
+        //}
+
+        public bool WarehouseExists()
+        {
+            foreach (var room in DictionaryValuesToList())
+            {
+                if (room.roomTypes == RoomTypes.warehouse)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        protected override void ShouldSerialize(Room entity)
+        {
+            //entity.ShouldSerialize = true;
+            return;
         }
     }
 }
