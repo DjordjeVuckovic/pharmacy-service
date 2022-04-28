@@ -34,6 +34,7 @@ namespace TechHealth.View.ManagerView.VieW
         public event PropertyChangedEventHandler PropertyChanged;
         public RelayCommand AddEquipmentCommand { get; set; }
         public RelayCommand DeleteEquipmentCommand { get; set; }
+        public RelayCommand ReallocateCommand { get; set; }
 
         public Equipment SelectedItem
         {
@@ -68,6 +69,22 @@ namespace TechHealth.View.ManagerView.VieW
             eqlist = new ObservableCollection<Equipment>(EquipmentRepository.Instance.DictionaryValuesToList());
             AddEquipmentCommand = new RelayCommand(param => ExecuteAdd());
             DeleteEquipmentCommand = new RelayCommand(param => ExecuteDelete(), param => CanExecuteDelete());
+            ReallocateCommand = new RelayCommand(param => ExecuteReallocate(), param => CanExecuteReallocate());
+        }
+
+        private bool CanExecuteReallocate()
+        {
+            if (selectedItem == null)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        private void ExecuteReallocate()
+        {
+            new ReallocateForm().ShowDialog();
         }
 
         private bool CanExecuteDelete()

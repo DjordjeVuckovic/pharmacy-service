@@ -13,9 +13,9 @@ namespace TechHealth.Conversions
         {
             switch (str)
             {
-                case "Static":
+                case "Statical":
                     return EquipmentType.statical;
-                case "Dynamic":
+                case "Dynamical":
                     return EquipmentType.dynamical;
                 default:
                     return EquipmentType.statical;
@@ -26,9 +26,9 @@ namespace TechHealth.Conversions
             switch (type)
             {
                 case EquipmentType.statical:
-                    return "Static";
+                    return "Statical";
                 case EquipmentType.dynamical:
-                    return "Dynamic";
+                    return "Dynamical";
                 default:
                     return "";
             }
