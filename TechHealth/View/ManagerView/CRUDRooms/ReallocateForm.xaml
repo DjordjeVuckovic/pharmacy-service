@@ -1,0 +1,29 @@
+﻿<Window x:Class="TechHealth.View.ManagerView.CRUDRooms.ReallocateForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TechHealth.View.ManagerView.CRUDRooms"
+        mc:Ignorable="d"
+        Title="ReallocateForm" Height="480" Width="400">
+    <Grid Background="#272537">
+        <Label Content="EquipmentID:" HorizontalAlignment="Left" Margin="51,78,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <Label Content="From room:" HorizontalAlignment="Left" Margin="51,137,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <Label Content="To room:" HorizontalAlignment="Left" Margin="51,0,0,0" VerticalAlignment="Center" FontSize="14"/>
+        <Label Content="Amount:" HorizontalAlignment="Left" Margin="51,268,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <Label Content="Reallocation date:" HorizontalAlignment="Left" Margin="51,337,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <TextBox HorizontalAlignment="Left" Margin="207,82,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="21.96" x:Name="TxtEqId"/>
+        <ComboBox HorizontalAlignment="Left" Margin="207,144,0,0" VerticalAlignment="Top" Width="120" x:Name="CbSourceRoom">
+        </ComboBox>
+        <ComboBox HorizontalAlignment="Left" Margin="207,209,0,0" VerticalAlignment="Top" Width="120" x:Name="CbDestinationRoom">
+        </ComboBox>
+        <TextBox HorizontalAlignment="Left" Margin="207,275,0,0" VerticalAlignment="Top" Width="120" Height ="21.96" RenderTransformOrigin="0.033,0.608" x:Name="CbAmount">
+        </TextBox>
+        <DatePicker HorizontalAlignment="Left" Margin="207,341,0,0" VerticalAlignment="Top" Width="120" Height="21.96" x:Name="DpDateTime">
+        </DatePicker>
+        <Label Content="Reallocate" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="20"/>
+        <Button Content="Confirm" HorizontalAlignment="Left" Margin="91,400,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal" Height="30" Width="70" RenderTransformOrigin="-0.291,0.467" Background="#FF42C130" Click="Button_Click_Confirm"/>
+        <Button Content="Close" HorizontalAlignment="Left" Margin="232,400,0,0" VerticalAlignment="Top" Width="70" Height="30" FontSize="16" Background="#FFEA9292" Click="Button_Click_Close"/>
+
+    </Grid>
+</Window>
