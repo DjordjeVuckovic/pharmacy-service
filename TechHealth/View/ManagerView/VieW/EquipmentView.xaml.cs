@@ -83,7 +83,7 @@ namespace TechHealth.View.ManagerView.VieW
 
         private void ExecuteReallocate()
         {
-            new ReallocateForm().ShowDialog();
+            new ReallocateForm(selectedItem).ShowDialog();
         }
 
         private bool CanExecuteDelete()

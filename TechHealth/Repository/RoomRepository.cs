@@ -67,6 +67,16 @@ namespace TechHealth.Repository
             }
             return roomNames;
         }
+        public List<String> GetRoomNames(List<Room> rooms)
+        {
+            List<String> roomNames = new List<String>();
+
+            foreach (var room in rooms)
+            {
+                roomNames.Add(room.roomId);
+            }
+            return roomNames;
+        }
 
         //public List<string> GetRoomTypes()
         //{
@@ -77,6 +87,22 @@ namespace TechHealth.Repository
         //    }
         //    return roomTypes;
         //}
+
+        public List<Room> GetRoomsByEq(string eqName)
+        {
+            List<Room> rooms = new List<Room>();
+            foreach (var room in DictionaryValuesToList())
+            {
+                foreach (var e in room.equipment)
+                {
+                    if (e.name == eqName)
+                    {
+                        rooms.Add(room);
+                    }
+                }
+            }
+            return rooms;
+        }
 
         public bool WarehouseExists()
         {

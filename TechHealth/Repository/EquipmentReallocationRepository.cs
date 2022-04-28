@@ -39,7 +39,7 @@ namespace TechHealth.Repository
 
         protected override void ShouldSerialize(EquipmentReallocationDTO entity)
         {
-            throw new NotImplementedException();
+            entity.ShouldSerialize = true;
         }
     }
 }

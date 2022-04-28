@@ -3,7 +3,7 @@
     "name": "skalpel",
     "id": "35c9d35390b44f7e8987c8a9ad3fdfed",
     "type": 0,
-    "quantity": 100,
+    "quantity": 114,
     "roomID": "Warehouse"
   },
   "0526949279ef4825a2f976e3806d2108": {
@@ -24,7 +24,7 @@
     "name": "krevet",
     "id": "8a30ea9ab35f4868a7e387755e93972e",
     "type": 0,
-    "quantity": 7,
+    "quantity": 12,
     "roomID": "Warehouse"
   }
 }

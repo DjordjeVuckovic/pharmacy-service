@@ -83,7 +83,7 @@ namespace TechHealth.View.ManagerView.CRUDRooms
                             EquipmentRepository.Instance.Update(eq);
 
                             int index = EquipmentRepository.Instance.GetEqIndex(eq.name, eqListWarehouse);
-                            eqListWarehouse[index] = eq;
+                            eqListWarehouse[index].quantity = eq.quantity;
                             room.equipment = eqListWarehouse;
                             roomController.Update(room);
                             this.Close();

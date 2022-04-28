@@ -35,21 +35,21 @@ namespace TechHealth.Model
         {
             equipment.Add(eq);
         }
-        public bool ShouldSerializeroomTypes()
-        {
-            return ShouldSerialize;
-        }
-        public bool ShouldSerializefloor()
-        {
-            return ShouldSerialize;
-        }
-        public bool ShouldSerializeavailability()
-        {
-            return ShouldSerialize;
-        }
-        public bool ShouldSerializeequipment()
-        {
-            return ShouldSerialize;
-        }
+        //public bool ShouldSerializeroomTypes()
+        //{
+        //    return ShouldSerialize;
+        //}
+        //public bool ShouldSerializefloor()
+        //{
+        //    return ShouldSerialize;
+        //}
+        //public bool ShouldSerializeavailability()
+        //{
+        //    return ShouldSerialize;
+        //}
+        //public bool ShouldSerializeequipment()
+        //{
+        //    return ShouldSerialize;
+        //}
     }
 }
