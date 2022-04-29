@@ -10,9 +10,9 @@ using System.Threading.Tasks;
 
 namespace TechHealth.View.PatientView.ViewModel
 {
-    public class AppointmentViewModel: ViewModelBase
+    public class AppointmentViewModel
     {
-        private ObservableCollection<Appointment> apList;
+        /*private ObservableCollection<Appointment> apList;
 
         public ObservableCollection<Appointment> appointments => apList ?? (apList =
             new ObservableCollection<Appointment>(AppointmentRepository.Instance.DictionaryValuesToList()));
@@ -20,6 +20,6 @@ namespace TechHealth.View.PatientView.ViewModel
         public AppointmentViewModel()
         {
 
-        }
+        }*/
     }
 }

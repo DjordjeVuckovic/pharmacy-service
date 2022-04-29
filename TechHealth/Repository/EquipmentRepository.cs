@@ -80,6 +80,14 @@ namespace TechHealth.Repository
             }
             return eqList;
         }
+
         
+
+
+        /*protected override void ShouldSerialize(Equipment entity)
+        {
+            throw new NotImplementedException();
+        }*/
+
     }
 }

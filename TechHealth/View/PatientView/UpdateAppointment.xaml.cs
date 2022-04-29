@@ -73,12 +73,12 @@ namespace TechHealth.View.PatientView
 
         private bool ValidateDate()
         {
-            return (Date.SelectedDate.Value > selected.StartTimeD.AddDays(3)) || (Date.SelectedDate.Value < selected.StartTimeD.AddDays(-4));
+            return (Date.SelectedDate.Value > selected.StartTimeD.AddDays(4)) || (Date.SelectedDate.Value < selected.StartTimeD.AddDays(-4));
         }
 
         private bool Validate()
         {
-            if (ValidateDate())
+            if (!ValidateDate())
             {
                 MessageBox.Show("Moguce je pomeriti termin za maksimalo 3 dana unapred ili unazad!");
                 return false;

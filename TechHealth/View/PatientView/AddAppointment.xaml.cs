@@ -31,6 +31,7 @@ namespace TechHealth.View.PatientView       //dodati IDappointment
         {
 
             InitializeComponent();
+            DataContext = this;
             doctors = DoctorRepository.Instance.DictionaryValuesToList();
             CbDoctor.ItemsSource = doctors;
         }
@@ -61,6 +62,4 @@ namespace TechHealth.View.PatientView       //dodati IDappointment
     }
 }
 
-//Resource dictionary
 
-//Koristiti radiobutton
