@@ -112,6 +112,8 @@ namespace TechHealth.Repository
             }
 
             return false;
+        }
+
 
             // protected override void ShouldSerialize(Room entity)
             // {
@@ -119,5 +121,12 @@ namespace TechHealth.Repository
             //
             // }
         }
+
+        /*protected override void ShouldSerialize(Room entity)
+        {
+            throw new NotImplementedException();
+
+        }*/
+
     }
 }
