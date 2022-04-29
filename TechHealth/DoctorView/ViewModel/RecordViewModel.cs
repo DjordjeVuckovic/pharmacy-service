@@ -1,4 +1,5 @@
 ﻿using System.Collections.ObjectModel;
+using TechHealth.Controller;
 using TechHealth.Core;
 using TechHealth.DoctorView.MedicalHistory;
 using TechHealth.DoctorView.View;
@@ -11,6 +12,7 @@ namespace TechHealth.DoctorView.ViewModel
     {
         private string _doctorId;
         private string ics;
+        private readonly AppointmentController appointmentController = new AppointmentController();
         private object _currentView;
         private static RecordViewModel _instance;
         public RelayCommand NewCommand { get; set; }
@@ -70,10 +72,16 @@ namespace TechHealth.DoctorView.ViewModel
         {
             _doctorId = LoginWindow.GetDoctorId();
             _instance = this;
-            _appointments = new ObservableCollection<Appointment>(AppointmentRepository.Instance.GetByDoctorId(_doctorId));
+            Appointments = new ObservableCollection<Appointment>(appointmentController.GetByDoctorId(_doctorId));
             NewCommand = new RelayCommand(param => Execute(), param => CanExecute());
             ReviewCommand = new RelayCommand(param => Execute1(), param => CanExecute1());
 
+        }
+
+        public void RefreshView()
+        {
+            Appointments.Clear();
+            Appointments=new ObservableCollection<Appointment>(appointmentController.GetByDoctorId(_doctorId));
         }
 
         private bool CanExecute()

@@ -1,10 +1,7 @@
-// File:    AppointmentController.cs
-// Author:  nsred
-// Created: Thursday, April 7, 2022 6:13:48 PM
-// Purpose: Definition of Class AppointmentController
-
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Windows.Documents;
 using TechHealth.Model;
 using TechHealth.Service;
 
@@ -69,16 +66,31 @@ namespace TechHealth.Controller
         }
 
         public bool Delete(string idAppointment)
-      {
+        {
             return appointmentService.Delete(idAppointment);
-      }
+        }
         public List<Appointment> GetByDoctorId(string doctorId)
         {
 
             return appointmentService.GetByDoctorId(doctorId);
         }
-        
+        public ObservableCollection<Appointment> GetAllNotEvident(string doctorId)
+        {
+            var temp =  new ObservableCollection<Appointment>(appointmentService.GetByDoctorId(doctorId));
+            var temp1 = new ObservableCollection<Appointment>();
+            foreach (var vAppointment in temp)
+            {
+                if (!vAppointment.Evident)
+                {
+                    temp1.Add(vAppointment);
+                }
 
-    
+            }
+
+            return temp1;
+        }
+
+
+
     }
 }

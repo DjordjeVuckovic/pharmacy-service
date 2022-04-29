@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:TechHealth.DoctorView.View"
              mc:Ignorable="d"
              d:DesignHeight="500" d:DesignWidth="800">
-      <Grid>
+    <Grid>
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="50"/>
@@ -21,6 +21,15 @@
                               SelectionMode="Single" AutoGenerateColumns="False" FontSize="15" 
                               FontStyle="Normal"
                               CanUserResizeRows="False"  Background="#333545">
+                        <!--<DataGrid.RowStyle>
+                            <Style TargetType="DataGridRow">
+                                <Style.Triggers>
+                                    <Trigger Property="IsSelected" Value="True">
+                                        <Setter Property="Background" Value="black" />
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </DataGrid.RowStyle>-->
 
                         <DataGrid.Columns>
 

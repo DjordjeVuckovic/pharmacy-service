@@ -45,6 +45,7 @@ namespace TechHealth.DoctorView.MedicalHistory
             app.Evident = true;
             //UpdateList(myappointment);
             AppointmentRepository.Instance.Update(app);
+            ViewModelAppointment.GetInstance().RefreshView();
             Close();
         }
 

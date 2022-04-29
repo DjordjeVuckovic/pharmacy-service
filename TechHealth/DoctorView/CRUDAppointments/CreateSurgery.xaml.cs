@@ -74,6 +74,7 @@ namespace TechHealth.DoctorView.CRUDAppointments
                 //AppointmentIgnore ignore = new AppointmentIgnore(appointment);
                 //AppointmentRepository.Instance.Create(appointment);
                 Appointments.Add(appointment);
+                RecordViewModel.GetInstance().Appointments.Add(appointment);
                 controller.Create(appointment);
                 MessageBox.Show("You are successfully create new examination");
                 Close();

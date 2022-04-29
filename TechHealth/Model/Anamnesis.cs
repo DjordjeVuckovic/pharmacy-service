@@ -3,7 +3,7 @@ using PostSharp.Patterns.Model;
 
 namespace TechHealth.Model
 {
-    [NotifyPropertyChanged]
+    
     public class Anamnesis
     {
         public Appointment AnmnesisAppointment { get; set; }

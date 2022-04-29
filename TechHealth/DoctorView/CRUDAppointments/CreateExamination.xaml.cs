@@ -59,6 +59,7 @@ namespace TechHealth.DoctorView.CRUDAppointments
                     ShouldSerialize = true
                 };
                 Appointments.Add(appointment);
+                RecordViewModel.GetInstance().Appointments.Add(appointment);
                 AppointmentRepository.Instance.Create(appointment);
                 MessageBox.Show("You are successfully create new examination");
                 Close();
