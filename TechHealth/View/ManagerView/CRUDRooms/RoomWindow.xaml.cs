@@ -38,7 +38,7 @@ namespace TechHealth.View.ManagerView.CRUDRooms
 
         private void Button_Click_Add(object sender, RoutedEventArgs e)
         {
-            new AddForm().ShowDialog();
+            new AddForm(rooms).ShowDialog();
             UpdateView();
         }
 
