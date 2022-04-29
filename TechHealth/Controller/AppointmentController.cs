@@ -72,6 +72,11 @@ namespace TechHealth.Controller
       {
             return appointmentService.Delete(idAppointment);
       }
+        public List<Appointment> GetByDoctorId(string doctorId)
+        {
+
+            return appointmentService.GetByDoctorId(doctorId);
+        }
         
 
     

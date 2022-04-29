@@ -54,6 +54,7 @@ namespace TechHealth.Repository
             {
                 roomIDs.Add(room.roomId);
             }
+
             return roomIDs;
         }
 
@@ -65,8 +66,10 @@ namespace TechHealth.Repository
             {
                 roomNames.Add(room.roomId);
             }
+
             return roomNames;
         }
+
         public List<String> GetRoomNames(List<Room> rooms)
         {
             List<String> roomNames = new List<String>();
@@ -75,6 +78,7 @@ namespace TechHealth.Repository
             {
                 roomNames.Add(room.roomId);
             }
+
             return roomNames;
         }
 
@@ -93,6 +97,7 @@ namespace TechHealth.Repository
                     }
                 }
             }
+
             return rooms;
         }
 
@@ -105,12 +110,14 @@ namespace TechHealth.Repository
                     return true;
                 }
             }
+
             return false;
 
-        protected override void ShouldSerialize(Room entity)
-        {
-            throw new NotImplementedException();
-
+            // protected override void ShouldSerialize(Room entity)
+            // {
+            //     throw new NotImplementedException();
+            //
+            // }
         }
     }
 }

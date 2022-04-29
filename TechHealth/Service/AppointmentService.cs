@@ -13,6 +13,9 @@ namespace TechHealth.Service
    public class AppointmentService
    {
       
+      private PatientService patientService = new PatientService();
+      private DoctorService doctorService = new DoctorService();
+      private RoomService roomService = new RoomService();
       public Appointment GetById(string idAppointment)
       {
          throw new NotImplementedException();
@@ -20,7 +23,9 @@ namespace TechHealth.Service
       
       public List<Appointment> GetAll()
       {
-        return AppointmentRepository.Instance.DictionaryValuesToList();
+         var temp = AppointmentRepository.Instance.DictionaryValuesToList();
+         BindDataForAppointments(temp);
+         return temp;
       }
 
       public bool Create(Appointment appointment)
@@ -40,7 +45,9 @@ namespace TechHealth.Service
       
       public List<Appointment> GetByDoctorId(string doctorId)
       {
-         throw new NotImplementedException();
+         var temp = AppointmentRepository.Instance.GetByDoctorId(doctorId);
+         BindDataForAppointments(temp);
+         return temp;
       }
       
       public List<Appointment> GetByPatientId(string patientId)
@@ -51,6 +58,20 @@ namespace TechHealth.Service
       public List<Appointment> GetByRoomId(string roomId)
       {
          throw new NotImplementedException();
+      }
+
+      private void BindDataForAppointments(List<Appointment> appointments)
+      {
+         foreach (var appointment in appointments)
+         {
+            appointment.Doctor = DoctorRepository.Instance.GetDoctorbyId(appointment.Doctor.Jmbg);
+         }
+
+         foreach (var appointment in appointments)
+         {
+            appointment.Patient = PatientRepository.Instance.GetById(appointment.Patient.Jmbg);
+         }
+         
       }
    
    }

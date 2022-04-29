@@ -6,6 +6,7 @@ using TechHealth.Core;
 using TechHealth.DoctorView.CRUDAppointments;
 using TechHealth.Model;
 using TechHealth.Repository;
+using TechHealth.Service;
 
 namespace TechHealth.DoctorView.ViewModel
 {
@@ -53,7 +54,7 @@ namespace TechHealth.DoctorView.ViewModel
         {
             
             doctorId = LoginWindow.GetDoctorId();
-            Appointments = new ObservableCollection<Appointment>(AppointmentRepository.Instance.GetByDoctorId(doctorId));
+            Appointments = new ObservableCollection<Appointment>(appointmentController.GetByDoctorId(doctorId));
             NewExaminationCommand = new RelayCommand(param => Execute(),param => CanExecute());
             NewSurgeryCommand= new RelayCommand(param => Execute1(),param => CanExecute1());
             UpdateCommand= new RelayCommand(param => Execute2(),param => CanExecute2());
