@@ -7,7 +7,6 @@
              xmlns:mainview="clr-namespace:TechHealth.DoctorView"
              xmlns:viewmodel="clr-namespace:TechHealth.View.ManagerView.ViewModel"
              xmlns:vieW="clr-namespace:TechHealth.View.ManagerView.VieW"
-             
              xmlns:viewModelP="clr-namespace:TechHealth.View.PatientView.ViewModel"
              xmlns:viewP="clr-namespace:TechHealth.View.PatientView.View"
              
@@ -48,7 +47,7 @@
             <DataTemplate DataType="{x:Type viewmodel:RoomViewModel}">
                 <vieW:RoomView/>
             </DataTemplate>
-
+            <!--patient data template-->
             <DataTemplate DataType="{x:Type viewModelP:HomeViewModelP}">
                 <viewP:HomeViewP/>
             </DataTemplate>

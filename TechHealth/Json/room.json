@@ -1,63 +1,30 @@
 {
   "Warehouse": {
-
-    "roomTypes": 4,
     "roomId": "Warehouse",
-    "floor": 2,
-    "availability": true,
-    "equipment": [
-      {
-        "name": "skalpel",
-        "id": "35c9d35390b44f7e8987c8a9ad3fdfed",
-        "type": 0,
-        "quantity": 114,
-        "roomID": "Warehouse"
-      },
-      {
-        "name": "gaza",
-        "id": "0526949279ef4825a2f976e3806d2108",
-        "type": 0,
-        "quantity": 75,
-        "roomID": "Warehouse"
-      },
-      {
-        "name": "bandazer",
-        "id": "f24d99d580ff4f4290c37baa09a34643",
-        "type": 0,
-        "quantity": 200,
-        "roomID": "Warehouse"
-      },
-      {
-        "name": "krevet",
-        "id": "8a30ea9ab35f4868a7e387755e93972e",
-        "type": 0,
-        "quantity": 12,
-        "roomID": "Warehouse"
-      }
-    ]
+    "ShouldSerialize": false
   },
   "S1": {
-    "roomTypes": 3,
     "roomId": "S1",
-    "floor": 1,
-    "availability": true,
-    "equipment": []
+    "ShouldSerialize": false
   },
   "S2": {
-    "roomTypes": 1,
     "roomId": "S2",
-    "floor": 3
+    "ShouldSerialize": false
   },
-
   "da": {
-    "roomId": "da"
+    "roomId": "da",
+    "ShouldSerialize": false
   },
   "12": {
-    "roomTypes": 3,
     "roomId": "12",
-    "floor": 2,
-
-    "availability": false,
-    "equipment": []
+    "ShouldSerialize": false
+  },
+  "155": {
+    "roomTypes": 3,
+    "roomId": "155",
+    "floor": 1,
+    "availability": true,
+    "equipment": [],
+    "ShouldSerialize": true
   }
 }

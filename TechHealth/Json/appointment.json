@@ -77,5 +77,105 @@
       "ShouldSerialize": false
     },
     "Evident": false
+  },
+  "f1884640ec054f74a306d9f1578a87cc": {
+    "ShouldSerialize": true,
+    "Date": "2022-04-03T00:00:00",
+    "StartTimeD": "0001-01-01T00:00:00",
+    "FinishTimeD": "0001-01-01T00:00:00",
+    "Emergent": false,
+    "StartTime": "12",
+    "FinishTime": "12:30",
+    "IdAppointment": "f1884640ec054f74a306d9f1578a87cc",
+    "Room": {
+      "roomId": "S1",
+      "ShouldSerialize": false
+    },
+    "Patient": {
+      "Lbo": 0,
+      "Jmbg": "2456",
+      "ShouldSerialize": false
+    },
+    "AppointmentType": 0,
+    "Doctor": {
+      "Jmbg": "131213121111",
+      "ShouldSerialize": false
+    },
+    "Evident": false
+  },
+  "d84d6c56391d4f64abd8eeba8df4b176": {
+    "ShouldSerialize": true,
+    "Date": "2022-04-17T00:00:00",
+    "StartTimeD": "0001-01-01T00:00:00",
+    "FinishTimeD": "0001-01-01T00:00:00",
+    "Emergent": false,
+    "StartTime": "12:20",
+    "FinishTime": null,
+    "IdAppointment": "d84d6c56391d4f64abd8eeba8df4b176",
+    "Room": null,
+    "Patient": null,
+    "AppointmentType": 0,
+    "Doctor": {
+      "Specialization": {
+        "IdSpecialization": 0,
+        "NameSpecialization": "General"
+      },
+      "Address": {
+        "City": "Novi Sad",
+        "StreetNumber": "21",
+        "Country": "Srbija",
+        "Street": "Puse Pusica",
+        "Postcode": 21000
+      },
+      "Name": "Djordje",
+      "Surname": "Vuckovic",
+      "Email": "doctor@doctor11",
+      "Jmbg": "1313",
+      "Phone": "0613412312332",
+      "Employed": true,
+      "Birthday": "0001-01-01T00:00:00",
+      "Username": "Djordje",
+      "Password": "1",
+      "ShouldSerialize": true
+    },
+    "Evident": false
+  },
+  "200e1270a2cb40988c23228aba60d610": {
+    "ShouldSerialize": true,
+    "Date": "2022-04-25T00:00:00",
+    "StartTimeD": "0001-01-01T00:00:00",
+    "FinishTimeD": "0001-01-01T00:00:00",
+    "Emergent": false,
+    "StartTime": "12:20",
+    "FinishTime": "13:30",
+    "IdAppointment": "200e1270a2cb40988c23228aba60d610",
+    "Room": {
+      "roomId": "12",
+      "ShouldSerialize": false
+    },
+    "Patient": {
+      "Lbo": 0,
+      "Jmbg": "13456",
+      "ShouldSerialize": false
+    },
+    "AppointmentType": 0,
+    "Doctor": {
+      "Specialization": {
+        "IdSpecialization": 1,
+        "NameSpecialization": "Anesthesiology"
+      },
+      "Address": null,
+      "Name": "John",
+      "Surname": "Black",
+      "Email": "spec@spec.com",
+      "Jmbg": "131213121111",
+      "Phone": "06123111114",
+      "Employed": true,
+      "Birthday": "0001-01-01T00:00:00",
+      "Username": "1",
+      "Password": "1",
+      "ShouldSerialize": true
+    },
+    "Evident": false
   }
 }

@@ -56,16 +56,6 @@ namespace TechHealth.View.PatientView.View
 
         }
 
-        private bool CanExecuteDelete()
-        {
-            if (selected == null)
-            {
-                return false;
-            }
-
-            return true;
-        }
-
         private void ExecuteDelete()
         {
             if (dataAppointments.SelectedIndex == -1)
@@ -80,6 +70,16 @@ namespace TechHealth.View.PatientView.View
                 MessageBox.Show("You have successfully deleted selected appointment");
             }
                 
+        }
+
+        private bool CanExecute()
+        {
+            if (selected == null)
+            {
+                return false;
+            }
+
+            return true;
         }
 
         private void ExecuteAdd()
