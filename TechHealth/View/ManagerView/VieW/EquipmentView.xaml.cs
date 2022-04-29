@@ -110,7 +110,7 @@ namespace TechHealth.View.ManagerView.VieW
 
         private void ExecuteAdd()
         {
-            new AddEquipment().ShowDialog();
+            new AddEquipment(eqlist).ShowDialog();
         }
 
         [NotifyPropertyChangedInvocator]
