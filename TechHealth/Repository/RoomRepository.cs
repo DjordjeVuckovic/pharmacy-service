@@ -67,16 +67,34 @@ namespace TechHealth.Repository
             }
             return roomNames;
         }
+        public List<String> GetRoomNames(List<Room> rooms)
+        {
+            List<String> roomNames = new List<String>();
 
-        //public List<string> GetRoomTypes()
-        //{
-        //    List<string> roomTypes = new List<string>();
-        //    foreach (var room in DictionaryValuesToList())
-        //    {
-        //        roomTypes.Add(ManagerConversions.RoomTypesToString(room.roomTypes));
-        //    }
-        //    return roomTypes;
-        //}
+            foreach (var room in rooms)
+            {
+                roomNames.Add(room.roomId);
+            }
+            return roomNames;
+        }
+
+
+
+        public List<Room> GetRoomsByEq(string eqName)
+        {
+            List<Room> rooms = new List<Room>();
+            foreach (var room in DictionaryValuesToList())
+            {
+                foreach (var e in room.equipment)
+                {
+                    if (e.name == eqName)
+                    {
+                        rooms.Add(room);
+                    }
+                }
+            }
+            return rooms;
+        }
 
         public bool WarehouseExists()
         {
@@ -88,8 +106,11 @@ namespace TechHealth.Repository
                 }
             }
             return false;
-        }
 
-        
+        protected override void ShouldSerialize(Room entity)
+        {
+            throw new NotImplementedException();
+
+        }
     }
 }

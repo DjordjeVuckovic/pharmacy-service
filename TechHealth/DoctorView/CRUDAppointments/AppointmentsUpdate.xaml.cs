@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows;
-using TechHealth.DoctorView.View;
 using TechHealth.Model;
 using TechHealth.Repository;
 
