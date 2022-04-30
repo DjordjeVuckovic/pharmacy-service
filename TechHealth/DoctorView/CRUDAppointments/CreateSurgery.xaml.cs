@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Windows;
 using TechHealth.Controller;
+using TechHealth.Core;
 using TechHealth.DoctorView.View;
 using TechHealth.DoctorView.ViewModel;
 using TechHealth.Model;
@@ -23,7 +24,7 @@ namespace TechHealth.DoctorView.CRUDAppointments
         public CreateSurgery()
         {
             InitializeComponent();
-            DataContext = this;
+            //DataContext = this;
             //Appointments = appointments;
             // doctor = DoctorRepository.Instance.GetDoctorbyId(doctorId);
             // patients = PatientRepository.Instance.GetAllToList();

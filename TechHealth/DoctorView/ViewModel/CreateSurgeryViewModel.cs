@@ -1,29 +1,34 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Windows;
+using System.Windows.Forms;
 using TechHealth.Controller;
 using TechHealth.Core;
 using TechHealth.Model;
+using MessageBox = System.Windows.Forms.MessageBox;
 
 namespace TechHealth.DoctorView.ViewModel
 {
     public class CreateSurgeryViewModel:ViewModelBase
     {
+        public event EventHandler OnRequestClose;
         private readonly AppointmentController appointmentController = new AppointmentController();
         private readonly DoctorController doctorController = new DoctorController();
         private readonly PatientController patientController = new PatientController();
         private readonly RoomController roomController = new RoomController();
         private DateTime date;
-        private DateTime startDate;
-        private DateTime endDate;
+        private string startDate;
+        private string endDate;
         private Patient patient;
         private Doctor doctor;
+        private Room room;
 
         private List<ComboBoxGeneric<Patient>> patientComboBox = new List<ComboBoxGeneric<Patient>>();
         private List<ComboBoxGeneric<Room>> roomComboBox = new List<ComboBoxGeneric<Room>>();
         private ObservableCollection<Appointment> Appointments { get; set; }
-        private RelayCommand FinishCommand { get; set; }
-        private RelayCommand CancelCommand { get; set; }
+        public RelayCommand FinishCommand { get; set; }
+        public RelayCommand CancelCommand { get; set; }
 
         public CreateSurgeryViewModel(string doctorId,ObservableCollection<Appointment> appointmentItems)
         {
@@ -31,7 +36,51 @@ namespace TechHealth.DoctorView.ViewModel
             doctor = doctorController.GetById(doctorId);
             DoctorFullName = doctor.FullSpecialization;
             FillComboData();
+            FinishCommand = new RelayCommand(param => Execute(), param => CanExecute());
+            CancelCommand = new RelayCommand(param => CloseWindow());
 
+        }
+        private void CloseWindow()
+        {
+            DialogResult dialogResult = MessageBox.Show("Are you sure about that?", "Cancel appointment", MessageBoxButtons.YesNo);
+            if(dialogResult==(DialogResult) MessageBoxResult.Yes)
+            {
+                OnRequestClose(this, new EventArgs());
+            }
+        }
+
+        public bool CanExecute()
+        {
+            if (StartDate != null && EndDate != null && PatientData != null & RoomData != null)
+            {
+                return true;
+            }
+
+            return false;
+
+        }
+
+        public void Execute()
+        {
+            
+            Appointment appointment = new Appointment
+            {
+                AppointmentType = AppointmentType.operation,
+                Date = Date,
+                Doctor = doctor,
+                Emergent = false,
+                FinishTimeD = DateTime.Parse(EndDate),
+                IdAppointment = Guid.NewGuid().ToString("N"),
+                Patient = PatientData,
+                Room = RoomData,
+                StartTimeD = DateTime.Parse(StartDate),
+                ShouldSerialize = true
+            };
+            Appointments.Add(appointment);
+            RecordViewModel.GetInstance().Appointments.Add(appointment);
+            appointmentController.Create(appointment);
+            MessageBox.Show(@"You are successfully create new examination");
+            OnRequestClose(this, new EventArgs());
         }
 
         public string DoctorFullName { get; set; }
@@ -57,7 +106,7 @@ namespace TechHealth.DoctorView.ViewModel
             }
         }
 
-        public DateTime StartDate
+        public string StartDate
         {
             get => startDate;
             set
@@ -76,7 +125,7 @@ namespace TechHealth.DoctorView.ViewModel
             }
         }
 
-        public DateTime EndDate
+        public string EndDate
         {
             get => endDate;
             set
@@ -93,6 +142,15 @@ namespace TechHealth.DoctorView.ViewModel
             {
                 patient = value;
                 OnPropertyChanged(nameof(PatientData));
+            }
+        }
+        public Room RoomData
+        {
+            get => room;
+            set
+            {
+                room = value;
+                OnPropertyChanged(nameof(RoomData));
             }
         }
         // private void ButtonBase_OnClick1()
@@ -117,4 +175,6 @@ namespace TechHealth.DoctorView.ViewModel
             }
         }
     }
+
+    
 }

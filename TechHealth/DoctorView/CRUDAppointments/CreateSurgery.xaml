@@ -8,10 +8,11 @@
         xmlns:validationRules="clr-namespace:TechHealth.ValidationRules"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="CreateSurgery" Height="450" Width="450">
-    
+        Title="CreateSurgery" Height="450" Width="650">
+
     <Window.Resources>
-        
+
+
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Dark.xaml" />
@@ -22,40 +23,71 @@
         </ResourceDictionary>
     </Window.Resources>
     <Border Background="#282a36" >
-    <Grid>
-        <TextBlock HorizontalAlignment="Left" Height="36.316" Margin="160.268,26.405,0,0" TextWrapping="Wrap" Text="New Surgery" VerticalAlignment="Top" Width="193.116" FontSize="22" Foreground="#50fa7b"/>
-        <Label Content="Doctor:" HorizontalAlignment="Left" Height="30" Margin="31.6,85.833,0,0" VerticalAlignment="Top" Width="124.8" FontSize="16" FontFamily="Roboto" />
-        <Label Content="Date:" HorizontalAlignment="Left" Height="30" Margin="31.6,167.7,0,0" VerticalAlignment="Top" Width="124.8" RenderTransformOrigin="0.548,2.84" FontSize="16" FontFamily="Roboto" />
-        <Label Content="Patient:" HorizontalAlignment="Left" Height="30" Margin="31.6,127.033,0,0" VerticalAlignment="Top" Width="124.8" FontSize="16" FontFamily="Roboto"/>
-        <Label Content="Finish time:" HorizontalAlignment="Left" Height="30" Margin="31.6,246.233,0,0" VerticalAlignment="Top" Width="124.8" RenderTransformOrigin="0.548,2.84" FontSize="16" FontFamily="Roboto"/>
-        <Label Content="Start  time:" HorizontalAlignment="Left" Height="30" Margin="31.6,206.233,0,0" VerticalAlignment="Top" Width="124.8" RenderTransformOrigin="0.548,2.84" FontSize="16" FontFamily="Roboto"/>
-        <Label Content="Room:" HorizontalAlignment="Left" Height="30" Margin="31.6,276.233,0,0" VerticalAlignment="Top" Width="124.8" RenderTransformOrigin="0.548,2.84" FontSize="16" FontFamily="Roboto"/>
-        <Button Content="Cancel" HorizontalAlignment="Left" Height="32.4" Margin="94.9,357.3,0,0" VerticalAlignment="Top" Width="105.9" Command="{Binding CancelCommand}"/>
-        <Button Content="Finish" HorizontalAlignment="Left" Height="32.4" Margin="262.9,357.3,0,0" VerticalAlignment="Top" Width="105.9" Command="{Binding FinishCommand}"/>
-        <TextBox x:Name="DoctorTxt" Text="{Binding DoctorFullName}"  HorizontalAlignment="Left" Height="30" Margin="205.3,85.833,0,0" VerticalAlignment="Top" Width="205.2" IsReadOnly = "True" />
-        <ComboBox x:Name="PatentCombo"  HorizontalAlignment="Left" DisplayMemberPath="DisplayText" SelectedValuePath="Entity" ItemsSource="{Binding Path=PatientComboBox}" SelectedValue = "{Binding Path = PatientData}" Height="30" Margin="205.3,127.033,0,0" VerticalAlignment="Top" Width="205.2"/>
-        <ComboBox x:Name="RoomCombo" DisplayMemberPath="roomId"  HorizontalAlignment="Left" Height="30" Margin="205.3,276.233,0,0" VerticalAlignment="Top" Width="205.2"/>
-        <DatePicker x:Name="Picker" HorizontalAlignment="Left" Height="30" Margin="205.3,167.7,0,0" VerticalAlignment="Top" Width="205.2"
-                   SelectedDate="{Binding Path= Date}" />
-        <TextBox x:Name="StartTxt" HorizontalAlignment="Left" Height="30" Margin="205.3,206.233,0,0" VerticalAlignment="Top" Width="205.2"/>
-        <TextBox x:Name="FinishTxt" HorizontalAlignment="Left" Height="30" Margin="205.3,241.233,0,0" VerticalAlignment="Top" Width="205.2"/>
-        <materialDesign:TimePicker Margin="205.3,240.233,0,0"
-                                   x:Name="Timepicker1"
-            materialDesign:HintAssist.Hint="Validates"
-            IsInvalidTextAllowed="True"
-                                   Width="100">
-            <materialDesign:TimePicker.Text>
-                <Binding
-                    Path="FinishTime"
-                    UpdateSourceTrigger="PropertyChanged">
-                    <Binding.ValidationRules>
-                        <validationRules:FutureDateValidationRule
-                            ValidatesOnTargetUpdated="True" />
-                    </Binding.ValidationRules>
-                </Binding>
-            </materialDesign:TimePicker.Text>
-        </materialDesign:TimePicker>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="70"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="70"/>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" Content="New Surgery"  HorizontalAlignment="Center" FontSize="32"  FontWeight="Light" Foreground="MediumSpringGreen" Margin="59.54,-5,28.14,5" Width="181.32"/>
+            <Grid Grid.Row="1"  Margin="10,0,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
 
-    </Grid>
-        </Border>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="270"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Column="0" Grid.Row="0" Content="Doctor:" HorizontalAlignment="Left"  VerticalAlignment="Top"  FontSize="16" FontFamily="Roboto" Height="27.203" Width="59.477" />
+                <Label Grid.Column="0" Grid.Row="1" Content="Patient:" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" FontSize="16" FontFamily="Roboto" Width="62.223" />
+                <Label Grid.Column="0" Grid.Row="2" Content="Room:" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top"  FontSize="16" FontFamily="Roboto" Width="62.223"/>
+                <Label Grid.Column="0" Grid.Row="3"  Content="Date:" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top"  FontSize="16" FontFamily="Roboto" Width="54"/>
+                <Label Grid.Column="0" Grid.Row="5" Content="Finish time:" HorizontalAlignment="Left" Height="30"  VerticalAlignment="Top" Width="124.8" RenderTransformOrigin="0.548,2.84" FontSize="16" FontFamily="Roboto"/>
+                <Label  Grid.Column="0" Grid.Row="4"  Content="Start  time:" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="124.8" RenderTransformOrigin="0.548,2.84" FontSize="16" FontFamily="Roboto"/>
+                <TextBox Grid.Column="1" Grid.Row="0"  Text="{Binding DoctorFullName}"  VerticalAlignment="Center" IsReadOnly = "True" Height="24.96" Margin="0,0,60,0" />
+                <ComboBox Grid.Column="1" Grid.Row="1"  x:Name="PatentCombo"  HorizontalAlignment="Left" DisplayMemberPath="DisplayText" SelectedValuePath="Entity" ItemsSource="{Binding Path=PatientComboBox}" SelectedValue = "{Binding Path = PatientData}"  VerticalAlignment="Top" Height="36.734" Width="290" />
+                <ComboBox Grid.Column="1" Grid.Row="2"  x:Name="RoomCombo"  HorizontalAlignment="Left" Height="36.733"  VerticalAlignment="Top" Width="290"  DisplayMemberPath="DisplayText" SelectedValuePath="Entity" ItemsSource="{Binding Path=RoomComboBox}" SelectedValue = "{Binding Path = RoomData}"/>
+                <DatePicker Grid.Column="1" Grid.Row="3" x:Name="Picker" HorizontalAlignment="Left" Height="30"  VerticalAlignment="Top" Width="290"
+                   SelectedDate="{Binding Path= Date}" />
+                <materialDesign:TimePicker Grid.Column="1" Grid.Row="4"
+                                   x:Name="Timepicker1" 
+            materialDesign:HintAssist.Hint="Validates"
+            IsInvalidTextAllowed="True" Height="19.113" Margin="0,10.887,10,16.734" >
+                    <materialDesign:TimePicker.Text>
+                        <Binding
+                    Path="StartDate"
+                    UpdateSourceTrigger="PropertyChanged">
+                            <Binding.ValidationRules>
+                                <validationRules:SimpleDateValidationRule
+                            ValidatesOnTargetUpdated="True" />
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </materialDesign:TimePicker.Text>
+                </materialDesign:TimePicker>
+                <materialDesign:TimePicker Grid.Column="1" Grid.Row="5" SelectedTime="{Binding EndDate}"
+                                           materialDesign:HintAssist.Hint="Select start time" Foreground="White"
+                IsInvalidTextAllowed="True" Height="27.175" >
+                    <materialDesign:TimePicker.Text>
+                        <Binding
+                        Path="EndDate"
+                        UpdateSourceTrigger="PropertyChanged">
+                            <Binding.ValidationRules>
+                                <validationRules:SimpleDateValidationRule
+                                ValidatesOnTargetUpdated="True" />
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </materialDesign:TimePicker.Text>
+                </materialDesign:TimePicker>
+            </Grid>
+            <Button Content="Cancel" HorizontalAlignment="Center" Height="32.4" VerticalAlignment="Stretch" Width="105.9" Command="{Binding CancelCommand}"  Margin="0,0,100,0" Grid.Row="2"/>
+            <Button Content="Finish" HorizontalAlignment="Right" Height="32.4"  VerticalAlignment="Stretch" Width="105.9" Command="{Binding FinishCommand}"   Grid.Row="2"/>
+        </Grid>
+    </Border>
 </Window>

@@ -94,8 +94,12 @@ namespace TechHealth.DoctorView.ViewModel
 
         private void Execute1()
         {
-            CreateSurgery createSurgery = new CreateSurgery();
-            createSurgery.DataContext = new CreateSurgeryViewModel(doctorId, Appointments);
+            var vm = new CreateSurgeryViewModel(doctorId, Appointments);
+            CreateSurgery createSurgery = new CreateSurgery()
+            {
+                DataContext = vm
+            };
+            vm.OnRequestClose += (s, e) => createSurgery.Close();
             createSurgery.ShowDialog();
         }
         private bool CanExecute2()

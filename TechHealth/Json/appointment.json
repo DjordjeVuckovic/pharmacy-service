@@ -9,8 +9,7 @@
     "FinishTime": "14",
     "IdAppointment": "13411eb404174849b60ddc01d4a193f0",
     "Room": {
-      "roomId": "soba2",
-      "ShouldSerialize": false
+      "roomId": "soba2"
     },
     "Patient": {
       "Lbo": 0,
@@ -34,8 +33,7 @@
     "FinishTime": "12",
     "IdAppointment": "a03e3793a29b457cb9f1226315dfed34",
     "Room": {
-      "roomId": "S1",
-      "ShouldSerialize": false
+      "roomId": "S1"
     },
     "Patient": {
       "Lbo": 0,
@@ -59,8 +57,7 @@
     "FinishTime": "12",
     "IdAppointment": "6bc4a6274d7b4fcea0e09cd9b9954fba",
     "Room": {
-      "roomId": "S1",
-      "ShouldSerialize": false
+      "roomId": "S1"
     },
     "Patient": {
       "Lbo": 0,
@@ -84,8 +81,7 @@
     "FinishTime": "12",
     "IdAppointment": "aecf389cf7ae4fe591e24c42e165dd49",
     "Room": {
-      "roomId": "S1",
-      "ShouldSerialize": false
+      "roomId": "S1"
     },
     "Patient": {
       "Lbo": 0,
@@ -109,8 +105,7 @@
     "FinishTime": "13",
     "IdAppointment": "ba60b6f7af7c47ecb56763e1126fd32e",
     "Room": {
-      "roomId": "Warehouse",
-      "ShouldSerialize": false
+      "roomId": "Warehouse"
     },
     "Patient": {
       "Lbo": 0,
@@ -134,8 +129,7 @@
     "FinishTime": "12",
     "IdAppointment": "202d3d9cf9844a029cf8cf2a0e4ed6dc",
     "Room": {
-      "roomId": "S1",
-      "ShouldSerialize": false
+      "roomId": "S1"
     },
     "Patient": {
       "Lbo": 0,
@@ -159,8 +153,7 @@
     "FinishTime": "12",
     "IdAppointment": "6859e748147d4586a6c9744eb4962639",
     "Room": {
-      "roomId": "S1",
-      "ShouldSerialize": false
+      "roomId": "S1"
     },
     "Patient": {
       "Lbo": 0,
@@ -184,8 +177,7 @@
     "FinishTime": "12",
     "IdAppointment": "cf0ed05ba0df444ea7077cef26e53632",
     "Room": {
-      "roomId": "S2",
-      "ShouldSerialize": false
+      "roomId": "S2"
     },
     "Patient": {
       "Lbo": 0,
@@ -211,5 +203,64 @@
       "ShouldSerialize": true
     },
     "Evident": true
+  },
+  "71f512f07b5445c19765afb8da8699c9": {
+    "ShouldSerialize": true,
+    "Date": "0001-01-10T00:00:00",
+    "StartTimeD": "2022-04-30T01:05:00",
+    "FinishTimeD": "2022-04-30T15:09:00",
+    "Emergent": false,
+    "StartTime": null,
+    "FinishTime": null,
+    "IdAppointment": "71f512f07b5445c19765afb8da8699c9",
+    "Room": {
+      "roomTypes": 1,
+      "roomId": "S2",
+      "floor": 2,
+      "availability": true,
+      "equipment": []
+    },
+    "Patient": {
+      "Guest": false,
+      "ChosenDoctor": null,
+      "Lbo": 0,
+      "IsBanned": false,
+      "Address": {
+        "City": "Novi Sad",
+        "StreetNumber": "21a",
+        "Country": "Srbija",
+        "Street": "Vojvode Bojovica",
+        "Postcode": 21000
+      },
+      "Name": "miki",
+      "Surname": "Djuricic",
+      "Email": "dsa@adsa",
+      "Jmbg": "13456",
+      "Phone": "06105111331",
+      "Employed": false,
+      "Birthday": "0001-01-01T00:00:00",
+      "Username": "Djura",
+      "Password": "1311",
+      "ShouldSerialize": true
+    },
+    "AppointmentType": 1,
+    "Doctor": {
+      "Specialization": {
+        "IdSpecialization": 1,
+        "NameSpecialization": "Anesthesiology"
+      },
+      "Address": null,
+      "Name": "John",
+      "Surname": "Black",
+      "Email": "spec@spec.com",
+      "Jmbg": "131213121111",
+      "Phone": "06123111114",
+      "Employed": true,
+      "Birthday": "0001-01-01T00:00:00",
+      "Username": "1",
+      "Password": "1",
+      "ShouldSerialize": true
+    },
+    "Evident": false
   }
 }

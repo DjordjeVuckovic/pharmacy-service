@@ -159,8 +159,10 @@
     <Compile Include="Controller\RoomController.cs" />
     <Compile Include="Conversions\AddressConverter.cs" />
     <Compile Include="Conversions\ManagerConversions.cs" />
+    <Compile Include="Conversions\TimeConverter.cs" />
     <Compile Include="Core\ComboBoxGeneric.cs" />
     <Compile Include="Core\CommandBase.cs" />
+    <Compile Include="Core\IClosable.cs" />
     <Compile Include="Core\RelayCommand.cs" />
     <Compile Include="Core\ViewModelBase.cs" />
     <Compile Include="DoctorView\CRUDAppointments\AppointmentsUpdate.xaml.cs">

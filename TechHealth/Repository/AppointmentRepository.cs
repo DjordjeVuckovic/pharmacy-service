@@ -91,12 +91,10 @@ namespace TechHealth.Repository
 
       protected override void ShouldSerialize(Appointment entity)
       {
-            //throw new NotImplementedException();
-
             entity.ShouldSerialize = true;
-            //entity.Patient.ShouldSerialize = true;
+            entity.Patient.ShouldSerialize = true;
             entity.Doctor.ShouldSerialize = true;
-            //entity.Room.ShouldSerialize = true;
+            entity.Room.ShouldSerialize = true;
 
         }
    }

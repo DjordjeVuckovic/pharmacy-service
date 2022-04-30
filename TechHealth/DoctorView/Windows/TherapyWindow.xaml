@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:TechHealth.DoctorView.Windows"
         xmlns:viewModel="clr-namespace:TechHealth.DoctorView.ViewModel"
         mc:Ignorable="d"
-        Title="TherapyWindow" Height="450" Width="600"
+        Title="TherapyWindow" Height="450" Width="650"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
         TextElement.FontSize="14"
@@ -57,7 +57,7 @@
             </Grid.RowDefinitions>
 
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="240"/>
+                <ColumnDefinition Width="270"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             
