@@ -320,21 +320,6 @@
     <Compile Include="View\PatientView\View\HomeViewP.xaml.cs">
       <DependentUpon>HomeViewP.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\SecretaryView\AddGuest.xaml.cs">
-      <DependentUpon>AddGuest.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\SecretaryView\AddPatient.xaml.cs">
-      <DependentUpon>AddPatient.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\SecretaryView\SecretaryMainWindow.xaml.cs">
-      <DependentUpon>SecretaryMainWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\SecretaryView\UpdateGuest.xaml.cs">
-      <DependentUpon>UpdateGuest.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\SecretaryView\UpdatePatient.xaml.cs">
-      <DependentUpon>UpdatePatient.xaml</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\Address.cs" />
@@ -525,26 +510,6 @@
     <Page Include="View\PatientView\View\HomeViewP.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\SecretaryView\AddGuest.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\SecretaryView\AddPatient.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\SecretaryView\SecretaryMainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\SecretaryView\UpdateGuest.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\SecretaryView\UpdatePatient.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>
