@@ -29,11 +29,13 @@ namespace TechHealth.View.PatientView
 
         public UpdateAppointment(Appointment newAppointment)
         {
-            
-            selected = AppointmentRepository.Instance.GetById(newAppointment.IdAppointment);
             InitializeComponent();
-            doctors = DoctorRepository.Instance.GetAllToList();
             DataContext = this;
+            //selected = AppointmentRepository.Instance.GetById(newAppointment.IdAppointment);
+            selected = newAppointment;
+
+            doctors = DoctorRepository.Instance.GetAllToList();
+
             CbDoctor.ItemsSource = doctors;
             BlackoutDates();
             TxtTime.Text = selected.StartTime;
@@ -100,14 +102,13 @@ namespace TechHealth.View.PatientView
             
             AppointmentRepository.Instance.Update(selected);
             //appointmentController.Update(selected.Date, selected.StartTime, selected.AppointmentType, selected.Doctor, selected.IdAppointment);
-
-            this.Close();
+            Close();
         }
 
 
-            private void Button_Click_Close(object sender, RoutedEventArgs e)
+        private void Button_Click_Close(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            Close();
         }
 
         

@@ -9,8 +9,11 @@
     "FinishTime": "14",
     "IdAppointment": "13411eb404174849b60ddc01d4a193f0",
     "Room": {
+      "roomTypes": 0,
       "roomId": "soba2",
-      "ShouldSerialize": false
+      "floor": 0,
+      "availability": false,
+      "equipment": null
     },
     "Patient": {
       "Lbo": 0,
@@ -34,8 +37,11 @@
     "FinishTime": "12",
     "IdAppointment": "a03e3793a29b457cb9f1226315dfed34",
     "Room": {
+      "roomTypes": 0,
       "roomId": "S1",
-      "ShouldSerialize": false
+      "floor": 0,
+      "availability": false,
+      "equipment": null
     },
     "Patient": {
       "Lbo": 0,
@@ -59,8 +65,11 @@
     "FinishTime": "12",
     "IdAppointment": "6bc4a6274d7b4fcea0e09cd9b9954fba",
     "Room": {
+      "roomTypes": 0,
       "roomId": "S1",
-      "ShouldSerialize": false
+      "floor": 0,
+      "availability": false,
+      "equipment": null
     },
     "Patient": {
       "Lbo": 0,
@@ -84,8 +93,11 @@
     "FinishTime": "12",
     "IdAppointment": "aecf389cf7ae4fe591e24c42e165dd49",
     "Room": {
+      "roomTypes": 0,
       "roomId": "S1",
-      "ShouldSerialize": false
+      "floor": 0,
+      "availability": false,
+      "equipment": null
     },
     "Patient": {
       "Lbo": 0,
@@ -109,8 +121,11 @@
     "FinishTime": "13",
     "IdAppointment": "ba60b6f7af7c47ecb56763e1126fd32e",
     "Room": {
+      "roomTypes": 0,
       "roomId": "Warehouse",
-      "ShouldSerialize": false
+      "floor": 0,
+      "availability": false,
+      "equipment": null
     },
     "Patient": {
       "Lbo": 0,
@@ -134,8 +149,11 @@
     "FinishTime": "12",
     "IdAppointment": "202d3d9cf9844a029cf8cf2a0e4ed6dc",
     "Room": {
+      "roomTypes": 0,
       "roomId": "S1",
-      "ShouldSerialize": false
+      "floor": 0,
+      "availability": false,
+      "equipment": null
     },
     "Patient": {
       "Lbo": 0,
@@ -159,8 +177,11 @@
     "FinishTime": "12",
     "IdAppointment": "6859e748147d4586a6c9744eb4962639",
     "Room": {
+      "roomTypes": 0,
       "roomId": "S1",
-      "ShouldSerialize": false
+      "floor": 0,
+      "availability": false,
+      "equipment": null
     },
     "Patient": {
       "Lbo": 0,
@@ -184,8 +205,11 @@
     "FinishTime": "12",
     "IdAppointment": "cf0ed05ba0df444ea7077cef26e53632",
     "Room": {
+      "roomTypes": 0,
       "roomId": "S2",
-      "ShouldSerialize": false
+      "floor": 0,
+      "availability": false,
+      "equipment": null
     },
     "Patient": {
       "Lbo": 0,

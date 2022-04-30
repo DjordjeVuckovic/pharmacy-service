@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using TechHealth.Model;
 using TechHealth.Controller;
 using TechHealth.Repository;
+using System.Collections.ObjectModel;
 
 namespace TechHealth.View.PatientView       //dodati IDappointment
 {
@@ -26,11 +27,15 @@ namespace TechHealth.View.PatientView       //dodati IDappointment
         private Appointment appointment;
         private AppointmentController appointmentController = new AppointmentController();
         private List<Doctor> doctors;
+        private List<Appointment> apList;
+        private ObservableCollection<Appointment> apt;
 
-        public AddAppointment()
+        public AddAppointment(ObservableCollection<Appointment> listAppointment)
         {
 
             InitializeComponent();
+            apt = listAppointment;
+            apList = AppointmentRepository.Instance.GetAllToList();
             DataContext = this;
             doctors = DoctorRepository.Instance.GetAllToList();
             CbDoctor.ItemsSource = doctors;
@@ -52,8 +57,8 @@ namespace TechHealth.View.PatientView       //dodati IDappointment
             appointment.Doctor = doctors[CbDoctor.SelectedIndex]; 
             appointment.IdAppointment = Guid.NewGuid().ToString("N");
 
-            appointmentController.Create(appointment.Date, appointment.StartTime, appointment.AppointmentType, appointment.Doctor, appointment.IdAppointment);
-
+            appointmentController.Create(appointment);
+            apt.Add(appointment);
 
             //AppointmentRepository.Instance.Create(appointment); 
             this.Close();
