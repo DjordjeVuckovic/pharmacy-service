@@ -34,7 +34,7 @@ namespace TechHealth.View.ManagerView.CRUDRooms
         private void Button_Click_Close(object sender, RoutedEventArgs e)
         {
             this.Close();
-        }      
+        }
 
         private void Button_Click_Confirm(object sender, RoutedEventArgs e)
         {
@@ -44,17 +44,16 @@ namespace TechHealth.View.ManagerView.CRUDRooms
             room.floor = ManagerConversions.StringToFloor(CbFloor.Text);
             room.roomTypes = ManagerConversions.StringToRoomType(CbType.Text);
             room.availability = ManagerConversions.StringToAvailability(CbAvailability.Text);
-            room.equipment = new List<Equipment>();
 
             if (RoomRepository.Instance.WarehouseExists() && room.roomTypes == RoomTypes.warehouse)
             {
                 MessageBox.Show("There can only be one warehouse!");
                 this.Close();
-                return;               
+                return;
             }
             roomController.Create(room);
             rooms.Add(room);
             this.Close();
-        }       
+        }
     }
 }

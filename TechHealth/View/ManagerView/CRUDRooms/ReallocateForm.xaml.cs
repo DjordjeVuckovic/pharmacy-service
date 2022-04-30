@@ -23,7 +23,7 @@ namespace TechHealth.View.ManagerView.CRUDRooms
     /// </summary>
     public partial class ReallocateForm : Window
     {
-        private List<Equipment> eqList;
+        //private List<Equipment> eqList;
         private List<String> rooms;
         private List<String> dstRooms;
         private Equipment selected;
@@ -37,10 +37,10 @@ namespace TechHealth.View.ManagerView.CRUDRooms
             DataContext = this;
             selected = EquipmentRepository.Instance.GetById(eq.id);
             rooms = RoomRepository.Instance.GetRoomNames();
-            eqList = EquipmentRepository.Instance.GetAllToList();
-            eqs = RoomRepository.Instance.GetRoomsByEq(selected.name);
-            dstRooms = RoomRepository.Instance.GetRoomNames(eqs);
-            CbSourceRoom.ItemsSource = dstRooms;
+            //eqList = EquipmentRepository.Instance.GetAllToList();
+            //eqs = RoomRepository.Instance.GetRoomsByEq(selected.name);
+            //dstRooms = RoomRepository.Instance.GetRoomNames(eqs);
+            CbSourceRoom.ItemsSource = rooms;
             CbDestinationRoom.ItemsSource = rooms;
             TxtEqId.Text = selected.name;
         }
@@ -55,11 +55,81 @@ namespace TechHealth.View.ManagerView.CRUDRooms
             dto.ReallocationTime = DpDateTime.SelectedDate;
             dto.ReallocationID = Guid.NewGuid().ToString("N");
 
-            reallocationController.Create(dto);
+            if (dto.SourceRoomID != dto.DestinationRoomID)
+            {
+                if (AppointmentRepository.Instance.CanDoReallocation(dto.ReallocationTime, dto.SourceRoomID, dto.DestinationRoomID))
+                {     //dodato poslednje
+                    if (RoomRenovationRepository.Instance.IsValidDate(dto.ReallocationTime, dto.SourceRoomID, dto.DestinationRoomID))
+                    {    //dodato
+                         //reallocationController.Create(dto);
 
-            //update room fajla
+                        //update roomEquipment fajla
+                        RoomEquipment reDst = new RoomEquipment();
+                        RoomEquipment reSrc = new RoomEquipment();
+                        reDst = RoomEquipmentRepository.Instance.GetReByKey(dto.EquipmentName, dto.DestinationRoomID);
+                        reSrc = RoomEquipmentRepository.Instance.GetReByKey(dto.EquipmentName, dto.SourceRoomID);
+                        if (RoomEquipmentRepository.Instance.ReEqExists(dto.EquipmentName, dto.DestinationRoomID))
+                        {
+                            if (reSrc.Quantity >= dto.AmountMoving)
+                            {
+                                reallocationController.Create(dto); //dodato
+                                                                    //reDst = RoomEquipmentRepository.Instance.GetReByKey(dto.EquipmentName, dto.DestinationRoomID);
+                                reDst.Quantity += dto.AmountMoving;
+                                RoomEquipmentRepository.Instance.Update(reDst);
 
-            this.Close();
+                                //reSrc = RoomEquipmentRepository.Instance.GetReByKey(dto.EquipmentName, dto.SourceRoomID);
+
+                                reSrc.Quantity -= dto.AmountMoving;
+                                RoomEquipmentRepository.Instance.Update(reSrc);
+                                this.Close();
+                                return;
+                            }
+                            else
+                            {
+                                MessageBox.Show("Can't transfer that much!");
+                                return;
+                            }
+                        }
+                        else
+                        {
+                            if (reSrc.Quantity >= dto.AmountMoving)
+                            {
+                                reallocationController.Create(dto); //dodato
+                                reDst.EquipmentName = dto.EquipmentName;
+                                reDst.RoomID = dto.DestinationRoomID;
+                                reDst.Quantity = dto.AmountMoving;
+                                RoomEquipmentRepository.Instance.Create(reDst);
+
+                                reSrc = RoomEquipmentRepository.Instance.GetReByKey(dto.EquipmentName, dto.SourceRoomID);
+
+                                reSrc.EquipmentName = dto.EquipmentName;
+                                reSrc.RoomID = dto.SourceRoomID;
+                                reSrc.Quantity -= dto.AmountMoving;
+                                RoomEquipmentRepository.Instance.Update(reSrc);
+                                this.Close();
+                                return;
+                            }
+                            else
+                            {
+                                MessageBox.Show("Can't transfer that much!");
+                            }
+                        }
+                    } //dodato
+                    else               //dodato
+                    {                                              //dodato
+                        MessageBox.Show("Invalid date!");       //dodato
+                    }                   //dodato
+                }
+                else//dodato poslednje
+                {//dodato poslednje
+                    MessageBox.Show("There is an appointment scheduled on that date!");//dodato poslednje
+                }//dodato poslednje
+            }
+            else
+            {
+                MessageBox.Show("Invalid rooms for transfer selected!");
+                return;
+            }
         }
 
         private void Button_Click_Close(object sender, RoutedEventArgs e)

@@ -98,10 +98,6 @@ namespace TechHealth.View.ManagerView.VieW
 
         private void ExecuteDelete()
         {
-            //roomController.Delete(selectedItem.roomId);
-            //rooms.Remove(selectedItem);
-            //MessageBox.Show("You have successfully deleted the room");
-
             Equipment eq = (Equipment)dataEquipment.SelectedItem;
             EquipmentRepository.Instance.Delete(eq.id);
             Equipment.Remove(eq);

@@ -68,26 +68,17 @@ namespace TechHealth.Repository
             return index;
         }
 
-        public List<Equipment> GetEqListByRoomID(string roomID)
-        {
-            List<Equipment> eqList = new List<Equipment>();
-            foreach (var eq in GetAllToList())
-            {
-                if (eq.roomID == roomID)
-                {
-                    eqList.Add(eq);
-                }
-            }
-            return eqList;
-        }
-
-        
-
-
-        /*protected override void ShouldSerialize(Equipment entity)
-        {
-            throw new NotImplementedException();
-        }*/
-
+        //public List<Equipment> GetEqListByRoomID(string roomID)
+        //{
+        //    List<Equipment> eqList = new List<Equipment>();
+        //    foreach (var eq in GetAllToList())
+        //    {
+        //        if (eq.roomID == roomID)
+        //        {
+        //            eqList.Add(eq);
+        //        }
+        //    }
+        //    return eqList;
+        //}
     }
 }

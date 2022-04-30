@@ -157,6 +157,7 @@
     <Compile Include="Controller\EquipmentReallocationController.cs" />
     <Compile Include="Controller\PatientController.cs" />
     <Compile Include="Controller\RoomController.cs" />
+    <Compile Include="Controller\RoomEquipmentController.cs" />
     <Compile Include="Conversions\AddressConverter.cs" />
     <Compile Include="Conversions\ManagerConversions.cs" />
     <Compile Include="Conversions\TimeConverter.cs" />
@@ -239,6 +240,8 @@
     </Compile>
     <Compile Include="Model\Anamnesis.cs" />
     <Compile Include="Model\EquipmentType.cs" />
+    <Compile Include="Model\RoomEquipment.cs" />
+    <Compile Include="Model\RoomRenovation.cs" />
     <Compile Include="Model\Substance.cs" />
     <Compile Include="Model\EmlpoymentData.cs" />
     <Compile Include="Model\MainIssue.cs" />
@@ -258,6 +261,8 @@
     <Compile Include="Repository\MedicineRepository.cs" />
     <Compile Include="Repository\PatientRepository.cs" />
     <Compile Include="Repository\PrescribeMedicineRepository.cs" />
+    <Compile Include="Repository\RoomEquipmentRepository.cs" />
+    <Compile Include="Repository\RoomRenovationRepository.cs" />
     <Compile Include="Repository\RoomRepository.cs" />
     <Compile Include="Repository\SecretaryRepository.cs" />
     <Compile Include="Repository\SpecializationRepository.cs" />
@@ -268,6 +273,7 @@
     <Compile Include="Service\EquipmentReallocationService.cs" />
     <Compile Include="Service\EquipmentService.cs" />
     <Compile Include="Service\PatientService.cs" />
+    <Compile Include="Service\RoomEquipmentService.cs" />
     <Compile Include="Service\RoomService.cs" />
     <Compile Include="Store\NavigationStore.cs" />
     <Compile Include="ValidationRules\FutureDateValidationRule.cs" />
@@ -278,6 +284,9 @@
     </Compile>
     <Compile Include="View\ManagerView\CRUDRooms\AddForm.xaml.cs">
       <DependentUpon>AddForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ManagerView\CRUDRooms\AddRenovation.xaml.cs">
+      <DependentUpon>AddRenovation.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ManagerView\CRUDRooms\ReallocateForm.xaml.cs">
       <DependentUpon>ReallocateForm.xaml</DependentUpon>
@@ -388,6 +397,8 @@
     <None Include="Json\equipmentReallocation.json" />
     <None Include="Json\room.json" />
     <None Include="Json\equipment.json" />
+    <None Include="Json\roomEquipment.json" />
+    <None Include="Json\roomRenovation.json" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -477,6 +488,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\ManagerView\CRUDRooms\AddForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ManagerView\CRUDRooms\AddRenovation.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

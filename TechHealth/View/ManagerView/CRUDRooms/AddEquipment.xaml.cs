@@ -26,21 +26,16 @@ namespace TechHealth.View.ManagerView.CRUDRooms
     public partial class AddEquipment : Window
     {
         private Equipment equipment;
-        //private List<String> roomIDs;
-        private List<String> eqNames;
-        private List<Room> rooms;
+        private RoomEquipment re;
+        private List<RoomEquipment> reList;
         private List<Equipment> eqList;
-        private RoomController roomController = new RoomController();
         private ObservableCollection<Equipment> eqs;
         public AddEquipment(ObservableCollection<Equipment> listEq)
         {
             InitializeComponent();
             eqs = listEq;
             eqList = EquipmentRepository.Instance.GetAllToList();
-            rooms = RoomRepository.Instance.GetAllToList();
-            //roomIDs = RoomRepository.Instance.GetRoomIDs();
-            eqNames = EquipmentRepository.Instance.GetEqNames();
-            //CbRoomID.ItemsSource = roomIDs;
+            reList = RoomEquipmentRepository.Instance.GetAllToList();
         }
 
         private void Button_Click_Confirm(object sender, RoutedEventArgs e)
@@ -51,42 +46,41 @@ namespace TechHealth.View.ManagerView.CRUDRooms
             equipment.id = Guid.NewGuid().ToString("N");
             equipment.type = ManagerConversions.StringToEquipmentType(CbEqType.Text);
             equipment.quantity = Int32.Parse(TxtQuantity.Text);
-            equipment.roomID = ManagerConversions.RoomTypesToString(RoomTypes.warehouse);
 
-            foreach (var room in rooms)     
+            re = new RoomEquipment();
+            bool createRe = true;
+            foreach (var re in reList)
             {
-                if (room.roomTypes == RoomTypes.warehouse)
+                if (re.EquipmentName == equipment.name && re.RoomID == ManagerConversions.RoomTypesToString(RoomTypes.warehouse))
                 {
-                    List<Equipment> eqListWarehouse = EquipmentRepository.Instance.GetEqListByRoomID(equipment.roomID);
-                    foreach (var eq in eqListWarehouse)
-                    {
-                        if (eq.name == equipment.name)
-                        {
-                            eq.quantity += equipment.quantity;
-                            EquipmentRepository.Instance.Update(eq);
-
-                            int index = EquipmentRepository.Instance.GetEqIndex(eq.name, eqListWarehouse);
-                            eqListWarehouse[index].quantity = eq.quantity;
-                            room.equipment = eqListWarehouse;
-                            roomController.Update(room);
-                            this.Close();
-                            return;
-                        }
-                    }
-                    EquipmentRepository.Instance.Create(equipment);
-                    eqs.Add(equipment);
-                    room.equipment.Add(equipment);
-                    roomController.Update(room);
-                    this.Close();
-                    return;
-
-                }
-                else
-                {
-                    continue;
+                    re.Quantity += equipment.quantity;
+                    RoomEquipmentRepository.Instance.Update(re);
+                    createRe = false;
+                    break;
                 }
             }
-            MessageBox.Show("Warehouse doesn't exist!");
+            if (createRe)
+            {
+                re.EquipmentName = equipment.name;
+                re.RoomID = ManagerConversions.RoomTypesToString(RoomTypes.warehouse);
+                re.Quantity = equipment.quantity;
+                RoomEquipmentRepository.Instance.Create(re);
+            }
+
+            foreach (var eq in eqList)
+            {
+                if (eq.name == equipment.name)
+                {
+                    eq.quantity += equipment.quantity;
+                    EquipmentRepository.Instance.Update(eq);
+                    this.Close();
+                    return;
+                }
+            }
+            EquipmentRepository.Instance.Create(equipment);
+            eqs.Add(equipment);
+            this.Close();
+            return;
         }
 
         private void Button_Click_Close(object sender, RoutedEventArgs e)
