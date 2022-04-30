@@ -42,7 +42,7 @@ namespace TechHealth.Repository
 
       protected override void ShouldSerialize(Patient entity)
       {
-         throw new NotImplementedException();
+         entity.ShouldSerialize = true;
       }
 
       public Patient GetPatientbyId(string patientId)
