@@ -1,30 +1,16 @@
 {
-  "35c9d35390b44f7e8987c8a9ad3fdfed": {
-    "name": "skalpel",
-    "id": "35c9d35390b44f7e8987c8a9ad3fdfed",
-    "type": 0,
-    "quantity": 114,
-    "roomID": "Warehouse"
-  },
-  "0526949279ef4825a2f976e3806d2108": {
-    "name": "gaza",
-    "id": "0526949279ef4825a2f976e3806d2108",
-    "type": 0,
-    "quantity": 75,
-    "roomID": "Warehouse"
-  },
-  "f24d99d580ff4f4290c37baa09a34643": {
+  "bd58c4713f7d447d85e507f1b132756b": {
     "name": "bandazer",
-    "id": "f24d99d580ff4f4290c37baa09a34643",
+    "id": "bd58c4713f7d447d85e507f1b132756b",
     "type": 0,
-    "quantity": 200,
+    "quantity": 67,
     "roomID": "Warehouse"
   },
-  "8a30ea9ab35f4868a7e387755e93972e": {
-    "name": "krevet",
-    "id": "8a30ea9ab35f4868a7e387755e93972e",
+  "4ed0f743275a4dd19a5801b77c5dbdd8": {
+    "name": "skalpel",
+    "id": "4ed0f743275a4dd19a5801b77c5dbdd8",
     "type": 0,
-    "quantity": 12,
+    "quantity": 30,
     "roomID": "Warehouse"
   }
 }

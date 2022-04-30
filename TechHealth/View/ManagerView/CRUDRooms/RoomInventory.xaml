@@ -14,7 +14,7 @@
         </Grid.RowDefinitions>
         <TextBlock Grid.Row="0"
                    Text="Room inventory"
-                   Foreground="Black"
+                   Foreground="White"
                    FontSize="22"
                    HorizontalAlignment="Center"
                    Margin="0,10,0,0"/>

@@ -16,6 +16,7 @@ using TechHealth.Controller;
 using TechHealth.Conversions;
 using TechHealth.View.ManagerView.VieW;
 using TechHealth.Repository;
+using System.Collections.ObjectModel;
 
 namespace TechHealth.View.ManagerView.CRUDRooms
 {
@@ -23,9 +24,11 @@ namespace TechHealth.View.ManagerView.CRUDRooms
     {
         private Room room;
         private RoomController roomController = new RoomController();
-        public AddForm()
+        private ObservableCollection<Room> rooms;
+        public AddForm(ObservableCollection<Room> roomList)
         {
             InitializeComponent();
+            rooms = roomList;
         }
 
         private void Button_Click_Close(object sender, RoutedEventArgs e)
@@ -50,9 +53,7 @@ namespace TechHealth.View.ManagerView.CRUDRooms
                 return;               
             }
             roomController.Create(room);
-            //RoomView roomView = new RoomView();
-            //roomView.Rooms.Add(room);
-
+            rooms.Add(room);
             this.Close();
         }       
     }

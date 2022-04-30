@@ -130,7 +130,7 @@ namespace TechHealth.View.ManagerView.VieW
 
         private void ExecuteAdd()
         {
-            new AddForm().ShowDialog();
+            new AddForm(rooms).ShowDialog();
         }
 
         [NotifyPropertyChangedInvocator]
