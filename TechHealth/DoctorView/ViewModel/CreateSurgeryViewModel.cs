@@ -4,8 +4,6 @@ using System.Collections.ObjectModel;
 using TechHealth.Controller;
 using TechHealth.Core;
 using TechHealth.Model;
-using System.Runtime;
-using System.Windows;
 
 namespace TechHealth.DoctorView.ViewModel
 {

@@ -14,8 +14,8 @@ namespace TechHealth.Model
    {
       private DateTime date;
       private bool emergent;
-      private string? startTime;
-      private string? finishTime;
+      private string startTime;
+      private string finishTime;
       private string idAppointment;
       private Room room;
       private Patient patient;
@@ -87,7 +87,7 @@ namespace TechHealth.Model
          }
       }
 
-      public string? StartTime
+      public string StartTime
       {
          get => startTime;
          set
@@ -97,7 +97,7 @@ namespace TechHealth.Model
          }
       }
 
-      public string? FinishTime {
+      public string FinishTime {
          get => finishTime;
          set
          {
