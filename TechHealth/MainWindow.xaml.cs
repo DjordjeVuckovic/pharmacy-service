@@ -18,6 +18,7 @@ using TechHealth.Repository;
 using TechHealth.View.ManagerView;
 using TechHealth.View.ManagerView.CRUDRooms;
 using TechHealth.View.PatientView;
+using TechHealth.View.SecretaryView;
 
 namespace TechHealth
 {
@@ -37,6 +38,8 @@ namespace TechHealth
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
+            new SecretaryMainWindow().Show();
+            this.Close();
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
