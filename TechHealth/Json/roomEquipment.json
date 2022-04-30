@@ -1,0 +1,47 @@
+{
+  "Warehouse-Gaza": {
+    "RoomID": "Warehouse",
+    "EquipmentName": "Gaza",
+    "Quantity": 82
+  },
+  "Warehouse-Skalpel": {
+    "RoomID": "Warehouse",
+    "EquipmentName": "Skalpel",
+    "Quantity": 10
+  },
+  "Warehouse-Krevet": {
+    "RoomID": "Warehouse",
+    "EquipmentName": "Krevet",
+    "Quantity": 6
+  },
+  "S2-Gaza": {
+    "RoomID": "S2",
+    "EquipmentName": "Gaza",
+    "Quantity": 4
+  },
+  "S3-Gaza": {
+    "RoomID": "S3",
+    "EquipmentName": "Gaza",
+    "Quantity": 4
+  },
+  "S3-Skalpel": {
+    "RoomID": "S3",
+    "EquipmentName": "Skalpel",
+    "Quantity": 16
+  },
+  "S2-Krevet": {
+    "RoomID": "S2",
+    "EquipmentName": "Krevet",
+    "Quantity": 1
+  },
+  "S3-Krevet": {
+    "RoomID": "S3",
+    "EquipmentName": "Krevet",
+    "Quantity": 2
+  },
+  "S2-Skalpel": {
+    "RoomID": "S2",
+    "EquipmentName": "Skalpel",
+    "Quantity": 11
+  }
+}

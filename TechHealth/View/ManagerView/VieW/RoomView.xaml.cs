@@ -39,14 +39,15 @@ namespace TechHealth.View.ManagerView.VieW
         public RelayCommand DeleteRoomCommand { get; set; }
         public RelayCommand UpdateRoomCommand { get; set; }
         public RelayCommand InventoryCommand { get; set; }
+        public RelayCommand RenovationCommand { get; set; }
         public Room SelectedItem
         {
-            get 
+            get
             {
                 return selectedItem;
             }
-            set 
-            { 
+            set
+            {
                 selectedItem = value;
                 OnPropertyChanged();
             }
@@ -74,6 +75,22 @@ namespace TechHealth.View.ManagerView.VieW
             DeleteRoomCommand = new RelayCommand(param => ExecuteDel(), param => CanExecuteDel());
             UpdateRoomCommand = new RelayCommand(param => ExecuteUpdate(), param => CanExecuteUpdate());
             InventoryCommand = new RelayCommand(param => ExecuteInventory(), param => CanExecuteInventory());
+            RenovationCommand = new RelayCommand(param => ExecuteRenovation(), param => CanExecuteRenovation());
+        }
+
+        private bool CanExecuteRenovation()
+        {
+            if (selectedItem == null)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        private void ExecuteRenovation()
+        {
+            new AddRenovation(selectedItem).ShowDialog();
         }
 
         private bool CanExecuteInventory()

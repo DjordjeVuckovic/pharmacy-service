@@ -25,28 +25,45 @@ namespace TechHealth.View.ManagerView.CRUDRooms
     /// </summary>
     public partial class RoomInventory : Window, INotifyPropertyChanged
     {
-        private ObservableCollection<Equipment> eqList;
+        //private ObservableCollection<Equipment> eqList;
+
+        private ObservableCollection<RoomEquipment> reList;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public ObservableCollection<Equipment> EqList
+        //public ObservableCollection<Equipment> EqList
+        //{
+        //    get 
+        //    {
+        //        return eqList;
+        //    }
+
+        //    set
+        //    {
+        //        eqList = value;
+        //        OnPropertyChanged(nameof(EqList));
+        //    }
+        //}
+
+        public ObservableCollection<RoomEquipment> ReList
         {
-            get 
+            get
             {
-                return eqList;
+                return reList;
             }
 
             set
             {
-                eqList = value;
-                OnPropertyChanged(nameof(EqList));
+                reList = value;
+                OnPropertyChanged(nameof(ReList));
             }
         }
         public RoomInventory(Room room)
         {
             InitializeComponent();
             DataContext = this;
-            eqList = new ObservableCollection<Equipment>(EquipmentRepository.Instance.GetEqListByRoomID(room.roomId));
+            //eqList = new ObservableCollection<Equipment>(EquipmentRepository.Instance.GetEqListByRoomID(room.roomId));
+            reList = new ObservableCollection<RoomEquipment>(RoomEquipmentRepository.Instance.GetRoomEqListByRoomID(room.roomId));
         }
 
         [NotifyPropertyChangedInvocator]

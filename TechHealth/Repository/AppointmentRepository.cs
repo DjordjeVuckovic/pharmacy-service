@@ -74,6 +74,38 @@ namespace TechHealth.Repository
 
             return appointments;
         }
+
+        public bool CanSetRenovation(DateTime? start, DateTime? end, string roomID)
+        {
+            if (GetAllToList().Count != 0)
+            {
+                foreach (var app in GetAllToList())
+                {
+                    if (app.StartTimeD >= start && app.FinishTimeD <= end && app.Room.roomId == roomID)
+                    {
+                        return false;
+                    }
+                }
+                return true;
+            }
+            else return true;
+        }
+
+        public bool CanDoReallocation(DateTime? date, string src, string dst)
+        {
+            if (GetAllToList().Count != 0)
+            {
+                foreach (var app in GetAllToList())
+                {
+                    if ((app.Room.roomId == src || app.Room.roomId == dst) && (date >= app.StartTimeD && date <= app.FinishTimeD))
+                    {
+                        return false;
+                    }
+                }
+                return true;
+            }
+            else return true;
+        }
         protected override string GetPath()
       {
          return @"../../Json/appointment.json";

@@ -84,22 +84,22 @@ namespace TechHealth.Repository
 
 
 
-        public List<Room> GetRoomsByEq(string eqName)
-        {
-            List<Room> rooms = new List<Room>();
-            foreach (var room in GetAllToList())
-            {
-                foreach (var e in room.equipment)
-                {
-                    if (e.name == eqName)
-                    {
-                        rooms.Add(room);
-                    }
-                }
-            }
+        //public List<Room> GetRoomsByEq(string eqName)
+        //{
+        //    List<Room> rooms = new List<Room>();
+        //    foreach (var room in GetAllToList())
+        //    {
+        //        foreach (var e in room.equipment)
+        //        {
+        //            if (e.name == eqName)
+        //            {
+        //                rooms.Add(room);
+        //            }
+        //        }
+        //    }
 
-            return rooms;
-        }
+        //    return rooms;
+        //}
 
         public bool WarehouseExists()
         {
@@ -113,18 +113,5 @@ namespace TechHealth.Repository
 
             return false;
         }
-
-
-            // protected override void ShouldSerialize(Room entity)
-            // {
-            //     throw new NotImplementedException();
-            //
-            // }
-        }
-
-        /*protected override void ShouldSerialize(Room entity)
-        {
-            throw new NotImplementedException();
-
-        }*/
+    }
 }

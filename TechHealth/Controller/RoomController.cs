@@ -13,19 +13,19 @@ namespace TechHealth.Controller
    public class RoomController
    {
         private readonly RoomService roomService = new RoomService();
-      
-      public Room GetById(string roomId)
-      {
-         throw new NotImplementedException();
-      }
-      
-      public List<Room> GetAll()
-      {
-          return roomService.GetAll();
-      }
-      
-      public bool Create(string roomId, int floor, bool available, RoomTypes type)
-      {
+
+        public Room GetById(string roomId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Room> GetAll()
+        {
+            return roomService.GetAll();
+        }
+
+        public bool Create(string roomId, int floor, bool available, RoomTypes type)
+        {
             var room = new Room();
             room.roomId = roomId;
             room.floor = floor;
@@ -33,33 +33,32 @@ namespace TechHealth.Controller
             room.roomTypes = type;
 
             return roomService.Create(room);
-      }
+        }
 
-      public bool Create(Room room)
-      {
-          return roomService.Create(room);
-      }
+        public bool Create(Room room)
+        {
+            return roomService.Create(room);
+        }
 
-      public bool Update(string roomId, int floor, bool available, RoomTypes type, List<Equipment> eq)
-      {
+        public bool Update(string roomId, int floor, bool available, RoomTypes type)
+        {
             var room = new Room();
             room.roomId = roomId;
             room.floor = floor;
             room.availability = available;
             room.roomTypes = type;
-            room.equipment = eq;
 
             return roomService.Update(room);
-      }
-      public bool Update(Room room)
-      {
+        }
+        public bool Update(Room room)
+        {
             return roomService.Update(room);
-      }
+        }
 
         public bool Delete(string roomId)
-      {
+        {
             return roomService.Delete(roomId);
-      }
-   
-   }
+        }
+
+    }
 }
