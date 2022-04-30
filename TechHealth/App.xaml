@@ -37,6 +37,9 @@
             <DataTemplate DataType="{x:Type viewModel:ViewModelAppointment}">
                 <view:AppointmentsView/>
             </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:AnamnesisActionViewModel}">
+                <view:AnamnesisActionView/>
+            </DataTemplate>
             <!--manager data template-->
             <DataTemplate DataType="{x:Type viewmodel:HomeViewModel}">
                 <vieW:HomeView/>
