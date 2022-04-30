@@ -183,6 +183,7 @@
     <Compile Include="DoctorView\MedicalHistory\ReviewAnamnesis.xaml.cs">
       <DependentUpon>ReviewAnamnesis.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DoctorView\ViewModel\CreateExaminationViewModel.cs" />
     <Compile Include="DoctorView\ViewModel\CreateSurgeryViewModel.cs" />
     <Compile Include="DoctorView\ViewModel\DashBoardViewModel.cs" />
     <Compile Include="DoctorView\ViewModel\MainViewModel.cs" />

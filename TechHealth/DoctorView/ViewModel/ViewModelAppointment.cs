@@ -83,7 +83,13 @@ namespace TechHealth.DoctorView.ViewModel
 
         private void Execute()
         {
-            new CreateExamination(doctorId,Appointments).ShowDialog();
+            var vm = new CreateExaminationViewModel(doctorId, Appointments);
+            var createExamination = new CreateExamination()
+            {
+                DataContext = vm
+            };
+            vm.OnRequestClose += (s, e) => createExamination.Close();
+            createExamination.ShowDialog();
             
         }
         private bool CanExecute1()

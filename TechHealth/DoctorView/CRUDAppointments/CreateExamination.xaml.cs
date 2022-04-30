@@ -16,27 +16,27 @@ namespace TechHealth.DoctorView.CRUDAppointments
     /// </summary>
     public partial class CreateExamination : Window
     {
-        private Doctor doctor;
-        private List<Patient> patients;
-        private List<Room> rooms;
-        private string doctorId;
-        private ObservableCollection<Appointment> Appointments { get; set; }
-        public CreateExamination(string doctorId, ObservableCollection<Appointment> observableCollection)
+        // private Doctor doctor;
+        // private List<Patient> patients;
+        // private List<Room> rooms;
+        // private string doctorId;
+        // private ObservableCollection<Appointment> Appointments { get; set; }
+        public CreateExamination()
         {
             InitializeComponent();
-            DataContext = this;
-            doctor = DoctorRepository.Instance.GetDoctorbyId(doctorId);
-            patients = PatientRepository.Instance.GetAllToList();
-            rooms = RoomRepository.Instance.GetAllToList();
-            Appointments = observableCollection;
-
-            DoctorTxt.Text = doctor.FullSpecialization;
-            PatentCombo.ItemsSource = patients;
-            RoomCombo.ItemsSource = rooms;
-            this.doctorId = doctorId;
+            // DataContext = this;
+            // doctor = DoctorRepository.Instance.GetDoctorbyId(doctorId);
+            // patients = PatientRepository.Instance.GetAllToList();
+            // rooms = RoomRepository.Instance.GetAllToList();
+            // Appointments = observableCollection;
+            //
+            // DoctorTxt.Text = doctor.FullSpecialization;
+            // PatentCombo.ItemsSource = patients;
+            // RoomCombo.ItemsSource = rooms;
+            // this.doctorId = doctorId;
         }
 
-        private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
+        /*private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
         {
             if (PatentCombo.SelectionBoxItem == null || Picker.SelectedDate == null ||
                 PatentCombo.SelectionBoxItem == null || RoomCombo.SelectionBoxItem == null)
@@ -74,6 +74,6 @@ namespace TechHealth.DoctorView.CRUDAppointments
                 Close();
             }
             
-        }
+        }*/
     }
 }

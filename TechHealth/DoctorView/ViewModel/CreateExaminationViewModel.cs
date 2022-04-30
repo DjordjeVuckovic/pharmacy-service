@@ -10,9 +10,9 @@ using MessageBox = System.Windows.Forms.MessageBox;
 
 namespace TechHealth.DoctorView.ViewModel
 {
-    public class CreateSurgeryViewModel:ViewModelBase
+    public class CreateExaminationViewModel:ViewModelBase
     {
-        public event EventHandler OnRequestClose;
+         public event EventHandler OnRequestClose;
         private readonly AppointmentController appointmentController = new AppointmentController();
         private readonly DoctorController doctorController = new DoctorController();
         private readonly PatientController patientController = new PatientController();
@@ -30,7 +30,7 @@ namespace TechHealth.DoctorView.ViewModel
         public RelayCommand FinishCommand { get; set; }
         public RelayCommand CancelCommand { get; set; }
 
-        public CreateSurgeryViewModel(string doctorId,ObservableCollection<Appointment> appointmentItems)
+        public CreateExaminationViewModel(string doctorId,ObservableCollection<Appointment> appointmentItems)
         {
             Appointments = appointmentItems;
             doctor = doctorController.GetById(doctorId);
@@ -65,7 +65,7 @@ namespace TechHealth.DoctorView.ViewModel
             
             Appointment appointment = new Appointment
             {
-                AppointmentType = AppointmentType.operation,
+                AppointmentType = AppointmentType.examination,
                 Date = Date,
                 Doctor = doctor,
                 Emergent = false,
@@ -175,6 +175,4 @@ namespace TechHealth.DoctorView.ViewModel
             }
         }
     }
-
-    
 }

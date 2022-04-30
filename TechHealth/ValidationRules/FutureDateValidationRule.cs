@@ -14,7 +14,7 @@ namespace TechHealth.ValidationRules
                 DateTimeStyles.AssumeLocal | DateTimeStyles.AllowWhiteSpaces,
                 out time)) return new ValidationResult(false, "Invalid date");
 
-            return time.Date <= DateTime.Now.Date
+            return time.Date < DateTime.Now.Date
                 ? new ValidationResult(false, "Future date required")
                 : ValidationResult.ValidResult;
         }
