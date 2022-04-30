@@ -65,6 +65,11 @@ namespace TechHealth.Controller
             return appointmentService.Create(appointment);
         }
 
+        public void Update(Appointment appointment)
+        {
+            appointmentService.Update(appointment);
+        }
+
         public bool Delete(string idAppointment)
         {
             return appointmentService.Delete(idAppointment);

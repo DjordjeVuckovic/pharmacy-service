@@ -120,7 +120,14 @@ namespace TechHealth.DoctorView.ViewModel
 
         private void Execute2()
         {
-            new AppointmentsUpdate(SelectedItem).ShowDialog();
+            //new AppointmentsUpdate(SelectedItem).ShowDialog();
+            var vm = new UpdateAppointmentViewModel(doctorId, SelectedItem);
+            var updateAppointment = new UpdateAppointment()
+            {
+                DataContext = vm
+            };
+            vm.OnRequestClose += (s, e) => updateAppointment.Close();
+            updateAppointment.ShowDialog();
         }
         private bool CanExecute3()
         {

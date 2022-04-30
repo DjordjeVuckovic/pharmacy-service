@@ -80,7 +80,7 @@ namespace TechHealth.Service
       {
          foreach (var existingAppointment in AppointmentRepository.Instance.GetAllToList())
          {
-            if (existingAppointment.Conflicts(appointment))
+            if (existingAppointment.DoctorConflicts(appointment))
             {
                throw new AppointmentConflictException(existingAppointment,appointment);
             }

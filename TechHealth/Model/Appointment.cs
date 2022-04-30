@@ -195,14 +195,14 @@ namespace TechHealth.Model
       }
 
 
-      public bool Conflicts(Appointment appointment)
+      public bool DoctorConflicts(Appointment appointment)
       {
-         if (appointment.Date != Date)
+         if (appointment.Doctor.Jmbg != Doctor.Jmbg)
          {
             return false;
          }
 
-         return appointment.StartTimeD < FinishTimeD && appointment.FinishTimeD > StartTimeD;
+         return appointment.Date == Date && appointment.StartTimeD < FinishTimeD && appointment.FinishTimeD > StartTimeD;
       }
       
    }

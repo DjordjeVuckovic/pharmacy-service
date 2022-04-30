@@ -10,7 +10,7 @@ using MessageBox = System.Windows.Forms.MessageBox;
 
 namespace TechHealth.DoctorView.ViewModel
 {
-    public class CreateSurgeryViewModel:ViewModelBase
+    public class UpdateAppointmentViewModel:ViewModelBase
     {
         public event EventHandler OnRequestClose;
         private readonly AppointmentController appointmentController = new AppointmentController();
@@ -23,19 +23,28 @@ namespace TechHealth.DoctorView.ViewModel
         private Patient patient;
         private Doctor doctor;
         private Room room;
+        private Appointment appointment;
 
         private List<ComboBoxGeneric<Patient>> patientComboBox = new List<ComboBoxGeneric<Patient>>();
         private List<ComboBoxGeneric<Room>> roomComboBox = new List<ComboBoxGeneric<Room>>();
         private ObservableCollection<Appointment> Appointments { get; set; }
         public RelayCommand FinishCommand { get; set; }
         public RelayCommand CancelCommand { get; set; }
+        public int PatientIndex { get; set; }
+        public int RoomIndex { get; set; }
 
-        public CreateSurgeryViewModel(string doctorId,ObservableCollection<Appointment> appointmentItems)
+        public UpdateAppointmentViewModel(string doctorId,Appointment appointmentUpdate)
         {
-            Appointments = appointmentItems;
+            appointment = appointmentUpdate;
             doctor = doctorController.GetById(doctorId);
             DoctorFullName = doctor.FullSpecialization;
             FillComboData();
+            FillIndex();
+            PatientData = appointment.Patient;
+            RoomData = appointment.Room;
+            Date = appointment.Date;
+            StartDate = appointment.StartTimeD.ToString("t");
+            EndDate = appointment.FinishTimeD.ToString("t");
             FinishCommand = new RelayCommand(param => Execute(), param => CanExecute());
             CancelCommand = new RelayCommand(param => CloseWindow());
 
@@ -64,23 +73,13 @@ namespace TechHealth.DoctorView.ViewModel
         public void Execute()
         {
             
-            Appointment appointment = new Appointment
-            {
-                AppointmentType = AppointmentType.operation,
-                Date = Date,
-                Doctor = doctor,
-                Emergent = false,
-                FinishTimeD = DateTime.Parse(EndDate),
-                IdAppointment = Guid.NewGuid().ToString("N"),
-                Patient = PatientData,
-                Room = RoomData,
-                StartTimeD = DateTime.Parse(StartDate),
-                ShouldSerialize = true
-            };
-            Appointments.Add(appointment);
-            RecordViewModel.GetInstance().Appointments.Add(appointment);
-            appointmentController.Create(appointment);
-            MessageBox.Show(@"You are successfully create new examination");
+            appointment.Date = Date;
+            appointment.FinishTimeD = DateTime.Parse(EndDate);
+            appointment.StartTimeD = DateTime.Parse(StartDate);;
+            appointment.Patient = PatientData;
+            appointment.Room = RoomData;
+            appointmentController.Update(appointment);
+            MessageBox.Show(@"You are successfully create update appointment");
             OnRequestClose(this, new EventArgs());
         }
 
@@ -119,7 +118,11 @@ namespace TechHealth.DoctorView.ViewModel
         public DateTime Date
         {
             get => date;
-            set => SetProperty(ref date, value);
+            set
+            {
+                date = value;
+                OnPropertyChanged(nameof(Date));
+            }
         }
 
         public string EndDate
@@ -171,7 +174,33 @@ namespace TechHealth.DoctorView.ViewModel
                 roomComboBox.Add(new ComboBoxGeneric<Room>(){DisplayText = r.roomId , Entity = r});
             }
         }
-    }
 
-    
+        private void FillIndex()
+        {
+            int cnt = 0;
+            foreach (var combo in patientComboBox)
+            {
+                if (combo.Entity.Jmbg.Equals(appointment.Patient.Jmbg))
+                {
+                    break;
+                }
+
+                cnt++;
+            }
+
+            PatientIndex = cnt;
+            cnt = 0;
+            foreach (var combo in roomComboBox)
+            {
+                if (combo.Entity.roomId.Equals(appointment.Room.roomId))
+                {
+                    break;
+                }
+
+                cnt++;
+            }
+
+            RoomIndex = cnt;
+        }
+    }
 }

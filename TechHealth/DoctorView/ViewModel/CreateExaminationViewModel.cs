@@ -51,9 +51,10 @@ namespace TechHealth.DoctorView.ViewModel
 
         public bool CanExecute()
         {
-            if (StartDate != null && EndDate != null && PatientData != null & RoomData != null)
+            if (StartDate != null && EndDate != null && PatientData != null && RoomData != null )
             {
-                return true;
+                if(DateTime.Parse(StartDate)<DateTime.Parse(EndDate))
+                    return true;
             }
 
             return false;

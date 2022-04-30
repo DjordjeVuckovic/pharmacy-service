@@ -204,21 +204,17 @@
     },
     "Evident": true
   },
-  "6d4b110959484e1cb05d7f6229ceba41": {
+  "54181bfe8c494f979d6caabb69402c57": {
     "ShouldSerialize": true,
-    "Date": "2022-04-30T00:00:00",
+    "Date": "2022-05-13T00:00:00",
     "StartTimeD": "2022-04-30T01:04:00",
-    "FinishTimeD": "2022-04-30T01:10:00",
+    "FinishTimeD": "2022-04-30T04:15:00",
     "Emergent": false,
     "StartTime": null,
     "FinishTime": null,
-    "IdAppointment": "6d4b110959484e1cb05d7f6229ceba41",
+    "IdAppointment": "54181bfe8c494f979d6caabb69402c57",
     "Room": {
-      "roomTypes": 0,
-      "roomId": "S1",
-      "floor": 3,
-      "availability": false,
-      "equipment": []
+      "roomId": "Warehouse"
     },
     "Patient": {
       "Guest": false,
@@ -241,6 +237,120 @@
       "Birthday": "0001-01-01T00:00:00",
       "Username": "dusan",
       "Password": "dusan",
+      "ShouldSerialize": true
+    },
+    "AppointmentType": 0,
+    "Doctor": {
+      "Specialization": {
+        "IdSpecialization": 1,
+        "NameSpecialization": "Anesthesiology"
+      },
+      "Address": null,
+      "Name": "John",
+      "Surname": "Black",
+      "Email": "spec@spec.com",
+      "Jmbg": "131213121111",
+      "Phone": "06123111114",
+      "Employed": true,
+      "Birthday": "0001-01-01T00:00:00",
+      "Username": "1",
+      "Password": "1",
+      "ShouldSerialize": true
+    },
+    "Evident": false
+  },
+  "d34109b99ae945a4bc54d1928e45965a": {
+    "ShouldSerialize": true,
+    "Date": "2022-04-30T00:00:00",
+    "StartTimeD": "2022-04-30T07:35:00",
+    "FinishTimeD": "2022-04-30T11:55:00",
+    "Emergent": false,
+    "StartTime": null,
+    "FinishTime": null,
+    "IdAppointment": "d34109b99ae945a4bc54d1928e45965a",
+    "Room": {
+      "roomId": "S1"
+    },
+    "Patient": {
+      "Guest": false,
+      "ChosenDoctor": null,
+      "Lbo": 0,
+      "IsBanned": false,
+      "Address": {
+        "City": "Novi Sad",
+        "StreetNumber": "21",
+        "Country": "Srbija",
+        "Street": "Puse Pusica",
+        "Postcode": 21000
+      },
+      "Name": "Dusan",
+      "Surname": "Vukovic",
+      "Email": "dusan@dusan",
+      "Jmbg": "2456",
+      "Phone": "0613411123",
+      "Employed": false,
+      "Birthday": "0001-01-01T00:00:00",
+      "Username": "dusan",
+      "Password": "dusan",
+      "ShouldSerialize": true
+    },
+    "AppointmentType": 1,
+    "Doctor": {
+      "Specialization": {
+        "IdSpecialization": 1,
+        "NameSpecialization": "Anesthesiology"
+      },
+      "Address": null,
+      "Name": "John",
+      "Surname": "Black",
+      "Email": "spec@spec.com",
+      "Jmbg": "131213121111",
+      "Phone": "06123111114",
+      "Employed": true,
+      "Birthday": "0001-01-01T00:00:00",
+      "Username": "1",
+      "Password": "1",
+      "ShouldSerialize": true
+    },
+    "Evident": false
+  },
+  "b12c99ab6bb741e0ad1014f4f530339f": {
+    "ShouldSerialize": true,
+    "Date": "2022-05-20T00:00:00",
+    "StartTimeD": "2022-04-30T01:05:00",
+    "FinishTimeD": "2022-04-30T02:10:00",
+    "Emergent": false,
+    "StartTime": null,
+    "FinishTime": null,
+    "IdAppointment": "b12c99ab6bb741e0ad1014f4f530339f",
+    "Room": {
+      "roomTypes": 0,
+      "roomId": "S1",
+      "floor": 3,
+      "availability": false,
+      "equipment": []
+    },
+    "Patient": {
+      "Guest": false,
+      "ChosenDoctor": null,
+      "Lbo": 0,
+      "IsBanned": false,
+      "Address": {
+        "City": "Novi Sad",
+        "StreetNumber": "21a",
+        "Country": "Srbija",
+        "Street": "Vojvode Bojovica",
+        "Postcode": 21000
+      },
+      "Name": "miki",
+      "Surname": "Djuricic",
+      "Email": "dsa@adsa",
+      "Jmbg": "13456",
+      "Phone": "06105111331",
+      "Employed": false,
+      "Birthday": "0001-01-01T00:00:00",
+      "Username": "Djura",
+      "Password": "1311",
       "ShouldSerialize": true
     },
     "AppointmentType": 0,
