@@ -22,6 +22,21 @@ namespace TechHealth.Service
       {
          return PatientRepository.Instance.GetAllToList();
       }
-   
-   }
+
+        public bool Create(Patient patient)
+        {
+            return PatientRepository.Instance.Create(patient);
+        }
+
+        public bool Update(Patient patient)
+        {
+            return PatientRepository.Instance.Update(patient);
+        }
+
+        public bool Delete(string jmbg)
+        {
+            return PatientRepository.Instance.Delete(jmbg);
+        }
+
+    }
 }
