@@ -27,7 +27,7 @@ namespace TechHealth.Repository
       public List<Appointment> GetByDoctorId(string id)
       {
          List<Appointment> appointments = new List<Appointment>();
-         foreach (var t in DictionaryValuesToList())
+         foreach (var t in GetAllToList())
          {
             if (t.Doctor != null)
             {
@@ -44,7 +44,7 @@ namespace TechHealth.Repository
       public List<Appointment> GetByPatientId(string patientId)
         {
             List<Appointment> appointments = new List<Appointment>();
-            foreach (var p in DictionaryValuesToList())
+            foreach (var p in GetAllToList())
             {
                 if (p.Patient != null)
                 {
@@ -61,7 +61,7 @@ namespace TechHealth.Repository
         public List<Appointment> GetByRoomId(string roomId)
         {
             List<Appointment> appointments = new List<Appointment>();
-            foreach (var r in DictionaryValuesToList())
+            foreach (var r in GetAllToList())
             {
                 if (r.Room != null)
                 {

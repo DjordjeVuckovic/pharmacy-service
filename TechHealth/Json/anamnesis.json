@@ -206,5 +206,31 @@
     "Respiratory": "",
     "Mouth": "",
     "Gi": ""
+  },
+  "fcbfd2bb0ee240029bb0371058b96034": {
+    "AnmnesisAppointment": {
+      "ShouldSerialize": false,
+      "Emergent": false,
+      "StartTime": "11",
+      "FinishTime": "12",
+      "IdAppointment": "cf0ed05ba0df444ea7077cef26e53632"
+    },
+    "MainIssue": "a",
+    "AnamnesisDate": "2022-04-29T21:52:27.9421318+02:00",
+    "AnamnesisId": "fcbfd2bb0ee240029bb0371058b96034",
+    "OtherSymptoms": "a",
+    "GeneralAmnesis": "a",
+    "Cns": "",
+    "Eye": "",
+    "Neck": "",
+    "Mss": "",
+    "Skin": "",
+    "Ear": "",
+    "Cus": "",
+    "Infectious": "",
+    "Ugs": "",
+    "Respiratory": "",
+    "Mouth": "",
+    "Gi": ""
   }
 }

@@ -12,11 +12,10 @@ namespace TechHealth.Service
 {
    public class DoctorService
    {
-      private DoctorRepository doctorRepository;
-      
+
       public Doctor GetById(string doctorId)
       {
-         throw new NotImplementedException();
+         return  DoctorRepository.Instance.GetDoctorbyId(doctorId);
       }
       
       public List<Doctor> GetAll()

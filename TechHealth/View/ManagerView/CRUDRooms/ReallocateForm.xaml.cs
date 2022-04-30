@@ -37,7 +37,7 @@ namespace TechHealth.View.ManagerView.CRUDRooms
             DataContext = this;
             selected = EquipmentRepository.Instance.GetById(eq.id);
             rooms = RoomRepository.Instance.GetRoomNames();
-            eqList = EquipmentRepository.Instance.DictionaryValuesToList();
+            eqList = EquipmentRepository.Instance.GetAllToList();
             eqs = RoomRepository.Instance.GetRoomsByEq(selected.name);
             dstRooms = RoomRepository.Instance.GetRoomNames(eqs);
             CbSourceRoom.ItemsSource = dstRooms;

@@ -5,6 +5,7 @@
 
 using System;
 using System.Collections.Generic;
+using TechHealth.Exceptions;
 using TechHealth.Model;
 using TechHealth.Repository;
 
@@ -23,14 +24,15 @@ namespace TechHealth.Service
       
       public List<Appointment> GetAll()
       {
-         var temp = AppointmentRepository.Instance.DictionaryValuesToList();
+         var temp = AppointmentRepository.Instance.GetAllToList();
          BindDataForAppointments(temp);
          return temp;
       }
 
       public bool Create(Appointment appointment)
       {
-            return AppointmentRepository.Instance.Create(appointment);
+         CheckAvailability(appointment);
+         return AppointmentRepository.Instance.Create(appointment);
       }
       
       public bool Update(Appointment appointment)
@@ -70,6 +72,19 @@ namespace TechHealth.Service
          foreach (var appointment in appointments)
          {
             appointment.Patient = PatientRepository.Instance.GetById(appointment.Patient.Jmbg);
+         }
+         
+      }
+
+      private void CheckAvailability(Appointment appointment)
+      {
+         foreach (var existingAppointment in AppointmentRepository.Instance.GetAllToList())
+         {
+            if (existingAppointment.Conflicts(appointment))
+            {
+               throw new AppointmentConflictException(existingAppointment,appointment);
+            }
+            
          }
          
       }

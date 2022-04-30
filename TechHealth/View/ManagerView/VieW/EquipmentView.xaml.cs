@@ -66,7 +66,7 @@ namespace TechHealth.View.ManagerView.VieW
         {
             InitializeComponent();
             DataContext = this;
-            eqlist = new ObservableCollection<Equipment>(EquipmentRepository.Instance.DictionaryValuesToList());
+            eqlist = new ObservableCollection<Equipment>(EquipmentRepository.Instance.GetAllToList());
             AddEquipmentCommand = new RelayCommand(param => ExecuteAdd());
             DeleteEquipmentCommand = new RelayCommand(param => ExecuteDelete(), param => CanExecuteDelete());
             ReallocateCommand = new RelayCommand(param => ExecuteReallocate(), param => CanExecuteReallocate());

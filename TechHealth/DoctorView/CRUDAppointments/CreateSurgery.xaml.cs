@@ -15,26 +15,26 @@ namespace TechHealth.DoctorView.CRUDAppointments
     /// </summary>
     public partial class CreateSurgery : Window
     {
-        private readonly AppointmentController controller = new AppointmentController();
-        private Doctor doctor;
-        private List<Patient> patients;
-        private List<Room> rooms;
-        private ObservableCollection<Appointment> Appointments { get; set; }
-        public CreateSurgery(string doctorId, ObservableCollection<Appointment> appointments)
+        // private readonly AppointmentController controller = new AppointmentController();
+        // private Doctor doctor;
+        // private List<Patient> patients;
+        // private List<Room> rooms;
+        // private ObservableCollection<Appointment> Appointments { get; set; }
+        public CreateSurgery()
         {
             InitializeComponent();
             DataContext = this;
-            Appointments = appointments;
-            doctor = DoctorRepository.Instance.GetDoctorbyId(doctorId);
-            patients = PatientRepository.Instance.DictionaryValuesToList();
-            rooms = RoomRepository.Instance.DictionaryValuesToList();
-
-            DoctorTxt.Text = doctor.FullSpecialization;
-            PatentCombo.ItemsSource = patients;
-            RoomCombo.ItemsSource = rooms;
+            //Appointments = appointments;
+            // doctor = DoctorRepository.Instance.GetDoctorbyId(doctorId);
+            // patients = PatientRepository.Instance.GetAllToList();
+            // rooms = RoomRepository.Instance.GetAllToList();
+            //
+            // DoctorTxt.Text = doctor.FullSpecialization;
+            // PatentCombo.ItemsSource = patients;
+            // RoomCombo.ItemsSource = rooms;
         }
 
-        private void ButtonBase_OnClick1(object sender, RoutedEventArgs e)
+        /*private void ButtonBase_OnClick1(object sender, RoutedEventArgs e)
         {
             MessageBoxResult dialogResult = MessageBox.Show("Are you sure about that?", "Cancel appointment", MessageBoxButton.YesNo);
             if(dialogResult==MessageBoxResult.Yes)
@@ -80,7 +80,7 @@ namespace TechHealth.DoctorView.CRUDAppointments
                 Close();
 
             }
-        }
+        }*/
 
        
     }

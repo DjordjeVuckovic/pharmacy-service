@@ -26,8 +26,8 @@ namespace TechHealth.DoctorView.CRUDAppointments
             InitializeComponent();
             DataContext = this;
             doctor = DoctorRepository.Instance.GetDoctorbyId(doctorId);
-            patients = PatientRepository.Instance.DictionaryValuesToList();
-            rooms = RoomRepository.Instance.DictionaryValuesToList();
+            patients = PatientRepository.Instance.GetAllToList();
+            rooms = RoomRepository.Instance.GetAllToList();
             Appointments = observableCollection;
 
             DoctorTxt.Text = doctor.FullSpecialization;

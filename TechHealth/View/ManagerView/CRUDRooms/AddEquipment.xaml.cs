@@ -33,8 +33,8 @@ namespace TechHealth.View.ManagerView.CRUDRooms
         public AddEquipment()
         {
             InitializeComponent();
-            eqList = EquipmentRepository.Instance.DictionaryValuesToList();
-            rooms = RoomRepository.Instance.DictionaryValuesToList();
+            eqList = EquipmentRepository.Instance.GetAllToList();
+            rooms = RoomRepository.Instance.GetAllToList();
             //roomIDs = RoomRepository.Instance.GetRoomIDs();
             eqNames = EquipmentRepository.Instance.GetEqNames();
             //CbRoomID.ItemsSource = roomIDs;

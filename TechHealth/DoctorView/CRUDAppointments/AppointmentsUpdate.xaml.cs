@@ -19,8 +19,8 @@ namespace TechHealth.DoctorView.CRUDAppointments
             DataContext = this;
             appointment = dataAppointmentSelectedItem;
             doctor = DoctorRepository.Instance.GetDoctorbyId(appointment.Doctor.Jmbg);
-            patients = PatientRepository.Instance.DictionaryValuesToList();
-            rooms = RoomRepository.Instance.DictionaryValuesToList();
+            patients = PatientRepository.Instance.GetAllToList();
+            rooms = RoomRepository.Instance.GetAllToList();
 
             PatentCombo.ItemsSource = patients;
             RoomCombo.ItemsSource = rooms;

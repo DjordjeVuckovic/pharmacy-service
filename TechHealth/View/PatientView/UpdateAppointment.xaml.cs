@@ -32,7 +32,7 @@ namespace TechHealth.View.PatientView
             
             selected = AppointmentRepository.Instance.GetById(newAppointment.IdAppointment);
             InitializeComponent();
-            doctors = DoctorRepository.Instance.DictionaryValuesToList();
+            doctors = DoctorRepository.Instance.GetAllToList();
             DataContext = this;
             CbDoctor.ItemsSource = doctors;
             BlackoutDates();

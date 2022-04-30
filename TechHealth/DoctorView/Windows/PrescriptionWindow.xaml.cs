@@ -15,7 +15,7 @@ namespace TechHealth.DoctorView.Windows
         public PrescriptionWindow(Medicine selectedItem)
         {
             InitializeComponent();
-            patients = PatientRepository.Instance.DictionaryValuesToList();
+            patients = PatientRepository.Instance.GetAllToList();
             ComboBox.ItemsSource = patients;
             medicine = selectedItem;
             TextBox.Text = medicine.MedicineName;

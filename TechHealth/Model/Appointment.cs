@@ -14,23 +14,43 @@ namespace TechHealth.Model
    {
       private DateTime date;
       private bool emergent;
-      private string startTime;
-      private string finishTime;
+      private string? startTime;
+      private string? finishTime;
       private string idAppointment;
       private Room room;
       private Patient patient;
       private AppointmentType appointmentType;
       private Doctor doctor;
       private bool evident;
-      
+      private DateTime startTimeD;
+      private DateTime finishTimeD;
+
+      public Appointment(DateTime date, string idAppointment, Room room, Patient patient, AppointmentType appointmentType, Doctor doctor, DateTime startTimeD, DateTime finishTimeD)
+      {
+         this.date = date;
+         emergent = false;
+         this.idAppointment = idAppointment;
+         this.room = room;
+         this.patient = patient;
+         this.appointmentType = appointmentType;
+         this.doctor = doctor;
+         this.evident = false;
+         this.startTimeD = startTimeD;
+         this.finishTimeD = finishTimeD;
+         ShouldSerialize = true;
+      }
+
+      public Appointment()
+      {
+         
+      }
+
       public bool ShouldSerialize { get; set; }
+      
 
       public DateTime Date
       {
-         get
-         {
-            return date;
-         }
+         get => date;
          set
          {
             date = value;
@@ -38,15 +58,28 @@ namespace TechHealth.Model
          }
       }
 
-      public DateTime StartTimeD{ get; set; }
-      public DateTime FinishTimeD{ get; set; }
+      public DateTime StartTimeD
+      {
+         get => startTimeD;
+         set
+         {
+            startTimeD = value;
+            OnPropertyChanged(nameof(StartTimeD));
+         } 
+      }
+      public DateTime FinishTimeD
+      {
+         get => finishTimeD;
+         set
+         {
+            finishTimeD = value;
+            OnPropertyChanged(nameof(FinishTimeD));
+         } 
+      }
 
       public bool Emergent
       {
-         get
-         {
-            return emergent;
-         }
+         get => emergent;
          set
          {
             emergent = value;
@@ -54,12 +87,9 @@ namespace TechHealth.Model
          }
       }
 
-      public string StartTime
+      public string? StartTime
       {
-         get
-         {
-            return startTime;
-         }
+         get => startTime;
          set
          {
             startTime = value;
@@ -67,11 +97,8 @@ namespace TechHealth.Model
          }
       }
 
-      public string FinishTime {
-         get
-         {
-            return finishTime;
-         }
+      public string? FinishTime {
+         get => finishTime;
          set
          {
             finishTime = value;
@@ -79,10 +106,7 @@ namespace TechHealth.Model
          }
       }
       public string IdAppointment{
-         get
-         {
-            return idAppointment;
-         }
+         get => idAppointment;
          set
          {
             idAppointment = value;
@@ -90,10 +114,7 @@ namespace TechHealth.Model
          }
       }
       public Room Room{
-         get
-         {
-            return room;
-         }
+         get => room;
          set
          {
             room = value;
@@ -101,10 +122,7 @@ namespace TechHealth.Model
          }
       }
       public Patient Patient{
-         get
-         {
-            return patient;
-         }
+         get => patient;
          set
          {
             patient = value;
@@ -112,10 +130,7 @@ namespace TechHealth.Model
          }
       }
       public AppointmentType AppointmentType{
-         get
-         {
-            return appointmentType;
-         }
+         get => appointmentType;
          set
          {
             appointmentType = value;
@@ -123,10 +138,7 @@ namespace TechHealth.Model
          }
       }
       public Doctor Doctor{
-         get
-         {
-            return doctor;
-         }
+         get => doctor;
          set
          {
             doctor = value;
@@ -181,17 +193,17 @@ namespace TechHealth.Model
       {
          return ShouldSerialize;
       }
-      
-      
-      
 
-     
 
+      public bool Conflicts(Appointment appointment)
+      {
+         if (appointment.Date != Date)
+         {
+            return false;
+         }
+
+         return appointment.StartTimeD < FinishTimeD && appointment.FinishTimeD > StartTimeD;
+      }
       
-      
-      
-      
-     
-   
    }
 }

@@ -45,7 +45,7 @@ namespace TechHealth.DoctorView.ViewModel
 
         public PatientsViewModel()
         {
-            patients = new ObservableCollection<Patient>(PatientRepository.Instance.DictionaryValuesToList());
+            patients = new ObservableCollection<Patient>(PatientRepository.Instance.GetAllToList());
             //currentViewPatient = this;
             TherapyCommand= new RelayCommand(param => Execute(), param => CanExecute());
             MedicineRecordCommand = new RelayCommand(param => Execute1(), param => CanExecute1());

@@ -50,7 +50,7 @@ namespace TechHealth.Repository
         {
             List<String> roomIDs = new List<String>();
 
-            foreach (var room in DictionaryValuesToList())
+            foreach (var room in GetAllToList())
             {
                 roomIDs.Add(room.roomId);
             }
@@ -62,7 +62,7 @@ namespace TechHealth.Repository
         {
             List<String> roomNames = new List<String>();
 
-            foreach (var room in DictionaryValuesToList())
+            foreach (var room in GetAllToList())
             {
                 roomNames.Add(room.roomId);
             }
@@ -87,7 +87,7 @@ namespace TechHealth.Repository
         public List<Room> GetRoomsByEq(string eqName)
         {
             List<Room> rooms = new List<Room>();
-            foreach (var room in DictionaryValuesToList())
+            foreach (var room in GetAllToList())
             {
                 foreach (var e in room.equipment)
                 {
@@ -103,7 +103,7 @@ namespace TechHealth.Repository
 
         public bool WarehouseExists()
         {
-            foreach (var room in DictionaryValuesToList())
+            foreach (var room in GetAllToList())
             {
                 if (room.roomTypes == RoomTypes.warehouse)
                 {

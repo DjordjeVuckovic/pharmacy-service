@@ -173,5 +173,43 @@
       "ShouldSerialize": false
     },
     "Evident": true
+  },
+  "cf0ed05ba0df444ea7077cef26e53632": {
+    "ShouldSerialize": true,
+    "Date": "2022-04-06T00:00:00",
+    "StartTimeD": "0001-01-01T00:00:00",
+    "FinishTimeD": "0001-01-01T00:00:00",
+    "Emergent": false,
+    "StartTime": "11",
+    "FinishTime": "12",
+    "IdAppointment": "cf0ed05ba0df444ea7077cef26e53632",
+    "Room": {
+      "roomId": "S2",
+      "ShouldSerialize": false
+    },
+    "Patient": {
+      "Lbo": 0,
+      "Jmbg": "13456",
+      "ShouldSerialize": false
+    },
+    "AppointmentType": 0,
+    "Doctor": {
+      "Specialization": {
+        "IdSpecialization": 1,
+        "NameSpecialization": "Anesthesiology"
+      },
+      "Address": null,
+      "Name": "John",
+      "Surname": "Black",
+      "Email": "spec@spec.com",
+      "Jmbg": "131213121111",
+      "Phone": "06123111114",
+      "Employed": true,
+      "Birthday": "0001-01-01T00:00:00",
+      "Username": "1",
+      "Password": "1",
+      "ShouldSerialize": true
+    },
+    "Evident": true
   }
 }

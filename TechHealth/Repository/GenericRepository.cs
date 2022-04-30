@@ -114,11 +114,11 @@ namespace TechHealth.Repository
             return true;
         }
 
-        public List<TEntity> DictionaryValuesToList()
+        public List<TEntity> GetAllToList()
         {
             return GetAll().Values.ToList();
         }
-        public List<TKey> DictionaryKeysToList()
+        public List<TKey> GetAllKeysToList()
         {
             List<TKey> entities = new List<TKey>();
             Dictionary<TKey, TEntity>.KeyCollection keyCollection = GetAll().Keys;

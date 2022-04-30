@@ -30,27 +30,26 @@
         <Label Content="Finish time:" HorizontalAlignment="Left" Height="30" Margin="31.6,246.233,0,0" VerticalAlignment="Top" Width="124.8" RenderTransformOrigin="0.548,2.84" FontSize="16" FontFamily="Roboto"/>
         <Label Content="Start  time:" HorizontalAlignment="Left" Height="30" Margin="31.6,206.233,0,0" VerticalAlignment="Top" Width="124.8" RenderTransformOrigin="0.548,2.84" FontSize="16" FontFamily="Roboto"/>
         <Label Content="Room:" HorizontalAlignment="Left" Height="30" Margin="31.6,276.233,0,0" VerticalAlignment="Top" Width="124.8" RenderTransformOrigin="0.548,2.84" FontSize="16" FontFamily="Roboto"/>
-        <Button Content="Cancel" HorizontalAlignment="Left" Height="32.4" Margin="94.9,357.3,0,0" VerticalAlignment="Top" Width="105.9" Click="ButtonBase_OnClick1"/>
-        <Button Content="Finish" HorizontalAlignment="Left" Height="32.4" Margin="262.9,357.3,0,0" VerticalAlignment="Top" Width="105.9" Click="ButtonBase_OnClick"/>
-        <TextBox x:Name="DoctorTxt"   HorizontalAlignment="Left" Height="30" Margin="205.3,85.833,0,0" VerticalAlignment="Top" Width="205.2" IsReadOnly = "True" />
-        <ComboBox x:Name="PatentCombo"  HorizontalAlignment="Left" DisplayMemberPath="FullName" Height="30" Margin="205.3,127.033,0,0" VerticalAlignment="Top" Width="205.2"/>
+        <Button Content="Cancel" HorizontalAlignment="Left" Height="32.4" Margin="94.9,357.3,0,0" VerticalAlignment="Top" Width="105.9" Command="{Binding CancelCommand}"/>
+        <Button Content="Finish" HorizontalAlignment="Left" Height="32.4" Margin="262.9,357.3,0,0" VerticalAlignment="Top" Width="105.9" Command="{Binding FinishCommand}"/>
+        <TextBox x:Name="DoctorTxt" Text="{Binding DoctorFullName}"  HorizontalAlignment="Left" Height="30" Margin="205.3,85.833,0,0" VerticalAlignment="Top" Width="205.2" IsReadOnly = "True" />
+        <ComboBox x:Name="PatentCombo"  HorizontalAlignment="Left" DisplayMemberPath="DisplayText" SelectedValuePath="Entity" ItemsSource="{Binding Path=PatientComboBox}" SelectedValue = "{Binding Path = PatientData}" Height="30" Margin="205.3,127.033,0,0" VerticalAlignment="Top" Width="205.2"/>
         <ComboBox x:Name="RoomCombo" DisplayMemberPath="roomId"  HorizontalAlignment="Left" Height="30" Margin="205.3,276.233,0,0" VerticalAlignment="Top" Width="205.2"/>
         <DatePicker x:Name="Picker" HorizontalAlignment="Left" Height="30" Margin="205.3,167.7,0,0" VerticalAlignment="Top" Width="205.2"
-                    />
+                   SelectedDate="{Binding Path= Date}" />
         <TextBox x:Name="StartTxt" HorizontalAlignment="Left" Height="30" Margin="205.3,206.233,0,0" VerticalAlignment="Top" Width="205.2"/>
         <TextBox x:Name="FinishTxt" HorizontalAlignment="Left" Height="30" Margin="205.3,241.233,0,0" VerticalAlignment="Top" Width="205.2"/>
         <materialDesign:TimePicker Margin="205.3,240.233,0,0"
                                    x:Name="Timepicker1"
             materialDesign:HintAssist.Hint="Validates"
             IsInvalidTextAllowed="True"
-            Is24Hours="{Binding IsChecked, ElementName=Is24HourCheckbox}"
-            Width="100">
+                                   Width="100">
             <materialDesign:TimePicker.Text>
                 <Binding
                     Path="FinishTime"
                     UpdateSourceTrigger="PropertyChanged">
                     <Binding.ValidationRules>
-                        <validationRules:SimpleDateValidationRule
+                        <validationRules:FutureDateValidationRule
                             ValidatesOnTargetUpdated="True" />
                     </Binding.ValidationRules>
                 </Binding>

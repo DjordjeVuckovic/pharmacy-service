@@ -12,7 +12,7 @@ namespace TechHealth.Controller
 {
    public class RoomController
    {
-        private RoomService roomService = new RoomService();
+        private readonly RoomService roomService = new RoomService();
       
       public Room GetById(string roomId)
       {
@@ -21,7 +21,7 @@ namespace TechHealth.Controller
       
       public List<Room> GetAll()
       {
-         throw new NotImplementedException();
+          return roomService.GetAll();
       }
       
       public bool Create(string roomId, int floor, bool available, RoomTypes type)

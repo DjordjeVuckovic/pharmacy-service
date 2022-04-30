@@ -18,6 +18,7 @@ namespace TechHealth.DoctorView.ViewModel
         private ObservableCollection<Appointment> _appointments;
         private  string doctorId;
         private static ViewModelAppointment _instance;
+        
         public RelayCommand NewExaminationCommand { get; set; }
         public RelayCommand NewSurgeryCommand { get; set; }
         public RelayCommand UpdateCommand { get; set; }
@@ -71,8 +72,7 @@ namespace TechHealth.DoctorView.ViewModel
         }
         public void RefreshView()
         {
-           var temp =  new ObservableCollection<Appointment>(appointmentController.GetByDoctorId(doctorId));
-           Appointments.Clear();
+            Appointments.Clear();
            Appointments = appointmentController.GetAllNotEvident(doctorId);
         }
         private bool CanExecute()
@@ -94,7 +94,9 @@ namespace TechHealth.DoctorView.ViewModel
 
         private void Execute1()
         {
-            new CreateSurgery(doctorId,Appointments).ShowDialog();
+            CreateSurgery createSurgery = new CreateSurgery();
+            createSurgery.DataContext = new CreateSurgeryViewModel(doctorId, Appointments);
+            createSurgery.ShowDialog();
         }
         private bool CanExecute2()
         {

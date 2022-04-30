@@ -21,7 +21,7 @@ namespace TechHealth.Service
       
       public List<Room> GetAll()
       {
-         throw new NotImplementedException();
+          return RoomRepository.Instance.GetAllToList();
       }
       
       public bool Create(Room room)

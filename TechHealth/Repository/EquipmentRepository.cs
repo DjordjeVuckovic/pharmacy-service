@@ -46,7 +46,7 @@ namespace TechHealth.Repository
         {
             List<String> eqNames = new List<String>();
 
-            foreach (var eq in DictionaryValuesToList())
+            foreach (var eq in GetAllToList())
             {
                 eqNames.Add(eq.name);
             }
@@ -71,7 +71,7 @@ namespace TechHealth.Repository
         public List<Equipment> GetEqListByRoomID(string roomID)
         {
             List<Equipment> eqList = new List<Equipment>();
-            foreach (var eq in DictionaryValuesToList())
+            foreach (var eq in GetAllToList())
             {
                 if (eq.roomID == roomID)
                 {

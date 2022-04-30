@@ -48,7 +48,7 @@ namespace TechHealth.Repository
 
       public Doctor GetDoctorByUser(string user)
       {
-         foreach (var doc in DictionaryValuesToList())
+         foreach (var doc in GetAllToList())
          {
             if (doc.Username.Equals(user))
             {
@@ -61,7 +61,7 @@ namespace TechHealth.Repository
 
       public Doctor GetDoctorbyId(string id)
       {
-         foreach (var doc in DictionaryValuesToList())
+         foreach (var doc in GetAllToList())
          {
             if (doc.Jmbg.Equals(id))
             {

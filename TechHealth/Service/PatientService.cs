@@ -12,7 +12,6 @@ namespace TechHealth.Service
 {
    public class PatientService
    {
-      private PatientRepository patientRepository;
       
       public Patient GetById(string patientId)
       {
@@ -21,7 +20,7 @@ namespace TechHealth.Service
       
       public List<Patient> GetAll()
       {
-         throw new NotImplementedException();
+         return PatientRepository.Instance.GetAllToList();
       }
    
    }

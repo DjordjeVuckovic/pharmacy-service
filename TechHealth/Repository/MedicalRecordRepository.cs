@@ -36,7 +36,7 @@ namespace TechHealth.Repository
 
         public MedicalRecord GetByPatientId(string id)
         {
-            foreach (var med in DictionaryValuesToList())
+            foreach (var med in GetAllToList())
             {
                 if (med.Patient != null)
                 {

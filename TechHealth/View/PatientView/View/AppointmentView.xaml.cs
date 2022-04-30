@@ -48,7 +48,7 @@ namespace TechHealth.View.PatientView.View
         {
             InitializeComponent();
             DataContext = this;
-            aplist = new ObservableCollection<Appointment>(AppointmentRepository.Instance.DictionaryValuesToList());
+            aplist = new ObservableCollection<Appointment>(AppointmentRepository.Instance.GetAllToList());
 
             AddAppointmentCommand = new RelayCommand(param => ExecuteAdd());
             DeleteAppointmentCommand = new RelayCommand(param => ExecuteDelete());

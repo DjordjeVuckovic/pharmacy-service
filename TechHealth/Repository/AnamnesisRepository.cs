@@ -38,7 +38,7 @@ namespace TechHealth.Repository
         public List<Anamnesis> GetByDoctorId(string id)
         {
             List<Anamnesis> anamneses = new List<Anamnesis>();
-            foreach (var t in DictionaryValuesToList())
+            foreach (var t in GetAllToList())
             {
                 if (id.Equals(t.AnmnesisAppointment.Doctor.Jmbg))
                 {
@@ -51,7 +51,7 @@ namespace TechHealth.Repository
         public Anamnesis GetByAppointmentId(Appointment appointment)
         {
             Anamnesis retval=null;
-            foreach (var t in DictionaryValuesToList())
+            foreach (var t in GetAllToList())
             {
                 if (appointment.IdAppointment == t.AnmnesisAppointment.IdAppointment)
                 {

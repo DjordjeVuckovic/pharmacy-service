@@ -32,7 +32,7 @@ namespace TechHealth.View.PatientView       //dodati IDappointment
 
             InitializeComponent();
             DataContext = this;
-            doctors = DoctorRepository.Instance.DictionaryValuesToList();
+            doctors = DoctorRepository.Instance.GetAllToList();
             CbDoctor.ItemsSource = doctors;
         }
 

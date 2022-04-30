@@ -42,7 +42,7 @@ namespace TechHealth.DoctorView.ViewModel
         public MedicineViewModel()
         {
             
-            medicines = new ObservableCollection<Medicine>(MedicineRepository.Instance.DictionaryValuesToList());
+            medicines = new ObservableCollection<Medicine>(MedicineRepository.Instance.GetAllToList());
             PrescribeCommand= new RelayCommand(param => Execute(), param => CanExecute());
         }
 
