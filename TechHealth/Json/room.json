@@ -18,6 +18,13 @@
         "type": 0,
         "quantity": 30,
         "roomID": "Warehouse"
+      },
+      {
+        "name": "da",
+        "id": "9026546209d84ec2b0c5bbbb630c7c0f",
+        "type": 0,
+        "quantity": 12,
+        "roomID": "Warehouse"
       }
     ]
   },
