@@ -1,0 +1,42 @@
+{
+  "Warehouse-Operaciona masina": {
+    "RoomID": "Warehouse",
+    "EquipmentName": "Operaciona masina",
+    "Quantity": 1
+  },
+  "Warehouse-Skalpel": {
+    "RoomID": "Warehouse",
+    "EquipmentName": "Skalpel",
+    "Quantity": 30
+  },
+  "Warehouse-Krevet": {
+    "RoomID": "Warehouse",
+    "EquipmentName": "Krevet",
+    "Quantity": 5
+  },
+  "Warehouse-Bandazer": {
+    "RoomID": "Warehouse",
+    "EquipmentName": "Bandazer",
+    "Quantity": 180
+  },
+  "Warehouse-Gaza": {
+    "RoomID": "Warehouse",
+    "EquipmentName": "Gaza",
+    "Quantity": 200
+  },
+  "Warehouse-Sto": {
+    "RoomID": "Warehouse",
+    "EquipmentName": "Sto",
+    "Quantity": 12
+  },
+  "Warehouse-Kesa": {
+    "RoomID": "Warehouse",
+    "EquipmentName": "Kesa",
+    "Quantity": 30
+  },
+  "Warehouse-dassd": {
+    "RoomID": "Warehouse",
+    "EquipmentName": "dassd",
+    "Quantity": 2
+  }
+}

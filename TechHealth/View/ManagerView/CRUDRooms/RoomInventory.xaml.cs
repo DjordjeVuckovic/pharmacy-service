@@ -26,6 +26,7 @@ namespace TechHealth.View.ManagerView.CRUDRooms
     public partial class RoomInventory : Window, INotifyPropertyChanged
     {
         private ObservableCollection<Equipment> eqList;
+        private List<RoomEquipment> roomEq = new List<RoomEquipment>();
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -46,7 +47,9 @@ namespace TechHealth.View.ManagerView.CRUDRooms
         {
             InitializeComponent();
             DataContext = this;
-            eqList = new ObservableCollection<Equipment>(EquipmentRepository.Instance.GetEqListByRoomID(room.roomId));
+            roomEq = RoomEquipmentRepository.Instance.GetRoomEqListByRoomID(room.roomId);
+            eqList = new ObservableCollection<Equipment>(EquipmentRepository.Instance.GetEqListByRoomEqList(roomEq));
+            //eqList = new ObservableCollection<Equipment>(EquipmentRepository.Instance.GetEqListByRoomID(room.roomId));
         }
 
         [NotifyPropertyChangedInvocator]

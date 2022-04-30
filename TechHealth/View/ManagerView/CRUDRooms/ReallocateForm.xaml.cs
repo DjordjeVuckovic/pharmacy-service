@@ -56,9 +56,6 @@ namespace TechHealth.View.ManagerView.CRUDRooms
             dto.ReallocationID = Guid.NewGuid().ToString("N");
 
             reallocationController.Create(dto);
-
-            //update room fajla
-
             this.Close();
         }
 

@@ -24,7 +24,7 @@ namespace TechHealth.Repository
         public static EquipmentRepository Instance => instance;
         protected override string GetKey(Equipment entity)
         {
-            return entity.id;
+            return entity.name;
         }
 
         protected override string GetPath()
@@ -39,7 +39,7 @@ namespace TechHealth.Repository
 
         protected override void ShouldSerialize(Equipment entity)
         {
-            //skip
+            entity.ShouldSerialize = true;
         }
 
         public List<String> GetEqNames()
@@ -81,13 +81,29 @@ namespace TechHealth.Repository
             return eqList;
         }
 
-        
-
-
-        /*protected override void ShouldSerialize(Equipment entity)
+        public Equipment GetByEqName(string name)
         {
-            throw new NotImplementedException();
-        }*/
+            Equipment eq = new Equipment();
+            foreach (var v in DictionaryValuesToList())
+            {
+                if (v.name == name)
+                {
+                    eq = v;
+                    break;
+                }
+            }
+            return eq;
+        }
 
+        public List<Equipment> GetEqListByRoomEqList(List<RoomEquipment> re)
+        {
+            List<Equipment> eqList = new List<Equipment>();
+            foreach (var r in re)
+            {
+                Equipment eq = GetByEqName(r.EquipmentName);
+                eqList.Add(eq);
+            }
+            return eqList;
+        }
     }
 }

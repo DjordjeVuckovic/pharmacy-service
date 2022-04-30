@@ -3,6 +3,7 @@
 // Created: Saturday, April 2, 2022 8:55:43 PM
 // Purpose: Definition of Class Equipment
 
+using Newtonsoft.Json;
 using System;
 
 
@@ -16,6 +17,8 @@ namespace TechHealth.Model
         public EquipmentType type { get; set; }
         public int quantity { get; set; }
         public string roomID { get; set; }
+        [JsonIgnore]
+        public bool ShouldSerialize;
         
 
         public Equipment() { }
@@ -28,11 +31,9 @@ namespace TechHealth.Model
             this.roomID = roomID;
         }
 
-
-        //public override string ToString()
-        //{
-        //    return name.ToString() + ", " + id.ToString() + ", " + type.ToString() + ", " + quantity.ToString();
-        //}
-
+        public bool ShouldSerializeroomID()
+        {
+            return ShouldSerialize;
+        }
     }
 }

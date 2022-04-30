@@ -1,16 +1,51 @@
 {
-  "bd58c4713f7d447d85e507f1b132756b": {
-    "name": "bandazer",
-    "id": "bd58c4713f7d447d85e507f1b132756b",
-    "type": 0,
-    "quantity": 67,
-    "roomID": "Warehouse"
+  "39ea1c7b988d4bb993e5b7133774ff93": {
+    "name": "Operaciona masina",
+    "id": "39ea1c7b988d4bb993e5b7133774ff93",
+    "type": 1,
+    "quantity": 1
   },
-  "4ed0f743275a4dd19a5801b77c5dbdd8": {
-    "name": "skalpel",
-    "id": "4ed0f743275a4dd19a5801b77c5dbdd8",
+  "80f607975ff14eb5aae6d1f5f6cf3945": {
+    "name": "Skalpel",
+    "id": "80f607975ff14eb5aae6d1f5f6cf3945",
     "type": 0,
-    "quantity": 30,
+    "quantity": 30
+  },
+  "da3f5024bc894d6fa7f383c2ddb0e873": {
+    "name": "Krevet",
+    "id": "da3f5024bc894d6fa7f383c2ddb0e873",
+    "type": 0,
+    "quantity": 5
+  },
+  "7d733741f5554e4882a4b0acb920e127": {
+    "name": "Bandazer",
+    "id": "7d733741f5554e4882a4b0acb920e127",
+    "type": 0,
+    "quantity": 180
+  },
+  "adad943df6d845ea9170eb9e3e314484": {
+    "name": "Gaza",
+    "id": "adad943df6d845ea9170eb9e3e314484",
+    "type": 0,
+    "quantity": 200
+  },
+  "Sto": {
+    "name": "Sto",
+    "id": "c4d9b81fd0f04708bfc7b21c90f87689",
+    "type": 0,
+    "quantity": 12
+  },
+  "Kesa": {
+    "name": "Kesa",
+    "id": "02f566632afc410abae8f64f5528a4d6",
+    "type": 0,
+    "quantity": 33
+  },
+  "dassd": {
+    "name": "dassd",
+    "id": "c374eaf97571492289dc77c843207d3f",
+    "type": 1,
+    "quantity": 2,
     "roomID": "Warehouse"
   }
 }

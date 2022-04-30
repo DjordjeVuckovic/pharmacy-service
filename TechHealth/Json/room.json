@@ -6,17 +6,22 @@
     "availability": true,
     "equipment": [
       {
-        "name": "bandazer",
-        "id": "bd58c4713f7d447d85e507f1b132756b",
+        "name": "Operaciona masina",
+        "id": "c59ea1b661164e4d93287be47a16e087",
         "type": 0,
-        "quantity": 67,
-        "roomID": "Warehouse"
+        "quantity": 4
       },
       {
-        "name": "skalpel",
-        "id": "4ed0f743275a4dd19a5801b77c5dbdd8",
+        "name": "Sto",
+        "id": "20dfd3339a8b4ccba93f965d0d98aec4",
         "type": 0,
-        "quantity": 30,
+        "quantity": 12
+      },
+      {
+        "name": "dassd",
+        "id": "c374eaf97571492289dc77c843207d3f",
+        "type": 1,
+        "quantity": 2,
         "roomID": "Warehouse"
       }
     ]

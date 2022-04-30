@@ -31,6 +31,7 @@ namespace TechHealth.View.ManagerView.CRUDRooms
         private List<Room> rooms;
         private List<Equipment> eqList;
         private RoomController roomController = new RoomController();
+        private RoomEquipmentController roomEquipmentController = new RoomEquipmentController();
         private ObservableCollection<Equipment> eqs;
         public AddEquipment(ObservableCollection<Equipment> listEq)
         {
@@ -53,6 +54,7 @@ namespace TechHealth.View.ManagerView.CRUDRooms
             equipment.quantity = Int32.Parse(TxtQuantity.Text);
             equipment.roomID = ManagerConversions.RoomTypesToString(RoomTypes.warehouse);
 
+            //provera ako vec postoji ta oprema u magacinu, da se samo uveca kolicina           //probaj mozda da stavis za polja roomEquipmenta citave klase umeste stringova
             foreach (var room in rooms)     
             {
                 if (room.roomTypes == RoomTypes.warehouse)
@@ -77,6 +79,13 @@ namespace TechHealth.View.ManagerView.CRUDRooms
                     eqs.Add(equipment);
                     room.equipment.Add(equipment);
                     roomController.Update(room);
+
+                    //pravljenje room equipmenta da se testira
+                    RoomEquipment re = new RoomEquipment();
+                    re.EquipmentName = equipment.name;
+                    re.RoomID = equipment.roomID;
+                    re.Quantity = equipment.quantity;
+                    roomEquipmentController.Create(re);
                     this.Close();
                     return;
 

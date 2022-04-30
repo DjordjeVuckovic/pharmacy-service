@@ -88,7 +88,14 @@ namespace TechHealth.View.ManagerView.VieW
 
         private void ExecuteInventory()
         {
-            new RoomInventory(selectedItem).ShowDialog();
+            if (selectedItem != null)
+            {
+                new RoomInventory(selectedItem).ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("blabla");
+            }
         }
 
         private bool CanExecuteUpdate()

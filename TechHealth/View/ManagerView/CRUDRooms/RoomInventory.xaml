@@ -28,7 +28,6 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Name" Binding="{Binding name}" Width="*"  CanUserResize="False"/>
                 <DataGridTextColumn Header="Quantity" Binding="{Binding quantity}" Width="*"  CanUserResize="False"/>
-                <DataGridTextColumn Header="Type" Binding="{Binding roomID}" Width="*"  CanUserResize="False"/>
             </DataGrid.Columns>
         </DataGrid>
         <Button x:Name="Close" Content="Close" Margin="10,10,10,10" HorizontalAlignment="Center" Width="120" Height="50"  Grid.Row="2" Click="Close_Click"/>
