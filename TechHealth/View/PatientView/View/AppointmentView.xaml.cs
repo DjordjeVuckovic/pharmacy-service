@@ -19,6 +19,7 @@ namespace TechHealth.View.PatientView.View
         public RelayCommand AddAppointmentCommand { get; set; }
         public RelayCommand UpdateAppointmentCommand { get; set; }
         public RelayCommand DeleteAppointmentCommand { get; set; }
+        public RelayCommand SuggestAppointmentCommand { get; set; }
 
         public Appointment GetSelected
         {
@@ -53,6 +54,7 @@ namespace TechHealth.View.PatientView.View
             AddAppointmentCommand = new RelayCommand(param => ExecuteAdd());
             DeleteAppointmentCommand = new RelayCommand(param => ExecuteDelete());
             UpdateAppointmentCommand = new RelayCommand(param => ExecuteUpdate(selected));
+            SuggestAppointmentCommand = new RelayCommand(param => ExecuteSuggest());
 
         }
 
@@ -100,11 +102,20 @@ namespace TechHealth.View.PatientView.View
             }
         }
 
+        private void ExecuteSuggest()
+        {
+            //new SuggestAppointment().ShowDialog();
+        }
+
         [NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
