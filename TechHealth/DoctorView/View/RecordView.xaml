@@ -24,11 +24,13 @@
                    CanUserResizeColumns="False" SelectionMode="Single" AutoGenerateColumns="False" Background="#333545" IsReadOnly="True">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Date" Binding="{Binding Date,StringFormat=d}" Width="*"  CanUserResize="False" />
+                <DataGridTextColumn Header="StartTime" Binding="{Binding StartTimeD,StringFormat=t}" Width="*"  CanUserResize="False"/>
+                <DataGridTextColumn Header="FinishTime" Binding="{Binding FinishTimeD,StringFormat=t}" Width="*"  CanUserResize="False"/>
                 <DataGridTextColumn Header="Room" Binding="{Binding Room.roomId}" Width="*"  CanUserResize="False"/>
                 <DataGridTextColumn Header="Patient" Binding="{Binding Patient.Name}" Width="*"  CanUserResize="False"/>
                 <DataGridTextColumn Header="PatientLbo" Binding="{Binding Patient.Lbo}" Width="*"  CanUserResize="False"/>
                 <DataGridTextColumn Header="Type" Binding="{Binding AppointmentType}" Width="*"  CanUserResize="False"/>
-               <DataGridTemplateColumn Header="Evident?">
+                <DataGridTemplateColumn Header="Evident?">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <CheckBox IsChecked="{Binding Evident}" IsEnabled="False" />
@@ -38,9 +40,9 @@
 
             </DataGrid.Columns>
         </DataGrid>
-
-        <Button Grid.Row="3" Content="Review Anamnesis"  HorizontalAlignment="Left"  Width="150" Height="50" Margin="173.684,0,0,0" Command="{Binding ReviewCommand}"/>
-        <Button Grid.Row="3" Content="New Anamnesis"  HorizontalAlignment="Right"   Width="150" Height="50" Margin="0,0,168.947,0" Command="{Binding NewCommand}"/>
+        <Button Grid.Row="3" Content="More Action"  HorizontalAlignment="Left"   Width="150" Height="50" Margin="52.847,5.381,0,10" Command="{Binding MoreAction}"/>
+        <Button Grid.Row="3" Content="Review Anamnesis"  HorizontalAlignment="Left"  Width="150" Height="50" Margin="588.453,5.381,0,10" Command="{Binding ReviewCommand}"/>
+        <Button Grid.Row="3" Content="New Anamnesis"  HorizontalAlignment="Right"   Width="150" Height="50" Margin="0,5.382,314.676,10" Command="{Binding NewCommand}"/>
     </Grid>
 </UserControl>
 

@@ -32,7 +32,7 @@ namespace TechHealth.DoctorView.MedicalHistory
             InitializeComponent();
             DataContext = this;
             myappointment = appointment;
-            currentAnamnesis=AnamnesisRepository.Instance.GetByAppointmentId(myappointment);
+            currentAnamnesis=AnamnesisRepository.Instance.GetByAppointmentId(myappointment.IdAppointment);
             FillUpFields();
             
         }

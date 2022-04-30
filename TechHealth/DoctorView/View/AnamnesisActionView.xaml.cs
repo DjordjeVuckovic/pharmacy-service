@@ -1,10 +1,11 @@
 ﻿using System.Windows.Controls;
+using TechHealth.Model;
 
 namespace TechHealth.DoctorView.View
 {
-    public partial class AddAnamnesis : UserControl
+    public partial class AnamnesisActionView : UserControl
     {
-        public AddAnamnesis()
+        public AnamnesisActionView()
         {
             InitializeComponent();
         }

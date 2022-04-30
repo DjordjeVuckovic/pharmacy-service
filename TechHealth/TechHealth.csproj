@@ -151,6 +151,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Controller\AccountController.cs" />
+    <Compile Include="Controller\AnamnesisController.cs" />
     <Compile Include="Controller\AppointmentController.cs" />
     <Compile Include="Controller\DoctorController.cs" />
     <Compile Include="Controller\EquipmentController.cs" />
@@ -186,6 +187,7 @@
     <Compile Include="DoctorView\MedicalHistory\ReviewAnamnesis.xaml.cs">
       <DependentUpon>ReviewAnamnesis.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DoctorView\ViewModel\AnamnesisActionViewModel.cs" />
     <Compile Include="DoctorView\ViewModel\CreateExaminationViewModel.cs" />
     <Compile Include="DoctorView\ViewModel\CreateSurgeryViewModel.cs" />
     <Compile Include="DoctorView\ViewModel\DashBoardViewModel.cs" />
@@ -197,8 +199,8 @@
     <Compile Include="DoctorView\ViewModel\TherapyViewModel.cs" />
     <Compile Include="DoctorView\ViewModel\UpdateAppointmentViewModel.cs" />
     <Compile Include="DoctorView\ViewModel\ViewModelAppointment.cs" />
-    <Compile Include="DoctorView\View\AddAnamnesis.xaml.cs">
-      <DependentUpon>AddAnamnesis.xaml</DependentUpon>
+    <Compile Include="DoctorView\View\AnamnesisActionView.xaml.cs">
+      <DependentUpon>AnamnesisActionView.xaml</DependentUpon>
     </Compile>
     <Compile Include="DoctorView\View\AppointmentsView.xaml.cs">
       <DependentUpon>AppointmentsView.xaml</DependentUpon>
@@ -263,6 +265,7 @@
     <Compile Include="Repository\SpecializationRepository.cs" />
     <Compile Include="Repository\TherapyRepository.cs" />
     <Compile Include="Service\AccountService.cs" />
+    <Compile Include="Service\AnamnesisService.cs" />
     <Compile Include="Service\AppointmentService.cs" />
     <Compile Include="Service\DoctorService.cs" />
     <Compile Include="Service\EquipmentReallocationService.cs" />
@@ -417,6 +420,8 @@
     <Resource Include="resources\1e.png" />
     <Resource Include="resources\1f.png" />
     <Content Include="Json\therapy.json" />
+    <Content Include="resources\body-scan.png" />
+    <Content Include="resources\diagnosis.png" />
     <Content Include="resources\ph.png" />
     <Resource Include="resources\hospital.png" />
     <Resource Include="resources\ambulance.png" />
@@ -449,7 +454,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="DoctorView\View\AddAnamnesis.xaml" />
+    <Page Include="DoctorView\View\AnamnesisActionView.xaml" />
     <Page Include="DoctorView\View\AppointmentsView.xaml" />
     <Page Include="DoctorView\View\DashBoardView.xaml" />
     <Page Include="DoctorView\View\MedicalRecordView.xaml" />

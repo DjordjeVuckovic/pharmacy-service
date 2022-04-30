@@ -14,7 +14,9 @@ namespace TechHealth.DoctorView.ViewModel
         private string ics;
         private readonly AppointmentController appointmentController = new AppointmentController();
         private object _currentView;
+        private AnamnesisActionViewModel anamnesisActionViewModel;
         private static RecordViewModel _instance;
+        public RelayCommand MoreAction { get; set; }
         public RelayCommand NewCommand { get; set; }
         public RelayCommand ReviewCommand { get; set; }
         public NewAnamnesis AddAnamnesisView { get; set; }
@@ -75,6 +77,7 @@ namespace TechHealth.DoctorView.ViewModel
             Appointments = new ObservableCollection<Appointment>(appointmentController.GetByDoctorId(_doctorId));
             NewCommand = new RelayCommand(param => Execute(), param => CanExecute());
             ReviewCommand = new RelayCommand(param => Execute1(), param => CanExecute1());
+            MoreAction = new RelayCommand(param => Execute2(), param => CanExecute2());
 
         }
 
@@ -114,6 +117,22 @@ namespace TechHealth.DoctorView.ViewModel
             ReviewAnamnesis = new ReviewAnamnesis(_selectedItem);
             ReviewAnamnesis.ShowDialog();
         }
+        private bool CanExecute2()
+        {
+            if (SelectedItem == null || !SelectedItem.Evident)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        private void Execute2()
+        {
+            anamnesisActionViewModel = new AnamnesisActionViewModel(SelectedItem);
+            MainViewModel.GetInstance().CurrentView = anamnesisActionViewModel;
+        }
+        
         
     }
 }
