@@ -26,7 +26,9 @@ namespace TechHealth.Model
       private string martialStatus;
       private EmlpoymentData emlpoymentData;
 
-      public string RecordId
+        public bool ShouldSerialize { get; set; }
+
+        public string RecordId
       {
          get => recordId;
          set
@@ -160,6 +162,9 @@ namespace TechHealth.Model
                break;
             case Bloodtype.Op:
                ret = "0+";
+               break;
+            case Bloodtype.None:
+               ret = "";
                break;
 
          }

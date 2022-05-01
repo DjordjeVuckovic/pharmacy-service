@@ -46,7 +46,8 @@
       "Job": "kasir"
     },
     "MartialStatus": "Divorced",
-    "Gender": 0
+    "Gender": 0,
+    "ShouldSerialize": true
   },
   "MikiDjuricic13456": {
     "RecordId": "mikiDjuricic13456",
@@ -95,6 +96,7 @@
       "Job": "asistent"
     },
     "MartialStatus": "Single",
-    "Gender": 0
+    "Gender": 0,
+    "ShouldSerialize": true
   }
 }

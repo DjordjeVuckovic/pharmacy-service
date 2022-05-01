@@ -16,6 +16,7 @@ namespace TechHealth.Model
       Bp,
       Bn,
       ABp,
-      ABn
+      ABn,
+      None
    }
 }

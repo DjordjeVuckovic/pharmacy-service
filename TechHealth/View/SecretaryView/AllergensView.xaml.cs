@@ -21,9 +21,13 @@ namespace TechHealth.View.SecretaryView
     
     public partial class AllergensView : Window
     {
+        private string jmbg;
+        private Patient patient1;
         private ObservableCollection<Allergen> allergens = new ObservableCollection<Allergen>();
         public AllergensView(Patient patient)
         {
+            patient1 = patient;
+            jmbg = patient.Jmbg;
             InitializeComponent();
             foreach (var m in MedicalRecordRepository.Instance.GetAll().Values)
             {
@@ -42,12 +46,31 @@ namespace TechHealth.View.SecretaryView
         }
         private void Button_Click_Add(object sender, RoutedEventArgs e)
         {
+            new AddAllergen(jmbg).ShowDialog();
+            Update();
         }
         private void Button_Click_Edit(object sender, RoutedEventArgs e)
         {
         }
         private void Button_Click_Delete(object sender, RoutedEventArgs e)
         {
+        }
+        public void Update()
+        {
+            allergens.Clear();
+            foreach (var m in MedicalRecordRepository.Instance.GetAll().Values)
+            {
+                if (m.Patient.Jmbg.Equals(patient1.Jmbg))
+                {
+                    foreach (var a in m.Allergens)
+                    {
+                        if (m.Allergens.Contains(a))
+                        {
+                            allergens.Add(a);
+                        }
+                    }
+                }
+            }
         }
     }
 }
