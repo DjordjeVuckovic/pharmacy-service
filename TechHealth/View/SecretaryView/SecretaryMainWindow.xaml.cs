@@ -102,6 +102,17 @@ namespace TechHealth.View.SecretaryView
             new UpdateGuest(patient).ShowDialog();
             Update();
         }
+        private void Button_Click_Allergens(object sender, RoutedEventArgs e)
+        {
+            if (accountList.SelectedIndex == -1)
+            {
+                MessageBox.Show("You didn't select an account.");
+                return;
+            }
+            Patient patient = (Patient)accountList.SelectedItems[0];
+            new AllergensView(patient).ShowDialog();
+            Update();
+        }
         public void Update()
         {
             users.Clear();
