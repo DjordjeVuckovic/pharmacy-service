@@ -46,6 +46,14 @@ namespace TechHealth.View.SecretaryView
         }
         private void Button_Click_Edit(object sender, RoutedEventArgs e)
         {
+            if (allergenList.SelectedIndex == -1)
+            {
+                MessageBox.Show("You didn't select an allergen.");
+                return;
+            }
+            PatientAllergens patientAllergens = (PatientAllergens)allergenList.SelectedItems[0];
+            new UpdateAllergen(patientAllergens).ShowDialog();
+            Update();
         }
         private void Button_Click_Delete(object sender, RoutedEventArgs e)
         {

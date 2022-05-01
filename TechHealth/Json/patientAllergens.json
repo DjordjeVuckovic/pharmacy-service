@@ -6,7 +6,7 @@
     "AllergenDescription": "/"
   },
   "2456-paracetamol": {
-    "ShouldSerialize": false,
+    "ShouldSerialize": true,
     "PatientJMBG": "2456",
     "AllergenName": "paracetamol",
     "AllergenDescription": "/"
