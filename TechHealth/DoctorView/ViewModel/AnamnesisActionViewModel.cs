@@ -1,5 +1,6 @@
 ﻿using TechHealth.Controller;
 using TechHealth.Core;
+using TechHealth.DoctorView.Windows;
 using TechHealth.Model;
 
 namespace TechHealth.DoctorView.ViewModel
@@ -9,6 +10,9 @@ namespace TechHealth.DoctorView.ViewModel
         private Anamnesis anamnesis;
         private Appointment appointment;
         private readonly AnamnesisController anamnesisController = new AnamnesisController();
+        public RelayCommand TherapyCommand { get; set; }
+        public RelayCommand PrescribeCommand { get; set; }
+        public  string AppointmentTypeLabel { get; set; }
         public string PatientLabel { get; set; }
         public string DoctorLabel { get; set; }
         public string RoomLabel { get; set; }
@@ -52,7 +56,40 @@ namespace TechHealth.DoctorView.ViewModel
             MainSymptom = "Main Symptom:  " + SelectedAnamnesis.MainIssue;
             OtherSymptoms = "Other Symptoms:  " + SelectedAnamnesis.OtherSymptoms;
             GeneralAnamnesis = "General Anamnesis:  " + SelectedAnamnesis.GeneralAmnesis;
-            
+            AppointmentTypeLabel = "Appointment Type: " + SelectedItemAppointment.AppointmentType; 
+            TherapyCommand = new RelayCommand(param => Execute(), param => CanExecute());
+            PrescribeCommand = new RelayCommand(param => Execute1(), param => CanExecute1());
+        }
+
+        private bool CanExecute()
+        {
+            return true;
+        }
+
+        private void Execute()
+        {
+            var vm = new TherapyViewModel(SelectedItemAppointment);
+            var therapyWindow = new TherapyWindow()
+            {
+                DataContext = vm
+            };
+            vm.OnRequestClose += (s, e) => therapyWindow.Close();
+            therapyWindow.ShowDialog();
+        }
+        private bool CanExecute1()
+        {
+            return true;
+        }
+
+        private void Execute1()
+        {
+            var vm = new PrescriptionViewModel(SelectedItemAppointment);
+            var prescritionWindow = new PrescriptionWindow()
+            {
+                DataContext = vm
+            };
+            vm.OnRequestClose += (s, e) => prescritionWindow.Close();
+            prescritionWindow.ShowDialog();
         }
     }
 }

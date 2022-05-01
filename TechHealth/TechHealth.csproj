@@ -156,9 +156,12 @@
     <Compile Include="Controller\DoctorController.cs" />
     <Compile Include="Controller\EquipmentController.cs" />
     <Compile Include="Controller\EquipmentReallocationController.cs" />
+    <Compile Include="Controller\MedicineController.cs" />
     <Compile Include="Controller\PatientController.cs" />
+    <Compile Include="Controller\PrescribeMedicineController.cs" />
     <Compile Include="Controller\RoomController.cs" />
     <Compile Include="Controller\RoomEquipmentController.cs" />
+    <Compile Include="Controller\TherapyController.cs" />
     <Compile Include="Conversions\AddressConverter.cs" />
     <Compile Include="Conversions\ManagerConversions.cs" />
     <Compile Include="Conversions\TimeConverter.cs" />
@@ -196,6 +199,7 @@
     <Compile Include="DoctorView\ViewModel\MedicalRecordViewModel.cs" />
     <Compile Include="DoctorView\ViewModel\MedicineViewModel.cs" />
     <Compile Include="DoctorView\ViewModel\PatientsViewModel.cs" />
+    <Compile Include="DoctorView\ViewModel\PrescriptionViewModel.cs" />
     <Compile Include="DoctorView\ViewModel\RecordViewModel.cs" />
     <Compile Include="DoctorView\ViewModel\TherapyViewModel.cs" />
     <Compile Include="DoctorView\ViewModel\UpdateAppointmentViewModel.cs" />
@@ -275,9 +279,12 @@
     <Compile Include="Service\DoctorService.cs" />
     <Compile Include="Service\EquipmentReallocationService.cs" />
     <Compile Include="Service\EquipmentService.cs" />
+    <Compile Include="Service\MedicineService.cs" />
     <Compile Include="Service\PatientService.cs" />
+    <Compile Include="Service\PrescribeMedicineService.cs" />
     <Compile Include="Service\RoomEquipmentService.cs" />
     <Compile Include="Service\RoomService.cs" />
+    <Compile Include="Service\TherapyService.cs" />
     <Compile Include="Store\NavigationStore.cs" />
     <Compile Include="ValidationRules\FutureDateValidationRule.cs" />
     <Compile Include="ValidationRules\NotEmptyValidationRule.cs" />

@@ -9,19 +9,19 @@ namespace TechHealth.DoctorView.Windows
 {
     public partial class PrescriptionWindow : Window
     {
-        private List<Patient> patients;
+        //private List<Patient> patients;
         private Medicine medicine;
-        
-        public PrescriptionWindow(Medicine selectedItem)
+
+        public PrescriptionWindow()
         {
             InitializeComponent();
-            patients = PatientRepository.Instance.GetAllToList();
-            ComboBox.ItemsSource = patients;
-            medicine = selectedItem;
-            TextBox.Text = medicine.MedicineName;
+            // patients = PatientRepository.Instance.GetAllToList();
+            // ComboBox.ItemsSource = patients;
+            // medicine = selectedItem;
+            // TextBox.Text = medicine.MedicineName;
         }
 
-        private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
+        /*private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
         {
             throw new System.NotImplementedException();
         }
@@ -55,5 +55,6 @@ namespace TechHealth.DoctorView.Windows
             };
             PrescribeMedicineRepository.Instance.Create(prescription);
         }
+    }*/
     }
 }

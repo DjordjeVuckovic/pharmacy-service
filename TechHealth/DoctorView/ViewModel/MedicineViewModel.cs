@@ -43,7 +43,7 @@ namespace TechHealth.DoctorView.ViewModel
         {
             
             medicines = new ObservableCollection<Medicine>(MedicineRepository.Instance.GetAllToList());
-            PrescribeCommand= new RelayCommand(param => Execute(), param => CanExecute());
+            //PrescribeCommand= new RelayCommand(param => Execute(), param => CanExecute());
         }
 
         private bool CanExecute()
@@ -58,8 +58,8 @@ namespace TechHealth.DoctorView.ViewModel
 
         private void Execute()
         {
-            prescriptionWindow = new PrescriptionWindow(selectedItem);
-            prescriptionWindow.ShowDialog();
+            //prescriptionWindow = new PrescriptionWindow(selectedItem);
+            //prescriptionWindow.ShowDialog();
         }
     }
 }

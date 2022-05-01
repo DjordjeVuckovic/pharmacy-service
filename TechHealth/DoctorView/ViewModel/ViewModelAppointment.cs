@@ -53,7 +53,6 @@ namespace TechHealth.DoctorView.ViewModel
                 OnPropertyChanged(nameof(SelectedItem));
             }
         }
-
         public static ViewModelAppointment GetInstance()
         {
             return _instance;

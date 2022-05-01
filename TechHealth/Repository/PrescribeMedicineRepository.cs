@@ -31,7 +31,10 @@ namespace TechHealth.Repository
 
         protected override void ShouldSerialize(Prescription entity)
         {
-            throw new System.NotImplementedException();
+            entity.ShouldSerialize = true;
+            entity.Appointment.ShouldSerialize = false;
+            entity.Medicine.ShouldSerialize = false;
+
         }
     }
 }

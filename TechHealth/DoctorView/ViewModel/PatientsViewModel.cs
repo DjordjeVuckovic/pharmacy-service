@@ -9,7 +9,7 @@ namespace TechHealth.DoctorView.ViewModel
 {
     public class PatientsViewModel:ViewModelBase
     {
-        public RelayCommand TherapyCommand { get; set; }
+        //public RelayCommand TherapyCommand { get; set; }
         public RelayCommand MedicineRecordCommand { get; set; }
         private ObservableCollection<Patient> patients;
         private Patient selectedItem;
@@ -47,7 +47,7 @@ namespace TechHealth.DoctorView.ViewModel
         {
             patients = new ObservableCollection<Patient>(PatientRepository.Instance.GetAllToList());
             //currentViewPatient = this;
-            TherapyCommand= new RelayCommand(param => Execute(), param => CanExecute());
+            //TherapyCommand= new RelayCommand(param => Execute(), param => CanExecute());
             MedicineRecordCommand = new RelayCommand(param => Execute1(), param => CanExecute1());
             
         }
@@ -64,8 +64,8 @@ namespace TechHealth.DoctorView.ViewModel
 
         private void Execute()
         {
-            therapyWindow = new TherapyWindow(SelectedItem);
-            therapyWindow.ShowDialog();
+            //therapyWindow = new TherapyWindow(SelectedItem);
+            //therapyWindow.ShowDialog();
         }
         private bool CanExecute1()
         {

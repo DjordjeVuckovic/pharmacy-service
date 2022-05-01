@@ -1,4 +1,5 @@
-﻿using TechHealth.Model;
+﻿using System.Collections.Generic;
+using TechHealth.Model;
 
 namespace TechHealth.Repository
 {
@@ -33,7 +34,9 @@ namespace TechHealth.Repository
 
         protected override void ShouldSerialize(Medicine entity)
         {
-            throw new System.NotImplementedException();
+            entity.ShouldSerialize = true;
         }
+
+        
     }
 }

@@ -193,6 +193,18 @@ namespace TechHealth.Model
       {
          return ShouldSerialize;
       }
+      public bool ShouldSerializeStartTime()
+      {
+         return ShouldSerialize;
+      }
+      public bool ShouldSerializeFinishTime()
+      {
+         return ShouldSerialize;
+      }
+      public bool ShouldSerializeEmergent()
+      {
+         return ShouldSerialize;
+      }
 
 
       public bool DoctorConflicts(Appointment appointment)

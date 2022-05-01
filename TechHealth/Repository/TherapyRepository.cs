@@ -36,7 +36,8 @@ namespace TechHealth.Repository
 
         protected override void ShouldSerialize(Therapy entity)
         {
-            //skip
+            entity.ShouldSerialize = true;
+            entity.Appointment.ShouldSerialize = false;
         }
     }
 }

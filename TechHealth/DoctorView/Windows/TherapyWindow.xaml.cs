@@ -7,17 +7,17 @@ namespace TechHealth.DoctorView.Windows
 {
     public partial class TherapyWindow : Window
     {
-        private Doctor doctor;
-        private Patient patient;
-        public TherapyWindow(Patient selectedItem)
+        //private Doctor doctor;
+        //private Patient patient;
+        public TherapyWindow()
         {
             InitializeComponent();
-            string doctorId = DoctorWindow.GetDoctorId();
-            doctor = DoctorRepository.Instance.GetById(doctorId);
-            patient = PatientRepository.Instance.GetById(selectedItem.Jmbg);
+            // string doctorId = DoctorWindow.GetDoctorId();
+            // doctor = DoctorRepository.Instance.GetById(doctorId);
+            // patient = PatientRepository.Instance.GetById(selectedItem.Jmbg);
         }
 
-        private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
+        /*private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
         {
             Close();
         }
@@ -42,6 +42,6 @@ namespace TechHealth.DoctorView.Windows
             };
             TherapyRepository.Instance.Create(therapy);
             
-        }
+        }*/
     }
 }

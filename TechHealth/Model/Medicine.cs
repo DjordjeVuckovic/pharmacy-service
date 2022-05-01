@@ -22,6 +22,48 @@ namespace TechHealth.Model
         public string Allergens { get; set; }
         //public IEnumerable<Allergen> allergens;
         public bool Approved { get; set; }
+        public bool ShouldSerialize { get; set; }
+        public bool ShouldSerializeComposition()
+        {
+            return ShouldSerialize;
+        }
+        public bool ShouldSerializeQuantity()
+        {
+            return ShouldSerialize;
+        }
+        public bool ShouldSerializeUnits()
+        {
+            return ShouldSerialize;
+        }
+        public bool ShouldSerializeSideEffects()
+        {
+            return ShouldSerialize;
+        }
+        public bool ShouldSerializeMainSubstance()
+        {
+            return ShouldSerialize;
+        }
+        public bool ShouldSerializeHarmfulRate()
+        {
+            return ShouldSerialize;
+            
+        }
+        public bool ShouldSerializePrice()
+        {
+            return ShouldSerialize;
+        }
+        public bool ShouldSerializeAllergens()
+        {
+            return ShouldSerialize;
+        }
+        public bool ShouldSerializeApproved()
+        {
+            return ShouldSerialize;
+        }
+        public bool ShouldSerializeMedicineName()
+        {
+            return ShouldSerialize;
+        }
     }
 
 }
