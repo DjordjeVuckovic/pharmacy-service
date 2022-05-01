@@ -21,7 +21,6 @@ namespace TechHealth.Model
       private string weight;
       private string height;
       private string chronicDiseases;
-      private List<Allergen> allergens;
       private string parentDiseases;
       private string martialStatus;
       private EmlpoymentData emlpoymentData;
@@ -78,14 +77,6 @@ namespace TechHealth.Model
          {
             chronicDiseases = value;
             OnPropertyChanged(nameof(ChronicDiseases));
-         }
-      }
-      public List<Allergen> Allergens{
-         get => allergens;
-         set
-         {
-            allergens = value;
-            OnPropertyChanged(nameof(Allergens));
          }
       }
       public string ParentDiseases{

@@ -20,19 +20,11 @@ namespace TechHealth.View.SecretaryView
     public partial class AddAllergen : Window
     {
         private AllergenController allergenController = new AllergenController();
-        private MedicalRecordController medicalRecordController = new MedicalRecordController();
-        private MedicalRecord medicalRecord = new MedicalRecord();
+        private PatientAllergensController patientAllergensController = new PatientAllergensController();
         private string jmbg1;
         public AddAllergen(string jmbg)
         {
             jmbg1 = jmbg;
-            foreach (var m in MedicalRecordRepository.Instance.GetAll().Values)
-            {
-                if (m.Patient.Jmbg.Equals(jmbg1))
-                {
-                    medicalRecord = m;
-                }
-            }
             InitializeComponent();
         }
         private void Button_Click_Confirm(object sender, RoutedEventArgs e)
@@ -50,14 +42,11 @@ namespace TechHealth.View.SecretaryView
                 }
             }
             //allergenController.Create(allergenId.ToString(), allergenName.Text, allergenDescription.Text);
-            List<Allergen> lista = new List<Allergen>();
-            lista = medicalRecord.Allergens;
-            Allergen a = new Allergen();
-            a.Id = allergenId.ToString();
-            a.Name = allergenName.Text;
-            a.Description = allergenDescription.Text;
-            lista.Add(a);
-            medicalRecordController.Update(medicalRecord.RecordId, medicalRecord.BloodType, medicalRecord.Patient, medicalRecord.Weight, medicalRecord.Height, medicalRecord.ChronicDiseases, lista, medicalRecord.ParentDiseases, medicalRecord.MartialStatus, medicalRecord.EmlpoymentData);
+            PatientAllergens pa = new PatientAllergens();
+            pa.PatientJMBG = jmbg1;
+            pa.AllergenName = allergenName.Text;
+            pa.AllergenDescription = allergenDescription.Text;
+            patientAllergensController.Create(pa);
             this.Close();
         }
         private void Button_Click_Cancel(object sender, RoutedEventArgs e)

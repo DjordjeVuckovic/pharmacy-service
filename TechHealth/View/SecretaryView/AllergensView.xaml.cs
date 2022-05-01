@@ -23,23 +23,18 @@ namespace TechHealth.View.SecretaryView
     {
         private string jmbg;
         private Patient patient1;
-        private ObservableCollection<Allergen> allergens = new ObservableCollection<Allergen>();
+        private ObservableCollection<PatientAllergens> allergens = new ObservableCollection<PatientAllergens>();
+        private PatientAllergensController patientAllergensController = new PatientAllergensController();
         public AllergensView(Patient patient)
         {
             patient1 = patient;
             jmbg = patient.Jmbg;
             InitializeComponent();
-            foreach (var m in MedicalRecordRepository.Instance.GetAll().Values)
+            foreach (var pa in PatientAllergensRepository.Instance.GetAll().Values)
             {
-                if (m.Patient.Jmbg.Equals(patient.Jmbg))
+                if (pa.PatientJMBG.Equals(patient.Jmbg))
                 {
-                    foreach (var a in m.Allergens)
-                    {
-                        if (m.Allergens.Contains(a))
-                        {
-                            allergens.Add(a);
-                        }
-                    }
+                    allergens.Add(pa);
                 }
             }
             allergenList.ItemsSource = allergens;
@@ -54,21 +49,23 @@ namespace TechHealth.View.SecretaryView
         }
         private void Button_Click_Delete(object sender, RoutedEventArgs e)
         {
+            if (allergenList.SelectedIndex == -1)
+            {
+                MessageBox.Show("You didn't select an allergen.");
+                return;
+            }
+            PatientAllergens pa = (PatientAllergens)allergenList.SelectedItems[0];
+            patientAllergensController.Delete(pa.PatientJMBG+"-"+pa.AllergenName);
+            Update();
         }
         public void Update()
         {
             allergens.Clear();
-            foreach (var m in MedicalRecordRepository.Instance.GetAll().Values)
+            foreach (var pa in PatientAllergensRepository.Instance.GetAll().Values)
             {
-                if (m.Patient.Jmbg.Equals(patient1.Jmbg))
+                if (pa.PatientJMBG.Equals(patient1.Jmbg))
                 {
-                    foreach (var a in m.Allergens)
-                    {
-                        if (m.Allergens.Contains(a))
-                        {
-                            allergens.Add(a);
-                        }
-                    }
+                    allergens.Add(pa);
                 }
             }
         }

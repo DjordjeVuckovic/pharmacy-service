@@ -16,7 +16,7 @@ namespace TechHealth.Controller
         {
             return MedicalRecordRepository.Instance.GetAllToList();
         }
-        public bool Create(string id, Bloodtype bloodType, Patient patient, string weight, string height, string chronicDiseases, List<Allergen> allergens, string parentDiseases, string martialStatus, EmlpoymentData emlpoymentData)
+        public bool Create(string id, Bloodtype bloodType, Patient patient, string weight, string height, string chronicDiseases, string parentDiseases, string martialStatus, EmlpoymentData emlpoymentData)
         {
             var medicalRecord = new MedicalRecord();
 
@@ -26,7 +26,6 @@ namespace TechHealth.Controller
             medicalRecord.Weight = weight;
             medicalRecord.Height = height;
             medicalRecord.ChronicDiseases = chronicDiseases;
-            medicalRecord.Allergens = allergens;
             medicalRecord.ParentDiseases = parentDiseases;
             medicalRecord.MartialStatus = martialStatus;
             medicalRecord.EmlpoymentData = emlpoymentData;
@@ -34,7 +33,7 @@ namespace TechHealth.Controller
             return MedicalRecordService.Create(medicalRecord);
         }
 
-        public bool Update(string id, Bloodtype bloodType, Patient patient, string weight, string height, string chronicDiseases, List<Allergen> allergens, string parentDiseases, string martialStatus, EmlpoymentData emlpoymentData)
+        public bool Update(string id, Bloodtype bloodType, Patient patient, string weight, string height, string chronicDiseases, string parentDiseases, string martialStatus, EmlpoymentData emlpoymentData)
         {
             var medicalRecord = new MedicalRecord();
 
@@ -44,7 +43,6 @@ namespace TechHealth.Controller
             medicalRecord.Weight = weight;
             medicalRecord.Height = height;
             medicalRecord.ChronicDiseases = chronicDiseases;
-            medicalRecord.Allergens = allergens;
             medicalRecord.ParentDiseases = parentDiseases;
             medicalRecord.MartialStatus = martialStatus;
             medicalRecord.EmlpoymentData = emlpoymentData;

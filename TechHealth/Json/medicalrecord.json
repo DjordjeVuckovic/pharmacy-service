@@ -26,18 +26,6 @@
     "Weight": "80 kg",
     "Height": "170 cm",
     "ChronicDiseases": "asma",
-    "Allergens": [
-      {
-        "Id": "3",
-        "Name": "ibuprofen",
-        "Description": "/"
-      },
-      {
-        "Id": "4",
-        "Name": "paracetamol",
-        "Description": "/"
-      }
-    ],
     "ParentDiseases": "plucna maramica",
     "EmlpoymentData": {
       "Our": "1345",
@@ -76,18 +64,6 @@
     "Weight": "80 kg",
     "Height": "170 cm",
     "ChronicDiseases": "asma",
-    "Allergens": [
-      {
-        "Id": "1",
-        "Name": "dust",
-        "Description": "Fine powdery material such as dry earth or pollen that can be blown about in the air."
-      },
-      {
-        "Id": "2",
-        "Name": "animal dander",
-        "Description": "/"
-      }
-    ],
     "ParentDiseases": "plucna maramica",
     "EmlpoymentData": {
       "Our": "1675",
