@@ -23,6 +23,7 @@ namespace TechHealth.View.SecretaryView
         private ObservableCollection<Patient> users = new ObservableCollection<Patient>();
         private ObservableCollection<Patient> guests = new ObservableCollection<Patient>();
         private PatientController patientController = new PatientController();
+        private PatientAllergensController patientAllergensController = new PatientAllergensController();
         public SecretaryMainWindow()
         {
             InitializeComponent();
@@ -59,6 +60,13 @@ namespace TechHealth.View.SecretaryView
                 patientController.Delete(p.Jmbg);
                 users = new ObservableCollection<Patient>(PatientRepository.Instance.GetAll().Values);
                 accountList.ItemsSource = users;
+                foreach(var pa in PatientAllergensRepository.Instance.GetAll().Values)
+                {
+                    if (pa.PatientJMBG.Equals(p.Jmbg))
+                    {
+                        patientAllergensController.Delete(pa.PatientJMBG + "-" + pa.AllergenName);
+                    }
+                }
             }
         }
         private void Button_Click_Edit(object sender, RoutedEventArgs e)

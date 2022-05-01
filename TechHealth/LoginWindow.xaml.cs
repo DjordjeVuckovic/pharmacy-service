@@ -4,6 +4,7 @@ using System.Windows;
 using TechHealth.DoctorView;
 using TechHealth.Model;
 using TechHealth.Repository;
+using TechHealth.View.SecretaryView;
 
 namespace TechHealth
 {
@@ -21,10 +22,10 @@ namespace TechHealth
 
         private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
         {
-            DoctorLog();
+            Log();
         }
 
-        private void DoctorLog()
+        private void Log()
         {
             string user = Username.Text;
             string pass = Password.Password;
@@ -34,6 +35,13 @@ namespace TechHealth
                 //AppointmentsWindow.GetInstance(doctor.Jmbg).Show();
                 _doctorId = doctor.Jmbg;
                 new DoctorWindow(doctor.Jmbg).Show();
+                Close();
+            }
+
+            Secretary secretary = SecretaryRepository.Instance.GetSecretaryByUser(user);
+            if (secretary != null && pass.Equals(secretary.Password))
+            {
+                new SecretaryMainWindow().Show();
                 Close();
             }
         }
