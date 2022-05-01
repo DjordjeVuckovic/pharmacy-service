@@ -350,6 +350,9 @@
     <Compile Include="View\SecretaryView\AddPatient.xaml.cs">
       <DependentUpon>AddPatient.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\SecretaryView\AllergensView.xaml.cs">
+      <DependentUpon>AllergensView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\SecretaryView\SecretaryMainWindow.xaml.cs">
       <DependentUpon>SecretaryMainWindow.xaml</DependentUpon>
     </Compile>
@@ -566,6 +569,10 @@
     <Page Include="View\SecretaryView\AddPatient.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\SecretaryView\AllergensView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\SecretaryView\SecretaryMainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
