@@ -2,7 +2,7 @@
   "DusanVukovic2456": {
     "ShouldSerialize": true,
     "RecordId": "DusanVukovic2456",
-    "BloodType": 3,
+    "BloodType": 2,
     "Patient": {
       "Guest": false,
       "ChosenDoctor": null,
