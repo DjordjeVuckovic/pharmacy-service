@@ -1,15 +1,15 @@
 {
   "13411eb404174849b60ddc01d4a193f0": {
     "ShouldSerialize": true,
-    "Date": "2022-04-06T00:00:00",
-    "StartTimeD": "0001-01-01T00:00:00",
-    "FinishTimeD": "2022-04-28T02:19:00",
+    "Date": "2022-05-04T00:00:00",
+    "StartTimeD": "2022-05-04T00:00:00",
+    "FinishTimeD": "2022-05-10T02:19:00",
     "Emergent": false,
     "StartTime": "14",
     "FinishTime": "14",
     "IdAppointment": "13411eb404174849b60ddc01d4a193f0",
     "Room": {
-      "roomId": "soba2"
+      "roomId": "S3"
     },
     "Patient": {
       "Lbo": 0,

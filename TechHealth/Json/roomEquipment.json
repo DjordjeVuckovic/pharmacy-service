@@ -43,5 +43,10 @@
     "RoomID": "S2",
     "EquipmentName": "Skalpel",
     "Quantity": 11
+  },
+  "Warehouse-Bandazer": {
+    "RoomID": "Warehouse",
+    "EquipmentName": "Bandazer",
+    "Quantity": 60
   }
 }
