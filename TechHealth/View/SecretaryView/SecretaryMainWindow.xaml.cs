@@ -23,6 +23,8 @@ namespace TechHealth.View.SecretaryView
         private ObservableCollection<Patient> users = new ObservableCollection<Patient>();
         private ObservableCollection<Patient> guests = new ObservableCollection<Patient>();
         private PatientController patientController = new PatientController();
+        private PatientAllergensController patientAllergensController = new PatientAllergensController();
+        private MedicalRecordController medicalRecordController = new MedicalRecordController();
         public SecretaryMainWindow()
         {
             InitializeComponent();
@@ -59,7 +61,15 @@ namespace TechHealth.View.SecretaryView
                 patientController.Delete(p.Jmbg);
                 users = new ObservableCollection<Patient>(PatientRepository.Instance.GetAll().Values);
                 accountList.ItemsSource = users;
+                foreach(var pa in PatientAllergensRepository.Instance.GetAll().Values)
+                {
+                    if (pa.PatientJMBG.Equals(p.Jmbg))
+                    {
+                        patientAllergensController.Delete(pa.PatientJMBG + "-" + pa.AllergenName);
+                    }
+                }
             }
+            medicalRecordController.Delete(p.Name + p.Surname + p.Jmbg);
         }
         private void Button_Click_Edit(object sender, RoutedEventArgs e)
         {
@@ -101,6 +111,41 @@ namespace TechHealth.View.SecretaryView
             Patient patient = (Patient)guestList.SelectedItems[0];
             new UpdateGuest(patient).ShowDialog();
             Update();
+        }
+        private void Button_Click_Allergens(object sender, RoutedEventArgs e)
+        {
+            if (accountList.SelectedIndex == -1)
+            {
+                MessageBox.Show("You didn't select an account.");
+                return;
+            }
+            Patient patient = (Patient)accountList.SelectedItems[0];
+            new AllergensView(patient).ShowDialog();
+            Update();
+        }
+        private void Button_Click_MedicalRecord(object sender, RoutedEventArgs e)
+        {
+            if (accountList.SelectedIndex == -1)
+            {
+                MessageBox.Show("You didn't select an account.");
+                return;
+            }
+            Patient patient = (Patient)accountList.SelectedItems[0];
+            MedicalRecord medicalRecord = new MedicalRecord();
+            foreach (var mr in MedicalRecordRepository.Instance.GetAll().Values)
+            {
+                if (mr.Patient.Jmbg.Equals(patient.Jmbg))
+                {
+                    medicalRecord = mr;
+                }
+            }
+            new MedicalRecordView(medicalRecord).ShowDialog();
+            Update();
+        }
+        private void Button_Click_LogOut(object sender, RoutedEventArgs e)
+        {
+            new LoginWindow().Show();
+            Close();
         }
         public void Update()
         {

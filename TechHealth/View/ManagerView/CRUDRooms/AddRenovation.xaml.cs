@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using TechHealth.Core;
 using TechHealth.Model;
 using TechHealth.Repository;
 
@@ -23,28 +24,55 @@ namespace TechHealth.View.ManagerView.CRUDRooms
     {
         private List<String> rooms;
         private Room selected;
+        private RoomRenovation rr;
+        public RelayCommand CancelRenovationCommand { get; set; }
         public AddRenovation(Room rm)
         {
             InitializeComponent();
+            DataContext = this;
             selected = rm;
             rooms = RoomRepository.Instance.GetRoomIDs();
             TxtRoomID.Text = selected.roomId;
+            CancelRenovationCommand = new RelayCommand(param => ExeceuteCancel(), param =>CanExecuteCancel());
+
+            rr = RoomRenovationRepository.Instance.GetRrByRoomID(selected.roomId);
+            RStart.SelectedDate = rr.RenovationStart;
+            REnd.SelectedDate = rr.RenovationEnd;
+        }
+
+        private bool CanExecuteCancel()
+        {
+            return !RoomRenovationRepository.Instance.ExistsInRenovations(selected.roomId);     
+        }
+
+        private void ExeceuteCancel()
+        {
+            RoomRenovationRepository.Instance.Delete(rr.RenovationID);
+            this.Close();
         }
 
         private void Button_Click_Confirm(object sender, RoutedEventArgs e)
         {
-            RoomRenovation rr = new RoomRenovation();
-            rr.RoomID = selected.roomId;
-            rr.RenovationStart = RStart.SelectedDate;
-            rr.RenovationEnd = REnd.SelectedDate;
-            rr.RenovationID = Guid.NewGuid().ToString("N");
+            RoomRenovation r = new RoomRenovation();
+            r.RoomID = selected.roomId;
+            r.RenovationStart = RStart.SelectedDate;
+            r.RenovationEnd = REnd.SelectedDate;
+            r.RenovationID = Guid.NewGuid().ToString("N");
 
-            if (RoomRenovationRepository.Instance.ExistsInRenovations(selected.roomId))
+            if (RoomRenovationRepository.Instance.ExistsInRenovations(selected.roomId))     //da li je vec zakazano renoviranje te sobe
             {
-                if (AppointmentRepository.Instance.CanSetRenovation(rr.RenovationStart, rr.RenovationEnd, rr.RoomID))
+                if (AppointmentRepository.Instance.CanSetRenovation(r.RenovationStart, r.RenovationEnd, r.RoomID))  //da li ima app zakazan u tom periodu
                 {
-                    RoomRenovationRepository.Instance.Create(rr);
-                    this.Close();
+                    if (!EquipmentReallocationRepository.Instance.IsReallocationHappening(r.RenovationStart, r.RenovationEnd, r.RoomID))
+                    {
+                        RoomRenovationRepository.Instance.Create(r);
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Reallocation is happening in that period!");
+                        return;
+                    }
                 }
                 else
                 {

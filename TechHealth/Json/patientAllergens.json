@@ -1,0 +1,26 @@
+{
+  "2456-ibuprofen": {
+    "ShouldSerialize": false,
+    "PatientJMBG": "2456",
+    "AllergenName": "ibuprofen",
+    "AllergenDescription": "/"
+  },
+  "2456-paracetamol": {
+    "ShouldSerialize": true,
+    "PatientJMBG": "2456",
+    "AllergenName": "paracetamol",
+    "AllergenDescription": "/"
+  },
+  "13456-dust": {
+    "ShouldSerialize": false,
+    "PatientJMBG": "13456",
+    "AllergenName": "dust",
+    "AllergenDescription": "Fine powdery material such as dry earth or pollen that can be blown about in the air."
+  },
+  "13456-animal dander": {
+    "ShouldSerialize": false,
+    "PatientJMBG": "13456",
+    "AllergenName": "animal dander",
+    "AllergenDescription": "/"
+  }
+}

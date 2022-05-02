@@ -43,5 +43,16 @@ namespace TechHealth.Repository
       {
          throw new NotImplementedException();
       }
-   }
+        public Secretary GetSecretaryByUser(string user)
+        {
+            foreach (var sec in GetAllToList())
+            {
+                if (sec.Username.Equals(user))
+                {
+                    return sec;
+                }
+            }
+            return null;
+        }
+    }
 }

@@ -21,12 +21,13 @@ namespace TechHealth.Model
       private string weight;
       private string height;
       private string chronicDiseases;
-      private List<Allergen> allergens;
       private string parentDiseases;
       private string martialStatus;
       private EmlpoymentData emlpoymentData;
 
-      public string RecordId
+        public bool ShouldSerialize { get; set; }
+
+        public string RecordId
       {
          get => recordId;
          set
@@ -76,14 +77,6 @@ namespace TechHealth.Model
          {
             chronicDiseases = value;
             OnPropertyChanged(nameof(ChronicDiseases));
-         }
-      }
-      public List<Allergen> Allergens{
-         get => allergens;
-         set
-         {
-            allergens = value;
-            OnPropertyChanged(nameof(Allergens));
          }
       }
       public string ParentDiseases{
@@ -160,6 +153,9 @@ namespace TechHealth.Model
                break;
             case Bloodtype.Op:
                ret = "0+";
+               break;
+            case Bloodtype.None:
+               ret = "";
                break;
 
          }

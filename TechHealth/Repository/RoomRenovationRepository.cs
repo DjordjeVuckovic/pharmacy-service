@@ -42,6 +42,20 @@ namespace TechHealth.Repository
             entity.ShouldSerialize = true;
         }
 
+        public RoomRenovation GetRrByRoomID(string roomID)
+        {
+            RoomRenovation r = new RoomRenovation();
+            foreach (var rr in GetAllToList())
+            {
+                if (rr.RoomID == roomID)
+                {
+                    r = rr;
+                    break;
+                }
+            }
+            return r;
+        }
+
         public bool ExistsInRenovations(string roomID)
         {
             if (GetAllToList().Count != 0)

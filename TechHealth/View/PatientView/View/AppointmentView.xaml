@@ -49,12 +49,14 @@
             </DataGrid.Columns>
         </DataGrid>
 
-        <Button Grid.Row="3" Content="Add Appointment"  HorizontalAlignment="Left"  Width="150" Height="50" Margin="10,7,0,8"
+        <Button Grid.Row="3" Content="Add Appointment"  HorizontalAlignment="Left"  Width="120" Height="50" Margin="10,7,0,8"
                 Command="{Binding AddAppointmentCommand}"/>
-        <Button Grid.Row="3" Content="Edit Appointment"  HorizontalAlignment="Right"   Width="150" Height="50" Margin="0,7,221,8"
+        <Button Grid.Row="3" Content="Edit Appointment"  HorizontalAlignment="Right"   Width="120" Height="50" Margin="0,7,316,8"
                 Command="{Binding UpdateAppointmentCommand}"/>
-        <Button Grid.Row="3" Content="Delete Appointment"  HorizontalAlignment="Right"   Width="150" Height="50" Margin="0,7,10,8"
+        <Button Grid.Row="3" Content="Delete Appointment"  HorizontalAlignment="Right"   Width="120" Height="50" Margin="0,7,162,8"
                 Command="{Binding DeleteAppointmentCommand }"/>
+        <Button Grid.Row="3" Content="Suggest Appointment"  HorizontalAlignment="Right"   Width="120" Height="50" Margin="0,7,10,8"
+            Command="{Binding SuggestAppointmentCommand}"/>
     </Grid>
 </UserControl>
 

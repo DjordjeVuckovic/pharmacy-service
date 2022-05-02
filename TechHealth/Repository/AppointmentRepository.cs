@@ -81,7 +81,7 @@ namespace TechHealth.Repository
             {
                 foreach (var app in GetAllToList())
                 {
-                    if (app.StartTimeD >= start && app.FinishTimeD <= end && app.Room.roomId == roomID)
+                    if (app.StartTimeD <= start && app.FinishTimeD >= end && app.Room.roomId == roomID)
                     {
                         return false;
                     }
@@ -124,9 +124,9 @@ namespace TechHealth.Repository
       protected override void ShouldSerialize(Appointment entity)
       {
             entity.ShouldSerialize = true;
-            entity.Patient.ShouldSerialize = true;
+            //entity.Patient.ShouldSerialize = true;
             entity.Doctor.ShouldSerialize = true;
-            entity.Room.ShouldSerialize = true;
+            //entity.Room.ShouldSerialize = true;
 
         }
    }

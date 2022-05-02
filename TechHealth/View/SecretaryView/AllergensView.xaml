@@ -1,0 +1,23 @@
+﻿<Window x:Class="TechHealth.View.SecretaryView.AllergensView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TechHealth.View.SecretaryView"
+        mc:Ignorable="d"
+        Title="AllergensView" Height="450" Width="800">
+    <Grid>
+        <Button x:Name="addAllergen" Content="Add" HorizontalAlignment="Left" Margin="64,26,0,0" VerticalAlignment="Top" Width="98" Click="Button_Click_Add"/>
+        <Button x:Name="deleteAllergen" Content="Delete" HorizontalAlignment="Left" Margin="638,26,0,0" VerticalAlignment="Top" Width="98" Click="Button_Click_Delete"/>
+        <Button x:Name="editAllergen" Content="Edit" HorizontalAlignment="Center" Margin="0,26,0,0" VerticalAlignment="Top" Width="98" Click="Button_Click_Edit"/>
+
+        <ListView x:Name="allergenList" Margin="64,69,64,10">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Name" Width="200" DisplayMemberBinding="{Binding AllergenName}" />
+                    <GridViewColumn Header="Description" Width="470" DisplayMemberBinding="{Binding AllergenDescription}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Window>

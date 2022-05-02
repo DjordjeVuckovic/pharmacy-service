@@ -31,7 +31,8 @@ namespace TechHealth.Repository
 
         protected override void ShouldSerialize(MedicalRecord entity)
         {
-            throw new System.NotImplementedException();
+            entity.ShouldSerialize = true;
+            entity.Patient.ShouldSerialize = true;
         }
 
         public MedicalRecord GetByPatientId(string id)
