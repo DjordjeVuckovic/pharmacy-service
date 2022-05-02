@@ -20,13 +20,17 @@ namespace TechHealth.View.SecretaryView
     public partial class MedicalRecordView : Window
     {
         private MedicalRecordController medicalRecordController = new MedicalRecordController();
+        private string id;
+        private Patient p;
+        private List<Bloodtype> lista = new List<Bloodtype>();
+        
         public MedicalRecordView(MedicalRecord medicalRecord)
         {
-            //MedicalRecord mr = MedicalRecordRepository.Instance.GetById(medicalRecord.RecordId);
+            id = medicalRecord.RecordId;
+            p = medicalRecord.Patient;
             InitializeComponent();
             this.DataContext = this;
             name.Content = medicalRecord.Patient.Name + " " + medicalRecord.Patient.Surname;
-            List <Bloodtype> lista = new List<Bloodtype>();
             lista.Add(Bloodtype.Op);
             lista.Add(Bloodtype.On);
             lista.Add(Bloodtype.Ap);
@@ -50,17 +54,16 @@ namespace TechHealth.View.SecretaryView
         }
         private void Button_Click_Confirm(object sender, RoutedEventArgs e)
         {
-            /*var address = new Address();
+            EmlpoymentData ed = new EmlpoymentData();
 
-            address.Street = accountStreet.Text;
-            address.StreetNumber = accountStreetNumber.Text;
-            address.City = accountCity.Text;
-            address.Country = accountCountry.Text;
-            address.Postcode = Int32.Parse(accountPostcode.Text);
+            ed.Our = textboxOur.Text;
+            ed.Workplace = textboxWorkplace.Text;
+            ed.Profession = textboxProfession.Text;
+            ed.Job = textboxJob.Text;
 
-            patientController.Update(accountName.Text, accountSurname.Text, address, null, accountJmbg.Text, Int32.Parse(accountLbo.Text), false, accountUsername.Text, accountPassword.Text, accountEmail.Text, false, false, accountPhone.Text);
+            medicalRecordController.Update(id, lista[bloodTypeCombo.SelectedIndex], p, textboxWeight.Text, textboxHeight.Text, textboxChronicDiseases.Text, textboxParentDiseases.Text, textboxMartialStatus.Text, ed);
 
-            this.Close();*/
+            this.Close();
         }
         private void Button_Click_Cancel(object sender, RoutedEventArgs e)
         {

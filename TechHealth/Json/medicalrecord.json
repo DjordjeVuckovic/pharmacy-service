@@ -1,9 +1,11 @@
 {
   "DusanVukovic2456": {
+    "ShouldSerialize": true,
     "RecordId": "DusanVukovic2456",
-    "BloodType": 2,
+    "BloodType": 3,
     "Patient": {
       "Guest": false,
+      "ChosenDoctor": null,
       "Lbo": 0,
       "IsBanned": false,
       "Address": {
@@ -21,45 +23,30 @@
       "Employed": false,
       "Birthday": "0001-01-01T00:00:00",
       "Username": "dusan",
-      "Password": "dusan"
+      "Password": "dusan",
+      "ShouldSerialize": true
     },
     "Weight": "80 kg",
     "Height": "170 cm",
-    "ChronicDiseases": "asma",
+    "ChronicDiseases": "astma",
     "ParentDiseases": "plucna maramica",
     "EmlpoymentData": {
       "Our": "1345",
-      "Profession": "moler",
+      "Profession": "Moler",
       "Workplace": "Duga",
-      "Job": "kasir"
+      "Job": "Kasir"
     },
     "MartialStatus": "Divorced",
-    "Gender": 0,
-    "ShouldSerialize": true
+    "Gender": 0
   },
   "MikiDjuricic13456": {
+    "ShouldSerialize": true,
     "RecordId": "mikiDjuricic13456",
     "BloodType": 0,
     "Patient": {
-      "Guest": false,
       "Lbo": 0,
-      "IsBanned": false,
-      "Address": {
-        "City": "Novi Sad",
-        "StreetNumber": "21a",
-        "Country": "Srbija",
-        "Street": "Vojvode Bojovica",
-        "Postcode": 21000
-      },
-      "Name": "miki",
-      "Surname": "Djuricic",
-      "Email": "dsa@adsa",
       "Jmbg": "13456",
-      "Phone": "06105111331",
-      "Employed": false,
-      "Birthday": "0001-01-01T00:00:00",
-      "Username": "Djura",
-      "Password": "1311"
+      "ShouldSerialize": false
     },
     "Weight": "80 kg",
     "Height": "170 cm",
@@ -72,7 +59,6 @@
       "Job": "asistent"
     },
     "MartialStatus": "Single",
-    "Gender": 0,
-    "ShouldSerialize": true
+    "Gender": 0
   }
 }
