@@ -44,7 +44,7 @@ namespace TechHealth.View.PatientView       //dodati IDappointment
 
         private void Button_Click_Close(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            Close();
         }
 
         private void Button_Click_Confirm(object sender, RoutedEventArgs e)
@@ -54,14 +54,14 @@ namespace TechHealth.View.PatientView       //dodati IDappointment
             appointment.Date = DateTime.Parse(Date.Text);
             appointment.StartTime = TxtTime.Text;
             appointment.AppointmentType = AppointmentType.examination;
-            appointment.Doctor = doctors[CbDoctor.SelectedIndex]; 
+            appointment.Doctor = doctors[CbDoctor.SelectedIndex];
             appointment.IdAppointment = Guid.NewGuid().ToString("N");
 
             appointmentController.Create(appointment);
             apt.Add(appointment);
 
             //AppointmentRepository.Instance.Create(appointment); 
-            this.Close();
+            Close();
 
         }
     }

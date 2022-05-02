@@ -235,6 +235,7 @@
       <DependentUpon>TherapyWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="DTO\EquipmentReallocationDTO.cs" />
+    <Compile Include="DTO\RecommendedAppointmentDTO.cs" />
     <Compile Include="Exceptions\AppointmentConflictException.cs" />
     <Compile Include="JsonIgnore\ShouldSerializeAppointment.cs" />
     <Compile Include="LoginWindow.xaml.cs">
@@ -250,6 +251,7 @@
     <Compile Include="Model\Anamnesis.cs" />
     <Compile Include="Model\EquipmentType.cs" />
     <Compile Include="Model\PatientAllergens.cs" />
+    <Compile Include="Model\PatientRecommendType.cs" />
     <Compile Include="Model\RoomEquipment.cs" />
     <Compile Include="Model\RoomRenovation.cs" />
     <Compile Include="Model\Substance.cs" />
