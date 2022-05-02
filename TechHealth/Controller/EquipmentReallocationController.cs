@@ -16,5 +16,10 @@ namespace TechHealth.Controller
         {
             return eqReallocationService.Create(dto);
         }
+
+        public void SubmitReallocation(EquipmentReallocationDTO dto)
+        {
+            eqReallocationService.SubmitReallocation(dto);
+        }
     }
 }
