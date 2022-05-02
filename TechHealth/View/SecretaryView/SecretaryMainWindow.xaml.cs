@@ -121,6 +121,25 @@ namespace TechHealth.View.SecretaryView
             new AllergensView(patient).ShowDialog();
             Update();
         }
+        private void Button_Click_MedicalRecord(object sender, RoutedEventArgs e)
+        {
+            if (accountList.SelectedIndex == -1)
+            {
+                MessageBox.Show("You didn't select an account.");
+                return;
+            }
+            Patient patient = (Patient)accountList.SelectedItems[0];
+            MedicalRecord medicalRecord = new MedicalRecord();
+            foreach (var mr in MedicalRecordRepository.Instance.GetAll().Values)
+            {
+                if (mr.Patient.Jmbg.Equals(patient.Jmbg))
+                {
+                    medicalRecord = mr;
+                }
+            }
+            new MedicalRecordView(medicalRecord).ShowDialog();
+            Update();
+        }
         public void Update()
         {
             users.Clear();
