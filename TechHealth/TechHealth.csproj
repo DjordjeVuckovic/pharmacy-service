@@ -159,6 +159,7 @@
     <Compile Include="Controller\EquipmentReallocationController.cs" />
     <Compile Include="Controller\MedicalRecordController.cs" />
     <Compile Include="Controller\MedicineController.cs" />
+    <Compile Include="Controller\NotificationController.cs" />
     <Compile Include="Controller\PatientAllergensController.cs" />
     <Compile Include="Controller\PatientController.cs" />
     <Compile Include="Controller\PrescribeMedicineController.cs" />
@@ -250,6 +251,8 @@
     </Compile>
     <Compile Include="Model\Anamnesis.cs" />
     <Compile Include="Model\EquipmentType.cs" />
+    <Compile Include="Model\Notification.cs" />
+    <Compile Include="Model\NotifType.cs" />
     <Compile Include="Model\PatientAllergens.cs" />
     <Compile Include="Model\PatientRecommendType.cs" />
     <Compile Include="Model\RoomEquipment.cs" />
@@ -267,10 +270,14 @@
     <Compile Include="Repository\DoctorRepository.cs" />
     <Compile Include="Repository\EquipmentReallocationRepository.cs" />
     <Compile Include="Repository\EquipmentRepository.cs" />
+    <Compile Include="Repository\GenericRepoNotifications.cs" />
     <Compile Include="Repository\GenericRepository.cs" />
+    <Compile Include="Repository\IGenericRepository.cs" />
+    <Compile Include="Repository\INotificationRepository.cs" />
     <Compile Include="Repository\ManagerRepository.cs" />
     <Compile Include="Repository\MedicalRecordRepository.cs" />
     <Compile Include="Repository\MedicineRepository.cs" />
+    <Compile Include="Repository\NotificationFileRepository.cs" />
     <Compile Include="Repository\PatientAllergensRepository.cs" />
     <Compile Include="Repository\PatientRepository.cs" />
     <Compile Include="Repository\PrescribeMedicineRepository.cs" />
@@ -289,6 +296,7 @@
     <Compile Include="Service\EquipmentService.cs" />
     <Compile Include="Service\MedicalRecordService.cs" />
     <Compile Include="Service\MedicineService.cs" />
+    <Compile Include="Service\NotificationService.cs" />
     <Compile Include="Service\PatientAllergensService.cs" />
     <Compile Include="Service\PatientService.cs" />
     <Compile Include="Service\PrescribeMedicineService.cs" />
@@ -342,6 +350,7 @@
     <Compile Include="View\PatientView\SuggestAppointment.xaml.cs">
       <DependentUpon>SuggestAppointment.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\PatientView\ViewModel\NotificationViewModel.cs" />
     <Compile Include="View\PatientView\View\AppointmentView.xaml.cs">
       <DependentUpon>AppointmentView.xaml</DependentUpon>
     </Compile>
@@ -356,6 +365,9 @@
     <Compile Include="View\PatientView\ViewModel\MainViewModel.cs" />
     <Compile Include="View\PatientView\View\HomeViewP.xaml.cs">
       <DependentUpon>HomeViewP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PatientView\View\NotificationView.xaml.cs">
+      <DependentUpon>NotificationView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\SecretaryView\AddAllergen.xaml.cs">
       <DependentUpon>AddAllergen.xaml</DependentUpon>
@@ -465,6 +477,7 @@
     <Resource Include="resources\1e.png" />
     <Resource Include="resources\1f.png" />
     <Content Include="Json\therapy.json" />
+    <Resource Include="reports.png" />
     <Content Include="resources\body-scan.png" />
     <Content Include="resources\diagnosis.png" />
     <Content Include="resources\ph.png" />
@@ -587,6 +600,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\PatientView\View\HomeViewP.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PatientView\View\NotificationView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

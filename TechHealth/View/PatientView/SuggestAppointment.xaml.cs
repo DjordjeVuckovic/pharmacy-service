@@ -25,11 +25,13 @@ namespace TechHealth.View.PatientView
 
     class SuggestedAppointment
     {
+        private List<Doctor> doctors;
+        private DateTime time;
         public SuggestedAppointment() { }
         public SuggestedAppointment(DateTime time)
         {
-            Time = time;
-            Doctors = DoctorRepository.Instance.GetAllToList();
+            this.Time = time;
+            this.Doctors = DoctorRepository.Instance.GetAllToList();
         }
         public List<Doctor> Doctors { get; set; }
         public DateTime Time { get; set; } 

@@ -57,10 +57,9 @@
                 </Grid>
             </Border>
             <Border Width="275"
-                    
-                    CornerRadius="10" Margin="0,26,20,27"
+                    CornerRadius="10"
+                    Margin="0,26,20,27"
                     >
-
                 <Border.Background>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
                         <GradientStop Color="Yellow" Offset="0"/>
