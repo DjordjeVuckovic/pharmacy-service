@@ -14,6 +14,7 @@ namespace TechHealth.View.PatientView.ViewModel
         public RelayCommand AppointmentViewCommand { get; set; }
         public AppointmentViewModel AppointmentVm { get; set; }
 
+
         private object _currentView;
 
         public object CurrentView

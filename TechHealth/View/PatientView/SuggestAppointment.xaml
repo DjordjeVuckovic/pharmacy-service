@@ -1,0 +1,74 @@
+﻿<Window x:Class="TechHealth.View.PatientView.SuggestAppointment"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TechHealth.View.PatientView"
+        xmlns:validationRules="clr-namespace:TechHealth.ValidationRules"
+
+        mc:Ignorable="d"
+        Title="Suggestions" Height="450" Width="400">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Dark.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/materialdesigncolor.bluegrey.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Grid Background="Gray" Margin="0,0,-231,-96">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Date:" HorizontalAlignment="Left" Margin="10,188,0,0" VerticalAlignment="Top" FontSize="20" Height="39" Width="84" Grid.Column="1" />
+        <Label Content="Doctor:" HorizontalAlignment="Left" Margin="10,188,0,0" VerticalAlignment="Top" FontSize="20" Height="39" Width="84"/>
+        <Label Content="Priority:" HorizontalAlignment="Left" Margin="10,107,0,0" VerticalAlignment="Top" FontSize="20" Height="39" Width="84"/>
+        <DatePicker HorizontalAlignment="Left" Margin="154,188,0,0"
+                    VerticalAlignment="Top"
+                    Width="147" Height="39"
+                    Background="#FFC0C0C0"
+                    Foreground="BlanchedAlmond"
+                    FontSize="14" x:Name="Date"
+                    Grid.Column="1">
+            <DatePicker.SelectedDate>
+                <Binding Path="Date" Mode="OneWayToSource"  
+                    UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <validationRules:FutureDateValidationRule
+                            ValidatesOnTargetUpdated="True"/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </DatePicker.SelectedDate>
+        </DatePicker>
+        <Label Content="Appointment Suggestion" HorizontalContentAlignment="Center"
+               Margin="91,10,90,0" VerticalAlignment="Top" FontWeight="Bold"
+               FontSize="18" Grid.ColumnSpan="2" Height="34"/>
+        <ComboBox HorizontalAlignment="Left"
+                  Margin="155,188,0,0" VerticalAlignment="Top"
+                  Width="147" Height="39" x:Name="CbDoctor"
+                  DisplayMemberPath="FullName"/>
+
+        <RadioButton x:Name="radioDoc" Content="Doctor" HorizontalAlignment="Left"
+                     Margin="155,112,0,0" VerticalAlignment="Top"
+                     Checked="CheckedDoctor" FontSize="20"
+                     Height="34" Width="84" IsChecked="False"
+                     />
+        <RadioButton x:Name="radioDate" Content="Date" Grid.Column="1" HorizontalAlignment="Left"
+                     Margin="79,112,0,0" VerticalAlignment="Top"
+                     FontSize="20" Height="34" Width="84" Checked="CheckedDate"
+                     IsChecked="False"/>
+
+
+        <Button Content="Confirm" HorizontalAlignment="Left" Margin="155,475,0,0"
+                VerticalAlignment="Top" FontSize="16" FontWeight="Normal"
+                Height="30" Width="95" RenderTransformOrigin="-0.291,0.467"
+                Background="#FF42C130" Click="Button_Click_Confirm" />
+        <Button Content="Close" HorizontalAlignment="Left" Margin="70,475,0,0"
+                VerticalAlignment="Top" Width="93" Height="30" FontSize="16"
+                Background="#FFEA9292" Click="Button_Click_Close" Grid.Column="1" />
+    </Grid>
+</Window>
