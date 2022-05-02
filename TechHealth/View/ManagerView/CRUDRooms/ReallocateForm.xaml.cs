@@ -54,7 +54,7 @@ namespace TechHealth.View.ManagerView.CRUDRooms
             dto.AmountMoving = Int32.Parse(TxtAmount.Text);
             dto.ReallocationTime = DpDateTime.SelectedDate;
             dto.ReallocationID = Guid.NewGuid().ToString("N");
-
+            //sve ovo bi trebalo da se spakuje u jednu funkciju koja bi isla u kontroller pa u service gde bi se ova logika izvrsavala
             if (dto.SourceRoomID != dto.DestinationRoomID)
             {
                 if (AppointmentRepository.Instance.CanDoReallocation(dto.ReallocationTime, dto.SourceRoomID, dto.DestinationRoomID))

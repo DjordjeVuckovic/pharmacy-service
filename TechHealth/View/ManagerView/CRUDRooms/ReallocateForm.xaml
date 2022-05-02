@@ -11,7 +11,7 @@
         <Label Content="From room:" HorizontalAlignment="Left" Margin="51,137,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White"/>
         <Label Content="To room:" HorizontalAlignment="Left" Margin="51,-30,0,0" VerticalAlignment="Center" FontSize="14" Foreground="White"/>
         <Label Content="Amount:" HorizontalAlignment="Left" Margin="51,268,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White"/>
-        <Label Content="Reallocation date:" HorizontalAlignment="Left" Margin="51,337,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <Label Content="Reallocation date:" HorizontalAlignment="Left" Margin="51,337,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White"/>
         <TextBox HorizontalAlignment="Left" Margin="207,82,0,0" VerticalAlignment="Top" Width="120" Height="21.96" x:Name="TxtEqId"/>
         <ComboBox HorizontalAlignment="Left" Margin="207,144,0,0" VerticalAlignment="Top" Width="120" x:Name="CbSourceRoom">
         </ComboBox>
