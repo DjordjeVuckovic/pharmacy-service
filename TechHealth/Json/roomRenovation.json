@@ -4,5 +4,11 @@
     "RenovationEnd": "2022-05-13T00:00:00",
     "RoomID": "S2",
     "RenovationID": "71cc56d1853640afb61d0dc3cf4f35cd"
+  },
+  "33e9069539b347b59dc49f2519e4d689": {
+    "RenovationStart": "2022-05-14T00:00:00",
+    "RenovationEnd": "2022-05-16T00:00:00",
+    "RoomID": "S3",
+    "RenovationID": "33e9069539b347b59dc49f2519e4d689"
   }
 }
