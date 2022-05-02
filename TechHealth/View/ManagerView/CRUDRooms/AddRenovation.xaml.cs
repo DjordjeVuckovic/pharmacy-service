@@ -63,8 +63,16 @@ namespace TechHealth.View.ManagerView.CRUDRooms
             {
                 if (AppointmentRepository.Instance.CanSetRenovation(r.RenovationStart, r.RenovationEnd, r.RoomID))  //da li ima app zakazan u tom periodu
                 {
-                    RoomRenovationRepository.Instance.Create(r);
-                    this.Close();
+                    if (!EquipmentReallocationRepository.Instance.IsReallocationHappening(r.RenovationStart, r.RenovationEnd, r.RoomID))
+                    {
+                        RoomRenovationRepository.Instance.Create(r);
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Reallocation is happening in that period!");
+                        return;
+                    }
                 }
                 else
                 {
