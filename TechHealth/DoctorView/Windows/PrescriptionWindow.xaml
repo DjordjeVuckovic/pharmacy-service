@@ -94,7 +94,7 @@
                 </DatePicker.SelectedDate>
             </DatePicker>
             <TextBox x:Name="TextBox1" Grid.Row="4" Text="{Binding Frequency}" Grid.Column="1" Margin="20,0,20,0" VerticalAlignment="Center" Height="30" ></TextBox>
-            <TextBox x:Name="TextBox2" Text="{Binding Usage}" Grid.Row="5" Grid.Column="1" Margin="20,0,20,0"  Height="30"></TextBox>
+            <TextBox x:Name="TextBox2" Text="{Binding Usage,Mode=TwoWay}" Grid.Row="5" Grid.Column="1" Margin="20,0,20,0"  Height="30"></TextBox>
             <TextBox x:Name="TextBox3" Text="{Binding MedicineData.SideEffects,Mode=TwoWay}" Grid.Row="6" Grid.Column="1" Margin="20,0,20,0"  Height="30" IsReadOnly="True"></TextBox>
             <TextBox Text="{Binding MedicineData.Allergens,Mode=TwoWay}"  Grid.Row="7" Grid.Column="1" Margin="20,0,20,0"  Height="30"></TextBox>
             <Border Grid.Row="0" Grid.RowSpan="8" Grid.Column="0" BorderThickness="0,0,2,0" BorderBrush="#50fa7b" />

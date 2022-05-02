@@ -154,14 +154,6 @@ namespace TechHealth.DoctorView.ViewModel
                 OnPropertyChanged(nameof(RoomData));
             }
         }
-        // private void ButtonBase_OnClick1()
-        // {
-        //     MessageBoxResult dialogResult = MessageBox.Show("Are you sure about that?", "Cancel appointment", MessageBoxButton.YesNo);
-        //     if(dialogResult==MessageBoxResult.Yes)
-        //     {
-        //         Close();
-        //     }
-        // }
         private void FillComboData()
         {
 

@@ -3,8 +3,6 @@
     "PrescriptionId": "5989895ddf804c2d8abb73b6630dcce1",
     "Medicine": {
       "MedicineId": "4e39d97e9ef24dea899335d58c4fa534",
-      "MedicineName": "Brufen",
-      "Approved": true,
       "ShouldSerialize": false
     },
     "Frequency": "1 x nedeljno",
@@ -15,6 +13,22 @@
     "Appointment": {
       "ShouldSerialize": false,
       "IdAppointment": "cf0ed05ba0df444ea7077cef26e53632"
+    }
+  },
+  "4ce1c3ce657a4ebda970d9f809c1a05f": {
+    "PrescriptionId": "4ce1c3ce657a4ebda970d9f809c1a05f",
+    "Medicine": {
+      "MedicineId": "4e39d97e9ef24dea899335d58c4fa534",
+      "ShouldSerialize": false
+    },
+    "Frequency": "2*nedljeno",
+    "Usage": "oralno",
+    "StartDate": "2022-05-01T00:00:00",
+    "FinishDate": "2022-05-02T00:00:00",
+    "ShouldSerialize": true,
+    "Appointment": {
+      "ShouldSerialize": false,
+      "IdAppointment": "6859e748147d4586a6c9744eb4962639"
     }
   }
 }

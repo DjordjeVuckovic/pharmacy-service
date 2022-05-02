@@ -79,6 +79,7 @@ namespace TechHealth.DoctorView.ViewModel
             appointment.Patient = PatientData;
             appointment.Room = RoomData;
             appointmentController.Update(appointment);
+            RecordViewModel.GetInstance().RefreshView();
             MessageBox.Show(@"You are successfully create update appointment");
             OnRequestClose(this, new EventArgs());
         }
