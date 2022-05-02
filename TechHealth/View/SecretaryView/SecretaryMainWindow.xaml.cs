@@ -24,6 +24,7 @@ namespace TechHealth.View.SecretaryView
         private ObservableCollection<Patient> guests = new ObservableCollection<Patient>();
         private PatientController patientController = new PatientController();
         private PatientAllergensController patientAllergensController = new PatientAllergensController();
+        private MedicalRecordController medicalRecordController = new MedicalRecordController();
         public SecretaryMainWindow()
         {
             InitializeComponent();
@@ -68,6 +69,7 @@ namespace TechHealth.View.SecretaryView
                     }
                 }
             }
+            medicalRecordController.Delete(p.Name + p.Surname + p.Jmbg);
         }
         private void Button_Click_Edit(object sender, RoutedEventArgs e)
         {
@@ -139,6 +141,11 @@ namespace TechHealth.View.SecretaryView
             }
             new MedicalRecordView(medicalRecord).ShowDialog();
             Update();
+        }
+        private void Button_Click_LogOut(object sender, RoutedEventArgs e)
+        {
+            new LoginWindow().Show();
+            Close();
         }
         public void Update()
         {
