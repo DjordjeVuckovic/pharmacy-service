@@ -6,24 +6,24 @@ namespace TechHealth.Service
 {
     class NotificationService
     {
-        private INotificationRepository notificationRepository = new NotificationFileRepository();
+        private NotificationFileRepository notificationRepository = new NotificationFileRepository();
 
         public NotificationService()
         {
         }
-        public List<Notification> GetAllNotification() => notificationRepository.GetAll();
+        public List<Notification> GetAllNotification() => notificationRepository.GetAllToList();
 
         public void UpdateNotification(Notification notification) => notificationRepository.Update(notification);
 
         public void DeleteNotification(Notification notification) => notificationRepository.Delete(notification.ID);
 
-        public void SaveNotification(Notification notification) => notificationRepository.Save(notification);
+        //public void SaveNotification(Notification notification) => notificationRepository.Save(notification);
 
         public void DeleteNotification(string ID) => notificationRepository.Delete(ID);
 
-        public Notification GetNotification(string key) => notificationRepository.FindById(key);
+        public Notification GetNotification(string key) => notificationRepository.GetById(key);
 
-        public void SaveOrUpdate(Notification notification) => notificationRepository.CreateOrUpdate(notification);
+        public void SaveOrUpdate(Notification notification) => notificationRepository.Create(notification);
 
         public List<Notification> ReadByUser(string userID)
         {

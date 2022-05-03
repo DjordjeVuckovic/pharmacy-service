@@ -4,26 +4,26 @@ using TechHealth.Model;
 
 namespace TechHealth.Repository
 {
-    public class NotificationFileRepository : GenericFileRepository<string, Notification, NotificationFileRepository>, INotificationRepository
+    public class NotificationFileRepository : GenericRepository<string, Notification>
     {
-        protected override string getKey(Notification entity)
+        protected override string GetKey(Notification entity)
         {
             return entity.ID;
         }
 
-        protected override string getPath()
+        protected override string GetPath()
         {
-            return @".\..\..\..\Data\obavestenja.json";
+            return @"../../Json/notifications.json";
         }
 
-        protected override void RemoveReferences(string key)
+        protected override void RemoveAllReference(string key)
         {
 
         }
 
-        public List<Notification> ReadByUser(String key)
+        public List<Notification> ReadByUser(string key)
         {
-            List<Notification> retVal = this.GetAll();
+            List<Notification> retVal = GetAllToList();
 
             for (int i = 0; i < retVal.Count; i++)
             {
@@ -39,9 +39,9 @@ namespace TechHealth.Repository
 
         }
 
-        public List<Notification> ReadPastNotificationsByUser(String key)
+        public List<Notification> ReadPastNotificationsByUser(string key)
         {
-            List<Notification> retVal = this.GetAll();
+            List<Notification> retVal = GetAllToList();
 
             for (int i = 0; i < retVal.Count; i++)
             {

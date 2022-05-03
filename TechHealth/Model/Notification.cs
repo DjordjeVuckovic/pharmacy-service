@@ -19,7 +19,7 @@ namespace TechHealth.Model
 
         }
 
-        public Notification(string author, DateTime time, string content, List<string> target)
+        public Notification(string author, int v, DateTime time, string content, List<string> target)
         {
             Author = author;
             Time = time;
