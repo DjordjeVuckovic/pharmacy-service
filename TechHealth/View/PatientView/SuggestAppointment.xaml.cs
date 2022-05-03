@@ -16,7 +16,7 @@ namespace TechHealth.View.PatientView
     /// </summary>
     /// 
 
-    class TerminZaPreporuku
+    /*class TerminZaPreporuku
     {
         private List<Doctor> doctors;
         private DateTime time;
@@ -28,7 +28,7 @@ namespace TechHealth.View.PatientView
         }
         public List<Doctor> Doctors { get; set; }
         public DateTime Time { get; set; }
-    }
+    }*/
 
 
     public partial class SuggestAppointment : Window //da li ovde treba user control
@@ -50,7 +50,8 @@ namespace TechHealth.View.PatientView
             apList = AppointmentRepository.Instance.GetAllToList();
             suggestedAppointmentList = new List<Appointment>();
             suggestedApp = new List<SuggestAppointment>();
-            doctors = new DoctorController().GetDoctorsForExamination();
+            doctors = DoctorRepository.Instance.GetAllToList();
+            CbDoctor.ItemsSource = doctors;
             DataContext = this;
         }
 
@@ -80,13 +81,12 @@ namespace TechHealth.View.PatientView
 
         private void CheckedDoctor(object sender, RoutedEventArgs e)
         {
-            CbDoctor.IsHitTestVisible = false;
+            
         }
 
         private void CheckedDate(object sender, RoutedEventArgs e)
         {
-            CbDoctor.SelectedIndex = -1;
-            CbDoctor.IsHitTestVisible = false;
+           
         }
 
         private void Button_Click_Close(object sender, RoutedEventArgs e)

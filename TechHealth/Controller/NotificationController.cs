@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using TechHealth.Model;
+using TechHealth.Repository;
 using TechHealth.Service;
 
 namespace TechHealth.Controller
