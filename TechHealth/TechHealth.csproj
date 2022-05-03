@@ -372,6 +372,9 @@
     <Compile Include="View\SecretaryView\AddAllergen.xaml.cs">
       <DependentUpon>AddAllergen.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\SecretaryView\AddAppointmentSecretary.xaml.cs">
+      <DependentUpon>AddAppointmentSecretary.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\SecretaryView\AddGuest.xaml.cs">
       <DependentUpon>AddGuest.xaml</DependentUpon>
     </Compile>
@@ -609,6 +612,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\SecretaryView\AddAllergen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SecretaryView\AddAppointmentSecretary.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

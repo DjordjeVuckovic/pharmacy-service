@@ -21,9 +21,11 @@ namespace TechHealth.View.SecretaryView
     public partial class AppointmentsViewSecretary : Window
     {
         private ObservableCollection<Appointment> examinations = new ObservableCollection<Appointment>();
+        private AppointmentType type1;
         public AppointmentsViewSecretary(DateTime date, AppointmentType type)
         {
             InitializeComponent();
+            type1 = type;
             foreach (var a in AppointmentRepository.Instance.GetAll().Values)
             {
                 if (a.Date.Equals(date) && a.AppointmentType.Equals(type))
@@ -33,6 +35,16 @@ namespace TechHealth.View.SecretaryView
             }
             pickedDate.Content = date;
             examinationList.ItemsSource = examinations;
+        }
+        private void Button_Click_Add(object sender, RoutedEventArgs e)
+        {
+            new AddAppointmentSecretary(type1).ShowDialog();
+        }
+        private void Button_Click_Edit(object sender, RoutedEventArgs e)
+        {
+        }
+        private void Button_Click_Delete(object sender, RoutedEventArgs e)
+        {
         }
     }
 }
