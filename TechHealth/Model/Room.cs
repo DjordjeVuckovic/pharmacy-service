@@ -29,17 +29,17 @@ namespace TechHealth.Model
             availability = available;
         }
 
-        //public bool ShouldSerializeroomTypes()
-        //{
-        //    return ShouldSerialize;
-        //}
-        //public bool ShouldSerializefloor()
-        //{
-        //    return ShouldSerialize;
-        //}
-        //public bool ShouldSerializeavailability()
-        //{
-        //    return ShouldSerialize;
-        //}
+        public bool ShouldSerializeroomTypes()
+        {
+            return ShouldSerialize;
+        }
+        public bool ShouldSerializefloor()
+        {
+            return ShouldSerialize;
+        }
+        public bool ShouldSerializeavailability()
+        {
+            return ShouldSerialize;
+        }
     }
 }

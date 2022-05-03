@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using TechHealth.Model;
 using TechHealth.Service;
 
@@ -12,6 +13,10 @@ namespace TechHealth.Controller
             prescribeMedicineService.Create(prescription);
         }
 
+        public ObservableCollection<Prescription> GetAllByPatientId(string patientId)
+        {
+            return new ObservableCollection<Prescription>(prescribeMedicineService.GetAllByPatientId(patientId));
+        }
         public List<Prescription> GetAll()
         {
             return prescribeMedicineService.GetAll();

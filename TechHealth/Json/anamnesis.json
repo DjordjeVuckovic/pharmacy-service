@@ -1,93 +1,12 @@
 {
-  "3a23b45b2ffe4225bd6b83378713fd1e": {
-    "AnmnesisAppointment": {
+  "3e2c337f670f49928fecbb5188aeb65e": {
+    "Appointment": {
       "ShouldSerialize": false,
-      "Emergent": false,
-      "StartTime": "14",
-      "FinishTime": "14",
-      "IdAppointment": "13411eb404174849b60ddc01d4a193f0"
+      "IdAppointment": "5c9c2749cdc34f7d905fb62a431626fc"
     },
-    "MainIssue": "a",
-    "AnamnesisDate": "2022-04-29T13:20:58.6604017+02:00",
-    "AnamnesisId": "3a23b45b2ffe4225bd6b83378713fd1e",
-    "OtherSymptoms": "",
-    "GeneralAmnesis": "",
-    "Cns": "",
-    "Eye": "",
-    "Neck": "",
-    "Mss": "",
-    "Skin": "",
-    "Ear": "",
-    "Cus": "",
-    "Infectious": "",
-    "Ugs": "",
-    "Respiratory": "",
-    "Mouth": "",
-    "Gi": ""
-  },
-  "1c2ada9a1ad241cc8406ae7710e1d4ad": {
-    "AnmnesisAppointment": {
-      "ShouldSerialize": false,
-      "Emergent": false,
-      "StartTime": "11",
-      "FinishTime": "12",
-      "IdAppointment": "a03e3793a29b457cb9f1226315dfed34"
-    },
-    "MainIssue": "aa",
-    "AnamnesisDate": "2022-04-29T13:44:36.1473971+02:00",
-    "AnamnesisId": "1c2ada9a1ad241cc8406ae7710e1d4ad",
-    "OtherSymptoms": "",
-    "GeneralAmnesis": "",
-    "Cns": "",
-    "Eye": "",
-    "Neck": "",
-    "Mss": "",
-    "Skin": "",
-    "Ear": "",
-    "Cus": "",
-    "Infectious": "",
-    "Ugs": "",
-    "Respiratory": "",
-    "Mouth": "",
-    "Gi": ""
-  },
-  "33591352da93485fab6a632f0d186b67": {
-    "AnmnesisAppointment": {
-      "ShouldSerialize": false,
-      "Emergent": false,
-      "StartTime": "11",
-      "FinishTime": "12",
-      "IdAppointment": "6bc4a6274d7b4fcea0e09cd9b9954fba"
-    },
-    "MainIssue": "a",
-    "AnamnesisDate": "2022-04-29T20:57:34.5441958+02:00",
-    "AnamnesisId": "33591352da93485fab6a632f0d186b67",
-    "OtherSymptoms": "a",
-    "GeneralAmnesis": "",
-    "Cns": "",
-    "Eye": "",
-    "Neck": "",
-    "Mss": "",
-    "Skin": "",
-    "Ear": "",
-    "Cus": "",
-    "Infectious": "",
-    "Ugs": "",
-    "Respiratory": "",
-    "Mouth": "",
-    "Gi": ""
-  },
-  "40ea5c1cdd6343c882be567f91cd768a": {
-    "AnmnesisAppointment": {
-      "ShouldSerialize": false,
-      "Emergent": false,
-      "StartTime": "11",
-      "FinishTime": "12",
-      "IdAppointment": "aecf389cf7ae4fe591e24c42e165dd49"
-    },
-    "MainIssue": "a",
-    "AnamnesisDate": "2022-04-29T21:09:54.7645265+02:00",
-    "AnamnesisId": "40ea5c1cdd6343c882be567f91cd768a",
+    "MainSymptom": "a",
+    "AnamnesisDate": "2022-05-02T21:30:52.3233853+02:00",
+    "AnamnesisId": "3e2c337f670f49928fecbb5188aeb65e",
     "OtherSymptoms": "a",
     "GeneralAmnesis": "a",
     "Cns": "",
@@ -103,19 +22,16 @@
     "Mouth": "",
     "Gi": ""
   },
-  "90c7e7d9e8f846e1ab876be33051c042": {
-    "AnmnesisAppointment": {
+  "ed6a29859d924769995f899e27709661": {
+    "Appointment": {
       "ShouldSerialize": false,
-      "Emergent": false,
-      "StartTime": "12",
-      "FinishTime": "13",
-      "IdAppointment": "ba60b6f7af7c47ecb56763e1126fd32e"
+      "IdAppointment": "cd10583b9dea4d628447d6c12510808b"
     },
-    "MainIssue": "a",
-    "AnamnesisDate": "2022-04-29T21:17:00.3867594+02:00",
-    "AnamnesisId": "90c7e7d9e8f846e1ab876be33051c042",
-    "OtherSymptoms": "a",
-    "GeneralAmnesis": "a",
+    "MainSymptom": "glava bol",
+    "AnamnesisDate": "2022-05-02T21:34:21.6854885+02:00",
+    "AnamnesisId": "ed6a29859d924769995f899e27709661",
+    "OtherSymptoms": "temperatura",
+    "GeneralAmnesis": "38.2",
     "Cns": "",
     "Eye": "",
     "Neck": "",
@@ -129,97 +45,16 @@
     "Mouth": "",
     "Gi": ""
   },
-  "cdf932f040a949fc9079f688ada5a50f": {
-    "AnmnesisAppointment": {
+  "a9cdce96149342d1a36bdc884692f673": {
+    "Appointment": {
       "ShouldSerialize": false,
-      "Emergent": false,
-      "StartTime": "12",
-      "FinishTime": "13",
-      "IdAppointment": "ba60b6f7af7c47ecb56763e1126fd32e"
+      "IdAppointment": "31890aaae47c4166a31ccbdeb306bb82"
     },
-    "MainIssue": "a",
-    "AnamnesisDate": "2022-04-29T21:19:54.7525939+02:00",
-    "AnamnesisId": "cdf932f040a949fc9079f688ada5a50f",
-    "OtherSymptoms": "a",
-    "GeneralAmnesis": "a",
-    "Cns": "",
-    "Eye": "",
-    "Neck": "",
-    "Mss": "",
-    "Skin": "",
-    "Ear": "",
-    "Cus": "",
-    "Infectious": "",
-    "Ugs": "",
-    "Respiratory": "",
-    "Mouth": "",
-    "Gi": ""
-  },
-  "bbb17c86098740fe9c4452a9166c6d87": {
-    "AnmnesisAppointment": {
-      "ShouldSerialize": false,
-      "Emergent": false,
-      "StartTime": "11",
-      "FinishTime": "12",
-      "IdAppointment": "202d3d9cf9844a029cf8cf2a0e4ed6dc"
-    },
-    "MainIssue": "a",
-    "AnamnesisDate": "2022-04-29T21:20:31.5992918+02:00",
-    "AnamnesisId": "bbb17c86098740fe9c4452a9166c6d87",
-    "OtherSymptoms": "a",
-    "GeneralAmnesis": "a",
-    "Cns": "aa",
-    "Eye": "",
-    "Neck": "",
-    "Mss": "",
-    "Skin": "",
-    "Ear": "",
-    "Cus": "",
-    "Infectious": "",
-    "Ugs": "",
-    "Respiratory": "",
-    "Mouth": "",
-    "Gi": ""
-  },
-  "9e350fbbe435456dbd878ea449033562": {
-    "AnmnesisAppointment": {
-      "ShouldSerialize": false,
-      "Emergent": false,
-      "StartTime": "11",
-      "FinishTime": "12",
-      "IdAppointment": "6859e748147d4586a6c9744eb4962639"
-    },
-    "MainIssue": "a",
-    "AnamnesisDate": "2022-04-29T21:42:50.861474+02:00",
-    "AnamnesisId": "9e350fbbe435456dbd878ea449033562",
-    "OtherSymptoms": "a",
-    "GeneralAmnesis": "a",
-    "Cns": "",
-    "Eye": "",
-    "Neck": "",
-    "Mss": "",
-    "Skin": "",
-    "Ear": "",
-    "Cus": "",
-    "Infectious": "",
-    "Ugs": "",
-    "Respiratory": "",
-    "Mouth": "",
-    "Gi": ""
-  },
-  "fcbfd2bb0ee240029bb0371058b96034": {
-    "AnmnesisAppointment": {
-      "ShouldSerialize": false,
-      "Emergent": false,
-      "StartTime": "11",
-      "FinishTime": "12",
-      "IdAppointment": "cf0ed05ba0df444ea7077cef26e53632"
-    },
-    "MainIssue": "a",
-    "AnamnesisDate": "2022-04-29T21:52:27.9421318+02:00",
-    "AnamnesisId": "fcbfd2bb0ee240029bb0371058b96034",
-    "OtherSymptoms": "a",
-    "GeneralAmnesis": "a",
+    "MainSymptom": "aaaa",
+    "AnamnesisDate": "2022-05-02T22:03:13.5450503+02:00",
+    "AnamnesisId": "a9cdce96149342d1a36bdc884692f673",
+    "OtherSymptoms": "qqq",
+    "GeneralAmnesis": "qqqq",
     "Cns": "",
     "Eye": "",
     "Neck": "",

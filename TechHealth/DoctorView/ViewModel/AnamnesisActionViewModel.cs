@@ -53,7 +53,7 @@ namespace TechHealth.DoctorView.ViewModel
             AppointmentStartTime= "Appointment StartTime:  " + SelectedItemAppointment.StartTimeD.ToString("t");
             AppointmentFinishTime = "Appointment FinishTime:  " + SelectedItemAppointment.FinishTimeD.ToString("t");
             AnamesisDate="Anamesis Date:  " + SelectedAnamnesis.AnamnesisDate.ToString("d");
-            MainSymptom = "Main Symptom:  " + SelectedAnamnesis.MainIssue;
+            MainSymptom = "Main Symptom:  " + SelectedAnamnesis.MainSymptom;
             OtherSymptoms = "Other Symptoms:  " + SelectedAnamnesis.OtherSymptoms;
             GeneralAnamnesis = "General Anamnesis:  " + SelectedAnamnesis.GeneralAmnesis;
             AppointmentTypeLabel = "Appointment Type: " + SelectedItemAppointment.AppointmentType; 

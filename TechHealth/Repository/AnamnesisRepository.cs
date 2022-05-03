@@ -32,7 +32,7 @@ namespace TechHealth.Repository
 
         protected override void ShouldSerialize(Anamnesis entity)
         {
-            entity.AnmnesisAppointment.ShouldSerialize = false;
+            entity.Appointment.ShouldSerialize = false;
         }
 
         public List<Anamnesis> GetByDoctorId(string id)
@@ -40,7 +40,7 @@ namespace TechHealth.Repository
             List<Anamnesis> anamneses = new List<Anamnesis>();
             foreach (var t in GetAllToList())
             {
-                if (id.Equals(t.AnmnesisAppointment.Doctor.Jmbg))
+                if (id.Equals(t.Appointment.Doctor.Jmbg))
                 {
                     anamneses.Add(t);
                 }
@@ -53,7 +53,7 @@ namespace TechHealth.Repository
             Anamnesis retval=null;
             foreach (var t in GetAllToList())
             {
-                if (appointmentId == t.AnmnesisAppointment.IdAppointment)
+                if (appointmentId == t.Appointment.IdAppointment)
                 {
                     retval = t;
                     break;

@@ -39,7 +39,7 @@ namespace TechHealth.DoctorView.MedicalHistory
 
         private void FillUpFields()
         {
-            Txt1.Text = currentAnamnesis.MainIssue;
+            Txt1.Text = currentAnamnesis.MainSymptom;
             Txt2.Text = currentAnamnesis.OtherSymptoms;
             Txt3.Text = currentAnamnesis.GeneralAmnesis;
             Txt4.Text =  currentAnamnesis.Cns; 

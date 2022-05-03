@@ -54,8 +54,8 @@ namespace TechHealth.DoctorView.MedicalHistory
             RandomGenerator randomGenerator = new RandomGenerator();
             Anamnesis anamnesis = new Anamnesis
             {
-                AnmnesisAppointment = myappointment,
-                MainIssue = Txt1.Text,
+                Appointment = myappointment,
+                MainSymptom = Txt1.Text,
                 AnamnesisDate = DateTime.Now,
                 AnamnesisId = randomGenerator.GenerateRandHash(),
                 OtherSymptoms = Txt2.Text,

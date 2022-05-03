@@ -13,10 +13,10 @@ namespace TechHealth.DoctorView.ViewModel
         public RelayCommand MedicineRecordCommand { get; set; }
         private ObservableCollection<Patient> patients;
         private Patient selectedItem;
-        private TherapyWindow therapyWindow;
-        private MedicalRecordViewModel MedicalRecordViewModel;
-        private readonly MainViewModel mainViewModel;
+        private HistoryOfCareViewModel historyOfCareViewModel;
+        private MedicalRecordViewModel medicalRecordViewModel;
         public string DoctorId { get; set; }
+        public RelayCommand HistoryCommand { get;}
         public Patient SelectedItem
         {
             get
@@ -47,7 +47,7 @@ namespace TechHealth.DoctorView.ViewModel
         {
             patients = new ObservableCollection<Patient>(PatientRepository.Instance.GetAllToList());
             //currentViewPatient = this;
-            //TherapyCommand= new RelayCommand(param => Execute(), param => CanExecute());
+            HistoryCommand= new RelayCommand(param => Execute(), param => CanExecute());
             MedicineRecordCommand = new RelayCommand(param => Execute1(), param => CanExecute1());
             
         }
@@ -64,8 +64,8 @@ namespace TechHealth.DoctorView.ViewModel
 
         private void Execute()
         {
-            //therapyWindow = new TherapyWindow(SelectedItem);
-            //therapyWindow.ShowDialog();
+            historyOfCareViewModel = new HistoryOfCareViewModel(SelectedItem);
+            MainViewModel.GetInstance().CurrentView = historyOfCareViewModel;
         }
         private bool CanExecute1()
         {
@@ -79,8 +79,8 @@ namespace TechHealth.DoctorView.ViewModel
 
         private void Execute1()
         {
-            MedicalRecordViewModel = new MedicalRecordViewModel(SelectedItem);
-            MainViewModel.GetInstance().CurrentView = MedicalRecordViewModel;
+            medicalRecordViewModel = new MedicalRecordViewModel(SelectedItem);
+            MainViewModel.GetInstance().CurrentView = medicalRecordViewModel;
         }
     }
 }

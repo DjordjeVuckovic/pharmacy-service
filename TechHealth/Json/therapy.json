@@ -1,13 +1,13 @@
 {
-  "f344de9d99734cc2ad7ba802b620bb7f": {
-    "TherapyId": "f344de9d99734cc2ad7ba802b620bb7f",
-    "StartDate": "2022-05-01T00:00:00",
+  "b8262160fc60440f8c61dbe886120336": {
+    "TherapyId": "b8262160fc60440f8c61dbe886120336",
+    "StartDate": "2022-05-02T00:00:00",
     "FinishDate": "2022-05-03T00:00:00",
-    "Frequency": "1x",
-    "Description": "aaa",
+    "Frequency": "11",
+    "Description": "aaaa",
     "Appointment": {
       "ShouldSerialize": false,
-      "IdAppointment": "cf0ed05ba0df444ea7077cef26e53632"
+      "IdAppointment": "31890aaae47c4166a31ccbdeb306bb82"
     },
     "ShouldSerialize": true
   }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows.Documents;
 using PostSharp.Patterns.Model;
 
 namespace TechHealth.Model
@@ -6,9 +7,8 @@ namespace TechHealth.Model
     
     public class Anamnesis
     {
-        public Appointment AnmnesisAppointment { get; set; }
-        //public MainIssue MainIssue { get; set; }
-        public string MainIssue { get; set; }
+        public Appointment Appointment { get; set; }
+        public string MainSymptom { get; set; }
         public DateTime AnamnesisDate { get; set; }
         public string AnamnesisId { get; set; }
         public string OtherSymptoms { get; set; }
@@ -25,5 +25,8 @@ namespace TechHealth.Model
         public string Respiratory { get; set; }
         public string Mouth { get; set; }
         public string Gi { get; set; }
+        //public bool ShouldSerialize { get; set; }
+
+        
     }
 }
