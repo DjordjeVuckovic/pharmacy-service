@@ -1,14 +1,9 @@
 ﻿using System.Collections.ObjectModel;
-using System.Windows;
-using System.Windows.Controls;
-using TechHealth.DoctorView.CRUDAppointments;
-using TechHealth.DoctorView.ViewModel;
 using TechHealth.Model;
-using TechHealth.Repository;
 
 namespace TechHealth.DoctorView.View
 {
-    public partial class AppointmentsView 
+    public partial class AppointmentsView
     {
         public AppointmentsView()
         {
@@ -72,6 +67,6 @@ namespace TechHealth.DoctorView.View
                 MessageBox.Show("You are successfully deleted an appointment");
             }
         }*/
-        
+
     }
-    }
+}

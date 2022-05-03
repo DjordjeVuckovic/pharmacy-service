@@ -1,7 +1,4 @@
-﻿using System;
-using System.Windows;
-using TechHealth.Model;
-using TechHealth.Repository;
+﻿using System.Windows;
 
 namespace TechHealth.DoctorView.Windows
 {

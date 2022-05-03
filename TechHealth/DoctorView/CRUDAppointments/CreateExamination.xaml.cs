@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Windows;
-using TechHealth.DoctorView.MedicalHistory;
-using TechHealth.DoctorView.View;
-using TechHealth.DoctorView.ViewModel;
-using TechHealth.Model;
-using TechHealth.Repository;
-using MessageBox = System.Windows.MessageBox;
+﻿using System.Windows;
 
 namespace TechHealth.DoctorView.CRUDAppointments
 {

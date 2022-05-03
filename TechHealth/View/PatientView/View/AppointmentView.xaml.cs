@@ -7,7 +7,6 @@ using TechHealth.Annotations;
 using TechHealth.Core;
 using TechHealth.Model;
 using TechHealth.Repository;
-using TechHealth.View.PatientView.ViewModel;
 
 namespace TechHealth.View.PatientView.View
 {
@@ -71,7 +70,7 @@ namespace TechHealth.View.PatientView.View
                 Appointment.Remove(ap);
                 MessageBox.Show("You have successfully deleted selected appointment");
             }
-                
+
         }
 
         private bool CanExecute()
@@ -91,7 +90,7 @@ namespace TechHealth.View.PatientView.View
 
         private void ExecuteUpdate(Appointment selected)
         {
-            if(dataAppointments.SelectedIndex == -1)
+            if (dataAppointments.SelectedIndex == -1)
             {
                 MessageBox.Show("You must select an appointment that you want to change");
             }

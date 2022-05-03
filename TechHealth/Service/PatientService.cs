@@ -10,18 +10,18 @@ using TechHealth.Repository;
 
 namespace TechHealth.Service
 {
-   public class PatientService
-   {
-      
-      public Patient GetById(string patientId)
-      {
-         throw new NotImplementedException();
-      }
-      
-      public List<Patient> GetAll()
-      {
-         return PatientRepository.Instance.GetAllToList();
-      }
+    public class PatientService
+    {
+
+        public Patient GetById(string patientId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Patient> GetAll()
+        {
+            return PatientRepository.Instance.GetAllToList();
+        }
 
         public bool Create(Patient patient)
         {

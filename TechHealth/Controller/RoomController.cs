@@ -10,8 +10,8 @@ using TechHealth.Service;
 
 namespace TechHealth.Controller
 {
-   public class RoomController
-   {
+    public class RoomController
+    {
         private readonly RoomService roomService = new RoomService();
 
         public Room GetById(string roomId)

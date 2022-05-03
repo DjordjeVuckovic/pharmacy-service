@@ -1,5 +1,4 @@
 ﻿using System.Windows;
-using TechHealth.DoctorView.View;
 using TechHealth.DoctorView.ViewModel;
 
 namespace TechHealth.DoctorView

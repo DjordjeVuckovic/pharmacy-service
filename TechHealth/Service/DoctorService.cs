@@ -10,28 +10,54 @@ using TechHealth.Repository;
 
 namespace TechHealth.Service
 {
-   public class DoctorService
-   {
+    public class DoctorService
+    {
 
-      public Doctor GetById(string doctorId)
-      {
-         return  DoctorRepository.Instance.GetDoctorbyId(doctorId);
-      }
-      
-      public List<Doctor> GetAll()
-      {
-         throw new NotImplementedException();
-      }
-      
-      public List<Doctor> GetAllGeneral()
-      {
-         throw new NotImplementedException();
-      }
-      
-      public List<Doctor> GetAllSpecialist()
-      {
-         throw new NotImplementedException();
-      }
-   
-   }
+        public Doctor GetById(string doctorId)
+        {
+            return DoctorRepository.Instance.GetDoctorbyId(doctorId);
+        }
+
+        public List<Doctor> GetAll()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Doctor> GetDoctorsForExamination()
+        {
+            List<Doctor> doctorsForExamination = GetAll();
+            for (int i = 0; i < doctorsForExamination.Count; i++)
+            {
+                if (doctorsForExamination[i].Specialization != SpecializationRepository.Instance.GetById(0)) //da li je ovo specijalizacija = 0 odnosno general
+                {
+                    doctorsForExamination.RemoveAt(i);
+                    i--;
+                }
+            }
+
+            return doctorsForExamination;
+        }
+
+        public List<Doctor> GetAllGeneral()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Doctor> GetAllSpecialist()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<string> GetExaminationDoctorsID()
+        {
+            List<string> ids = new List<string>();
+            List<Doctor> lekari = GetDoctorsForExamination();
+            foreach (Doctor l in lekari)
+            {
+                ids.Add(l.Jmbg);
+            }
+            return ids;
+        }
+
+    }
 }

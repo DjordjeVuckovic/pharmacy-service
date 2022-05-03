@@ -10,38 +10,38 @@ using TechHealth.Model;
 namespace TechHealth.Repository
 {
     public class AppointmentRepository : GenericRepository<string, Appointment>
-   {
-      private static readonly AppointmentRepository instance = new AppointmentRepository();
+    {
+        private static readonly AppointmentRepository instance = new AppointmentRepository();
 
-      // Explicit static constructor to tell C# compiler
-      // not to mark type as beforefieldinit
-      static AppointmentRepository()
-      {
-      }
+        // Explicit static constructor to tell C# compiler
+        // not to mark type as beforefieldinit
+        static AppointmentRepository()
+        {
+        }
 
-      private AppointmentRepository()
-      {
-      }
-      public static AppointmentRepository Instance => instance;
-      
-      public List<Appointment> GetByDoctorId(string id)
-      {
-         List<Appointment> appointments = new List<Appointment>();
-         foreach (var t in GetAllToList())
-         {
-            if (t.Doctor != null)
+        private AppointmentRepository()
+        {
+        }
+        public static AppointmentRepository Instance => instance;
+
+        public List<Appointment> GetByDoctorId(string id)
+        {
+            List<Appointment> appointments = new List<Appointment>();
+            foreach (var t in GetAllToList())
             {
-               if (id.Equals(t.Doctor.Jmbg))
-               {
-                  appointments.Add(t);
-               }
+                if (t.Doctor != null)
+                {
+                    if (id.Equals(t.Doctor.Jmbg))
+                    {
+                        appointments.Add(t);
+                    }
+                }
             }
-         }
 
-         return appointments;
-      }
-      
-      public List<Appointment> GetByPatientId(string patientId)
+            return appointments;
+        }
+
+        public List<Appointment> GetByPatientId(string patientId)
         {
             List<Appointment> appointments = new List<Appointment>();
             foreach (var p in GetAllToList())
@@ -107,27 +107,27 @@ namespace TechHealth.Repository
             else return true;
         }
         protected override string GetPath()
-      {
-         return @"../../Json/appointment.json";
-      }
+        {
+            return @"../../Json/appointment.json";
+        }
 
-      protected override string GetKey(Appointment entity)
-      {
-         return entity.IdAppointment;
-      }
+        protected override string GetKey(Appointment entity)
+        {
+            return entity.IdAppointment;
+        }
 
-      protected override void RemoveAllReference(string key)
-      {
-         throw new NotImplementedException();
-      }
+        protected override void RemoveAllReference(string key)
+        {
+            throw new NotImplementedException();
+        }
 
-      protected override void ShouldSerialize(Appointment entity)
-      {
+        protected override void ShouldSerialize(Appointment entity)
+        {
             entity.ShouldSerialize = true;
             //entity.Patient.ShouldSerialize = true;
             entity.Doctor.ShouldSerialize = true;
             //entity.Room.ShouldSerialize = true;
 
         }
-   }
+    }
 }

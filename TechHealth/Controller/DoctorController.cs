@@ -1,5 +1,5 @@
-﻿using TechHealth.Model;
-using TechHealth.Repository;
+﻿using System.Collections.Generic;
+using TechHealth.Model;
 using TechHealth.Service;
 
 namespace TechHealth.Controller
@@ -12,5 +12,7 @@ namespace TechHealth.Controller
         {
             return doctorService.GetById(doctorId);
         }
+
+        public List<Doctor> GetDoctorsForExamination() => doctorService.GetDoctorsForExamination();
     }
 }

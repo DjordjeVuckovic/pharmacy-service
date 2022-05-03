@@ -98,6 +98,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51">
       <HintPath>packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
       <Private>True</Private>
@@ -262,6 +263,7 @@
     <Compile Include="Model\MainIssue.cs" />
     <Compile Include="Model\RandomGenerator.cs" />
     <Compile Include="Model\Therapy.cs" />
+    <Compile Include="Model\TypeOfRecommendation.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Repository\AccountRepository.cs" />
     <Compile Include="Repository\AllergensRepository.cs" />
@@ -300,6 +302,15 @@
     <Compile Include="Service\PatientAllergensService.cs" />
     <Compile Include="Service\PatientService.cs" />
     <Compile Include="Service\PrescribeMedicineService.cs" />
+    <Compile Include="Service\RecommendationService\AppointmentDraft.cs" />
+    <Compile Include="Service\RecommendationService\AppointmentDraftPreparation.cs" />
+    <Compile Include="Service\RecommendationService\DateRecommendationStrategy.cs" />
+    <Compile Include="Service\RecommendationService\DoctorRecommendationDraftsTransformation.cs" />
+    <Compile Include="Service\RecommendationService\DoctorRecommendationStrategy.cs" />
+    <Compile Include="Service\RecommendationService\IRecommendationStrategy.cs" />
+    <Compile Include="Service\RecommendationService\ITransformDraftToAppointment.cs" />
+    <Compile Include="Service\RecommendationService\RecommendationService.cs" />
+    <Compile Include="Service\RecommendationService\RecommendedAppointmentController.cs" />
     <Compile Include="Service\RoomEquipmentService.cs" />
     <Compile Include="Service\RoomService.cs" />
     <Compile Include="Service\TherapyService.cs" />
@@ -347,6 +358,9 @@
     <Compile Include="View\PatientView\AddAppointment.xaml.cs">
       <DependentUpon>AddAppointment.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\PatientView\AppointmentNotification.xaml.cs">
+      <DependentUpon>AppointmentNotification.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\PatientView\SuggestAppointment.xaml.cs">
       <DependentUpon>SuggestAppointment.xaml</DependentUpon>
     </Compile>
@@ -368,6 +382,9 @@
     </Compile>
     <Compile Include="View\PatientView\View\NotificationView.xaml.cs">
       <DependentUpon>NotificationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PatientView\View\SuggestedAppointmentsView.xaml.cs">
+      <DependentUpon>SuggestedAppointmentsView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\SecretaryView\AddAllergen.xaml.cs">
       <DependentUpon>AddAllergen.xaml</DependentUpon>
@@ -583,6 +600,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\PatientView\AppointmentNotification.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\PatientView\SuggestAppointment.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -604,6 +625,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\PatientView\View\NotificationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PatientView\View\SuggestedAppointmentsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

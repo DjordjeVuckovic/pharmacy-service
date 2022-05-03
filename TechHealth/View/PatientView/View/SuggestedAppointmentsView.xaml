@@ -1,0 +1,60 @@
+﻿<Page x:Class="TechHealth.View.PatientView.View.SuggestedAppointmentsView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TechHealth.View.PatientView.View"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="600"
+      Title="SuggestedAppointmentsView">
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Dark.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.Blue.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+    <Grid Background="#FF323D52">
+        <StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="30">
+                <Button Width="150"  Name="Back" Click="Nazad_Click">Back</Button>
+                <Label HorizontalAlignment="Center" FontSize="20"
+                       Margin="150,0,0,0">Suggested appointments</Label>
+            </StackPanel>
+            <DataGrid x:Name="PreporuceniTerminiTabela"
+                      ItemsSource="{Binding Appointments}"
+                      IsReadOnly="True" 
+                  SelectionMode="Single" AutoGenerateColumns="False"
+                      HorizontalAlignment="Center" 
+                  Height="300" Margin="125,40,25,0"
+                      VerticalAlignment="Top" Width="450"
+                      BorderBrush="Black"
+                      HorizontalScrollBarVisibility="Hidden">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Doctor"
+                                        Binding="{Binding Doctor.FullName}"/>
+                    <DataGridTextColumn Header="Date"
+                                        Binding="{Binding Date,StringFormat=d}" />
+                    <DataGridTextColumn Header="Time"
+                                        Binding="{Binding StartTime, StringFormat=hh:mm}" />
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Padding="0" Width="60"
+                                        Background="#FF01C38D" x:Name="Zakazi"
+                                        Click="Zakazi_Click" Content="Zakaži"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+
+
+        </StackPanel>
+    </Grid>
+</Page>
+
+       

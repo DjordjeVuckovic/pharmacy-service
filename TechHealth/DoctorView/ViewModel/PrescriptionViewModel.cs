@@ -9,7 +9,7 @@ using MessageBox = System.Windows.Forms.MessageBox;
 
 namespace TechHealth.DoctorView.ViewModel
 {
-    public class PrescriptionViewModel:ViewModelBase
+    public class PrescriptionViewModel : ViewModelBase
     {
         public event EventHandler OnRequestClose;
         private Appointment appointment;
@@ -21,7 +21,7 @@ namespace TechHealth.DoctorView.ViewModel
         private List<ComboBoxGeneric<Medicine>> medicineComboBox = new List<ComboBoxGeneric<Medicine>>();
         private readonly MedicineController medicineController = new MedicineController();
         private readonly PrescribeMedicineController prescribeMedicineController = new PrescribeMedicineController();
-        
+
 
 
         public List<ComboBoxGeneric<Medicine>> MedicineComboBox
@@ -52,7 +52,8 @@ namespace TechHealth.DoctorView.ViewModel
                 OnPropertyChanged(nameof(SelectedAppointment));
             }
         }
-        public DateTime StartDate{
+        public DateTime StartDate
+        {
             get => startDate;
             set
             {
@@ -60,7 +61,8 @@ namespace TechHealth.DoctorView.ViewModel
                 OnPropertyChanged(nameof(StartDate));
             }
         }
-        public DateTime FinishDate{
+        public DateTime FinishDate
+        {
             get => finishDate;
             set
             {
@@ -88,7 +90,7 @@ namespace TechHealth.DoctorView.ViewModel
         }
         public string DoctorLabel { get; set; }
         public string PatientLabel { get; set; }
-        
+
         public RelayCommand FinishCommand { get; set; }
         public RelayCommand CancelCommand { get; set; }
         public PrescriptionViewModel(Appointment selectedItemAppointment)
@@ -99,12 +101,12 @@ namespace TechHealth.DoctorView.ViewModel
             PatientLabel = "Patient:  " + SelectedAppointment.Patient.FullName;
             FinishCommand = new RelayCommand(param => Execute(), param => CanExecute());
             CancelCommand = new RelayCommand(param => CloseWindow());
-            
+
         }
         private void CloseWindow()
         {
             DialogResult dialogResult = MessageBox.Show(@"Are you sure about that?", @"Cancel prescription", MessageBoxButtons.YesNo);
-            if(dialogResult==(DialogResult) MessageBoxResult.Yes)
+            if (dialogResult == (DialogResult)MessageBoxResult.Yes)
             {
                 OnRequestClose(this, new EventArgs());
             }
@@ -112,9 +114,9 @@ namespace TechHealth.DoctorView.ViewModel
 
         public bool CanExecute()
         {
-            if (Frequency != null && Usage != null && MedicineData !=null)
+            if (Frequency != null && Usage != null && MedicineData != null)
             {
-                if(StartDate<FinishDate)
+                if (StartDate < FinishDate)
                     return true;
             }
 
@@ -145,7 +147,7 @@ namespace TechHealth.DoctorView.ViewModel
                 Appointment = SelectedAppointment
             };
             prescribeMedicineController.Create(prescription);
-            
+
         }
 
         private void FillComboData()
@@ -153,11 +155,11 @@ namespace TechHealth.DoctorView.ViewModel
 
             foreach (var m in medicineController.GetAllApproved())
             {
-                medicineComboBox.Add(new ComboBoxGeneric<Medicine>() { DisplayText = m.MedicineName +  " - " + m.MainSubstance.SubstanceName, Entity = m });
+                medicineComboBox.Add(new ComboBoxGeneric<Medicine>() { DisplayText = m.MedicineName + " - " + m.MainSubstance.SubstanceName, Entity = m });
             }
-            
+
         }
- 
+
 
     }
 }

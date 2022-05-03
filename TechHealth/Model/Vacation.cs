@@ -7,12 +7,12 @@ using System;
 
 namespace TechHealth.Model
 {
-   public class Vacation
-   {
-      public DateTime startTime;
-      public DateTime finishTime;
-      public int vacationId;
-      public int personId;
-   
-   }
+    public class Vacation
+    {
+        public DateTime startTime;
+        public DateTime finishTime;
+        public int vacationId;
+        public int personId;
+
+    }
 }

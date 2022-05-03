@@ -1,6 +1,4 @@
 ﻿using System.Windows.Controls;
-using TechHealth.DoctorView.MedicalHistory;
-using TechHealth.DoctorView.ViewModel;
 
 namespace TechHealth.DoctorView.View
 {
@@ -12,7 +10,7 @@ namespace TechHealth.DoctorView.View
             //DataContext = new RecordViewModel();
 
         }
-        
-        
+
+
     }
 }

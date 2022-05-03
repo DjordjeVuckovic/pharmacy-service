@@ -6,11 +6,11 @@ using TechHealth.Model;
 
 namespace TechHealth.Conversions
 {
-    class AddressConverter:MarkupExtension, IValueConverter
+    class AddressConverter : MarkupExtension, IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            Address address= (Address)value;
+            Address address = (Address)value;
             return address.Street + "," + address.StreetNumber + "," + address.City + "," + address.Postcode + "," + address.Country;
         }
 
@@ -25,5 +25,5 @@ namespace TechHealth.Conversions
             return this;
         }
     }
-    
+
 }

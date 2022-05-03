@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Windows;
-using TechHealth.Controller;
-using TechHealth.Core;
-using TechHealth.DoctorView.View;
-using TechHealth.DoctorView.ViewModel;
-using TechHealth.Model;
-using TechHealth.Repository;
+﻿using System.Windows;
 
 namespace TechHealth.DoctorView.CRUDAppointments
 {
@@ -83,6 +74,6 @@ namespace TechHealth.DoctorView.CRUDAppointments
             }
         }*/
 
-       
+
     }
 }

@@ -1,9 +1,8 @@
 ﻿using System;
-using PostSharp.Patterns.Model;
 
 namespace TechHealth.Model
 {
-    
+
     public class Anamnesis
     {
         public Appointment AnmnesisAppointment { get; set; }

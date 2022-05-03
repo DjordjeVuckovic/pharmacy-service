@@ -8,7 +8,7 @@ using MessageBox = System.Windows.Forms.MessageBox;
 
 namespace TechHealth.DoctorView.ViewModel
 {
-    public class TherapyViewModel:ViewModelBase
+    public class TherapyViewModel : ViewModelBase
     {
         public event EventHandler OnRequestClose;
         private Appointment appointment;
@@ -49,9 +49,10 @@ namespace TechHealth.DoctorView.ViewModel
                 OnPropertyChanged(nameof(SelectedAppointment));
             }
         }
-        
-        
-        public DateTime StartDateTherapy{
+
+
+        public DateTime StartDateTherapy
+        {
             get => startDate;
             set
             {
@@ -59,7 +60,8 @@ namespace TechHealth.DoctorView.ViewModel
                 OnPropertyChanged(nameof(StartDateTherapy));
             }
         }
-        public DateTime FinishDateTherapy{
+        public DateTime FinishDateTherapy
+        {
             get => finishDate;
             set
             {
@@ -67,7 +69,8 @@ namespace TechHealth.DoctorView.ViewModel
                 OnPropertyChanged(nameof(FinishDateTherapy));
             }
         }
-        public string Description{
+        public string Description
+        {
             get => description;
             set
             {
@@ -88,12 +91,12 @@ namespace TechHealth.DoctorView.ViewModel
                 Description = Description
             };
             therapyController.Create(therapy);
-            
+
         }
         private void CloseWindow()
         {
             DialogResult dialogResult = MessageBox.Show(@"Are you sure about that?", @"Cancel appointment", MessageBoxButtons.YesNo);
-            if(dialogResult==(DialogResult) MessageBoxResult.Yes)
+            if (dialogResult == (DialogResult)MessageBoxResult.Yes)
             {
                 OnRequestClose(this, new EventArgs());
             }
@@ -101,9 +104,9 @@ namespace TechHealth.DoctorView.ViewModel
 
         public bool CanExecute()
         {
-            if (Frequency != null && Description != null )
+            if (Frequency != null && Description != null)
             {
-                if(StartDateTherapy<FinishDateTherapy)
+                if (StartDateTherapy < FinishDateTherapy)
                     return true;
             }
 

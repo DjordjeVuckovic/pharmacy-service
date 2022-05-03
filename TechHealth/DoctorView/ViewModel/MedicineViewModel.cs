@@ -1,13 +1,12 @@
 ﻿using System.Collections.ObjectModel;
 using TechHealth.Core;
-using TechHealth.DoctorView.View;
 using TechHealth.DoctorView.Windows;
 using TechHealth.Model;
 using TechHealth.Repository;
 
 namespace TechHealth.DoctorView.ViewModel
 {
-    public class MedicineViewModel:ViewModelBase
+    public class MedicineViewModel : ViewModelBase
     {
         public RelayCommand PrescribeCommand { get; set; }
         private ObservableCollection<Medicine> medicines;
@@ -41,7 +40,7 @@ namespace TechHealth.DoctorView.ViewModel
 
         public MedicineViewModel()
         {
-            
+
             medicines = new ObservableCollection<Medicine>(MedicineRepository.Instance.GetAllToList());
             //PrescribeCommand= new RelayCommand(param => Execute(), param => CanExecute());
         }
