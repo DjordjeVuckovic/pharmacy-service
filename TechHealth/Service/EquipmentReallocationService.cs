@@ -1,4 +1,9 @@
-﻿using System.Windows;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
 using TechHealth.DTO;
 using TechHealth.Model;
 using TechHealth.Repository;
@@ -17,9 +22,9 @@ namespace TechHealth.Service
             if (dto.SourceRoomID != dto.DestinationRoomID)
             {
                 if (AppointmentRepository.Instance.CanDoReallocation(dto.ReallocationTime, dto.SourceRoomID, dto.DestinationRoomID))
-                {
+                {     
                     if (RoomRenovationRepository.Instance.IsValidDate(dto.ReallocationTime, dto.SourceRoomID, dto.DestinationRoomID))
-                    {
+                    {    
                         RoomEquipment reDst = new RoomEquipment();
                         RoomEquipment reSrc = new RoomEquipment();
                         reDst = RoomEquipmentRepository.Instance.GetReByKey(dto.EquipmentName, dto.DestinationRoomID);
@@ -28,8 +33,8 @@ namespace TechHealth.Service
                         {
                             if (reSrc.Quantity >= dto.AmountMoving)
                             {
-
-                                EquipmentReallocationRepository.Instance.Create(dto);
+                                
+                                EquipmentReallocationRepository.Instance.Create(dto);   
                                 reDst.Quantity += dto.AmountMoving;
                                 RoomEquipmentRepository.Instance.Update(reDst);
 
@@ -80,11 +85,11 @@ namespace TechHealth.Service
                                 MessageBox.Show("Can't transfer that much!");
                             }
                         }
-                    }
-                    else
-                    {
-                        MessageBox.Show("Invalid date!");
-                    }
+                    } 
+                    else               
+                    {                                              
+                        MessageBox.Show("Invalid date!");      
+                    }                  
                 }
                 else
                 {

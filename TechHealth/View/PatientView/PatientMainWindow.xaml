@@ -16,7 +16,7 @@
     <Window.DataContext>
         <viewModelP:MainViewModel/>
     </Window.DataContext>
-
+    
     <Border Background="#272537"
             CornerRadius="20">
         <Grid>
@@ -36,7 +36,7 @@
                    Margin="20,0,0,0" Width="96" />
 
             <StackPanel Grid.Row="1">
-
+                
                 <RadioButton Content="Home"
                              Height="50"
                              Foreground="White"
@@ -77,13 +77,6 @@
                              FontSize="14"
                              Style="{StaticResource MenuButtonTheme}"/>
 
-                <RadioButton Content="Notifications"
-                             Height="50"
-                             Foreground="White"
-                             FontSize="14"
-                             Style="{StaticResource MenuButtonTheme}"
-                             Command="{Binding NotificationViewCommand}"/>
-
             </StackPanel>
 
             <TextBox Width="250"
@@ -98,6 +91,8 @@
                             Grid.Column="1"
                             Margin="10"
                             Content="{Binding CurrentView}"/>
+
+
         </Grid>
 
 

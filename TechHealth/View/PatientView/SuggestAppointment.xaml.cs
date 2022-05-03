@@ -1,13 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Shapes;
 using TechHealth.Controller;
-using TechHealth.DTO;
 using TechHealth.Model;
 using TechHealth.Repository;
-using TechHealth.Service.RecommendationService;
-using TechHealth.View.PatientView.View;
 
 namespace TechHealth.View.PatientView
 {
@@ -16,18 +23,16 @@ namespace TechHealth.View.PatientView
     /// </summary>
     /// 
 
-    class TerminZaPreporuku
+    class SuggestedAppointment
     {
-        private List<Doctor> doctors;
-        private DateTime time;
-        public TerminZaPreporuku() { }
-        public TerminZaPreporuku(DateTime time)
+        public SuggestedAppointment() { }
+        public SuggestedAppointment(DateTime time)
         {
-            this.Time = time;
-            this.Doctors = DoctorRepository.Instance.GetAllToList();
+            Time = time;
+            Doctors = DoctorRepository.Instance.GetAllToList();
         }
         public List<Doctor> Doctors { get; set; }
-        public DateTime Time { get; set; }
+        public DateTime Time { get; set; } 
     }
 
 
@@ -39,7 +44,7 @@ namespace TechHealth.View.PatientView
         List<SuggestAppointment> suggestedApp;
         //AppointmentController controller = new AppointmentController();
         List<Doctor> doctors;
-
+        
         private ObservableCollection<Appointment> apt;
         private DateTime time;
 
@@ -48,45 +53,23 @@ namespace TechHealth.View.PatientView
             InitializeComponent();
             patient = p;
             apList = AppointmentRepository.Instance.GetAllToList();
-            suggestedAppointmentList = new List<Appointment>();
-            suggestedApp = new List<SuggestAppointment>();
-            doctors = new DoctorController().GetDoctorsForExamination();
             DataContext = this;
         }
 
-        private void Preporuka()
-        {
-            if (radioDoc.IsChecked == true)
-            {
-                RecommendedAppointmentDTO recAppDTO = new RecommendedAppointmentDTO
-                    (PatientRecommendType.DoctorRecommendation, doctors[CbDoctor.SelectedIndex].Jmbg, (DateTime)StartDate.SelectedDate, (DateTime)EndDate.SelectedDate, patient.Jmbg);
-                RecommendedAppointmentController recController = new RecommendedAppointmentController();
-                suggestedAppointmentList = recController.GetRecommendedAppointments(recAppDTO);
-            }
-            else
-            {
-                RecommendedAppointmentDTO recAppDTO = new RecommendedAppointmentDTO(
-                    PatientRecommendType.DoctorRecommendation, null,
-                    (DateTime)StartDate.SelectedDate, (DateTime)EndDate.SelectedDate,
-                    patient.Jmbg);
-                RecommendedAppointmentController recController = new RecommendedAppointmentController();
-                suggestedAppointmentList = recController.GetRecommendedAppointments(recAppDTO);
-            }
-        }
 
-        public Patient Patient { get => patient; set => patient = value; }
-        public List<Doctor> Doctors { get => doctors; set => doctors = value; }
+
+
+
 
 
         private void CheckedDoctor(object sender, RoutedEventArgs e)
         {
-            CbDoctor.IsHitTestVisible = false;
+            Date.IsEnabled = false;
         }
 
         private void CheckedDate(object sender, RoutedEventArgs e)
         {
-            CbDoctor.SelectedIndex = -1;
-            CbDoctor.IsHitTestVisible = false;
+            CbDoctor.IsEnabled = false;
         }
 
         private void Button_Click_Close(object sender, RoutedEventArgs e)
@@ -96,11 +79,9 @@ namespace TechHealth.View.PatientView
 
         private void Button_Click_Confirm(object sender, RoutedEventArgs e)
         {
-            Preporuka();
-            SuggestedAppointmentsView preporuceni = new SuggestedAppointmentsView();
-            preporuceni.addTermini(suggestedAppointmentList);
+            
         }
 
-
+        
     }
 }

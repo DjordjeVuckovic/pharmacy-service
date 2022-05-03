@@ -1,9 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using TechHealth.Controller;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Shapes;
 using TechHealth.Model;
+using TechHealth.Controller;
 using TechHealth.Repository;
 
 namespace TechHealth.View.PatientView
@@ -15,7 +24,7 @@ namespace TechHealth.View.PatientView
     {
         private Appointment selected;
         private List<Doctor> doctors;
-
+        
         private AppointmentController appointmentController = new AppointmentController();
 
         public UpdateAppointment(Appointment newAppointment)
@@ -90,7 +99,7 @@ namespace TechHealth.View.PatientView
             {
                 return;
             }
-
+            
             AppointmentRepository.Instance.Update(selected);
             //appointmentController.Update(selected.Date, selected.StartTime, selected.AppointmentType, selected.Doctor, selected.IdAppointment);
             Close();
@@ -102,7 +111,7 @@ namespace TechHealth.View.PatientView
             Close();
         }
 
-
+        
 
 
     }

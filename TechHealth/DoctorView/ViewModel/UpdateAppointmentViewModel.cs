@@ -10,7 +10,7 @@ using MessageBox = System.Windows.Forms.MessageBox;
 
 namespace TechHealth.DoctorView.ViewModel
 {
-    public class UpdateAppointmentViewModel : ViewModelBase
+    public class UpdateAppointmentViewModel:ViewModelBase
     {
         public event EventHandler OnRequestClose;
         private readonly AppointmentController appointmentController = new AppointmentController();
@@ -33,7 +33,7 @@ namespace TechHealth.DoctorView.ViewModel
         public int PatientIndex { get; set; }
         public int RoomIndex { get; set; }
 
-        public UpdateAppointmentViewModel(string doctorId, Appointment appointmentUpdate)
+        public UpdateAppointmentViewModel(string doctorId,Appointment appointmentUpdate)
         {
             appointment = appointmentUpdate;
             doctor = doctorController.GetById(doctorId);
@@ -52,7 +52,7 @@ namespace TechHealth.DoctorView.ViewModel
         private void CloseWindow()
         {
             DialogResult dialogResult = MessageBox.Show(@"Are you sure about that?", @"Cancel appointment", MessageBoxButtons.YesNo);
-            if (dialogResult == (DialogResult)MessageBoxResult.Yes)
+            if(dialogResult==(DialogResult) MessageBoxResult.Yes)
             {
                 OnRequestClose(this, new EventArgs());
             }
@@ -60,9 +60,9 @@ namespace TechHealth.DoctorView.ViewModel
 
         public bool CanExecute()
         {
-            if (StartDate != null && EndDate != null && PatientData != null && RoomData != null)
+            if (StartDate != null && EndDate != null && PatientData != null && RoomData != null )
             {
-                if (DateTime.Parse(StartDate) < DateTime.Parse(EndDate))
+                if(DateTime.Parse(StartDate)<DateTime.Parse(EndDate))
                     return true;
             }
 
@@ -72,10 +72,10 @@ namespace TechHealth.DoctorView.ViewModel
 
         public void Execute()
         {
-
+            
             appointment.Date = Date;
             appointment.FinishTimeD = DateTime.Parse(EndDate);
-            appointment.StartTimeD = DateTime.Parse(StartDate); ;
+            appointment.StartTimeD = DateTime.Parse(StartDate);;
             appointment.Patient = PatientData;
             appointment.Room = RoomData;
             appointmentController.Update(appointment);
@@ -172,7 +172,7 @@ namespace TechHealth.DoctorView.ViewModel
 
             foreach (var r in roomController.GetAll())
             {
-                roomComboBox.Add(new ComboBoxGeneric<Room>() { DisplayText = r.roomId, Entity = r });
+                roomComboBox.Add(new ComboBoxGeneric<Room>(){DisplayText = r.roomId , Entity = r});
             }
         }
 

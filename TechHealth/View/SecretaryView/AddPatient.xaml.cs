@@ -1,8 +1,18 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using TechHealth.Controller;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Shapes;
 using TechHealth.Model;
+using TechHealth.Controller;
 
 namespace TechHealth.View.SecretaryView
 {
@@ -48,7 +58,7 @@ namespace TechHealth.View.SecretaryView
             ed.Profession = "";
             ed.Job = "";
 
-            medicalRecordController.Create(accountName.Text + accountSurname.Text + accountJmbg.Text, Bloodtype.None, p, "", "", "", "", "", ed);
+            medicalRecordController.Create(accountName.Text+accountSurname.Text+accountJmbg.Text, Bloodtype.None, p, "", "", "", "", "", ed);
 
             this.Close();
         }

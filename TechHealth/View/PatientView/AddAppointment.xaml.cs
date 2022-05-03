@@ -1,10 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
-using TechHealth.Controller;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Shapes;
 using TechHealth.Model;
+using TechHealth.Controller;
 using TechHealth.Repository;
+using System.Collections.ObjectModel;
 
 namespace TechHealth.View.PatientView       //dodati IDappointment
 {
@@ -13,13 +23,12 @@ namespace TechHealth.View.PatientView       //dodati IDappointment
     /// </summary>
     public partial class AddAppointment : Window
     {
-
+        
         private Appointment appointment;
         private AppointmentController appointmentController = new AppointmentController();
         private List<Doctor> doctors;
         private List<Appointment> apList;
         private ObservableCollection<Appointment> apt;
-
 
         public AddAppointment(ObservableCollection<Appointment> listAppointment)
         {

@@ -1,9 +1,10 @@
-﻿using TechHealth.Core;
+﻿using System;
+using TechHealth.Core;
 using TechHealth.DoctorView.View;
 
 namespace TechHealth.DoctorView.ViewModel
 {
-    public class MainViewModel : ViewModelBase
+    public class MainViewModel:ViewModelBase
     {
         private object currentView;
         public RecordViewModel RecordViewModel { get; set; }
@@ -18,8 +19,8 @@ namespace TechHealth.DoctorView.ViewModel
         private MedicineViewModel MedicineViewModel { get; set; }
         public RelayCommand MedicineCommand { get; set; }
         public DashBoardViewModel DashBoardViewModel { get; set; }
-
-
+        
+        
         public object CurrentView
         {
             get => currentView;
@@ -91,7 +92,7 @@ namespace TechHealth.DoctorView.ViewModel
             RecordCommand = new RelayCommand(o =>
                 {
                     CurrentView = RecordViewModel;
-
+                    
                 }
             );
             AppointmentCommand = new RelayCommand(o =>
@@ -103,13 +104,13 @@ namespace TechHealth.DoctorView.ViewModel
             {
                 CurrentView = PatientsViewModel;
             });
-            MedicineCommand = new RelayCommand(o =>
-                 {
-                     CurrentView = MedicineViewModel;
-                 }
+            MedicineCommand= new RelayCommand(o =>
+                {
+                    CurrentView = MedicineViewModel;
+                }
             );
-
+            
         }
-
+        
     }
 }

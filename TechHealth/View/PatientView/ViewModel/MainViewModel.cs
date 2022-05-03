@@ -1,4 +1,9 @@
-﻿using TechHealth.Core;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using TechHealth.Core;
 
 namespace TechHealth.View.PatientView.ViewModel
 {
@@ -8,8 +13,6 @@ namespace TechHealth.View.PatientView.ViewModel
         public HomeViewModelP HomeVm { get; set; }
         public RelayCommand AppointmentViewCommand { get; set; }
         public AppointmentViewModel AppointmentVm { get; set; }
-        public RelayCommand NotificationViewCommand { get; set; }
-        public NotificationViewModel NotificationVm { get; set; }
 
 
         private object _currentView;
@@ -39,11 +42,6 @@ namespace TechHealth.View.PatientView.ViewModel
             AppointmentViewCommand = new RelayCommand(o =>
             {
                 CurrentView = AppointmentVm;
-            });
-
-            NotificationViewCommand = new RelayCommand(o =>
-            {
-                CurrentView = NotificationVm;
             });
         }
 

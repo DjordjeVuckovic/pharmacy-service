@@ -1,14 +1,15 @@
 ﻿using System;
 using TechHealth.Core;
+using TechHealth.DoctorView.View;
 using TechHealth.DoctorView.ViewModel;
 
 namespace TechHealth.Store
 {
-    public class NavigationStore : ViewModelBase
+    public class NavigationStore:ViewModelBase
     {
         private object currentViewModel;
         private RelayCommand dashCommand;
-        private DashBoardViewModel DashBoardViewModel { get; set; }
+        private  DashBoardViewModel DashBoardViewModel { get; set; }
 
         public RelayCommand DashCommand
         {
@@ -33,7 +34,7 @@ namespace TechHealth.Store
             get => currentViewModel;
             set
             {
-                currentViewModel = value;
+                currentViewModel= value;
                 OnPropertyChanged(nameof(CurrentViewModel));
             }
         }
@@ -47,19 +48,19 @@ namespace TechHealth.Store
         public static NavigationStore GetInstance(string id)
         {
             if (_instance == null)
-                _instance = new NavigationStore(id);
-            return _instance;
+                    _instance = new NavigationStore(id);
+                return _instance;
         }
 
-        private NavigationStore(string id)
+        private  NavigationStore(string id)
         {
             if (id.Equals("1"))
             {
-
+                
             }
-
+            
         }
 
         public event Action CurrentViewModelChanged;
     }
-}
+    }
