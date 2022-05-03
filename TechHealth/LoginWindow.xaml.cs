@@ -1,4 +1,6 @@
-﻿using System.Windows;
+﻿using System;
+using System.Linq;
+using System.Windows;
 using TechHealth.DoctorView;
 using TechHealth.Model;
 using TechHealth.Repository;
@@ -10,13 +12,13 @@ namespace TechHealth
     {
         private static string _doctorId;
         private static LoginWindow _instance;
-
+        
         public LoginWindow()
         {
             InitializeComponent();
         }
 
-
+        
 
         private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
         {
@@ -49,6 +51,6 @@ namespace TechHealth
             return _doctorId;
         }
 
-
+        
     }
 }

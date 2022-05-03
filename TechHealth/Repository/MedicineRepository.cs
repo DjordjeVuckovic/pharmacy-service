@@ -1,8 +1,9 @@
-﻿using TechHealth.Model;
+﻿using System.Collections.Generic;
+using TechHealth.Model;
 
 namespace TechHealth.Repository
 {
-    public class MedicineRepository : GenericRepository<string, Medicine>
+    public class MedicineRepository:GenericRepository<string,Medicine>
     {
         private static readonly MedicineRepository instance = new MedicineRepository();
 
@@ -23,7 +24,7 @@ namespace TechHealth.Repository
 
         protected override string GetKey(Medicine entity)
         {
-            return entity.MedicineId;
+            return  entity.MedicineId;
         }
 
         protected override void RemoveAllReference(string key)
@@ -36,6 +37,6 @@ namespace TechHealth.Repository
             entity.ShouldSerialize = true;
         }
 
-
+        
     }
 }

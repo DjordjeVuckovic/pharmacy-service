@@ -1,11 +1,12 @@
 ﻿using System;
+using System.ComponentModel;
 using TechHealth.Core;
 using TechHealth.Model;
 using TechHealth.Repository;
 
 namespace TechHealth.DoctorView.ViewModel
 {
-    public class MedicalRecordViewModel : ViewModelBase
+    public class MedicalRecordViewModel:ViewModelBase
     {
         private Patient selectedItemPatient;
         private string name;
@@ -59,7 +60,7 @@ namespace TechHealth.DoctorView.ViewModel
             LabelFullName = selectedItem.FullName;
             medicalRecord = MedicalRecordRepository.Instance.GetByPatientId(selectedItem.Jmbg);
             MedicalRecord = medicalRecord;
-            LabelBirth = "Birthday:  " + SelectedItemPatient.Birthday.ToShortDateString();
+            LabelBirth ="Birthday:  " + SelectedItemPatient.Birthday.ToShortDateString();
             LabelEmail = "Email:  " + SelectedItemPatient.Email;
             LabelPhone = "Phone:  " + SelectedItemPatient.Phone;
             LabelId = "Jmbg:  " + SelectedItemPatient.Jmbg;
@@ -69,7 +70,7 @@ namespace TechHealth.DoctorView.ViewModel
             LabelMartialStatus = "Martial Status: " + MedicalRecord.MartialStatus;
             LabelOur = "Our:  " + MedicalRecord.EmlpoymentData.Our;
             LabelProfession = "Profession:  " + MedicalRecord.EmlpoymentData.Profession;
-            LabelWork = "Workplace:  " + MedicalRecord.EmlpoymentData.Workplace;
+            LabelWork= "Workplace:  " + MedicalRecord.EmlpoymentData.Workplace;
             LabelJob = "Job:  " + MedicalRecord.EmlpoymentData.Job;
             LabelWeight = "Weight:  " + MedicalRecord.Weight;
             LabelHeight = "Height: " + MedicalRecord.Height;

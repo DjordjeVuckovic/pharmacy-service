@@ -3,10 +3,13 @@
 // Created: Saturday, April 2, 2022 8:55:43 PM
 // Purpose: Definition of Class Equipment
 
+using System;
+
+
 namespace TechHealth.Model
 {
-    public class Equipment
-    {
+   public class Equipment
+   {
         public string name { get; set; }
         public string id { get; set; }
 

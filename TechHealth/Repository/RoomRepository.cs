@@ -5,6 +5,7 @@
 
 using System;
 using System.Collections.Generic;
+using TechHealth.Conversions;
 using TechHealth.Model;
 
 namespace TechHealth.Repository
@@ -92,45 +93,6 @@ namespace TechHealth.Repository
             }
 
             return false;
-        }
-
-        public List<Room> UcitajProstorijeZaPreglede()
-        {
-            List<Room> prostorije = GetAllToList();
-            for (int i = 0; i < prostorije.Count; i++)
-            {
-                if (prostorije[i].roomTypes != RoomTypes.examination || prostorije[i].availability == false)
-                {
-                    prostorije.RemoveAt(i);
-                    i--;
-                }
-            }
-            return prostorije;
-        }
-
-        public List<Room> GetAvailableRooms(DateTime appointmentTime)
-        {
-            List<Room> examRooms = RoomRepository.Instance.UcitajProstorijeZaPreglede();
-            foreach (Appointment termin in AppointmentRepository.Instance.GetAllToList())
-            {
-                if (termin.EqualDate(appointmentTime))
-                {
-                    RemoveRoom(termin.Room.roomId, examRooms);
-                }
-            }
-            return examRooms;
-        }
-
-        private void RemoveRoom(string number, List<Room> examRooms)
-        {
-            for (int i = 0; i < examRooms.Count; i++)
-            {
-                if (examRooms[i].roomId == number || examRooms[i].availability == false)
-                {
-                    examRooms.RemoveAt(i);
-                    i--;
-                }
-            }
         }
     }
 }

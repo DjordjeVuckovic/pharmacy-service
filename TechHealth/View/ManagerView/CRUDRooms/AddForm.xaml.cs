@@ -1,9 +1,22 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Shapes;
+using TechHealth.Model;
 using TechHealth.Controller;
 using TechHealth.Conversions;
-using TechHealth.Model;
+using TechHealth.View.ManagerView.VieW;
 using TechHealth.Repository;
+using System.Collections.ObjectModel;
 
 namespace TechHealth.View.ManagerView.CRUDRooms
 {

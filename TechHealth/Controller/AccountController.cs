@@ -10,49 +10,49 @@ using TechHealth.Service;
 
 namespace TechHealth.Controller
 {
-    public class AccountController
-    {
-        private AccountService accountService;
-
-        public User GetByUsername(string username)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<User> GetAll()
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool Create(string username, string password, string jmbg, string phone, string email, bool employed)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool Update(string username, string password, string jmbg, string phone, string email, bool employed)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool Delete(string personId)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool CreateGuest(string userId, string password)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool DeleteGuest(string userId)
-        {
-            throw new NotImplementedException();
-        }
-
-        public int UpdateGuest(string userId, string password)
-        {
-            throw new NotImplementedException();
-        }
-
-    }
+   public class AccountController
+   {
+      private AccountService accountService;
+      
+      public User GetByUsername(string username)
+      {
+         throw new NotImplementedException();
+      }
+      
+      public List<User> GetAll()
+      {
+         throw new NotImplementedException();
+      }
+      
+      public bool Create(string username, string password, string jmbg, string phone, string email, bool employed)
+      {
+         throw new NotImplementedException();
+      }
+      
+      public bool Update(string username, string password, string jmbg, string phone, string email, bool employed)
+      {
+         throw new NotImplementedException();
+      }
+      
+      public bool Delete(string personId)
+      {
+         throw new NotImplementedException();
+      }
+      
+      public bool CreateGuest(string userId, string password)
+      {
+         throw new NotImplementedException();
+      }
+      
+      public bool DeleteGuest(string userId)
+      {
+         throw new NotImplementedException();
+      }
+      
+      public int UpdateGuest(string userId, string password)
+      {
+         throw new NotImplementedException();
+      }
+   
+   }
 }

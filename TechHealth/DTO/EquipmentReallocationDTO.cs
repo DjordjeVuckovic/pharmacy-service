@@ -1,5 +1,9 @@
 ﻿using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace TechHealth.DTO
 {
@@ -15,7 +19,7 @@ namespace TechHealth.DTO
         public string EquipmentName { get; set; }
 
         public EquipmentReallocationDTO()
-        {
+        {               
         }
         public EquipmentReallocationDTO(string SourceRoomID, string DestinationRoomID, int AmountMoving, DateTime? ReallocationTime, string EquipmentName, string ReallocationID)
         {

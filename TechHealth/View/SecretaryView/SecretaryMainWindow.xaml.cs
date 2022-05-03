@@ -1,9 +1,20 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using TechHealth.Controller;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Shapes;
 using TechHealth.Model;
 using TechHealth.Repository;
+using TechHealth.Controller;
 
 namespace TechHealth.View.SecretaryView
 {
@@ -17,7 +28,7 @@ namespace TechHealth.View.SecretaryView
         public SecretaryMainWindow()
         {
             InitializeComponent();
-            foreach (var p in PatientRepository.Instance.GetAll().Values)
+            foreach(var p in PatientRepository.Instance.GetAll().Values)
             {
                 if (!p.Guest)
                 {
@@ -45,12 +56,12 @@ namespace TechHealth.View.SecretaryView
                 return;
             }
             Patient p = (Patient)accountList.SelectedItems[0];
-            if (!p.Guest)
+            if(!p.Guest)
             {
                 patientController.Delete(p.Jmbg);
                 users = new ObservableCollection<Patient>(PatientRepository.Instance.GetAll().Values);
                 accountList.ItemsSource = users;
-                foreach (var pa in PatientAllergensRepository.Instance.GetAll().Values)
+                foreach(var pa in PatientAllergensRepository.Instance.GetAll().Values)
                 {
                     if (pa.PatientJMBG.Equals(p.Jmbg))
                     {

@@ -7,11 +7,11 @@ using System;
 
 namespace TechHealth.Model
 {
-    public class Allergen
-    {
-        public String Id { get; set; }
-        public String Name { get; set; }
-        public String Description { get; set; }
-
-    }
+   public class Allergen
+   {
+      public String Id { get; set; }
+      public String Name { get; set; }
+      public String Description { get; set; }
+   
+   }
 }

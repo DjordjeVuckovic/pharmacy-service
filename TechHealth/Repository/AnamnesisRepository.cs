@@ -3,10 +3,10 @@ using TechHealth.Model;
 
 namespace TechHealth.Repository
 {
-    public class AnamnesisRepository : GenericRepository<string, Anamnesis>
+    public class AnamnesisRepository:GenericRepository<string,Anamnesis>
     {
         private static readonly AnamnesisRepository instance = new AnamnesisRepository();
-
+        
         static AnamnesisRepository()
         {
         }
@@ -50,7 +50,7 @@ namespace TechHealth.Repository
 
         public Anamnesis GetByAppointmentId(string appointmentId)
         {
-            Anamnesis retval = null;
+            Anamnesis retval=null;
             foreach (var t in GetAllToList())
             {
                 if (appointmentId == t.Appointment.IdAppointment)
@@ -62,6 +62,6 @@ namespace TechHealth.Repository
 
             return retval;
         }
-
+        
     }
 }

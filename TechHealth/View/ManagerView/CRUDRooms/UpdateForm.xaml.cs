@@ -1,8 +1,21 @@
-﻿using System.Windows;
-using TechHealth.Controller;
-using TechHealth.Conversions;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Shapes;
 using TechHealth.Model;
+using TechHealth.Controller;
 using TechHealth.Repository;
+using TechHealth.View.ManagerView;
+using TechHealth.Conversions;
 
 namespace TechHealth.View.ManagerView.CRUDRooms
 {
@@ -21,8 +34,8 @@ namespace TechHealth.View.ManagerView.CRUDRooms
             CbFloor.Text = ManagerConversions.FloorToString(selected.floor);
             CbType.Text = ManagerConversions.RoomTypesToString(selected.roomTypes);
             CbAvailability.Text = ManagerConversions.AvailabilityToString(selected.availability);
-
-        }
+            
+        } 
 
         private void Button_Click_Confirm(object sender, RoutedEventArgs e)
         {
