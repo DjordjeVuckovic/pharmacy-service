@@ -98,9 +98,6 @@
                             Grid.Column="1"
                             Margin="10"
                             Content="{Binding CurrentView}"/>
-            
-
-
         </Grid>
 
 

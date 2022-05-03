@@ -108,6 +108,7 @@ namespace TechHealth.View.PatientView.View
             new SuggestAppointment(patient).ShowDialog();
         }
 
+
         [NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
