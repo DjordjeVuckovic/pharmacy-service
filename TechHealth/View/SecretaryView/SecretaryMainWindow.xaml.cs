@@ -147,6 +147,32 @@ namespace TechHealth.View.SecretaryView
             new LoginWindow().Show();
             Close();
         }
+        private void Button_Click_Examinations(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                DateTime date = DateTime.Parse(datePicker.Text);
+                new AppointmentsViewSecretary(date, AppointmentType.examination).Show();
+            }
+            catch
+            {
+                MessageBox.Show("You didn't select a date.");
+                return;
+            }
+        }
+        private void Button_Click_Operations(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                DateTime date = DateTime.Parse(datePicker.Text);
+                new AppointmentsViewSecretary(date, AppointmentType.operation).Show();
+            }
+            catch
+            {
+                MessageBox.Show("You didn't select a date.");
+                return;
+            }
+        }
         public void Update()
         {
             users.Clear();

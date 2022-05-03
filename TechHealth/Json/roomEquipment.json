@@ -29,15 +29,10 @@
     "EquipmentName": "Skalpel",
     "Quantity": 10
   },
-  "S2-Krevet": {
-    "RoomID": "S2",
-    "EquipmentName": "Krevet",
-    "Quantity": 1
-  },
   "S3-Krevet": {
     "RoomID": "S3",
     "EquipmentName": "Krevet",
-    "Quantity": 2
+    "Quantity": 3
   },
   "S2-Skalpel": {
     "RoomID": "S2",
@@ -47,6 +42,11 @@
   "Warehouse-Bandazer": {
     "RoomID": "Warehouse",
     "EquipmentName": "Bandazer",
-    "Quantity": 60
+    "Quantity": 50
+  },
+  "S2-Bandazer": {
+    "RoomID": "S2",
+    "EquipmentName": "Bandazer",
+    "Quantity": 10
   }
 }

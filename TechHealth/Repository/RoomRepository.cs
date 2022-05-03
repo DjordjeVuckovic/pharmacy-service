@@ -82,25 +82,6 @@ namespace TechHealth.Repository
             return roomNames;
         }
 
-
-
-        //public List<Room> GetRoomsByEq(string eqName)
-        //{
-        //    List<Room> rooms = new List<Room>();
-        //    foreach (var room in GetAllToList())
-        //    {
-        //        foreach (var e in room.equipment)
-        //        {
-        //            if (e.name == eqName)
-        //            {
-        //                rooms.Add(room);
-        //            }
-        //        }
-        //    }
-
-        //    return rooms;
-        //}
-
         public bool WarehouseExists()
         {
             foreach (var room in GetAllToList())

@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -25,25 +26,9 @@ namespace TechHealth.View.ManagerView.CRUDRooms
     /// </summary>
     public partial class RoomInventory : Window, INotifyPropertyChanged
     {
-        //private ObservableCollection<Equipment> eqList;
-
         private ObservableCollection<RoomEquipment> reList;
-
         public event PropertyChangedEventHandler PropertyChanged;
-
-        //public ObservableCollection<Equipment> EqList
-        //{
-        //    get 
-        //    {
-        //        return eqList;
-        //    }
-
-        //    set
-        //    {
-        //        eqList = value;
-        //        OnPropertyChanged(nameof(EqList));
-        //    }
-        //}
+        public static Timer timer;
 
         public ObservableCollection<RoomEquipment> ReList
         {
@@ -62,7 +47,6 @@ namespace TechHealth.View.ManagerView.CRUDRooms
         {
             InitializeComponent();
             DataContext = this;
-            //eqList = new ObservableCollection<Equipment>(EquipmentRepository.Instance.GetEqListByRoomID(room.roomId));
             reList = new ObservableCollection<RoomEquipment>(RoomEquipmentRepository.Instance.GetRoomEqListByRoomID(room.roomId));
         }
 
