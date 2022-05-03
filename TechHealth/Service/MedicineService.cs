@@ -19,5 +19,9 @@ namespace TechHealth.Service
 
             return temp;
         }
+        public Medicine GetById(string id)
+        {
+            return MedicineRepository.Instance.GetById(id);
+        }
     }
 }

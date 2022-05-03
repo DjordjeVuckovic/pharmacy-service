@@ -24,7 +24,9 @@ namespace TechHealth.DoctorView.ViewModel
         public RelayCommand PreviewCommand { get; set; }
         private Anamnesis selectedAnamnesis;
         private Therapy selectedTherapy;
+        private Prescription selectedPrescription;
         private TherapyPreview therapyPreview;
+        private PrescriptionPreview prescriptionPreview;
         
         
 
@@ -35,6 +37,16 @@ namespace TechHealth.DoctorView.ViewModel
             {
                 selectedIndex = value;
                 OnPropertyChanged(nameof(SelectedIndex));
+            }
+        }
+
+        public Prescription SelectedPrescription
+        {
+            get => selectedPrescription;
+            set
+            {
+                selectedPrescription = value;
+                OnPropertyChanged(nameof(SelectedPrescription));
             }
         }
 
@@ -85,6 +97,10 @@ namespace TechHealth.DoctorView.ViewModel
             {
                 return false;
             }
+            if (SelectedIndex==2 & SelectedPrescription == null)
+            {
+                return false;
+            }
 
             return true;
         }
@@ -96,16 +112,26 @@ namespace TechHealth.DoctorView.ViewModel
                 reviewAnamnesis= new ReviewAnamnesis(SelectedAnamnesis.Appointment);
                 reviewAnamnesis.ShowDialog();
             }
-
             if (SelectedIndex == 3)
             {
                 var vm = new TherapyPreviewViewModel(SelectedTherapy,selectedItemPatient);
-                therapyPreview = new TherapyPreview()
+                therapyPreview = new TherapyPreview
                 {
                     DataContext = vm
                 };
                 therapyPreview.ShowDialog();
             }
+            
+            if (SelectedIndex == 2)
+            {
+                var vm = new PrescriptionPreviewViewModel(selectedItemPatient,SelectedPrescription);
+                prescriptionPreview = new PrescriptionPreview
+                {
+                    DataContext = vm
+                };
+                prescriptionPreview.ShowDialog();
+            }
+            
         }
     }
 }

@@ -49,7 +49,7 @@
                         
                         <TabItem Header="Prescriptions">
 
-                            <DataGrid x:Name="dataGridReceipts" ItemsSource="{Binding Path = Prescriptions}" SelectedItem="{Binding SelectedPrescription}" IsReadOnly="True" SelectionMode="Single" AutoGenerateColumns="False" CanUserResizeColumns="False" Background="#333545">
+                            <DataGrid ItemsSource="{Binding Path = Prescriptions}" SelectedItem="{Binding SelectedPrescription}" IsReadOnly="True" SelectionMode="Single" AutoGenerateColumns="False" CanUserResizeColumns="False" Background="#333545">
 
                                 <DataGrid.Columns>
 

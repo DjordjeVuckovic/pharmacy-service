@@ -19,7 +19,7 @@ namespace TechHealth.Service
       private RoomService roomService = new RoomService();
       public Appointment GetById(string idAppointment)
       {
-         throw new NotImplementedException();
+         return AppointmentRepository.Instance.GetById(idAppointment);
       }
       
       public List<Appointment> GetAll()

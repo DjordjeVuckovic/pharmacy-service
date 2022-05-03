@@ -18,7 +18,7 @@ namespace TechHealth.Controller
       
       public Appointment GetById(string idAppointment)
       {
-         throw new NotImplementedException();
+          return appointmentService.GetById(idAppointment);
       }
       
       public List<Appointment> GetAll()

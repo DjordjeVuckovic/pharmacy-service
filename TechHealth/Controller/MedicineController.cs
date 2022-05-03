@@ -13,5 +13,9 @@ namespace TechHealth.Controller
             return medicineService.GetAllApproved();
 
         }
+        public Medicine GetById(string id)
+        {
+            return MedicineRepository.Instance.GetById(id);
+        }
     }
 }

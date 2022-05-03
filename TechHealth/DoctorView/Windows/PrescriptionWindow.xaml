@@ -37,7 +37,7 @@
            
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="0" Text="Prescribe medicine"  HorizontalAlignment="Center" FontSize="32"  FontWeight="Light" Foreground="#50fa7b"/>
+        <TextBlock Grid.Row="0" Text="Prescribe medicine" Margin="0,5,0,1"  HorizontalAlignment="Center" FontSize="32"  FontWeight="Light" Foreground="#50fa7b"/>
         <StackPanel Grid.Row="1" VerticalAlignment="Center" Margin="10,0,0,0">
             <Label  Content="{Binding DoctorLabel}"    HorizontalAlignment="Left" Margin="20,0,0,0" VerticalAlignment="Stretch" FontSize="14"  FontWeight="Bold" />
             <Label  Content="{Binding PatientLabel}"  HorizontalAlignment="Left" Margin="20,0,0,0" VerticalAlignment="Stretch" FontSize="14"  FontWeight="Bold" />

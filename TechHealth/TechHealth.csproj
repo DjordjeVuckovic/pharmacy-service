@@ -203,6 +203,7 @@
     <Compile Include="DoctorView\ViewModel\MedicalRecordViewModel.cs" />
     <Compile Include="DoctorView\ViewModel\MedicineViewModel.cs" />
     <Compile Include="DoctorView\ViewModel\PatientsViewModel.cs" />
+    <Compile Include="DoctorView\ViewModel\PrescriptionPreviewViewModel.cs" />
     <Compile Include="DoctorView\ViewModel\PrescriptionViewModel.cs" />
     <Compile Include="DoctorView\ViewModel\RecordViewModel.cs" />
     <Compile Include="DoctorView\ViewModel\TherapyPreviewViewModel.cs" />

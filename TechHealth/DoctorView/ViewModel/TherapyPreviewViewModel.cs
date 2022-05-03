@@ -1,4 +1,5 @@
 ﻿using System;
+using TechHealth.Controller;
 using TechHealth.Core;
 using TechHealth.Model;
 
@@ -14,19 +15,21 @@ namespace TechHealth.DoctorView.ViewModel
         public string DoctorName { get; set; }
         public string RoomId { get; set; }
         public string PatientName { get; set; }
+        //private readonly  AppointmentController appointmentController = new AppointmentController();
         
         
 
         public TherapyPreviewViewModel(Therapy selectedTherapy, Patient selectedItemPatient)
         {
+            //Appointment appointment = appointmentController.GetById(selectedTherapy.Appointment.IdAppointment);
             therapy = selectedTherapy;
             StartDate = selectedTherapy.StartDate;
             FinishDate = selectedTherapy.FinishDate;
             Description = selectedTherapy.Description;
             Frequency = selectedTherapy.Frequency;
             DoctorName = "Doctor: " + selectedTherapy.Appointment.Doctor.FullSpecialization;
-            RoomId = "Room: " + selectedTherapy.Appointment.Room.roomId;
             PatientName = "Patient: " + selectedItemPatient.FullName;
+            RoomId = "AppointmentRoom: " + selectedTherapy.Appointment.Room.roomId;
 
         }
     }

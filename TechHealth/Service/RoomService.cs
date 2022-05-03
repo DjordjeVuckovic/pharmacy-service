@@ -16,7 +16,7 @@ namespace TechHealth.Service
       
       public Room GetById(string roomId)
       {
-         throw new NotImplementedException();
+          return RoomRepository.Instance.GetById(roomId);
       }
       
       public List<Room> GetAll()
