@@ -65,7 +65,7 @@
                 <ColumnDefinition Width="20"/>
             </Grid.ColumnDefinitions>
             <Label Content="Medicine:" HorizontalAlignment="Left" Margin="10,10,10,0" Grid.Column="0" Grid.Row="0"  />
-            <Label Content="Medicine id :" HorizontalAlignment="Left" Margin="10,10,10,0" Grid.Column="0" Grid.Row="1" />
+            <Label Content="Medicine id :" HorizontalAlignment="Left" Margin="10,10,10,0" Grid.Column="0" Grid.Row="1"  />
             <Label Content="Start Date :" HorizontalAlignment="Left" Margin="10,10,10,0" Grid.Column="0" Grid.Row="2" />
             <Label Content="Finish Date :" HorizontalAlignment="Left" Margin="10,0,10,0" Grid.Column="0" Grid.Row="3" VerticalAlignment="Center"/>
             <Label Content="Frequency :" HorizontalAlignment="Left" Margin="10,0,10,0" Grid.Column="0" Grid.Row="4" VerticalAlignment="Center"/>
@@ -73,7 +73,7 @@
             <Label Content="Medicine side effects :" HorizontalAlignment="Left" Margin="10,0,10,0" Grid.Column="0" Grid.Row="6" VerticalAlignment="Center"/>
             <Label Content="Medicine allergens:" HorizontalAlignment="Left" Margin="10,0,10,0" Grid.Column="0" Grid.Row="7" VerticalAlignment="Center"/>
             <ComboBox Grid.Row="0" Grid.Column="1" Width="300" HorizontalAlignment="Left" Margin="20,0,10,0" Height="30" x:Name="ComboBox" DisplayMemberPath="DisplayText" SelectedValuePath="Entity" ItemsSource="{Binding Path=MedicineComboBox}" SelectedValue = "{Binding Path = MedicineData,UpdateSourceTrigger=PropertyChanged}" ></ComboBox>
-            <TextBox x:Name="TextBox" Text="{Binding MedicineData.MedicineId,Mode=TwoWay}" Grid.Row="1" Grid.Column="1" Margin="20,0,20,0" VerticalAlignment="Center" Height="30" IsReadOnly="True">
+            <TextBox x:Name="TextBox" Text="{Binding MedicineData.MedicineId,Mode=TwoWay}" Grid.Row="1" Grid.Column="1" Margin="20,0,20,0" VerticalAlignment="Center" Height="30" IsReadOnly="True" ToolTip="autocomplete">
             </TextBox>
             <DatePicker x:Name="DatePicker" Grid.Row="2" Grid.Column="1" Margin="20,0,20,0" VerticalAlignment="Center" SelectedDateFormat="Short" >
                 <DatePicker.SelectedDate>

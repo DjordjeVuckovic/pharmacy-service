@@ -21,6 +21,15 @@ namespace TechHealth.Service
             
         }
 
+        public bool Create(Anamnesis anamnesis)
+        {
+            return AnamnesisRepository.Instance.Create(anamnesis);
+        }
+        public bool Update(Anamnesis anamnesis)
+        {
+            return AnamnesisRepository.Instance.Update(anamnesis);
+        }
+
         public List<Anamnesis> GetAllAnamnesisSurgeriesByPatient(string patientId)
         {
             var anamneses = AnamnesisRepository.Instance.GetAllToList();

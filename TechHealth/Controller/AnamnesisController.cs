@@ -13,6 +13,15 @@ namespace TechHealth.Controller
             return anamnesisService.GetByAppointmentId(appointmentId);
         }
 
+        public void Create(Anamnesis anamnesis)
+        {
+            anamnesisService.Create(anamnesis);
+        }
+        public bool Update(Anamnesis anamnesis)
+        {
+            return anamnesisService.Update(anamnesis);
+        }
+
         public ObservableCollection<Anamnesis> GetAllAnamnesisExaminationsByPatient(string patientId)
         {
             return new ObservableCollection<Anamnesis>(anamnesisService.GetAllAnamnesisExaminationsByPatient(patientId));

@@ -21,6 +21,7 @@ namespace TechHealth.DoctorView.ViewModel
         public RelayCommand ReviewCommand { get; set; }
         public NewAnamnesis AddAnamnesisView { get; set; }
         public ReviewAnamnesis ReviewAnamnesis { get; set; }
+        public RelayCommand UpdateCommand { get; set; }
         
         public string DoctorId
         {
@@ -70,15 +71,37 @@ namespace TechHealth.DoctorView.ViewModel
             }
         }
            
-        public RecordViewModel()
+        public RecordViewModel(string doctorId)
         {
-            _doctorId = LoginWindow.GetDoctorId();
+            _doctorId = doctorId;
             _instance = this;
             Appointments = new ObservableCollection<Appointment>(appointmentController.GetByDoctorId(_doctorId));
             NewCommand = new RelayCommand(param => Execute(), param => CanExecute());
             ReviewCommand = new RelayCommand(param => Execute1(), param => CanExecute1());
             MoreAction = new RelayCommand(param => Execute2(), param => CanExecute2());
+            UpdateCommand = new RelayCommand(param => Execute3(), param => CanExecute3());
+            
+        }
 
+        private bool CanExecute3()
+        {
+            if (SelectedItem == null || !SelectedItem.Evident)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        private void Execute3()
+        {
+            var vm = new UpdateAnamnesisViewModel(SelectedItem);
+           UpdateAnamnesis updateAnamnesis = new UpdateAnamnesis()
+            {
+                DataContext = vm
+            };
+            vm.OnRequestClose += (s, e) => updateAnamnesis.Close();
+            updateAnamnesis.ShowDialog();
         }
 
         public void RefreshView()
@@ -99,8 +122,15 @@ namespace TechHealth.DoctorView.ViewModel
 
         private void Execute()
         {
-            AddAnamnesisView = new NewAnamnesis(_selectedItem);
-            AddAnamnesisView.ShowDialog();
+            //AddAnamnesisView = new NewAnamnesis(_selectedItem);
+            //AddAnamnesisView.ShowDialog();
+            var vm = new NewAnamnesisViewModel(SelectedItem);
+            NewAnamnesis newAnamnesis = new NewAnamnesis()
+            {
+                DataContext = vm
+            };
+            vm.OnRequestClose += (s, e) => newAnamnesis.Close();
+            newAnamnesis.ShowDialog();
         }
         private bool CanExecute1()
         {

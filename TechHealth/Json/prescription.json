@@ -46,5 +46,21 @@
       "ShouldSerialize": false,
       "IdAppointment": "ab4d42dfc8e847a4b0ab5acddd24183f"
     }
+  },
+  "6b60488ae2f64b4cb532f4fb8b239227": {
+    "PrescriptionId": "6b60488ae2f64b4cb532f4fb8b239227",
+    "Medicine": {
+      "MedicineId": "4e39d97e9ef24dea899335d58c4fa534",
+      "ShouldSerialize": false
+    },
+    "Frequency": "2*nedljno",
+    "Usage": "oralno",
+    "StartDate": "2022-05-04T00:00:00",
+    "FinishDate": "2022-05-05T00:00:00",
+    "ShouldSerialize": true,
+    "Appointment": {
+      "ShouldSerialize": false,
+      "IdAppointment": "1ef1b43af5b548c7b4a982aef3ce5cc9"
+    }
   }
 }

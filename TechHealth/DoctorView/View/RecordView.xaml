@@ -19,17 +19,15 @@
         <Grid Grid.Row="0">
             <TextBox Style="{StaticResource SearchText}" VerticalAlignment="Stretch" HorizontalAlignment="Right" Margin="0,0,10,0"></TextBox>
         </Grid>
-        <TextBlock Grid.Row="0"  Text="{Binding DoctorId}"/>
         <DataGrid FontSize="14" Grid.Row="2" Margin="10,0,10,10"  ItemsSource="{Binding Path=Appointments}" SelectedItem="{Binding SelectedItem}"
-                   CanUserResizeColumns="False" SelectionMode="Single" AutoGenerateColumns="False" Background="#333545" IsReadOnly="True">
+                  CanUserResizeColumns="False" SelectionMode="Single" AutoGenerateColumns="False" Background="#333545" IsReadOnly="True">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Date" Binding="{Binding Date,StringFormat=d}" Width="*"  CanUserResize="False" />
-                <DataGridTextColumn Header="StartTime" Binding="{Binding StartTimeD,StringFormat=t}" Width="*"  CanUserResize="False"/>
-                <DataGridTextColumn Header="FinishTime" Binding="{Binding FinishTimeD,StringFormat=t}" Width="*"  CanUserResize="False"/>
-                <DataGridTextColumn Header="Room" Binding="{Binding Room.roomId}" Width="*"  CanUserResize="False"/>
-                <DataGridTextColumn Header="Patient" Binding="{Binding Patient.Name}" Width="*"  CanUserResize="False"/>
-                <DataGridTextColumn Header="PatientLbo" Binding="{Binding Patient.Lbo}" Width="*"  CanUserResize="False"/>
-                <DataGridTextColumn Header="Type" Binding="{Binding AppointmentType}" Width="*"  CanUserResize="False"/>
+                <DataGridTextColumn Header="Date" Binding="{Binding Date,StringFormat=d}" Width="1.2*"  CanUserResize="False" />
+                <DataGridTextColumn Header="StartTime" Binding="{Binding StartTimeD,StringFormat=t}" Width="1.4*"  CanUserResize="False"/>
+                <DataGridTextColumn Header="FinishTime" Binding="{Binding FinishTimeD,StringFormat=t}" Width="1.4*"  CanUserResize="False"/>
+                <DataGridTextColumn Header="Room" Binding="{Binding Room.roomId}" Width="1.4*"  CanUserResize="False"/>
+                <DataGridTextColumn Header="Patient" Binding="{Binding Patient.FullName}" Width="1.8*"  CanUserResize="False"/>
+                <DataGridTextColumn Header="Type" Binding="{Binding AppointmentType}" Width="1.5*"  CanUserResize="False"/>
                 <DataGridTemplateColumn Header="Evident?">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -40,9 +38,10 @@
 
             </DataGrid.Columns>
         </DataGrid>
-        <Button Grid.Row="3" Content="More Action"  HorizontalAlignment="Left"   Width="150" Height="50" Margin="52.847,5.381,0,10" Command="{Binding MoreAction}"/>
-        <Button Grid.Row="3" Content="Review Anamnesis"  HorizontalAlignment="Left"  Width="150" Height="50" Margin="588.453,5.381,0,10" Command="{Binding ReviewCommand}"/>
-        <Button Grid.Row="3" Content="New Anamnesis"  HorizontalAlignment="Right"   Width="150" Height="50" Margin="0,5.382,314.676,10" Command="{Binding NewCommand}"/>
+        <Button Grid.Row="3" Content="More Action"  HorizontalAlignment="Left"   Width="150" Height="50" Margin="40,0,0,10" Command="{Binding MoreAction}"/>
+        <Button Grid.Row="3" Content="Review Anamnesis"  HorizontalAlignment="Right"  Width="150" Height="50" Margin="0,0,30,10" Command="{Binding ReviewCommand}"/>
+        <Button Grid.Row="3" Content="Update Anamnesis"  HorizontalAlignment="Center"  Width="150" Height="50" Margin="210,0,30,10" Command="{Binding UpdateCommand}"/>
+        <Button Grid.Row="3" Content="New Anamnesis"  HorizontalAlignment="Left"   Width="150" Height="50" Margin="220,0,0,10" Command="{Binding NewCommand}"/>
     </Grid>
 </UserControl>
 

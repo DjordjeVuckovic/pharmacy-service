@@ -2,7 +2,7 @@
   "2456": {
     "Guest": false,
     "ChosenDoctor": null,
-    "Lbo": 0,
+    "Lbo": 73456,
     "IsBanned": false,
     "Address": {
       "City": "Novi Sad",
@@ -25,7 +25,7 @@
   "13456": {
     "Guest": false,
     "ChosenDoctor": null,
-    "Lbo": 0,
+    "Lbo": 657771,
     "IsBanned": false,
     "Address": {
       "City": "Novi Sad",
@@ -34,7 +34,7 @@
       "Street": "Vojvode Bojovica",
       "Postcode": 21000
     },
-    "Name": "miki",
+    "Name": "Miki",
     "Surname": "Djuricic",
     "Email": "dsa@adsa",
     "Jmbg": "13456",

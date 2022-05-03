@@ -113,5 +113,74 @@
     "Respiratory": "",
     "Mouth": "",
     "Gi": ""
+  },
+  "21d397b1f3ea410c8deed5a466fe1fa9": {
+    "Appointment": {
+      "ShouldSerialize": false,
+      "IdAppointment": "1ef1b43af5b548c7b4a982aef3ce5cc9"
+    },
+    "MainSymptom": "a",
+    "AnamnesisDate": "2022-05-03T23:17:05.700818+02:00",
+    "AnamnesisId": "21d397b1f3ea410c8deed5a466fe1fa9",
+    "OtherSymptoms": "a",
+    "GeneralAmnesis": "a",
+    "Cns": "",
+    "Eye": "",
+    "Neck": "",
+    "Mss": "",
+    "Skin": "",
+    "Ear": "",
+    "Cus": "",
+    "Infectious": "",
+    "Ugs": "",
+    "Respiratory": "",
+    "Mouth": "",
+    "Gi": ""
+  },
+  "f318a822d893427ea3a03f9428deb94b": {
+    "Appointment": {
+      "ShouldSerialize": false,
+      "IdAppointment": "cf326e7af44e4f6f94d5ea04cbbf2a82"
+    },
+    "MainSymptom": "a",
+    "AnamnesisDate": "2022-05-04T00:00:20.3978889+02:00",
+    "AnamnesisId": "f318a822d893427ea3a03f9428deb94b",
+    "OtherSymptoms": "a",
+    "GeneralAmnesis": "a",
+    "Cns": null,
+    "Eye": null,
+    "Neck": null,
+    "Mss": null,
+    "Skin": null,
+    "Ear": null,
+    "Cus": null,
+    "Infectious": null,
+    "Ugs": null,
+    "Respiratory": null,
+    "Mouth": null,
+    "Gi": null
+  },
+  "ead7bebfdd9e4677a8715bc2f1977fce": {
+    "Appointment": {
+      "ShouldSerialize": false,
+      "IdAppointment": "d3f085348d6f49c4a8ddf64d1bf400eb"
+    },
+    "MainSymptom": "stomacni virus",
+    "AnamnesisDate": "2022-05-04T00:36:24.3819904+02:00",
+    "AnamnesisId": "ead7bebfdd9e4677a8715bc2f1977fce",
+    "OtherSymptoms": "temperatura i proliv",
+    "GeneralAmnesis": "Pacijent je vidno lose",
+    "Cns": "ab",
+    "Eye": "ab",
+    "Neck": "ab",
+    "Mss": "ab",
+    "Skin": null,
+    "Ear": null,
+    "Cus": null,
+    "Infectious": "stomak",
+    "Ugs": null,
+    "Respiratory": null,
+    "Mouth": null,
+    "Gi": null
   }
 }

@@ -10,9 +10,7 @@ namespace TechHealth
 {
     public partial class LoginWindow : Window
     {
-        private static string _doctorId;
-        private static LoginWindow _instance;
-        
+
         public LoginWindow()
         {
             InitializeComponent();
@@ -22,19 +20,22 @@ namespace TechHealth
 
         private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
         {
-            Log();
+            if(!Log())
+            {
+                MessageBox.Show("Wrong credential.Try again!","Error",MessageBoxButton.OK,MessageBoxImage.Error);
+            }
         }
 
-        private void Log()
+        private bool Log()
         {
             string user = Username.Text;
             string pass = Password.Password;
+            bool successLogin=false;
             Doctor doctor = DoctorRepository.Instance.GetDoctorByUser(user);
             if (doctor != null && pass.Equals(doctor.Password))
             {
-                //AppointmentsWindow.GetInstance(doctor.Jmbg).Show();
-                _doctorId = doctor.Jmbg;
                 new DoctorWindow(doctor.Jmbg).Show();
+                successLogin = true;
                 Close();
             }
 
@@ -42,14 +43,18 @@ namespace TechHealth
             if (secretary != null && pass.Equals(secretary.Password))
             {
                 new SecretaryMainWindow().Show();
+                successLogin = true;
                 Close();
             }
+
+            return successLogin;
+
         }
 
-        public static string GetDoctorId()
-        {
-            return _doctorId;
-        }
+        // public static string GetDoctorId()
+        // {
+        //     return _doctorId;
+        // }
 
         
     }

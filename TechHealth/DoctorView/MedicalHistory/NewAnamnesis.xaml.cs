@@ -22,14 +22,14 @@ namespace TechHealth.DoctorView.MedicalHistory
     /// </summary>
     public partial class NewAnamnesis : Window
     {
-        private Appointment myappointment;
-        private Appointment app;
+        // private Appointment myappointment;
+        // private Appointment app;
         public NewAnamnesis()
         {
             InitializeComponent();
         }
 
-        public NewAnamnesis(Appointment appointment)
+        /*public NewAnamnesis(Appointment appointment)
         {
             InitializeComponent();
             //DataContext = this;
@@ -79,6 +79,6 @@ namespace TechHealth.DoctorView.MedicalHistory
         private void ButtonBase_OnClick1(object sender, RoutedEventArgs e)
         {
             throw new NotImplementedException();
-        }
+        }*/
     }
 }

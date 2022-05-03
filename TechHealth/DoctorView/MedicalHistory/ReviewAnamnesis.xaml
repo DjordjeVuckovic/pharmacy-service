@@ -78,7 +78,7 @@
             <TextBox Name="Txt2" Grid.Column="1" Grid.Row="1" Margin="30,4.292,10,3.253" VerticalContentAlignment="Center" Padding="5,0,10,0" FontSize="14" ToolTip="This fieled is requered" IsReadOnly="True"/>
 
             <Label Content="General Anamnesis: *" HorizontalAlignment="Left" Margin="0,0,10,0" Grid.Column="0" Grid.Row="2" VerticalAlignment="Center"/>
-            <TextBox Name="Txt3" Grid.Column="1" Grid.Row="2" Margin="30,4.292,10,3.253" VerticalContentAlignment="Center" Padding="5,0,10,0" FontSize="14"  ToolTip="This fieled is requered" IsReadOnly="True"/>
+            <TextBox Name="Txt3" Grid.Column="1" Grid.Row="2" Margin="30,4.292,10,3.253" VerticalContentAlignment="Center" Padding="5,0,10,0" FontSize="14"   ToolTip="This fieled is requered" IsReadOnly="True"/>
 
             <Label Content="CNS: " HorizontalAlignment="Left" Margin="0,0,10,0" Grid.Column="0" Grid.Row="3" VerticalAlignment="Center"/>
             <TextBox Name="Txt4" Grid.Column="1" Grid.Row="3" Margin="30,4.291,10,3.254" VerticalContentAlignment="Center" Padding="5,0,10,0" FontSize="14" IsReadOnly="True" />
@@ -115,8 +115,8 @@
             <TextBox Name="txt15" Grid.Column="1" Grid.Row="14" Margin="30,4.292,10,3.253" VerticalContentAlignment="Center" Padding="5,0,10,0" FontSize="14" IsReadOnly="True"/>
             <Border Grid.Row="0" Grid.RowSpan="15" BorderThickness="0,0,1,0" BorderBrush="#50fa7b"/>
         </Grid>
-        <Button Grid.Row="3" Content="Close"  HorizontalAlignment="Right" VerticalAlignment="Stretch" Width="100" Margin="0,0,85.53,10"/>
-        <Button Grid.Row="3" Content="Print"  HorizontalAlignment="Left" VerticalAlignment="Stretch" Width="100" Margin="83.947,0,0,10"/>
+        <Button Grid.Row="3" Content="Print"  HorizontalAlignment="Right" VerticalAlignment="Stretch" Width="100" Margin="0,0,85.53,10" Click="ButtonBase_OnClick"/>
+        <Button Grid.Row="3" Content="Close"  HorizontalAlignment="Left" VerticalAlignment="Stretch" Width="100" Margin="83.947,0,0,10"/>
     </Grid>
     </Border>
 </Window>

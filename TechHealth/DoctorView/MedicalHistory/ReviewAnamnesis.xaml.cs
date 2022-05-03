@@ -55,5 +55,10 @@ namespace TechHealth.DoctorView.MedicalHistory
             txt14.Text=  currentAnamnesis.Mouth;
             txt15.Text=  currentAnamnesis.Gi;
         }
+
+        private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
     }
 }

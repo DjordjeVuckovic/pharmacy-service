@@ -59,10 +59,10 @@ namespace TechHealth.DoctorView.ViewModel
         {
             return _instance;
         }
-        public ViewModelAppointment()
+        public ViewModelAppointment(string id)
         {
             _instance = this;
-            doctorId = LoginWindow.GetDoctorId();
+            doctorId = id;
             Appointments = appointmentController.GetAllNotEvident(doctorId);
             currentDoctor = doctorController.GetById(doctorId);
             NewExaminationCommand = new RelayCommand(param => Execute(),param => CanExecute());
