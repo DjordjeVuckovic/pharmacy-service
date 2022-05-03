@@ -7,9 +7,9 @@
         mc:Ignorable="d"
         Title="AllergensView" Height="450" Width="800">
     <Grid>
-        <Button x:Name="addAllergen" Content="Add" HorizontalAlignment="Left" Margin="64,26,0,0" VerticalAlignment="Top" Width="98" Click="Button_Click_Add"/>
-        <Button x:Name="deleteAllergen" Content="Delete" HorizontalAlignment="Left" Margin="638,26,0,0" VerticalAlignment="Top" Width="98" Click="Button_Click_Delete"/>
-        <Button x:Name="editAllergen" Content="Edit" HorizontalAlignment="Center" Margin="0,26,0,0" VerticalAlignment="Top" Width="98" Click="Button_Click_Edit"/>
+        <Button x:Name="addAllergen" Background="Black" Foreground="White" Content="Add" HorizontalAlignment="Left" Margin="64,26,0,0" VerticalAlignment="Top" Width="98" Click="Button_Click_Add"/>
+        <Button x:Name="deleteAllergen" Background="Black" Foreground="White" Content="Delete" HorizontalAlignment="Left" Margin="638,26,0,0" VerticalAlignment="Top" Width="98" Click="Button_Click_Delete"/>
+        <Button x:Name="editAllergen" Background="Black" Foreground="White" Content="Edit" HorizontalAlignment="Center" Margin="0,26,0,0" VerticalAlignment="Top" Width="98" Click="Button_Click_Edit"/>
 
         <ListView x:Name="allergenList" Margin="64,69,64,10">
             <ListView.View>

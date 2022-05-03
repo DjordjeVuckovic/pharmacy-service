@@ -34,8 +34,8 @@
         <TextBox x:Name="accountPostcode" HorizontalAlignment="Left" Margin="200,317,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="156"/>
         <TextBox x:Name="accountUsername" HorizontalAlignment="Left" Margin="200,343,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="156"/>
         <TextBox x:Name="accountPassword" HorizontalAlignment="Left" Margin="200,369,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="156"/>
-        <Button x:Name="confirm" Content="Confirm" HorizontalAlignment="Left" Margin="246,430,0,0" VerticalAlignment="Top" Width="100" Height="26" Click="Button_Click_Confirm"/>
-        <Button x:Name="cancel" Content="Cancel" HorizontalAlignment="Left" Margin="51,430,0,0" VerticalAlignment="Top" Width="100" Height="26" Click="Button_Click_Cancel"/>
+        <Button x:Name="confirm" Background="Black" Foreground="White" Content="Confirm" HorizontalAlignment="Left" Margin="246,430,0,0" VerticalAlignment="Top" Width="100" Height="26" Click="Button_Click_Confirm"/>
+        <Button x:Name="cancel" Background="Black" Foreground="White" Content="Cancel" HorizontalAlignment="Left" Margin="51,430,0,0" VerticalAlignment="Top" Width="100" Height="26" Click="Button_Click_Cancel"/>
 
     </Grid>
 </Window>
