@@ -272,10 +272,7 @@
     <Compile Include="Repository\DoctorRepository.cs" />
     <Compile Include="Repository\EquipmentReallocationRepository.cs" />
     <Compile Include="Repository\EquipmentRepository.cs" />
-    <Compile Include="Repository\GenericRepoNotifications.cs" />
     <Compile Include="Repository\GenericRepository.cs" />
-    <Compile Include="Repository\IGenericRepository.cs" />
-    <Compile Include="Repository\INotificationRepository.cs" />
     <Compile Include="Repository\ManagerRepository.cs" />
     <Compile Include="Repository\MedicalRecordRepository.cs" />
     <Compile Include="Repository\MedicineRepository.cs" />
