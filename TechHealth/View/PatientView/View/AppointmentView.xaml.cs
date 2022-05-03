@@ -7,7 +7,6 @@ using TechHealth.Annotations;
 using TechHealth.Core;
 using TechHealth.Model;
 using TechHealth.Repository;
-using TechHealth.View.PatientView.ViewModel;
 
 namespace TechHealth.View.PatientView.View
 {
@@ -15,6 +14,8 @@ namespace TechHealth.View.PatientView.View
     {
         private ObservableCollection<Appointment> aplist;
         private Appointment selected;
+        private Patient patient;
+
         public event PropertyChangedEventHandler PropertyChanged;
         public RelayCommand AddAppointmentCommand { get; set; }
         public RelayCommand UpdateAppointmentCommand { get; set; }
@@ -71,7 +72,7 @@ namespace TechHealth.View.PatientView.View
                 Appointment.Remove(ap);
                 MessageBox.Show("You have successfully deleted selected appointment");
             }
-                
+
         }
 
         private bool CanExecute()
@@ -91,7 +92,7 @@ namespace TechHealth.View.PatientView.View
 
         private void ExecuteUpdate(Appointment selected)
         {
-            if(dataAppointments.SelectedIndex == -1)
+            if (dataAppointments.SelectedIndex == -1)
             {
                 MessageBox.Show("You must select an appointment that you want to change");
             }
@@ -104,8 +105,9 @@ namespace TechHealth.View.PatientView.View
 
         private void ExecuteSuggest()
         {
-            //new SuggestAppointment().ShowDialog();
+            new SuggestAppointment(patient).ShowDialog();
         }
+
 
         [NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)

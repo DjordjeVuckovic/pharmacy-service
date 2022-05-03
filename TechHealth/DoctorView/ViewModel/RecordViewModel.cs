@@ -2,13 +2,11 @@
 using TechHealth.Controller;
 using TechHealth.Core;
 using TechHealth.DoctorView.MedicalHistory;
-using TechHealth.DoctorView.View;
 using TechHealth.Model;
-using TechHealth.Repository;
 
 namespace TechHealth.DoctorView.ViewModel
 {
-    public class RecordViewModel:ViewModelBase
+    public class RecordViewModel : ViewModelBase
     {
         private string _doctorId;
         private string ics;
@@ -21,7 +19,7 @@ namespace TechHealth.DoctorView.ViewModel
         public RelayCommand ReviewCommand { get; set; }
         public NewAnamnesis AddAnamnesisView { get; set; }
         public ReviewAnamnesis ReviewAnamnesis { get; set; }
-        
+
         public string DoctorId
         {
             get
@@ -48,7 +46,7 @@ namespace TechHealth.DoctorView.ViewModel
                 _appointments = value;
                 OnPropertyChanged(nameof(Appointments));
             }
-            
+
         }
 
         private Appointment _selectedItem;
@@ -69,7 +67,7 @@ namespace TechHealth.DoctorView.ViewModel
                 OnPropertyChanged(nameof(SelectedItem));
             }
         }
-           
+
         public RecordViewModel()
         {
             _doctorId = LoginWindow.GetDoctorId();
@@ -84,7 +82,7 @@ namespace TechHealth.DoctorView.ViewModel
         public void RefreshView()
         {
             Appointments.Clear();
-            Appointments=new ObservableCollection<Appointment>(appointmentController.GetByDoctorId(_doctorId));
+            Appointments = new ObservableCollection<Appointment>(appointmentController.GetByDoctorId(_doctorId));
         }
 
         private bool CanExecute()
@@ -132,7 +130,7 @@ namespace TechHealth.DoctorView.ViewModel
             anamnesisActionViewModel = new AnamnesisActionViewModel(SelectedItem);
             MainViewModel.GetInstance().CurrentView = anamnesisActionViewModel;
         }
-        
-        
+
+
     }
 }

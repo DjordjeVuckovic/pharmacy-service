@@ -7,7 +7,7 @@ namespace TechHealth.Core
     {
         private Action<object> _execute;
         private Predicate<object> _canExecute;
-        
+
         public RelayCommand(Action<object> execute, Predicate<object> canExecute)
         {
             _execute = execute;
@@ -18,7 +18,7 @@ namespace TechHealth.Core
 
         public bool CanExecute(object parameters)
         {
-            return _canExecute == null ||  _canExecute(parameters);
+            return _canExecute == null || _canExecute(parameters);
         }
 
         public event EventHandler CanExecuteChanged

@@ -7,13 +7,13 @@ using System;
 
 namespace TechHealth.Model
 {
-   public class ReferralRequest
-   {
-      public DateTime refferalDate;
-      public String refferalId;
-      
-      public Patient patient;
-      public Doctor doctor;
-   
-   }
+    public class ReferralRequest
+    {
+        public DateTime refferalDate;
+        public String refferalId;
+
+        public Patient patient;
+        public Doctor doctor;
+
+    }
 }

@@ -2,7 +2,7 @@
 
 namespace TechHealth.Repository
 {
-    public class ManagerRepository:GenericRepository<string,Manager>
+    public class ManagerRepository : GenericRepository<string, Manager>
     {
         private static readonly ManagerRepository instance = new ManagerRepository();
 

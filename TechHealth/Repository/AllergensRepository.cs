@@ -2,10 +2,10 @@
 
 namespace TechHealth.Repository
 {
-    public class AllergensRepository:GenericRepository<string,Allergen>
+    public class AllergensRepository : GenericRepository<string, Allergen>
     {
         private static readonly AllergensRepository instance = new AllergensRepository();
-        
+
         static AllergensRepository()
         {
         }
@@ -14,7 +14,7 @@ namespace TechHealth.Repository
         {
         }
         public static AllergensRepository Instance => instance;
-       
+
 
         protected override string GetPath()
         {

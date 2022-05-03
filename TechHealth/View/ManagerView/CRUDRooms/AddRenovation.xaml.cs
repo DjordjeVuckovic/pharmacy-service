@@ -1,16 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using TechHealth.Core;
 using TechHealth.Model;
 using TechHealth.Repository;
@@ -33,7 +23,7 @@ namespace TechHealth.View.ManagerView.CRUDRooms
             selected = rm;
             rooms = RoomRepository.Instance.GetRoomIDs();
             TxtRoomID.Text = selected.roomId;
-            CancelRenovationCommand = new RelayCommand(param => ExeceuteCancel(), param =>CanExecuteCancel());
+            CancelRenovationCommand = new RelayCommand(param => ExeceuteCancel(), param => CanExecuteCancel());
 
             rr = RoomRenovationRepository.Instance.GetRrByRoomID(selected.roomId);
             RStart.SelectedDate = rr.RenovationStart;
@@ -42,7 +32,7 @@ namespace TechHealth.View.ManagerView.CRUDRooms
 
         private bool CanExecuteCancel()
         {
-            return !RoomRenovationRepository.Instance.ExistsInRenovations(selected.roomId);     
+            return !RoomRenovationRepository.Instance.ExistsInRenovations(selected.roomId);
         }
 
         private void ExeceuteCancel()

@@ -1,8 +1,8 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using Newtonsoft.Json;
 
 namespace TechHealth.Repository
 {
@@ -19,7 +19,7 @@ namespace TechHealth.Repository
 
         private Dictionary<TKey, TEntity> Deserialize()
         {
-            
+
             string path = GetPath();
             if (!File.Exists(path))
             {
@@ -34,13 +34,13 @@ namespace TechHealth.Repository
         private void Serialize(Dictionary<TKey, TEntity> entities)
         {
             string path = GetPath();
-            
-            string jsonWrite = JsonConvert.SerializeObject(entities,Formatting.Indented);
-            File.WriteAllText(path,jsonWrite);
+
+            string jsonWrite = JsonConvert.SerializeObject(entities, Formatting.Indented);
+            File.WriteAllText(path, jsonWrite);
         }
         public bool Create(TEntity entity)
         {
-            
+
             Dictionary<TKey, TEntity> entities = Deserialize();
             ShouldSerialize(entity);
 
@@ -99,7 +99,7 @@ namespace TechHealth.Repository
         public bool Delete(TKey key)
         {
             Dictionary<TKey, TEntity> entities = Deserialize();
-            
+
             if (!entities.ContainsKey(key))
             {
                 return false;
@@ -129,7 +129,7 @@ namespace TechHealth.Repository
 
             return entities;
         }
-        
+
 
     }
 }

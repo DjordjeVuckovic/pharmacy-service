@@ -8,7 +8,7 @@ namespace TechHealth.Service
     {
         public bool Create(Prescription prescription)
         {
-            return  PrescribeMedicineRepository.Instance.Create(prescription);
+            return PrescribeMedicineRepository.Instance.Create(prescription);
         }
 
         public List<Prescription> GetAll()

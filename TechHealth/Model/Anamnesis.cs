@@ -1,10 +1,12 @@
 ﻿using System;
+
 using System.Windows.Documents;
 using PostSharp.Patterns.Model;
 
+
 namespace TechHealth.Model
 {
-    
+
     public class Anamnesis
     {
         public Appointment Appointment { get; set; }

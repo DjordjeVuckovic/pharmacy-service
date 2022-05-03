@@ -1,13 +1,13 @@
-﻿using System.Reflection;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
+using System.Reflection;
 using TechHealth.Model;
 
 namespace TechHealth.JsonIgnore
 {
-    public class ShouldSerializeAppointment:DefaultContractResolver
+    public class ShouldSerializeAppointment : DefaultContractResolver
     {
-        
+
 
         protected override JsonProperty CreateProperty(MemberInfo member, MemberSerialization memberSerialization)
         {
@@ -21,10 +21,10 @@ namespace TechHealth.JsonIgnore
                         Doctor doc = (Doctor)instance;
                         return false;
                     };
-                
+
             }
 
             return property;
-        } 
+        }
     }
 }

@@ -7,15 +7,15 @@ using System;
 
 namespace TechHealth.Model
 {
-   public class Hospitalization
-   {
-      public DateTime startDate;
-      public DateTime finishDate;
-      public String hospitalizationId;
-      
-      public Specialist specialist;
-      public Patient patient;
-      public Room room;
-   
-   }
+    public class Hospitalization
+    {
+        public DateTime startDate;
+        public DateTime finishDate;
+        public String hospitalizationId;
+
+        public Specialist specialist;
+        public Patient patient;
+        public Room room;
+
+    }
 }

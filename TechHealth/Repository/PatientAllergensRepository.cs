@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TechHealth.Model;
 
 namespace TechHealth.Repository
 {
-    public class PatientAllergensRepository: GenericRepository<string, PatientAllergens>
+    public class PatientAllergensRepository : GenericRepository<string, PatientAllergens>
     {
         private static readonly PatientAllergensRepository instance = new PatientAllergensRepository();
 

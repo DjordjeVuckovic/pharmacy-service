@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using TechHealth.Model;
+﻿using TechHealth.Model;
 using TechHealth.Repository;
 
 namespace TechHealth.Service
@@ -9,16 +8,22 @@ namespace TechHealth.Service
         private readonly AppointmentService appointmentService = new AppointmentService();
         public Anamnesis GetByAppointmentId(string appointmentId)
         {
-          var anamnesis = AnamnesisRepository.Instance.GetByAppointmentId(appointmentId);
-          BindDataForAnamnesis(anamnesis);
-          return anamnesis;
+            var anamnesis = AnamnesisRepository.Instance.GetByAppointmentId(appointmentId);
+            BindDataForAnamnesis(anamnesis);
+            return anamnesis;
         }
 
         private void BindDataForAnamnesis(Anamnesis anamneses)
         {
+
             
             anamneses.Appointment = AppointmentRepository.Instance.GetById(anamneses.Appointment.IdAppointment);
             
+
+
+            anamneses.AnmnesisAppointment = AppointmentRepository.Instance.GetById(anamneses.AnmnesisAppointment.IdAppointment);
+
+
         }
 
         public List<Anamnesis> GetAllAnamnesisSurgeriesByPatient(string patientId)

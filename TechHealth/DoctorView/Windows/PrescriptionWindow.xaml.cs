@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Windows;
+﻿using System.Windows;
 using TechHealth.Model;
-using TechHealth.Repository;
 
 namespace TechHealth.DoctorView.Windows
 {

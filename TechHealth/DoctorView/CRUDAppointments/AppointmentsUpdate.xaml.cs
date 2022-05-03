@@ -73,7 +73,7 @@ namespace TechHealth.DoctorView.CRUDAppointments
 
         private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
         {
-            
+
             if (PatentCombo.SelectionBoxItem == null || Picker.SelectedDate == null ||
                 PatentCombo.SelectionBoxItem == null || RoomCombo.SelectionBoxItem == null)
             {
@@ -81,7 +81,7 @@ namespace TechHealth.DoctorView.CRUDAppointments
             }
             else
             {
-                
+
                 appointment.Date = DateTime.Parse(Picker.Text);
                 appointment.Doctor = doctor;
                 appointment.FinishTime = FinishTxt.Text;
@@ -92,8 +92,8 @@ namespace TechHealth.DoctorView.CRUDAppointments
                 MessageBox.Show("You are successfully update appointment");
                 Close();
             }
-            
+
         }
-        
+
     }
 }

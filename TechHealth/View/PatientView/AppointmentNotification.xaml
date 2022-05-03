@@ -1,0 +1,35 @@
+﻿<Window x:Class="TechHealth.View.PatientView.AppointmentNotification"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TechHealth.View.PatientView"
+        mc:Ignorable="d"
+        Title="AppointmentNotification" Height="300" Width="700">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Dark.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.Blue.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid Background="Red">
+        <StackPanel Margin="10,10,10,10">
+
+
+            <Label HorizontalAlignment="Center" FontSize="20" Name="Naslov" FontWeight="SemiBold">
+                Notification
+            </Label>
+            <TextBlock Margin="30" FontSize="15" Name="TekstObavjestenja" Text=" Today, you have an appointment. Click section notification for more informations"  TextWrapping="Wrap" Foreground="White" Height="30">
+
+            </TextBlock>
+            <Button Width="150" Height="30" Name="Zatvori" Click="Zatvori_Click">
+                Close
+            </Button>
+        </StackPanel>
+    </Grid>
+</Window>

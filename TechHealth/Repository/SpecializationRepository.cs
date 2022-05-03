@@ -2,16 +2,16 @@
 
 namespace TechHealth.Repository
 {
-    public class SpecializationRepository:GenericRepository<int,Specialization>
+    public class SpecializationRepository : GenericRepository<int, Specialization>
     {
         private static readonly SpecializationRepository instance = new SpecializationRepository();
 
         static SpecializationRepository()
-        { 
+        {
         }
 
         private SpecializationRepository()
-        { 
+        {
         }
 
         public static SpecializationRepository Instance => instance;

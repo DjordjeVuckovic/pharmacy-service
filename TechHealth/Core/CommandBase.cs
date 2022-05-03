@@ -3,7 +3,7 @@ using System.Windows.Input;
 
 namespace TechHealth.Core
 {
-    public abstract class CommandBase:ICommand
+    public abstract class CommandBase : ICommand
     {
         public virtual bool CanExecute(object parameter)
         {
@@ -16,7 +16,7 @@ namespace TechHealth.Core
 
         protected void OnCanExecutedChanged()
         {
-            CanExecuteChanged?.Invoke(this,new EventArgs());
+            CanExecuteChanged?.Invoke(this, new EventArgs());
         }
     }
 }
