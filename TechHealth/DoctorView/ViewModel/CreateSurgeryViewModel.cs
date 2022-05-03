@@ -5,6 +5,7 @@ using System.Windows;
 using System.Windows.Forms;
 using TechHealth.Controller;
 using TechHealth.Core;
+using TechHealth.Exceptions;
 using TechHealth.Model;
 using MessageBox = System.Windows.Forms.MessageBox;
 
@@ -77,10 +78,18 @@ namespace TechHealth.DoctorView.ViewModel
                 StartTimeD = DateTime.Parse(StartDate),
                 ShouldSerialize = true
             };
-            Appointments.Add(appointment);
-            RecordViewModel.GetInstance().Appointments.Add(appointment);
-            appointmentController.Create(appointment);
-            MessageBox.Show(@"You are successfully create new examination");
+            try
+            {
+                appointmentController.Create(appointment);
+                Appointments.Add(appointment);
+                RecordViewModel.GetInstance().Appointments.Add(appointment);
+                MessageBox.Show(@"You are successfully create new examination");
+            }
+            catch (AppointmentConflictException)
+            {
+                MessageBox.Show(@"Doctor has already scheduled appointment in that period!",@"Appointment exception",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                
+            }
             OnRequestClose(this, new EventArgs());
         }
 
