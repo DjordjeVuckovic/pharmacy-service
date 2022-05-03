@@ -23,9 +23,12 @@ namespace TechHealth.View.SecretaryView
         private List<Doctor> doctors = DoctorRepository.Instance.GetAllToList();
         private List<Patient> patients = PatientRepository.Instance.GetAllToList();
         private List<Room> rooms = RoomRepository.Instance.GetAllToList();
+        private AppointmentController appointmentController = new AppointmentController();
+        private AppointmentType t1;
         public AddAppointmentSecretary(AppointmentType t)
         {
             InitializeComponent();
+            t1 = t;
             if (t.Equals(AppointmentType.examination))
             {
                 addLabel.Content = "Add Examination";
@@ -55,6 +58,37 @@ namespace TechHealth.View.SecretaryView
         }
         private void Button_Click_Confirm(object sender, RoutedEventArgs e)
         {
+            Doctor dr = new Doctor();
+            foreach (var d in doctors)
+            {
+                if (doctorCombo.SelectedItem.Equals(d.FullSpecialization))
+                {
+                    dr = d;
+                }
+            }
+            Patient pa = new Patient();
+            foreach (var p in patients)
+            {
+                if (patientCombo.SelectedItem.Equals(p.FullName))
+                {
+                    pa = p;
+                }
+            }
+            Appointment a = new Appointment()
+            {
+                AppointmentType = t1,
+                Date = DateTime.Parse(datePick.Text),
+                Doctor = dr,
+                Emergent = false,
+                FinishTime = "",
+                StartTime = "",
+                IdAppointment = Guid.NewGuid().ToString("N"),
+                Patient = pa,
+                Room = rooms[roomCombo.SelectedIndex],
+                ShouldSerialize = true
+            };
+            appointmentController.Create(a);
+            Close();
         }
         private void Button_Click_Cancel(object sender, RoutedEventArgs e)
         {
