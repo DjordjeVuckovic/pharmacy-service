@@ -478,7 +478,6 @@
     </EmbeddedResource>
     <None Include="Json\equipmentReallocation.json" />
     <None Include="Json\medicalrecord.json" />
-    <None Include="Json\notifications.json" />
     <None Include="Json\patientAllergens.json" />
     <None Include="Json\room.json" />
     <None Include="Json\equipment.json" />

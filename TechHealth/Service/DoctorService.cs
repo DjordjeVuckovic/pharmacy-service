@@ -20,7 +20,7 @@ namespace TechHealth.Service
 
         public List<Doctor> GetAll()
         {
-            return DoctorRepository.Instance.GetAllToList();
+            throw new NotImplementedException();
         }
 
         public List<Doctor> GetDoctorsForExamination()

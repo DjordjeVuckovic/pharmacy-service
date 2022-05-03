@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Windows;
-using TechHealth.Model;
-using TechHealth.Repository;
 using TechHealth.View.ManagerView;
 using TechHealth.View.PatientView;
 using TechHealth.View.SecretaryView;
@@ -12,8 +8,6 @@ namespace TechHealth
 {
     public partial class MainWindow : Window
     {
-        private List<string> target;
-
         public MainWindow()
         {
             InitializeComponent();
@@ -22,16 +16,8 @@ namespace TechHealth
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
+
         {
-            target = new List<string>
-            {
-                "aa",
-                "as"
-            };
-            Notification notif = new Notification("nalog", DateTime.Now, "nesto", target, true, NotifType.TherapyAlert);
-            
-
-
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
