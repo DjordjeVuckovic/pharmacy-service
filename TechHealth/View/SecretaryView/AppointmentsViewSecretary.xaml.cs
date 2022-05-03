@@ -23,6 +23,7 @@ namespace TechHealth.View.SecretaryView
         private ObservableCollection<Appointment> examinations = new ObservableCollection<Appointment>();
         private AppointmentType type1;
         private DateTime date1;
+        private AppointmentController appointmentController = new AppointmentController();
         public AppointmentsViewSecretary(DateTime date, AppointmentType type)
         {
             InitializeComponent();
@@ -41,15 +42,25 @@ namespace TechHealth.View.SecretaryView
         private void Button_Click_Add(object sender, RoutedEventArgs e)
         {
             new AddAppointmentSecretary(type1).ShowDialog();
+            Update();
         }
         private void Button_Click_Edit(object sender, RoutedEventArgs e)
         {
         }
         private void Button_Click_Delete(object sender, RoutedEventArgs e)
         {
+            if (examinationList.SelectedIndex == -1)
+            {
+                MessageBox.Show("You didn't select an appointment.");
+                return;
+            }
+            Appointment a = (Appointment)examinationList.SelectedItems[0];
+            appointmentController.Delete(a.IdAppointment);
+            Update();
         }
         private void Update()
         {
+            examinations.Clear();
             foreach (var a in AppointmentRepository.Instance.GetAll().Values)
             {
                 if (a.Date.Equals(date1) && a.AppointmentType.Equals(type1))

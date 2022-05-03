@@ -42,7 +42,7 @@ namespace TechHealth.View.SecretaryView
                     }
                 }
             }
-            patientController.Create("", "", null, null, "guest" + guestId.ToString(), 0, false, guestUsername.Text, guestPassword.Text, "", false, true, "");
+            patientController.Create(guestUsername.Text, "", null, null, "guest" + guestId.ToString(), 0, false, guestUsername.Text, guestPassword.Text, "", false, true, "");
             guestId++;
             this.Close();
         }
