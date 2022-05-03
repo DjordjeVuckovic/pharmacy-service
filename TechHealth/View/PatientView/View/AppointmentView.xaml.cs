@@ -14,6 +14,8 @@ namespace TechHealth.View.PatientView.View
     {
         private ObservableCollection<Appointment> aplist;
         private Appointment selected;
+        private Patient patient;
+
         public event PropertyChangedEventHandler PropertyChanged;
         public RelayCommand AddAppointmentCommand { get; set; }
         public RelayCommand UpdateAppointmentCommand { get; set; }
@@ -103,7 +105,7 @@ namespace TechHealth.View.PatientView.View
 
         private void ExecuteSuggest()
         {
-            //new SuggestAppointment().ShowDialog();
+            new SuggestAppointment(patient).ShowDialog();
         }
 
         [NotifyPropertyChangedInvocator]
