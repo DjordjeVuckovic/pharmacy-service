@@ -31,7 +31,7 @@ namespace TechHealth.Service
                         reSrc = RoomEquipmentRepository.Instance.GetReByKey(dto.EquipmentName, dto.SourceRoomID);
                         if (RoomEquipmentRepository.Instance.ReEqExists(dto.EquipmentName, dto.DestinationRoomID))
                         {
-                            if (reSrc.Quantity > dto.AmountMoving)
+                            if (reSrc.Quantity >= dto.AmountMoving)
                             {
                                 
                                 EquipmentReallocationRepository.Instance.Create(dto);   
@@ -39,7 +39,14 @@ namespace TechHealth.Service
                                 RoomEquipmentRepository.Instance.Update(reDst);
 
                                 reSrc.Quantity -= dto.AmountMoving;
-                                RoomEquipmentRepository.Instance.Update(reSrc);
+                                if (reSrc.Quantity == 0)
+                                {
+                                    RoomEquipmentRepository.Instance.Delete(reSrc.RoomID + "-" + reSrc.EquipmentName);
+                                }
+                                else
+                                {
+                                    RoomEquipmentRepository.Instance.Update(reSrc);
+                                }
                                 return;
                             }
                             else
@@ -50,7 +57,7 @@ namespace TechHealth.Service
                         }
                         else
                         {
-                            if (reSrc.Quantity > dto.AmountMoving)
+                            if (reSrc.Quantity >= dto.AmountMoving)
                             {
                                 EquipmentReallocationRepository.Instance.Create(dto);
                                 reDst.EquipmentName = dto.EquipmentName;
@@ -63,7 +70,14 @@ namespace TechHealth.Service
                                 reSrc.EquipmentName = dto.EquipmentName;
                                 reSrc.RoomID = dto.SourceRoomID;
                                 reSrc.Quantity -= dto.AmountMoving;
-                                RoomEquipmentRepository.Instance.Update(reSrc);
+                                if (reSrc.Quantity == 0)
+                                {
+                                    RoomEquipmentRepository.Instance.Delete(reSrc.RoomID + "-" + reSrc.EquipmentName);
+                                }
+                                else
+                                {
+                                    RoomEquipmentRepository.Instance.Update(reSrc);
+                                }
                                 return;
                             }
                             else
