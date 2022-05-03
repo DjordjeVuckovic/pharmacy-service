@@ -10,5 +10,17 @@
       "IdAppointment": "31890aaae47c4166a31ccbdeb306bb82"
     },
     "ShouldSerialize": true
+  },
+  "1f8f18f56cb54ee58d99f36d0a69f97b": {
+    "TherapyId": "1f8f18f56cb54ee58d99f36d0a69f97b",
+    "StartDate": "2022-05-03T00:00:00",
+    "FinishDate": "2022-05-06T00:00:00",
+    "Frequency": "aaa",
+    "Description": "aaa",
+    "Appointment": {
+      "ShouldSerialize": false,
+      "IdAppointment": "ab4d42dfc8e847a4b0ab5acddd24183f"
+    },
+    "ShouldSerialize": true
   }
 }

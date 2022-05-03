@@ -68,6 +68,7 @@ namespace TechHealth.DoctorView.ViewModel
                 OnPropertyChanged(nameof(SelectedTherapy));
             }
         }
+        public  string LabelFullName { get; set; }
 
         public HistoryOfCareViewModel(Patient selectedItem)
         {
@@ -79,6 +80,7 @@ namespace TechHealth.DoctorView.ViewModel
             Therapies = therapyController.GetAllByPatientId(selectedItem.Jmbg);
             SelectedIndex = 0;
             PreviewCommand = new RelayCommand(param => Execute(), param => CanExecute());
+            LabelFullName ="History of care for patient: "+ selectedItemPatient.FullName;
 
         }
         

@@ -24,6 +24,8 @@ namespace TechHealth.DoctorView.ViewModel
         public RelayCommand UpdateCommand { get; set; }
         public RelayCommand DeleteCommand { get; set; }
         private readonly  AppointmentController appointmentController = new AppointmentController();
+        private readonly DoctorController doctorController = new DoctorController();
+        private Doctor currentDoctor;
         public string DoctorId
         {
             get => doctorId;
@@ -62,6 +64,7 @@ namespace TechHealth.DoctorView.ViewModel
             _instance = this;
             doctorId = LoginWindow.GetDoctorId();
             Appointments = appointmentController.GetAllNotEvident(doctorId);
+            currentDoctor = doctorController.GetById(doctorId);
             NewExaminationCommand = new RelayCommand(param => Execute(),param => CanExecute());
             NewSurgeryCommand= new RelayCommand(param => Execute1(),param => CanExecute1());
             UpdateCommand= new RelayCommand(param => Execute2(),param => CanExecute2());
@@ -72,7 +75,7 @@ namespace TechHealth.DoctorView.ViewModel
         public void RefreshView()
         {
             Appointments.Clear();
-           Appointments = appointmentController.GetAllNotEvident(doctorId);
+            Appointments = appointmentController.GetAllNotEvident(doctorId);
         }
         private bool CanExecute()
         {
@@ -93,7 +96,10 @@ namespace TechHealth.DoctorView.ViewModel
         }
         private bool CanExecute1()
         {
-
+            if (currentDoctor.Specialization.IdSpecialization == 0)
+            {
+                return false;
+            }
             return true;
         }
 

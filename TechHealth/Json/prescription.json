@@ -14,5 +14,37 @@
       "ShouldSerialize": false,
       "IdAppointment": "31890aaae47c4166a31ccbdeb306bb82"
     }
+  },
+  "9b86c1bbbe6140c6b84d3de799d6a380": {
+    "PrescriptionId": "9b86c1bbbe6140c6b84d3de799d6a380",
+    "Medicine": {
+      "MedicineId": "4e39d97e9ef24dea899335d58c4fa534",
+      "ShouldSerialize": false
+    },
+    "Frequency": "aaa",
+    "Usage": "aa",
+    "StartDate": "2022-05-04T00:00:00",
+    "FinishDate": "2022-05-05T00:00:00",
+    "ShouldSerialize": true,
+    "Appointment": {
+      "ShouldSerialize": false,
+      "IdAppointment": "ab4d42dfc8e847a4b0ab5acddd24183f"
+    }
+  },
+  "d975661f19ff44acb88726ca47155dbe": {
+    "PrescriptionId": "d975661f19ff44acb88726ca47155dbe",
+    "Medicine": {
+      "MedicineId": "4e39d97e9ef24dea899335d58c4fa534",
+      "ShouldSerialize": false
+    },
+    "Frequency": "aa",
+    "Usage": "aa",
+    "StartDate": "2022-05-04T00:00:00",
+    "FinishDate": "2022-05-06T00:00:00",
+    "ShouldSerialize": true,
+    "Appointment": {
+      "ShouldSerialize": false,
+      "IdAppointment": "ab4d42dfc8e847a4b0ab5acddd24183f"
+    }
   }
 }

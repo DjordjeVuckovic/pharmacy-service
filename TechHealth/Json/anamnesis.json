@@ -67,5 +67,51 @@
     "Respiratory": "",
     "Mouth": "",
     "Gi": ""
+  },
+  "31ea27df1f454419a6aab1b68c0ba35d": {
+    "Appointment": {
+      "ShouldSerialize": false,
+      "IdAppointment": "ab4d42dfc8e847a4b0ab5acddd24183f"
+    },
+    "MainSymptom": "a",
+    "AnamnesisDate": "2022-05-03T16:05:58.190679+02:00",
+    "AnamnesisId": "31ea27df1f454419a6aab1b68c0ba35d",
+    "OtherSymptoms": "a",
+    "GeneralAmnesis": "a",
+    "Cns": "a",
+    "Eye": "a",
+    "Neck": "a",
+    "Mss": "a",
+    "Skin": "a",
+    "Ear": "",
+    "Cus": "",
+    "Infectious": "",
+    "Ugs": "",
+    "Respiratory": "",
+    "Mouth": "",
+    "Gi": ""
+  },
+  "38685577fbd3437cb217717ecace8acd": {
+    "Appointment": {
+      "ShouldSerialize": false,
+      "IdAppointment": "9170ed96b76840379b2c1004b24cf6f7"
+    },
+    "MainSymptom": "glavobolja",
+    "AnamnesisDate": "2022-05-03T16:32:17.5569589+02:00",
+    "AnamnesisId": "38685577fbd3437cb217717ecace8acd",
+    "OtherSymptoms": "temperatura,kasalj",
+    "GeneralAmnesis": "Pacijent ima temeraturu 38,2,pojacan kasalj.",
+    "Cns": "",
+    "Eye": "",
+    "Neck": "",
+    "Mss": "",
+    "Skin": "",
+    "Ear": "",
+    "Cus": "",
+    "Infectious": "",
+    "Ugs": "",
+    "Respiratory": "",
+    "Mouth": "",
+    "Gi": ""
   }
 }
