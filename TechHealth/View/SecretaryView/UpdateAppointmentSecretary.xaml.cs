@@ -105,7 +105,7 @@ namespace TechHealth.View.SecretaryView
                 AppointmentType = t,
                 Date = DateTime.Parse(datePick.Text),
                 Doctor = dr,
-                Emergent = false,
+                Emergent = true,
                 FinishTimeD = DateTime.Parse(timePickerEnd.Text),
                 StartTimeD = DateTime.Parse(timePickerStart.Text),
                 IdAppointment = id,

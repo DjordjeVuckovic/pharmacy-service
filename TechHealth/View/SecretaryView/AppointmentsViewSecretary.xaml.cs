@@ -29,6 +29,14 @@ namespace TechHealth.View.SecretaryView
             InitializeComponent();
             type1 = type;
             date1 = date;
+            if (type.Equals(AppointmentType.examination))
+            {
+                pickedDate.Content = "Examinations ";
+            }
+            else
+            {
+                pickedDate.Content = "Operations ";
+            }
             foreach (var a in appointmentController.GetAll())
             {
                 if (a.Date.Equals(date) && a.AppointmentType.Equals(type))
@@ -36,7 +44,7 @@ namespace TechHealth.View.SecretaryView
                     examinations.Add(a);
                 }
             }
-            pickedDate.Content = date;
+            pickedDate.Content += date.ToString("dd.MM.yyyy");
             examinationList.ItemsSource = examinations;
         }
         private void Button_Click_Add(object sender, RoutedEventArgs e)
