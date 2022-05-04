@@ -7,6 +7,7 @@ using TechHealth.Controller;
 using TechHealth.Core;
 using TechHealth.Exceptions;
 using TechHealth.Model;
+using TechHealth.View;
 using MessageBox = System.Windows.Forms.MessageBox;
 
 namespace TechHealth.DoctorView.ViewModel
@@ -87,8 +88,10 @@ namespace TechHealth.DoctorView.ViewModel
             }
             catch (AppointmentConflictException)
             {
-                MessageBox.Show(@"Doctor has already scheduled appointment in that period!",@"Appointment exception",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 
+                //MessageBox.Show(@"Doctor has already scheduled appointment in that period!",@"Appointment exception",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                new AppointmensFuture(Date, doctor, PatientData).Show();
+
             }
             OnRequestClose(this, new EventArgs());
         }

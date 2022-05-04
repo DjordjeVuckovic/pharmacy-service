@@ -64,7 +64,6 @@ namespace TechHealth.DoctorView.ViewModel
 
         public void Execute()
         {
-            
             Appointment appointment = new Appointment
             {
                 AppointmentType = AppointmentType.examination,
