@@ -46,6 +46,14 @@ namespace TechHealth.View.SecretaryView
         }
         private void Button_Click_Edit(object sender, RoutedEventArgs e)
         {
+            if (examinationList.SelectedIndex == -1)
+            {
+                MessageBox.Show("You didn't select an appointment.");
+                return;
+            }
+            Appointment a = (Appointment)examinationList.SelectedItems[0];
+            new UpdateAppointmentSecretary(a).ShowDialog();
+            Update();
         }
         private void Button_Click_Delete(object sender, RoutedEventArgs e)
         {

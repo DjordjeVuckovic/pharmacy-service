@@ -404,6 +404,9 @@
     <Compile Include="View\SecretaryView\UpdateAllergen.xaml.cs">
       <DependentUpon>UpdateAllergen.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\SecretaryView\UpdateAppointmentSecretary.xaml.cs">
+      <DependentUpon>UpdateAppointmentSecretary.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\SecretaryView\UpdateGuest.xaml.cs">
       <DependentUpon>UpdateGuest.xaml</DependentUpon>
     </Compile>
@@ -654,6 +657,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\SecretaryView\UpdateAllergen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SecretaryView\UpdateAppointmentSecretary.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
