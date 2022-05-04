@@ -55,8 +55,17 @@ namespace TechHealth.View.ManagerView.CRUDRooms
         {
             RoomRenovation r = new RoomRenovation();
             r.RoomID = selected.roomId;
-            r.RenovationStart = (DateTime)RStart.SelectedDate;
-            r.RenovationEnd = (DateTime)REnd.SelectedDate;
+            //string date = DpDateTime.Text;
+            //string dateTime = date + " " + TxtTime.Text;
+            //dto.ReallocationTime = DateTime.Parse(dateTime);
+            string dateStart = RStart.Text;
+            string dateStartTime = dateStart + " " + TxtStartTime.Text;
+            r.RenovationStart = DateTime.Parse(dateStartTime);
+            //r.RenovationStart = (DateTime)RStart.SelectedDate;
+            string dateEnd = REnd.Text;
+            string dateEndTime = dateEnd + " " + TxtEndTime.Text;
+            r.RenovationEnd = DateTime.Parse(dateEndTime);
+            //r.RenovationEnd = (DateTime)REnd.SelectedDate;
             r.RenovationID = Guid.NewGuid().ToString("N");
 
             if (RoomRenovationRepository.Instance.ExistsInRenovations(selected.roomId))     //da li je vec zakazano renoviranje te sobe
