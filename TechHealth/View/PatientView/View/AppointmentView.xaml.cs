@@ -104,7 +104,11 @@ namespace TechHealth.View.PatientView.View
 
         private void ExecuteSuggest()
         {
+
             //new SuggestAppointment().ShowDialog();
+
+            //new SuggestAppointment(patient).ShowDialog();
+
         }
 
         [NotifyPropertyChangedInvocator]

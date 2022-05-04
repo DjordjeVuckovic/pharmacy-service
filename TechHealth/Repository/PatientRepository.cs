@@ -45,9 +45,37 @@ namespace TechHealth.Repository
          entity.ShouldSerialize = true;
       }
 
+
       public Patient GetPatientbyId(string patientId)
       {
          throw new NotImplementedException();
       }
    }
+
+        public Patient GetPatientById(string id)
+        {
+            foreach (var pat in GetAllToList())
+            {
+                if (pat.Jmbg.Equals(id))
+                {
+                    return pat;
+                }
+            }
+            return null;
+        }
+
+        public Patient GetPatientByUser(string user)
+        {
+            foreach (var pat in GetAllToList())
+            {
+                if (pat.Username.Equals(user))
+                {
+                    return pat;
+                }
+            }
+            return null;
+        }
+
+    }
+
 }
