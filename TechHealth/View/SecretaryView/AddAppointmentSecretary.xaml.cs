@@ -50,7 +50,10 @@ namespace TechHealth.View.SecretaryView
             List<String> roomsForCombo = new List<String>();
             foreach (var r in rooms)
             {
-                roomsForCombo.Add(r.roomId);
+                if (!r.roomId.Equals("Warehouse"))
+                {
+                    roomsForCombo.Add(r.roomId);
+                }
             }
             doctorCombo.ItemsSource = doctorsForCombo;
             patientCombo.ItemsSource = patientsForCombo;
