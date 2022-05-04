@@ -299,17 +299,6 @@
     <Compile Include="Service\PatientAllergensService.cs" />
     <Compile Include="Service\PatientService.cs" />
     <Compile Include="Service\PrescribeMedicineService.cs" />
-    <Compile Include="Service\RecommendationService\AppointmentDraft.cs" />
-    <Compile Include="Service\RecommendationService\AppointmentDraftPreparation.cs" />
-    <Compile Include="Service\RecommendationService\DateDraft.cs" />
-    <Compile Include="Service\RecommendationService\DateRecommendationStrategy.cs" />
-    <Compile Include="Service\RecommendationService\DoctorRecommendationDraftsTransformation.cs" />
-    <Compile Include="Service\RecommendationService\DoctorRecommendationStrategy.cs" />
-    <Compile Include="Service\RecommendationService\IRecommendationStrategy.cs" />
-    <Compile Include="Service\RecommendationService\ITransformDraftToAppointment.cs" />
-    <Compile Include="Service\RecommendationService\RecommendationService.cs" />
-    <Compile Include="Service\RecommendationService\RecommendedAppointmentController.cs" />
-    <Compile Include="Service\RecommendationService\RecommendedAppointmentDraft.cs" />
     <Compile Include="Service\RoomEquipmentService.cs" />
     <Compile Include="Service\RoomService.cs" />
     <Compile Include="Service\TherapyService.cs" />
