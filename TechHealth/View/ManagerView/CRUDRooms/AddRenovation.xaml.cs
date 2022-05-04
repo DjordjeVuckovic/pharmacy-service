@@ -55,8 +55,8 @@ namespace TechHealth.View.ManagerView.CRUDRooms
         {
             RoomRenovation r = new RoomRenovation();
             r.RoomID = selected.roomId;
-            r.RenovationStart = RStart.SelectedDate;
-            r.RenovationEnd = REnd.SelectedDate;
+            r.RenovationStart = (DateTime)RStart.SelectedDate;
+            r.RenovationEnd = (DateTime)REnd.SelectedDate;
             r.RenovationID = Guid.NewGuid().ToString("N");
 
             if (RoomRenovationRepository.Instance.ExistsInRenovations(selected.roomId))     //da li je vec zakazano renoviranje te sobe

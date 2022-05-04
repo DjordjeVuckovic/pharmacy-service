@@ -72,7 +72,7 @@ namespace TechHealth.Repository
             else return true;
         }
 
-        public bool IsValidDate(DateTime? date, string src, string dst)
+        public bool IsValidDate(DateTime date, string src, string dst)
         {
             if (GetAllToList().Count != 0)
             {

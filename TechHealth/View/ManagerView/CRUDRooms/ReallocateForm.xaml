@@ -5,13 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TechHealth.View.ManagerView.CRUDRooms"
         mc:Ignorable="d"
-        Title="ReallocateForm" Height="480" Width="400">
+        Title="ReallocateForm" Height="500" Width="400">
     <Grid Background="#272537">
         <Label Content="Equipment name:" HorizontalAlignment="Left" Margin="51,78,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White"/>
         <Label Content="From room:" HorizontalAlignment="Left" Margin="51,137,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White"/>
         <Label Content="To room:" HorizontalAlignment="Left" Margin="51,-30,0,0" VerticalAlignment="Center" FontSize="14" Foreground="White"/>
         <Label Content="Amount:" HorizontalAlignment="Left" Margin="51,268,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White"/>
         <Label Content="Reallocation date:" HorizontalAlignment="Left" Margin="51,337,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White"/>
+        <Label Content="Time:" HorizontalAlignment="Left" Margin="51,390,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White"/>
         <TextBox HorizontalAlignment="Left" Margin="207,82,0,0" VerticalAlignment="Top" Width="120" Height="21.96" x:Name="TxtEqId"/>
         <ComboBox HorizontalAlignment="Left" Margin="207,144,0,0" VerticalAlignment="Top" Width="120" x:Name="CbSourceRoom">
         </ComboBox>
@@ -21,9 +22,10 @@
         </TextBox>
         <DatePicker HorizontalAlignment="Left" Margin="207,341,0,0" VerticalAlignment="Top" Width="120" Height="21.96" x:Name="DpDateTime">
         </DatePicker>
+        <TextBox HorizontalAlignment="Left" Margin="207,393,0,0" VerticalAlignment="Top" Width="120" Height="21.96" x:Name="TxtTime"/>
         <Label Content="Reallocate" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="20" Foreground="White"/>
-        <Button Content="Confirm" HorizontalAlignment="Left" Margin="91,400,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal" Height="30" Width="70" RenderTransformOrigin="-0.291,0.467" Background="#FF42C130" Click="Button_Click_Confirm"/>
-        <Button Content="Close" HorizontalAlignment="Left" Margin="232,400,0,0" VerticalAlignment="Top" Width="70" Height="30" FontSize="16" Background="#FFEA9292" Click="Button_Click_Close"/>
+        <Button Content="Confirm" HorizontalAlignment="Left" Margin="91,440,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal" Height="30" Width="70" RenderTransformOrigin="-0.291,0.467" Background="#FF42C130" Click="Button_Click_Confirm"/>
+        <Button Content="Close" HorizontalAlignment="Left" Margin="232,440,0,0" VerticalAlignment="Top" Width="70" Height="30" FontSize="16" Background="#FFEA9292" Click="Button_Click_Close"/>
 
     </Grid>
 </Window>
