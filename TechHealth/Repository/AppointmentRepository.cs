@@ -75,7 +75,7 @@ namespace TechHealth.Repository
             return appointments;
         }
 
-        public bool CanSetRenovation(DateTime? start, DateTime? end, string roomID)
+        public bool CanSetRenovation(DateTime start, DateTime end, string roomID)
         {
             if (GetAllToList().Count != 0)
             {

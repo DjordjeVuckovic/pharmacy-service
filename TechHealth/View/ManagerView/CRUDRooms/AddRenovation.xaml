@@ -5,22 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TechHealth.View.ManagerView.CRUDRooms"
         mc:Ignorable="d"
-        Title="AddRenovation" Height="450" Width="400">
+        Title="AddRenovation" Height="480" Width="400">
     <Grid Background="#272537">
         <Label Content="RoomID:" HorizontalAlignment="Left" Margin="51,78,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White"/>
         <Label Content="Renovation start:" HorizontalAlignment="Left" Margin="51,137,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White"/>
-        <Label Content="Renovation end:" HorizontalAlignment="Left" Margin="51,0,0,0" VerticalAlignment="Center" FontSize="14" Foreground="White"/>
+        <Label Content="Start time:" HorizontalAlignment="Left" Margin="51,196,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White"/>
+        <Label Content="Renovation end:" HorizontalAlignment="Left" Margin="51,69,0,0" VerticalAlignment="Center" FontSize="14" Foreground="White"/>
+        <Label Content="End time:" HorizontalAlignment="Left" Margin="51,170,0,0" VerticalAlignment="Center" FontSize="14" Foreground="White"/>
         <TextBox HorizontalAlignment="Left" Margin="207,82,0,0" VerticalAlignment="Top" Width="120" Height="21.96" x:Name="TxtRoomID"/>
         <DatePicker HorizontalAlignment="Left" Margin="207,144,0,0" VerticalAlignment="Top" Width="120" x:Name="RStart">
         </DatePicker>
-        <DatePicker HorizontalAlignment="Left" Margin="207,209,0,0" VerticalAlignment="Top" Width="120" x:Name="REnd">
+        <TextBox HorizontalAlignment="Left" Margin="207,200,0,0" VerticalAlignment="Top" Width="120" Height="21.96" x:Name="TxtStartTime"/>
+        <DatePicker HorizontalAlignment="Left" Margin="207,255,0,0" VerticalAlignment="Top" Width="120" x:Name="REnd">
         </DatePicker>
-
+        <TextBox HorizontalAlignment="Left" Margin="207,310,0,0" VerticalAlignment="Top" Width="120" Height="21.96" x:Name="TxtEndTime"/>
         <Label Content="Set renovation" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="20" Foreground="White"/>
-        <Button Content="Cancel renovation" HorizontalAlignment="Center" Margin="0,300,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal" Height="30" Width="130" RenderTransformOrigin="-0.291,0.467"
+        <Button Content="Cancel renovation" HorizontalAlignment="Center" Margin="0,350,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal" Height="30" Width="130" RenderTransformOrigin="-0.291,0.467"
                 Command="{Binding CancelRenovationCommand}"/>
-        <Button Content="Confirm" HorizontalAlignment="Left" Margin="91,357,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal" Height="30" Width="70" RenderTransformOrigin="-0.291,0.467" Background="#FF42C130" Click="Button_Click_Confirm"/>
-        <Button Content="Close" HorizontalAlignment="Left" Margin="232,357,0,0" VerticalAlignment="Top" Width="70" Height="30" FontSize="16" Background="#FFEA9292" Click="Button_Click_Close"/>
+        <Button Content="Confirm" HorizontalAlignment="Left" Margin="91,400,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal" Height="30" Width="70" RenderTransformOrigin="-0.291,0.467" Background="#FF42C130" Click="Button_Click_Confirm"/>
+        <Button Content="Close" HorizontalAlignment="Left" Margin="232,400,0,0" VerticalAlignment="Top" Width="70" Height="30" FontSize="16" Background="#FFEA9292" Click="Button_Click_Close"/>
 
     </Grid>
 </Window>
