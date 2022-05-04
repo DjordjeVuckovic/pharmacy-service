@@ -1,17 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using TechHealth.Model;
 using TechHealth.Repository;
 
 namespace TechHealth.Service.RecommendationService
 {
-    class DoctorRecommendationDraftsTransformation : ITransformDraftToAppointment
+    class DateDraft : ITransformDraftToAppointment
     {
-        public List<Appointment> TransformDraftToAppointment(List<AppointmentDraft> recommendedAppointmentsDraft,string patientID, string doctorID)
+
+        public List<Appointment> TransformDraftToAppointment(List<AppointmentDraft> recommendedAppointmentsDraft,string patientID,string doctorID)
         {
-            //DoctorRepository DoctorRepository = new DoctorRepository();
-            //PatientRepository patientRepository = PatientRepository;
-            //RoomService roomService = new RoomAvailabilityService();
+            //DoctorRepository doctorRepository = new DoctorRepository();
+            //IPatientRepository patientRepository = new PatientFileRepository();
+            //RoomAvailabilityService roomService = new RoomAvailabilityService();*/
             List<Appointment> recommendedAppointments = new List<Appointment>();
             for (int i = 0; i < recommendedAppointmentsDraft.Count && i < 5; i++)
             {

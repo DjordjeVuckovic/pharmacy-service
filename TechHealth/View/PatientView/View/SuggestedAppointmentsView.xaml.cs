@@ -15,11 +15,12 @@ namespace TechHealth.View.PatientView.View
     {
         private static ObservableCollection<Appointment> termini;
         private Patient patient;
+        private string username;
         public SuggestedAppointmentsView()
         {
             InitializeComponent();
             DataContext = this;
-            patient = PatientRepository.Instance.GetPatientbyId(patient.FullName);
+            patient = PatientRepository.Instance.GetPatientByUser(username);
         }
         public static ObservableCollection<Appointment> Termini { get; set; }
 

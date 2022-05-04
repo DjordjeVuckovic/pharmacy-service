@@ -91,7 +91,7 @@ namespace TechHealth.Service
             List<Appointment> futureAppointments = AppointmentRepository.Instance.GetAllToList();
             for (int i = 0; i < futureAppointments.Count; i++)
             {
-                if (DateTime.Parse(futureAppointments[i].StartTime) < DateTime.Now)
+                if (futureAppointments[i].StartTimeD < DateTime.Now)
                 {
                     futureAppointments.RemoveAt(i);
                     i--;

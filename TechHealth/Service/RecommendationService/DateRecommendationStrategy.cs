@@ -21,7 +21,10 @@ namespace TechHealth.Service.RecommendationService
 
         public List<Appointment> GetRecommendedAppointments()
         {
-            throw new NotImplementedException();
+            RemoveReservedAppointments();
+            ITransformDraftToAppointment transformDraftToAppointment = new DateDraft();
+            return transformDraftToAppointment.TransformDraftToAppointment(recommendedAppointementsDrafts, patientID, "");
+
         }
 
         private void RemoveBusyDoctors(Appointment appointment)
@@ -35,8 +38,33 @@ namespace TechHealth.Service.RecommendationService
                     recommendedAppointementsDrafts[i].AvailableDoctorsID.Remove(appointment.Doctor.Jmbg);
 
                 }
-
             }
         }
+
+        private void RemoveReservedAppointments()
+        {
+            List<Appointment> scheduledAppointments = new AppointmentService().GetFutureAppointments();
+            for (int i = 0; i < scheduledAppointments.Count; i++)
+            {
+
+                RemoveBusyDoctors(scheduledAppointments[i]);
+            }
+            RemoveAppointmentsWithoutDoctors();
+        }
+
+
+        private void RemoveAppointmentsWithoutDoctors()
+        {
+            for (int i = 0; i < recommendedAppointementsDrafts.Count; i++)
+            {
+                if (recommendedAppointementsDrafts[i].AvailableDoctorsID.Count == 0)
+                {
+                    recommendedAppointementsDrafts.RemoveAt(i);
+                    i--;
+                }
+            }
+        }
+ 
+
     }
 }

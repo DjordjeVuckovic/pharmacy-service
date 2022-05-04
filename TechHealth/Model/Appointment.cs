@@ -42,11 +42,11 @@ namespace TechHealth.Model
         public Appointment(DateTime startTimeD, AppointmentType appointmenttype, Doctor doctor, Patient patient, Room room)
         {
             this.startTimeD = startTimeD;
-            this.idAppointment = GenerateID();
+            idAppointment = GenerateID();
             AppointmentType= appointmenttype;
-            this.Doctor = doctor;
-            this.Patient = patient;
-            this.Room = room;
+            Doctor = doctor;
+            Patient = patient;
+            Room = room;
             ShouldSerialize = true;
         }
 

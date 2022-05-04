@@ -60,7 +60,8 @@ namespace TechHealth.View.PatientView
             if (radioDoc.IsChecked == true)
             {
                 RecommendedAppointmentDTO recAppDTO = new RecommendedAppointmentDTO
-                    (PatientRecommendType.DoctorRecommendation, doctors[CbDoctor.SelectedIndex].Jmbg, (DateTime)StartDate.SelectedDate, (DateTime)EndDate.SelectedDate, patient.Jmbg);
+                    (PatientRecommendType.DoctorRecommendation, doctors[CbDoctor.SelectedIndex].Jmbg, (DateTime)StartDate.SelectedDate, (DateTime)EndDate.SelectedDate,
+                    LoginWindow.GetPatientId());
                 RecommendedAppointmentController recController = new RecommendedAppointmentController();
                 suggestedAppointmentList = recController.GetRecommendedAppointments(recAppDTO);
             }
@@ -69,7 +70,7 @@ namespace TechHealth.View.PatientView
                 RecommendedAppointmentDTO recAppDTO = new RecommendedAppointmentDTO(
                     PatientRecommendType.DoctorRecommendation, null,
                     (DateTime)StartDate.SelectedDate, (DateTime)EndDate.SelectedDate,
-                    patient.Jmbg);
+                    LoginWindow.GetPatientId());
                 RecommendedAppointmentController recController = new RecommendedAppointmentController();
                 suggestedAppointmentList = recController.GetRecommendedAppointments(recAppDTO);
             }

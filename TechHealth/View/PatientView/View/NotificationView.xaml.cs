@@ -33,12 +33,12 @@ namespace TechHealth.View.PatientView.View
     {
         private List<Notification> notifications;
         private Patient patient;
-
+        private string user;
 
         public NotificationView()
         {
             InitializeComponent();
-            patient = PatientRepository.Instance.GetPatientbyId(patient.Jmbg);
+            patient = PatientRepository.Instance.GetPatientByUser(user);
             notifications = new List<Notification>();
             NotificationController notifController = new NotificationController();
             notifications = notifController.ReadPastNotificationsByUser(patient.Jmbg);

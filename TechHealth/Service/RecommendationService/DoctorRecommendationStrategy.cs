@@ -55,10 +55,5 @@ namespace TechHealth.Service.RecommendationService
             ITransformDraftToAppointment transformDraftToAppointment = new DoctorRecommendationDraftsTransformation();
             return transformDraftToAppointment.TransformDraftToAppointment(recommendedAppointementsDrafts, patientID, doctorID);
         }
-
-        List<Appointment> IRecommendationStrategy.GetRecommendedAppointments()
-        {
-            throw new NotImplementedException();
-        }
     }
 }
