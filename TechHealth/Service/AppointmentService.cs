@@ -29,7 +29,7 @@ namespace TechHealth.Service
          return temp;
       }
 
-      public List<Appointment> GetAllFuture(DateTime startDate,Doctor doctor,Patient patient)
+      public List<Appointment> GetAllFuture(DateTime startDate, Doctor doctor,Patient patient)
       {
          List<Appointment> ret = new List<Appointment>();
          
@@ -42,7 +42,6 @@ namespace TechHealth.Service
          DateTime endDate = myStart.AddDays(2);
          while (startDate < endDate)
          {
-          
             while(startduration <= finishduration)
             {
                Appointment appointment = new Appointment
@@ -62,17 +61,14 @@ namespace TechHealth.Service
                {
                   ret.Add(appointment);
                }
-
                startduration= startduration.Add(duration);
                startTime = startTime.Add(duration);
                endTime = endTime.Add(duration);
-
             }
             startDate =startDate.AddDays(1);
             startduration=new TimeSpan(0, 8, 0, 0);
             finishduration = new TimeSpan(0, 24, 0, 0);
          }
-
          return ret;
       }
 
@@ -101,10 +97,12 @@ namespace TechHealth.Service
       
       public List<Appointment> GetByPatientId(string patientId)
       {
-         throw new NotImplementedException();
-      }
-      
-      public List<Appointment> GetByRoomId(string roomId)
+            var temp = AppointmentRepository.Instance.GetByPatientId(patientId);
+            BindDataForAppointments(temp);
+            return temp;
+        }
+
+        public List<Appointment> GetByRoomId(string roomId)
       {
          throw new NotImplementedException();
       }
@@ -118,7 +116,7 @@ namespace TechHealth.Service
 
          foreach (var appointment in appointments)
          {
-            appointment.Patient = PatientRepository.Instance.GetById(appointment.Patient.Jmbg);
+            appointment.Patient = PatientRepository.Instance.GetPatientbyId(appointment.Patient.Jmbg);
          }
          
       }
@@ -146,9 +144,7 @@ namespace TechHealth.Service
             }
             
          }
-
          return ret;
-
       }
    
    }

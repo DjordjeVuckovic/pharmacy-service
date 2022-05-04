@@ -13,7 +13,7 @@ namespace TechHealth.View.PatientView.ViewModel
         public HomeViewModelP HomeVm { get; set; }
         public RelayCommand AppointmentViewCommand { get; set; }
         public AppointmentViewModel AppointmentVm { get; set; }
-
+        public static string PatientId { get; set; }
 
         private object _currentView;
 
@@ -23,8 +23,25 @@ namespace TechHealth.View.PatientView.ViewModel
             set
             {
                 _currentView = value;
-                OnPropertyChanged();
+                OnPropertyChanged(nameof(CurrentView));
             }
+        }
+
+        private static MainViewModel _instance;
+
+        public static MainViewModel GetInstance(string patientId)
+        {
+            if (_instance == null)
+            {
+                PatientId = patientId;
+                _instance = new MainViewModel();
+            }
+            return _instance;
+        }
+
+        public static MainViewModel GetInstance()
+        {
+            return _instance;
         }
 
         public MainViewModel()
@@ -44,6 +61,10 @@ namespace TechHealth.View.PatientView.ViewModel
                 CurrentView = AppointmentVm;
             });
         }
+
+        
+
+
 
     }
 }
