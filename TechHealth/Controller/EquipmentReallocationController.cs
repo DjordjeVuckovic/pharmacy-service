@@ -21,5 +21,10 @@ namespace TechHealth.Controller
         {
             eqReallocationService.SubmitReallocation(dto);
         }
+
+        public void ReallocateOnDate(object state)
+        {
+            eqReallocationService.ReallocateOnDate(state);
+        }
     }
 }

@@ -13,7 +13,7 @@ namespace TechHealth.DTO
         public string SourceRoomID { get; set; }
         public string DestinationRoomID { get; set; }
         public int AmountMoving { get; set; }
-        public DateTime? ReallocationTime { get; set; }
+        public DateTime ReallocationTime { get; set; }
         [JsonIgnore]
         public bool ShouldSerialize { get; set; }
         public string EquipmentName { get; set; }
@@ -21,7 +21,7 @@ namespace TechHealth.DTO
         public EquipmentReallocationDTO()
         {               
         }
-        public EquipmentReallocationDTO(string SourceRoomID, string DestinationRoomID, int AmountMoving, DateTime? ReallocationTime, string EquipmentName, string ReallocationID)
+        public EquipmentReallocationDTO(string SourceRoomID, string DestinationRoomID, int AmountMoving, DateTime ReallocationTime, string EquipmentName, string ReallocationID)
         {
             this.SourceRoomID = SourceRoomID;
             this.DestinationRoomID = DestinationRoomID;

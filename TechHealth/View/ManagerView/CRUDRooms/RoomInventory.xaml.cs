@@ -16,6 +16,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using TechHealth.Annotations;
+using TechHealth.Controller;
 using TechHealth.Model;
 using TechHealth.Repository;
 
@@ -29,6 +30,7 @@ namespace TechHealth.View.ManagerView.CRUDRooms
         private ObservableCollection<RoomEquipment> reList;
         public event PropertyChangedEventHandler PropertyChanged;
         public static Timer timer;
+        private EquipmentReallocationController eqReallocationController = new EquipmentReallocationController();
 
         public ObservableCollection<RoomEquipment> ReList
         {
@@ -45,6 +47,7 @@ namespace TechHealth.View.ManagerView.CRUDRooms
         }
         public RoomInventory(Room room)
         {
+            timer = new Timer(new TimerCallback(eqReallocationController.ReallocateOnDate), null, 1000, 60000);
             InitializeComponent();
             DataContext = this;
             reList = new ObservableCollection<RoomEquipment>(RoomEquipmentRepository.Instance.GetRoomEqListByRoomID(room.roomId));

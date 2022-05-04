@@ -42,7 +42,7 @@ namespace TechHealth.Repository
             entity.ShouldSerialize = true;
         }
 
-        public bool IsReallocationHappening(DateTime? start, DateTime? end, string roomID)
+        public bool IsReallocationHappening(DateTime start, DateTime end, string roomID)
         {
             foreach (var er in GetAllToList())
             {

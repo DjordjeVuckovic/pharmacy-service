@@ -9,8 +9,8 @@ namespace TechHealth.Model
 {
     public class RoomRenovation
     {
-        public DateTime? RenovationStart { get; set; }
-        public DateTime? RenovationEnd { get; set; }
+        public DateTime RenovationStart { get; set; }
+        public DateTime RenovationEnd { get; set; }
         public string RoomID { get; set; }
         public string RenovationID { get; set; }
         [JsonIgnore]
@@ -20,7 +20,7 @@ namespace TechHealth.Model
         {
         }
 
-        public RoomRenovation(DateTime? start, DateTime? end, string roomid, string id)
+        public RoomRenovation(DateTime start, DateTime end, string roomid, string id)
         {
             RenovationStart = start;
             RenovationEnd = end;
