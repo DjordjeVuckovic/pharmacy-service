@@ -54,7 +54,9 @@ namespace TechHealth.Service
 
         public List<Appointment> GetByPatientId(string patientId)
         {
-            throw new NotImplementedException();
+            var temp = AppointmentRepository.Instance.GetByPatientId(patientId);
+            BindDataForAppointments(temp);
+            return temp;
         }
 
         public List<Appointment> GetByRoomId(string roomId)
