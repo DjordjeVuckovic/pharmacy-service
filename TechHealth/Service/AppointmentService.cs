@@ -116,21 +116,12 @@ namespace TechHealth.Service
             appointment.Doctor = DoctorRepository.Instance.GetDoctorbyId(appointment.Doctor.Jmbg);
          }
 
-
          foreach (var appointment in appointments)
          {
             appointment.Patient = PatientRepository.Instance.GetById(appointment.Patient.Jmbg);
          }
          
       }
-
-        public List<Appointment> GetByPatientId(string patientId)
-        {
-            var temp = AppointmentRepository.Instance.GetByPatientId(patientId);
-            BindDataForAppointments(temp);
-            return temp;
-        }
-
 
       private void CheckAvailability(Appointment appointment)
       {
@@ -158,26 +149,7 @@ namespace TechHealth.Service
 
          return ret;
 
-
       }
    
    }
-
-        public List<Appointment> GetFutureAppointments()
-        {
-            List<Appointment> futureAppointments = AppointmentRepository.Instance.GetAllToList();
-            for (int i = 0; i < futureAppointments.Count; i++)
-            {
-                if (futureAppointments[i].StartTimeD < DateTime.Now)
-                {
-                    futureAppointments.RemoveAt(i);
-                    i--;
-                }
-            }
-            return futureAppointments;
-        }
-
-
-    }
-
 }

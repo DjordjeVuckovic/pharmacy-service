@@ -17,11 +17,7 @@ namespace TechHealth.Service
 
         public void DeleteNotification(Notification notification) => notificationRepository.Delete(notification.ID);
 
-
         public void SaveNotification(Notification notification) => notificationRepository.Save(notification);
-
-        public void SaveNotification(Notification notification) => notificationRepository.Create(notification);
-
 
         public void DeleteNotification(string ID) => notificationRepository.Delete(ID);
 

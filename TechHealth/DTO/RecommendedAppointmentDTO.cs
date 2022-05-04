@@ -15,14 +15,14 @@ namespace TechHealth.DTO
         public DateTime EndDate { get; set; }
         public string PatientID { get; set; }
 
-        public RecommendedAppointmentDTO(PatientRecommendType type, string doctorId, DateTime startDate,
-            DateTime endDate, string patientId)
+        public RecommendedAppointmentDTO(PatientRecommendType type, String doctorId, DateTime startDate,
+            DateTime endDate, String patientId)
         {
             Type = type;
             DoctorID = doctorId;
             StartDate = startDate;
             EndDate = endDate;
-            PatientID = patientId;           
+            PatientID = patientId;
         }
     }
 }

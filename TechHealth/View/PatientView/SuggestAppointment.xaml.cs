@@ -16,11 +16,6 @@ using TechHealth.Controller;
 using TechHealth.Model;
 using TechHealth.Repository;
 
-
-
-using TechHealth.View.PatientView.View;
-
-
 namespace TechHealth.View.PatientView
 {
     /// <summary>
@@ -28,11 +23,7 @@ namespace TechHealth.View.PatientView
     /// </summary>
     /// 
 
-
     class SuggestedAppointment
-
-    /*class TerminZaPreporuku
-
     {
         public SuggestedAppointment() { }
         public SuggestedAppointment(DateTime time)
@@ -41,18 +32,12 @@ namespace TechHealth.View.PatientView
             Doctors = DoctorRepository.Instance.GetAllToList();
         }
         public List<Doctor> Doctors { get; set; }
-
         public DateTime Time { get; set; } 
     }
-
-        public DateTime Time { get; set; }
-    }*/
-
 
 
     public partial class SuggestAppointment : Window //da li ovde treba user control
     {
-
         Patient patient;
         List<Appointment> apList;
         List<Appointment> suggestedAppointmentList;
@@ -90,33 +75,13 @@ namespace TechHealth.View.PatientView
         private void Button_Click_Close(object sender, RoutedEventArgs e)
         {
             Close();
-
-        private void CheckedDate(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void CheckedDoctor(object sender, RoutedEventArgs e)
-        {
-
-
         }
 
         private void Button_Click_Confirm(object sender, RoutedEventArgs e)
         {
-
             
         }
 
         
-
-
-        }
-
-        private void Button_Click_Close(object sender, RoutedEventArgs e)
-        {
-
-        }
-
     }
 }

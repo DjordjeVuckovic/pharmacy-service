@@ -45,21 +45,8 @@ namespace TechHealth.Model
          
       }
 
-
       public bool ShouldSerialize { get; set; }
       
-
-        public Appointment(DateTime startTimeD, AppointmentType appointmenttype, Doctor doctor, Patient patient, Room room)
-        {
-            this.startTimeD = startTimeD;
-            idAppointment = GenerateID();
-            AppointmentType= appointmenttype;
-            Doctor = doctor;
-            Patient = patient;
-            Room = room;
-            ShouldSerialize = true;
-        }
-
 
       public DateTime Date
       {

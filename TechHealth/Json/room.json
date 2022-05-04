@@ -16,11 +16,5 @@
     "roomId": "S3",
     "floor": 3,
     "availability": false
-  },
-  "P1": {
-    "roomTypes": 2,
-    "roomId": "P1",
-    "floor": 2,
-    "availability": true
   }
 }
