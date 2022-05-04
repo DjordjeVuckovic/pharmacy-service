@@ -310,5 +310,29 @@
       "ShouldSerialize": false
     },
     "Evident": false
+  },
+  "6397f09b027543e3b4943df1588d39ae": {
+    "ShouldSerialize": true,
+    "Date": "2022-05-04T00:00:00",
+    "StartTimeD": "2022-05-04T01:04:00",
+    "FinishTimeD": "2022-05-04T02:10:00",
+    "Emergent": false,
+    "StartTime": null,
+    "FinishTime": null,
+    "IdAppointment": "6397f09b027543e3b4943df1588d39ae",
+    "Room": {
+      "roomId": "Warehouse"
+    },
+    "Patient": {
+      "Lbo": 73456,
+      "Jmbg": "2456",
+      "ShouldSerialize": false
+    },
+    "AppointmentType": 0,
+    "Doctor": {
+      "Jmbg": "2315",
+      "ShouldSerialize": false
+    },
+    "Evident": false
   }
 }

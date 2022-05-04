@@ -29,7 +29,7 @@ namespace TechHealth.View.SecretaryView
             InitializeComponent();
             type1 = type;
             date1 = date;
-            foreach (var a in AppointmentRepository.Instance.GetAll().Values)
+            foreach (var a in appointmentController.GetAll())
             {
                 if (a.Date.Equals(date) && a.AppointmentType.Equals(type))
                 {
