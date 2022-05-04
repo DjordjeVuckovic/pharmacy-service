@@ -11,14 +11,6 @@ namespace TechHealth.Model
         public string Description { get; set; }
         public Appointment Appointment { get; set; }
         public bool ShouldSerialize { get; set; }
-        public bool ShouldSerializePatient()
-        {
-            return ShouldSerialize;
-        }
-        public bool ShouldSerializeDoctor()
-        {
-            return ShouldSerialize;
-        }
         public bool ShouldSerializeStartDate()
         {
             return ShouldSerialize;

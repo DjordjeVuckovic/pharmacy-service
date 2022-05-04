@@ -39,9 +39,10 @@
 
             <Label Grid.Row="0" Content="New Therapy"  HorizontalAlignment="Center" FontSize="32"  FontWeight="Light" Foreground="#50fa7b"/>
 
-            <StackPanel Grid.Row="1" VerticalAlignment="Center" Margin="20,0,0,0">
-                <Label Content="{Binding DoctorLabel}"  HorizontalAlignment="Left"   />
-                <Label Content="{Binding PatientLabel}"   HorizontalAlignment="Left" Padding="5,10,5,0"/>
+            <StackPanel Grid.Row="1" VerticalAlignment="Center" Margin="20,0,0,0" >
+                <Label Content="{Binding DoctorLabel}"  HorizontalAlignment="Left"  Foreground="#bd93f9" Margin="10,0,0,0" />
+                <Label Content="{Binding PatientLabel}"   HorizontalAlignment="Left" Margin="10,0,0,0"/>
+                <Label  Content="{Binding RoomLabel}"  HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Stretch" FontSize="14"  FontWeight="Bold" />
             </StackPanel>
 
             <Grid Grid.Row="2"  Margin="10,0,0,0">
@@ -83,7 +84,7 @@
                 </DatePicker>
                 <TextBox x:Name="TextBox" Grid.Row="2" Grid.Column="1" Margin="20,27.148,10,27.148" VerticalAlignment="Center" Height="25.804" Text="{Binding Frequency,UpdateSourceTrigger=PropertyChanged}"></TextBox>
                 <TextBox x:Name="TextBox1" Grid.Row="3" Grid.Column="1" Margin="20,0,10,10"  Text="{Binding Description, UpdateSourceTrigger=PropertyChanged}" ></TextBox>
-                <Border Grid.Row="0" Grid.RowSpan="4" Grid.Column="0" BorderThickness="0,0,2,0" BorderBrush="#50fa7b" />
+                <Border Grid.Row="0" Grid.RowSpan="4" Grid.Column="0" BorderThickness="0,0,2,0" Margin="0,20,0,0" BorderBrush="#50fa7b" />
 
             </Grid>
 

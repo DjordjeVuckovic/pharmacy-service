@@ -19,6 +19,7 @@ namespace TechHealth.DoctorView.ViewModel
         private readonly TherapyController therapyController = new TherapyController();
         public string DoctorLabel { get; set; }
         public string PatientLabel { get; set; }
+        public string RoomLabel { get; set; }
         public RelayCommand FinishCommand { get; set; }
         public RelayCommand CancelCommand { get; set; }
         public TherapyViewModel(Appointment selectedItemAppointment)
@@ -28,6 +29,7 @@ namespace TechHealth.DoctorView.ViewModel
             CancelCommand = new RelayCommand(param => CloseWindow());
             DoctorLabel = "Doctor:  " + SelectedAppointment.Doctor.FullSpecialization;
             PatientLabel = "Patient:  " + SelectedAppointment.Patient.FullName;
+            RoomLabel = "Room: " + SelectedAppointment.Room.roomId;
         }
 
         public string Frequency

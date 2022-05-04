@@ -16,8 +16,6 @@ namespace TechHealth.Model
 
       private Bloodtype bloodType;
       private Patient patient;
-      
-      //public IEnumerable<Allergen> Allergens { get; set; }
       private string weight;
       private string height;
       private string chronicDiseases;

@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:TechHealth.DoctorView.Windows"
         mc:Ignorable="d"
          WindowStartupLocation="CenterScreen"
-        Title="Prescription Preview" Height="550" Width="500">
+        Title="Prescription Preview" Height="650" Width="500">
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -55,7 +55,6 @@
                 <RowDefinition/>
                 <RowDefinition/>
                 <RowDefinition/>
-                <RowDefinition/>
             </Grid.RowDefinitions>
 
             <Grid.ColumnDefinitions>
@@ -75,17 +74,15 @@
             <TextBox  Text="{Binding MedicineId}"  Grid.Column="1" Grid.Row="3" Margin="30,4.291,10,3.254" VerticalContentAlignment="Center" Padding="5,0,10,0" FontSize="14" IsReadOnly="True"/>
             <Label Content="Medicine side effects: " HorizontalAlignment="Left" Margin="0,0,10,0" Grid.Column="0" Grid.Row="4" VerticalAlignment="Center"/>
             <TextBox  Text="{Binding MedicineSide}"  Grid.Column="1" Grid.Row="4" Margin="30,4.291,10,3.254" VerticalContentAlignment="Center" Padding="5,0,10,0" FontSize="14" IsReadOnly="True"/>
-            <Label Content="Medicine allergens: " HorizontalAlignment="Left" Margin="0,0,10,0" Grid.Column="0" Grid.Row="5" VerticalAlignment="Center"/>
+            <Label Content="Medicine substances : " HorizontalAlignment="Left" Margin="0,0,10,0" Grid.Column="0" Grid.Row="5" VerticalAlignment="Center"/>
             <TextBox  Text="{Binding MedicineAlg}"  Grid.Column="1" Grid.Row="5" Margin="30,4.291,10,3.254" VerticalContentAlignment="Center" Padding="5,0,10,0" FontSize="14" IsReadOnly="True"/>
             <Label Content="Usage: " HorizontalAlignment="Left" Margin="0,0,10,0" Grid.Column="0" Grid.Row="6" VerticalAlignment="Center"/>
             <TextBox  Text="{Binding Usage}"  Grid.Column="1" Grid.Row="6" Margin="30,4.291,10,3.254" VerticalContentAlignment="Center" Padding="5,0,10,0" FontSize="14" IsReadOnly="True"/>
             <Label Content="Frequency: " HorizontalAlignment="Left" Margin="0,0,10,0" Grid.Column="0" Grid.Row="7" VerticalAlignment="Center"/>
             <TextBox  Text="{Binding Frequency}"  Grid.Column="1" Grid.Row="7" Margin="30,4.291,10,3.254" VerticalContentAlignment="Center" Padding="5,0,10,0" FontSize="14" IsReadOnly="True"/>
-           <Label Content="Frequency: " HorizontalAlignment="Left" Margin="0,0,10,0" Grid.Column="0" Grid.Row="8" VerticalAlignment="Center"/>
-           <TextBox  Text="{Binding Description}"  Grid.Column="1" Grid.Row="8" Margin="30,4.291,10,3.254" VerticalContentAlignment="Center" Padding="5,0,10,0" FontSize="14" IsReadOnly="True"/>
+           
             
-            
-            <Border Grid.Row="0" Grid.RowSpan="9" BorderThickness="0,0,1,0" BorderBrush="#50fa7b"/>
+            <Border Grid.Row="0" Grid.RowSpan="8" BorderThickness="0,0,1,0" BorderBrush="#50fa7b"/>
         </Grid>
         <Button Grid.Row="3" Content="Print"  HorizontalAlignment="Right" VerticalAlignment="Stretch" Width="100" Margin="0,0,85.53,10" />
         <Button Grid.Row="3" Content="Close"  HorizontalAlignment="Left" VerticalAlignment="Stretch" Width="100" Margin="83.947,0,0,10" />

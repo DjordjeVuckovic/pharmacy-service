@@ -21,9 +21,9 @@ namespace TechHealth.Controller
           return appointmentService.GetById(idAppointment);
       }
       
-      public List<Appointment> GetAll()
+      public ObservableCollection<Appointment> GetAll()
       {
-         return appointmentService.GetAll();
+         return new ObservableCollection<Appointment>(appointmentService.GetAll());
       }
       
       public bool Create(string doctorId, string patientId, DateTime date, DateTime startTime, DateTime finishTime, string roomId, AppointmentType type)
@@ -74,10 +74,10 @@ namespace TechHealth.Controller
         {
             return appointmentService.Delete(idAppointment);
         }
-        public List<Appointment> GetByDoctorId(string doctorId)
+        public ObservableCollection<Appointment> GetByDoctorId(string doctorId)
         {
 
-            return appointmentService.GetByDoctorId(doctorId);
+            return new ObservableCollection<Appointment>(appointmentService.GetByDoctorId(doctorId));
         }
         public ObservableCollection<Appointment> GetAllNotEvident(string doctorId)
         {

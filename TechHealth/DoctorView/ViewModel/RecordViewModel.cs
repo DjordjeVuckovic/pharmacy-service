@@ -75,7 +75,7 @@ namespace TechHealth.DoctorView.ViewModel
         {
             _doctorId = doctorId;
             _instance = this;
-            Appointments = new ObservableCollection<Appointment>(appointmentController.GetByDoctorId(_doctorId));
+            Appointments = appointmentController.GetByDoctorId(_doctorId);
             NewCommand = new RelayCommand(param => Execute(), param => CanExecute());
             ReviewCommand = new RelayCommand(param => Execute1(), param => CanExecute1());
             MoreAction = new RelayCommand(param => Execute2(), param => CanExecute2());

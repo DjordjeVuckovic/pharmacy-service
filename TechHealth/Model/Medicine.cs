@@ -5,6 +5,7 @@
 
 using System;
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace TechHealth.Model
 {
@@ -15,11 +16,9 @@ namespace TechHealth.Model
         public int Quantity{ get; set; }
         public string Units{ get; set; }
         public string SideEffects{ get; set; }
-        public Substance MainSubstance{ get; set; }
-        public int HarmfulRate { get; set; }
+        public Substance MainSubstance { get; set; }
         public double Price{ get; set; }
         public string MedicineName{ get; set; }
-        public string Allergens { get; set; }
         //public IEnumerable<Allergen> allergens;
         public bool Approved { get; set; }
         public bool ShouldSerialize { get; set; }
@@ -64,6 +63,27 @@ namespace TechHealth.Model
         {
             return ShouldSerialize;
         }
+
+        public string MedicineSubstanceToString()
+        {
+            string composition = "";
+            foreach (var cmp in Composition)
+            {
+                composition += cmp.SubstanceName + "; ";
+            }
+
+            return composition;
+        }
+
+        [JsonIgnore]
+        public string MedicineSubstances
+        {
+            get=>MedicineSubstanceToString();
+            set
+            {
+                
+            }
+        } 
     }
 
 }

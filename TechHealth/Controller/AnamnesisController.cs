@@ -17,9 +17,9 @@ namespace TechHealth.Controller
         {
             anamnesisService.Create(anamnesis);
         }
-        public bool Update(Anamnesis anamnesis)
+        public void Update(Anamnesis anamnesis)
         {
-            return anamnesisService.Update(anamnesis);
+             anamnesisService.Update(anamnesis);
         }
 
         public ObservableCollection<Anamnesis> GetAllAnamnesisExaminationsByPatient(string patientId)

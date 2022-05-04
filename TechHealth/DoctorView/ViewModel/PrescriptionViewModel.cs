@@ -88,6 +88,7 @@ namespace TechHealth.DoctorView.ViewModel
         }
         public string DoctorLabel { get; set; }
         public string PatientLabel { get; set; }
+        public string RoomLabel { get; set; }
         
         public RelayCommand FinishCommand { get; set; }
         public RelayCommand CancelCommand { get; set; }
@@ -97,6 +98,7 @@ namespace TechHealth.DoctorView.ViewModel
             FillComboData();
             DoctorLabel = "Doctor:  " + SelectedAppointment.Doctor.FullSpecialization;
             PatientLabel = "Patient:  " + SelectedAppointment.Patient.FullName;
+            RoomLabel = "Room: " + SelectedAppointment.Room.roomId;
             FinishCommand = new RelayCommand(param => Execute(), param => CanExecute());
             CancelCommand = new RelayCommand(param => CloseWindow());
             

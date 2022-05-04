@@ -21,7 +21,6 @@ namespace TechHealth.DoctorView.ViewModel
         public string MedicineSide { get; set; }
         public string MedicineAlg { get; set; }
         public string Usage { get; set; }
-        public string Description { get; set; }
         public string DoctorName { get; set; }
         public string RoomID { get; set; }
 
@@ -41,12 +40,9 @@ namespace TechHealth.DoctorView.ViewModel
             MedicineName = medicine.MedicineName;
             MedicineId = medicine.MedicineId;
             MedicineSide = medicine.SideEffects;
-            MedicineAlg = medicine.Allergens;
+            MedicineAlg = medicine.MedicineSubstances;
             Usage = prescription.Usage;
             Frequency = prescription.Frequency;
-            Description = prescription.Usage;
-
-
         }
     }
 }
