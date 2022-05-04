@@ -69,6 +69,8 @@ namespace TechHealth.Service
 
             }
             startDate =startDate.AddDays(1);
+            startduration=new TimeSpan(0, 8, 0, 0);
+            finishduration = new TimeSpan(0, 24, 0, 0);
          }
 
          return ret;
