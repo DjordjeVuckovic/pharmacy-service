@@ -32,7 +32,7 @@ namespace TechHealth.View.PatientView       //dodati IDappointment
         private List<Appointment> apList;
         private ObservableCollection<Appointment> Apt { get; set; }
 
-        public AddAppointment(string patientId,ObservableCollection<Appointment> listAppointment)
+        public AddAppointment(ObservableCollection<Appointment> listAppointment)
         {
             InitializeComponent();
             DataContext = this;

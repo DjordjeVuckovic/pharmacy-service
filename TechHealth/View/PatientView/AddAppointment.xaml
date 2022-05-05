@@ -49,11 +49,11 @@
 
         <ComboBox HorizontalAlignment="Left" Margin="25,292,0,0" VerticalAlignment="Top" Width="147" Height="29"
                   x:Name="CbDoctor" Grid.Column="1" DisplayMemberPath="FullName"/>
-        <Button Content="Confirm" HorizontalAlignment="Left" Margin="38,482,0,0"
+        <Button Content="Confirm" HorizontalAlignment="Left" Margin="50,529,0,0"
                 VerticalAlignment="Top" FontSize="16" FontWeight="Normal" Height="30"
                 Width="95" RenderTransformOrigin="-0.291,0.467" Background="#FF42C130"
                 Click="Button_Click_Confirm" />
-        <Button Content="Close" HorizontalAlignment="Left" Margin="67,482,0,0"
+        <Button Content="Close" HorizontalAlignment="Left" Margin="79,529,0,0"
                 VerticalAlignment="Top" Width="93" Height="30" FontSize="16"
                 Background="#FFEA9292" Click="Button_Click_Close" Grid.Column="1" />
         <Label Content="Add appointment" HorizontalContentAlignment="Center"
@@ -79,12 +79,13 @@
             </materialDesign:TimePicker.Text>
         </materialDesign:TimePicker>
         <Label Content="PATIENT" HorizontalAlignment="Center" VerticalAlignment="Center"
-               Margin="50,81,67,453"
-               FontSize="20" Width="104"/>
+               Margin="50,81,67,442"
+               FontSize="20" Width="104" Height="46"/>
         <TextBox Grid.Column="1"
                  Text="{Binding PatientFullName}" HorizontalAlignment="Left"
-                 Height="34" Margin="25,81,0,0" TextWrapping="Wrap"
-                 VerticalAlignment="Top" Width="147"
-                 IsReadOnly="True"/>
+                 Height="46" Margin="25,81,0,442" TextWrapping="Wrap"
+                 VerticalAlignment="Center" Width="147"
+                 IsReadOnly="True"
+                 FontSize="20"/>
     </Grid>
 </Window>

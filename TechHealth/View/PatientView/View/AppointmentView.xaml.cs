@@ -88,7 +88,7 @@ namespace TechHealth.View.PatientView.View
 
         private void ExecuteAdd()
         {
-            new AddAppointment(PatientId,aplist).ShowDialog();
+            new AddAppointment(aplist).ShowDialog();
         }
 
         private void ExecuteUpdate(Appointment selected)

@@ -13,13 +13,13 @@ namespace TechHealth.View
         private readonly AppointmentService appointmentService = new AppointmentService();
         private List<Doctor> doctors;
         public ObservableCollection<Appointment>MyList { get; set; }
-        public AppointmensFuture(DateTime startDate,Doctor doctor,Patient patient)
+        public AppointmensFuture(DateTime startDateRegion, DateTime finishDateRegion, Doctor doctor,Patient patient, Room room)
         {
             InitializeComponent();
             DataContext = this;
             doctors = DoctorRepository.Instance.GetAllToList();
 
-            MyList = new ObservableCollection<Appointment>(appointmentService.GetAllFuture(startDate, doctor, patient));
+            MyList = new ObservableCollection<Appointment>(appointmentService.GetAllFuture(startDateRegion, finishDateRegion, doctor, patient, room));
             
         }
     }
