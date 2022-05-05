@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TechHealth.View.ManagerView.CRUDRooms"
         mc:Ignorable="d"
-        Title="ReallocateForm" Height="500" Width="400">
+        Title="ReallocateForm" Height="520" Width="400">
     <Grid Background="#272537">
         <Label Content="Equipment name:" HorizontalAlignment="Left" Margin="51,78,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White"/>
         <Label Content="From room:" HorizontalAlignment="Left" Margin="51,137,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White"/>
