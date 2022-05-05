@@ -29,6 +29,7 @@ namespace TechHealth.View.PatientView
     {
         private AppointmentController appointmentController = new AppointmentController();
         private PatientController patientController = new PatientController();
+        private RoomController roomController = new RoomController();
         private List<Doctor> doctors;
         private List<Appointment> apList;
         private ObservableCollection<Appointment> Apt { get; set; }
@@ -72,7 +73,7 @@ namespace TechHealth.View.PatientView
                 //FinishDate = DateTime.Parse(FinishDate.Text),
                 AppointmentType = AppointmentType.examination,
                 Doctor = doctors[CbDoctor.SelectedIndex],
-                Room = RoomData,
+                Room = roomController.GetById("S2"),
                 IdAppointment = Guid.NewGuid().ToString("N"),
                 ShouldSerialize = true
             };
