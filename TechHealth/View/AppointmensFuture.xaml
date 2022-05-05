@@ -9,10 +9,10 @@
     <Grid>
         <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding MyList}" >
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Doctor" Binding="{Binding Doctor.FullName}" Width="1.2*"  CanUserResize="False"/>
-            <DataGridTextColumn Header="Date" Binding="{Binding Date,StringFormat=d}" Width="*"  CanUserResize="False" />
-            <DataGridTextColumn Header="StartTime" Binding="{Binding StartTimeD,StringFormat=t}" Width="*"  CanUserResize="False"/>
-            <DataGridTextColumn Header="FinishTime" Binding="{Binding FinishTimeD,StringFormat=t}" Width="1.2*"  CanUserResize="False"/>
+                <DataGridTextColumn Header="Doctor" Binding="{Binding Doctor.FullName}" Width="1.2*"  CanUserResize="False" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Date" Binding="{Binding Date,StringFormat=d}" Width="*"  CanUserResize="False" IsReadOnly="True" />
+                <DataGridTextColumn Header="StartTime" Binding="{Binding StartTimeD,StringFormat=t}" Width="*"  CanUserResize="False" IsReadOnly="True"/>
+                <DataGridTextColumn Header="FinishTime" Binding="{Binding FinishTimeD,StringFormat=t}" Width="1.2*"  CanUserResize="False" IsReadOnly="True"/>
             
             </DataGrid.Columns>
         </DataGrid>
