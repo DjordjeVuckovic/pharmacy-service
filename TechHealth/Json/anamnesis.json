@@ -1,3 +1,52 @@
 {
-  
+  "24b2193c4a4c4488b411ca2232b157f4": {
+    "Appointment": {
+      "ShouldSerialize": false,
+      "IdAppointment": "86771793b2074ed0af6c137913d3e2ca",
+      "StartDateRegion": "0001-01-01T00:00:00",
+      "FinishDateRegion": "0001-01-01T00:00:00"
+    },
+    "MainSymptom": "aaa",
+    "AnamnesisDate": "2022-05-05T23:55:55.498222+02:00",
+    "AnamnesisId": "24b2193c4a4c4488b411ca2232b157f4",
+    "OtherSymptoms": "aa",
+    "GeneralAmnesis": "aaa",
+    "Cns": null,
+    "Eye": null,
+    "Neck": null,
+    "Mss": null,
+    "Skin": null,
+    "Ear": null,
+    "Cus": null,
+    "Infectious": null,
+    "Ugs": null,
+    "Respiratory": null,
+    "Mouth": null,
+    "Gi": null
+  },
+  "854a8f2c761b45dd81c4c0954c5081e4": {
+    "Appointment": {
+      "ShouldSerialize": false,
+      "IdAppointment": "787aeaed2ea747eeb8f659c05f01cb5c",
+      "StartDateRegion": "0001-01-01T00:00:00",
+      "FinishDateRegion": "0001-01-01T00:00:00"
+    },
+    "MainSymptom": "glavobolja",
+    "AnamnesisDate": "2022-05-06T00:05:32.4969604+02:00",
+    "AnamnesisId": "854a8f2c761b45dd81c4c0954c5081e4",
+    "OtherSymptoms": "temperatura",
+    "GeneralAmnesis": "pacijent je dosao sa povisenom temeraturom i glavoboljom",
+    "Cns": "a",
+    "Eye": "a",
+    "Neck": "a",
+    "Mss": "a",
+    "Skin": "a",
+    "Ear": "a",
+    "Cus": "a",
+    "Infectious": "a",
+    "Ugs": "a",
+    "Respiratory": "a",
+    "Mouth": "a",
+    "Gi": "a"
+  }
 }

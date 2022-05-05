@@ -12,7 +12,9 @@
     "ShouldSerialize": true,
     "Appointment": {
       "ShouldSerialize": false,
-      "IdAppointment": "31890aaae47c4166a31ccbdeb306bb82"
+      "IdAppointment": "31890aaae47c4166a31ccbdeb306bb82",
+      "StartDateRegion": "0001-01-01T00:00:00",
+      "FinishDateRegion": "0001-01-01T00:00:00"
     }
   },
   "9b86c1bbbe6140c6b84d3de799d6a380": {
@@ -28,7 +30,9 @@
     "ShouldSerialize": true,
     "Appointment": {
       "ShouldSerialize": false,
-      "IdAppointment": "ab4d42dfc8e847a4b0ab5acddd24183f"
+      "IdAppointment": "ab4d42dfc8e847a4b0ab5acddd24183f",
+      "StartDateRegion": "0001-01-01T00:00:00",
+      "FinishDateRegion": "0001-01-01T00:00:00"
     }
   },
   "d975661f19ff44acb88726ca47155dbe": {
@@ -44,7 +48,9 @@
     "ShouldSerialize": true,
     "Appointment": {
       "ShouldSerialize": false,
-      "IdAppointment": "ab4d42dfc8e847a4b0ab5acddd24183f"
+      "IdAppointment": "ab4d42dfc8e847a4b0ab5acddd24183f",
+      "StartDateRegion": "0001-01-01T00:00:00",
+      "FinishDateRegion": "0001-01-01T00:00:00"
     }
   },
   "6b60488ae2f64b4cb532f4fb8b239227": {
@@ -60,7 +66,9 @@
     "ShouldSerialize": true,
     "Appointment": {
       "ShouldSerialize": false,
-      "IdAppointment": "1ef1b43af5b548c7b4a982aef3ce5cc9"
+      "IdAppointment": "1ef1b43af5b548c7b4a982aef3ce5cc9",
+      "StartDateRegion": "0001-01-01T00:00:00",
+      "FinishDateRegion": "0001-01-01T00:00:00"
     }
   },
   "8e25376a403448a7a77296451f06393f": {
@@ -76,7 +84,9 @@
     "ShouldSerialize": true,
     "Appointment": {
       "ShouldSerialize": false,
-      "IdAppointment": "2b5137f394a84737bce6ce8629dd3991"
+      "IdAppointment": "2b5137f394a84737bce6ce8629dd3991",
+      "StartDateRegion": "0001-01-01T00:00:00",
+      "FinishDateRegion": "0001-01-01T00:00:00"
     }
   },
   "b13d80aa872b40a2846d2ce0523db83f": {
@@ -92,7 +102,27 @@
     "ShouldSerialize": true,
     "Appointment": {
       "ShouldSerialize": false,
-      "IdAppointment": "2b5137f394a84737bce6ce8629dd3991"
+      "IdAppointment": "2b5137f394a84737bce6ce8629dd3991",
+      "StartDateRegion": "0001-01-01T00:00:00",
+      "FinishDateRegion": "0001-01-01T00:00:00"
+    }
+  },
+  "95c95cf0db3d4b33b515cc5edf06d9cc": {
+    "PrescriptionId": "95c95cf0db3d4b33b515cc5edf06d9cc",
+    "Medicine": {
+      "MedicineId": "4e39d97e9ef24dea899335d58c4fa534",
+      "ShouldSerialize": false
+    },
+    "Frequency": "2* dnevno",
+    "Usage": "oralno",
+    "StartDate": "2022-05-07T00:00:00",
+    "FinishDate": "2022-05-09T00:00:00",
+    "ShouldSerialize": true,
+    "Appointment": {
+      "ShouldSerialize": false,
+      "IdAppointment": "86771793b2074ed0af6c137913d3e2ca",
+      "StartDateRegion": "0001-01-01T00:00:00",
+      "FinishDateRegion": "0001-01-01T00:00:00"
     }
   }
 }

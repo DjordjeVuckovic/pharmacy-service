@@ -25,13 +25,13 @@
             <RowDefinition/>
             <RowDefinition Height="43.4"/>
         </Grid.RowDefinitions>
-        <Label Grid.Row="0" Content="New Anamnesis" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="32" Margin="0,5,0,1" Foreground="#50fa7b"/>
-        <StackPanel Grid.Row="1" HorizontalAlignment="Left" Margin="41.578,10,0,10" Width="179.169">
-            <Label Content="Doctor: " x:Name="LabelDoctor1" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="5,0,5,0" FontSize="16" />
-            <Label Content="Date: " x:Name="LabelDate1" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="5,0,5,0" FontSize="16"/>
-            <Label Content="Patient: " x:Name="LabelPatient1" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="5,0,5,0" FontSize="16" />
-            <Label Content="Patient Lbo: " x:Name="LabelPatientLbo1" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="5,0,5,0" FontSize="16"/>
-            <Label Content="Room: " x:Name="LabelPatientDateOfBirth1" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16"/>
+        <Label Grid.Row="0" Content="Update Anamnesis" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="32" Margin="0,5,0,1" Foreground="#50fa7b"/>
+        <StackPanel Grid.Row="1" HorizontalAlignment="Left" Margin="26.578,10,0,10" >
+            <Label Content="{Binding DoctorLabel}"  HorizontalAlignment="Left" VerticalAlignment="Center" Padding="5,0,5,0" FontSize="16"/>
+            <Label Content="{Binding PateintLabel}" x:Name="LabelDate1" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="5,0,5,0" FontSize="16"/>
+            <Label Content="{Binding PateintLboLabel}" x:Name="LabelPatient1" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="5,0,5,0" FontSize="16" />
+            <Label Content="{Binding RoomLabel}" x:Name="LabelPatientLbo1" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="5,0,5,0" FontSize="16"/>
+            <Label Content="{Binding DateLabel}" x:Name="LabelPatientDateOfBirth1" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16"/>
         </StackPanel>
         <GridSplitter HorizontalAlignment="Left" Height="170" Margin="225.747,0,0,0" Grid.Row="1" VerticalAlignment="Top" Width="0" Grid.RowSpan="2"/>
         <Grid Grid.RowSpan="4">

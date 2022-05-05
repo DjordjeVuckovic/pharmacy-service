@@ -217,7 +217,7 @@ namespace TechHealth.DoctorView.ViewModel
             CancelCommand = new RelayCommand(param => CloseWindow());
             DoctorLabel = "Doctor: " + Appointment.Doctor.FullSpecialization;
             PateintLabel = "Patient: " + Appointment.Patient.FullName;
-            PateintLboLabel = "Patient: " + Appointment.Patient.Lbo;
+            PateintLboLabel = "Patient Lbo: " + Appointment.Patient.Lbo;
             RoomLabel = "Room: " + Appointment.Room.roomId;
             DateLabel = "Appointment Date: " + Appointment.Date.ToString("d");
 

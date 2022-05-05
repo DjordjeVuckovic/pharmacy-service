@@ -1,2 +1,80 @@
 {
+  "8f4aeb23199d4e21a3ef6467e71f6e3b": {
+    "ShouldSerialize": true,
+    "Date": "2022-05-05T00:00:00",
+    "StartTimeD": "0001-01-01T00:00:00",
+    "FinishTimeD": "0001-01-01T00:00:00",
+    "Emergent": false,
+    "StartTime": "12:01 AM",
+    "FinishTime": null,
+    "IdAppointment": "8f4aeb23199d4e21a3ef6467e71f6e3b",
+    "StartDateRegion": "0001-01-01T00:00:00",
+    "FinishDateRegion": "0001-01-01T00:00:00",
+    "Room": {
+      "roomId": "S2"
+    },
+    "Patient": {
+      "Lbo": 73456,
+      "Jmbg": "2456",
+      "ShouldSerialize": false
+    },
+    "AppointmentType": 0,
+    "Doctor": {
+      "Jmbg": "2315",
+      "ShouldSerialize": false
+    },
+    "Evident": false
+  },
+  "86771793b2074ed0af6c137913d3e2ca": {
+    "ShouldSerialize": true,
+    "Date": "2022-05-05T00:00:00",
+    "StartTimeD": "2022-05-05T01:05:00",
+    "FinishTimeD": "2022-05-05T02:09:00",
+    "Emergent": false,
+    "StartTime": null,
+    "FinishTime": null,
+    "IdAppointment": "86771793b2074ed0af6c137913d3e2ca",
+    "StartDateRegion": "0001-01-01T00:00:00",
+    "FinishDateRegion": "0001-01-01T00:00:00",
+    "Room": {
+      "roomId": "Warehouse"
+    },
+    "Patient": {
+      "Lbo": 73456,
+      "Jmbg": "2456",
+      "ShouldSerialize": false
+    },
+    "AppointmentType": 0,
+    "Doctor": {
+      "Jmbg": "131213121111",
+      "ShouldSerialize": false
+    },
+    "Evident": true
+  },
+  "787aeaed2ea747eeb8f659c05f01cb5c": {
+    "ShouldSerialize": true,
+    "Date": "2022-05-07T00:00:00",
+    "StartTimeD": "2022-05-06T01:05:00",
+    "FinishTimeD": "2022-05-06T03:15:00",
+    "Emergent": false,
+    "StartTime": null,
+    "FinishTime": null,
+    "IdAppointment": "787aeaed2ea747eeb8f659c05f01cb5c",
+    "StartDateRegion": "0001-01-01T00:00:00",
+    "FinishDateRegion": "0001-01-01T00:00:00",
+    "Room": {
+      "roomId": "Warehouse"
+    },
+    "Patient": {
+      "Lbo": 73456,
+      "Jmbg": "2456",
+      "ShouldSerialize": false
+    },
+    "AppointmentType": 0,
+    "Doctor": {
+      "Jmbg": "131213121111",
+      "ShouldSerialize": false
+    },
+    "Evident": true
+  }
 }

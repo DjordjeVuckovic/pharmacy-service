@@ -33,6 +33,11 @@ namespace TechHealth.DoctorView.ViewModel
         public RelayCommand FinishCommand { get; set; }
         public RelayCommand CancelCommand { get; set; }
         private Anamnesis anamnesis;
+        public string DoctorLabel { get; set; }
+        public string PateintLabel { get; set; }
+        public string PateintLboLabel { get; set; }
+        public string RoomLabel { get; set; }
+        public string DateLabel { get; set; }
         public Appointment Appointment
         {
             get => appointment;
@@ -227,6 +232,11 @@ namespace TechHealth.DoctorView.ViewModel
             Gi = anamnesis.Gi;
             FinishCommand = new RelayCommand(param => Execute(), param => CanExecute());
             CancelCommand = new RelayCommand(param => CloseWindow());
+            DoctorLabel = "Doctor: " + Appointment.Doctor.FullSpecialization;
+            PateintLabel = "Patient: " + Appointment.Patient.FullName;
+            PateintLboLabel = "Patient Lbo: " + Appointment.Patient.Lbo;
+            RoomLabel = "Room: " + Appointment.Room.roomId;
+            DateLabel = "Appointment Date: " + Appointment.Date.ToString("d");
             
         }
         public bool CanExecute()

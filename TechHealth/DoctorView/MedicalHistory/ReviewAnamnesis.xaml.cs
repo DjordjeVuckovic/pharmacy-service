@@ -40,7 +40,7 @@ namespace TechHealth.DoctorView.MedicalHistory
             currentAnamnesis=AnamnesisRepository.Instance.GetByAppointmentId(myappointment.IdAppointment);
             DoctorLabel = "Doctor: " + myappointment.Doctor.FullSpecialization;
             PateintLabel = "Patient: " + myappointment.Patient.FullName;
-            PateintLboLabel = "Patient: " + myappointment.Patient.Lbo;
+            PateintLboLabel = "Patient Lbo: " + myappointment.Patient.Lbo;
             RoomLabel = "Room: " + myappointment.Room.roomId;
             DateLabel = "Appointment Date: " + myappointment.Date.ToString("d");
             FillUpFields();
