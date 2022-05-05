@@ -101,6 +101,8 @@ namespace TechHealth.View.ManagerView.VieW
             Equipment eq = (Equipment)dataEquipment.SelectedItem;
             EquipmentRepository.Instance.Delete(eq.id);
             Equipment.Remove(eq);
+            List<RoomEquipment> reList = RoomEquipmentRepository.Instance.GetRoomEqListByEqName(eq.name);
+            RoomEquipmentRepository.Instance.DeleteRoomEqByEqName(reList);
             MessageBox.Show("You have successfully deleted the equipment");
         }
 
