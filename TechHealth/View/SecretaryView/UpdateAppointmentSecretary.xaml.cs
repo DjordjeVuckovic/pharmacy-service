@@ -22,7 +22,7 @@ namespace TechHealth.View.SecretaryView
     {
         private List<Doctor> doctors = DoctorRepository.Instance.GetAllToList();
         private List<Patient> patients = PatientRepository.Instance.GetAllToList();
-        private List<Room> rooms = RoomRepository.Instance.GetAllToList();
+        private List<Room> rooms = new List<Room>();
         private AppointmentController appointmentController = new AppointmentController();
         private AppointmentType t;
         private string id;
@@ -50,13 +50,17 @@ namespace TechHealth.View.SecretaryView
             {
                 patientsForCombo.Add(p.FullName);
             }
-            List<String> roomsForCombo = new List<String>();
-            foreach (var r in rooms)
+            foreach (var r in RoomRepository.Instance.GetAll().Values)
             {
                 if (!r.roomId.Equals("Warehouse"))
                 {
-                    roomsForCombo.Add(r.roomId);
+                    rooms.Add(r);
                 }
+            }
+            List<String> roomsForCombo = new List<String>();
+            foreach (var r in rooms)
+            {
+                roomsForCombo.Add(r.roomId);
             }
             doctorCombo.ItemsSource = doctorsForCombo;
             patientCombo.ItemsSource = patientsForCombo;
