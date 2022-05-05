@@ -94,5 +94,18 @@ namespace TechHealth.Repository
 
             return false;
         }
+
+        public Room GetRoombyId(string idr)
+        {
+            foreach (var room in GetAllToList())
+            {
+                if (room.roomId.Equals(idr))
+                {
+                    return room;
+                }
+            }
+            return null;
+        }
+
     }
 }

@@ -24,7 +24,8 @@ namespace TechHealth.View.PatientView
     {
         private Appointment selected;
         private List<Doctor> doctors;
-        
+        private Patient patient;
+        public string PatientFullName { get; set; }
         private AppointmentController appointmentController = new AppointmentController();
 
         public UpdateAppointment(Appointment newAppointment)
@@ -33,7 +34,8 @@ namespace TechHealth.View.PatientView
             DataContext = this;
             //selected = AppointmentRepository.Instance.GetById(newAppointment.IdAppointment);
             selected = newAppointment;
-
+            patient = PatientRepository.Instance.GetPatientbyId("2456");
+            PatientFullName = patient.FullName;
             doctors = DoctorRepository.Instance.GetAllToList();
 
             CbDoctor.ItemsSource = doctors;

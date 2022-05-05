@@ -42,6 +42,14 @@ namespace TechHealth.View.SecretaryView
                     }
                 }
             }
+            foreach (var patient in PatientRepository.Instance.GetAll().Values)
+            {
+                if (patient.Username.Equals(guestUsername.Text) && patient.Jmbg != ("guest" + guestId.ToString()))
+                {
+                    MessageBox.Show("Username already exists.");
+                    return;
+                }
+            }
             patientController.Create(guestUsername.Text, "", null, null, "guest" + guestId.ToString(), 0, false, guestUsername.Text, guestPassword.Text, "", false, true, "");
             guestId++;
             this.Close();

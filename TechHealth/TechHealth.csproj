@@ -338,6 +338,9 @@
     <Compile Include="View\ManagerView\CRUDRooms\RoomWindow.xaml.cs">
       <DependentUpon>RoomWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\ManagerView\CRUDRooms\UpdateEquipment.xaml.cs">
+      <DependentUpon>UpdateEquipment.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\ManagerView\CRUDRooms\UpdateForm.xaml.cs">
       <DependentUpon>UpdateForm.xaml</DependentUpon>
     </Compile>
@@ -578,6 +581,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\ManagerView\CRUDRooms\RoomWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ManagerView\CRUDRooms\UpdateEquipment.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

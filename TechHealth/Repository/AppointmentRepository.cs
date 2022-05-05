@@ -81,7 +81,7 @@ namespace TechHealth.Repository
             {
                 foreach (var app in GetAllToList())
                 {
-                    if (app.StartTimeD <= start && app.FinishTimeD >= end && app.Room.roomId == roomID)
+                    if(((start >= app.StartTimeD && start <= app.FinishTimeD) || (end >= app.StartTimeD && end <= app.FinishTimeD)) && app.Room.roomId == roomID)
                     {
                         return false;
                     }
