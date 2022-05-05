@@ -15,15 +15,21 @@ using TechHealth.Model;
 using TechHealth.Repository;
 using TechHealth.Controller;
 using System.Collections.ObjectModel;
+using TechHealth.DTO;
 
 namespace TechHealth.View.SecretaryView
 {
     public partial class AppointmentsViewSecretary : Window
     {
-        private ObservableCollection<Appointment> examinations = new ObservableCollection<Appointment>();
+        //private ObservableCollection<Appointment> examinations = new ObservableCollection<Appointment>();
         private AppointmentType type1;
         private DateTime date1;
         private AppointmentController appointmentController = new AppointmentController();
+        private ObservableCollection<AppointmentsDTO> list = new ObservableCollection<AppointmentsDTO>();
+        private string spec;
+        private string name;
+        private DoctorController doctorController = new DoctorController();
+        private PatientController patientController = new PatientController();
         public AppointmentsViewSecretary(DateTime date, AppointmentType type)
         {
             InitializeComponent();
@@ -37,15 +43,18 @@ namespace TechHealth.View.SecretaryView
             {
                 pickedDate.Content = "Operations ";
             }
-            foreach (var a in appointmentController.GetAll())
+            foreach (var a in AppointmentRepository.Instance.GetAll().Values)
             {
                 if (a.Date.Equals(date) && a.AppointmentType.Equals(type))
                 {
-                    examinations.Add(a);
+                    spec = doctorController.GetById(a.Doctor.Jmbg).FullSpecialization;
+                    name = patientController.GetByPatientId(a.Patient.Jmbg).FullName;
+                    AppointmentsDTO aDTO = new AppointmentsDTO(a.IdAppointment, a.StartTimeD, a.FinishTimeD, spec, name, a.Room.roomId);
+                    list.Add(aDTO);
                 }
             }
-            pickedDate.Content += date.ToString("dd.MM.yyyy");
-            examinationList.ItemsSource = examinations;
+            pickedDate.Content += date.ToString("dd.MM.yyyy.");
+            examinationList.ItemsSource = list;
         }
         private void Button_Click_Add(object sender, RoutedEventArgs e)
         {
@@ -59,8 +68,8 @@ namespace TechHealth.View.SecretaryView
                 MessageBox.Show("You didn't select an appointment.");
                 return;
             }
-            Appointment a = (Appointment)examinationList.SelectedItems[0];
-            new UpdateAppointmentSecretary(a).ShowDialog();
+            AppointmentsDTO a = (AppointmentsDTO)examinationList.SelectedItems[0];
+            new UpdateAppointmentSecretary(AppointmentRepository.Instance.GetById(a.idAppointment)).ShowDialog();
             Update();
         }
         private void Button_Click_Delete(object sender, RoutedEventArgs e)
@@ -70,22 +79,33 @@ namespace TechHealth.View.SecretaryView
                 MessageBox.Show("You didn't select an appointment.");
                 return;
             }
-            Appointment a = (Appointment)examinationList.SelectedItems[0];
-            appointmentController.Delete(a.IdAppointment);
+            AppointmentsDTO a = (AppointmentsDTO)examinationList.SelectedItems[0];
+            appointmentController.Delete(a.idAppointment);
             Update();
         }
         private void Update()
         {
-            examinations.Clear();
+            list.Clear();
             foreach (var a in AppointmentRepository.Instance.GetAll().Values)
             {
                 if (a.Date.Equals(date1) && a.AppointmentType.Equals(type1))
                 {
-                    examinations.Add(a);
+                    spec = doctorController.GetById(a.Doctor.Jmbg).FullSpecialization;
+                    name = patientController.GetByPatientId(a.Patient.Jmbg).FullName;
+                    AppointmentsDTO aDTO = new AppointmentsDTO(a.IdAppointment, a.StartTimeD, a.FinishTimeD, spec, name, a.Room.roomId);
+                    list.Add(aDTO);
                 }
             }
-            pickedDate.Content = date1;
-            examinationList.ItemsSource = examinations;
+            if (type1.Equals(AppointmentType.examination))
+            {
+                pickedDate.Content = "Examinations ";
+            }
+            else
+            {
+                pickedDate.Content = "Operations ";
+            }
+            pickedDate.Content += date1.ToString("dd.MM.yyyy.");
+            examinationList.ItemsSource = list;
         }
     }
 }

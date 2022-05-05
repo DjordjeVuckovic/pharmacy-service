@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using TechHealth.Model;
 using TechHealth.Controller;
+using TechHealth.Repository;
 
 namespace TechHealth.View.SecretaryView
 {
@@ -57,6 +58,15 @@ namespace TechHealth.View.SecretaryView
             ed.Workplace = "";
             ed.Profession = "";
             ed.Job = "";
+
+            foreach (var patient in PatientRepository.Instance.GetAll().Values)
+            {
+                if (patient.Jmbg.Equals(p.Jmbg))
+                {
+                    MessageBox.Show("A patient with that Jmbg already exists.");
+                    return;
+                }
+            }
 
             medicalRecordController.Create(accountName.Text+accountSurname.Text+accountJmbg.Text, Bloodtype.None, p, "", "", "", "", "", ed);
 

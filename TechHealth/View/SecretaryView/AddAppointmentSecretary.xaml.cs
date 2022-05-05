@@ -20,9 +20,9 @@ namespace TechHealth.View.SecretaryView
 {
     public partial class AddAppointmentSecretary : Window
     {
-        private List<Doctor> doctors = DoctorRepository.Instance.GetAllToList();
+        private List<Doctor> doctors = new List<Doctor>();
         private List<Patient> patients = PatientRepository.Instance.GetAllToList();
-        private List<Room> rooms = RoomRepository.Instance.GetAllToList();
+        private List<Room> rooms = new List<Room>();
         private AppointmentController appointmentController = new AppointmentController();
         private AppointmentType t1;
         public AddAppointmentSecretary(AppointmentType t)
@@ -38,22 +38,33 @@ namespace TechHealth.View.SecretaryView
                 addLabel.Content = "Add Operation";
             }
             List<String> doctorsForCombo = new List<String>();
-            foreach (var d in doctors)
+            foreach (var d in DoctorRepository.Instance.GetAll().Values)
             {
-                doctorsForCombo.Add(d.FullSpecialization);
+                if (t.Equals(AppointmentType.operation) && d.Specialization.IdSpecialization.Equals(0))
+                {
+                    continue;
+                }else
+                {
+                    doctors.Add(d);
+                    doctorsForCombo.Add(d.FullSpecialization);
+                }
             }
             List<String> patientsForCombo = new List<String>();
             foreach (var p in patients)
             {
                 patientsForCombo.Add(p.FullName);
             }
-            List<String> roomsForCombo = new List<String>();
-            foreach (var r in rooms)
+            foreach (var r in RoomRepository.Instance.GetAll().Values)
             {
                 if (!r.roomId.Equals("Warehouse"))
                 {
-                    roomsForCombo.Add(r.roomId);
+                    rooms.Add(r);
                 }
+            }
+            List<String> roomsForCombo = new List<String>();
+            foreach (var r in rooms)
+            {
+                roomsForCombo.Add(r.roomId);
             }
             doctorCombo.ItemsSource = doctorsForCombo;
             patientCombo.ItemsSource = patientsForCombo;
