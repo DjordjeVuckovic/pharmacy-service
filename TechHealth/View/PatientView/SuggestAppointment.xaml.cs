@@ -34,7 +34,7 @@ namespace TechHealth.View.PatientView
         private List<Appointment> apList;
         private ObservableCollection<Appointment> Apt { get; set; }
         private Doctor doctor;
-
+        private Room room;
 
         private Patient patient;
 
@@ -44,8 +44,10 @@ namespace TechHealth.View.PatientView
             DataContext = this;
             Apt = listAppointment;
 
-            PatientData = patientController.GetByPatientId("2456");
-            PatientFullName = PatientData.FullName;
+            patient = patientController.GetByPatientId("2456");
+            PatientFullName = patient.FullName;
+
+            room = roomController.GetById("S2");
             //apList = AppointmentRepository.Instance.GetAllToList();
             //doctor = DoctorRepository.Instance.GetDoctorbyId("2315");
             doctors = DoctorRepository.Instance.GetAllToList();
@@ -72,14 +74,14 @@ namespace TechHealth.View.PatientView
                 Doctor = doctors[CbDoctor.SelectedIndex],
                 Emergent = false,
                 IdAppointment = Guid.NewGuid().ToString("N"),
-                Patient = PatientData,
-                Room = RoomData,
-                ShouldSerialize = true
+                Patient = patient,
+                Room = room,
+                //ShouldSerialize = true
             };
 
             try //ako ima dostupnih datuma kod doktora, izlistaj
             {
-                new AppointmensFuture(appointment.StartDateRegion, appointment.FinishDateRegion, appointment.Doctor, appointment.Patient, RoomData).Show();
+                new AppointmensFuture(appointment.StartDateRegion, appointment.FinishDateRegion, appointment.Doctor, appointment.Patient, appointment.Room).Show();
             }
             catch (AppointmentConflictException) //ako je doktor zauzet za neke datume, izlistaj dostupne na odnosu sta je stiklirano od prioriteta
             {
@@ -94,20 +96,12 @@ namespace TechHealth.View.PatientView
 
         public string PatientFullName { get; set; }
 
-        public Patient PatientData { get; set; }
-        public Room RoomData { get; set; }
+        //public Patient PatientData { get; set; }
+        //public Room RoomData { get; set; }
         //public DateTime StartDateRegion { get=>DateTime.Parse(StartDatePicker.Text); set { } }
         //public DateTime FinishDateRegion { get => DateTime.Parse(FinishDatePicker.Text); set { } }
 
-        private void CheckedDoctor(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void CheckedDate(object sender, RoutedEventArgs e)
-        {
-
-        }
+        
 
     }
 
