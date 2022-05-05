@@ -43,38 +43,39 @@ namespace TechHealth.Service
             TimeSpan startduration = new TimeSpan(0, 8, 0, 0);
             TimeSpan finishduration = new TimeSpan(0, 24, 0, 0);
 
-            DateTime endDate = myFinish;
-            while (startDateRegion < endDate) // <endDate
-         {
-            while(startduration <= finishduration)
+            DateTime endDate = finishDateRegion;
+            while (startDateRegion <= endDate) // <endDate
             {
-               Appointment appointment = new Appointment
-               {
-                  Date = startTime,
-                  Emergent = false,
-                  IdAppointment = null,
-                  Room = RoomRepository.Instance.GetById("S2"),
-                  Patient = patient,
-                  AppointmentType = AppointmentType.examination,
-                  Doctor = doctor,
-                  Evident = false,
-                  StartTimeD = startTime,
-                  FinishTimeD = endTime
-               };
-               if (CheckAvailabilityForFuture(appointment))
-               {
-                  ret.Add(appointment);
-               }
-               startduration= startduration.Add(duration);
-               startTime = startTime.Add(duration);
-               endTime = endTime.Add(duration);
+                while (startduration <= finishduration)
+                {
+                    Appointment appointment = new Appointment
+                    {
+                        Date = startDateRegion,
+                        Emergent = false,
+                        IdAppointment = null,
+                        //Room = RoomRepository.Instance.GetById("S2"),
+                        Room = room,
+                        Patient = patient,
+                        AppointmentType = AppointmentType.examination,
+                        Doctor = doctor,
+                        Evident = false,
+                        StartTimeD = startTime,
+                        FinishTimeD = endTime
+                    };
+                    if (CheckAvailabilityForFuture(appointment))
+                    {
+                        ret.Add(appointment);
+                    }
+                    startduration = startduration.Add(duration);
+                    startTime = startTime.Add(duration);
+                    endTime = endTime.Add(duration);
+                }
+                startDateRegion = startDateRegion.AddDays(1);
+                startduration = new TimeSpan(0, 8, 0, 0);
+                finishduration = new TimeSpan(0, 24, 0, 0);
             }
-            startDateRegion =startDateRegion.AddDays(1);
-            startduration=new TimeSpan(0, 8, 0, 0);
-            finishduration = new TimeSpan(0, 24, 0, 0);
-         }
-         return ret;
-      }
+            return ret;
+        }
 
 
       public bool Create(Appointment appointment)
