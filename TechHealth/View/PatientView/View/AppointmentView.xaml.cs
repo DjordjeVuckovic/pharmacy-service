@@ -22,6 +22,7 @@ namespace TechHealth.View.PatientView.View
         public RelayCommand SuggestAppointmentCommand { get; set; }
         private Patient currentPatient;
         public string PatientId { get; set; }
+        public Doctor doctor;
 
         public Appointment GetSelected
         {

@@ -1,5 +1,5 @@
 {
-  "77fb891b4e6b43deab1c8e0c3dc7e24b": {
+  "3af4dfc2a64344a1b67d207a01863c05": {
     "ShouldSerialize": true,
     "Date": "2022-05-06T00:00:00",
     "StartTimeD": "0001-01-01T00:00:00",
@@ -7,33 +7,7 @@
     "Emergent": false,
     "StartTime": "1:05 AM",
     "FinishTime": null,
-    "IdAppointment": "77fb891b4e6b43deab1c8e0c3dc7e24b",
-    "StartDateRegion": "0001-01-01T00:00:00",
-    "FinishDateRegion": "0001-01-01T00:00:00",
-    "Room": {
-      "roomId": "S2"
-    },
-    "Patient": {
-      "Lbo": 73456,
-      "Jmbg": "2456",
-      "ShouldSerialize": false
-    },
-    "AppointmentType": 0,
-    "Doctor": {
-      "Jmbg": "2315",
-      "ShouldSerialize": false
-    },
-    "Evident": false
-  },
-  "ae48e3734c97408196c26c3e6d49459c": {
-    "ShouldSerialize": true,
-    "Date": "2022-05-15T00:00:00",
-    "StartTimeD": "0001-01-01T00:00:00",
-    "FinishTimeD": "0001-01-01T00:00:00",
-    "Emergent": false,
-    "StartTime": "2:10 AM",
-    "FinishTime": null,
-    "IdAppointment": "ae48e3734c97408196c26c3e6d49459c",
+    "IdAppointment": "3af4dfc2a64344a1b67d207a01863c05",
     "StartDateRegion": "0001-01-01T00:00:00",
     "FinishDateRegion": "0001-01-01T00:00:00",
     "Room": {
@@ -47,6 +21,32 @@
     "AppointmentType": 0,
     "Doctor": {
       "Jmbg": "131213121111",
+      "ShouldSerialize": false
+    },
+    "Evident": false
+  },
+  "df1add44480f45388a91d8b6cb02c19d": {
+    "ShouldSerialize": true,
+    "Date": "2022-05-06T00:00:00",
+    "StartTimeD": "2022-05-06T03:30:00",
+    "FinishTimeD": "2022-05-06T04:00:00",
+    "Emergent": false,
+    "StartTime": null,
+    "FinishTime": null,
+    "IdAppointment": "df1add44480f45388a91d8b6cb02c19d",
+    "StartDateRegion": "0001-01-01T00:00:00",
+    "FinishDateRegion": "0001-01-01T00:00:00",
+    "Room": {
+      "roomId": "S2"
+    },
+    "Patient": {
+      "Lbo": 73456,
+      "Jmbg": "2456",
+      "ShouldSerialize": false
+    },
+    "AppointmentType": 0,
+    "Doctor": {
+      "Jmbg": "1313",
       "ShouldSerialize": false
     },
     "Evident": false

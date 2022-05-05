@@ -71,9 +71,10 @@ namespace TechHealth.View.PatientView       //dodati IDappointment
             };
             try
             {
-                appointmentController.Create(appointment);
+                AppointmentRepository.Instance.Create(appointment);
+                //appointmentController.Create(appointment);
                 Apt.Add(appointment);
-                MessageBox.Show("You have succesfully created a new appointment");
+                //MessageBox.Show("You have succesfully created a new appointment");
             }
             catch (AppointmentConflictException)
             {
