@@ -38,20 +38,5 @@
     "RoomID": "S2",
     "EquipmentName": "Skalpel",
     "Quantity": 7
-  },
-  "Warehouse-Bandazer": {
-    "RoomID": "Warehouse",
-    "EquipmentName": "Bandazer",
-    "Quantity": 40
-  },
-  "S2-Bandazer": {
-    "RoomID": "S2",
-    "EquipmentName": "Bandazer",
-    "Quantity": 10
-  },
-  "S3-Bandazer": {
-    "RoomID": "S3",
-    "EquipmentName": "Bandazer",
-    "Quantity": 10
   }
 }

@@ -93,5 +93,13 @@ namespace TechHealth.Repository
             }
             return re;
         }
+
+        public void DeleteRoomEqByEqName(List<RoomEquipment> reList)
+        {
+            foreach (var re in reList)
+            {
+                Delete(re.RoomID + "-" + re.EquipmentName);
+            }
+        }
     }
 }
