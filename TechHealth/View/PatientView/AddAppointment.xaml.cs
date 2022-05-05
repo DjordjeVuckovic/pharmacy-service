@@ -26,8 +26,10 @@ namespace TechHealth.View.PatientView       //dodati IDappointment
     {
         //public event EventHandler OnRequestClose;
         private Patient patient;
+        private Room room;
         private AppointmentController appointmentController = new AppointmentController();
         private PatientController patientController = new PatientController();
+        private RoomController roomController = new RoomController();
         private List<Doctor> doctors;
         private List<Appointment> apList;
         private ObservableCollection<Appointment> Apt { get; set; }
@@ -38,7 +40,7 @@ namespace TechHealth.View.PatientView       //dodati IDappointment
             DataContext = this;
             Apt = listAppointment;
             patient = patientController.GetByPatientId("2456");
-            
+            room = roomController.GetById("S2");
             PatientFullName = patient.FullName;
             apList = AppointmentRepository.Instance.GetAllToList();
             
@@ -59,6 +61,7 @@ namespace TechHealth.View.PatientView       //dodati IDappointment
             Appointment appointment = new Appointment
             {
                 Patient = patient,
+                Room = room,
                 Date = DateTime.Parse(Date.Text),
                 StartTime = TxtTime.Text,
                 AppointmentType = AppointmentType.examination,
