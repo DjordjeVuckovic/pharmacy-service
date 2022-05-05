@@ -53,7 +53,7 @@ namespace TechHealth.View.SecretaryView
                     list.Add(aDTO);
                 }
             }
-            pickedDate.Content += date.ToString("dd.MM.yyyy");
+            pickedDate.Content += date.ToString("dd.MM.yyyy.");
             examinationList.ItemsSource = list;
         }
         private void Button_Click_Add(object sender, RoutedEventArgs e)
@@ -96,7 +96,15 @@ namespace TechHealth.View.SecretaryView
                     list.Add(aDTO);
                 }
             }
-            pickedDate.Content = date1;
+            if (type1.Equals(AppointmentType.examination))
+            {
+                pickedDate.Content = "Examinations ";
+            }
+            else
+            {
+                pickedDate.Content = "Operations ";
+            }
+            pickedDate.Content += date1.ToString("dd.MM.yyyy.");
             examinationList.ItemsSource = list;
         }
     }
