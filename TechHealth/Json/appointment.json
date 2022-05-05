@@ -50,9 +50,9 @@
   "31890aaae47c4166a31ccbdeb306bb82": {
     "ShouldSerialize": true,
     "Date": "2022-05-02T00:00:00",
-    "StartTimeD": "2022-05-02T01:05:00",
-    "FinishTimeD": "2022-05-02T02:10:00",
-    "Emergent": false,
+    "StartTimeD": "2022-05-05T01:05:00",
+    "FinishTimeD": "2022-05-05T02:10:00",
+    "Emergent": true,
     "StartTime": null,
     "FinishTime": null,
     "IdAppointment": "31890aaae47c4166a31ccbdeb306bb82",
@@ -60,7 +60,7 @@
       "roomId": "Warehouse"
     },
     "Patient": {
-      "Lbo": 0,
+      "Lbo": 657771,
       "Jmbg": "13456",
       "ShouldSerialize": false
     },
@@ -69,7 +69,7 @@
       "Jmbg": "131213121111",
       "ShouldSerialize": false
     },
-    "Evident": true
+    "Evident": false
   },
   "ab4d42dfc8e847a4b0ab5acddd24183f": {
     "ShouldSerialize": true,

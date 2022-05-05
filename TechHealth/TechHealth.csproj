@@ -251,6 +251,7 @@
     <Compile Include="DoctorView\Windows\TherapyWindow.xaml.cs">
       <DependentUpon>TherapyWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DTO\AppointmentsDTO.cs" />
     <Compile Include="DTO\EquipmentReallocationDTO.cs" />
     <Compile Include="DTO\RecommendedAppointmentDTO.cs" />
     <Compile Include="Exceptions\AppointmentConflictException.cs" />
