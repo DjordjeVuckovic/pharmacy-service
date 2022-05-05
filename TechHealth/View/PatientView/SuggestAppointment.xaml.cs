@@ -74,7 +74,7 @@ namespace TechHealth.View.PatientView
                 IdAppointment = Guid.NewGuid().ToString("N"),
                 Patient = PatientData,
                 Room = RoomData,
-                ShouldSerialize = true
+                //ShouldSerialize = true
             };
 
             try //ako ima dostupnih datuma kod doktora, izlistaj
