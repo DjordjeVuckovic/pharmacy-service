@@ -35,6 +35,23 @@ namespace TechHealth.View.SecretaryView
             address.Country = accountCountry.Text;
             address.Postcode = Int32.Parse(accountPostcode.Text);
 
+            foreach (var patient in PatientRepository.Instance.GetAll().Values)
+            {
+                if (patient.Jmbg.Equals(accountJmbg.Text))
+                {
+                    MessageBox.Show("Jmbg already exists.");
+                    return;
+                }
+            }
+            foreach (var patient in PatientRepository.Instance.GetAll().Values)
+            {
+                if (patient.Username.Equals(accountUsername.Text))
+                {
+                    MessageBox.Show("Username already exists.");
+                    return;
+                }
+            }
+
             patientController.Create(accountName.Text, accountSurname.Text, address, null, accountJmbg.Text, Int32.Parse(accountLbo.Text), false, accountUsername.Text, accountPassword.Text, accountEmail.Text, false, false, accountPhone.Text);
 
             Patient p = new Patient();
@@ -58,15 +75,6 @@ namespace TechHealth.View.SecretaryView
             ed.Workplace = "";
             ed.Profession = "";
             ed.Job = "";
-
-            foreach (var patient in PatientRepository.Instance.GetAll().Values)
-            {
-                if (patient.Jmbg.Equals(p.Jmbg))
-                {
-                    MessageBox.Show("A patient with that Jmbg already exists.");
-                    return;
-                }
-            }
 
             medicalRecordController.Create(accountName.Text+accountSurname.Text+accountJmbg.Text, Bloodtype.None, p, "", "", "", "", "", ed);
 

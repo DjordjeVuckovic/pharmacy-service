@@ -64,6 +64,15 @@ namespace TechHealth.View.SecretaryView
             address.Country = accountCountry.Text;
             address.Postcode = Int32.Parse(accountPostcode.Text);
 
+            foreach (var patient in PatientRepository.Instance.GetAll().Values)
+            {
+                if (patient.Username.Equals(accountUsername.Text) && patient.Jmbg != accountJmbg.Text)
+                {
+                    MessageBox.Show("Username already exists.");
+                    return;
+                }
+            }
+
             patientController.Update(accountName.Text, accountSurname.Text, address, null, accountJmbg.Text, Int32.Parse(accountLbo.Text), false, accountUsername.Text, accountPassword.Text, accountEmail.Text, false, false, accountPhone.Text);
 
             this.Close();
