@@ -15,6 +15,7 @@ using TechHealth.Model;
 using TechHealth.Controller;
 using TechHealth.Repository;
 using System.Collections.ObjectModel;
+using TechHealth.Exceptions;
 
 namespace TechHealth.View.PatientView       //dodati IDappointment
 {
@@ -23,20 +24,26 @@ namespace TechHealth.View.PatientView       //dodati IDappointment
     /// </summary>
     public partial class AddAppointment : Window
     {
-        
-        private Appointment appointment;
+        //public event EventHandler OnRequestClose;
+        private Patient patient;
         private AppointmentController appointmentController = new AppointmentController();
+        private PatientController patientController = new PatientController();
         private List<Doctor> doctors;
         private List<Appointment> apList;
-        private ObservableCollection<Appointment> apt;
+        private ObservableCollection<Appointment> Apt { get; set; }
 
-        public AddAppointment(ObservableCollection<Appointment> listAppointment)
+        public AddAppointment(string patientId,ObservableCollection<Appointment> listAppointment)
         {
-
             InitializeComponent();
-            apt = listAppointment;
-            apList = AppointmentRepository.Instance.GetAllToList();
             DataContext = this;
+            Apt = listAppointment;
+            patient = patientController.GetByPatientId("2456");
+            
+            PatientFullName = patient.FullName;
+            apList = AppointmentRepository.Instance.GetAllToList();
+            
+
+            //TxtPatient.Text = patient.FullName;
             doctors = DoctorRepository.Instance.GetAllToList();
             CbDoctor.ItemsSource = doctors;
         }
@@ -49,22 +56,37 @@ namespace TechHealth.View.PatientView       //dodati IDappointment
 
         private void Button_Click_Confirm(object sender, RoutedEventArgs e)
         {
-            appointment = new Appointment();
-
-            appointment.Date = DateTime.Parse(Date.Text);
-            appointment.StartTime = TxtTime.Text;
-            appointment.AppointmentType = AppointmentType.examination;
-            appointment.Doctor = doctors[CbDoctor.SelectedIndex];
-            appointment.IdAppointment = Guid.NewGuid().ToString("N");
-
-            appointmentController.Create(appointment);
-            apt.Add(appointment);
-
-            //AppointmentRepository.Instance.Create(appointment); 
+            Appointment appointment = new Appointment
+            {
+                Patient = patient,
+                Date = DateTime.Parse(Date.Text),
+                StartTime = TxtTime.Text,
+                AppointmentType = AppointmentType.examination,
+                Doctor = doctors[CbDoctor.SelectedIndex],
+                IdAppointment = Guid.NewGuid().ToString("N"),
+                ShouldSerialize = true
+            };
+            try
+            {
+                appointmentController.Create(appointment);
+                Apt.Add(appointment);
+                MessageBox.Show("You have succesfully created a new appointment");
+            }
+            catch (AppointmentConflictException)
+            {
+                MessageBox.Show("Appointment has already been scheduled in that period!");
+            }
+            //OnRequestClose(this, new EventArgs());
             Close();
-
         }
+
+        public string PatientFullName { get; set; }
+
+        //AppointmentRepository.Instance.Create(appointment); 
+        //Close();
+
     }
-}
+    }
+
 
 

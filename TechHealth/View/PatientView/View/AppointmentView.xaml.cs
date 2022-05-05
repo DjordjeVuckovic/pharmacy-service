@@ -20,6 +20,8 @@ namespace TechHealth.View.PatientView.View
         public RelayCommand UpdateAppointmentCommand { get; set; }
         public RelayCommand DeleteAppointmentCommand { get; set; }
         public RelayCommand SuggestAppointmentCommand { get; set; }
+        private Patient currentPatient;
+        public string PatientId { get; set; }
 
         public Appointment GetSelected
         {
@@ -86,7 +88,7 @@ namespace TechHealth.View.PatientView.View
 
         private void ExecuteAdd()
         {
-            new AddAppointment(aplist).ShowDialog();
+            new AddAppointment(PatientId,aplist).ShowDialog();
         }
 
         private void ExecuteUpdate(Appointment selected)
@@ -104,7 +106,7 @@ namespace TechHealth.View.PatientView.View
 
         private void ExecuteSuggest()
         {
-            //new SuggestAppointment().ShowDialog();
+            new SuggestAppointment(PatientId, aplist).ShowDialog();
         }
 
         [NotifyPropertyChangedInvocator]

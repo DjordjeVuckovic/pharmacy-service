@@ -80,7 +80,7 @@ namespace TechHealth.View.PatientView
 
         private bool Validate()
         {
-            if (!ValidateDate())
+            if (ValidateDate())
             {
                 MessageBox.Show("Moguce je pomeriti termin za maksimalo 3 dana unapred ili unazad!");
                 return false;
