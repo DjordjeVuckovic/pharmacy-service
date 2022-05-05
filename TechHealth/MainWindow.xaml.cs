@@ -1,5 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Windows;
+using TechHealth.Model;
+using TechHealth.Repository;
 using TechHealth.View.ManagerView;
 using TechHealth.View.PatientView;
 using TechHealth.View.SecretaryView;
@@ -8,6 +10,7 @@ namespace TechHealth
 {
     public partial class MainWindow : Window
     {
+        
         public MainWindow()
         {
             InitializeComponent();
@@ -28,6 +31,7 @@ namespace TechHealth
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
+            
             new PatientMainWindow().Show();
             this.Close();
         }

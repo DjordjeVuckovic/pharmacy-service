@@ -7,7 +7,7 @@
         xmlns:validationRules="clr-namespace:TechHealth.ValidationRules"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="AddAppointment" Height="450" Width="400">
+        Title="AddAppointment" Height="600" Width="450">
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -19,18 +19,18 @@
         </ResourceDictionary>
     </Window.Resources>
 
-    <Grid Background="Gray">
+    <Grid Background="Gray" Margin="0,0,0,0">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Label Content="Date:" HorizontalAlignment="Left" Margin="38,78,0,0" VerticalAlignment="Top"
+        <Label Content="Date:" HorizontalAlignment="Left" Margin="50,211,0,0" VerticalAlignment="Top"
                FontSize="14" Height="29" Width="42"/>
-        <Label Content="Available hours:" HorizontalAlignment="Left" Margin="38,260,0,0"
+        <Label Content="Available hours:" HorizontalAlignment="Left" Margin="50,396,0,0"
                VerticalAlignment="Top" FontSize="14" Height="29" Width="113"/>
-        <Label Content="Doctor:" HorizontalAlignment="Left" Margin="38,168,0,0" VerticalAlignment="Top"
+        <Label Content="Doctor:" HorizontalAlignment="Left" Margin="50,292,0,0" VerticalAlignment="Top"
                FontSize="14" Height="29" Width="55"/>
-        <DatePicker HorizontalAlignment="Left" Margin="13,78,0,0"
+        <DatePicker HorizontalAlignment="Left" Margin="25,211,0,0"
                     VerticalAlignment="Top"
                     Width="147" Height="29"
                     Background="#FFC0C0C0"
@@ -39,7 +39,7 @@
                     Grid.Column="1">
             <DatePicker.SelectedDate>
                 <Binding Path="Date" Mode="OneWayToSource"  
-                    UpdateSourceTrigger="PropertyChanged"> 
+                    UpdateSourceTrigger="PropertyChanged">
                     <Binding.ValidationRules>
                         <validationRules:FutureDateValidationRule ValidatesOnTargetUpdated="True"/>
                     </Binding.ValidationRules>
@@ -47,26 +47,26 @@
             </DatePicker.SelectedDate>
         </DatePicker>
 
-        <ComboBox HorizontalAlignment="Left" Margin="13,168,0,0" VerticalAlignment="Top" Width="147" Height="29"
+        <ComboBox HorizontalAlignment="Left" Margin="25,292,0,0" VerticalAlignment="Top" Width="147" Height="29"
                   x:Name="CbDoctor" Grid.Column="1" DisplayMemberPath="FullName"/>
-        <Button Content="Confirm" HorizontalAlignment="Left" Margin="38,357,0,0"
+        <Button Content="Confirm" HorizontalAlignment="Left" Margin="38,482,0,0"
                 VerticalAlignment="Top" FontSize="16" FontWeight="Normal" Height="30"
                 Width="95" RenderTransformOrigin="-0.291,0.467" Background="#FF42C130"
                 Click="Button_Click_Confirm" />
-        <Button Content="Close" HorizontalAlignment="Left" Margin="67,357,0,0"
+        <Button Content="Close" HorizontalAlignment="Left" Margin="67,482,0,0"
                 VerticalAlignment="Top" Width="93" Height="30" FontSize="16"
                 Background="#FFEA9292" Click="Button_Click_Close" Grid.Column="1" />
         <Label Content="Add appointment" HorizontalContentAlignment="Center"
                Margin="91,10,90,0" VerticalAlignment="Top" FontWeight="Bold"
                FontSize="18" Grid.ColumnSpan="2" Height="34"/>
 
-        <materialDesign:TimePicker Grid.Column="1" 
+        <materialDesign:TimePicker 
                                    x:Name="TxtTime" 
             materialDesign:HintAssist.Hint="Select appointment time"
                                    Foreground="White"
             IsInvalidTextAllowed="True"
                                    Height="29" 
-                                   Margin="13,260,36,130" >
+                                   Margin="13,396,49,144" Grid.Column="1" >
             <materialDesign:TimePicker.Text>
                 <Binding
                     Path="StartDate"
@@ -78,5 +78,13 @@
                 </Binding>
             </materialDesign:TimePicker.Text>
         </materialDesign:TimePicker>
+        <Label Content="PATIENT" HorizontalAlignment="Center" VerticalAlignment="Center"
+               Margin="50,81,67,453"
+               FontSize="20" Width="104"/>
+        <TextBox Grid.Column="1"
+                 Text="{Binding PatientFullName}" HorizontalAlignment="Left"
+                 Height="34" Margin="25,81,0,0" TextWrapping="Wrap"
+                 VerticalAlignment="Top" Width="147"
+                 IsReadOnly="True"/>
     </Grid>
 </Window>

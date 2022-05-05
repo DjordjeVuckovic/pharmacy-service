@@ -7,7 +7,7 @@
         xmlns:validationRules="clr-namespace:TechHealth.ValidationRules"
 
         mc:Ignorable="d"
-        Title="Suggestions" Height="450" Width="400">
+        Title="Suggestions" Height="600" Width="700">
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -19,12 +19,12 @@
         </ResourceDictionary>
     </Window.Resources>
 
-    <Grid Background="Gray" Margin="0,0,-231,-96">
+    <Grid Background="Gray" Margin="10,10,10,10">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Label Content="Date:" HorizontalAlignment="Left" Margin="10,188,0,0" VerticalAlignment="Top" FontSize="20" Height="39" Width="84" Grid.Column="1" />
+        <Label Content="Start date:" HorizontalAlignment="Left" Margin="10,188,0,0" VerticalAlignment="Top" FontSize="20" Height="39" Width="112" Grid.Column="1" />
         <Label Content="Doctor:" HorizontalAlignment="Left" Margin="10,188,0,0" VerticalAlignment="Top" FontSize="20" Height="39" Width="84"/>
         <Label Content="Priority:" HorizontalAlignment="Left" Margin="10,107,0,0" VerticalAlignment="Top" FontSize="20" Height="39" Width="84"/>
         <DatePicker HorizontalAlignment="Left" Margin="154,188,0,0"
@@ -32,7 +32,7 @@
                     Width="147" Height="39"
                     Background="#FFC0C0C0"
                     Foreground="BlanchedAlmond"
-                    FontSize="14" x:Name="Date"
+                    FontSize="14" x:Name="StartDate"
                     Grid.Column="1">
             <DatePicker.SelectedDate>
                 <Binding Path="Date" Mode="OneWayToSource"  
@@ -58,7 +58,7 @@
                      Height="34" Width="84" IsChecked="False"
                      />
         <RadioButton x:Name="radioDate" Content="Date" Grid.Column="1" HorizontalAlignment="Left"
-                     Margin="79,112,0,0" VerticalAlignment="Top"
+                     Margin="10,112,0,0" VerticalAlignment="Top"
                      FontSize="20" Height="34" Width="84" Checked="CheckedDate"
                      IsChecked="False"/>
 
@@ -70,5 +70,23 @@
         <Button Content="Close" HorizontalAlignment="Left" Margin="70,475,0,0"
                 VerticalAlignment="Top" Width="93" Height="30" FontSize="16"
                 Background="#FFEA9292" Click="Button_Click_Close" Grid.Column="1" />
+        <Label Content="Finish date:" HorizontalAlignment="Left" Margin="10,272,0,0" VerticalAlignment="Top" FontSize="20" Height="39" Width="112" Grid.Column="1" />
+        <DatePicker HorizontalAlignment="Left" Margin="154,272,0,0"
+            VerticalAlignment="Top"
+            Width="147" Height="39"
+            Background="#FFC0C0C0"
+            Foreground="BlanchedAlmond"
+            FontSize="14" x:Name="FinishDate"
+            Grid.Column="1">
+            <DatePicker.SelectedDate>
+                <Binding Path="Date" Mode="OneWayToSource"  
+                    UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <validationRules:FutureDateValidationRule
+                            ValidatesOnTargetUpdated="True"/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </DatePicker.SelectedDate>
+        </DatePicker>
     </Grid>
 </Window>

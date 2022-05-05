@@ -4,6 +4,7 @@ using System.Windows;
 using TechHealth.DoctorView;
 using TechHealth.Model;
 using TechHealth.Repository;
+using TechHealth.View.PatientView;
 using TechHealth.View.SecretaryView;
 
 namespace TechHealth
@@ -43,6 +44,14 @@ namespace TechHealth
             if (secretary != null && pass.Equals(secretary.Password))
             {
                 new SecretaryMainWindow().Show();
+                successLogin = true;
+                Close();
+            }
+
+            Patient patient = PatientRepository.Instance.GetPatientByUser(user);
+            if (patient != null && pass.Equals(patient.Password))
+            {
+                new PatientMainWindow().Show();
                 successLogin = true;
                 Close();
             }

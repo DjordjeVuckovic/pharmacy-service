@@ -59,5 +59,11 @@ namespace TechHealth.Controller
         {
             return patientService.Delete(personId);
         }
+
+        public Patient GetByPatientId(string patientId)
+        {
+            return patientService.GetById(patientId);
+        }
+
     }
 }
