@@ -29,24 +29,28 @@ namespace TechHealth.Service
          return temp;
       }
 
-      public List<Appointment> GetAllFuture(DateTime startDate, Doctor doctor,Patient patient)
+      public List<Appointment> GetAllFuture(DateTime startDateRegion, DateTime finishDateRegion, Doctor doctor,Patient patient, Room room)
       {
          List<Appointment> ret = new List<Appointment>();
-         
-         DateTime myStart = startDate;
-         DateTime startTime = startDate;
-         DateTime endTime = startDate.AddMinutes(30);
-         TimeSpan duration = new TimeSpan(0, 0, 30, 0);
-         TimeSpan startduration = new TimeSpan(0, 8, 0, 0);
-         TimeSpan finishduration = new TimeSpan(0, 24, 0, 0);
-         DateTime endDate = myStart.AddDays(2);
-         while (startDate < endDate)
+
+            DateTime myStart = startDateRegion;
+            DateTime myFinish = finishDateRegion;
+
+            DateTime startTime = startDateRegion;
+            DateTime endTime = startDateRegion.AddMinutes(30);
+
+            TimeSpan duration = new TimeSpan(0, 0, 30, 0);
+            TimeSpan startduration = new TimeSpan(0, 8, 0, 0);
+            TimeSpan finishduration = new TimeSpan(0, 24, 0, 0);
+
+            DateTime endDate = myFinish;
+            while (startDateRegion < endDate) // <endDate
          {
             while(startduration <= finishduration)
             {
                Appointment appointment = new Appointment
                {
-                  Date = startDate,
+                  Date = startTime,
                   Emergent = false,
                   IdAppointment = null,
                   Room = RoomRepository.Instance.GetById("S2"),
@@ -65,12 +69,13 @@ namespace TechHealth.Service
                startTime = startTime.Add(duration);
                endTime = endTime.Add(duration);
             }
-            startDate =startDate.AddDays(1);
+            startDateRegion =startDateRegion.AddDays(1);
             startduration=new TimeSpan(0, 8, 0, 0);
             finishduration = new TimeSpan(0, 24, 0, 0);
          }
          return ret;
       }
+
 
       public bool Create(Appointment appointment)
       {
@@ -104,8 +109,10 @@ namespace TechHealth.Service
 
         public List<Appointment> GetByRoomId(string roomId)
       {
-         throw new NotImplementedException();
-      }
+            var temp = AppointmentRepository.Instance.GetByRoomId(roomId);
+            BindDataForAppointments(temp);
+            return temp;
+        }
 
       private void BindDataForAppointments(List<Appointment> appointments)
       {
@@ -118,8 +125,14 @@ namespace TechHealth.Service
          {
             appointment.Patient = PatientRepository.Instance.GetPatientbyId(appointment.Patient.Jmbg);
          }
-         
-      }
+
+
+            foreach (var appointment in appointments)
+            {
+                appointment.Room = RoomRepository.Instance.GetRoombyId(appointment.Room.roomId);
+            }
+
+        }
 
       private void CheckAvailability(Appointment appointment)
       {

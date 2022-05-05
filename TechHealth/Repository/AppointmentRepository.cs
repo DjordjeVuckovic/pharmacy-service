@@ -126,7 +126,7 @@ namespace TechHealth.Repository
             entity.ShouldSerialize = true;
             entity.Patient.ShouldSerialize = false;
             entity.Doctor.ShouldSerialize = false;
-            entity.Room.ShouldSerialize = false;
+            //entity.Room.ShouldSerialize = false;
 
         }
    }

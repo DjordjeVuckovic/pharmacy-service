@@ -32,8 +32,9 @@ namespace TechHealth.View.PatientView
         private List<Doctor> doctors;
         private List<Appointment> apList;
         private ObservableCollection<Appointment> Apt { get; set; }
-        private DateTime date;
         private Doctor doctor;
+
+
         private Patient patient;
 
         public SuggestAppointment(string patientId, ObservableCollection<Appointment> listAppointment)
@@ -41,13 +42,11 @@ namespace TechHealth.View.PatientView
             InitializeComponent();
             DataContext = this;
             Apt = listAppointment;
+
             PatientData = patientController.GetByPatientId("2456");
-
             PatientFullName = PatientData.FullName;
-            apList = AppointmentRepository.Instance.GetAllToList();
-
-
-            //TxtPatient.Text = patient.FullName;
+            //apList = AppointmentRepository.Instance.GetAllToList();
+            //doctor = DoctorRepository.Instance.GetDoctorbyId("2315");
             doctors = DoctorRepository.Instance.GetAllToList();
             CbDoctor.ItemsSource = doctors;
         }
@@ -66,23 +65,27 @@ namespace TechHealth.View.PatientView
         {
             Appointment appointment = new Appointment
             {
-                Patient = PatientData,
-                StartTimeD = DateTime.Parse(StartDates),
-                FinishTimeD = DateTime.Parse(EndDate),
-                //FinishDate = DateTime.Parse(FinishDate.Text),
                 AppointmentType = AppointmentType.examination,
+                StartDateRegion = DateTime.Parse(StartDatePicker.Text),
+                FinishDateRegion = DateTime.Parse(FinishDatePicker.Text),
                 Doctor = doctors[CbDoctor.SelectedIndex],
-                Room = RoomData,
+                Emergent = false,
                 IdAppointment = Guid.NewGuid().ToString("N"),
+                Patient = PatientData,
+                Room = RoomData,
                 ShouldSerialize = true
             };
+
             try //ako ima dostupnih datuma kod doktora, izlistaj
             {
-                //new AppointmensFuture(Date, doctor, patientData).Show(); 
+                new AppointmensFuture(appointment.StartDateRegion, appointment.FinishDateRegion, appointment.Doctor, appointment.Patient, RoomData).Show();
             }
             catch (AppointmentConflictException) //ako je doktor zauzet za neke datume, izlistaj dostupne na odnosu sta je stiklirano od prioriteta
             {
-                new AppointmensFuture(Date, doctor, PatientData).Show();
+                /*Appointment ap = new Appointment();
+                ap.StartDateRegion = DateTime.Parse(StartDatePicker.Text);
+                ap.FinishDateRegion = DateTime.Parse(FinishDatePicker.Text);*/
+                //new AppointmensFuture(StartDateRegion, FinishDateRegion, doctor, PatientData).Show();
             }
    
             Close();
@@ -90,13 +93,10 @@ namespace TechHealth.View.PatientView
 
         public string PatientFullName { get; set; }
 
-        public string StartDates { get; set; }
-        public DateTime Date => date;
-
-        public string EndDate { get; set; }
-
         public Patient PatientData { get; set; }
         public Room RoomData { get; set; }
+        //public DateTime StartDateRegion { get=>DateTime.Parse(StartDatePicker.Text); set { } }
+        //public DateTime FinishDateRegion { get => DateTime.Parse(FinishDatePicker.Text); set { } }
 
         private void CheckedDoctor(object sender, RoutedEventArgs e)
         {
@@ -107,5 +107,7 @@ namespace TechHealth.View.PatientView
         {
 
         }
+
     }
+
 }
