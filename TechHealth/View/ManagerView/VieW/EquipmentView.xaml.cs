@@ -35,6 +35,7 @@ namespace TechHealth.View.ManagerView.VieW
         public RelayCommand AddEquipmentCommand { get; set; }
         public RelayCommand DeleteEquipmentCommand { get; set; }
         public RelayCommand ReallocateCommand { get; set; }
+        public RelayCommand ViewEquipmentCommand { get; set; }
 
         public Equipment SelectedItem
         {
@@ -70,7 +71,24 @@ namespace TechHealth.View.ManagerView.VieW
             AddEquipmentCommand = new RelayCommand(param => ExecuteAdd());
             DeleteEquipmentCommand = new RelayCommand(param => ExecuteDelete(), param => CanExecuteDelete());
             ReallocateCommand = new RelayCommand(param => ExecuteReallocate(), param => CanExecuteReallocate());
+            ViewEquipmentCommand = new RelayCommand(param => ExecuteView(), param => CanExecuteView());
         }
+
+        private bool CanExecuteView()
+        {
+            if (selectedItem == null)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        private void ExecuteView()
+        {
+            new UpdateEquipment(selectedItem).ShowDialog();
+        }
+
         private bool CanExecuteReallocate()
         {
             if (selectedItem == null)
