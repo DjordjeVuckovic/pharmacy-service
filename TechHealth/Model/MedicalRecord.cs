@@ -51,8 +51,6 @@ namespace TechHealth.Model
             OnPropertyChanged(nameof(Patient));
          }
       }
-      
-      //public IEnumerable<Allergen> Allergens { get; set; }
       public string Weight{
          get => weight;
          set

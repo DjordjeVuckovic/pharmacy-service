@@ -39,5 +39,18 @@ namespace TechHealth.Repository
         {
             entity.ShouldSerialize = true;
         }
+        public List<string> PatientAllergensList(string id)
+        {
+            List<string> temp = new List<string>();
+            foreach (var pat in GetAllToList())
+            {
+                if (pat.PatientJMBG.Equals(id))
+                {
+                    temp.Add(pat.AllergenName);
+                } 
+            }
+
+            return temp;
+        }
     }
 }

@@ -89,8 +89,8 @@ namespace TechHealth.DoctorView.ViewModel
             catch (AppointmentConflictException)
             {
                 
-                //MessageBox.Show(@"Doctor has already scheduled appointment in that period!",@"Appointment exception",MessageBoxButtons.OK,MessageBoxIcon.Error);
-                new AppointmensFuture(Date, doctor, PatientData).Show();
+                MessageBox.Show(@"Doctor has already scheduled appointment in that period!",@"Appointment exception",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                //new AppointmensFuture(Date, doctor, PatientData).Show();
 
             }
             OnRequestClose(this, new EventArgs());

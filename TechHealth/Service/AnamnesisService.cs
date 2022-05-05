@@ -37,10 +37,14 @@ namespace TechHealth.Service
             var temp = new List<Anamnesis>();
             foreach (var an in anamneses )
             {
-                if (an.Appointment.AppointmentType == AppointmentType.operation && an.Appointment.Patient.Jmbg.Equals(patientId))
+                if (an.Appointment != null)
                 {
-                    temp.Add(an);
-                    BindDataForAppointment(an.Appointment);
+                    if (an.Appointment.AppointmentType == AppointmentType.operation &&
+                        an.Appointment.Patient.Jmbg.Equals(patientId))
+                    {
+                        temp.Add(an);
+                        BindDataForAppointment(an.Appointment);
+                    }
                 }
             }
             return temp;
@@ -52,10 +56,14 @@ namespace TechHealth.Service
             var temp = new List<Anamnesis>();
             foreach (var an in anamneses)
             {
-                if (an.Appointment.AppointmentType == AppointmentType.examination && an.Appointment.Patient.Jmbg.Equals(patientId))
+                if (an.Appointment != null)
                 {
-                    temp.Add(an);
-                    BindDataForAppointment(an.Appointment);
+                    if (an.Appointment.AppointmentType == AppointmentType.examination &&
+                        an.Appointment.Patient.Jmbg.Equals(patientId))
+                    {
+                        temp.Add(an);
+                        BindDataForAppointment(an.Appointment);
+                    }
                 }
             }
             return temp;

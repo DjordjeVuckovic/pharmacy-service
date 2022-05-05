@@ -76,7 +76,7 @@ namespace TechHealth.DoctorView.ViewModel
             LabelHeight = "Height: " + MedicalRecord.Height;
             LabelBloodType = "BloodType:  " + MedicalRecord.BloodTypeToString();
             LabelHronical = "Chronic diseases:  " + MedicalRecord.ChronicDiseases;
-            //LabelAllergens = "Allergens:  " + GetAllergens();
+            LabelAllergens = "Allergens:  " + GetAllergens();
             LabelParentDiseases = "ParentDiseases:  " + MedicalRecord.ParentDiseases;
             LabelName = "Name:  " + SelectedItemPatient.Name;
             LabelSurName = "Surname:  " + SelectedItemPatient.Surname;
@@ -85,16 +85,16 @@ namespace TechHealth.DoctorView.ViewModel
 
         }
 
-        /*private string GetAllergens()
+        private string GetAllergens()
         {
             string ret = "";
-            foreach (var alg in MedicalRecord.Allergens)
+            foreach (var alg in PatientAllergensRepository.Instance.PatientAllergensList(SelectedItemPatient.Jmbg))
             {
-                ret += alg.Name;
+                ret += alg;
                 ret += ";";
             }
 
             return ret;
-        }*/
+        }
     }
 }

@@ -204,13 +204,23 @@ namespace TechHealth.DoctorView.ViewModel
                 OnPropertyChanged(nameof(Gi));
             }
         }
+        public string DoctorLabel { get; set; }
+        public string PateintLabel { get; set; }
+        public string PateintLboLabel { get; set; }
+        public string RoomLabel { get; set; }
+        public string DateLabel { get; set; }
 
         public NewAnamnesisViewModel(Appointment appointment)
         {
             Appointment = appointment;
             FinishCommand = new RelayCommand(param => Execute(), param => CanExecute());
             CancelCommand = new RelayCommand(param => CloseWindow());
-            
+            DoctorLabel = "Doctor: " + Appointment.Doctor.FullSpecialization;
+            PateintLabel = "Patient: " + Appointment.Patient.FullName;
+            PateintLboLabel = "Patient: " + Appointment.Patient.Lbo;
+            RoomLabel = "Room: " + Appointment.Room.roomId;
+            DateLabel = "Appointment Date: " + Appointment.Date.ToString("d");
+
         }
         public bool CanExecute()
         {

@@ -78,5 +78,21 @@
       "ShouldSerialize": false,
       "IdAppointment": "2b5137f394a84737bce6ce8629dd3991"
     }
+  },
+  "b13d80aa872b40a2846d2ce0523db83f": {
+    "PrescriptionId": "b13d80aa872b40a2846d2ce0523db83f",
+    "Medicine": {
+      "MedicineId": "4e39d97e9ef24dea899335d58c4fa534",
+      "ShouldSerialize": false
+    },
+    "Frequency": "1*dnevno",
+    "Usage": "naneti tanak sloj...",
+    "StartDate": "2022-05-05T00:00:00",
+    "FinishDate": "2022-05-13T00:00:00",
+    "ShouldSerialize": true,
+    "Appointment": {
+      "ShouldSerialize": false,
+      "IdAppointment": "2b5137f394a84737bce6ce8629dd3991"
+    }
   }
 }

@@ -41,7 +41,6 @@
         <StackPanel Grid.Row="1" VerticalAlignment="Center" Margin="10,0,0,0">
             <Label  Content="{Binding DoctorLabel}"    HorizontalAlignment="Left" Margin="20,0,0,0" VerticalAlignment="Stretch" FontSize="14"  FontWeight="Bold" />
             <Label  Content="{Binding PatientLabel}"  HorizontalAlignment="Left" Margin="20,0,0,0" VerticalAlignment="Stretch" FontSize="14"  FontWeight="Bold" />
-            <Label  Content="{Binding RoomLabel}"  HorizontalAlignment="Left" Margin="20,0,0,0" VerticalAlignment="Stretch" FontSize="14"  FontWeight="Bold" />
         </StackPanel>
         
         <Grid Grid.Row="2"  Margin="10,0,0,0">
