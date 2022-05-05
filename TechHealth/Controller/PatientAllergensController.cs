@@ -24,5 +24,6 @@ namespace TechHealth.Controller
         {
             return patientAllergensService.Delete(id);
         }
+        
     }
 }

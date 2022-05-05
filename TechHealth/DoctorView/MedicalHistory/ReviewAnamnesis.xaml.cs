@@ -23,6 +23,11 @@ namespace TechHealth.DoctorView.MedicalHistory
     {
         private Appointment myappointment;
         private Anamnesis currentAnamnesis;
+        public string DoctorLabel { get; set; }
+        public string PateintLabel { get; set; }
+        public string PateintLboLabel { get; set; }
+        public string RoomLabel { get; set; }
+        public string DateLabel { get; set; }
         public ReviewAnamnesis()
         {
             InitializeComponent();
@@ -33,6 +38,11 @@ namespace TechHealth.DoctorView.MedicalHistory
             DataContext = this;
             myappointment = appointment;
             currentAnamnesis=AnamnesisRepository.Instance.GetByAppointmentId(myappointment.IdAppointment);
+            DoctorLabel = "Doctor: " + myappointment.Doctor.FullSpecialization;
+            PateintLabel = "Patient: " + myappointment.Patient.FullName;
+            PateintLboLabel = "Patient: " + myappointment.Patient.Lbo;
+            RoomLabel = "Room: " + myappointment.Room.roomId;
+            DateLabel = "Appointment Date: " + myappointment.Date.ToString("d");
             FillUpFields();
             
         }

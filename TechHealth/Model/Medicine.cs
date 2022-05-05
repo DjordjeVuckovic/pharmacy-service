@@ -19,7 +19,6 @@ namespace TechHealth.Model
         public Substance MainSubstance { get; set; }
         public double Price{ get; set; }
         public string MedicineName{ get; set; }
-        //public IEnumerable<Allergen> allergens;
         public bool Approved { get; set; }
         public bool ShouldSerialize { get; set; }
         public bool ShouldSerializeComposition()

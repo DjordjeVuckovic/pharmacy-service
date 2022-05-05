@@ -127,7 +127,7 @@ namespace TechHealth.DoctorView.ViewModel
         public void Execute()
         {
             CreatePresription();
-            MessageBox.Show(@"You are successfully create new prescription");
+            //MessageBox.Show(@"You are successfully create new prescription");
             OnRequestClose(this, new EventArgs());
         }
 
@@ -147,7 +147,7 @@ namespace TechHealth.DoctorView.ViewModel
                 Appointment = SelectedAppointment
             };
             prescribeMedicineController.Create(prescription);
-            
+            MessageBox.Show(@"You are successfully created new prescription for " + PatientLabel);
         }
 
         private void FillComboData()
