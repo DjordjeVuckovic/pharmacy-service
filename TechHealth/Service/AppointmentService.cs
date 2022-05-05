@@ -128,12 +128,12 @@ namespace TechHealth.Service
          }
 
 
-            foreach (var appointment in appointments)
-            {
-                appointment.Room = RoomRepository.Instance.GetRoombyId(appointment.Room.roomId);
-            }
+         foreach (var appointment in appointments)
+         {
+            appointment.Room = RoomRepository.Instance.GetRoombyId(appointment.Room.roomId);
+         }
 
-        }
+      }
 
       private void CheckAvailability(Appointment appointment)
       {
