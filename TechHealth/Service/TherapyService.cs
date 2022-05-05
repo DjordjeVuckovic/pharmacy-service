@@ -33,11 +33,17 @@ namespace TechHealth.Service
             List<Therapy> ret = new List<Therapy>();
             foreach (var therapy in therapies)
             {
-                if (therapy.Appointment.Patient.Jmbg.Equals(patientId))
+                if (therapy.Appointment != null)
                 {
-                    ret.Add(therapy);
-                    BindDataForAppointment(therapy.Appointment);
+                    {
+                        if (therapy.Appointment.Patient.Jmbg.Equals(patientId))
+                        {
+                            ret.Add(therapy);
+                            BindDataForAppointment(therapy.Appointment);
+                        }
+                    }
                 }
+
             }
 
             return ret;
