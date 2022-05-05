@@ -55,12 +55,12 @@
 
         <RadioButton x:Name="radioDoc" Content="Doctor" HorizontalAlignment="Left"
                      Margin="155,112,0,0" VerticalAlignment="Top"
-                     Checked="CheckedDoctor" FontSize="20"
+                     FontSize="20"
                      Height="34" Width="84" IsChecked="False"
                      />
         <RadioButton x:Name="radioDate" Content="Date" Grid.Column="1" HorizontalAlignment="Left"
                      Margin="10,112,0,0" VerticalAlignment="Top"
-                     FontSize="20" Height="34" Width="84" Checked="CheckedDate"
+                     FontSize="20" Height="34" Width="84" 
                      IsChecked="False"/>
 
 

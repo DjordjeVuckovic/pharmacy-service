@@ -7,14 +7,23 @@
         mc:Ignorable="d"
         Title="AppointmensFuture" Height="450" Width="800">
     <Grid>
-        <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding MyList}" >
+        <DataGrid x:Name="RecommendedAppointmentsTable" AutoGenerateColumns="False" ItemsSource="{Binding MyList}" Margin="0,68,0,0" IsReadOnly="True" SelectionMode="Single" >
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Doctor" Binding="{Binding Doctor.FullName}" Width="1.2*"  CanUserResize="False"/>
-            <DataGridTextColumn Header="Date" Binding="{Binding Date,StringFormat=d}" Width="*"  CanUserResize="False" />
-            <DataGridTextColumn Header="StartTime" Binding="{Binding StartTimeD,StringFormat=t}" Width="*"  CanUserResize="False"/>
-            <DataGridTextColumn Header="FinishTime" Binding="{Binding FinishTimeD,StringFormat=t}" Width="1.2*"  CanUserResize="False"/>
-            
+                <DataGridTextColumn Header="Doctor" Binding="{Binding Doctor.FullName}" Width="1.2*"  CanUserResize="False" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Date" Binding="{Binding Date,StringFormat=d}" Width="*"  CanUserResize="False" IsReadOnly="True" />
+                <DataGridTextColumn Header="StartTime" Binding="{Binding StartTimeD,StringFormat=t}" Width="*"  CanUserResize="False" IsReadOnly="True"/>
+                <DataGridTextColumn Header="FinishTime" Binding="{Binding FinishTimeD,StringFormat=t}" Width="1.2*"  CanUserResize="False" IsReadOnly="True"/>
+
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Padding="0" Width="60" Background="#FF01C38D" Name="Zakazi" Click="Zakazi_Click">Confirm</Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
             </DataGrid.Columns>
         </DataGrid>
+        <Label Content="Available appointments" HorizontalAlignment="Center" Margin="10,10,10,10" VerticalAlignment="Top" FontSize="20" FontStyle="Normal"/>
     </Grid>
 </Window>
