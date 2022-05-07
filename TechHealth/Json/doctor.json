@@ -55,5 +55,41 @@
     "Employed": true,
     "Username": "1",
     "Password": "1"
+  },
+  "1312131214201": {
+    "Specialization": {
+      "IdSpecialization": 4,
+      "NameSpecialization": "Neurologist"
+    },
+    "Address": null,
+    "Name": "Lara",
+    "Surname": "Croft",
+    "Email": "spec@spec1.com",
+    "Jmbg": "1312131214201",
+    "Phone": "06123111114",
+    "Employed": true,
+    "Username": "lara",
+    "Password": "lara"
+  },
+  "141314131111": {
+    "Specialization": {
+      "IdSpecialization": 0,
+      "NameSpecialization": "General"
+    },
+    "Address": {
+      "City": "Novi Sad",
+      "StreetNumber": "11",
+      "Country": "Srbija",
+      "Street": "Mike Mikica",
+      "Postcode": 21000
+    },
+    "Name": "Bili",
+    "Surname": "Bilanovic",
+    "Email": "doctor@doctor11",
+    "Jmbg": "141314131111",
+    "Phone": "0613412312331",
+    "Employed": true,
+    "Username": "bili",
+    "Password": "1"
   }
 }

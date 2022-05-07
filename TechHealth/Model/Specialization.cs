@@ -4,13 +4,25 @@
 // Purpose: Definition of Class Specialization
 
 using System;
+using TechHealth.Core;
 
 namespace TechHealth.Model
 {
-   public class Specialization
+   public class Specialization:ViewModelBase
    {
-      public int IdSpecialization{ get; set; }
+      private int idSpecialization;
+
+      public int IdSpecialization
+      {
+         get => idSpecialization;
+         set
+         { 
+            idSpecialization = value;
+            OnPropertyChanged(nameof(IdSpecialization));
+         }
+      }
+
       public string NameSpecialization{ get; set; }
-   
+      
    }
 }

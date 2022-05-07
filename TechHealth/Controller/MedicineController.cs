@@ -17,5 +17,10 @@ namespace TechHealth.Controller
         {
             return MedicineRepository.Instance.GetById(id);
         }
+
+        public void Update(Medicine medicine)
+        {
+            medicineService.Update(medicine);
+        }
     }
 }

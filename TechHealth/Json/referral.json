@@ -1,0 +1,15 @@
+{
+  "8d2a5d52683a4df29008d2e1c6c8f1b3": {
+    "ReferralId": "8d2a5d52683a4df29008d2e1c6c8f1b3",
+    "Appointment": {
+      "ShouldSerialize": false,
+      "IdAppointment": "a736a9653bad485181463fa1e9944eb6",
+      "StartDateRegion": "0001-01-01T00:00:00",
+      "FinishDateRegion": "0001-01-01T00:00:00"
+    },
+    "ReferralDoctor": {
+      "Jmbg": "1313",
+      "ShouldSerialize": false
+    }
+  }
+}

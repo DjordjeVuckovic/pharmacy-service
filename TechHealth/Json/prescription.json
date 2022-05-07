@@ -124,5 +124,23 @@
       "StartDateRegion": "0001-01-01T00:00:00",
       "FinishDateRegion": "0001-01-01T00:00:00"
     }
+  },
+  "ab760cf6a20e411d80e72e9f3e79aea0": {
+    "PrescriptionId": "ab760cf6a20e411d80e72e9f3e79aea0",
+    "Medicine": {
+      "MedicineId": "4e39d97e9ef24dea899335d58c4fa534",
+      "ShouldSerialize": false
+    },
+    "Frequency": "1* dnevno",
+    "Usage": "oralno",
+    "StartDate": "2022-05-07T00:00:00",
+    "FinishDate": "2022-05-09T00:00:00",
+    "ShouldSerialize": true,
+    "Appointment": {
+      "ShouldSerialize": false,
+      "IdAppointment": "a736a9653bad485181463fa1e9944eb6",
+      "StartDateRegion": "0001-01-01T00:00:00",
+      "FinishDateRegion": "0001-01-01T00:00:00"
+    }
   }
 }

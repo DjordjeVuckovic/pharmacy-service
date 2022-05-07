@@ -9,11 +9,10 @@ namespace TechHealth.Model
 {
    public class ReferralRequest
    {
-      public DateTime refferalDate;
-      public String refferalId;
+      public String ReferralId { get; set; }
       
-      public Patient patient;
-      public Doctor doctor;
-   
+      public Appointment Appointment { get; set; }
+      public Doctor ReferralDoctor { get; set; }
+
    }
 }

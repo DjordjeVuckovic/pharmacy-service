@@ -78,7 +78,7 @@ namespace TechHealth.DoctorView.ViewModel
             PatientsViewModel = new PatientsViewModel();
             //AppointmentsView = new AppointmentsView(DoctorId);
             RecordViewModel = new RecordViewModel(DoctorId);
-            MedicineViewModel = new MedicineViewModel();
+            MedicineViewModel = new MedicineViewModel(DoctorId);
             DashBoardViewModel = new DashBoardViewModel();
             viewModelAppointment = new ViewModelAppointment(DoctorId);
             //RecordViewModel.DoctorId = doctorJmbg;

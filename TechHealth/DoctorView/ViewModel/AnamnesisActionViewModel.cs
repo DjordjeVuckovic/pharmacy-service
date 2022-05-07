@@ -12,6 +12,7 @@ namespace TechHealth.DoctorView.ViewModel
         private readonly AnamnesisController anamnesisController = new AnamnesisController();
         public RelayCommand TherapyCommand { get; set; }
         public RelayCommand PrescribeCommand { get; set; }
+        public  RelayCommand ReferralCommand { get; set; }
         public  string AppointmentTypeLabel { get; set; }
         public string PatientLabel { get; set; }
         public string DoctorLabel { get; set; }
@@ -59,6 +60,7 @@ namespace TechHealth.DoctorView.ViewModel
             AppointmentTypeLabel = "Appointment Type: " + SelectedItemAppointment.AppointmentType; 
             TherapyCommand = new RelayCommand(param => Execute(), param => CanExecute());
             PrescribeCommand = new RelayCommand(param => Execute1(), param => CanExecute1());
+            ReferralCommand = new RelayCommand(param => ExecuteReferral());
         }
 
         private bool CanExecute()
@@ -90,6 +92,16 @@ namespace TechHealth.DoctorView.ViewModel
             };
             vm.OnRequestClose += (s, e) => prescritionWindow.Close();
             prescritionWindow.ShowDialog();
+        }
+        private void ExecuteReferral()
+        {
+            var vm = new ReferralRequestViewModel(SelectedItemAppointment);
+            var referralWindow = new ReferralWindow
+            {
+                DataContext = vm
+            };
+            //vm.OnRequestClose += (s, e) => prescritionWindow.Close();
+            referralWindow.ShowDialog();
         }
     }
 }

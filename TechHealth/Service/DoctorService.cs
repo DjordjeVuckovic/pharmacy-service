@@ -17,10 +17,24 @@ namespace TechHealth.Service
       {
          return  DoctorRepository.Instance.GetDoctorbyId(doctorId);
       }
+
+      public List<Doctor> GetAllBySpecializationId(int id)
+      {
+         List<Doctor> returnList = new List<Doctor>();
+         foreach (var doctor in GetAll())
+         {
+            if (doctor.Specialization.IdSpecialization == id)
+            {
+               returnList.Add(doctor);
+            }  
+         }
+
+         return returnList;
+      }
       
       public List<Doctor> GetAll()
       {
-         throw new NotImplementedException();
+        return DoctorRepository.Instance.GetAllToList();
       }
       
       public List<Doctor> GetAllGeneral()

@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System.Collections.Generic;
+using System.ComponentModel;
 using System.Windows;
 using TechHealth.Model;
 using TechHealth.Repository;
@@ -10,12 +11,10 @@ namespace TechHealth
 {
     public partial class MainWindow : Window
     {
-        
+
         public MainWindow()
         {
             InitializeComponent();
-
-
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -55,7 +54,7 @@ namespace TechHealth
 
         private void initMed()
         {
-            /*InitializeComponent();
+             /*InitializeComponent();
            RandomGenerator randomGenerator = new RandomGenerator();
            Substance substance = new Substance
            {
@@ -89,11 +88,10 @@ namespace TechHealth
                Units = "sirup",
                SideEffects = "/",
                MainSubstance = substance,
-               HarmfulRate = 0,
                Price = 300,
                MedicineName = "Brufen",
-               Allergens = "/",
-               Approved = true
+               MedicineStatus = MedicineStatus.Waiting,
+               ShouldSerialize = true,
            };
            List<Substance> substances1 = new List<Substance>();
            substances1.Add(substance3);
@@ -106,14 +104,16 @@ namespace TechHealth
                Units = "pill",
                SideEffects = "/",
                MainSubstance = substance3,
-               HarmfulRate = 0,
                Price = 100,
                MedicineName = "Paracetamol Uno",
-               Allergens = "/",
-               Approved = false
+               MedicineStatus = MedicineStatus.Waiting,
+               ShouldSerialize = true,
            };
            MedicineRepository.Instance.Create(medicine);
-           MedicineRepository.Instance.Create(medicine1);*/
+           MedicineRepository.Instance.Create(medicine1);
+
+
+        }*/
 
             /*RandomGenerator randomGenerator = new RandomGenerator();
            Patient patient = PatientRepository.Instance.GetById("2456");

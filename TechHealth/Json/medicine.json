@@ -1,6 +1,6 @@
 {
-  "4e39d97e9ef24dea899335d58c4fa534": {
-    "MedicineId": "4e39d97e9ef24dea899335d58c4fa534",
+  "97a1cfc8fcab49cf9d0ad78cd3a45a46": {
+    "MedicineId": "97a1cfc8fcab49cf9d0ad78cd3a45a46",
     "Composition": [
       {
         "SubstanceId": "113",
@@ -22,14 +22,13 @@
       "SubstanceId": "113",
       "SubstanceName": "ibuprofen"
     },
-    "HarmfulRate": 0,
-    "Price": 300,
+    "Price": 300.0,
     "MedicineName": "Brufen",
-    "Allergens": "/",
-    "Approved": true
+    "MedicineStatus": 1,
+    "ShouldSerialize": true
   },
-  "a636652d860b4fd79c9a7948cb8bad22": {
-    "MedicineId": "a636652d860b4fd79c9a7948cb8bad22",
+  "29a4bed4444841d58c51a39b49bf4d26": {
+    "MedicineId": "29a4bed4444841d58c51a39b49bf4d26",
     "Composition": [
       {
         "SubstanceId": "116",
@@ -47,10 +46,9 @@
       "SubstanceId": "116",
       "SubstanceName": "paracetamol"
     },
-    "HarmfulRate": 0,
-    "Price": 100,
+    "Price": 100.0,
     "MedicineName": "Paracetamol Uno",
-    "Allergens": "/",
-    "Approved": false
+    "MedicineStatus": 0,
+    "ShouldSerialize": true
   }
 }

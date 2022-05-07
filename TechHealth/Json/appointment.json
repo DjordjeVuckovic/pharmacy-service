@@ -76,5 +76,57 @@
       "ShouldSerialize": false
     },
     "Evident": true
+  },
+  "a736a9653bad485181463fa1e9944eb6": {
+    "ShouldSerialize": true,
+    "Date": "2022-05-07T00:00:00",
+    "StartTimeD": "2022-05-06T14:09:00",
+    "FinishTimeD": "2022-05-06T15:15:00",
+    "Emergent": false,
+    "StartTime": null,
+    "FinishTime": null,
+    "IdAppointment": "a736a9653bad485181463fa1e9944eb6",
+    "StartDateRegion": "0001-01-01T00:00:00",
+    "FinishDateRegion": "0001-01-01T00:00:00",
+    "Room": {
+      "roomId": "S2"
+    },
+    "Patient": {
+      "Lbo": 73456,
+      "Jmbg": "2456",
+      "ShouldSerialize": false
+    },
+    "AppointmentType": 0,
+    "Doctor": {
+      "Jmbg": "131213121111",
+      "ShouldSerialize": false
+    },
+    "Evident": true
+  },
+  "9b2a32b3807349bdb8343c68ff0ed497": {
+    "ShouldSerialize": true,
+    "Date": "2022-05-13T00:00:00",
+    "StartTimeD": "2022-05-06T00:00:00",
+    "FinishTimeD": "2022-05-06T01:05:00",
+    "Emergent": false,
+    "StartTime": null,
+    "FinishTime": null,
+    "IdAppointment": "9b2a32b3807349bdb8343c68ff0ed497",
+    "StartDateRegion": "0001-01-01T00:00:00",
+    "FinishDateRegion": "0001-01-01T00:00:00",
+    "Room": {
+      "roomId": "Warehouse"
+    },
+    "Patient": {
+      "Lbo": 73456,
+      "Jmbg": "2456",
+      "ShouldSerialize": false
+    },
+    "AppointmentType": 0,
+    "Doctor": {
+      "Jmbg": "131213121111",
+      "ShouldSerialize": false
+    },
+    "Evident": false
   }
 }

@@ -11,7 +11,7 @@ namespace TechHealth.Service
             var temp = new List<Medicine>();
             foreach (var medicine in MedicineRepository.Instance.GetAllToList())
             {
-                if (medicine.Approved)
+                if (medicine.MedicineStatus == MedicineStatus.Approved)
                 {
                     temp.Add(medicine);
                 }
@@ -22,6 +22,11 @@ namespace TechHealth.Service
         public Medicine GetById(string id)
         {
             return MedicineRepository.Instance.GetById(id);
+        }
+
+        public void Update(Medicine medicine)
+        {
+            MedicineRepository.Instance.Update(medicine);
         }
     }
 }

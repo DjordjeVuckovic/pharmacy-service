@@ -6,11 +6,13 @@
 using System;
 using System.Collections.Generic;
 using Newtonsoft.Json;
+using TechHealth.Core;
 
 namespace TechHealth.Model
 {
-    public class Medicine
+    public class Medicine:ViewModelBase
     {
+        private MedicineStatus medicineStatus;
         public string MedicineId{ get; set; }
         public List<Substance> Composition{ get; set; }
         public int Quantity{ get; set; }
@@ -19,7 +21,17 @@ namespace TechHealth.Model
         public Substance MainSubstance { get; set; }
         public double Price{ get; set; }
         public string MedicineName{ get; set; }
-        public bool Approved { get; set; }
+
+        public MedicineStatus MedicineStatus
+        {
+            get => medicineStatus;
+            set
+            {
+                medicineStatus = value;
+                OnPropertyChanged(nameof(MedicineStatus));
+            }
+        }
+
         public bool ShouldSerialize { get; set; }
         public bool ShouldSerializeComposition()
         {
@@ -41,19 +53,12 @@ namespace TechHealth.Model
         {
             return ShouldSerialize;
         }
-        public bool ShouldSerializeHarmfulRate()
-        {
-            return ShouldSerialize;
-            
-        }
+        
         public bool ShouldSerializePrice()
         {
             return ShouldSerialize;
         }
-        public bool ShouldSerializeAllergens()
-        {
-            return ShouldSerialize;
-        }
+        
         public bool ShouldSerializeApproved()
         {
             return ShouldSerialize;
@@ -82,7 +87,27 @@ namespace TechHealth.Model
             {
                 
             }
-        } 
+        }
+
+        public string MedicineStatusToString()
+        {
+            string returnValue = "";
+            switch (MedicineStatus)
+            {
+                case MedicineStatus.Waiting:
+                    returnValue = "Waiting";
+                    break;
+                case MedicineStatus.Approved:
+                    returnValue = "Approved";
+                    break;
+                case MedicineStatus.Rejected:
+                    returnValue = "Rejected";
+                    break;
+                
+            }
+
+            return returnValue;
+        }
     }
 
 }

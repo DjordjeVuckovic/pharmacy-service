@@ -1,4 +1,6 @@
 ﻿using System.Collections.ObjectModel;
+using System.Windows;
+using TechHealth.Controller;
 using TechHealth.Core;
 using TechHealth.DoctorView.View;
 using TechHealth.DoctorView.Windows;
@@ -9,10 +11,14 @@ namespace TechHealth.DoctorView.ViewModel
 {
     public class MedicineViewModel:ViewModelBase
     {
-        public RelayCommand PrescribeCommand { get; set; }
         private ObservableCollection<Medicine> medicines;
         private Medicine selectedItem;
         private PrescriptionWindow prescriptionWindow;
+        private  readonly  MedicineController medicineController = new MedicineController();
+        public  RelayCommand ApproveCommand { get; set; }
+        public  RelayCommand RejectCommand { get; set; }
+        public RelayCommand DetailsCommand { get; set; }
+        private string DocotorId;
         public Medicine SelectedItem
         {
             get
@@ -28,10 +34,7 @@ namespace TechHealth.DoctorView.ViewModel
 
         public ObservableCollection<Medicine> Medicines
         {
-            get
-            {
-                return medicines;
-            }
+            get => medicines;
             set
             {
                 medicines = value;
@@ -39,16 +42,19 @@ namespace TechHealth.DoctorView.ViewModel
             }
         }
 
-        public MedicineViewModel()
+        public MedicineViewModel(string doctorId)
         {
-            
-            medicines = new ObservableCollection<Medicine>(MedicineRepository.Instance.GetAllToList());
+            DocotorId = doctorId;
+            Medicines = new ObservableCollection<Medicine>(MedicineRepository.Instance.GetAllToList());
             //PrescribeCommand= new RelayCommand(param => Execute(), param => CanExecute());
+            ApproveCommand = new RelayCommand(param=>ExecuteApprove(),param=>CanExecuteApprove());
+            RejectCommand = new RelayCommand(param => ExecuteReject(), param => CanExecuteReject());
+            DetailsCommand = new RelayCommand(param => ExecuteDetails(), param => CanExecuteDetails());
         }
 
-        private bool CanExecute()
+        private bool CanExecuteReject()
         {
-            if (selectedItem == null || !SelectedItem.Approved)
+            if (selectedItem == null || SelectedItem.MedicineStatus != MedicineStatus.Waiting)
             {
                 return false;
             }
@@ -56,10 +62,48 @@ namespace TechHealth.DoctorView.ViewModel
             return true;
         }
 
-        private void Execute()
+        private void ExecuteReject()
         {
-            //prescriptionWindow = new PrescriptionWindow(selectedItem);
-            //prescriptionWindow.ShowDialog();
+            var vm = new RejectViewModel(SelectedItem,DocotorId);
+            RejectWindow rejectWindow = new RejectWindow()
+            {
+                DataContext = vm
+            };
+            vm.OnRequestClose += (s, e) => rejectWindow.Close();
+
+            rejectWindow.ShowDialog();
         }
+        private bool CanExecuteApprove()
+        {
+            if (selectedItem == null || SelectedItem.MedicineStatus != MedicineStatus.Waiting)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        private void ExecuteApprove()
+        {
+            SelectedItem.MedicineStatus= MedicineStatus.Approved;
+            medicineController.Update(SelectedItem);
+            MessageBox.Show(@"Yor are successfully approve medicine: " + SelectedItem.MedicineName);
+        }
+        private bool CanExecuteDetails()
+        {
+            if (selectedItem == null)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        private void ExecuteDetails()
+        {
+            var vm = new MedicineDetailsViewModel(SelectedItem);
+            MainViewModel.GetInstance().CurrentView = vm;
+        }
+        
     }
 }

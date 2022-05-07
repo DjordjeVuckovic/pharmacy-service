@@ -25,18 +25,14 @@
                         <DataGridTextColumn Header="Quantity" Binding="{Binding Quantity}" Width="*"  CanUserResize="False"/>
                         <DataGridTextColumn Header="Main Substance" Binding="{Binding MainSubstance.SubstanceName}" Width="*"  CanUserResize="False"/>
                         <DataGridTextColumn Header="Units" Binding="{Binding Units}" Width="*"  CanUserResize="False"/>
-                        <DataGridTemplateColumn Header="Approved?">
-                            <DataGridTemplateColumn.CellTemplate>
-                                <DataTemplate>
-                                    <CheckBox IsChecked="{Binding Approved}" IsEnabled="False" />
-                                </DataTemplate>
-                            </DataGridTemplateColumn.CellTemplate>
-                        </DataGridTemplateColumn>
+                        <DataGridTextColumn Header="Status" Binding="{Binding MedicineStatus}" Width="*"  CanUserResize="False"/>
+                        
                     </DataGrid.Columns>
                 </DataGrid>
 
-                <Button Grid.Row="3" Content="Approve"  HorizontalAlignment="Left"  Width="150" Height="50" Margin="173.684,0,0,0" Command="{Binding ApproveCommand }"/>
-                <Button Grid.Row="3" Content="Prescribe"  HorizontalAlignment="Right"   Width="150" Height="50" Margin="0,0,168.947,0" Command="{Binding PrescribeCommand}"/>
+                <Button Grid.Row="3" Content="Approve"  HorizontalAlignment="Left"  Width="150" Height="50" Margin="100,0,0,0" Command="{Binding ApproveCommand }"/>
+                <Button Grid.Row="3" Content="Reject"  HorizontalAlignment="Center"   Width="150" Height="50" Margin="70,0,0,0"  Command="{Binding RejectCommand}"/>
+                <Button Grid.Row="3" Content="Details"  HorizontalAlignment="Right"   Width="150" Height="50" Margin="0,0,30,0" Command="{Binding DetailsCommand}"/>
             </Grid>
         </Grid>
     </Grid>
