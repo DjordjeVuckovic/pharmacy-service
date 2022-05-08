@@ -91,5 +91,26 @@
     "Employed": true,
     "Username": "bili",
     "Password": "1"
+  },
+  "131213124444": {
+    "Specialization": {
+      "IdSpecialization": 1,
+      "NameSpecialization": "Anesthesiology"
+    },
+    "Address": {
+      "City": "Nis",
+      "StreetNumber": "11",
+      "Country": "Srbija",
+      "Street": "Pule Pulica",
+      "Postcode": 11000
+    },
+    "Name": "Mika",
+    "Surname": "Antic",
+    "Email": "spec@spec.com",
+    "Jmbg": "131213124444",
+    "Phone": "06123111324",
+    "Employed": true,
+    "Username": "2",
+    "Password": "2"
   }
 }

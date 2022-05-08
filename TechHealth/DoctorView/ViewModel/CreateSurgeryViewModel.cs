@@ -51,7 +51,7 @@ namespace TechHealth.DoctorView.ViewModel
             }
         }
 
-        public bool CanExecute()
+        private bool CanExecute()
         {
             if (StartDate != null && EndDate != null && PatientData != null && RoomData != null )
             {
@@ -90,7 +90,6 @@ namespace TechHealth.DoctorView.ViewModel
             {
                 
                 MessageBox.Show(@"Doctor has already scheduled appointment in that period!",@"Appointment exception",MessageBoxButtons.OK,MessageBoxIcon.Error);
-                //new AppointmensFuture(Date, doctor, PatientData).Show();
 
             }
             OnRequestClose(this, new EventArgs());
@@ -162,14 +161,6 @@ namespace TechHealth.DoctorView.ViewModel
                 OnPropertyChanged(nameof(RoomData));
             }
         }
-        // private void ButtonBase_OnClick1()
-        // {
-        //     MessageBoxResult dialogResult = MessageBox.Show("Are you sure about that?", "Cancel appointment", MessageBoxButton.YesNo);
-        //     if(dialogResult==MessageBoxResult.Yes)
-        //     {
-        //         Close();
-        //     }
-        // }
         private void FillComboData()
         {
 

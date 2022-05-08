@@ -155,6 +155,7 @@
     <Compile Include="Controller\AnamnesisController.cs" />
     <Compile Include="Controller\AppointmentController.cs" />
     <Compile Include="Controller\DoctorController.cs" />
+    <Compile Include="Controller\DoctorVacationRequestController.cs" />
     <Compile Include="Controller\EquipmentController.cs" />
     <Compile Include="Controller\EquipmentReallocationController.cs" />
     <Compile Include="Controller\MedicalRecordController.cs" />
@@ -199,10 +200,12 @@
     <Compile Include="DoctorView\MedicalHistory\UpdateAnamnesis.xaml.cs">
       <DependentUpon>UpdateAnamnesis.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DoctorView\ViewModel\AccountViewModel.cs" />
     <Compile Include="DoctorView\ViewModel\AnamnesisActionViewModel.cs" />
     <Compile Include="DoctorView\ViewModel\CreateExaminationViewModel.cs" />
     <Compile Include="DoctorView\ViewModel\CreateSurgeryViewModel.cs" />
     <Compile Include="DoctorView\ViewModel\DashBoardViewModel.cs" />
+    <Compile Include="DoctorView\ViewModel\DoctorVacationViewModel.cs" />
     <Compile Include="DoctorView\ViewModel\HistoryOfCareViewModel.cs" />
     <Compile Include="DoctorView\ViewModel\MainViewModel.cs" />
     <Compile Include="DoctorView\ViewModel\MedicalRecordViewModel.cs" />
@@ -220,6 +223,9 @@
     <Compile Include="DoctorView\ViewModel\UpdateAnamnesisViewModel.cs" />
     <Compile Include="DoctorView\ViewModel\UpdateAppointmentViewModel.cs" />
     <Compile Include="DoctorView\ViewModel\ViewModelAppointment.cs" />
+    <Compile Include="DoctorView\View\AccountView.xaml.cs">
+      <DependentUpon>AccountView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DoctorView\View\AnamnesisActionView.xaml.cs">
       <DependentUpon>AnamnesisActionView.xaml</DependentUpon>
     </Compile>
@@ -247,6 +253,9 @@
     <Compile Include="DoctorView\View\RecordView.xaml.cs">
       <DependentUpon>RecordView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DoctorView\Windows\DoctorVacationWindow.xaml.cs">
+      <DependentUpon>DoctorVacationWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DoctorView\Windows\ReferralWindow.xaml.cs">
       <DependentUpon>ReferralWindow.xaml</DependentUpon>
     </Compile>
@@ -269,6 +278,7 @@
     <Compile Include="DTO\EquipmentReallocationDTO.cs" />
     <Compile Include="DTO\RecommendedAppointmentDTO.cs" />
     <Compile Include="Exceptions\AppointmentConflictException.cs" />
+    <Compile Include="Exceptions\SpecializationException.cs" />
     <Compile Include="JsonIgnore\ShouldSerializeAppointment.cs" />
     <Compile Include="LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
@@ -281,6 +291,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Model\Anamnesis.cs" />
+    <Compile Include="Model\DoctorVacationRequest.cs" />
     <Compile Include="Model\EquipmentType.cs" />
     <Compile Include="Model\MedicineStatus.cs" />
     <Compile Include="Model\PatientAllergens.cs" />
@@ -292,12 +303,14 @@
     <Compile Include="Model\MainIssue.cs" />
     <Compile Include="Model\RandomGenerator.cs" />
     <Compile Include="Model\Therapy.cs" />
+    <Compile Include="Model\VacationStatus.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Repository\AccountRepository.cs" />
     <Compile Include="Repository\AllergensRepository.cs" />
     <Compile Include="Repository\AnamnesisRepository.cs" />
     <Compile Include="Repository\AppointmentRepository.cs" />
     <Compile Include="Repository\DoctorRepository.cs" />
+    <Compile Include="Repository\DoctorVacationRequestRepository.cs" />
     <Compile Include="Repository\EquipmentReallocationRepository.cs" />
     <Compile Include="Repository\EquipmentRepository.cs" />
     <Compile Include="Repository\GenericRepository.cs" />
@@ -319,6 +332,7 @@
     <Compile Include="Service\AnamnesisService.cs" />
     <Compile Include="Service\AppointmentService.cs" />
     <Compile Include="Service\DoctorService.cs" />
+    <Compile Include="Service\DoctorVacationRequestService.cs" />
     <Compile Include="Service\EquipmentReallocationService.cs" />
     <Compile Include="Service\EquipmentService.cs" />
     <Compile Include="Service\MedicalRecordService.cs" />
@@ -335,6 +349,8 @@
     <Compile Include="ValidationRules\FutureDateValidationRule.cs" />
     <Compile Include="ValidationRules\NotEmptyValidationRule.cs" />
     <Compile Include="ValidationRules\SimpleDateValidationRule.cs" />
+    <Compile Include="ValidationRules\VacationValidationFinishDateRule.cs" />
+    <Compile Include="ValidationRules\VacationValidationStartDateRule.cs" />
     <Compile Include="View\AppointmensFuture.xaml.cs">
       <DependentUpon>AppointmensFuture.xaml</DependentUpon>
     </Compile>
@@ -461,7 +477,6 @@
     <Compile Include="Model\Specialist.cs" />
     <Compile Include="Model\Specialization.cs" />
     <Compile Include="Model\User.cs" />
-    <Compile Include="Model\Vacation.cs" />
     <Compile Include="Model\Warehouse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -502,6 +517,7 @@
     <Content Include="Json\anamnesis.json" />
     <Content Include="Json\appointment.json" />
     <Content Include="Json\doctor.json" />
+    <Content Include="Json\doctorVacation.json" />
     <Content Include="Json\manager.json" />
     <Content Include="Json\medicine.json" />
     <Content Include="Json\patient.json" />
@@ -520,6 +536,7 @@
     <Content Include="resources\body-scan.png" />
     <Content Include="resources\diagnosis.png" />
     <Content Include="resources\medicine.png" />
+    <Content Include="resources\mydoctor.png" />
     <Content Include="resources\ph.png" />
     <Resource Include="resources\hospital.png" />
     <Resource Include="resources\ambulance.png" />
@@ -553,6 +570,7 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="DoctorView\MedicalHistory\UpdateAnamnesis.xaml" />
+    <Page Include="DoctorView\View\AccountView.xaml" />
     <Page Include="DoctorView\View\AnamnesisActionView.xaml" />
     <Page Include="DoctorView\View\AppointmentsView.xaml" />
     <Page Include="DoctorView\View\DashBoardView.xaml" />
@@ -562,6 +580,7 @@
     <Page Include="DoctorView\View\MedicineView.xaml" />
     <Page Include="DoctorView\View\PatientView.xaml" />
     <Page Include="DoctorView\View\RecordView.xaml" />
+    <Page Include="DoctorView\Windows\DoctorVacationWindow.xaml" />
     <Page Include="DoctorView\Windows\ReferralWindow.xaml" />
     <Page Include="DoctorView\Windows\RejectWindow.xaml">
       <SubType>Designer</SubType>
