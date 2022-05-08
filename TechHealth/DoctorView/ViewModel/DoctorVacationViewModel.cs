@@ -77,26 +77,23 @@ namespace TechHealth.DoctorView.ViewModel
             DialogResult dialogResult = MessageBox.Show(@"Are you sure?", @"Cancel vacation", MessageBoxButtons.YesNo);
             if(dialogResult==(DialogResult) MessageBoxResult.Yes)
             {
-                OnRequestClose(this, new EventArgs());
+                OnRequestClose?.Invoke(this, new EventArgs());
             }
         }
 
-        public bool CanExecute()
+        private bool CanExecute()
         {
             
-            if (Reason != null)
+            if ( StartDate >= DateTime.Now.Date.AddDays(2) && FinishDate >= DateTime.Now.Date.AddDays(3))
             {
-                if (StartDate >= DateTime.Now.Date.AddDays(2) && FinishDate >= DateTime.Now.Date.AddDays(2))
-                {
-                    return true;
-                }
+                return true;
             }
 
             return false;
 
         }
 
-        public void Execute()
+        private void Execute()
         {
             if (Emergent)
             {
@@ -107,7 +104,7 @@ namespace TechHealth.DoctorView.ViewModel
                 CreateNotEmergent();
             }
 
-            if (OnRequestClose != null) OnRequestClose(this, EventArgs.Empty);
+            OnRequestClose?.Invoke(this, EventArgs.Empty);
         }
 
         private void CreateNotEmergent()

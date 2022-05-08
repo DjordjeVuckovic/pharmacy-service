@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:TechHealth.DoctorView"
         xmlns:vm="clr-namespace:TechHealth.DoctorView.ViewModel"
         xmlns:view="clr-namespace:TechHealth.DoctorView.View"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         mc:Ignorable="d"
         Height="768" Width="1024"
         ResizeMode="NoResize"
@@ -50,7 +51,13 @@
                 </Grid.RowDefinitions>
                 <Image  Source="C:\Users\djord\OneDrive\Documents\GitHub\PharmacyService\TechHealth\resources\mylogo.png" Margin="5.2,0,4.8,0"/>
                 <StackPanel Grid.Row="1" Grid.Column="0">
-                    <RadioButton Height="60" Content="DashBoard" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="20" Foreground="#f8f8f2" Style="{StaticResource ResourceKey=MenuButtonTheme}" Width="210" Command="{Binding DashCommand}" />
+                    <RadioButton Height="60" Content="DashBoard" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="20" Foreground="#f8f8f2" Style="{StaticResource ResourceKey=MenuButtonTheme}" Width="210">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="Checked">
+                            <i:InvokeCommandAction Command="{Binding Path=DashCommand}"></i:InvokeCommandAction>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                        </RadioButton>
                     <RadioButton Height="60" Content="Appointments" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="20" Foreground="#f8f8f2" Style="{StaticResource ResourceKey=MenuButtonTheme}" Width="210" Command="{Binding AppointmentCommand}" />
                     <RadioButton Height="60" Content="Medical report" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="20" Foreground="#f8f8f2" Style="{StaticResource ResourceKey=MenuButtonTheme}" Width="210" Command="{Binding RecordCommand}" />
                     <RadioButton Height="60" Content="Patients" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="20" Foreground="#f8f8f2" Style="{StaticResource ResourceKey=MenuButtonTheme}" Width="210" Command="{Binding PateintCommand}"/>
