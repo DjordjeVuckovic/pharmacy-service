@@ -127,7 +127,6 @@ namespace TechHealth.Service
             appointment.Patient = PatientRepository.Instance.GetPatientbyId(appointment.Patient.Jmbg);
          }
 
-
          foreach (var appointment in appointments)
          {
             appointment.Room = RoomRepository.Instance.GetRoombyId(appointment.Room.roomId);

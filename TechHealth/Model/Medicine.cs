@@ -14,7 +14,7 @@ namespace TechHealth.Model
     {
         private MedicineStatus medicineStatus;
         public string MedicineId{ get; set; }
-        public List<Substance> Composition{ get; set; }
+        public List<Substance> Composition { get; set; }
         public int Quantity{ get; set; }
         public string Units{ get; set; }
         public string SideEffects{ get; set; }

@@ -7,6 +7,7 @@ namespace TechHealth.Service
 {
     public class DoctorVacationRequestService
     {
+        
         public List<DoctorVacationRequest> GetAll()
         {
             List<DoctorVacationRequest> vacationRequests = DoctorVacationRequestRepository.Instance.GetAllToList();
@@ -26,9 +27,8 @@ namespace TechHealth.Service
 
         private void CheckAvailabilityForSpecialization(DoctorVacationRequest doctorVacationRequest)
         {
-            
-                if(doctorVacationRequest.VacationStatus == VacationStatus.Approved || doctorVacationRequest.VacationStatus ==VacationStatus.Waiting) ThrowSpecializationException(doctorVacationRequest);
-            
+            if(doctorVacationRequest.VacationStatus == VacationStatus.Approved || doctorVacationRequest.VacationStatus ==VacationStatus.Waiting) 
+                ThrowSpecializationException(doctorVacationRequest);
         }
 
         private void ThrowSpecializationException(DoctorVacationRequest newVacation)
@@ -41,23 +41,26 @@ namespace TechHealth.Service
 
         private bool SpecializationConflict(DoctorVacationRequest newVacation)
         {
+            var specializationCounter = SpecializationCounter(newVacation);
+            return specializationCounter > 1;
+        }
+
+        private int SpecializationCounter(DoctorVacationRequest newVacation)
+        {
             int specializationCounter = 0;
             foreach (var existingVacation in GetAll())
             {
-                if (existingVacation.Doctor.Specialization.IdSpecialization == newVacation.Doctor.Specialization.IdSpecialization && existingVacation.CheckDaysConflict(newVacation))
+                if (existingVacation.Doctor.Specialization.IdSpecialization ==
+                    newVacation.Doctor.Specialization.IdSpecialization && existingVacation.CheckDaysConflict(newVacation))
                 {
                     specializationCounter++;
                 }
             }
-            if (specializationCounter > 1)
-            {
-                return true;
-            }
-            return false;
+
+            return specializationCounter;
         }
-        
-        
-        
+
+
         private void BindDataForDoctor(List<DoctorVacationRequest> doctorVacationRequests)
         {
             foreach (var vac in doctorVacationRequests)

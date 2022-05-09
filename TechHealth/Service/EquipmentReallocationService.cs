@@ -39,12 +39,10 @@ namespace TechHealth.Service
                     {
                         RoomEquipmentRepository.Instance.Update(reSrc);
                     }
-                    return;
                 }
                 else
                 {
                     MessageBox.Show("Can't transfer that much!");
-                    return;
                 }
             }
             else
@@ -69,7 +67,6 @@ namespace TechHealth.Service
                     {
                         RoomEquipmentRepository.Instance.Update(reSrc);
                     }
-                    return;
                 }
                 else
                 {

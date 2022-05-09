@@ -13,7 +13,7 @@ namespace TechHealth.DoctorView.ViewModel
 {
     public class CreateExaminationViewModel:ViewModelBase
     {
-         public event EventHandler OnRequestClose;
+        public event EventHandler OnRequestClose;
         private readonly AppointmentController appointmentController = new AppointmentController();
         private readonly DoctorController doctorController = new DoctorController();
         private readonly PatientController patientController = new PatientController();
@@ -46,7 +46,7 @@ namespace TechHealth.DoctorView.ViewModel
             DialogResult dialogResult = MessageBox.Show(@"Are you sure about that?", @"Cancel appointment", MessageBoxButtons.YesNo);
             if(dialogResult==(DialogResult) MessageBoxResult.Yes)
             {
-                OnRequestClose(this, new EventArgs());
+                OnRequestClose?.Invoke(this, new EventArgs());
             }
         }
 
@@ -89,7 +89,7 @@ namespace TechHealth.DoctorView.ViewModel
                 MessageBox.Show(@"Doctor has already scheduled appointment in that period!",@"Appointment exception",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 
             }
-            OnRequestClose(this, new EventArgs());
+            OnRequestClose?.Invoke(this, new EventArgs());
         }
 
         public string DoctorFullName { get; set; }

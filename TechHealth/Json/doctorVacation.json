@@ -58,5 +58,29 @@
     "VacationReason": "aaaa",
     "Emergent": true,
     "VacationStatus": 0
+  },
+  "e8d994f798ce4b8a8c4b9c1157276e4b": {
+    "VacationId": "e8d994f798ce4b8a8c4b9c1157276e4b",
+    "StartDate": "2022-05-11T00:00:00",
+    "FinishDate": "2022-05-12T00:00:00",
+    "Doctor": {
+      "Jmbg": "131213121111",
+      "ShouldSerialize": false
+    },
+    "VacationReason": "aaaaaa",
+    "Emergent": false,
+    "VacationStatus": 0
+  },
+  "5a2b35c6227f46608975a9afac888512": {
+    "VacationId": "5a2b35c6227f46608975a9afac888512",
+    "StartDate": "2022-05-11T00:00:00",
+    "FinishDate": "2022-05-12T00:00:00",
+    "Doctor": {
+      "Jmbg": "131213121111",
+      "ShouldSerialize": false
+    },
+    "VacationReason": "aaa",
+    "Emergent": false,
+    "VacationStatus": 0
   }
 }

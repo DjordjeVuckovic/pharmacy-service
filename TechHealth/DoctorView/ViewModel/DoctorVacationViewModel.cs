@@ -12,6 +12,7 @@ namespace TechHealth.DoctorView.ViewModel
     public class DoctorVacationViewModel:ViewModelBase
     {
         public event EventHandler OnRequestClose;
+        private event EventHandler OnDateChg;
         private readonly Doctor doctor;
         private DateTime startDate;
         private DateTime finishDate;
@@ -83,14 +84,14 @@ namespace TechHealth.DoctorView.ViewModel
 
         private bool CanExecute()
         {
-            
-            if ( StartDate >= DateTime.Now.Date.AddDays(2) && FinishDate >= DateTime.Now.Date.AddDays(3))
+            //string sDate = StartDate.ToString("d");
+           // string fDate = StartDate.ToString("d");
+            if (!String.IsNullOrEmpty(Reason) && StartDate >= DateTime.Now.Date.AddDays(2) && FinishDate >= DateTime.Now.Date.AddDays(3) && StartDate < FinishDate)
             {
                 return true;
             }
 
             return false;
-
         }
 
         private void Execute()

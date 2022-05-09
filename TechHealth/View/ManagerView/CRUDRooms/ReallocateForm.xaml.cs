@@ -98,7 +98,7 @@ namespace TechHealth.View.ManagerView.CRUDRooms
                 MessageBox.Show("Invalid rooms for transfer selected!");
                 return;
             }
-            this.Close();
+            Close();
         }
 
         private void Button_Click_Close(object sender, RoutedEventArgs e)
