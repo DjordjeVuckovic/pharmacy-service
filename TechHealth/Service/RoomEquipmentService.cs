@@ -35,6 +35,11 @@ namespace TechHealth.Service
             DoEquipmentMovingToWarehouse(roomOneEquipment);
             DoEquipmentMovingToWarehouse(roomTwoEquipment);
         }
+        public void MoveEquipmentToWarehouse(string room)
+        {
+            List<RoomEquipment> roomOneEquipment = GetRoomEqListByRoomID(room);
+            DoEquipmentMovingToWarehouse(roomOneEquipment);
+        }
 
         public void DoEquipmentMovingToWarehouse(List<RoomEquipment> roomEquipment)
         {

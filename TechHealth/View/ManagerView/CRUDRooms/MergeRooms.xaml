@@ -8,9 +8,9 @@
         Title="MergeRooms" Height="560" Width="400">
     <Grid Background="#272537">
         <Label Content="RoomID:" HorizontalAlignment="Left" Margin="51,78,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White"/>
-        <Label Content="Renovation start:" HorizontalAlignment="Left" Margin="51,137,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White"/>
+        <Label Content="Merge start:" HorizontalAlignment="Left" Margin="51,137,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White"/>
         <Label Content="Start time:" HorizontalAlignment="Left" Margin="51,196,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White"/>
-        <Label Content="Renovation end:" HorizontalAlignment="Left" Margin="51,255,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White"/>
+        <Label Content="Merge end:" HorizontalAlignment="Left" Margin="51,255,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White"/>
         <Label Content="End time:" HorizontalAlignment="Left" Margin="51,307,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White"/>
         <Label Content="Merging room" HorizontalAlignment="Left" Margin="51,359,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White"/>
         <Label Content="New room type" HorizontalAlignment="Left" Margin="51,411,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White"/>
