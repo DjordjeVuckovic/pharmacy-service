@@ -18,7 +18,6 @@ namespace TechHealth.Model
         public string roomId { get; set; }
         public int floor { get; set; }
         public bool availability { get; set; }
-        [JsonIgnore]
         public bool ShouldSerialize { get; set; }
         public Room() { }
         public Room(RoomTypes rt, string id, int flr, bool available)

@@ -26,7 +26,7 @@
                       CanUserAddRows="False"
                       SelectionMode="Extended"
                       AutoGenerateColumns="False"
-                      Margin="10,10,10,10">
+                      Margin="10,10,10,69">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="ID" Binding="{Binding roomId}" Width="*"  CanUserResize="False"/>
                     <DataGridTextColumn Header="Floor" Binding="{Binding floor}" Width="*"  CanUserResize="False"/>
@@ -37,6 +37,10 @@
 
             <Button x:Name="Add" Content="Add" Margin="20,0,10,10" HorizontalAlignment="Left" Width="120" Height="50"  Grid.Row="3" Background="Green"
                     Command="{Binding AddRoomCommand}"/>
+            <Button x:Name="Merging" Content="Merging" Margin="90,280,0,10" HorizontalAlignment="Left" Width="120" Height="50"
+                    Command="{Binding MergeRoomsCommand}"/>
+            <Button x:Name="Separation" Content="Separation" Margin="495,280,0,10" HorizontalAlignment="Left" Width="120" Height="50"
+                    Command="{Binding SeparateRoomsCommand}"/>
             <Button x:Name="Renovation" Content="Renovation" Margin="150,0,10,10" HorizontalAlignment="Left" Width="120" Height="50"  Grid.Row="3"
                     Command="{Binding RenovationCommand}"/>
             <Button x:Name="View" Content="View/Modify" Margin="-25,0,0,10" HorizontalAlignment="Center"  Width="120" Height="50"  Grid.Row="3"

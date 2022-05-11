@@ -166,6 +166,7 @@
     <Compile Include="Controller\ReferralRequestController.cs" />
     <Compile Include="Controller\RoomController.cs" />
     <Compile Include="Controller\RoomEquipmentController.cs" />
+    <Compile Include="Controller\RoomMergingController.cs" />
     <Compile Include="Controller\SpecializationController.cs" />
     <Compile Include="Controller\TherapyController.cs" />
     <Compile Include="Conversions\AddressConverter.cs" />
@@ -298,6 +299,7 @@
     <Compile Include="Model\PatientAllergens.cs" />
     <Compile Include="Model\PatientRecommendType.cs" />
     <Compile Include="Model\RoomEquipment.cs" />
+    <Compile Include="Model\RoomMerging.cs" />
     <Compile Include="Model\RoomRenovation.cs" />
     <Compile Include="Model\Substance.cs" />
     <Compile Include="Model\EmlpoymentData.cs" />
@@ -323,6 +325,7 @@
     <Compile Include="Repository\PrescribeMedicineRepository.cs" />
     <Compile Include="Repository\ReferralRequestRepository.cs" />
     <Compile Include="Repository\RoomEquipmentRepository.cs" />
+    <Compile Include="Repository\RoomMergingRepository.cs" />
     <Compile Include="Repository\RoomRenovationRepository.cs" />
     <Compile Include="Repository\RoomRepository.cs" />
     <Compile Include="Repository\SecretaryRepository.cs" />
@@ -343,6 +346,7 @@
     <Compile Include="Service\PrescribeMedicineService.cs" />
     <Compile Include="Service\ReferralRequestService.cs" />
     <Compile Include="Service\RoomEquipmentService.cs" />
+    <Compile Include="Service\RoomMergingService.cs" />
     <Compile Include="Service\RoomService.cs" />
     <Compile Include="Service\SpecializationService.cs" />
     <Compile Include="Service\TherapyService.cs" />
@@ -363,6 +367,9 @@
     </Compile>
     <Compile Include="View\ManagerView\CRUDRooms\AddRenovation.xaml.cs">
       <DependentUpon>AddRenovation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ManagerView\CRUDRooms\MergeRooms.xaml.cs">
+      <DependentUpon>MergeRooms.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ManagerView\CRUDRooms\ReallocateForm.xaml.cs">
       <DependentUpon>ReallocateForm.xaml</DependentUpon>
@@ -502,6 +509,7 @@
     <None Include="Json\room.json" />
     <None Include="Json\equipment.json" />
     <None Include="Json\roomEquipment.json" />
+    <None Include="Json\roomMerging.json" />
     <None Include="Json\roomRenovation.json" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -612,6 +620,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\ManagerView\CRUDRooms\AddRenovation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ManagerView\CRUDRooms\MergeRooms.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
