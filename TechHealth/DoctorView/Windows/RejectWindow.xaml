@@ -1,0 +1,52 @@
+﻿<Window x:Class="TechHealth.DoctorView.Windows.RejectWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TechHealth.DoctorView.Windows"
+        mc:Ignorable="d"
+        Title="Reject Medicine" Height="350" Width="350"
+        WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Dark.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/materialdesigncolor.bluegrey.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Border Background="#282a36" >
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="5"/>
+                <RowDefinition Height="46"/>
+                <RowDefinition/>
+                <RowDefinition  Height="43"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row ="1">
+                <TextBlock Text="Reject Medicine" HorizontalAlignment="Center" FontSize="20" Foreground="#1FC192"></TextBlock>
+            </Grid>
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Label Margin="20,0,0,0" Content="Doctor: " Grid.Column="0" Grid.Row="0" VerticalAlignment="Center"/>
+                <Label Margin="20,0,0,0" Content="Medicine: " Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" />
+                <Label Margin="20,0,0,0" Content="Reject reason: " Grid.Column="0" Grid.Row="2" VerticalAlignment="Center" />
+                <TextBox  Grid.Row="0" Grid.Column="1" Text="{Binding DoctorName}" VerticalAlignment="Center" Height="39.714" Margin="0,25.753,10,10" IsReadOnly="True"/>
+                <TextBox  Grid.Row="1" Grid.Column="1" Text="{Binding MedicineName}" VerticalAlignment="Center" Height="39.713" Margin="0,25.753,10,10" IsReadOnly="True"/>
+                <TextBox  Grid.Row="2" Grid.Column="1" Text="{Binding Details,UpdateSourceTrigger= PropertyChanged}" VerticalAlignment="Center" Height="61.8" Margin="0,0,10,13.667"  TextWrapping="Wrap"/>
+            </Grid>
+            <Button Grid.Row="3" Content="Finish"  HorizontalAlignment="Right" VerticalAlignment="Stretch" Width="80" Margin="0,0,30,0" Command="{Binding FinishCommand}" />
+            <Button Grid.Row="3" Content="Close"  HorizontalAlignment="Left" VerticalAlignment="Stretch" Width="80" Margin="30,0,0,0"  Command="{Binding CancelCommand}" />
+        </Grid>
+    </Border>
+</Window>

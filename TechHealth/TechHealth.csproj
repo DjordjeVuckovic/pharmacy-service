@@ -259,14 +259,14 @@
     <Compile Include="DoctorView\Windows\ReferralWindow.xaml.cs">
       <DependentUpon>ReferralWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DoctorView\Windows\RejectWindow.xaml.cs">
-      <DependentUpon>RejectWindow.xaml</DependentUpon>
-    </Compile>
     <Compile Include="DoctorView\Windows\PrescriptionPreview.xaml.cs">
       <DependentUpon>PrescriptionPreview.xaml</DependentUpon>
     </Compile>
     <Compile Include="DoctorView\Windows\PrescriptionWindow.xaml.cs">
       <DependentUpon>PrescriptionWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DoctorView\Windows\RejectWindow.xaml.cs">
+      <DependentUpon>RejectWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="DoctorView\Windows\TherapyPreview.xaml.cs">
       <DependentUpon>TherapyPreview.xaml</DependentUpon>
@@ -582,12 +582,9 @@
     <Page Include="DoctorView\View\RecordView.xaml" />
     <Page Include="DoctorView\Windows\DoctorVacationWindow.xaml" />
     <Page Include="DoctorView\Windows\ReferralWindow.xaml" />
-    <Page Include="DoctorView\Windows\RejectWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="DoctorView\Windows\PrescriptionPreview.xaml" />
     <Page Include="DoctorView\Windows\PrescriptionWindow.xaml" />
+    <Page Include="DoctorView\Windows\RejectWindow.xaml" />
     <Page Include="DoctorView\Windows\TherapyPreview.xaml" />
     <Page Include="DoctorView\Windows\TherapyWindow.xaml" />
     <Page Include="LoginWindow.xaml" />
