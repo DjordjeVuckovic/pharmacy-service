@@ -79,18 +79,23 @@ namespace TechHealth.View.ManagerView.VieW
             InventoryCommand = new RelayCommand(param => ExecuteInventory(), param => CanExecuteInventory());
             RenovationCommand = new RelayCommand(param => ExecuteRenovation(), param => CanExecuteRenovation());
             MergeRoomsCommand = new RelayCommand(param => ExecuteMerge(), param => CanExecuteMerge());
-            //SeparateRoomsCommand = new RelayCommand(param => ExecuteSeparation(), param => CanExecuteSeparation());
+            SeparateRoomsCommand = new RelayCommand(param => ExecuteSeparation(), param => CanExecuteSeparation());
         }
 
-        //private bool CanExecuteSeparation()
-        //{
-        //    throw new NotImplementedException();
-        //}
+        private bool CanExecuteSeparation()
+        {
+            if (selectedItem == null)
+            {
+                return false;
+            }
 
-        //private void ExecuteSeparation()
-        //{
-        //    throw new NotImplementedException();
-        //}
+            return true;
+        }
+
+        private void ExecuteSeparation()
+        {
+            new SeparateRooms(selectedItem).ShowDialog();
+        }
 
         private bool CanExecuteMerge()
         {

@@ -12,8 +12,7 @@ namespace TechHealth.Service
 {
    public class RoomService
    {
-      //private RoomRepository roomRepository;
-      
+        private RoomEquipmentService roomEquipmentService = new RoomEquipmentService();
       public Room GetById(string roomId)
       {
           return RoomRepository.Instance.GetById(roomId);
