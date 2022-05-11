@@ -145,8 +145,16 @@ namespace TechHealth.DoctorView.ViewModel
                 Emergent = true,
                 VacationStatus = VacationStatus.Waiting
             };
-            doctorVacationRequestController.CreateEmergentVacation(doctorVacationRequest);
-            MessageBox.Show(@"You are successfully scheduled new vacation");
+            try
+            {
+                doctorVacationRequestController.CreateEmergentVacation(doctorVacationRequest);
+                MessageBox.Show(@"You are successfully scheduled new vacation");
+            }
+            catch (AppointmentVacationException)
+            {
+                MessageBox.Show(
+                    @"You have scheduled appointment in requested vacation period.Please update or delete existing appointment or choose another vacation period!",@"Vacation  exception",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
         }
     }
 }

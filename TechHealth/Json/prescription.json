@@ -3,6 +3,7 @@
     "PrescriptionId": "1b3d8a049f5b4ddea5cf3b8721063be3",
     "Medicine": {
       "MedicineId": "4e39d97e9ef24dea899335d58c4fa534",
+      "MedicineStatus": 0,
       "ShouldSerialize": false
     },
     "Frequency": "jednom dnevno",
@@ -21,6 +22,7 @@
     "PrescriptionId": "9b86c1bbbe6140c6b84d3de799d6a380",
     "Medicine": {
       "MedicineId": "4e39d97e9ef24dea899335d58c4fa534",
+      "MedicineStatus": 0,
       "ShouldSerialize": false
     },
     "Frequency": "aaa",
@@ -39,6 +41,7 @@
     "PrescriptionId": "d975661f19ff44acb88726ca47155dbe",
     "Medicine": {
       "MedicineId": "4e39d97e9ef24dea899335d58c4fa534",
+      "MedicineStatus": 0,
       "ShouldSerialize": false
     },
     "Frequency": "aa",
@@ -57,6 +60,7 @@
     "PrescriptionId": "6b60488ae2f64b4cb532f4fb8b239227",
     "Medicine": {
       "MedicineId": "4e39d97e9ef24dea899335d58c4fa534",
+      "MedicineStatus": 0,
       "ShouldSerialize": false
     },
     "Frequency": "2*nedljno",
@@ -75,6 +79,7 @@
     "PrescriptionId": "8e25376a403448a7a77296451f06393f",
     "Medicine": {
       "MedicineId": "4e39d97e9ef24dea899335d58c4fa534",
+      "MedicineStatus": 0,
       "ShouldSerialize": false
     },
     "Frequency": "2* nedeljno",
@@ -93,6 +98,7 @@
     "PrescriptionId": "b13d80aa872b40a2846d2ce0523db83f",
     "Medicine": {
       "MedicineId": "4e39d97e9ef24dea899335d58c4fa534",
+      "MedicineStatus": 0,
       "ShouldSerialize": false
     },
     "Frequency": "1*dnevno",
@@ -111,6 +117,7 @@
     "PrescriptionId": "95c95cf0db3d4b33b515cc5edf06d9cc",
     "Medicine": {
       "MedicineId": "4e39d97e9ef24dea899335d58c4fa534",
+      "MedicineStatus": 0,
       "ShouldSerialize": false
     },
     "Frequency": "2* dnevno",
@@ -129,6 +136,7 @@
     "PrescriptionId": "ab760cf6a20e411d80e72e9f3e79aea0",
     "Medicine": {
       "MedicineId": "4e39d97e9ef24dea899335d58c4fa534",
+      "MedicineStatus": 0,
       "ShouldSerialize": false
     },
     "Frequency": "1* dnevno",
@@ -139,6 +147,25 @@
     "Appointment": {
       "ShouldSerialize": false,
       "IdAppointment": "a736a9653bad485181463fa1e9944eb6",
+      "StartDateRegion": "0001-01-01T00:00:00",
+      "FinishDateRegion": "0001-01-01T00:00:00"
+    }
+  },
+  "d9eb8f40157e4c63b3fd278e80c2727d": {
+    "PrescriptionId": "d9eb8f40157e4c63b3fd278e80c2727d",
+    "Medicine": {
+      "MedicineId": "97a1cfc8fcab49cf9d0ad78cd3a45a46",
+      "MedicineStatus": 1,
+      "ShouldSerialize": false
+    },
+    "Frequency": "aaa",
+    "Usage": "aaaa",
+    "StartDate": "2022-05-11T00:00:00",
+    "FinishDate": "2022-05-12T00:00:00",
+    "ShouldSerialize": true,
+    "Appointment": {
+      "ShouldSerialize": false,
+      "IdAppointment": "9b2a32b3807349bdb8343c68ff0ed497",
       "StartDateRegion": "0001-01-01T00:00:00",
       "FinishDateRegion": "0001-01-01T00:00:00"
     }

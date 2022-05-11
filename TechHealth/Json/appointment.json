@@ -128,5 +128,31 @@
       "ShouldSerialize": false
     },
     "Evident": true
+  },
+  "925d4abd290746608bf76d6a98a89897": {
+    "ShouldSerialize": true,
+    "Date": "2022-05-17T00:00:00",
+    "StartTimeD": "2022-05-11T01:05:00",
+    "FinishTimeD": "2022-05-11T02:11:00",
+    "Emergent": false,
+    "StartTime": null,
+    "FinishTime": null,
+    "IdAppointment": "925d4abd290746608bf76d6a98a89897",
+    "StartDateRegion": "0001-01-01T00:00:00",
+    "FinishDateRegion": "0001-01-01T00:00:00",
+    "Room": {
+      "roomId": "S2"
+    },
+    "Patient": {
+      "Lbo": 657771,
+      "Jmbg": "13456",
+      "ShouldSerialize": false
+    },
+    "AppointmentType": 0,
+    "Doctor": {
+      "Jmbg": "131213121111",
+      "ShouldSerialize": false
+    },
+    "Evident": false
   }
 }

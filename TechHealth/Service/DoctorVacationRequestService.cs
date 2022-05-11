@@ -7,7 +7,7 @@ namespace TechHealth.Service
 {
     public class DoctorVacationRequestService
     {
-        
+        private readonly AppointmentService appointmentService = new AppointmentService();
         public List<DoctorVacationRequest> GetAll()
         {
             List<DoctorVacationRequest> vacationRequests = DoctorVacationRequestRepository.Instance.GetAllToList();
@@ -18,10 +18,12 @@ namespace TechHealth.Service
         public void CreateNotEmergentVacation(DoctorVacationRequest doctorVacationRequest)
         {
             CheckAvailabilityForSpecialization(doctorVacationRequest);
+            CompareAppointmentVacationDays(doctorVacationRequest);
             DoctorVacationRequestRepository.Instance.Create(doctorVacationRequest);
         }
         public void CreateEmergentVacation(DoctorVacationRequest doctorVacationRequest)
         {
+            CompareAppointmentVacationDays(doctorVacationRequest);
             DoctorVacationRequestRepository.Instance.Create(doctorVacationRequest);
         }
 
@@ -39,13 +41,33 @@ namespace TechHealth.Service
             }
         }
 
+        private void CompareAppointmentVacationDays(DoctorVacationRequest newVacation)
+        {
+            if (AppointmentsVacationConflict(newVacation))
+            {
+                throw new AppointmentVacationException();
+            }
+        }
+
+        private bool AppointmentsVacationConflict(DoctorVacationRequest newVacation)
+        {
+            bool isConflict = false;
+            foreach (var existingAppointment in appointmentService.GetAllNotEvident(newVacation.Doctor.Jmbg))
+            {
+                if (existingAppointment.Date >= newVacation.StartDate && existingAppointment.Date <= newVacation.FinishDate)
+                    isConflict = true;
+            }
+
+            return isConflict;
+        }
+
         private bool SpecializationConflict(DoctorVacationRequest newVacation)
         {
-            var specializationCounter = SpecializationCounter(newVacation);
+            var specializationCounter = SpecializationConflictCounter(newVacation);
             return specializationCounter > 1;
         }
 
-        private int SpecializationCounter(DoctorVacationRequest newVacation)
+        private int SpecializationConflictCounter(DoctorVacationRequest newVacation)
         {
             int specializationCounter = 0;
             foreach (var existingVacation in GetAll())

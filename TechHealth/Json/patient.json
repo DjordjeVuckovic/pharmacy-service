@@ -44,5 +44,22 @@
     "Username": "Djura",
     "Password": "1311",
     "ShouldSerialize": true
+  },
+  "guest1": {
+    "Guest": true,
+    "ChosenDoctor": null,
+    "Lbo": 0,
+    "IsBanned": false,
+    "Address": null,
+    "Name": "aa",
+    "Surname": "",
+    "Email": "",
+    "Jmbg": "guest1",
+    "Phone": "",
+    "Employed": false,
+    "Birthday": "0001-01-01T00:00:00",
+    "Username": "aa",
+    "Password": "aa",
+    "ShouldSerialize": true
   }
 }

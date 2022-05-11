@@ -48,7 +48,7 @@
     },
     "Price": 100.0,
     "MedicineName": "Paracetamol Uno",
-    "MedicineStatus": 0,
+    "MedicineStatus": 2,
     "ShouldSerialize": true
   }
 }

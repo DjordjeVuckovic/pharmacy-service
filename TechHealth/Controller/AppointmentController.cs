@@ -81,18 +81,7 @@ namespace TechHealth.Controller
         }
         public ObservableCollection<Appointment> GetAllNotEvident(string doctorId)
         {
-            var temp =  new ObservableCollection<Appointment>(appointmentService.GetByDoctorId(doctorId));
-            var temp1 = new ObservableCollection<Appointment>();
-            foreach (var vAppointment in temp)
-            {
-                if (!vAppointment.Evident)
-                {
-                    temp1.Add(vAppointment);
-                }
-
-            }
-
-            return temp1;
+            return new ObservableCollection<Appointment>(appointmentService.GetAllNotEvident(doctorId));
         }
 
 

@@ -28,6 +28,20 @@ namespace TechHealth.Service
          BindDataForAppointments(temp);
          return temp;
       }
+      public List<Appointment> GetAllNotEvident(string doctorId)
+      {
+         var temp =  new List<Appointment>(AppointmentRepository.Instance.GetByDoctorId(doctorId));
+         var temp1 = new List<Appointment>();
+         foreach (var vAppointment in temp)
+         {
+            if (!vAppointment.Evident)
+            {
+               temp1.Add(vAppointment);
+            }
+
+         }
+         return temp1;
+      }
 
       public List<Appointment> GetAllFuture(DateTime startDateRegion, DateTime finishDateRegion, Doctor doctor,Patient patient, Room room)
       {
