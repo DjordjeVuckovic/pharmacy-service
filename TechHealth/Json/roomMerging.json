@@ -1,0 +1,18 @@
+{
+  "adf48e559e8a4161b99338f71687bc7a": {
+    "MergeStart": "2022-05-12T11:00:00",
+    "MergeEnd": "2022-05-13T12:00:00",
+    "RoomOne": "S5",
+    "RoomTwo": "S4",
+    "RoomType": 0,
+    "MergeID": "adf48e559e8a4161b99338f71687bc7a"
+  },
+  "40abb56ec19143eca9716e0899e4250f": {
+    "MergeStart": "2022-05-07T11:00:00",
+    "MergeEnd": "2022-05-06T11:00:00",
+    "RoomOne": "S4",
+    "RoomTwo": "S5",
+    "RoomType": 2,
+    "MergeID": "40abb56ec19143eca9716e0899e4250f"
+  }
+}

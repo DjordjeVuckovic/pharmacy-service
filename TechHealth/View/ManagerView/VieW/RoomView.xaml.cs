@@ -40,6 +40,8 @@ namespace TechHealth.View.ManagerView.VieW
         public RelayCommand UpdateRoomCommand { get; set; }
         public RelayCommand InventoryCommand { get; set; }
         public RelayCommand RenovationCommand { get; set; }
+        public RelayCommand MergeRoomsCommand { get; set; }
+        public RelayCommand SeparateRoomsCommand { get; set; }
         public Room SelectedItem
         {
             get
@@ -76,6 +78,33 @@ namespace TechHealth.View.ManagerView.VieW
             UpdateRoomCommand = new RelayCommand(param => ExecuteUpdate(), param => CanExecuteUpdate());
             InventoryCommand = new RelayCommand(param => ExecuteInventory(), param => CanExecuteInventory());
             RenovationCommand = new RelayCommand(param => ExecuteRenovation(), param => CanExecuteRenovation());
+            MergeRoomsCommand = new RelayCommand(param => ExecuteMerge(), param => CanExecuteMerge());
+            //SeparateRoomsCommand = new RelayCommand(param => ExecuteSeparation(), param => CanExecuteSeparation());
+        }
+
+        //private bool CanExecuteSeparation()
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+        //private void ExecuteSeparation()
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+        private bool CanExecuteMerge()
+        {
+            if (selectedItem == null)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        private void ExecuteMerge()
+        {
+            new MergeRooms(selectedItem).ShowDialog();
         }
 
         private bool CanExecuteRenovation()

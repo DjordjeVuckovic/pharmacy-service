@@ -38,6 +38,17 @@ namespace TechHealth.Service
       {
             return RoomRepository.Instance.Delete(roomId);
       }
-   
-   }
+
+       public Room GetRoombyId(string idr)
+       {
+           foreach (var room in RoomRepository.Instance.GetAllToList())
+           {
+               if (room.roomId.Equals(idr))
+               {
+                    return room;
+               }
+           }
+           return null;
+       }
+    }
 }
