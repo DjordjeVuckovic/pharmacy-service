@@ -7,17 +7,10 @@
     "ShouldSerialize": true
   },
   "S2": {
-    "roomTypes": 3,
+    "roomTypes": 1,
     "roomId": "S2",
     "floor": 2,
     "availability": false,
-    "ShouldSerialize": true
-  },
-  "S3": {
-    "roomTypes": 2,
-    "roomId": "S3",
-    "floor": 2,
-    "availability": true,
     "ShouldSerialize": true
   },
   "S4": {

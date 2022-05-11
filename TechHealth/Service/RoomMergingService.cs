@@ -11,6 +11,7 @@ namespace TechHealth.Service
     public class RoomMergingService
     {
         private RoomService roomService = new RoomService();
+        private RoomEquipmentService roomEquipmentService = new RoomEquipmentService();
         public RoomMerging GetById(string mergeId)
         {
             return RoomMergingRepository.Instance.GetById(mergeId);
@@ -42,6 +43,8 @@ namespace TechHealth.Service
             room.roomTypes = rm.RoomType;
             roomService.Update(room);
             roomService.Delete(rm.RoomTwo);
+
+            roomEquipmentService.MoveEquipmentToWarehouse(rm.RoomOne, rm.RoomTwo);
         }
     }
 }
