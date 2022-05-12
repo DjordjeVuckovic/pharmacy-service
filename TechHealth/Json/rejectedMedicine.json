@@ -10,5 +10,17 @@
       "Jmbg": "131213121111",
       "ShouldSerialize": false
     }
+  },
+  "63e0cd1e0be34c22ad73728e876e4150": {
+    "RejectedMedicineId": "63e0cd1e0be34c22ad73728e876e4150",
+    "Medicine": {
+      "MedicineId": "9ff1bb22a6634f09a858892fbdc76bb7",
+      "ShouldSerialize": false
+    },
+    "Reason": "//////////",
+    "Doctor": {
+      "Jmbg": "131213121111",
+      "ShouldSerialize": false
+    }
   }
 }

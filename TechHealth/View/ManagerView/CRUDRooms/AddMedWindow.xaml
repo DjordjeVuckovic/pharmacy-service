@@ -14,11 +14,11 @@
         <Label Content="Side effects:" HorizontalAlignment="Left" Margin="267,155,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White"/>
         <TextBox HorizontalAlignment="Left" Margin="51,112,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="22" x:Name="TxtMedName"/>
         <TextBox HorizontalAlignment="Left" Margin="267,204,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="125" x:Name="TxtSideEffects"/>
-        <TextBox HorizontalAlignment="Left" Margin="51,204,0,0" VerticalAlignment="Top" Width="120" x:Name="TxtMainSubstance">
+        <TextBox HorizontalAlignment="Left" Margin="51,204,0,0" VerticalAlignment="Top" Width="120" Height="22" x:Name="TxtMainSubstance">
         </TextBox>
-        <TextBox HorizontalAlignment="Left" Margin="51,307,0,0" VerticalAlignment="Top" Width="120" x:Name="TxtQuantity">
+        <TextBox HorizontalAlignment="Left" Margin="51,307,0,0" VerticalAlignment="Top" Width="120" Height="22" x:Name="TxtQuantity">
         </TextBox>
-        <TextBox HorizontalAlignment="Left" Margin="267,112,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.033,0.608" x:Name="TxtUnits">
+        <TextBox HorizontalAlignment="Left" Margin="267,112,0,0" VerticalAlignment="Top" Width="120" Height="22" RenderTransformOrigin="0.033,0.608" x:Name="TxtUnits">
         </TextBox>
         <Label Content="Add a medicine" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="20" Foreground="White"/>
         <Button Content="Confirm" HorizontalAlignment="Left" Margin="111,381,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal" Height="30" Width="70" RenderTransformOrigin="-0.291,0.467" Background="#FF42C130" Click="Button_Click_Confirm"/>

@@ -25,7 +25,6 @@
     "Price": 300.0,
     "MedicineName": "Brufen",
     "MedicineStatus": 1,
-    "quantity": 50,
     "ShouldSerialize": true
   },
   "29a4bed4444841d58c51a39b49bf4d26": {
@@ -50,7 +49,70 @@
     "Price": 100.0,
     "MedicineName": "Paracetamol Uno",
     "MedicineStatus": 2,
-    "quantity": 100,
+    "ShouldSerialize": true
+  },
+  "7330f5eb87eb45ba9a32095fb3202a3a": {
+    "MedicineId": "7330f5eb87eb45ba9a32095fb3202a3a",
+    "Composition": [
+      {
+        "SubstanceId": "1",
+        "SubstanceName": "acetaminophen"
+      },
+      {
+        "SubstanceId": "2",
+        "SubstanceName": "ibuprofen"
+      },
+      {
+        "SubstanceId": "3",
+        "SubstanceName": "pseudoephedrine"
+      },
+      {
+        "SubstanceId": "4",
+        "SubstanceName": "phenylephrine"
+      }
+    ],
+    "Quantity": 10,
+    "Units": "pills",
+    "SideEffects": "///",
+    "MainSubstance": {
+      "SubstanceId": "977115fbee374f5a8b338281f3c97f23",
+      "SubstanceName": "ibuprofen"
+    },
+    "Price": 0.0,
+    "MedicineName": "xanax",
+    "MedicineStatus": 0,
+    "ShouldSerialize": true
+  },
+  "9ff1bb22a6634f09a858892fbdc76bb7": {
+    "MedicineId": "9ff1bb22a6634f09a858892fbdc76bb7",
+    "Composition": [
+      {
+        "SubstanceId": "1",
+        "SubstanceName": "acetaminophen"
+      },
+      {
+        "SubstanceId": "2",
+        "SubstanceName": "ibuprofen"
+      },
+      {
+        "SubstanceId": "3",
+        "SubstanceName": "pseudoephedrine"
+      },
+      {
+        "SubstanceId": "4",
+        "SubstanceName": "phenylephrine"
+      }
+    ],
+    "Quantity": 12,
+    "Units": "dasdasd",
+    "SideEffects": "dasdasd",
+    "MainSubstance": {
+      "SubstanceId": "39ee61f5cf5b416086af6c46c7defedc",
+      "SubstanceName": "dsadas"
+    },
+    "Price": 0.0,
+    "MedicineName": "kiki",
+    "MedicineStatus": 2,
     "ShouldSerialize": true
   }
 }

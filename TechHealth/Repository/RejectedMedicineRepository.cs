@@ -34,6 +34,19 @@ namespace TechHealth.Repository
             entity.Medicine.ShouldSerialize = false;
             entity.Doctor.ShouldSerialize = false;
         }
-        
+
+        public RejectedMedicine GetByMedicineId(string medId)
+        {
+            RejectedMedicine rejectedMedicine = new RejectedMedicine();
+            foreach (var rm in GetAllToList())
+            {
+                if (medId == rm.Medicine.MedicineId)
+                {
+                    rejectedMedicine = rm;
+                    break;
+                }
+            }
+            return rejectedMedicine;
+        }
     }
 }

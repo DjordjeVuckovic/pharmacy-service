@@ -339,6 +339,7 @@
     <Compile Include="Repository\RoomSeparationRepository.cs" />
     <Compile Include="Repository\SecretaryRepository.cs" />
     <Compile Include="Repository\SpecializationRepository.cs" />
+    <Compile Include="Repository\SubstanceRepository.cs" />
     <Compile Include="Repository\TherapyRepository.cs" />
     <Compile Include="Service\AccountService.cs" />
     <Compile Include="Service\AllergenService.cs" />
@@ -414,6 +415,7 @@
     <Compile Include="View\ManagerView\ViewModel\HomeViewModel.cs" />
     <Compile Include="View\ManagerView\ViewModel\MainViewModel.cs" />
     <Compile Include="View\ManagerView\ViewModel\MedViewModel.cs" />
+    <Compile Include="View\ManagerView\ViewModel\RejectReasonViewModel.cs" />
     <Compile Include="View\ManagerView\ViewModel\RoomViewModel.cs" />
     <Compile Include="View\ManagerView\VieW\AddMedView.xaml.cs">
       <DependentUpon>AddMedView.xaml</DependentUpon>
@@ -426,6 +428,9 @@
     </Compile>
     <Compile Include="View\ManagerView\VieW\MedView.xaml.cs">
       <DependentUpon>MedView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ManagerView\VieW\RejectReasonView.xaml.cs">
+      <DependentUpon>RejectReasonView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ManagerView\VieW\RoomView.xaml.cs">
       <DependentUpon>RoomView.xaml</DependentUpon>
@@ -540,6 +545,7 @@
     <None Include="Json\roomMerging.json" />
     <None Include="Json\roomRenovation.json" />
     <None Include="Json\roomSeparation.json" />
+    <None Include="Json\substance.json" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -707,6 +713,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\ManagerView\VieW\MedView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ManagerView\VieW\RejectReasonView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

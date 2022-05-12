@@ -1,0 +1,18 @@
+﻿{
+  "1": {
+    "SubstanceId": 1,
+    "SubstanceName": "acetaminophen"
+  },
+  "2": {
+    "SubstanceId": 2,
+    "SubstanceName": "ibuprofen"
+  },
+  "3": {
+    "SubstanceId": 3,
+    "SubstanceName": "pseudoephedrine"
+  },
+  "4": {
+    "SubstanceId": 4,
+    "SubstanceName": "phenylephrine"
+  }
+}
