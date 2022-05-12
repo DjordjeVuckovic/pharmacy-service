@@ -168,6 +168,7 @@
     <Compile Include="Controller\RoomController.cs" />
     <Compile Include="Controller\RoomEquipmentController.cs" />
     <Compile Include="Controller\RoomMergingController.cs" />
+    <Compile Include="Controller\RoomSeparationController.cs" />
     <Compile Include="Controller\SpecializationController.cs" />
     <Compile Include="Controller\TherapyController.cs" />
     <Compile Include="Conversions\AddressConverter.cs" />
@@ -306,6 +307,7 @@
     <Compile Include="Model\RoomEquipment.cs" />
     <Compile Include="Model\RoomMerging.cs" />
     <Compile Include="Model\RoomRenovation.cs" />
+    <Compile Include="Model\RoomSeparation.cs" />
     <Compile Include="Model\Substance.cs" />
     <Compile Include="Model\EmlpoymentData.cs" />
     <Compile Include="Model\MainIssue.cs" />
@@ -334,6 +336,7 @@
     <Compile Include="Repository\RoomMergingRepository.cs" />
     <Compile Include="Repository\RoomRenovationRepository.cs" />
     <Compile Include="Repository\RoomRepository.cs" />
+    <Compile Include="Repository\RoomSeparationRepository.cs" />
     <Compile Include="Repository\SecretaryRepository.cs" />
     <Compile Include="Repository\SpecializationRepository.cs" />
     <Compile Include="Repository\TherapyRepository.cs" />
@@ -354,6 +357,7 @@
     <Compile Include="Service\RejectedMedicineService.cs" />
     <Compile Include="Service\RoomEquipmentService.cs" />
     <Compile Include="Service\RoomMergingService.cs" />
+    <Compile Include="Service\RoomSeparationService.cs" />
     <Compile Include="Service\RoomService.cs" />
     <Compile Include="Service\SpecializationService.cs" />
     <Compile Include="Service\TherapyService.cs" />
@@ -386,6 +390,9 @@
     </Compile>
     <Compile Include="View\ManagerView\CRUDRooms\RoomWindow.xaml.cs">
       <DependentUpon>RoomWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ManagerView\CRUDRooms\SeparateRooms.xaml.cs">
+      <DependentUpon>SeparateRooms.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ManagerView\CRUDRooms\UpdateEquipment.xaml.cs">
       <DependentUpon>UpdateEquipment.xaml</DependentUpon>
@@ -518,6 +525,7 @@
     <None Include="Json\roomEquipment.json" />
     <None Include="Json\roomMerging.json" />
     <None Include="Json\roomRenovation.json" />
+    <None Include="Json\roomSeparation.json" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -645,6 +653,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\ManagerView\CRUDRooms\RoomWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ManagerView\CRUDRooms\SeparateRooms.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

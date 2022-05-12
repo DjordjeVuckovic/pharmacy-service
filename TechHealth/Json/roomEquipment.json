@@ -2,56 +2,21 @@
   "Warehouse-Gaza": {
     "RoomID": "Warehouse",
     "EquipmentName": "Gaza",
-    "Quantity": 82
+    "Quantity": 90
   },
   "Warehouse-Skalpel": {
     "RoomID": "Warehouse",
     "EquipmentName": "Skalpel",
-    "Quantity": 20
+    "Quantity": 37
   },
   "Warehouse-Krevet": {
     "RoomID": "Warehouse",
     "EquipmentName": "Krevet",
-    "Quantity": 6
-  },
-  "S2-Gaza": {
-    "RoomID": "S2",
-    "EquipmentName": "Gaza",
-    "Quantity": 4
-  },
-  "S3-Gaza": {
-    "RoomID": "S3",
-    "EquipmentName": "Gaza",
-    "Quantity": 4
-  },
-  "S3-Skalpel": {
-    "RoomID": "S3",
-    "EquipmentName": "Skalpel",
-    "Quantity": 10
-  },
-  "S3-Krevet": {
-    "RoomID": "S3",
-    "EquipmentName": "Krevet",
-    "Quantity": 3
-  },
-  "S2-Skalpel": {
-    "RoomID": "S2",
-    "EquipmentName": "Skalpel",
-    "Quantity": 7
+    "Quantity": 9
   },
   "Warehouse-Bandazer": {
     "RoomID": "Warehouse",
     "EquipmentName": "Bandazer",
-    "Quantity": 40
-  },
-  "S2-Bandazer": {
-    "RoomID": "S2",
-    "EquipmentName": "Bandazer",
-    "Quantity": 10
-  },
-  "S3-Bandazer": {
-    "RoomID": "S3",
-    "EquipmentName": "Bandazer",
-    "Quantity": 10
+    "Quantity": 60
   }
 }

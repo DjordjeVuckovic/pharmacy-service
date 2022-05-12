@@ -59,6 +59,5 @@ namespace TechHealth.Controller
         {
             return roomService.Delete(roomId);
         }
-
     }
 }
