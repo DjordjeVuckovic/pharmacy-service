@@ -13,6 +13,9 @@ namespace TechHealth.Model
       
       public Appointment Appointment { get; set; }
       public Doctor ReferralDoctor { get; set; }
+      public DateTime Date { get; set; }
+      public DateTime StartTime { get; set; }
+      public DateTime FinishTime { get; set; }
 
    }
 }

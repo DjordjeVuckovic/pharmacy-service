@@ -1,0 +1,14 @@
+{
+  "28e983660ad5448cbe1a666868e16f23": {
+    "RejectedMedicineId": "28e983660ad5448cbe1a666868e16f23",
+    "Medicine": {
+      "MedicineId": "29a4bed4444841d58c51a39b49bf4d26",
+      "ShouldSerialize": false
+    },
+    "Reason": "aaaaaaaaaaaaaaaaa",
+    "Doctor": {
+      "Jmbg": "131213121111",
+      "ShouldSerialize": false
+    }
+  }
+}

@@ -28,9 +28,9 @@ namespace TechHealth.Service
          BindDataForAppointments(temp);
          return temp;
       }
-      public List<Appointment> GetAllNotEvident(string doctorId)
+      public List<Appointment> GetAllNotEvidentByDoctorId(string doctorId)
       {
-         var temp =  new List<Appointment>(AppointmentRepository.Instance.GetByDoctorId(doctorId));
+         var temp =  new List<Appointment>(GetByDoctorId(doctorId));
          var temp1 = new List<Appointment>();
          foreach (var vAppointment in temp)
          {
@@ -41,6 +41,20 @@ namespace TechHealth.Service
 
          }
          return temp1;
+      }
+
+      public List<Appointment> GetAllNotEvident()
+      {
+         var notEvidentAppointments = new List<Appointment>();
+         foreach (var vAppointment in GetAll())
+         {
+            if (!vAppointment.Evident)
+            {
+               notEvidentAppointments.Add(vAppointment);
+            }
+
+         }
+         return notEvidentAppointments;
       }
 
       public List<Appointment> GetAllFuture(DateTime startDateRegion, DateTime finishDateRegion, Doctor doctor,Patient patient, Room room)
@@ -150,7 +164,7 @@ namespace TechHealth.Service
 
       private void CheckAvailability(Appointment appointment)
       {
-         foreach (var existingAppointment in AppointmentRepository.Instance.GetAllToList())
+         foreach (var existingAppointment in GetAllNotEvident())
          {
             if (existingAppointment.DoctorConflicts(appointment))
             {

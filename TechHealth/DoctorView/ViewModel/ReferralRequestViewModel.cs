@@ -6,6 +6,7 @@ using System.Windows.Controls;
 using System.Windows.Forms;
 using TechHealth.Controller;
 using TechHealth.Core;
+using TechHealth.Exceptions;
 using TechHealth.Model;
 using MessageBox = System.Windows.Forms.MessageBox;
 
@@ -18,11 +19,16 @@ namespace TechHealth.DoctorView.ViewModel
         private RelayCommand specializationCommand;
         private Specialization specialization;
         private Doctor doctor;
+        private DateTime date;
+        private string startDate;
+        private string endDate;
         private List<ComboBoxGeneric<Specialization>> specComboBox = new List<ComboBoxGeneric<Specialization>>();
         private ObservableCollection<ComboBoxGeneric<Doctor>> doctorComboBox = new ObservableCollection<ComboBoxGeneric<Doctor>>();
         private readonly SpecializationController specializationController = new SpecializationController();
         private readonly  DoctorController doctorController = new DoctorController();
         private readonly ReferralRequestController referralRequestController = new ReferralRequestController();
+        private readonly AppointmentController appointmentController = new AppointmentController();
+        private readonly RoomController roomController = new RoomController();
 
         public RelayCommand SpecializationCommand
         {
@@ -37,6 +43,8 @@ namespace TechHealth.DoctorView.ViewModel
         public string DateLabel { get; set; }
         public RelayCommand FinishCommand { get; set; }
         public RelayCommand CancelCommand { get; set; }
+        private List<ComboBoxGeneric<Room>> roomComboBox = new List<ComboBoxGeneric<Room>>();
+        private Room room;
 
         public Specialization SpecializationData
         {
@@ -76,10 +84,36 @@ namespace TechHealth.DoctorView.ViewModel
                 OnPropertyChanged(nameof(DoctorData));
             }
         }
+        public string StartDate
+        {
+            get => startDate;
+            set
+            {
+                startDate = value;
+                OnPropertyChanged(nameof(StartDate));
+            }
+        }
+        public DateTime Date
+        {
+            get => date;
+            set => SetProperty(ref date, value);
+        }
+
+        public string EndDate
+        {
+            get => endDate;
+            set
+            {
+                endDate = value;
+                OnPropertyChanged(nameof(EndDate));
+            }
+        }
+
         public ReferralRequestViewModel(Appointment selectedItemAppointment)
         {
             selectedAppointment = selectedItemAppointment;
             FillSpecializationComboBox();
+            FillRoomCombo();
             DoctorLabel = "Appointment Doctor: " + selectedItemAppointment.Doctor.FullName;
             DateLabel = "Appointment Date: " + selectedItemAppointment.Date.ToString("d");
             PateintLabel = "Patient: " + selectedItemAppointment.Patient.FullName;
@@ -88,9 +122,37 @@ namespace TechHealth.DoctorView.ViewModel
             
 
         }
+
+        private void FillRoomCombo()
+        {
+            foreach (var r in roomController.GetAll())
+            {
+                roomComboBox.Add(new ComboBoxGeneric<Room>(){DisplayText = r.roomId , Entity = r});
+            }
+        }
+
         public void Execute()
         {
             FillDoctorComboBox();
+        }
+        public List<ComboBoxGeneric<Room>> RoomComboBox
+        {
+
+            get => roomComboBox;
+            set
+            {
+                roomComboBox = value;
+                OnPropertyChanged(nameof(RoomComboBox));
+            }
+        }
+        public Room RoomData
+        {
+            get => room;
+            set
+            {
+                room = value;
+                OnPropertyChanged(nameof(RoomData));
+            }
         }
         
 
@@ -115,11 +177,11 @@ namespace TechHealth.DoctorView.ViewModel
             DialogResult dialogResult = MessageBox.Show(@"Are you sure about that?", @"Cancel appointment", MessageBoxButtons.YesNo);
             if(dialogResult==(DialogResult) MessageBoxResult.Yes)
             {
-                OnRequestClose(this, new EventArgs());
+                OnRequestClose?.Invoke(this, new EventArgs());
             }
         }
 
-        public bool CanExecuteCreate()
+        private bool CanExecuteCreate()
         {
             if (DoctorData != null && SpecializationData != null )
             {
@@ -130,11 +192,9 @@ namespace TechHealth.DoctorView.ViewModel
 
         }
 
-        public void ExecuteCreate()
+        private void ExecuteCreate()
         {
-            CreateRefferal();
-            MessageBox.Show(@"You are successfully create new therapy");
-            OnRequestClose(this, new EventArgs());
+            CreateReferralAppointment();
         }
 
         private void CreateRefferal()
@@ -144,9 +204,45 @@ namespace TechHealth.DoctorView.ViewModel
             {
                 ReferralId = randomGenerator.GenerateRandHash(),
                 Appointment = selectedAppointment,
-                ReferralDoctor = DoctorData
+                ReferralDoctor = DoctorData,
+                Date = Date,
+                StartTime = DateTime.Parse(StartDate),
+                FinishTime = DateTime.Parse(EndDate),
             };
             referralRequestController.Create(referralRequest);
+        }
+
+        private void CreateReferralAppointment()
+        {
+            RandomGenerator randomGenerator = new RandomGenerator();
+            Appointment appointment = new Appointment
+            {
+                Date = Date,
+                Emergent = false,
+                IdAppointment = randomGenerator.GenerateRandHash(),
+                Room = RoomData,
+                Patient = selectedAppointment.Patient,
+                AppointmentType = AppointmentType.examination,
+                Doctor = DoctorData,
+                Evident = false,
+                StartTimeD = DateTime.Parse(StartDate),
+                FinishTimeD = DateTime.Parse(EndDate),
+                ShouldSerialize = true
+            };
+            try
+            {
+                appointmentController.Create(appointment);
+                CreateRefferal();
+                RecordViewModel.GetInstance().RefreshView();
+                ViewModelAppointment.GetInstance().RefreshView();
+                MessageBox.Show(@"You are successfully create new referral");
+                OnRequestClose?.Invoke(this, EventArgs.Empty);
+            }
+            catch (AppointmentConflictException)
+            {
+                MessageBox.Show(@"Doctor has already scheduled appointment in that period!Change date or time.",@"Appointment exception",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+
         }
     }
 }

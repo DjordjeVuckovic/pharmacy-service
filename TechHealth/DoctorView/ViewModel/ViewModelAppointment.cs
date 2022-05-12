@@ -63,7 +63,7 @@ namespace TechHealth.DoctorView.ViewModel
         {
             _instance = this;
             doctorId = id;
-            Appointments = appointmentController.GetAllNotEvident(doctorId);
+            Appointments = appointmentController.GetAllNotEvidentByDoctorId(doctorId);
             currentDoctor = doctorController.GetById(doctorId);
             NewExaminationCommand = new RelayCommand(param => Execute(),param => CanExecute());
             NewSurgeryCommand= new RelayCommand(param => Execute1(),param => CanExecute1());
@@ -75,7 +75,7 @@ namespace TechHealth.DoctorView.ViewModel
         public void RefreshView()
         {
             Appointments.Clear();
-            Appointments = appointmentController.GetAllNotEvident(doctorId);
+            Appointments = appointmentController.GetAllNotEvidentByDoctorId(doctorId);
         }
         private bool CanExecute()
         {

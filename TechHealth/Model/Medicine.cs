@@ -37,6 +37,11 @@ namespace TechHealth.Model
         {
             return ShouldSerialize;
         }
+
+        public bool ShouldSerializeMedicineStatus()
+        {
+            return ShouldSerialize;
+        } 
         public bool ShouldSerializeQuantity()
         {
             return ShouldSerialize;

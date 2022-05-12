@@ -94,5 +94,41 @@
     "VacationReason": "aaa",
     "Emergent": true,
     "VacationStatus": 0
+  },
+  "e522fe313fef4bfc91ecd0795b20cb4e": {
+    "VacationId": "e522fe313fef4bfc91ecd0795b20cb4e",
+    "StartDate": "2022-06-17T00:00:00",
+    "FinishDate": "2022-06-24T00:00:00",
+    "Doctor": {
+      "Jmbg": "131213121111",
+      "ShouldSerialize": false
+    },
+    "VacationReason": "aaa",
+    "Emergent": true,
+    "VacationStatus": 0
+  },
+  "e6999b4d5e874f089862da30d09d8316": {
+    "VacationId": "e6999b4d5e874f089862da30d09d8316",
+    "StartDate": "2022-05-16T00:00:00",
+    "FinishDate": "2022-05-18T00:00:00",
+    "Doctor": {
+      "Jmbg": "131213121111",
+      "ShouldSerialize": false
+    },
+    "VacationReason": "aa",
+    "Emergent": false,
+    "VacationStatus": 0
+  },
+  "df26bb2eb36a43a2b2c664629d434d49": {
+    "VacationId": "df26bb2eb36a43a2b2c664629d434d49",
+    "StartDate": "2022-05-17T00:00:00",
+    "FinishDate": "2022-05-26T00:00:00",
+    "Doctor": {
+      "Jmbg": "131213121111",
+      "ShouldSerialize": false
+    },
+    "VacationReason": "aaa",
+    "Emergent": false,
+    "VacationStatus": 0
   }
 }

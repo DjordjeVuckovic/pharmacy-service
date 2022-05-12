@@ -128,7 +128,12 @@ namespace TechHealth.DoctorView.ViewModel
             }
             catch(SpecializationException)
             {
-                MessageBox.Show(@"More then one doctor with same specialization is already on vacation!",@"Vacation exception",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show(@"More then one doctor with same specialization is already on vacation!",@"Specialization exception",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+            catch (AppointmentVacationException)
+            {
+                MessageBox.Show(
+                    @"You have scheduled appointment in requested vacation period.Please update or delete existing appointment or choose another vacation period!",@"Vacation  exception",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
 

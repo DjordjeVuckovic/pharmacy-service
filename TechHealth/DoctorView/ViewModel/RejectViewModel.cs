@@ -11,9 +11,11 @@ namespace TechHealth.DoctorView.ViewModel
     public class RejectViewModel:ViewModelBase
     {
         private Medicine selectedMedicine;
+        private Doctor doctor;
         private string details;
         private readonly  DoctorController doctorController = new DoctorController();
         private readonly MedicineController medicineController = new MedicineController();
+        private readonly RejectedMedicineController rejectedMedicineController = new RejectedMedicineController();
         public event EventHandler OnRequestClose;
         public  RelayCommand CancelCommand { get; set;}
         
@@ -42,7 +44,7 @@ namespace TechHealth.DoctorView.ViewModel
         public  string MedicineName { get; set; }
         public RejectViewModel(Medicine selectedItem, string docotorId)
         {
-            Doctor doctor = doctorController.GetById(docotorId);
+            doctor = doctorController.GetById(docotorId);
             DoctorName = doctor.FullSpecialization;
             SelectedMedicine = selectedItem;
             MedicineName = SelectedMedicine.MedicineName;
@@ -64,13 +66,27 @@ namespace TechHealth.DoctorView.ViewModel
         {
             SelectedMedicine.MedicineStatus = MedicineStatus.Rejected;
             medicineController.Update(SelectedMedicine);
+            CreateRejectedMedicine();
             MessageBox.Show(@"You are successfully reject medicine: " + MedicineName);
-            OnRequestClose(this, new EventArgs());
+            OnRequestClose?.Invoke(this, new EventArgs());
         }
         private void CloseWindow()
         {
            
-                OnRequestClose(this, new EventArgs());
+                OnRequestClose?.Invoke(this, new EventArgs());
+        }
+
+        private void CreateRejectedMedicine()
+        {
+            RandomGenerator randomGenerator = new RandomGenerator();
+            RejectedMedicine rejectedMedicine = new RejectedMedicine
+            {
+                RejectedMedicineId = randomGenerator.GenerateRandHash(),
+                Medicine = SelectedMedicine,
+                Reason = Details,
+                Doctor = doctor
+            };
+            rejectedMedicineController.Create(rejectedMedicine);
         }
     }
         

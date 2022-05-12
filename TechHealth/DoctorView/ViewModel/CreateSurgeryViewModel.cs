@@ -92,7 +92,7 @@ namespace TechHealth.DoctorView.ViewModel
                 MessageBox.Show(@"Doctor has already scheduled appointment in that period!",@"Appointment exception",MessageBoxButtons.OK,MessageBoxIcon.Error);
 
             }
-            OnRequestClose(this, new EventArgs());
+            OnRequestClose?.Invoke(this, new EventArgs());
         }
 
         public string DoctorFullName { get; set; }

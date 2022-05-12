@@ -52,7 +52,7 @@ namespace TechHealth.Service
         private bool AppointmentsVacationConflict(DoctorVacationRequest newVacation)
         {
             bool isConflict = false;
-            foreach (var existingAppointment in appointmentService.GetAllNotEvident(newVacation.Doctor.Jmbg))
+            foreach (var existingAppointment in appointmentService.GetAllNotEvidentByDoctorId(newVacation.Doctor.Jmbg))
             {
                 if (existingAppointment.Date >= newVacation.StartDate && existingAppointment.Date <= newVacation.FinishDate)
                     isConflict = true;

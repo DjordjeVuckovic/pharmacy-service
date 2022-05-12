@@ -100,7 +100,7 @@ namespace TechHealth.DoctorView.ViewModel
             {
                 DataContext = vm
             };
-            //vm.OnRequestClose += (s, e) => prescritionWindow.Close();
+            vm.OnRequestClose += (s, e) => referralWindow.Close();
             referralWindow.ShowDialog();
         }
     }

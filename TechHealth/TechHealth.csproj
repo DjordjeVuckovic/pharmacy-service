@@ -164,6 +164,7 @@
     <Compile Include="Controller\PatientController.cs" />
     <Compile Include="Controller\PrescribeMedicineController.cs" />
     <Compile Include="Controller\ReferralRequestController.cs" />
+    <Compile Include="Controller\RejectedMedicineController.cs" />
     <Compile Include="Controller\RoomController.cs" />
     <Compile Include="Controller\RoomEquipmentController.cs" />
     <Compile Include="Controller\RoomMergingController.cs" />
@@ -254,6 +255,9 @@
     <Compile Include="DoctorView\View\RecordView.xaml.cs">
       <DependentUpon>RecordView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DoctorView\Windows\AppointRefferalWindow.xaml.cs">
+      <DependentUpon>AppointRefferalWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DoctorView\Windows\DoctorVacationWindow.xaml.cs">
       <DependentUpon>DoctorVacationWindow.xaml</DependentUpon>
     </Compile>
@@ -298,6 +302,7 @@
     <Compile Include="Model\MedicineStatus.cs" />
     <Compile Include="Model\PatientAllergens.cs" />
     <Compile Include="Model\PatientRecommendType.cs" />
+    <Compile Include="Model\RejectedMedicine.cs" />
     <Compile Include="Model\RoomEquipment.cs" />
     <Compile Include="Model\RoomMerging.cs" />
     <Compile Include="Model\RoomRenovation.cs" />
@@ -324,6 +329,7 @@
     <Compile Include="Repository\PatientRepository.cs" />
     <Compile Include="Repository\PrescribeMedicineRepository.cs" />
     <Compile Include="Repository\ReferralRequestRepository.cs" />
+    <Compile Include="Repository\RejectedMedicineRepository.cs" />
     <Compile Include="Repository\RoomEquipmentRepository.cs" />
     <Compile Include="Repository\RoomMergingRepository.cs" />
     <Compile Include="Repository\RoomRenovationRepository.cs" />
@@ -345,6 +351,7 @@
     <Compile Include="Service\PatientService.cs" />
     <Compile Include="Service\PrescribeMedicineService.cs" />
     <Compile Include="Service\ReferralRequestService.cs" />
+    <Compile Include="Service\RejectedMedicineService.cs" />
     <Compile Include="Service\RoomEquipmentService.cs" />
     <Compile Include="Service\RoomMergingService.cs" />
     <Compile Include="Service\RoomService.cs" />
@@ -532,6 +539,7 @@
     <Content Include="Json\patient.json" />
     <Content Include="Json\prescription.json" />
     <Content Include="Json\referral.json" />
+    <Content Include="Json\rejectedMedicine.json" />
     <Content Include="Json\secretary.json" />
     <Content Include="Json\specialization.json" />
     <Resource Include="resources\ZDRAVOicon.png" />
@@ -589,6 +597,7 @@
     <Page Include="DoctorView\View\MedicineView.xaml" />
     <Page Include="DoctorView\View\PatientView.xaml" />
     <Page Include="DoctorView\View\RecordView.xaml" />
+    <Page Include="DoctorView\Windows\AppointRefferalWindow.xaml" />
     <Page Include="DoctorView\Windows\DoctorVacationWindow.xaml" />
     <Page Include="DoctorView\Windows\ReferralWindow.xaml" />
     <Page Include="DoctorView\Windows\PrescriptionPreview.xaml" />

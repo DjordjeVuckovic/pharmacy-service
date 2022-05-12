@@ -5,8 +5,10 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         xmlns:local="clr-namespace:TechHealth.DoctorView.Windows"
+        xmlns:validationRules="clr-namespace:TechHealth.ValidationRules"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="ReferralWindow" Height="400" Width="350"
+        Title="ReferralWindow" Height="550" Width="500"
         WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <ResourceDictionary>
@@ -28,7 +30,7 @@
                 <RowDefinition  Height="43"/>
             </Grid.RowDefinitions>
             <Grid Grid.Row ="1">
-                <TextBlock Text="Referral request" HorizontalAlignment="Center" FontSize="20" Foreground="#1FC192"></TextBlock>
+                <TextBlock Text="Referral request" HorizontalAlignment="Center" FontSize="28" Foreground="#1FC192"></TextBlock>
             </Grid>
             <StackPanel Grid.Row="2">
                 <Label Margin="20,0,0,0" Content="{Binding PateintLabel}"/>
@@ -43,20 +45,66 @@
                 <Grid.RowDefinitions>
                     <RowDefinition/>
                     <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
                 </Grid.RowDefinitions>
                 <Label Margin="20,0,0,0" Content="Specialization: " Grid.Column="0" Grid.Row="0" VerticalAlignment="Center"/>
                 <Label Margin="20,0,0,0"  Content="Doctor: " Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" />
-                <ComboBox  Grid.Row="0" Grid.Column="1"  VerticalAlignment="Center" Height="39.714" Margin="0,25.753,10,10" DisplayMemberPath="DisplayText" SelectedValuePath="Entity" ItemsSource="{Binding Path=SpecComboBox}" SelectedValue = "{Binding Path = SpecializationData}">
+                <Label Margin="20,0,0,0"  Content="Date: " Grid.Column="0" Grid.Row="2" VerticalAlignment="Center" />
+                <Label Margin="20,0,0,0"  Content="Start time: " Grid.Column="0" Grid.Row="3" VerticalAlignment="Center" />
+                <Label Margin="20,0,0,0"  Content="Finish time: " Grid.Column="0" Grid.Row="4" VerticalAlignment="Center" />
+                <Label Margin="20,0,0,0"  Content="Room: " Grid.Column="0" Grid.Row="5" VerticalAlignment="Center" />
+                <ComboBox  Grid.Row="0" Grid.Column="1"  VerticalAlignment="Center" Height="39.714" Margin="0,0,10,10" DisplayMemberPath="DisplayText" SelectedValuePath="Entity" ItemsSource="{Binding Path=SpecComboBox}" SelectedValue = "{Binding Path = SpecializationData}">
                     <i:Interaction.Triggers>
                         <i:EventTrigger EventName="SelectionChanged">
                             <i:InvokeCommandAction Command="{Binding Path=SpecializationCommand,NotifyOnSourceUpdated=True}"></i:InvokeCommandAction>
                         </i:EventTrigger>
                     </i:Interaction.Triggers>
                 </ComboBox>
-                <ComboBox  Grid.Row="1" Grid.Column="1"  VerticalAlignment="Center" Height="39.713" Margin="0,25.753,10,10" DisplayMemberPath="DisplayText" SelectedValuePath="Entity" ItemsSource="{Binding Path=DoctorComboBox,Mode=TwoWay}" SelectedValue = "{Binding Path = DoctorData,Mode=TwoWay}" />
+                <ComboBox  Grid.Row="1" Grid.Column="1"  VerticalAlignment="Center" Height="39.713" Margin="0,0,10,10" DisplayMemberPath="DisplayText" SelectedValuePath="Entity" ItemsSource="{Binding Path=DoctorComboBox,Mode=TwoWay}" SelectedValue = "{Binding Path = DoctorData,Mode=TwoWay}" />
+                <DatePicker Grid.Column="1" Grid.Row="2" x:Name="Picker" HorizontalAlignment="Left" Height="30"  VerticalAlignment="Top" Width="210" VerticalContentAlignment="Center">
+                    <DatePicker.SelectedDate>
+                        <Binding Path="Date" Mode="OneWayToSource" UpdateSourceTrigger="PropertyChanged">
+                            <Binding.ValidationRules>
+                                <validationRules:FutureDateValidationRule ValidatesOnTargetUpdated="True"/>
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </DatePicker.SelectedDate>
+                </DatePicker>
+                <materialDesign:TimePicker Grid.Column="1" Grid.Row="3" 
+                                           materialDesign:HintAssist.Hint="Select finish time" Foreground="White"
+                                           IsInvalidTextAllowed="True" Height="27.175" Margin="0,0,38,24.283">
+                    <materialDesign:TimePicker.Text>
+                        <Binding
+                            Path="StartDate"
+                            UpdateSourceTrigger="PropertyChanged">
+                            <Binding.ValidationRules>
+                                <validationRules:SimpleDateValidationRule
+                                    ValidatesOnTargetUpdated="True" />
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </materialDesign:TimePicker.Text>
+                </materialDesign:TimePicker>
+                <materialDesign:TimePicker Grid.Column="1" Grid.Row="4" 
+                                           materialDesign:HintAssist.Hint="Select finish time" Foreground="White"
+                                           IsInvalidTextAllowed="True" Height="27.175" Margin="0,0,38,24.283">
+                    <materialDesign:TimePicker.Text>
+                        <Binding
+                            Path="EndDate"
+                            UpdateSourceTrigger="PropertyChanged">
+                            <Binding.ValidationRules>
+                                <validationRules:SimpleDateValidationRule
+                                    ValidatesOnTargetUpdated="True" />
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </materialDesign:TimePicker.Text>
+                </materialDesign:TimePicker>
+                <ComboBox Grid.Column="1" Grid.Row="5"  x:Name="RoomCombo"  HorizontalAlignment="Left" Height="36.733"  VerticalAlignment="Top" Width="201.6"  DisplayMemberPath="DisplayText" SelectedValuePath="Entity" ItemsSource="{Binding Path=RoomComboBox}" SelectedValue = "{Binding Path = RoomData}" />
                 </Grid>
-            <Button Grid.Row="4" Content="Finish"  HorizontalAlignment="Right" VerticalAlignment="Stretch" Width="80" Margin="0,0,30,0" Command="{Binding FinishCommand}" />
-            <Button Grid.Row="4" Content="Close"  HorizontalAlignment="Left" VerticalAlignment="Stretch" Width="80" Margin="30,0,0,0"  Command="{Binding CancelCommand}" />
+            <Button Grid.Row="4" Content="Finish"  HorizontalAlignment="Right" VerticalAlignment="Stretch" Width="80" Margin="0,0,100,0" Command="{Binding FinishCommand}" />
+            <Button Grid.Row="4" Content="Close"  HorizontalAlignment="Left" VerticalAlignment="Stretch" Width="80" Margin="100,0,0,0"  Command="{Binding CancelCommand}" />
         </Grid>
     </Border>
 </Window>

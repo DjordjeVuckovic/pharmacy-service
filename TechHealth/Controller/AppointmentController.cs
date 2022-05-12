@@ -79,9 +79,14 @@ namespace TechHealth.Controller
 
             return new ObservableCollection<Appointment>(appointmentService.GetByDoctorId(doctorId));
         }
-        public ObservableCollection<Appointment> GetAllNotEvident(string doctorId)
+        public ObservableCollection<Appointment> GetAllNotEvidentByDoctorId(string doctorId)
         {
-            return new ObservableCollection<Appointment>(appointmentService.GetAllNotEvident(doctorId));
+            return new ObservableCollection<Appointment>(appointmentService.GetAllNotEvidentByDoctorId(doctorId));
+        }
+
+        public List<Appointment> GetAllNotEvident()
+        {
+            return appointmentService.GetAllNotEvident();
         }
 
 
