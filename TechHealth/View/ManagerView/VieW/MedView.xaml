@@ -1,0 +1,44 @@
+﻿<UserControl x:Class="TechHealth.View.ManagerView.VieW.MedView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TechHealth.View.ManagerView.VieW"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="710">
+    
+    <StackPanel Background="LightGray">
+        <TextBlock Text="Medicines"
+                   Foreground="Black"
+                   FontSize="28"
+                   HorizontalAlignment="Center"
+                   Margin="0,5,0,0"/>
+        <TextBox Style="{StaticResource SearchText}" VerticalAlignment="Stretch" HorizontalAlignment="Right" Margin="0,-8,10,0" Height="40" Width="250"></TextBox>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="340"/>
+                <RowDefinition Height="70"/>
+            </Grid.RowDefinitions>
+            <DataGrid x:Name="dataMedicine" ItemsSource="{Binding Medicines, UpdateSourceTrigger=PropertyChanged}"
+                      SelectedItem="{Binding SelectedItem}"
+                      CanUserAddRows="False"
+                      SelectionMode="Extended"
+                      AutoGenerateColumns="False"
+                      Margin="10,10,10,29">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Name" Binding="{Binding MedicineName}" Width="*"  CanUserResize="False"/>
+                    <DataGridTextColumn Header="Quantity" Binding="{Binding Quantity}" Width="*"  CanUserResize="False"/>
+                    <DataGridTextColumn Header="Main Substance" Binding="{Binding MainSubstance.SubstanceName}" Width="*"  CanUserResize="False"/>
+                    <DataGridTextColumn Header="Status" Binding="{Binding MedicineStatus}" Width="*"  CanUserResize="False"/>
+                </DataGrid.Columns>
+            </DataGrid>
+
+            <Button x:Name="Add" Content="Add" Margin="20,-45,10,10" HorizontalAlignment="Left" Width="120" Height="50"  Grid.Row="3" Background="Green"
+                    Command="{Binding AddMedicineCommand}"/>
+            <Button x:Name="View" Content="View/Modify" Margin="-25,-45,0,10" HorizontalAlignment="Center"  Width="120" Height="50"  Grid.Row="3"
+                    Command="{Binding UpdateMedicineCommand}"/>
+            <Button x:Name="Delete" Content="Delete" Margin="0,-45,20,10" HorizontalAlignment="Right" Width="120" Height="50"  Grid.Row="3" Background="OrangeRed"
+                    Command="{Binding DeleteMedicineCommand}"/>
+        </Grid>
+    </StackPanel>
+</UserControl>

@@ -18,9 +18,19 @@ namespace TechHealth.Controller
             return MedicineRepository.Instance.GetById(id);
         }
 
+        public void Create(Medicine medicine)
+        {
+            medicineService.Create(medicine);
+        }
+
         public void Update(Medicine medicine)
         {
             medicineService.Update(medicine);
+        }
+
+        public void Delete(Medicine medicine)
+        {
+            medicineService.Delete(medicine);
         }
     }
 }

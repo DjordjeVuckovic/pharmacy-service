@@ -9,6 +9,13 @@ namespace TechHealth.Conversions
 {
     public class ManagerConversions
     {
+        public static Substance StringToSubstance(string str)
+        {
+            Substance substance = new Substance();
+            substance.SubstanceId = Guid.NewGuid().ToString("N");
+            substance.SubstanceName = str;
+            return substance;
+        }
         public static EquipmentType StringToEquipmentType(string str)
         {
             switch (str)
