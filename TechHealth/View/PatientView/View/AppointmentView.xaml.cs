@@ -13,7 +13,6 @@ namespace TechHealth.View.PatientView.View
 {
     public partial class AppointmentView : UserControl, INotifyPropertyChanged
     {
-        private ObservableCollection<Appointment> aplist;
         private Appointment selected;
         public event PropertyChangedEventHandler PropertyChanged;
         public RelayCommand AddAppointmentCommand { get; set; }
@@ -36,23 +35,13 @@ namespace TechHealth.View.PatientView.View
                 OnPropertyChanged();
             }
         }
-        public ObservableCollection<Appointment> Appointment
-        {
-            get
-            {
-                return aplist;
-            }
-            set
-            {
-                aplist = value;
-            }
-        }
+        public ObservableCollection<Appointment> Appointment { get; set; }
 
         public AppointmentView()
         {
             InitializeComponent();
             DataContext = this;
-            aplist = new ObservableCollection<Appointment>(AppointmentRepository.Instance.GetAllToList());
+            Appointment = new ObservableCollection<Appointment>(AppointmentRepository.Instance.GetAllToList());
 
             AddAppointmentCommand = new RelayCommand(param => ExecuteAdd());
             DeleteAppointmentCommand = new RelayCommand(param => ExecuteDelete());
@@ -89,7 +78,7 @@ namespace TechHealth.View.PatientView.View
 
         private void ExecuteAdd()
         {
-            new AddAppointment(aplist).ShowDialog();
+            new AddAppointment(Appointment).ShowDialog();
         }
 
         private void ExecuteUpdate(Appointment selected)
@@ -107,7 +96,7 @@ namespace TechHealth.View.PatientView.View
 
         private void ExecuteSuggest()
         {
-            new SuggestAppointment(PatientId, aplist).ShowDialog();
+            new SuggestAppointment(PatientId, Appointment).ShowDialog();
         }
 
         [NotifyPropertyChangedInvocator]
@@ -115,10 +104,6 @@ namespace TechHealth.View.PatientView.View
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
+ 
     }
 }

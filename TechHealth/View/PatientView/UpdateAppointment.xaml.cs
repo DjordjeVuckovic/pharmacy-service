@@ -39,9 +39,10 @@ namespace TechHealth.View.PatientView
             doctors = DoctorRepository.Instance.GetAllToList();
 
             CbDoctor.ItemsSource = doctors;
-            BlackoutDates();
             TxtTime.Text = selected.StartTime;
             Date.SelectedDate = selected.Date;
+            BlackoutDates();
+            
 
         }
 
@@ -82,7 +83,7 @@ namespace TechHealth.View.PatientView
 
         private bool Validate()
         {
-            if (ValidateDate())
+            if (!ValidateDate())
             {
                 MessageBox.Show("Moguce je pomeriti termin za maksimalo 3 dana unapred ili unazad!");
                 return false;
