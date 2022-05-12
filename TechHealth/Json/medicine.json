@@ -25,6 +25,7 @@
     "Price": 300.0,
     "MedicineName": "Brufen",
     "MedicineStatus": 1,
+    "quantity": 50,
     "ShouldSerialize": true
   },
   "29a4bed4444841d58c51a39b49bf4d26": {
@@ -39,16 +40,17 @@
         "SubstanceName": "calcijum"
       }
     ],
-    "Quantity": 70,
+    "Quantity": 100,
     "Units": "pill",
     "SideEffects": "/",
     "MainSubstance": {
-      "SubstanceId": "116",
-      "SubstanceName": "paracetamol"
+      "SubstanceId": "3bb1bb5d21ab468487ee068e2a3bee37",
+      "SubstanceName": "penicilin"
     },
     "Price": 100.0,
     "MedicineName": "Paracetamol Uno",
     "MedicineStatus": 2,
+    "quantity": 100,
     "ShouldSerialize": true
   }
 }

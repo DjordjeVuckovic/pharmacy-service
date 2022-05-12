@@ -369,6 +369,9 @@
     <Compile Include="View\ManagerView\CRUDRooms\AddForm.xaml.cs">
       <DependentUpon>AddForm.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\ManagerView\CRUDRooms\AddMedWindow.xaml.cs">
+      <DependentUpon>AddMedWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\ManagerView\CRUDRooms\AddRenovation.xaml.cs">
       <DependentUpon>AddRenovation.xaml</DependentUpon>
     </Compile>
@@ -393,18 +396,29 @@
     <Compile Include="View\ManagerView\CRUDRooms\UpdateForm.xaml.cs">
       <DependentUpon>UpdateForm.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\ManagerView\CRUDRooms\UpdateMedWindow.xaml.cs">
+      <DependentUpon>UpdateMedWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\ManagerView\ManagerMainWindow.xaml.cs">
       <DependentUpon>ManagerMainWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\ManagerView\ViewModel\AddMedViewModel.cs" />
     <Compile Include="View\ManagerView\ViewModel\EquipmentViewModel.cs" />
     <Compile Include="View\ManagerView\ViewModel\HomeViewModel.cs" />
     <Compile Include="View\ManagerView\ViewModel\MainViewModel.cs" />
+    <Compile Include="View\ManagerView\ViewModel\MedViewModel.cs" />
     <Compile Include="View\ManagerView\ViewModel\RoomViewModel.cs" />
+    <Compile Include="View\ManagerView\VieW\AddMedView.xaml.cs">
+      <DependentUpon>AddMedView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\ManagerView\VieW\EquipmentView.xaml.cs">
       <DependentUpon>EquipmentView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ManagerView\VieW\HomeView.xaml.cs">
       <DependentUpon>HomeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ManagerView\VieW\MedView.xaml.cs">
+      <DependentUpon>MedView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ManagerView\VieW\RoomView.xaml.cs">
       <DependentUpon>RoomView.xaml</DependentUpon>
@@ -627,6 +641,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\ManagerView\CRUDRooms\AddMedWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\ManagerView\CRUDRooms\AddRenovation.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -659,7 +677,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\ManagerView\CRUDRooms\UpdateMedWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\ManagerView\ManagerMainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ManagerView\VieW\AddMedView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -668,6 +694,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\ManagerView\VieW\HomeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ManagerView\VieW\MedView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

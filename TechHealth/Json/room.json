@@ -31,7 +31,7 @@
     "roomTypes": 2,
     "roomId": "S6",
     "floor": 3,
-    "availability": true,
+    "availability": false,
     "ShouldSerialize": true
   }
 }
