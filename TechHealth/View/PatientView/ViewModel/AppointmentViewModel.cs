@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace TechHealth.View.PatientView.ViewModel
 {
-    public class AppointmentViewModel
+    public class AppointmentViewModel : ViewModelBase
     {
         /*private ObservableCollection<Appointment> apList;
 

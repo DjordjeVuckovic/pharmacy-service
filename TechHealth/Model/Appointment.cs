@@ -239,6 +239,11 @@ namespace TechHealth.Model
 
          return appointment.Date == Date && appointment.StartTimeD < FinishTimeD && appointment.FinishTimeD > StartTimeD;
       }
-      
-   }
+
+        public bool GetIfPast()
+        {
+            return FinishTimeD < DateTime.Now;
+        }
+
+    }
 }

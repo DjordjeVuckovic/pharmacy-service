@@ -105,11 +105,11 @@
   },
   "9b2a32b3807349bdb8343c68ff0ed497": {
     "ShouldSerialize": true,
-    "Date": "2022-05-13T00:00:00",
+    "Date": "2022-05-14T00:00:00",
     "StartTimeD": "2022-05-06T00:00:00",
     "FinishTimeD": "2022-05-06T01:05:00",
     "Emergent": false,
-    "StartTime": null,
+    "StartTime": "1:05 AM",
     "FinishTime": null,
     "IdAppointment": "9b2a32b3807349bdb8343c68ff0ed497",
     "StartDateRegion": "0001-01-01T00:00:00",
@@ -124,7 +124,7 @@
     },
     "AppointmentType": 0,
     "Doctor": {
-      "Jmbg": "131213121111",
+      "Jmbg": "131213124444",
       "ShouldSerialize": false
     },
     "Evident": true
