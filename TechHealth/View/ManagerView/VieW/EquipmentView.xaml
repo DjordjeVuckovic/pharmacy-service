@@ -13,8 +13,14 @@
                    Foreground="Black"
                    FontSize="28"
                    HorizontalAlignment="Center"
-                   Margin="0,10,0,0"/>
+                   Margin="0,5,0,0"/>
+        <TextBox x:Name="search" TextChanged="search_TextChanged" Width="120" Height="30"
+                 HorizontalAlignment="Right" Margin="0,0,11,0" Background="white"></TextBox>
         <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="46*"/>
+                <ColumnDefinition Width="309*"/>
+            </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="340"/>
                 <RowDefinition Height="70"/>
@@ -25,8 +31,8 @@
                       CanUserAddRows="False"
                       SelectionMode="Extended"
                       AutoGenerateColumns="False"
-                      Margin="10,10,10,10"
-                      Background="#272537">
+                      Margin="10,10,10,50"
+                      Background="#272537" Grid.ColumnSpan="2">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Name" Binding="{Binding name}" Width="*"  CanUserResize="False"/>
                     <DataGridTextColumn Header="ID" Binding="{Binding id}" Width="*"  CanUserResize="False"/>
@@ -36,14 +42,14 @@
                 </DataGrid.Columns>
             </DataGrid>
 
-            <Button x:Name="Add" Content="Add" Margin="20,0,10,10" HorizontalAlignment="Left" Width="120" Height="50"  Grid.Row="3" Background="Green"
-                    Command="{Binding AddEquipmentCommand}"/>
-            <Button x:Name="View" Content="View/Modify" Margin="-190,0,0,10" HorizontalAlignment="Center"  Width="120" Height="50"  Grid.Row="3"
-                    Command="{Binding ViewEquipmentCommand}"/>
-            <Button x:Name="Reallocate" Content="Reallocate" Margin="200,0,0,10" HorizontalAlignment="Center"  Width="120" Height="50"  Grid.Row="3"
-                    Command="{Binding ReallocateCommand}"/>
-            <Button x:Name="Delete" Content="Delete" Margin="0,0,20,10" HorizontalAlignment="Right" Width="120" Height="50"  Grid.Row="3" Background="OrangeRed"
-                    Command="{Binding DeleteEquipmentCommand}"/>
+            <Button x:Name="Add" Content="Add" Margin="20,322,0,38" HorizontalAlignment="Left" Width="120" Height="50" Background="Green"
+                    Command="{Binding AddEquipmentCommand}" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+            <Button x:Name="View" Content="View/Modify" Margin="108,322,0,38" HorizontalAlignment="Left"  Width="120" Height="50"
+                    Command="{Binding ViewEquipmentCommand}" Grid.Column="1" Grid.RowSpan="2"/>
+            <Button x:Name="Reallocate" Content="Reallocate" Margin="303,322,0,38" HorizontalAlignment="Left"  Width="120" Height="50"
+                    Command="{Binding ReallocateCommand}" Grid.Column="1" Grid.RowSpan="2"/>
+            <Button x:Name="Delete" Content="Delete" Margin="0,322,20,38" HorizontalAlignment="Right" Width="120" Height="50" Background="OrangeRed"
+                    Command="{Binding DeleteEquipmentCommand}" Grid.Column="1" Grid.RowSpan="2"/>
         </Grid>
     </StackPanel>
 </UserControl>
