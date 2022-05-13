@@ -20,9 +20,10 @@
                 <RowDefinition Height="70"/>
             </Grid.RowDefinitions>
             <DataGrid x:Name="dataMedicine" ItemsSource="{Binding Medicines, UpdateSourceTrigger=PropertyChanged}"
-                      SelectedItem="{Binding SelectedItem}"
+                      SelectedItem="{Binding SelectedItem }"
                       CanUserAddRows="False"
                       SelectionMode="Extended"
+                      IsReadOnly="True"
                       AutoGenerateColumns="False"
                       Margin="10,10,10,29">
                 <DataGrid.Columns>

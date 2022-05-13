@@ -10,5 +10,53 @@
       "Jmbg": "131213121111",
       "ShouldSerialize": false
     }
+  },
+  "26012d7c31ad42939372b6216af1dff8": {
+    "RejectedMedicineId": "26012d7c31ad42939372b6216af1dff8",
+    "Medicine": {
+      "MedicineId": "29a4bed4444841d58c51a39b49bf4d26",
+      "ShouldSerialize": false
+    },
+    "Reason": "aaaaaaa",
+    "Doctor": {
+      "Jmbg": "131213121111",
+      "ShouldSerialize": false
+    }
+  },
+  "68b2b8b1811a4db48e52b7288570c89c": {
+    "RejectedMedicineId": "68b2b8b1811a4db48e52b7288570c89c",
+    "Medicine": {
+      "MedicineId": "97a1cfc8fcab49cf9d0ad78cd3a45a46",
+      "ShouldSerialize": false
+    },
+    "Reason": "asaaaaaaaaaaaa",
+    "Doctor": {
+      "Jmbg": "131213121111",
+      "ShouldSerialize": false
+    }
+  },
+  "12128c99160240159459a6a85630b6c7": {
+    "RejectedMedicineId": "12128c99160240159459a6a85630b6c7",
+    "Medicine": {
+      "MedicineId": "29a4bed4444841d58c51a39b49bf4d26",
+      "ShouldSerialize": false
+    },
+    "Reason": "aaaaaaaaaaa",
+    "Doctor": {
+      "Jmbg": "131213121111",
+      "ShouldSerialize": false
+    }
+  },
+  "de338ba0613545f691e8eafcb3d74b8d": {
+    "RejectedMedicineId": "de338ba0613545f691e8eafcb3d74b8d",
+    "Medicine": {
+      "MedicineId": "29a4bed4444841d58c51a39b49bf4d26",
+      "ShouldSerialize": false
+    },
+    "Reason": "aaaaaaaaaa",
+    "Doctor": {
+      "Jmbg": "131213121111",
+      "ShouldSerialize": false
+    }
   }
 }

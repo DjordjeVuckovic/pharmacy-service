@@ -26,7 +26,6 @@ namespace TechHealth.Core
             add => CommandManager.RequerySuggested += value;
             remove => CommandManager.RequerySuggested -= value;
         }
-        
 
         public void Execute(object parameters)
         {

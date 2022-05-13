@@ -3,20 +3,33 @@ using System.Windows.Input;
 
 namespace TechHealth.Core
 {
-    public abstract class CommandBase:ICommand
+    public  class CommandBase:ICommand
     {
-        public virtual bool CanExecute(object parameter)
+        private Action<object> _execute;
+        private Predicate<object> _canExecute;
+        
+        public CommandBase(Action<object> execute, Predicate<object> canExecute)
         {
-            return true;
+            _execute = execute;
+            _canExecute = canExecute;
         }
 
-        public abstract void Execute(object parameter);
+        public CommandBase(Action<object> execute) : this(execute, null) { }
+        public bool CanExecute(object parameters)
+        {
+            return _canExecute == null ||  _canExecute(parameters);
+        }
+
+        public void Execute(object parameters)
+        {
+            _execute(parameters);
+        }
 
         public event EventHandler CanExecuteChanged;
 
-        protected void OnCanExecutedChanged()
+        public void OnCanExecutedChanged()
         {
-            CanExecuteChanged?.Invoke(this,new EventArgs());
+            CanExecuteChanged?.Invoke(this,EventArgs.Empty);
         }
     }
 }

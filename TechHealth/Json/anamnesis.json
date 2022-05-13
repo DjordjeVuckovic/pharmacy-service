@@ -98,5 +98,55 @@
     "Respiratory": null,
     "Mouth": null,
     "Gi": null
+  },
+  "7099512fcf9e471b99007596b0dd8d35": {
+    "Appointment": {
+      "ShouldSerialize": false,
+      "IdAppointment": "6e2ba6f81cc2434d94386dba61f0da3a",
+      "StartDateRegion": "0001-01-01T00:00:00",
+      "FinishDateRegion": "0001-01-01T00:00:00"
+    },
+    "MainSymptom": "aa",
+    "AnamnesisDate": "2022-05-12T13:47:30.3208343+02:00",
+    "AnamnesisId": "7099512fcf9e471b99007596b0dd8d35",
+    "OtherSymptoms": "aa",
+    "GeneralAmnesis": "aa",
+    "Cns": null,
+    "Eye": null,
+    "Neck": null,
+    "Mss": null,
+    "Skin": null,
+    "Ear": null,
+    "Cus": null,
+    "Infectious": null,
+    "Ugs": null,
+    "Respiratory": null,
+    "Mouth": null,
+    "Gi": null
+  },
+  "093f7be99c974e779de191f174c2f28c": {
+    "Appointment": {
+      "ShouldSerialize": false,
+      "IdAppointment": "08f1cde70ba84c61ad4186b075cf0594",
+      "StartDateRegion": "0001-01-01T00:00:00",
+      "FinishDateRegion": "0001-01-01T00:00:00"
+    },
+    "MainSymptom": "aaa",
+    "AnamnesisDate": "2022-05-12T18:18:15.4307583+02:00",
+    "AnamnesisId": "093f7be99c974e779de191f174c2f28c",
+    "OtherSymptoms": "aaa",
+    "GeneralAmnesis": "aaa",
+    "Cns": null,
+    "Eye": null,
+    "Neck": null,
+    "Mss": null,
+    "Skin": null,
+    "Ear": null,
+    "Cus": null,
+    "Infectious": null,
+    "Ugs": null,
+    "Respiratory": null,
+    "Mouth": null,
+    "Gi": null
   }
 }

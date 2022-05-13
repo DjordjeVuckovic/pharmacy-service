@@ -159,34 +159,7 @@
       "Jmbg": "131213121111",
       "ShouldSerialize": false
     },
-    "Evident": false
-  },
-  "8b88e5f335c54e3ba96739c9ea866407": {
-    "ShouldSerialize": true,
-    "Date": "2022-05-14T00:00:00",
-    "StartTimeD": "2022-05-12T04:20:00",
-    "FinishTimeD": "2022-05-12T15:15:00",
-    "Emergent": false,
-    "StartTime": null,
-    "FinishTime": null,
-    "IdAppointment": "8b88e5f335c54e3ba96739c9ea866407",
-    "StartDateRegion": "0001-01-01T00:00:00",
-    "FinishDateRegion": "0001-01-01T00:00:00",
-    "Room": {
-      "roomId": "S3",
-      "ShouldSerialize": false
-    },
-    "Patient": {
-      "Lbo": 73456,
-      "Jmbg": "2456",
-      "ShouldSerialize": false
-    },
-    "AppointmentType": 1,
-    "Doctor": {
-      "Jmbg": "131213121111",
-      "ShouldSerialize": false
-    },
-    "Evident": false
+    "Evident": true
   },
   "3e6e9dd3376f499da17e92994016aebe": {
     "ShouldSerialize": true,
@@ -215,33 +188,6 @@
     },
     "Evident": false
   },
-  "dc61ec35039e4ddc905e78bf4970ad54": {
-    "ShouldSerialize": true,
-    "Date": "2022-05-15T00:00:00",
-    "StartTimeD": "2022-05-12T00:05:00",
-    "FinishTimeD": "2022-05-12T00:50:00",
-    "Emergent": false,
-    "StartTime": null,
-    "FinishTime": null,
-    "IdAppointment": "dc61ec35039e4ddc905e78bf4970ad54",
-    "StartDateRegion": "0001-01-01T00:00:00",
-    "FinishDateRegion": "0001-01-01T00:00:00",
-    "Room": {
-      "roomId": "S3",
-      "ShouldSerialize": false
-    },
-    "Patient": {
-      "Lbo": 73456,
-      "Jmbg": "2456",
-      "ShouldSerialize": false
-    },
-    "AppointmentType": 0,
-    "Doctor": {
-      "Jmbg": "131213121111",
-      "ShouldSerialize": false
-    },
-    "Evident": false
-  },
   "8e7d3bde8207480594d72a6fd45f79b9": {
     "ShouldSerialize": true,
     "Date": "2022-05-14T00:00:00",
@@ -265,33 +211,6 @@
     "AppointmentType": 0,
     "Doctor": {
       "Jmbg": "141314131111",
-      "ShouldSerialize": false
-    },
-    "Evident": false
-  },
-  "bf0482b493954c7cbdf240049c45272d": {
-    "ShouldSerialize": true,
-    "Date": "2022-05-13T00:00:00",
-    "StartTimeD": "2022-05-12T00:01:00",
-    "FinishTimeD": "2022-05-12T00:45:00",
-    "Emergent": false,
-    "StartTime": null,
-    "FinishTime": null,
-    "IdAppointment": "bf0482b493954c7cbdf240049c45272d",
-    "StartDateRegion": "0001-01-01T00:00:00",
-    "FinishDateRegion": "0001-01-01T00:00:00",
-    "Room": {
-      "roomId": "S3",
-      "ShouldSerialize": false
-    },
-    "Patient": {
-      "Lbo": 73456,
-      "Jmbg": "2456",
-      "ShouldSerialize": false
-    },
-    "AppointmentType": 0,
-    "Doctor": {
-      "Jmbg": "131213121111",
       "ShouldSerialize": false
     },
     "Evident": false
@@ -404,19 +323,46 @@
     },
     "Evident": false
   },
-  "2addbe22921a40c9bd7bbbcda52bbe67": {
+  "08f1cde70ba84c61ad4186b075cf0594": {
     "ShouldSerialize": true,
-    "Date": "2022-05-15T00:00:00",
-    "StartTimeD": "2022-05-12T06:30:00",
-    "FinishTimeD": "2022-05-12T06:55:00",
+    "Date": "2022-05-14T00:00:00",
+    "StartTimeD": "2022-05-12T02:10:00",
+    "FinishTimeD": "2022-05-12T04:20:00",
     "Emergent": false,
     "StartTime": null,
     "FinishTime": null,
-    "IdAppointment": "2addbe22921a40c9bd7bbbcda52bbe67",
+    "IdAppointment": "08f1cde70ba84c61ad4186b075cf0594",
     "StartDateRegion": "0001-01-01T00:00:00",
     "FinishDateRegion": "0001-01-01T00:00:00",
     "Room": {
-      "roomId": "S3",
+      "roomId": "S6",
+      "ShouldSerialize": false
+    },
+    "Patient": {
+      "Lbo": 657771,
+      "Jmbg": "13456",
+      "ShouldSerialize": false
+    },
+    "AppointmentType": 0,
+    "Doctor": {
+      "Jmbg": "131213121111",
+      "ShouldSerialize": false
+    },
+    "Evident": true
+  },
+  "70e90ebbacf2473b915bec50cbf3838f": {
+    "ShouldSerialize": true,
+    "Date": "2022-05-14T00:00:00",
+    "StartTimeD": "2022-05-12T05:26:00",
+    "FinishTimeD": "2022-05-12T07:34:00",
+    "Emergent": false,
+    "StartTime": null,
+    "FinishTime": null,
+    "IdAppointment": "70e90ebbacf2473b915bec50cbf3838f",
+    "StartDateRegion": "0001-01-01T00:00:00",
+    "FinishDateRegion": "0001-01-01T00:00:00",
+    "Room": {
+      "roomId": "S2",
       "ShouldSerialize": false
     },
     "Patient": {
@@ -427,6 +373,114 @@
     "AppointmentType": 0,
     "Doctor": {
       "Jmbg": "131213121111",
+      "ShouldSerialize": false
+    },
+    "Evident": false
+  },
+  "86ab3a3da1744f2d9807ef42f4058056": {
+    "ShouldSerialize": true,
+    "Date": "2022-05-15T00:00:00",
+    "StartTimeD": "2022-05-12T05:25:00",
+    "FinishTimeD": "2022-05-12T06:30:00",
+    "Emergent": false,
+    "StartTime": null,
+    "FinishTime": null,
+    "IdAppointment": "86ab3a3da1744f2d9807ef42f4058056",
+    "StartDateRegion": "0001-01-01T00:00:00",
+    "FinishDateRegion": "0001-01-01T00:00:00",
+    "Room": {
+      "roomId": "S4",
+      "ShouldSerialize": false
+    },
+    "Patient": {
+      "Lbo": 73456,
+      "Jmbg": "2456",
+      "ShouldSerialize": false
+    },
+    "AppointmentType": 0,
+    "Doctor": {
+      "Jmbg": "131213121111",
+      "ShouldSerialize": false
+    },
+    "Evident": false
+  },
+  "b0b54d597d6f4d5bb51c3e3c4fc7bbea": {
+    "ShouldSerialize": true,
+    "Date": "2022-05-12T00:00:00",
+    "StartTimeD": "2022-05-12T02:10:00",
+    "FinishTimeD": "2022-05-12T04:20:00",
+    "Emergent": false,
+    "StartTime": null,
+    "FinishTime": null,
+    "IdAppointment": "b0b54d597d6f4d5bb51c3e3c4fc7bbea",
+    "StartDateRegion": "0001-01-01T00:00:00",
+    "FinishDateRegion": "0001-01-01T00:00:00",
+    "Room": {
+      "roomId": "S4",
+      "ShouldSerialize": false
+    },
+    "Patient": {
+      "Lbo": 73456,
+      "Jmbg": "2456",
+      "ShouldSerialize": false
+    },
+    "AppointmentType": 0,
+    "Doctor": {
+      "Jmbg": "131213121111",
+      "ShouldSerialize": false
+    },
+    "Evident": false
+  },
+  "9e5888f4ab064abeaf4b62f8e82e1b3e": {
+    "ShouldSerialize": true,
+    "Date": "2022-05-12T00:00:00",
+    "StartTimeD": "2022-05-12T02:10:00",
+    "FinishTimeD": "2022-05-12T02:11:00",
+    "Emergent": false,
+    "StartTime": null,
+    "FinishTime": null,
+    "IdAppointment": "9e5888f4ab064abeaf4b62f8e82e1b3e",
+    "StartDateRegion": "0001-01-01T00:00:00",
+    "FinishDateRegion": "0001-01-01T00:00:00",
+    "Room": {
+      "roomId": "S2",
+      "ShouldSerialize": false
+    },
+    "Patient": {
+      "Lbo": 73456,
+      "Jmbg": "2456",
+      "ShouldSerialize": false
+    },
+    "AppointmentType": 0,
+    "Doctor": {
+      "Jmbg": "2315",
+      "ShouldSerialize": false
+    },
+    "Evident": false
+  },
+  "82c3f28a5b76472fbaac37ca72bf3922": {
+    "ShouldSerialize": true,
+    "Date": "2022-05-14T00:00:00",
+    "StartTimeD": "2022-05-13T02:09:00",
+    "FinishTimeD": "2022-05-13T05:24:00",
+    "Emergent": false,
+    "StartTime": null,
+    "FinishTime": null,
+    "IdAppointment": "82c3f28a5b76472fbaac37ca72bf3922",
+    "StartDateRegion": "0001-01-01T00:00:00",
+    "FinishDateRegion": "0001-01-01T00:00:00",
+    "Room": {
+      "roomId": "S5",
+      "ShouldSerialize": false
+    },
+    "Patient": {
+      "Lbo": 657771,
+      "Jmbg": "13456",
+      "ShouldSerialize": false
+    },
+    "AppointmentType": 0,
+    "Doctor": {
+      "Jmbg": "2315",
       "ShouldSerialize": false
     },
     "Evident": false

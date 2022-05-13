@@ -33,13 +33,13 @@ namespace TechHealth.View.ManagerView.ViewModel
             set
             {
                 currentView = value;
-                OnPropertyChanged();
+                OnPropertyChanged(nameof(CurrentView));
             }
         }
 
         public MainViewModel()
         {
-            //_instance = this;
+            _instance = this;
             HomeVm = new HomeViewModel();
             EquipmentVm = new EquipmentViewModel();
             RoomVm = new RoomViewModel();

@@ -62,10 +62,6 @@
         <Grid Grid.Column="1"  Grid.Row="2" Margin="10,10,0,0">
             <Image Source="C:\Users\djord\OneDrive\Documents\GitHub\PharmacyService\TechHealth\resources\health-check.png" Margin="0,0,0,10"></Image>
         </Grid>
-
-
-
-
     </Grid>
 
 </UserControl>

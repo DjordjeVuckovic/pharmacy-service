@@ -25,7 +25,6 @@
     "Price": 300.0,
     "MedicineName": "Brufen",
     "MedicineStatus": 1,
-    "quantity": 50,
     "ShouldSerialize": true
   },
   "29a4bed4444841d58c51a39b49bf4d26": {
@@ -50,7 +49,21 @@
     "Price": 100.0,
     "MedicineName": "Paracetamol Uno",
     "MedicineStatus": 2,
-    "quantity": 100,
+    "ShouldSerialize": true
+  },
+  "97653f9d4f7b4e069cda4fbbf48a92c1": {
+    "MedicineId": "97653f9d4f7b4e069cda4fbbf48a92c1",
+    "Composition": [],
+    "Quantity": 100,
+    "Units": "tablete",
+    "SideEffects": "/",
+    "MainSubstance": {
+      "SubstanceId": "1f78b5f8abf94c35993bc9fec51d9d5f",
+      "SubstanceName": "paracetamol"
+    },
+    "Price": 0.0,
+    "MedicineName": "Paracetamol",
+    "MedicineStatus": 0,
     "ShouldSerialize": true
   }
 }

@@ -12,14 +12,14 @@ namespace TechHealth.DoctorView.ViewModel
     public class DoctorVacationViewModel:ViewModelBase
     {
         public event EventHandler OnRequestClose;
-        private event EventHandler OnDateChg;
         private readonly Doctor doctor;
         private DateTime startDate;
         private DateTime finishDate;
         private string reason;
         private bool emergent;
         private readonly DoctorVacationRequestController doctorVacationRequestController = new DoctorVacationRequestController();
-        private RelayCommand finishCommand;
+        //private RelayCommand finishCommand;
+        private CommandBase finishCommand;
 
         public bool Emergent
         {
@@ -37,6 +37,7 @@ namespace TechHealth.DoctorView.ViewModel
             {
                 startDate = value;
                 OnPropertyChanged(nameof(StartDate));
+                FinishCommand.OnCanExecutedChanged();
             }
         }
         public DateTime FinishDate{
@@ -45,6 +46,7 @@ namespace TechHealth.DoctorView.ViewModel
             {
                 finishDate = value;
                 OnPropertyChanged(nameof(FinishDate));
+                FinishCommand.OnCanExecutedChanged();
             }
         }
         public string Reason
@@ -54,15 +56,16 @@ namespace TechHealth.DoctorView.ViewModel
             {
                 reason = value;
                 OnPropertyChanged(nameof(Reason));
+                FinishCommand.OnCanExecutedChanged();
             }
         }
         public string DoctorTxt { get; set; }
 
-        public RelayCommand FinishCommand
+        public CommandBase FinishCommand
         {
             get
             {
-                return finishCommand ?? (finishCommand = new RelayCommand(param => Execute(), param => CanExecute()));
+                return finishCommand ?? (finishCommand = new CommandBase(param => Execute(), param => CanExecute()));
             }
         }
 
@@ -84,8 +87,12 @@ namespace TechHealth.DoctorView.ViewModel
 
         private bool CanExecute()
         {
-            //string sDate = StartDate.ToString("d");
-           // string fDate = StartDate.ToString("d");
+            // int res = DateTime.Compare(StartDate, DateTime.Now.Date.AddDays(2)); nista se ne desava?
+            // int res1 = DateTime.Compare(FinishDate, DateTime.Now.Date.AddDays(3)); 
+            // if (!String.IsNullOrEmpty(Reason) &&  res <= 0 &&  res1 <= 0 && StartDate < FinishDate)
+            // {
+            //     return true;
+            // }
             if (!String.IsNullOrEmpty(Reason) && StartDate >= DateTime.Now.Date.AddDays(2) && FinishDate >= DateTime.Now.Date.AddDays(3) && StartDate < FinishDate)
             {
                 return true;

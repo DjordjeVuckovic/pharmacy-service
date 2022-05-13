@@ -126,5 +126,69 @@
     "Date": "2022-05-15T00:00:00",
     "StartTime": "2022-05-12T06:30:00",
     "FinishTime": "2022-05-12T06:55:00"
+  },
+  "a739b968dff74ac087017fc3ff981538": {
+    "ReferralId": "a739b968dff74ac087017fc3ff981538",
+    "Appointment": {
+      "ShouldSerialize": false,
+      "IdAppointment": "6e2ba6f81cc2434d94386dba61f0da3a",
+      "StartDateRegion": "0001-01-01T00:00:00",
+      "FinishDateRegion": "0001-01-01T00:00:00"
+    },
+    "ReferralDoctor": {
+      "Jmbg": "131213121111",
+      "ShouldSerialize": false
+    },
+    "Date": "2022-05-14T00:00:00",
+    "StartTime": "2022-05-12T05:26:00",
+    "FinishTime": "2022-05-12T07:34:00"
+  },
+  "fc900c37b42f4ce9835e5b53f8ae1b24": {
+    "ReferralId": "fc900c37b42f4ce9835e5b53f8ae1b24",
+    "Appointment": {
+      "ShouldSerialize": false,
+      "IdAppointment": "6e2ba6f81cc2434d94386dba61f0da3a",
+      "StartDateRegion": "0001-01-01T00:00:00",
+      "FinishDateRegion": "0001-01-01T00:00:00"
+    },
+    "ReferralDoctor": {
+      "Jmbg": "131213121111",
+      "ShouldSerialize": false
+    },
+    "Date": "2022-05-15T00:00:00",
+    "StartTime": "2022-05-12T05:25:00",
+    "FinishTime": "2022-05-12T06:30:00"
+  },
+  "05227910c59b4de09fcc054659cf26e1": {
+    "ReferralId": "05227910c59b4de09fcc054659cf26e1",
+    "Appointment": {
+      "ShouldSerialize": false,
+      "IdAppointment": "6e2ba6f81cc2434d94386dba61f0da3a",
+      "StartDateRegion": "0001-01-01T00:00:00",
+      "FinishDateRegion": "0001-01-01T00:00:00"
+    },
+    "ReferralDoctor": {
+      "Jmbg": "2315",
+      "ShouldSerialize": false
+    },
+    "Date": "2022-05-12T00:00:00",
+    "StartTime": "2022-05-12T02:10:00",
+    "FinishTime": "2022-05-12T02:11:00"
+  },
+  "46dc28e0273448389f97169d151de695": {
+    "ReferralId": "46dc28e0273448389f97169d151de695",
+    "Appointment": {
+      "ShouldSerialize": false,
+      "IdAppointment": "08f1cde70ba84c61ad4186b075cf0594",
+      "StartDateRegion": "0001-01-01T00:00:00",
+      "FinishDateRegion": "0001-01-01T00:00:00"
+    },
+    "ReferralDoctor": {
+      "Jmbg": "2315",
+      "ShouldSerialize": false
+    },
+    "Date": "2022-05-14T00:00:00",
+    "StartTime": "2022-05-13T02:09:00",
+    "FinishTime": "2022-05-13T05:24:00"
   }
 }
