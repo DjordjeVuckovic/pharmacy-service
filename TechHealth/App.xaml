@@ -75,7 +75,10 @@
             <DataTemplate DataType="{x:Type viewModelP:AppointmentViewModel}">
                 <viewP:AppointmentView/>
             </DataTemplate>
-            
+            <DataTemplate DataType="{x:Type viewModelP:AppointmentHistoryViewModel}">
+                <viewP:AppointmentHistory/>
+            </DataTemplate>
+
 
         </ResourceDictionary>
     </Application.Resources>

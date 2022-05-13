@@ -1,9 +1,11 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Controls;
 using TechHealth.Annotations;
+using TechHealth.Controller;
 using TechHealth.Core;
 using TechHealth.Model;
 using TechHealth.Repository;
@@ -13,6 +15,7 @@ namespace TechHealth.View.PatientView.View
 {
     public partial class AppointmentView : UserControl, INotifyPropertyChanged
     {
+        private AppointmentController appController = new AppointmentController();
         private Appointment selected;
         public event PropertyChangedEventHandler PropertyChanged;
         public RelayCommand AddAppointmentCommand { get; set; }
@@ -41,13 +44,20 @@ namespace TechHealth.View.PatientView.View
         {
             InitializeComponent();
             DataContext = this;
-            Appointment = new ObservableCollection<Appointment>(AppointmentRepository.Instance.GetAllToList());
-
+            Appointment = new ObservableCollection<Appointment>(appController.GetAllNotEvident());
+            LoadDoctors();
             AddAppointmentCommand = new RelayCommand(param => ExecuteAdd());
             DeleteAppointmentCommand = new RelayCommand(param => ExecuteDelete());
             UpdateAppointmentCommand = new RelayCommand(param => ExecuteUpdate(selected));
             SuggestAppointmentCommand = new RelayCommand(param => ExecuteSuggest());
+        }
 
+        private void LoadDoctors()
+        {
+            for (int i = 0; i < Appointment.Count; i++)
+            {
+                Appointment[i].Doctor = DoctorRepository.Instance.GetDoctorbyId(Appointment[i].Doctor.Jmbg);
+            }
         }
 
         private void ExecuteDelete()

@@ -24,11 +24,9 @@ namespace TechHealth.Model
       private bool evident;
       private DateTime startTimeD;
       private DateTime finishTimeD;
-        private DateTime startDateRegion;
-        private DateTime finishDateRegion; //start i finish date su za suggestion
 
       public Appointment(DateTime date, string idAppointment, Room room, Patient patient, AppointmentType appointmentType, Doctor doctor,
-          DateTime startTimeD, DateTime finishTimeD, DateTime startDateRegion, DateTime finishDateRegion)
+          DateTime startTimeD, DateTime finishTimeD)
       {
          this.date = date;
          emergent = false;
@@ -40,8 +38,6 @@ namespace TechHealth.Model
          this.evident = false;
          this.startTimeD = startTimeD;
          this.finishTimeD = finishTimeD;
-            this.startDateRegion = startDateRegion;
-            this.finishDateRegion = finishDateRegion;
          ShouldSerialize = true;
       }
 
@@ -118,24 +114,6 @@ namespace TechHealth.Model
             OnPropertyChanged(nameof(IdAppointment));
          }
       }
-        public DateTime StartDateRegion
-        {
-            get => startDateRegion;
-            set
-            {
-                startDateRegion = value;
-                OnPropertyChanged(nameof(StartDateRegion));
-            }
-        }
-        public DateTime FinishDateRegion
-        {
-            get => finishDateRegion;
-            set
-            {
-                finishDateRegion = value;
-                OnPropertyChanged(nameof(FinishDateRegion));
-            }
-        }
         public Room Room{
          get => room;
          set

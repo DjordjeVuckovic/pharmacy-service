@@ -22,7 +22,7 @@
                    Margin="0,5,0,0"/>
         </Grid>
 
-        <TextBlock Grid.Row="0"  Text="Ime pacijenta"/>
+        <TextBlock Grid.Row="0"  Text="Dusan Vukovic"/>
         <DataGrid x:Name="dataAppointments"
                   FontSize="14" Grid.Row="2" Margin="10,0,10,10"
                   ItemsSource="{Binding Appointment, UpdateSourceTrigger=PropertyChanged}"
