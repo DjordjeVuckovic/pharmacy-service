@@ -134,5 +134,30 @@ namespace TechHealth.View.ManagerView.VieW
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
+        private void search_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            eqlist = new ObservableCollection<Equipment>();
+            eqlist.Clear();
+
+            if (search.Text.Equals(""))
+            {
+                foreach (var eq in EquipmentRepository.Instance.GetAllToList())
+                {
+                    eqlist.Add(eq);
+                }
+            }
+            else
+            {
+                foreach (var eq in EquipmentRepository.Instance.GetAllToList())
+                {
+                    if (eq.name.Contains(search.Text) || eq.quantity.ToString().Contains(search.Text) || eq.id.Contains(search.Text) || eq.type.ToString().Contains(search.Text))
+                    {
+                        eqlist.Add(eq);
+                    }
+                }
+            }
+            dataEquipment.ItemsSource = eqlist;
+        }
     }
 }
