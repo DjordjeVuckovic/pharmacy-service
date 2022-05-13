@@ -16,6 +16,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using TechHealth.Annotations;
+using TechHealth.Controller;
 using TechHealth.Core;
 using TechHealth.Model;
 using TechHealth.Repository;
@@ -30,16 +31,14 @@ namespace TechHealth.View.PatientView.View
     {
         private Patient patient;
         public Appointment selected;
+        public AppointmentController appController = new AppointmentController();
         public event PropertyChangedEventHandler PropertyChanged;
         public RelayCommand GradeAppointmentCommand { get; set; }
         public RelayCommand DetailsCommand { get; set; }
         
         public Appointment GetSelected
         {
-            get
-            {
-                return selected;
-            }
+            get => selected;
             set
             {
                 selected = value;
@@ -52,21 +51,26 @@ namespace TechHealth.View.PatientView.View
         {
             InitializeComponent();
             DataContext = this;
-            Past = new ObservableCollection<Appointment>(AppointmentRepository.Instance.GetAllToList());
-
+            Past = new ObservableCollection<Appointment>(appController.GetAllEvident());
+            LoadDoctors();
         }
 
+        private void LoadDoctors()
+        {
+            for (int i = 0; i < Past.Count; i++)
+            {
+                Past[i].Doctor = DoctorRepository.Instance.GetDoctorbyId(Past[i].Doctor.Jmbg);
+            }
+        }
 
         private void Rate_Click(object sender, RoutedEventArgs e)
         {
-
+            new RateAppointment(selected).ShowDialog();
         }
 
         private void Details_Click(object sender, RoutedEventArgs e)
         {
-
         }
-
 
         [NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)

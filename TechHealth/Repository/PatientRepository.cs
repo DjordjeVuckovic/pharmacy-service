@@ -75,10 +75,10 @@ namespace TechHealth.Repository
 
         public List<Appointment> GetPastAppointmentsForPatient(string patientId)
         {
-            List<Appointment> scheduledAppointments = AppointmentRepository.Instance.GetByPatientId(patientId);
+            List<Appointment> scheduledAppointments = AppointmentRepository.Instance.GetByPatientId("2456");
             for (int i = 0; i < scheduledAppointments.Count; i++)
             {
-                if (!scheduledAppointments[i].GetIfPast() || scheduledAppointments[i].Patient.Jmbg != patientId)
+                if (!scheduledAppointments[i].GetIfPast() || scheduledAppointments[i].Patient.Jmbg != "2456")
                 {
                     scheduledAppointments.RemoveAt(i);
                     i--;
