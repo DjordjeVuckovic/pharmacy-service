@@ -24,7 +24,6 @@
                       CanUserAddRows="False"
                       IsReadOnly="True"
                       SelectionMode="Extended"
-                      IsReadOnly="True"
                       AutoGenerateColumns="False"
                       Margin="10,10,10,29"
                       Background="#272537">
