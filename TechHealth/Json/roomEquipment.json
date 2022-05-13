@@ -18,5 +18,10 @@
     "RoomID": "Warehouse",
     "EquipmentName": "Bandazer",
     "Quantity": 60
+  },
+  "Warehouse-oprema dinamicka": {
+    "RoomID": "Warehouse",
+    "EquipmentName": "oprema dinamicka",
+    "Quantity": 20
   }
 }

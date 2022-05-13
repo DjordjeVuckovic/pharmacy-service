@@ -57,7 +57,21 @@ namespace TechHealth.Service
          return notEvidentAppointments;
       }
 
-      public List<Appointment> GetAllFuture(DateTime startDateRegion, DateTime finishDateRegion, Doctor doctor,Patient patient, Room room)
+        public List<Appointment> GetAllEvident()
+        {
+            var EvidentAppointments = new List<Appointment>();
+            foreach (var vAppointment in GetAll())
+            {
+                if (vAppointment.Evident)
+                {
+                    EvidentAppointments.Add(vAppointment);
+                }
+
+            }
+            return EvidentAppointments;
+        }
+
+        public List<Appointment> GetAllFuture(DateTime startDateRegion, DateTime finishDateRegion, Doctor doctor,Patient patient, Room room)
       {
          List<Appointment> ret = new List<Appointment>();
 

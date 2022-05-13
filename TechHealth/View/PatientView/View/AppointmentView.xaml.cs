@@ -1,9 +1,11 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Controls;
 using TechHealth.Annotations;
+using TechHealth.Controller;
 using TechHealth.Core;
 using TechHealth.Model;
 using TechHealth.Repository;
@@ -13,7 +15,7 @@ namespace TechHealth.View.PatientView.View
 {
     public partial class AppointmentView : UserControl, INotifyPropertyChanged
     {
-        private ObservableCollection<Appointment> aplist;
+        private AppointmentController appController = new AppointmentController();
         private Appointment selected;
         public event PropertyChangedEventHandler PropertyChanged;
         public RelayCommand AddAppointmentCommand { get; set; }
@@ -36,29 +38,26 @@ namespace TechHealth.View.PatientView.View
                 OnPropertyChanged();
             }
         }
-        public ObservableCollection<Appointment> Appointment
-        {
-            get
-            {
-                return aplist;
-            }
-            set
-            {
-                aplist = value;
-            }
-        }
+        public ObservableCollection<Appointment> Appointment { get; set; }
 
         public AppointmentView()
         {
             InitializeComponent();
             DataContext = this;
-            aplist = new ObservableCollection<Appointment>(AppointmentRepository.Instance.GetAllToList());
-
+            Appointment = new ObservableCollection<Appointment>(appController.GetAllNotEvident());
+            LoadDoctors();
             AddAppointmentCommand = new RelayCommand(param => ExecuteAdd());
             DeleteAppointmentCommand = new RelayCommand(param => ExecuteDelete());
             UpdateAppointmentCommand = new RelayCommand(param => ExecuteUpdate(selected));
             SuggestAppointmentCommand = new RelayCommand(param => ExecuteSuggest());
+        }
 
+        private void LoadDoctors()
+        {
+            for (int i = 0; i < Appointment.Count; i++)
+            {
+                Appointment[i].Doctor = DoctorRepository.Instance.GetDoctorbyId(Appointment[i].Doctor.Jmbg);
+            }
         }
 
         private void ExecuteDelete()
@@ -89,7 +88,7 @@ namespace TechHealth.View.PatientView.View
 
         private void ExecuteAdd()
         {
-            new AddAppointment(aplist).ShowDialog();
+            new AddAppointment(Appointment).ShowDialog();
         }
 
         private void ExecuteUpdate(Appointment selected)
@@ -107,7 +106,7 @@ namespace TechHealth.View.PatientView.View
 
         private void ExecuteSuggest()
         {
-            new SuggestAppointment(PatientId, aplist).ShowDialog();
+            new SuggestAppointment(PatientId, Appointment).ShowDialog();
         }
 
         [NotifyPropertyChangedInvocator]
@@ -115,10 +114,6 @@ namespace TechHealth.View.PatientView.View
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
+ 
     }
 }

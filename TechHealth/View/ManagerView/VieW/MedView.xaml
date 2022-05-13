@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:TechHealth.View.ManagerView.VieW"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="710">
-    
+
     <StackPanel Background="LightGray">
         <TextBlock Text="Medicines"
                    Foreground="Black"
@@ -22,10 +22,12 @@
             <DataGrid x:Name="dataMedicine" ItemsSource="{Binding Medicines, UpdateSourceTrigger=PropertyChanged}"
                       SelectedItem="{Binding SelectedItem }"
                       CanUserAddRows="False"
+                      IsReadOnly="True"
                       SelectionMode="Extended"
                       IsReadOnly="True"
                       AutoGenerateColumns="False"
-                      Margin="10,10,10,29">
+                      Margin="10,10,10,29"
+                      Background="#272537">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Name" Binding="{Binding MedicineName}" Width="*"  CanUserResize="False"/>
                     <DataGridTextColumn Header="Quantity" Binding="{Binding Quantity}" Width="*"  CanUserResize="False"/>
@@ -36,8 +38,10 @@
 
             <Button x:Name="Add" Content="Add" Margin="20,-45,10,10" HorizontalAlignment="Left" Width="120" Height="50"  Grid.Row="3" Background="Green"
                     Command="{Binding AddMedicineCommand}"/>
-            <Button x:Name="View" Content="View/Modify" Margin="-25,-45,0,10" HorizontalAlignment="Center"  Width="120" Height="50"  Grid.Row="3"
-                    Command="{Binding UpdateMedicineCommand}"/>
+            <Button x:Name="View" Content="View/Modify" Margin="198,322,0,38" HorizontalAlignment="Left"  Width="120" Height="50"
+                    Command="{Binding UpdateMedicineCommand}" Grid.RowSpan="2"/>
+            <Button x:Name="RejectReason" Content="Reject reason" Margin="390,322,0,38" HorizontalAlignment="Left"  Width="120" Height="50"
+                    Command="{Binding RejectReasonCommand}" Grid.RowSpan="2"/>
             <Button x:Name="Delete" Content="Delete" Margin="0,-45,20,10" HorizontalAlignment="Right" Width="120" Height="50"  Grid.Row="3" Background="OrangeRed"
                     Command="{Binding DeleteMedicineCommand}"/>
         </Grid>

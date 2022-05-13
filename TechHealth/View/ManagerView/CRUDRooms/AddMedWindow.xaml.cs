@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using TechHealth.Controller;
 using TechHealth.Conversions;
 using TechHealth.Model;
+using TechHealth.Repository;
 
 namespace TechHealth.View.ManagerView.CRUDRooms
 {
@@ -42,7 +43,7 @@ namespace TechHealth.View.ManagerView.CRUDRooms
             med.MainSubstance = ManagerConversions.StringToSubstance(TxtMainSubstance.Text);
             med.Price = 0;
             med.MedicineStatus = MedicineStatus.Waiting;
-            med.Composition = new List<Substance>();
+            med.Composition = SubstanceRepository.Instance.GetAllToList();
 
             medicineController.Create(med);
             medicines.Add(med);

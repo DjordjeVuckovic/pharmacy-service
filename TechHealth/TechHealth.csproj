@@ -298,8 +298,11 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Model\Anamnesis.cs" />
+    <Compile Include="Model\Anketa.cs" />
+    <Compile Include="Model\AppointmentGrade.cs" />
     <Compile Include="Model\DoctorVacationRequest.cs" />
     <Compile Include="Model\EquipmentType.cs" />
+    <Compile Include="Model\HospitalGrade.cs" />
     <Compile Include="Model\MedicineStatus.cs" />
     <Compile Include="Model\PatientAllergens.cs" />
     <Compile Include="Model\PatientRecommendType.cs" />
@@ -324,6 +327,7 @@
     <Compile Include="Repository\EquipmentReallocationRepository.cs" />
     <Compile Include="Repository\EquipmentRepository.cs" />
     <Compile Include="Repository\GenericRepository.cs" />
+    <Compile Include="Repository\GradeRepository.cs" />
     <Compile Include="Repository\ManagerRepository.cs" />
     <Compile Include="Repository\MedicalRecordRepository.cs" />
     <Compile Include="Repository\MedicineRepository.cs" />
@@ -339,6 +343,7 @@
     <Compile Include="Repository\RoomSeparationRepository.cs" />
     <Compile Include="Repository\SecretaryRepository.cs" />
     <Compile Include="Repository\SpecializationRepository.cs" />
+    <Compile Include="Repository\SubstanceRepository.cs" />
     <Compile Include="Repository\TherapyRepository.cs" />
     <Compile Include="Service\AccountService.cs" />
     <Compile Include="Service\AllergenService.cs" />
@@ -414,6 +419,7 @@
     <Compile Include="View\ManagerView\ViewModel\HomeViewModel.cs" />
     <Compile Include="View\ManagerView\ViewModel\MainViewModel.cs" />
     <Compile Include="View\ManagerView\ViewModel\MedViewModel.cs" />
+    <Compile Include="View\ManagerView\ViewModel\RejectReasonViewModel.cs" />
     <Compile Include="View\ManagerView\ViewModel\RoomViewModel.cs" />
     <Compile Include="View\ManagerView\VieW\AddMedView.xaml.cs">
       <DependentUpon>AddMedView.xaml</DependentUpon>
@@ -427,14 +433,24 @@
     <Compile Include="View\ManagerView\VieW\MedView.xaml.cs">
       <DependentUpon>MedView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\ManagerView\VieW\RejectReasonView.xaml.cs">
+      <DependentUpon>RejectReasonView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\ManagerView\VieW\RoomView.xaml.cs">
       <DependentUpon>RoomView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\PatientView\AddAppointment.xaml.cs">
       <DependentUpon>AddAppointment.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\PatientView\RateAppointment.xaml.cs">
+      <DependentUpon>RateAppointment.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\PatientView\SuggestAppointment.xaml.cs">
       <DependentUpon>SuggestAppointment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PatientView\ViewModel\AppointmentHistoryViewModel.cs" />
+    <Compile Include="View\PatientView\View\AppointmentHistory.xaml.cs">
+      <DependentUpon>AppointmentHistory.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\PatientView\View\AppointmentView.xaml.cs">
       <DependentUpon>AppointmentView.xaml</DependentUpon>
@@ -532,6 +548,8 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="Json\equipmentReallocation.json" />
+    <None Include="Json\grade.json" />
+    <None Include="Json\hospitalrating.json" />
     <None Include="Json\medicalrecord.json" />
     <None Include="Json\patientAllergens.json" />
     <None Include="Json\room.json" />
@@ -540,6 +558,7 @@
     <None Include="Json\roomMerging.json" />
     <None Include="Json\roomRenovation.json" />
     <None Include="Json\roomSeparation.json" />
+    <None Include="Json\substance.json" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -710,6 +729,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\ManagerView\VieW\RejectReasonView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\ManagerView\VieW\RoomView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -718,7 +741,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\PatientView\RateAppointment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\PatientView\SuggestAppointment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PatientView\View\AppointmentHistory.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

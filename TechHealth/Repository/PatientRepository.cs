@@ -58,7 +58,7 @@ namespace TechHealth.Repository
             return null;
         }
 
-      public Patient GetPatientByUser(string user)
+        public Patient GetPatientByUser(string user)
         {
             {
                 foreach (var pat in GetAllToList())
@@ -71,6 +71,20 @@ namespace TechHealth.Repository
 
                 return null;
             }
+        }
+
+        public List<Appointment> GetPastAppointmentsForPatient(string patientId)
+        {
+            List<Appointment> scheduledAppointments = AppointmentRepository.Instance.GetByPatientId("2456");
+            for (int i = 0; i < scheduledAppointments.Count; i++)
+            {
+                if (!scheduledAppointments[i].GetIfPast() || scheduledAppointments[i].Patient.Jmbg != "2456")
+                {
+                    scheduledAppointments.RemoveAt(i);
+                    i--;
+                }
+            }
+            return scheduledAppointments;
         }
 
     }
