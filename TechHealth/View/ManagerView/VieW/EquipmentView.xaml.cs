@@ -16,6 +16,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using TechHealth.Annotations;
+using TechHealth.Controller;
 using TechHealth.Core;
 using TechHealth.Model;
 using TechHealth.Repository;
@@ -31,6 +32,8 @@ namespace TechHealth.View.ManagerView.VieW
     {
         private ObservableCollection<Equipment> eqlist;
         private Equipment selectedItem;
+        private string type;
+        private EquipmentController equipmentController = new EquipmentController();
         public event PropertyChangedEventHandler PropertyChanged;
         public RelayCommand AddEquipmentCommand { get; set; }
         public RelayCommand DeleteEquipmentCommand { get; set; }
@@ -65,7 +68,7 @@ namespace TechHealth.View.ManagerView.VieW
         }
         public EquipmentView()
         {
-            InitializeComponent();
+            InitializeComponent();            
             DataContext = this;
             eqlist = new ObservableCollection<Equipment>(EquipmentRepository.Instance.GetAllToList());
             AddEquipmentCommand = new RelayCommand(param => ExecuteAdd());
@@ -137,7 +140,7 @@ namespace TechHealth.View.ManagerView.VieW
 
         private void search_TextChanged(object sender, TextChangedEventArgs e)
         {
-            eqlist = new ObservableCollection<Equipment>();
+            //eqlist = new ObservableCollection<Equipment>();
             eqlist.Clear();
 
             if (search.Text.Equals(""))
@@ -151,11 +154,29 @@ namespace TechHealth.View.ManagerView.VieW
             {
                 foreach (var eq in EquipmentRepository.Instance.GetAllToList())
                 {
-                    if (eq.name.Contains(search.Text) || eq.quantity.ToString().Contains(search.Text) || eq.id.Contains(search.Text) || eq.type.ToString().Contains(search.Text))
+                    if (eq.name.ToLower().Contains(search.Text.ToLower()) || eq.quantity.ToString().ToLower().Contains(search.Text.ToLower()) || eq.id.ToLower().Contains(search.Text.ToLower()) || eq.type.ToString().ToLower().Contains(search.Text.ToLower()))
                     {
                         eqlist.Add(eq);
                     }
                 }
+            }
+            //dataEquipment.ItemsSource = eqlist;
+        }
+
+        private void CbType_DropDownClosed(object sender, EventArgs e)
+        {
+            type = CbType.Text;
+            if (type.Equals("Statical"))
+            {
+                eqlist = new ObservableCollection<Equipment>(equipmentController.GetEquipmentByEqType(EquipmentType.statical));
+            }
+            else if (type.Equals("Dynamical"))
+            {
+                eqlist = new ObservableCollection<Equipment>(equipmentController.GetEquipmentByEqType(EquipmentType.dynamical));
+            }
+            else
+            {
+                eqlist = new ObservableCollection<Equipment>(EquipmentRepository.Instance.GetAllToList());
             }
             dataEquipment.ItemsSource = eqlist;
         }
