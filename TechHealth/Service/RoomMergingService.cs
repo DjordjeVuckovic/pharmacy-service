@@ -46,5 +46,22 @@ namespace TechHealth.Service
 
             roomEquipmentService.MoveEquipmentToWarehouse(rm.RoomOne, rm.RoomTwo);
         }
+
+        public void MergeOnDate(object state)
+        {
+            List<RoomMerging> roomMergings = new List<RoomMerging>();
+            roomMergings = RoomMergingRepository.Instance.GetAllToList();
+            foreach (var rm in roomMergings)
+            {
+                if (DateTime.Compare(DateTime.Now, rm.MergeEnd) == 0 || DateTime.Compare(rm.MergeEnd, DateTime.Now) < 0)
+                {
+                    App.Current.Dispatcher.Invoke((Action)delegate
+                    {
+                        MergeRooms(rm);
+                        RoomMergingRepository.Instance.Delete(rm.MergeID);
+                    });
+                }
+            }
+        }
     }
 }

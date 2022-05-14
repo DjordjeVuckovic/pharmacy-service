@@ -5,21 +5,32 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TechHealth.View.ManagerView.CRUDRooms"
         mc:Ignorable="d"
-        Title="AddMedWindow" Height="450" Width="435">
+        Title="AddMedWindow" Height="450" Width="550">
     <Grid Background="#272537">
-        <Label Content="Medicine name:" HorizontalAlignment="Left" Margin="51,78,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White"/>
-        <Label Content="Main substance:" HorizontalAlignment="Left" Margin="51,155,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White"/>
-        <Label Content="Quantity:" HorizontalAlignment="Left" Margin="51,255,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White"/>
-        <Label Content="Units:" HorizontalAlignment="Left" Margin="267,78,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White"/>
-        <Label Content="Side effects:" HorizontalAlignment="Left" Margin="267,155,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White"/>
-        <TextBox HorizontalAlignment="Left" Margin="51,112,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="22" x:Name="TxtMedName"/>
-        <TextBox HorizontalAlignment="Left" Margin="267,204,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="125" x:Name="TxtSideEffects"/>
-        <TextBox HorizontalAlignment="Left" Margin="51,204,0,0" VerticalAlignment="Top" Width="120" Height="22" x:Name="TxtMainSubstance">
+        <Label Content="Medicine name:" HorizontalAlignment="Left" Margin="30,78,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White"/>
+        <Label Content="Main substance:" HorizontalAlignment="Left" Margin="30,155,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White"/>
+        <Label Content="Quantity:" HorizontalAlignment="Left" Margin="30,257,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White"/>
+        <Label Content="Units:" HorizontalAlignment="Left" Margin="230,78,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White"/>
+        <Label Content="Side effects:" HorizontalAlignment="Center" Margin="0,155,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White"/>
+        <Label Content="Price:" HorizontalAlignment="Left" Margin="398,78,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White"/>
+        <Label Content="Substances:" HorizontalAlignment="Left" Margin="398,155,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White"/>
+        <TextBox HorizontalAlignment="Left" Margin="30,112,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="22" x:Name="TxtMedName"/>
+        <TextBox HorizontalAlignment="Left" Margin="233,204,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="125" x:Name="TxtSideEffects"/>
+        <TextBox HorizontalAlignment="Left" Margin="30,0,0,0" VerticalAlignment="Center" Width="120" Height="22" x:Name="TxtMainSubstance">
         </TextBox>
-        <TextBox HorizontalAlignment="Left" Margin="51,307,0,0" VerticalAlignment="Top" Width="120" Height="22" x:Name="TxtQuantity">
+        <TextBox HorizontalAlignment="Left" Margin="30,307,0,0" VerticalAlignment="Top" Width="120" Height="22" x:Name="TxtQuantity">
         </TextBox>
-        <TextBox HorizontalAlignment="Left" Margin="267,112,0,0" VerticalAlignment="Top" Width="120" Height="22" RenderTransformOrigin="0.033,0.608" x:Name="TxtUnits">
+        <TextBox HorizontalAlignment="Left" Margin="230,112,0,0" VerticalAlignment="Top" Width="120" Height="22" RenderTransformOrigin="0.033,0.608" x:Name="TxtUnits">
         </TextBox>
+        <TextBox HorizontalAlignment="Left" Margin="398,112,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="22" x:Name="TxtPrice"/>
+        <ListView x:Name="substanceList"  Width="120" Margin="398,204,32,105" Height="125"
+                  SelectionMode="Multiple" ItemsSource="{Binding Substances}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+        </ListView>
         <Label Content="Add a medicine" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="20" Foreground="White"/>
         <Button Content="Confirm" HorizontalAlignment="Left" Margin="111,381,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal" Height="30" Width="70" RenderTransformOrigin="-0.291,0.467" Background="#FF42C130" Click="Button_Click_Confirm"/>
         <Button Content="Close" HorizontalAlignment="Left" Margin="254,381,0,0" VerticalAlignment="Top" Width="70" Height="30" FontSize="16" Background="#FFEA9292" RenderTransformOrigin="0.602,1.633" Click="Button_Click_Close"/>

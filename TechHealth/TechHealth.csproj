@@ -170,6 +170,7 @@
     <Compile Include="Controller\RoomMergingController.cs" />
     <Compile Include="Controller\RoomSeparationController.cs" />
     <Compile Include="Controller\SpecializationController.cs" />
+    <Compile Include="Controller\SubstanceController.cs" />
     <Compile Include="Controller\TherapyController.cs" />
     <Compile Include="Conversions\AddressConverter.cs" />
     <Compile Include="Conversions\ManagerConversions.cs" />
@@ -365,6 +366,7 @@
     <Compile Include="Service\RoomSeparationService.cs" />
     <Compile Include="Service\RoomService.cs" />
     <Compile Include="Service\SpecializationService.cs" />
+    <Compile Include="Service\SubstanceService.cs" />
     <Compile Include="Service\TherapyService.cs" />
     <Compile Include="Store\NavigationStore.cs" />
     <Compile Include="ValidationRules\FutureDateValidationRule.cs" />
