@@ -1,28 +1,15 @@
 {
-  "a59a773f9c2a4e4bab50773a6d2c63f7": {
-    "SeparationStart": "2022-05-13T11:00:00",
-    "SeparationEnd": "2022-05-14T11:00:00",
+  "a0e62cfafc9a4e5e96c682d29a3ddc54": {
+    "SeparationStart": "2022-05-14T11:00:00",
+    "SeparationEnd": "2022-05-28T11:00:00",
     "RoomOne": {
-      "roomId": "S2",
-      "ShouldSerialize": false
-    },
-    "RoomTwo": {
-      "roomId": "S5",
-      "ShouldSerialize": false
-    },
-    "SeparationID": "a59a773f9c2a4e4bab50773a6d2c63f7"
-  },
-  "25905a7e9fcd4133bf8adcbb21699c59": {
-    "SeparationStart": "2022-05-13T11:00:00",
-    "SeparationEnd": "2022-05-14T12:00:00",
-    "RoomOne": {
-      "roomId": "S4",
-      "ShouldSerialize": false
-    },
-    "RoomTwo": {
       "roomId": "S6",
       "ShouldSerialize": false
     },
-    "SeparationID": "25905a7e9fcd4133bf8adcbb21699c59"
+    "RoomTwo": {
+      "roomId": "S7",
+      "ShouldSerialize": false
+    },
+    "SeparationID": "a0e62cfafc9a4e5e96c682d29a3ddc54"
   }
 }

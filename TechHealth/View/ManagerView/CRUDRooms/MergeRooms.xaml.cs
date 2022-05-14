@@ -26,6 +26,7 @@ namespace TechHealth.View.ManagerView.CRUDRooms
         private List<String> rooms;
         private Room selected;
         private RoomMergingController roomMergingController = new RoomMergingController();
+        private RoomController roomController = new RoomController();
         public MergeRooms(Room rm)
         {
             InitializeComponent();
@@ -49,9 +50,27 @@ namespace TechHealth.View.ManagerView.CRUDRooms
             rm.RoomType = ManagerConversions.StringToRoomType(CbType.Text);
             rm.MergeID = Guid.NewGuid().ToString("N");
 
-            roomMergingController.Create(rm);
-            roomMergingController.MergeRooms(rm);
+            Room roomOne = roomController.GetRoombyId(rm.RoomOne);
+            Room roomTwo = roomController.GetRoombyId(rm.RoomTwo);
 
+            if (roomOne.floor != roomTwo.floor)
+            {
+                MessageBox.Show("Can't perform merging because rooms aren't on the same floor");
+                return;
+            }
+            else
+            {
+                if (DateTime.Compare(DateTime.Now, rm.MergeEnd) == 0)
+                {
+                    roomMergingController.MergeRooms(rm);
+                }
+                else
+                {
+                    roomMergingController.Create(rm);
+                }
+                //roomMergingController.Create(rm);
+                //roomMergingController.MergeRooms(rm);
+            }
             this.Close(); 
         }
 
