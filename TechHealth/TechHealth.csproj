@@ -487,6 +487,9 @@
     <Compile Include="View\SecretaryView\AppointmentsViewSecretary.xaml.cs">
       <DependentUpon>AppointmentsViewSecretary.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\SecretaryView\GuestsView.xaml.cs">
+      <DependentUpon>GuestsView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\SecretaryView\MedicalRecordView.xaml.cs">
       <DependentUpon>MedicalRecordView.xaml</DependentUpon>
     </Compile>
@@ -585,6 +588,7 @@
     <Content Include="Json\rejectedMedicine.json" />
     <Content Include="Json\secretary.json" />
     <Content Include="Json\specialization.json" />
+    <Resource Include="View\SecretaryView\resources\bars.png" />
     <Resource Include="resources\ZDRAVOicon.png" />
     <Resource Include="resources\appoint.png" />
     <Resource Include="resources\1a.png" />
@@ -792,6 +796,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\SecretaryView\AppointmentsViewSecretary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SecretaryView\GuestsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

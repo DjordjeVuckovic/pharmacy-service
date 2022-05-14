@@ -40,7 +40,6 @@ namespace TechHealth.View.SecretaryView
                 }
             }
             accountList.ItemsSource = users;
-            guestList.ItemsSource = guests;
         }
 
         private void Button_Click_Add(object sender, RoutedEventArgs e)
@@ -80,36 +79,6 @@ namespace TechHealth.View.SecretaryView
             }
             Patient patient = (Patient)accountList.SelectedItems[0];
             new UpdatePatient(patient).ShowDialog();
-            Update();
-        }
-        private void Button_Click_Add_Guest(object sender, RoutedEventArgs e)
-        {
-            new AddGuest().ShowDialog();
-            Update();
-        }
-        private void Button_Click_Delete_Guest(object sender, RoutedEventArgs e)
-        {
-            if (guestList.SelectedIndex == -1)
-            {
-                MessageBox.Show("You didn't select a guest.");
-                return;
-            }
-            Patient p = (Patient)guestList.SelectedItems[0];
-            if (p.Guest)
-            {
-                patientController.Delete(p.Jmbg);
-                Update();
-            }
-        }
-        private void Button_Click_Edit_Guest(object sender, RoutedEventArgs e)
-        {
-            if (guestList.SelectedIndex == -1)
-            {
-                MessageBox.Show("You didn't select a guest.");
-                return;
-            }
-            Patient patient = (Patient)guestList.SelectedItems[0];
-            new UpdateGuest(patient).ShowDialog();
             Update();
         }
         private void Button_Click_Allergens(object sender, RoutedEventArgs e)
@@ -188,6 +157,11 @@ namespace TechHealth.View.SecretaryView
                     guests.Add(r);
                 }
             }
+        }
+        private void Button_Guests(object sender, RoutedEventArgs e) 
+        {
+            new GuestsView().Show();
+            Close();
         }
         private void accountList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {

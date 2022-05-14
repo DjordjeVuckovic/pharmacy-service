@@ -38,11 +38,13 @@ namespace TechHealth.View.SecretaryView
         {
             patientController.Update("", "", null, null, guestId, 0, false, guestUsername.Text, guestPassword.Text, "", false, true, "");
 
-            this.Close();
+            Close();
+            new GuestsView().Show();
         }
         private void Button_Click_Cancel(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            Close();
+            new GuestsView().Show();
         }
     }
 }

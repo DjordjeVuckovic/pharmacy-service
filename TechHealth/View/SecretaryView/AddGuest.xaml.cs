@@ -52,11 +52,13 @@ namespace TechHealth.View.SecretaryView
             }
             patientController.Create(guestUsername.Text, "", null, null, "guest" + guestId.ToString(), 0, false, guestUsername.Text, guestPassword.Text, "", false, true, "");
             guestId++;
-            this.Close();
+            Close();
+            new GuestsView().Show();
         }
         private void Button_Click_Cancel(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            Close();
+            new GuestsView().Show();
         }
     }
 }
