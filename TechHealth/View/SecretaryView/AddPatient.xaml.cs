@@ -84,10 +84,12 @@ namespace TechHealth.View.SecretaryView
             medicalRecordController.Create(accountName.Text+accountSurname.Text+accountJmbg.Text, Bloodtype.None, p, "", "", "", "", "", ed);
 
             this.Close();
+            new AccountsView().Show();
         }
         private void Button_Click_Cancel(object sender, RoutedEventArgs e)
         {
             this.Close();
+            new AccountsView().Show();
         }
 
         private void accountStreet_TextChanged(object sender, TextChangedEventArgs e)

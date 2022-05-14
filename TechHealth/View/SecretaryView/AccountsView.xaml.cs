@@ -53,8 +53,7 @@ namespace TechHealth.View.SecretaryView
             if (!p.Guest)
             {
                 patientController.Delete(p.Jmbg);
-                users = new ObservableCollection<Patient>(PatientRepository.Instance.GetAll().Values);
-                accountList.ItemsSource = users;
+                Update();
                 foreach (var pa in PatientAllergensRepository.Instance.GetAll().Values)
                 {
                     if (pa.PatientJMBG.Equals(p.Jmbg))

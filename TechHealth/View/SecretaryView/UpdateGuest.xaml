@@ -5,12 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TechHealth.View.SecretaryView"
         mc:Ignorable="d"
-        Title="UpdateGuest" Height="650" Width="430"
+        Title="UpdateGuest" Height="650" Width="400"
         WindowStartupLocation="CenterScreen">
     <Grid>
         <Label Content="Edit Guest" HorizontalAlignment="Center" Margin="0,98,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
-        <Label Content="Username" HorizontalAlignment="Left" Margin="77,140,0,0" VerticalAlignment="Top" FontSize="16"/>
-        <Label Content="Password" HorizontalAlignment="Left" Margin="77,219,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <Label Content="Username" HorizontalAlignment="Center" Margin="-195,140,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <Label Content="Password" HorizontalAlignment="Center" Margin="-195,219,0,0" VerticalAlignment="Top" FontSize="16"/>
         <TextBox x:Name="guestUsername" HorizontalAlignment="Center" Margin="0,176,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="266" FontSize="16"/>
         <TextBox x:Name="guestPassword" HorizontalAlignment="Center" Margin="0,250,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="266" FontSize="16"/>
         <Button x:Name="Cancel" Background="Black" Foreground="White" Content="Cancel" HorizontalAlignment="Center" Margin="0,354,0,0" VerticalAlignment="Top" Width="266" Click="Button_Click_Cancel" Height="32" FontSize="16" FontWeight="Bold" />
@@ -26,8 +26,6 @@
             </Button.ContextMenu>
         </Button>
         <Label Content="TechHealth" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="28" FontWeight="Bold" Margin="0,7,0,0"/>
-        <TextBox HorizontalAlignment="Left" Margin="300,23,0,0" TextWrapping="Wrap" Text="Search..." VerticalAlignment="Top" Width="120"/>
-        <Button Background="Black" Foreground="White" Content="Allergens" HorizontalAlignment="Center" Margin="0,530,0,0" VerticalAlignment="Top" Width="266" Click="Button_Click_Allergens" Height="32" FontSize="16" FontWeight="Bold"/>
-        <Button Background="Black" Foreground="White" Content="Medical Record" HorizontalAlignment="Center" Margin="0,567,0,0" VerticalAlignment="Top" Width="266" Click="Button_Click_MedicalRecord" Height="32" FontSize="16" FontWeight="Bold"/>
+        <TextBox HorizontalAlignment="Left" Margin="300,23,0,0" TextWrapping="Wrap" Text="Search..." VerticalAlignment="Top" Width="90"/>
     </Grid>
 </Window>
