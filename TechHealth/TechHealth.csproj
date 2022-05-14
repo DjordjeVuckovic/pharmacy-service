@@ -469,6 +469,9 @@
     <Compile Include="View\PatientView\View\HomeViewP.xaml.cs">
       <DependentUpon>HomeViewP.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\SecretaryView\AccountsView.xaml.cs">
+      <DependentUpon>AccountsView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\SecretaryView\AddAllergen.xaml.cs">
       <DependentUpon>AddAllergen.xaml</DependentUpon>
     </Compile>
@@ -772,6 +775,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\PatientView\View\HomeViewP.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SecretaryView\AccountsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -7,22 +7,29 @@
         mc:Ignorable="d"
         Title="GuestsView" Height="650" Width="430"
         WindowStartupLocation="CenterScreen">
-    <Window.Resources>
-        <Image x:Key="Bars" Source="resources/bars.png"/>
-    </Window.Resources>
     <Grid>
-            <ListView x:Name="guestList" Margin="82,127,82,131">
-                <ListView.View>
-                    <GridView>
-                        <GridViewColumn Header="Username" Width="250" DisplayMemberBinding="{Binding Username}" />
-                    </GridView>
-                </ListView.View>
-            </ListView>
-            <Label Content="Guests" HorizontalAlignment="Center" Margin="0,80,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
-            <Button x:Name="addGuest" Background="Black" Foreground="White" Content="Add" HorizontalAlignment="Center" Margin="0,510,0,0" VerticalAlignment="Top" Width="266" Click="Button_Click_Add_Guest" Height="32" FontWeight="Bold" FontSize="16"/>
-            <Button x:Name="deleteGuest" Background="Black" Foreground="White" Content="Delete" HorizontalAlignment="Center" Margin="0,584,0,0" VerticalAlignment="Top" Width="266" Click="Button_Click_Delete_Guest" Height="32" FontSize="16" FontWeight="Bold"/>
-            <Button x:Name="editGuest" Background="Black" Foreground="White" Content="Edit" HorizontalAlignment="Center" Margin="0,547,0,0" VerticalAlignment="Top" Width="266" Click="Button_Click_Edit_Guest" Height="32" FontSize="16" FontWeight="Bold"/>
-            <Rectangle HorizontalAlignment="Center" Height="63" Stroke="Black" VerticalAlignment="Top" Width="430"/>
-            <Button Content="{StaticResource Bars}" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="44" Width="55"/>
-        </Grid>
+        <ListView x:Name="guestList" Margin="82,127,82,131">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Username" Width="250" DisplayMemberBinding="{Binding Username}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Label Content="Guests" HorizontalAlignment="Center" Margin="0,80,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
+        <Button x:Name="addGuest" Background="Black" Foreground="White" Content="Add" HorizontalAlignment="Center" Margin="0,510,0,0" VerticalAlignment="Top" Width="266" Click="Button_Click_Add_Guest" Height="32" FontWeight="Bold" FontSize="16"/>
+        <Button x:Name="deleteGuest" Background="Black" Foreground="White" Content="Delete" HorizontalAlignment="Center" Margin="0,584,0,0" VerticalAlignment="Top" Width="266" Click="Button_Click_Delete_Guest" Height="32" FontSize="16" FontWeight="Bold"/>
+        <Button x:Name="editGuest" Background="Black" Foreground="White" Content="Edit" HorizontalAlignment="Center" Margin="0,547,0,0" VerticalAlignment="Top" Width="266" Click="Button_Click_Edit_Guest" Height="32" FontSize="16" FontWeight="Bold"/>
+        <Rectangle HorizontalAlignment="Center" Height="63" Stroke="Black" VerticalAlignment="Top" Width="430"/>
+        <Button Click="Button_Click_Main" HorizontalAlignment="Left" Margin="28,10,0,0" VerticalAlignment="Top" Height="44" Width="55" BorderBrush="#FFFBFBFB" Foreground="White" Background="White">
+            <Image Source="resources/bars.png"/>
+            <Button.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Home"/>
+                    <MenuItem Header="Log Out"/>
+                </ContextMenu>
+            </Button.ContextMenu>
+        </Button>
+        <Label Content="TechHealth" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="28" FontWeight="Bold" Margin="0,7,0,0"/>
+        <TextBox HorizontalAlignment="Left" Margin="300,23,0,0" TextWrapping="Wrap" Text="Search..." VerticalAlignment="Top" Width="120"/>
+    </Grid>
 </Window>

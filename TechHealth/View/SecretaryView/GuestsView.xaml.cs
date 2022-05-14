@@ -67,6 +67,11 @@ namespace TechHealth.View.SecretaryView
             new UpdateGuest(patient).ShowDialog();
             Update();
         }
+        private void LogOut(object sender, RoutedEventArgs e)
+        {
+            new LoginWindow().Show();
+            Close();
+        }
         public void Update()
         {
             guests.Clear();
@@ -77,6 +82,11 @@ namespace TechHealth.View.SecretaryView
                     guests.Add(r);
                 }
             }
+        }
+        private void Button_Click_Main(object sender, RoutedEventArgs e)
+        {
+            new SecretaryMainWindow().Show();
+            this.Close();
         }
     }
 }

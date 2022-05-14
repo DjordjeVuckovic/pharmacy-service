@@ -25,6 +25,11 @@ namespace TechHealth.View.SecretaryView
         {
             InitializeComponent();
         }
+        private void Button_Click_Main(object sender, RoutedEventArgs e)
+        {
+            new SecretaryMainWindow().Show();
+            this.Close();
+        }
         private void Button_Click_Confirm(object sender, RoutedEventArgs e)
         {
             var address = new Address();

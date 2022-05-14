@@ -18,32 +18,27 @@ using TechHealth.Controller;
 
 namespace TechHealth.View.SecretaryView
 {
-    public partial class SecretaryMainWindow : Window
+    public partial class AccountsView : Window
     {
         private ObservableCollection<Patient> users = new ObservableCollection<Patient>();
-        private ObservableCollection<Patient> guests = new ObservableCollection<Patient>();
         private PatientController patientController = new PatientController();
         private PatientAllergensController patientAllergensController = new PatientAllergensController();
         private MedicalRecordController medicalRecordController = new MedicalRecordController();
-        public SecretaryMainWindow()
+        public AccountsView()
         {
             InitializeComponent();
-            foreach(var p in PatientRepository.Instance.GetAll().Values)
+            foreach (var p in PatientRepository.Instance.GetAll().Values)
             {
                 if (!p.Guest)
                 {
                     users.Add(p);
                 }
-                else
-                {
-                    guests.Add(p);
-                }
             }
             accountList.ItemsSource = users;
         }
-
         private void Button_Click_Add(object sender, RoutedEventArgs e)
         {
+            Hide();
             new AddPatient().ShowDialog();
             Update();
         }
@@ -55,12 +50,12 @@ namespace TechHealth.View.SecretaryView
                 return;
             }
             Patient p = (Patient)accountList.SelectedItems[0];
-            if(!p.Guest)
+            if (!p.Guest)
             {
                 patientController.Delete(p.Jmbg);
                 users = new ObservableCollection<Patient>(PatientRepository.Instance.GetAll().Values);
                 accountList.ItemsSource = users;
-                foreach(var pa in PatientAllergensRepository.Instance.GetAll().Values)
+                foreach (var pa in PatientAllergensRepository.Instance.GetAll().Values)
                 {
                     if (pa.PatientJMBG.Equals(p.Jmbg))
                     {
@@ -78,6 +73,7 @@ namespace TechHealth.View.SecretaryView
                 return;
             }
             Patient patient = (Patient)accountList.SelectedItems[0];
+            Hide();
             new UpdatePatient(patient).ShowDialog();
             Update();
         }
@@ -111,66 +107,21 @@ namespace TechHealth.View.SecretaryView
             new MedicalRecordView(medicalRecord).ShowDialog();
             Update();
         }
-        private void Button_Click_LogOut(object sender, RoutedEventArgs e)
-        {
-            new LoginWindow().Show();
-            Close();
-        }
-        private void Button_Click_Examinations(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                DateTime date = DateTime.Parse(datePicker.Text);
-                new AppointmentsViewSecretary(date, AppointmentType.examination).Show();
-            }
-            catch
-            {
-                MessageBox.Show("You didn't select a date.");
-                return;
-            }
-        }
-        private void Button_Click_Operations(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                DateTime date = DateTime.Parse(datePicker.Text);
-                new AppointmentsViewSecretary(date, AppointmentType.operation).Show();
-            }
-            catch
-            {
-                MessageBox.Show("You didn't select a date.");
-                return;
-            }
-        }
         public void Update()
         {
             users.Clear();
-            guests.Clear();
             foreach (var r in PatientRepository.Instance.GetAll().Values)
             {
                 if (!r.Guest)
                 {
                     users.Add(r);
                 }
-                else
-                {
-                    guests.Add(r);
-                }
             }
         }
-        private void Button_Guests(object sender, RoutedEventArgs e) 
+        private void Button_Click_Main(object sender, RoutedEventArgs e)
         {
-            new GuestsView().Show();
-            Close();
-        }
-        private void Button_Accounts(object sender, RoutedEventArgs e)
-        {
-            new AccountsView().Show();
-            Close();
-        }
-        private void accountList_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
+            new SecretaryMainWindow().Show();
+            this.Close();
         }
     }
 }
