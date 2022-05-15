@@ -25,6 +25,7 @@ namespace TechHealth.View.SecretaryView
         private List<Room> rooms = new List<Room>();
         private AppointmentController appointmentController = new AppointmentController();
         private AppointmentType t;
+        private DateTime d;
         private string id;
         public UpdateAppointmentSecretary(Appointment appointment)
         {
@@ -32,6 +33,7 @@ namespace TechHealth.View.SecretaryView
             this.DataContext = this;
             id = appointment.IdAppointment;
             t = appointment.AppointmentType;
+            d = appointment.Date;
             if (t.Equals(AppointmentType.examination))
             {
                 addLabel.Content = "Edit Examination";
@@ -130,9 +132,16 @@ namespace TechHealth.View.SecretaryView
             };
             appointmentController.Update(a);
             Close();
+            new AppointmentsViewSecretary(d, t);
         }
         private void Button_Click_Cancel(object sender, RoutedEventArgs e)
         {
+            this.Close();
+            new AppointmentsViewSecretary(d, t);
+        }
+        private void Button_Click_Main(object sender, RoutedEventArgs e)
+        {
+            new SecretaryMainWindow().Show();
             this.Close();
         }
     }

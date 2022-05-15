@@ -56,9 +56,15 @@ namespace TechHealth.View.SecretaryView
             pickedDate.Content += date.ToString("dd.MM.yyyy.");
             examinationList.ItemsSource = list;
         }
+        private void Button_Click_Main(object sender, RoutedEventArgs e)
+        {
+            new SecretaryMainWindow().Show();
+            this.Close();
+        }
         private void Button_Click_Add(object sender, RoutedEventArgs e)
         {
-            new AddAppointmentSecretary(type1).ShowDialog();
+            Hide();
+            new AddAppointmentSecretary(date1, type1).ShowDialog();
             Update();
         }
         private void Button_Click_Edit(object sender, RoutedEventArgs e)
@@ -69,6 +75,7 @@ namespace TechHealth.View.SecretaryView
                 return;
             }
             AppointmentsDTO a = (AppointmentsDTO)examinationList.SelectedItems[0];
+            Hide();
             new UpdateAppointmentSecretary(AppointmentRepository.Instance.GetById(a.idAppointment)).ShowDialog();
             Update();
         }

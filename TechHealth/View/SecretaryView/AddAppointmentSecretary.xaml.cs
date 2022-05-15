@@ -25,10 +25,12 @@ namespace TechHealth.View.SecretaryView
         private List<Room> rooms = new List<Room>();
         private AppointmentController appointmentController = new AppointmentController();
         private AppointmentType t1;
-        public AddAppointmentSecretary(AppointmentType t)
+        private DateTime d;
+        public AddAppointmentSecretary(DateTime date, AppointmentType t)
         {
             InitializeComponent();
             t1 = t;
+            d = date;
             if (t.Equals(AppointmentType.examination))
             {
                 addLabel.Content = "Add Examination";
@@ -70,6 +72,11 @@ namespace TechHealth.View.SecretaryView
             patientCombo.ItemsSource = patientsForCombo;
             roomCombo.ItemsSource = roomsForCombo;
         }
+        private void Button_Click_Main(object sender, RoutedEventArgs e)
+        {
+            new SecretaryMainWindow().Show();
+            this.Close();
+        }
         private void Button_Click_Confirm(object sender, RoutedEventArgs e)
         {
             Doctor dr = new Doctor();
@@ -103,10 +110,12 @@ namespace TechHealth.View.SecretaryView
             };
             appointmentController.Create(a);
             Close();
+            new AppointmentsViewSecretary(d, t1).Show();
         }
         private void Button_Click_Cancel(object sender, RoutedEventArgs e)
         {
             this.Close();
+            new AppointmentsViewSecretary(d, t1).Show();
         }
     }
 }
