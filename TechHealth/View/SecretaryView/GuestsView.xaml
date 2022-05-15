@@ -8,7 +8,7 @@
         Title="GuestsView" Height="650" Width="400"
         WindowStartupLocation="CenterScreen">
     <Grid>
-        <ListView x:Name="guestList" Margin="82,127,82,131">
+        <ListView x:Name="guestList" Margin="67,127,67,131">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Username" Width="250" DisplayMemberBinding="{Binding Username}" />

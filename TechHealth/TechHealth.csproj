@@ -496,6 +496,9 @@
     <Compile Include="View\SecretaryView\MedicalRecordView.xaml.cs">
       <DependentUpon>MedicalRecordView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\SecretaryView\AppointmentsPickDate.xaml.cs">
+      <DependentUpon>AppointmentsPickDate.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\SecretaryView\SecretaryMainWindow.xaml.cs">
       <DependentUpon>SecretaryMainWindow.xaml</DependentUpon>
     </Compile>
@@ -814,9 +817,13 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\SecretaryView\SecretaryMainWindow.xaml">
+    <Page Include="View\SecretaryView\AppointmentsPickDate.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\SecretaryView\SecretaryMainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\SecretaryView\UpdateAllergen.xaml">
       <SubType>Designer</SubType>

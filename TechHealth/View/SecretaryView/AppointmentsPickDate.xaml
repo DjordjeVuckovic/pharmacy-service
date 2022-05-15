@@ -1,18 +1,18 @@
-﻿<Window x:Class="TechHealth.View.SecretaryView.SecretaryMainWindow"
+﻿<Window x:Class="TechHealth.View.SecretaryView.AppointmentsPickDate"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TechHealth.View.SecretaryView"
         mc:Ignorable="d"
-        Title="SecretaryMainWindow" Height="650" Width="400"
+        Title="AppointmentsPickDate" Height="650" Width="400"
         WindowStartupLocation="CenterScreen">
     <Grid>
-        <Button Content="guests" Click="Button_Guests" HorizontalAlignment="Center" Margin="0,297,0,0" VerticalAlignment="Top"/>
-        <Button Content="accounts" Click="Button_Accounts" HorizontalAlignment="Center" Margin="0,211,0,0" VerticalAlignment="Top"/>
-        <Button Content="appointments" Click="Button_Appointments" HorizontalAlignment="Left" Margin="175,382,0,0" VerticalAlignment="Top"/>
+        <DatePicker x:Name="datePicker" HorizontalAlignment="Center" Margin="0,245,0,0" VerticalAlignment="Top" Width="272" FontSize="16" Height="31"/>
+        <Button Content="Examinations" Background="Black" Foreground="White" HorizontalAlignment="Center" Margin="0,294,0,0" VerticalAlignment="Top" Width="272" Click="Button_Click_Examinations" FontSize="16" FontWeight="Bold" Height="32"/>
+        <Button Content="Operations" Background="Black" Foreground="White" HorizontalAlignment="Center" Margin="0,340,0,0" VerticalAlignment="Top" Width="272" Click="Button_Click_Operations" Height="32" FontSize="16" FontWeight="Bold"/>
         <Rectangle HorizontalAlignment="Center" Height="63" Stroke="Black" VerticalAlignment="Top" Width="430"/>
-        <Button HorizontalAlignment="Left" Margin="28,10,0,0" VerticalAlignment="Top" Height="44" Width="55" BorderBrush="#FFFBFBFB" Foreground="White" Background="White">
+        <Button Click="Button_Click_Main" HorizontalAlignment="Left" Margin="28,10,0,0" VerticalAlignment="Top" Height="44" Width="55" BorderBrush="#FFFBFBFB" Foreground="White" Background="White">
             <Image Source="resources/bars.png"/>
             <Button.ContextMenu>
                 <ContextMenu>
@@ -23,5 +23,6 @@
         </Button>
         <Label Content="TechHealth" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="28" FontWeight="Bold" Margin="0,7,0,0"/>
         <TextBox HorizontalAlignment="Left" Margin="300,23,0,0" TextWrapping="Wrap" Text="Search..." VerticalAlignment="Top" Width="90"/>
+        <Label Content="Appointments" HorizontalAlignment="Center" Margin="0,152,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
     </Grid>
 </Window>

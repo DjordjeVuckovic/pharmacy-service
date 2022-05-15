@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,34 +23,7 @@ namespace TechHealth.View.SecretaryView
         {
             InitializeComponent();
         }
-
-        private void Button_Click_Examinations(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                DateTime date = DateTime.Parse(datePicker.Text);
-                new AppointmentsViewSecretary(date, AppointmentType.examination).Show();
-            }
-            catch
-            {
-                MessageBox.Show("You didn't select a date.");
-                return;
-            }
-        }
-        private void Button_Click_Operations(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                DateTime date = DateTime.Parse(datePicker.Text);
-                new AppointmentsViewSecretary(date, AppointmentType.operation).Show();
-            }
-            catch
-            {
-                MessageBox.Show("You didn't select a date.");
-                return;
-            }
-        }
-        private void Button_Guests(object sender, RoutedEventArgs e) 
+        private void Button_Guests(object sender, RoutedEventArgs e)
         {
             new GuestsView().Show();
             Close();
@@ -61,9 +33,10 @@ namespace TechHealth.View.SecretaryView
             new AccountsView().Show();
             Close();
         }
-        private void accountList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void Button_Appointments(object sender, RoutedEventArgs e)
         {
-
+            new AppointmentsPickDate().Show();
+            Close();
         }
     }
 }
