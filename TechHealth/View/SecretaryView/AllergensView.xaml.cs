@@ -38,9 +38,16 @@ namespace TechHealth.View.SecretaryView
                 }
             }
             allergenList.ItemsSource = allergens;
+            allergensLabel.Content = patient.Name + " " + patient.Surname + "'s Allergens";
+        }
+        private void Button_Click_Main(object sender, RoutedEventArgs e)
+        {
+            new SecretaryMainWindow().Show();
+            this.Close();
         }
         private void Button_Click_Add(object sender, RoutedEventArgs e)
         {
+            Hide();
             new AddAllergen(jmbg).ShowDialog();
             Update();
         }
@@ -52,6 +59,7 @@ namespace TechHealth.View.SecretaryView
                 return;
             }
             PatientAllergens patientAllergens = (PatientAllergens)allergenList.SelectedItems[0];
+            Hide();
             new UpdateAllergen(patientAllergens).ShowDialog();
             Update();
         }
@@ -65,6 +73,11 @@ namespace TechHealth.View.SecretaryView
             PatientAllergens pa = (PatientAllergens)allergenList.SelectedItems[0];
             patientAllergensController.Delete(pa.PatientJMBG+"-"+pa.AllergenName);
             Update();
+        }
+        private void Button_Click_Cancel(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            new AccountsView().Show();
         }
         public void Update()
         {

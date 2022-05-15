@@ -9,10 +9,10 @@
         WindowStartupLocation="CenterScreen">
     <Grid>
         <Label Content="Add Guest" HorizontalAlignment="Center" Margin="0,98,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
-        <Label Content="Username" HorizontalAlignment="Center" Margin="-195,140,0,0" VerticalAlignment="Top" FontSize="16"/>
-        <Label Content="Password" HorizontalAlignment="Center" Margin="-195,219,0,0" VerticalAlignment="Top" FontSize="16"/>
-        <TextBox x:Name="guestUsername" HorizontalAlignment="Center" Margin="0,176,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="266" FontSize="16"/>
-        <TextBox x:Name="guestPassword" HorizontalAlignment="Center" Margin="0,250,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="266" FontSize="16"/>
+        <Label Content="Username" HorizontalAlignment="Left" Margin="64,150,0,0" VerticalAlignment="Top"/>
+        <Label Content="Password" HorizontalAlignment="Left" Margin="64,219,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="guestUsername" HorizontalAlignment="Center" Margin="0,176,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="266"/>
+        <TextBox x:Name="guestPassword" HorizontalAlignment="Center" Margin="0,245,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="266"/>
         <Button x:Name="Cancel" Background="Black" Foreground="White" Content="Cancel" HorizontalAlignment="Center" Margin="0,354,0,0" VerticalAlignment="Top" Width="266" Click="Button_Click_Cancel" Height="32" FontSize="16" FontWeight="Bold" />
         <Button x:Name="Confirm" Background="Black" Foreground="White" Content="Confirm" HorizontalAlignment="Center" Margin="0,317,0,0" VerticalAlignment="Top" Width="266" Click="Button_Click_Confirm" Height="32" FontSize="16" FontWeight="Bold" />
         <Rectangle HorizontalAlignment="Center" Height="63" Stroke="Black" VerticalAlignment="Top" Width="430"/>

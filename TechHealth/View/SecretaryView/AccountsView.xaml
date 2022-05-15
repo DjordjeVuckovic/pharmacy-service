@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TechHealth.View.SecretaryView"
         mc:Ignorable="d"
-        Title="AccountsView" Height="680" Width="400"
+        Title="AccountsView" Height="650" Width="400"
         WindowStartupLocation="CenterScreen">
     <Grid>
         <ListView x:Name="accountList" Margin="67,100,67,250">

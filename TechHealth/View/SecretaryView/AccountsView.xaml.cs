@@ -84,6 +84,7 @@ namespace TechHealth.View.SecretaryView
                 return;
             }
             Patient patient = (Patient)accountList.SelectedItems[0];
+            Hide();
             new AllergensView(patient).ShowDialog();
             Update();
         }
@@ -103,6 +104,7 @@ namespace TechHealth.View.SecretaryView
                     medicalRecord = mr;
                 }
             }
+            Hide();
             new MedicalRecordView(medicalRecord).ShowDialog();
             Update();
         }
