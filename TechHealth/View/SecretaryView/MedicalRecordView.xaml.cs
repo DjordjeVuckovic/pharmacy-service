@@ -52,6 +52,11 @@ namespace TechHealth.View.SecretaryView
             textboxWorkplace.Text = medicalRecord.EmlpoymentData.Workplace;
             textboxJob.Text = medicalRecord.EmlpoymentData.Job;
         }
+        private void Button_Click_Main(object sender, RoutedEventArgs e)
+        {
+            new SecretaryMainWindow().Show();
+            this.Close();
+        }
         private void Button_Click_Confirm(object sender, RoutedEventArgs e)
         {
             EmlpoymentData ed = new EmlpoymentData();
@@ -64,10 +69,12 @@ namespace TechHealth.View.SecretaryView
             medicalRecordController.Update(id, lista[bloodTypeCombo.SelectedIndex], p, textboxWeight.Text, textboxHeight.Text, textboxChronicDiseases.Text, textboxParentDiseases.Text, textboxMartialStatus.Text, ed);
 
             this.Close();
+            new AccountsView().Show();
         }
         private void Button_Click_Cancel(object sender, RoutedEventArgs e)
         {
             this.Close();
+            new AccountsView().Show();
         }
     }
 }
