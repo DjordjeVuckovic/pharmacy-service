@@ -32,7 +32,7 @@ namespace TechHealth.View.SecretaryView
         {
             EquipmentRequest er = new EquipmentRequest(Guid.NewGuid().ToString("N"), equipmentName.Text, Int32.Parse(quantity.Text));
             EquipmentRequestRepository.Instance.Create(er);
-            new EquipmentRequestsView().Show();
+            new AddEquipmentRequest().Show();
             this.Close();
         }
         private void Button_Click_Cancel(object sender, RoutedEventArgs e)
