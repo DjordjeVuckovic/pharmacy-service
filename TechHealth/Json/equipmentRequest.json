@@ -1,13 +1,16 @@
 {
   "request1": {
+    "RequestId": "request1",
     "EquipmentName": "Gaza",
     "Quantity": 10
   },
   "request2": {
+    "RequestId": "request2",
     "EquipmentName": "Bandazer",
     "Quantity": 20
   },
   "request3": {
+    "RequestId": "request3",
     "EquipmentName": "Gaza",
     "Quantity": 10
   }

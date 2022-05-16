@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using TechHealth.Model;
 using TechHealth.Repository;
 using TechHealth.Controller;
+using TechHealth.Service;
 using System.Collections.ObjectModel;
 
 namespace TechHealth.View.SecretaryView
@@ -21,6 +22,7 @@ namespace TechHealth.View.SecretaryView
     public partial class EquipmentRequestsView : Window
     {
         private ObservableCollection<EquipmentRequest> requests = new ObservableCollection<EquipmentRequest>();
+        private RoomEquipmentController roomEquipmentController = new RoomEquipmentController();
         public EquipmentRequestsView()
         {
             InitializeComponent();
@@ -35,8 +37,16 @@ namespace TechHealth.View.SecretaryView
             new SecretaryMainWindow().Show();
             this.Close();
         }
-        private void Button_Click_Add(object sender, RoutedEventArgs e)
+        private void Button_Click_Store(object sender, RoutedEventArgs e)
         {
+            EquipmentRequest equipmentRequest = CheckSelect();
+            if (equipmentRequest == null)
+            {
+                return;
+            }
+            roomEquipmentController.UpdateQuantityWithRequest(equipmentRequest);
+            EquipmentRequestRepository.Instance.Delete(equipmentRequest.RequestId);
+            Update();
         }
         private void Button_Click_Delete(object sender, RoutedEventArgs e)
         {
@@ -48,6 +58,16 @@ namespace TechHealth.View.SecretaryView
             {
                 requests.Add(er);
             }
+        }
+        private EquipmentRequest CheckSelect()
+        {
+            if (requestList.SelectedIndex == -1)
+            {
+                MessageBox.Show("You didn't select a request.");
+                return null;
+            }
+            EquipmentRequest equipmentRequest = (EquipmentRequest)requestList.SelectedItems[0];
+            return equipmentRequest;
         }
     }
 }
