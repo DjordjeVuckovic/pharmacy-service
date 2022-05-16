@@ -9,7 +9,7 @@
         WindowStartupLocation="CenterScreen">
     <Grid>
         <Button x:Name="storeRequest" Background="Black" Foreground="White" Content="Store" HorizontalAlignment="Center" Margin="0,470,0,0" VerticalAlignment="Top" Width="272" Click="Button_Click_Store" FontSize="16" FontWeight="Bold" Height="32"/>
-        <Button x:Name="deleteRequest" Background="Black" Foreground="White" Content="Delete" HorizontalAlignment="Center" Margin="0,507,0,0" VerticalAlignment="Top" Width="272" Click="Button_Click_Delete" FontSize="16" FontWeight="Bold" Height="32"/>
+        <Button x:Name="deleteRequest" Background="Black" Foreground="White" Content="Delete" HorizontalAlignment="Center" Margin="0,544,0,0" VerticalAlignment="Top" Width="272" Click="Button_Click_Delete" FontSize="16" FontWeight="Bold" Height="32"/>
 
         <ListView x:Name="requestList" Margin="64,155,64,169">
             <ListView.View>
@@ -32,5 +32,6 @@
         <Label Content="TechHealth" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="28" FontWeight="Bold" Margin="0,7,0,0"/>
         <TextBox HorizontalAlignment="Left" Margin="300,23,0,0" TextWrapping="Wrap" Text="Search..." VerticalAlignment="Top" Width="90"/>
         <Label Content="Equipment Requests" HorizontalAlignment="Center" Margin="0,93,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
+        <Button x:Name="addRequest" Background="Black" Foreground="White" Content="Add" HorizontalAlignment="Center" Margin="0,507,0,0" VerticalAlignment="Top" Width="272" Click="Button_Click_Add" FontSize="16" FontWeight="Bold" Height="32"/>
     </Grid>
 </Window>

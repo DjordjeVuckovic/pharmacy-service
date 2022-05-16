@@ -45,6 +45,11 @@ namespace TechHealth.View.SecretaryView
             EquipmentRequestRepository.Instance.Delete(equipmentRequest.RequestId);
             Update();
         }
+        private void Button_Click_Add(object sender, RoutedEventArgs e)
+        {
+            Hide();
+            new AddEquipmentRequest().Show();
+        }
         private void Button_Click_Delete(object sender, RoutedEventArgs e)
         {
             EquipmentRequest equipmentRequest = CheckSelect();
