@@ -40,16 +40,17 @@ namespace TechHealth.View.SecretaryView
         private void Button_Click_Store(object sender, RoutedEventArgs e)
         {
             EquipmentRequest equipmentRequest = CheckSelect();
-            if (equipmentRequest == null)
-            {
-                return;
-            }
+            if (equipmentRequest == null){ return; }
             roomEquipmentController.UpdateQuantityWithRequest(equipmentRequest);
             EquipmentRequestRepository.Instance.Delete(equipmentRequest.RequestId);
             Update();
         }
         private void Button_Click_Delete(object sender, RoutedEventArgs e)
         {
+            EquipmentRequest equipmentRequest = CheckSelect();
+            if (equipmentRequest == null) { return; }
+            EquipmentRequestRepository.Instance.Delete(equipmentRequest.RequestId);
+            Update();
         }
         public void Update()
         {
