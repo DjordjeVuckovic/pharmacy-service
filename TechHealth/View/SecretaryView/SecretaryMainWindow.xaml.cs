@@ -38,5 +38,10 @@ namespace TechHealth.View.SecretaryView
             new AppointmentsPickDate().Show();
             Close();
         }
+        private void Button_Equipment(object sender, RoutedEventArgs e)
+        {
+            new EquipmentRequestsView().Show();
+            Close();
+        }
     }
 }

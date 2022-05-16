@@ -302,6 +302,7 @@
     <Compile Include="Model\Anketa.cs" />
     <Compile Include="Model\AppointmentGrade.cs" />
     <Compile Include="Model\DoctorVacationRequest.cs" />
+    <Compile Include="Model\EquipmentRequest.cs" />
     <Compile Include="Model\EquipmentType.cs" />
     <Compile Include="Model\HospitalGrade.cs" />
     <Compile Include="Model\MedicineStatus.cs" />
@@ -327,6 +328,7 @@
     <Compile Include="Repository\DoctorVacationRequestRepository.cs" />
     <Compile Include="Repository\EquipmentReallocationRepository.cs" />
     <Compile Include="Repository\EquipmentRepository.cs" />
+    <Compile Include="Repository\EquipmentRequestRepository.cs" />
     <Compile Include="Repository\GenericRepository.cs" />
     <Compile Include="Repository\GradeRepository.cs" />
     <Compile Include="Repository\ManagerRepository.cs" />
@@ -490,6 +492,9 @@
     <Compile Include="View\SecretaryView\AppointmentsViewSecretary.xaml.cs">
       <DependentUpon>AppointmentsViewSecretary.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\SecretaryView\EquipmentRequestsView.xaml.cs">
+      <DependentUpon>EquipmentRequestsView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\SecretaryView\GuestsView.xaml.cs">
       <DependentUpon>GuestsView.xaml</DependentUpon>
     </Compile>
@@ -559,6 +564,7 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="Json\equipmentReallocation.json" />
+    <None Include="Json\equipmentRequest.json" />
     <None Include="Json\grade.json" />
     <None Include="Json\hospitalrating.json" />
     <None Include="Json\medicalrecord.json" />
@@ -807,6 +813,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\SecretaryView\AppointmentsViewSecretary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SecretaryView\EquipmentRequestsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
