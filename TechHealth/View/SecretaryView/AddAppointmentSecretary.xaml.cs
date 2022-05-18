@@ -108,6 +108,40 @@ namespace TechHealth.View.SecretaryView
                 Room = rooms[roomCombo.SelectedIndex],
                 ShouldSerialize = true
             };
+            foreach (var app in AppointmentRepository.Instance.GetAll().Values)
+            {
+                if (a.Doctor.Jmbg.Equals(app.Doctor.Jmbg))
+                {
+                    if (a.Date.Equals(app.Date))
+                    {
+                        if (DateTime.Compare(DateTime.Parse(a.StartTimeD.ToString("HH:mm")), DateTime.Parse(app.StartTimeD.ToString("HH:mm"))) >= 0)
+                        {
+                            if (DateTime.Compare(DateTime.Parse(a.StartTimeD.ToString("HH:mm")), DateTime.Parse(app.FinishTimeD.ToString("HH:mm"))) <= 0)
+                            {
+                                MessageBox.Show("Doctor already has an appointment.");
+                                return;
+                            }
+                        }
+                    }
+                }
+            }
+            foreach (var app in AppointmentRepository.Instance.GetAll().Values)
+            {
+                if (a.Patient.Jmbg.Equals(app.Patient.Jmbg))
+                {
+                    if (a.Date.Equals(app.Date))
+                    {
+                        if (DateTime.Compare(DateTime.Parse(a.StartTimeD.ToString("HH:mm")), DateTime.Parse(app.StartTimeD.ToString("HH:mm"))) >= 0)
+                        {
+                            if (DateTime.Compare(DateTime.Parse(a.StartTimeD.ToString("HH:mm")), DateTime.Parse(app.FinishTimeD.ToString("HH:mm"))) <= 0)
+                            {
+                                MessageBox.Show("Patient already has an appointment.");
+                                return;
+                            }
+                        }
+                    }
+                }
+            }
             appointmentController.Create(a);
             Close();
             new AppointmentsViewSecretary(d, t1).Show();
