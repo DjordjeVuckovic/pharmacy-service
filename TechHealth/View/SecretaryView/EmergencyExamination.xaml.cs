@@ -45,11 +45,11 @@ namespace TechHealth.View.SecretaryView
                 Room = RoomRepository.Instance.GetRoombyId("S2"),
                 ShouldSerialize = true
             };
-            appointment.Date = DateTime.Now;
+            appointment.Date = DateTime.Parse(DateTime.Now.ToShortDateString());
             appointment.StartTimeD = DateTime.Now.AddMinutes(5);
             appointment.FinishTimeD = DateTime.Now.AddMinutes(15);
             appointmentController.Create(appointment);
-            Close();
+            this.Close();
             new AppointmentsViewSecretary(appointment.Date, appointment.AppointmentType).Show();
         }
         private void Button_Click_Cancel(object sender, RoutedEventArgs e)
