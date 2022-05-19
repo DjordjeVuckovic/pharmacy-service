@@ -22,11 +22,16 @@ namespace TechHealth.View.SecretaryView
     {
         private DoctorController doctorController = new DoctorController();
         private AppointmentController appointmentController = new AppointmentController();
+        private DateTime closestStartTime;
+        private DateTime closestFinishTime;
+        private Doctor doctor = new Doctor();
+        private bool isBusy;
         public EmergencyExamination()
         {
             InitializeComponent();
             GeneratePatientsForComboBox();
             GenerateSpecializationsForComboBox();
+            isBusy = false;
         }
         private void Button_Click_Main(object sender, RoutedEventArgs e)
         {
@@ -35,6 +40,7 @@ namespace TechHealth.View.SecretaryView
         }
         private void Button_Click_Confirm(object sender, RoutedEventArgs e)
         {
+            GetClosestTime();
             Appointment appointment = GenerateAppointment();
             appointmentController.Create(appointment);
             Hide();
@@ -56,10 +62,10 @@ namespace TechHealth.View.SecretaryView
             Appointment appointment = new Appointment()
             {
                 AppointmentType = AppointmentType.examination,
-                Doctor = GetDoctor(),
+                Doctor = doctor,
                 Date = DateTime.Parse(DateTime.Now.ToShortDateString()),
-                StartTimeD = DateTime.Now.AddMinutes(5),
-                FinishTimeD = DateTime.Now.AddMinutes(15),
+                StartTimeD = closestStartTime,
+                FinishTimeD = closestFinishTime,
                 Emergent = true,
                 IdAppointment = Guid.NewGuid().ToString("N"),
                 Patient = GetPatientFromComboBox(),
@@ -67,6 +73,37 @@ namespace TechHealth.View.SecretaryView
                 ShouldSerialize = true
             };
             return appointment;
+        }
+        private void GetClosestTime()
+        {
+            for (int closestTimeCounter = 1; closestTimeCounter <= 30; closestTimeCounter++)
+            {
+                foreach (var d in doctorController.GetAllBySpecializationId(GetSpecializationIdFromComboBox()))
+                {
+                    doctor = d;
+                    isBusy = false;
+                    closestStartTime = DateTime.Now.AddMinutes(closestTimeCounter);
+                    closestFinishTime = DateTime.Now.AddMinutes(closestTimeCounter + 10);
+                    foreach (var appointment in AppointmentRepository.Instance.GetAll().Values)
+                    {
+                        if (appointment.Date.Equals(DateTime.Parse(DateTime.Now.ToShortDateString())))
+                        {
+                            if (appointment.Doctor.Jmbg.Equals(doctor.Jmbg))
+                            {
+                                if (DateTime.Compare(DateTime.Parse(closestStartTime.ToString("HH:mm")), DateTime.Parse(appointment.StartTimeD.ToString("HH:mm"))) >= 0)
+                                {
+                                    if (DateTime.Compare(DateTime.Parse(closestStartTime.ToString("HH:mm")), DateTime.Parse(appointment.FinishTimeD.ToString("HH:mm"))) <= 0)
+                                    {
+                                        isBusy = true;
+                                        break;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    if (!isBusy) { return; }
+                }
+            }
         }
         private void GeneratePatientsForComboBox()
         {
@@ -107,11 +144,6 @@ namespace TechHealth.View.SecretaryView
                 }
             }
             return -1;
-        }
-        private Doctor GetDoctor()
-        {
-            Random random = new Random();
-            return doctorController.GetAllBySpecializationId(GetSpecializationIdFromComboBox())[random.Next(0, doctorController.GetAllBySpecializationId(GetSpecializationIdFromComboBox()).Count)];
         }
     }
 }
