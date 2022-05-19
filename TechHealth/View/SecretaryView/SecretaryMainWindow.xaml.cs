@@ -43,5 +43,10 @@ namespace TechHealth.View.SecretaryView
             new EquipmentRequestsView().Show();
             Close();
         }
+        private void Button_EmergencyExamination(object sender, RoutedEventArgs e)
+        {
+            new EmergencyExamination().Show();
+            Close();
+        }
     }
 }

@@ -38,7 +38,7 @@ namespace TechHealth.View.SecretaryView
         private void Button_Click_Add_Guest(object sender, RoutedEventArgs e)
         {
             Hide();
-            new AddGuest().ShowDialog();
+            new AddGuest(false).ShowDialog();
             Update();
         }
         private void Button_Click_Delete_Guest(object sender, RoutedEventArgs e)
