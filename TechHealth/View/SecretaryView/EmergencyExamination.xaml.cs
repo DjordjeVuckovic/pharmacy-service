@@ -35,21 +35,9 @@ namespace TechHealth.View.SecretaryView
         }
         private void Button_Click_Confirm(object sender, RoutedEventArgs e)
         {
-            Appointment appointment = new Appointment()
-            {
-                AppointmentType = AppointmentType.examination,
-                Doctor = GetDoctor(),
-                Emergent = true,
-                IdAppointment = Guid.NewGuid().ToString("N"),
-                Patient = GetPatientFromComboBox(),
-                Room = RoomRepository.Instance.GetRoombyId("S2"),
-                ShouldSerialize = true
-            };
-            appointment.Date = DateTime.Parse(DateTime.Now.ToShortDateString());
-            appointment.StartTimeD = DateTime.Now.AddMinutes(5);
-            appointment.FinishTimeD = DateTime.Now.AddMinutes(15);
+            Appointment appointment = GenerateAppointment();
             appointmentController.Create(appointment);
-            this.Close();
+            Hide();
             new AppointmentsViewSecretary(appointment.Date, appointment.AppointmentType).Show();
         }
         private void Button_Click_Cancel(object sender, RoutedEventArgs e)
@@ -61,6 +49,24 @@ namespace TechHealth.View.SecretaryView
         {
             Hide();
             new AddGuest(true).ShowDialog();
+        }
+        private Appointment GenerateAppointment()
+        {
+            Random random = new Random();
+            Appointment appointment = new Appointment()
+            {
+                AppointmentType = AppointmentType.examination,
+                Doctor = GetDoctor(),
+                Date = DateTime.Parse(DateTime.Now.ToShortDateString()),
+                StartTimeD = DateTime.Now.AddMinutes(5),
+                FinishTimeD = DateTime.Now.AddMinutes(15),
+                Emergent = true,
+                IdAppointment = Guid.NewGuid().ToString("N"),
+                Patient = GetPatientFromComboBox(),
+                Room = RoomRepository.Instance.GetAllToList()[random.Next(1, RoomRepository.Instance.GetAllToList().Count)],
+                ShouldSerialize = true
+            };
+            return appointment;
         }
         private void GeneratePatientsForComboBox()
         {
@@ -104,11 +110,8 @@ namespace TechHealth.View.SecretaryView
         }
         private Doctor GetDoctor()
         {
-            foreach (var doctor in doctorController.GetAllBySpecializationId(GetSpecializationIdFromComboBox()))
-            {
-                return doctor;
-            }
-            return null;
+            Random random = new Random();
+            return doctorController.GetAllBySpecializationId(GetSpecializationIdFromComboBox())[random.Next(0, doctorController.GetAllBySpecializationId(GetSpecializationIdFromComboBox()).Count)];
         }
     }
 }
