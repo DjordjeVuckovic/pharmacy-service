@@ -57,8 +57,8 @@ namespace TechHealth.View.SecretaryView
         }
         private void Button_Click_Cancel(object sender, RoutedEventArgs e)
         {
-            this.Close();
             new SecretaryMainWindow().Show();
+            this.Close();
         }
         private void Button_Click_Add_Guest(object sender, RoutedEventArgs e)
         {

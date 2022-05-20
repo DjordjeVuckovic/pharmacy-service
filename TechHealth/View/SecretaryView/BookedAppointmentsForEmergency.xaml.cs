@@ -33,12 +33,16 @@ namespace TechHealth.View.SecretaryView
         public BookedAppointmentsForEmergency(Appointment appointment)
         {
             InitializeComponent();
+            InitializeData(appointment);
+            GenerateAppointments();
+        }
+        private void InitializeData(Appointment appointment)
+        {
             type = appointment.AppointmentType;
             date = appointment.Date;
             doctor = appointment.Doctor;
-            if (type.Equals(AppointmentType.examination)){ pickedDate.Content = "Booked Examinations "; }else{ pickedDate.Content = "Booked Operations "; }
+            if (type.Equals(appointment.AppointmentType)) { pickedDate.Content = "Booked Examinations "; } else { pickedDate.Content = "Booked Operations "; }
             pickedDate.Content += date.ToString("dd.MM.yyyy.");
-            GenerateAppointments();
         }
         private void GenerateAppointments()
         {
@@ -75,8 +79,25 @@ namespace TechHealth.View.SecretaryView
                 MessageBox.Show("You didn't select an appointment.");
                 return;
             }
+            AppointmentsDTO a = (AppointmentsDTO)examinationList.SelectedItems[0];
+            Appointment appointment = AppointmentRepository.Instance.GetById(a.idAppointment);
+            Postpone(appointment);
             new EmergencyExamination().Show();
             this.Close();
+        }
+        private void Postpone(Appointment appointment)
+        {
+            for (int daysPostponed = 1; daysPostponed <= 5; daysPostponed++)
+            {
+                appointment.Date = appointment.Date.AddDays(1);
+                appointment.StartTimeD = appointment.StartTimeD.AddDays(1);
+                appointment.FinishTimeD = appointment.FinishTimeD.AddDays(1);
+                if (AppointmentRepository.Instance.CanPostpone(appointment))
+                {
+                    break;
+                }
+            }
+            appointmentController.Update(appointment);
         }
     }
 }

@@ -107,6 +107,27 @@ namespace TechHealth.Repository
             }
             else return true;
         }
+        public bool CanPostpone(Appointment appointment)
+        {
+            if (GetAllToList().Count != 0)
+            {
+                foreach (var app in GetAllToList())
+                {
+                    if ((appointment.Doctor.Jmbg.Equals(app.Doctor.Jmbg)) && (appointment.Date.Equals(app.Date)))
+                    {
+                        if (DateTime.Compare(DateTime.Parse(appointment.StartTimeD.ToString("HH:mm")), DateTime.Parse(app.StartTimeD.ToString("HH:mm"))) >= 0)
+                        {
+                            if (DateTime.Compare(DateTime.Parse(appointment.StartTimeD.ToString("HH:mm")), DateTime.Parse(app.FinishTimeD.ToString("HH:mm"))) <= 0)
+                            {
+                                return false;
+                            }
+                        }
+                    }
+                }
+                return true;
+            }
+            else return true;
+        }
         protected override string GetPath()
       {
          return @"../../Json/appointment.json";
