@@ -26,12 +26,14 @@ namespace TechHealth.View.SecretaryView
         private DateTime closestFinishTime;
         private Doctor doctor = new Doctor();
         private bool isBusy;
+        private bool appointmentBooked;
         public EmergencyExamination()
         {
             InitializeComponent();
             GeneratePatientsForComboBox();
             GenerateSpecializationsForComboBox();
             isBusy = false;
+            appointmentBooked = false;
         }
         private void Button_Click_Main(object sender, RoutedEventArgs e)
         {
@@ -42,9 +44,12 @@ namespace TechHealth.View.SecretaryView
         {
             GetClosestTime();
             Appointment appointment = GenerateAppointment();
-            appointmentController.Create(appointment);
-            Hide();
-            new AppointmentsViewSecretary(appointment.Date, appointment.AppointmentType).Show();
+            if (!appointmentBooked)
+            { 
+                appointmentController.Create(appointment);
+                Hide();
+                new AppointmentsViewSecretary(appointment.Date, appointment.AppointmentType).Show();
+            }
         }
         private void Button_Click_Cancel(object sender, RoutedEventArgs e)
         {
@@ -104,6 +109,13 @@ namespace TechHealth.View.SecretaryView
                     if (!isBusy) { return; }
                 }
             }
+            ShowBookedAppointments();
+        }
+        private void ShowBookedAppointments()
+        {
+            Hide();
+            appointmentBooked = true;
+            new BookedAppointmentsForEmergency(DateTime.Parse(DateTime.Now.ToShortDateString()), AppointmentType.examination).Show();
         }
         private void GeneratePatientsForComboBox()
         {

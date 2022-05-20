@@ -495,6 +495,9 @@
     <Compile Include="View\SecretaryView\AppointmentsViewSecretary.xaml.cs">
       <DependentUpon>AppointmentsViewSecretary.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\SecretaryView\BookedAppointmentsForEmergency.xaml.cs">
+      <DependentUpon>BookedAppointmentsForEmergency.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\SecretaryView\EmergencyExamination.xaml.cs">
       <DependentUpon>EmergencyExamination.xaml</DependentUpon>
     </Compile>
@@ -823,6 +826,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\SecretaryView\AppointmentsViewSecretary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SecretaryView\BookedAppointmentsForEmergency.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

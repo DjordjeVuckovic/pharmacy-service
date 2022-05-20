@@ -1,0 +1,36 @@
+﻿<Window x:Class="TechHealth.View.SecretaryView.BookedAppointmentsForEmergency"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TechHealth.View.SecretaryView"
+        mc:Ignorable="d"
+        Title="BookedAppointmentsForEmergency" Height="650" Width="400"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <ListView x:Name="examinationList" Margin="10,117,10,133">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Start" Width="65" DisplayMemberBinding="{Binding start,StringFormat=t}" />
+                    <GridViewColumn Header="Finish" Width="65" DisplayMemberBinding="{Binding end,StringFormat=t}" />
+                    <GridViewColumn Header="Patient" Width="100" DisplayMemberBinding="{Binding patient}" />
+                    <GridViewColumn Header="Doctor" Width="160" DisplayMemberBinding="{Binding doctor}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Label x:Name="pickedDate" Content="date" HorizontalAlignment="Center" Margin="0,86,0,0" VerticalAlignment="Top"/>
+        <Button Content="Postpone" HorizontalAlignment="Center" Margin="0,527,0,0" VerticalAlignment="Top" Background="Black" Foreground="White" Width="272" Click="Button_Click_Postpone" Height="32" FontSize="16" FontWeight="Bold"/>
+        <Rectangle HorizontalAlignment="Center" Height="63" Stroke="Black" VerticalAlignment="Top" Width="430"/>
+        <Button Click="Button_Click_Main" HorizontalAlignment="Left" Margin="28,10,0,0" VerticalAlignment="Top" Height="44" Width="55" BorderBrush="#FFFBFBFB" Foreground="White" Background="White">
+            <Image Source="resources/bars.png"/>
+            <Button.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Home"/>
+                    <MenuItem Header="Log Out"/>
+                </ContextMenu>
+            </Button.ContextMenu>
+        </Button>
+        <Label Content="TechHealth" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="28" FontWeight="Bold" Margin="0,7,0,0"/>
+        <TextBox HorizontalAlignment="Left" Margin="300,23,0,0" TextWrapping="Wrap" Text="Search..." VerticalAlignment="Top" Width="90"/>
+    </Grid>
+</Window>
