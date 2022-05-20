@@ -44,11 +44,15 @@ namespace TechHealth.View.SecretaryView
         {
             GetClosestTime();
             Appointment appointment = GenerateAppointment();
+            Hide();
             if (!appointmentBooked)
-            { 
+            {
                 appointmentController.Create(appointment);
-                Hide();
                 new AppointmentsViewSecretary(appointment.Date, appointment.AppointmentType).Show();
+            }
+            else
+            {
+                new BookedAppointmentsForEmergency(appointment).Show();
             }
         }
         private void Button_Click_Cancel(object sender, RoutedEventArgs e)
@@ -109,13 +113,7 @@ namespace TechHealth.View.SecretaryView
                     if (!isBusy) { return; }
                 }
             }
-            ShowBookedAppointments();
-        }
-        private void ShowBookedAppointments()
-        {
-            Hide();
             appointmentBooked = true;
-            new BookedAppointmentsForEmergency(DateTime.Parse(DateTime.Now.ToShortDateString()), AppointmentType.examination).Show();
         }
         private void GeneratePatientsForComboBox()
         {

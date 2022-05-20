@@ -18,7 +18,7 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Label x:Name="pickedDate" Content="date" HorizontalAlignment="Center" Margin="0,86,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="pickedDate" Content="date" HorizontalAlignment="Center" Margin="0,78,0,0" VerticalAlignment="Top" FontSize="22" FontWeight="Bold"/>
         <Button Content="Postpone" HorizontalAlignment="Center" Margin="0,527,0,0" VerticalAlignment="Top" Background="Black" Foreground="White" Width="272" Click="Button_Click_Postpone" Height="32" FontSize="16" FontWeight="Bold"/>
         <Rectangle HorizontalAlignment="Center" Height="63" Stroke="Black" VerticalAlignment="Top" Width="430"/>
         <Button Click="Button_Click_Main" HorizontalAlignment="Left" Margin="28,10,0,0" VerticalAlignment="Top" Height="44" Width="55" BorderBrush="#FFFBFBFB" Foreground="White" Background="White">

@@ -27,14 +27,16 @@ namespace TechHealth.View.SecretaryView
         private ObservableCollection<AppointmentsDTO> list = new ObservableCollection<AppointmentsDTO>();
         private string spec;
         private string name;
+        private Doctor doctor;
         private DoctorController doctorController = new DoctorController();
         private PatientController patientController = new PatientController();
-        public BookedAppointmentsForEmergency(DateTime date, AppointmentType type)
+        public BookedAppointmentsForEmergency(Appointment appointment)
         {
             InitializeComponent();
-            this.type = type;
-            this.date = date;
-            if (type.Equals(AppointmentType.examination)){ pickedDate.Content = "Examinations "; }else{ pickedDate.Content = "Operations "; }
+            type = appointment.AppointmentType;
+            date = appointment.Date;
+            doctor = appointment.Doctor;
+            if (type.Equals(AppointmentType.examination)){ pickedDate.Content = "Booked Examinations "; }else{ pickedDate.Content = "Booked Operations "; }
             pickedDate.Content += date.ToString("dd.MM.yyyy.");
             GenerateAppointments();
         }
@@ -42,16 +44,19 @@ namespace TechHealth.View.SecretaryView
         {
             foreach (var a in AppointmentRepository.Instance.GetAll().Values)
             {
-                if (a.Date.Equals(date) && a.AppointmentType.Equals(type))
+                if(a.Doctor.Jmbg.Equals(doctor.Jmbg))
                 {
-                    if (DateTime.Compare(DateTime.Parse(a.StartTimeD.ToString("HH:mm")), DateTime.Now) >= 0)
+                    if (a.Date.Equals(date) && a.AppointmentType.Equals(type))
                     {
-                        if (DateTime.Compare(DateTime.Parse(a.StartTimeD.ToString("HH:mm")), DateTime.Now.AddMinutes(30)) <= 0)
+                        if (DateTime.Compare(DateTime.Parse(a.StartTimeD.ToString("HH:mm")), DateTime.Now) >= 0)
                         {
-                            spec = doctorController.GetById(a.Doctor.Jmbg).FullSpecialization;
-                            name = patientController.GetByPatientId(a.Patient.Jmbg).FullName;
-                            AppointmentsDTO aDTO = new AppointmentsDTO(a.IdAppointment, a.StartTimeD, a.FinishTimeD, spec, name, a.Room.roomId);
-                            list.Add(aDTO);
+                            if (DateTime.Compare(DateTime.Parse(a.StartTimeD.ToString("HH:mm")), DateTime.Now.AddMinutes(30)) <= 0)
+                            {
+                                spec = doctorController.GetById(a.Doctor.Jmbg).FullSpecialization;
+                                name = patientController.GetByPatientId(a.Patient.Jmbg).FullName;
+                                AppointmentsDTO aDTO = new AppointmentsDTO(a.IdAppointment, a.StartTimeD, a.FinishTimeD, spec, name, a.Room.roomId);
+                                list.Add(aDTO);
+                            }
                         }
                     }
                 }
@@ -65,6 +70,13 @@ namespace TechHealth.View.SecretaryView
         }
         private void Button_Click_Postpone(object sender, RoutedEventArgs e)
         {
+            if (examinationList.SelectedIndex == -1)
+            {
+                MessageBox.Show("You didn't select an appointment.");
+                return;
+            }
+            new EmergencyExamination().Show();
+            this.Close();
         }
     }
 }

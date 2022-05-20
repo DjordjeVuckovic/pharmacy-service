@@ -30,6 +30,7 @@ namespace TechHealth.View.SecretaryView
         private string name;
         private DoctorController doctorController = new DoctorController();
         private PatientController patientController = new PatientController();
+        private List<Appointment> tempList = AppointmentRepository.Instance.GetAllToList();
         public AppointmentsViewSecretary(DateTime date, AppointmentType type)
         {
             InitializeComponent();
@@ -43,7 +44,8 @@ namespace TechHealth.View.SecretaryView
             {
                 pickedDate.Content = "Operations ";
             }
-            foreach (var a in AppointmentRepository.Instance.GetAll().Values)
+            tempList.Sort((x, y) => DateTime.Compare(x.StartTimeD, y.StartTimeD));
+            foreach (var a in tempList)
             {
                 if (a.Date.Equals(date) && a.AppointmentType.Equals(type))
                 {
