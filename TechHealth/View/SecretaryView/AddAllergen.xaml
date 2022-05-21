@@ -5,14 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TechHealth.View.SecretaryView"
         mc:Ignorable="d"
-        Title="AddAllergen" Height="250" Width="400">
+        Title="AddAllergen" Height="650" Width="400"
+        WindowStartupLocation="CenterScreen">
     <Grid>
-        <Label Content="Add Allergen" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" FontSize="20"/>
-        <Label Content="Name" HorizontalAlignment="Left" Margin="56,62,0,0" VerticalAlignment="Top"/>
-        <Label Content="Description" HorizontalAlignment="Left" Margin="56,98,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="allergenName" HorizontalAlignment="Left" Margin="222,66,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="158"/>
-        <TextBox x:Name="allergenDescription" HorizontalAlignment="Left" Margin="222,102,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="158" Height="64"/>
-        <Button x:Name="Cancel" Background="Black" Foreground="White" Content="Cancel" HorizontalAlignment="Left" Margin="56,181,0,0" VerticalAlignment="Top" Width="100" Click="Button_Click_Cancel" />
-        <Button x:Name="Confirm" Background="Black" Foreground="White" Content="Confirm" HorizontalAlignment="Left" Margin="251,181,0,0" VerticalAlignment="Top" Width="100" Click="Button_Click_Confirm" />
+        <Label Content="Add Allergen" HorizontalAlignment="Center" Margin="0,101,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
+        <Label Content="Name" HorizontalAlignment="Left" Margin="57,170,0,0" VerticalAlignment="Top"/>
+        <Label Content="Description" HorizontalAlignment="Left" Margin="57,235,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="allergenName" HorizontalAlignment="Left" Margin="62,196,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="272"/>
+        <TextBox x:Name="allergenDescription" HorizontalAlignment="Left" Margin="62,261,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="272" Height="64"/>
+        <Button x:Name="Cancel" Background="Black" Foreground="White" Content="Cancel" HorizontalAlignment="Left" Margin="62,399,0,0" VerticalAlignment="Top" Width="272" Click="Button_Click_Cancel" Height="32" FontSize="16" FontWeight="Bold" />
+        <Button x:Name="Confirm" Background="Black" Foreground="White" Content="Confirm" HorizontalAlignment="Left" Margin="62,362,0,0" VerticalAlignment="Top" Width="272" Click="Button_Click_Confirm" FontSize="16" FontWeight="Bold" Height="32" />
+        <Rectangle HorizontalAlignment="Center" Height="63" Stroke="Black" VerticalAlignment="Top" Width="430"/>
+        <Button Click="Button_Click_Main" HorizontalAlignment="Left" Margin="28,10,0,0" VerticalAlignment="Top" Height="44" Width="55" BorderBrush="#FFFBFBFB" Foreground="White" Background="White">
+            <Image Source="resources/bars.png"/>
+            <Button.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Home"/>
+                    <MenuItem Header="Log Out"/>
+                </ContextMenu>
+            </Button.ContextMenu>
+        </Button>
+        <Label Content="TechHealth" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="28" FontWeight="Bold" Margin="0,7,0,0"/>
+        <TextBox HorizontalAlignment="Left" Margin="300,23,0,0" TextWrapping="Wrap" Text="Search..." VerticalAlignment="Top" Width="90"/>
     </Grid>
 </Window>

@@ -22,5 +22,11 @@
     "id": "a33413ceb22c4b0db537f2ec7749a30b",
     "type": 0,
     "quantity": 60
+  },
+  "940543c56616499eb2dabe89e5492f6f": {
+    "name": "oprema dinamicka",
+    "id": "940543c56616499eb2dabe89e5492f6f",
+    "type": 1,
+    "quantity": 20
   }
 }

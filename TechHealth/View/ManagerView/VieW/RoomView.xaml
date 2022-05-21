@@ -24,9 +24,11 @@
             <DataGrid x:Name="dataEquipment" ItemsSource="{Binding Rooms, UpdateSourceTrigger=PropertyChanged}"
                       SelectedItem="{Binding SelectedItem}"
                       CanUserAddRows="False"
+                      IsReadOnly="True"
                       SelectionMode="Extended"
                       AutoGenerateColumns="False"
-                      Margin="10,10,10,69">
+                      Margin="10,10,10,69"
+                      Background="#272537">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="ID" Binding="{Binding roomId}" Width="*"  CanUserResize="False"/>
                     <DataGridTextColumn Header="Floor" Binding="{Binding floor}" Width="*"  CanUserResize="False"/>

@@ -34,15 +34,22 @@ namespace TechHealth.View.SecretaryView
             guestPassword.Text = p.Password;
             guestId = p.Jmbg;
         }
+        private void Button_Click_Main(object sender, RoutedEventArgs e)
+        {
+            new SecretaryMainWindow().Show();
+            this.Close();
+        }
         private void Button_Click_Confirm(object sender, RoutedEventArgs e)
         {
             patientController.Update("", "", null, null, guestId, 0, false, guestUsername.Text, guestPassword.Text, "", false, true, "");
 
-            this.Close();
+            Close();
+            new GuestsView().Show();
         }
         private void Button_Click_Cancel(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            Close();
+            new GuestsView().Show();
         }
     }
 }

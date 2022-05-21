@@ -28,9 +28,9 @@ namespace TechHealth.View.PatientView
             /*DataContext = MainViewModel.GetInstance(patientJmbg);
             _patientId = patientJmbg;*/
         }
-        public static string GetPatientId()
+        /*public static string GetPatientId()
         {
             return _patientId;
-        }
+        }*/
     }
 }

@@ -24,23 +24,18 @@ namespace TechHealth.View
             doctors = DoctorRepository.Instance.GetAllToList();
 
             MyList = new ObservableCollection<Appointment>(appointmentService.GetAllFuture(startDateRegion, finishDateRegion, doctor, patient, room));
-            //ListValue = MyList.ToString()
             //patient = PatientRepository.Instance.GetPatientbyId("2456");
 
         }
 
         private void Zakazi_Click(object sender, RoutedEventArgs e)
         {
-            
-            AppointmentController appointmentController = new AppointmentController();
-            //appointmentController.Create(MyList[RecommendedAppointmentsTable.SelectedIndex]);
             Appointment appointmentt = MyList[RecommendedAppointmentsTable.SelectedIndex];
             appointmentt.IdAppointment = Guid.NewGuid().ToString("N");
             //appointmentt.Doctor = SuggestAppointment.
             //appointmentt.Doctor = MyList[RecommendedAppointmentsTable.SelectedIndex].Doctor;
 
             AppointmentRepository.Instance.Create(appointmentt);
-            //Apt.Add(appointmentt);
             Close();
         }
     }
