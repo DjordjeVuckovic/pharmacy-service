@@ -81,18 +81,12 @@ namespace TechHealth.DoctorView.ViewModel
             DialogResult dialogResult = MessageBox.Show(@"Are you sure?", @"Cancel vacation", MessageBoxButtons.YesNo);
             if(dialogResult==(DialogResult) MessageBoxResult.Yes)
             {
-                OnRequestClose?.Invoke(this, new EventArgs());
+                OnRequestClose?.Invoke(this, EventArgs.Empty);
             }
         }
 
         private bool CanExecute()
         {
-            // int res = DateTime.Compare(StartDate, DateTime.Now.Date.AddDays(2)); nista se ne desava?
-            // int res1 = DateTime.Compare(FinishDate, DateTime.Now.Date.AddDays(3)); 
-            // if (!String.IsNullOrEmpty(Reason) &&  res <= 0 &&  res1 <= 0 && StartDate < FinishDate)
-            // {
-            //     return true;
-            // }
             if (!String.IsNullOrEmpty(Reason) && StartDate >= DateTime.Now.Date.AddDays(2) && FinishDate >= DateTime.Now.Date.AddDays(3) && StartDate < FinishDate)
             {
                 return true;
