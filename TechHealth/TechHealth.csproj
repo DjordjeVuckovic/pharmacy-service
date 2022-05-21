@@ -14,8 +14,7 @@
     <WarningLevel>4</WarningLevel>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
-    <ApplicationIcon>
-    </ApplicationIcon>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -171,7 +170,6 @@
     <Compile Include="Controller\RoomMergingController.cs" />
     <Compile Include="Controller\RoomSeparationController.cs" />
     <Compile Include="Controller\SpecializationController.cs" />
-    <Compile Include="Controller\SubstanceController.cs" />
     <Compile Include="Controller\TherapyController.cs" />
     <Compile Include="Conversions\AddressConverter.cs" />
     <Compile Include="Conversions\ManagerConversions.cs" />
@@ -300,12 +298,8 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Model\Anamnesis.cs" />
-    <Compile Include="Model\Anketa.cs" />
-    <Compile Include="Model\AppointmentGrade.cs" />
     <Compile Include="Model\DoctorVacationRequest.cs" />
-    <Compile Include="Model\EquipmentRequest.cs" />
     <Compile Include="Model\EquipmentType.cs" />
-    <Compile Include="Model\HospitalGrade.cs" />
     <Compile Include="Model\MedicineStatus.cs" />
     <Compile Include="Model\PatientAllergens.cs" />
     <Compile Include="Model\PatientRecommendType.cs" />
@@ -329,9 +323,7 @@
     <Compile Include="Repository\DoctorVacationRequestRepository.cs" />
     <Compile Include="Repository\EquipmentReallocationRepository.cs" />
     <Compile Include="Repository\EquipmentRepository.cs" />
-    <Compile Include="Repository\EquipmentRequestRepository.cs" />
     <Compile Include="Repository\GenericRepository.cs" />
-    <Compile Include="Repository\GradeRepository.cs" />
     <Compile Include="Repository\ManagerRepository.cs" />
     <Compile Include="Repository\MedicalRecordRepository.cs" />
     <Compile Include="Repository\MedicineRepository.cs" />
@@ -347,7 +339,6 @@
     <Compile Include="Repository\RoomSeparationRepository.cs" />
     <Compile Include="Repository\SecretaryRepository.cs" />
     <Compile Include="Repository\SpecializationRepository.cs" />
-    <Compile Include="Repository\SubstanceRepository.cs" />
     <Compile Include="Repository\TherapyRepository.cs" />
     <Compile Include="Service\AccountService.cs" />
     <Compile Include="Service\AllergenService.cs" />
@@ -369,7 +360,6 @@
     <Compile Include="Service\RoomSeparationService.cs" />
     <Compile Include="Service\RoomService.cs" />
     <Compile Include="Service\SpecializationService.cs" />
-    <Compile Include="Service\SubstanceService.cs" />
     <Compile Include="Service\TherapyService.cs" />
     <Compile Include="Store\NavigationStore.cs" />
     <Compile Include="ValidationRules\FutureDateValidationRule.cs" />
@@ -424,7 +414,6 @@
     <Compile Include="View\ManagerView\ViewModel\HomeViewModel.cs" />
     <Compile Include="View\ManagerView\ViewModel\MainViewModel.cs" />
     <Compile Include="View\ManagerView\ViewModel\MedViewModel.cs" />
-    <Compile Include="View\ManagerView\ViewModel\RejectReasonViewModel.cs" />
     <Compile Include="View\ManagerView\ViewModel\RoomViewModel.cs" />
     <Compile Include="View\ManagerView\VieW\AddMedView.xaml.cs">
       <DependentUpon>AddMedView.xaml</DependentUpon>
@@ -438,24 +427,14 @@
     <Compile Include="View\ManagerView\VieW\MedView.xaml.cs">
       <DependentUpon>MedView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\ManagerView\VieW\RejectReasonView.xaml.cs">
-      <DependentUpon>RejectReasonView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\ManagerView\VieW\RoomView.xaml.cs">
       <DependentUpon>RoomView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\PatientView\AddAppointment.xaml.cs">
       <DependentUpon>AddAppointment.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\PatientView\RateAppointment.xaml.cs">
-      <DependentUpon>RateAppointment.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\PatientView\SuggestAppointment.xaml.cs">
       <DependentUpon>SuggestAppointment.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\PatientView\ViewModel\AppointmentHistoryViewModel.cs" />
-    <Compile Include="View\PatientView\View\AppointmentHistory.xaml.cs">
-      <DependentUpon>AppointmentHistory.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\PatientView\View\AppointmentView.xaml.cs">
       <DependentUpon>AppointmentView.xaml</DependentUpon>
@@ -472,17 +451,11 @@
     <Compile Include="View\PatientView\View\HomeViewP.xaml.cs">
       <DependentUpon>HomeViewP.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\SecretaryView\AccountsView.xaml.cs">
-      <DependentUpon>AccountsView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\SecretaryView\AddAllergen.xaml.cs">
       <DependentUpon>AddAllergen.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\SecretaryView\AddAppointmentSecretary.xaml.cs">
       <DependentUpon>AddAppointmentSecretary.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\SecretaryView\AddEquipmentRequest.xaml.cs">
-      <DependentUpon>AddEquipmentRequest.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\SecretaryView\AddGuest.xaml.cs">
       <DependentUpon>AddGuest.xaml</DependentUpon>
@@ -496,23 +469,8 @@
     <Compile Include="View\SecretaryView\AppointmentsViewSecretary.xaml.cs">
       <DependentUpon>AppointmentsViewSecretary.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\SecretaryView\BookedAppointmentsForEmergency.xaml.cs">
-      <DependentUpon>BookedAppointmentsForEmergency.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\SecretaryView\EmergencyExamination.xaml.cs">
-      <DependentUpon>EmergencyExamination.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\SecretaryView\EquipmentRequestsView.xaml.cs">
-      <DependentUpon>EquipmentRequestsView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\SecretaryView\GuestsView.xaml.cs">
-      <DependentUpon>GuestsView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\SecretaryView\MedicalRecordView.xaml.cs">
       <DependentUpon>MedicalRecordView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\SecretaryView\AppointmentsPickDate.xaml.cs">
-      <DependentUpon>AppointmentsPickDate.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\SecretaryView\SecretaryMainWindow.xaml.cs">
       <DependentUpon>SecretaryMainWindow.xaml</DependentUpon>
@@ -574,9 +532,6 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="Json\equipmentReallocation.json" />
-    <None Include="Json\equipmentRequest.json" />
-    <None Include="Json\grade.json" />
-    <None Include="Json\hospitalrating.json" />
     <None Include="Json\medicalrecord.json" />
     <None Include="Json\patientAllergens.json" />
     <None Include="Json\room.json" />
@@ -585,7 +540,6 @@
     <None Include="Json\roomMerging.json" />
     <None Include="Json\roomRenovation.json" />
     <None Include="Json\roomSeparation.json" />
-    <None Include="Json\substance.json" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -610,8 +564,6 @@
     <Content Include="Json\rejectedMedicine.json" />
     <Content Include="Json\secretary.json" />
     <Content Include="Json\specialization.json" />
-    <Resource Include="View\SecretaryView\resources\caduceus_logo_black_and_white.png" />
-    <Resource Include="View\SecretaryView\resources\bars.png" />
     <Resource Include="resources\ZDRAVOicon.png" />
     <Resource Include="resources\appoint.png" />
     <Resource Include="resources\1a.png" />
@@ -758,10 +710,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\ManagerView\VieW\RejectReasonView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="View\ManagerView\VieW\RoomView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -770,15 +718,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\PatientView\RateAppointment.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="View\PatientView\SuggestAppointment.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\PatientView\View\AppointmentHistory.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -798,19 +738,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\SecretaryView\AccountsView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="View\SecretaryView\AddAllergen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\SecretaryView\AddAppointmentSecretary.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\SecretaryView\AddEquipmentRequest.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -830,33 +762,13 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\SecretaryView\BookedAppointmentsForEmergency.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\SecretaryView\EmergencyExamination.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\SecretaryView\EquipmentRequestsView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\SecretaryView\GuestsView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="View\SecretaryView\MedicalRecordView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\SecretaryView\AppointmentsPickDate.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="View\SecretaryView\SecretaryMainWindow.xaml">
-      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="View\SecretaryView\UpdateAllergen.xaml">
       <SubType>Designer</SubType>

@@ -177,13 +177,13 @@ namespace TechHealth.DoctorView.ViewModel
             DialogResult dialogResult = MessageBox.Show(@"Are you sure about that?", @"Cancel appointment", MessageBoxButtons.YesNo);
             if(dialogResult==(DialogResult) MessageBoxResult.Yes)
             {
-                OnRequestClose?.Invoke(this, EventArgs.Empty);
+                OnRequestClose?.Invoke(this, new EventArgs());
             }
         }
 
         private bool CanExecuteCreate()
         {
-            if (DoctorData != null && SpecializationData != null && RoomData !=null && Date > DateTime.Today && DateTime.Parse(StartDate) < DateTime.Parse(EndDate))
+            if (DoctorData != null && SpecializationData != null )
             {
                 return true;
             }

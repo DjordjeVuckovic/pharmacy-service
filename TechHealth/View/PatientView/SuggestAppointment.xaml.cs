@@ -69,9 +69,8 @@ namespace TechHealth.View.PatientView
             Appointment appointment = new Appointment
             {
                 AppointmentType = AppointmentType.examination,
-
-                //StartDateRegion = DateTime.Parse(StartDatePicker.Text),
-                //FinishDateRegion = DateTime.Parse(FinishDatePicker.Text),
+                StartDateRegion = DateTime.Parse(StartDatePicker.Text),
+                FinishDateRegion = DateTime.Parse(FinishDatePicker.Text),
                 Doctor = doctors[CbDoctor.SelectedIndex],
                 Emergent = false,
                 IdAppointment = Guid.NewGuid().ToString("N"),
@@ -82,7 +81,7 @@ namespace TechHealth.View.PatientView
 
             try //ako ima dostupnih datuma kod doktora, izlistaj
             {
-                new AppointmensFuture(DateTime.Parse(StartDatePicker.Text), DateTime.Parse(FinishDatePicker.Text), appointment.Doctor, appointment.Patient, appointment.Room).Show();
+                new AppointmensFuture(appointment.StartDateRegion, appointment.FinishDateRegion, appointment.Doctor, appointment.Patient, appointment.Room).Show();
             }
             catch (AppointmentConflictException) //ako je doktor zauzet za neke datume, izlistaj dostupne na odnosu sta je stiklirano od prioriteta
             {

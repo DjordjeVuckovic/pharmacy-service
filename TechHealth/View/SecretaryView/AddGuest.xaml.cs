@@ -20,16 +20,9 @@ namespace TechHealth.View.SecretaryView
     public partial class AddGuest : Window
     {
         private PatientController patientController = new PatientController();
-        private bool isEmergency;
-        public AddGuest(bool emergency)
+        public AddGuest()
         {
             InitializeComponent();
-            isEmergency = emergency;
-        }
-        private void Button_Click_Main(object sender, RoutedEventArgs e)
-        {
-            new SecretaryMainWindow().Show();
-            this.Close();
         }
         private void Button_Click_Confirm(object sender, RoutedEventArgs e)
         {
@@ -59,27 +52,11 @@ namespace TechHealth.View.SecretaryView
             }
             patientController.Create(guestUsername.Text, "", null, null, "guest" + guestId.ToString(), 0, false, guestUsername.Text, guestPassword.Text, "", false, true, "");
             guestId++;
-            Close();
-            if (isEmergency)
-            {
-                new EmergencyExamination().Show();
-            }
-            else
-            {
-                new GuestsView().Show();
-            }
+            this.Close();
         }
         private void Button_Click_Cancel(object sender, RoutedEventArgs e)
         {
-            Close();
-            if (isEmergency)
-            {
-                new EmergencyExamination().Show();
-            }
-            else
-            {
-                new GuestsView().Show();
-            }
+            this.Close();
         }
     }
 }

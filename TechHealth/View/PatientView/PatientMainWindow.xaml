@@ -8,19 +8,11 @@
         mc:Ignorable="d"
 
         Height="600" Width="920"
-        ResizeMode="NoResize"
-        Background="Transparent">
+        WindowStyle="None"
+        ResizeMode="CanResize"
+        Background="Transparent"
+        AllowsTransparency="True">
 
-    <Window.Resources>
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Dark.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/materialdesigncolor.bluegrey.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
-            </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>
-    </Window.Resources>
     <Window.DataContext>
         <viewModelP:MainViewModel/>
     </Window.DataContext>
@@ -70,8 +62,7 @@
                              Height="50"
                              Foreground="White"
                              FontSize="14"
-                             Style="{StaticResource MenuButtonTheme}"
-                             Command="{Binding AppointmentHistoryViewCommand}"/>
+                             Style="{StaticResource MenuButtonTheme}"/>
 
                 <RadioButton Content="Medical record"
                              Height="50"
@@ -91,7 +82,7 @@
                              Foreground="White"
                              FontSize="14"
                              Style="{StaticResource MenuButtonTheme}"
-                             />
+                             Command="{Binding NotificationViewCommand}"/>
 
             </StackPanel>
 
@@ -107,7 +98,12 @@
                             Grid.Column="1"
                             Margin="10"
                             Content="{Binding CurrentView}"/>
+            
+
 
         </Grid>
+
+
+
     </Border>
 </Window>

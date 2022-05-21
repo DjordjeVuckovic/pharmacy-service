@@ -41,30 +41,12 @@
   },
   "MikiDjuricic13456": {
     "ShouldSerialize": true,
-    "RecordId": "MikiDjuricic13456",
+    "RecordId": "mikiDjuricic13456",
     "BloodType": 0,
     "Patient": {
-      "Guest": false,
-      "ChosenDoctor": null,
-      "Lbo": 657771,
-      "IsBanned": false,
-      "Address": {
-        "City": "Novi Sad",
-        "StreetNumber": "21a",
-        "Country": "Srbija",
-        "Street": "Vojvode Bojovica",
-        "Postcode": 21000
-      },
-      "Name": "Miki",
-      "Surname": "Djuricic",
-      "Email": "dsa@adsa",
+      "Lbo": 0,
       "Jmbg": "13456",
-      "Phone": "06105111331",
-      "Employed": false,
-      "Birthday": "0001-01-01T00:00:00",
-      "Username": "Djura",
-      "Password": "1311",
-      "ShouldSerialize": true
+      "ShouldSerialize": false
     },
     "Weight": "80 kg",
     "Height": "170 cm",

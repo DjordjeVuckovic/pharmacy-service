@@ -81,8 +81,7 @@ namespace TechHealth.Repository
             {
                 foreach (var app in GetAllToList())
                 {
-                    if(((start >= app.StartTimeD && start <= app.FinishTimeD) || (end >= app.StartTimeD && end <= app.FinishTimeD)
-                        || (start <= app.StartTimeD && end >= app.FinishTimeD)) && app.Room.roomId == roomID)
+                    if(((start >= app.StartTimeD && start <= app.FinishTimeD) || (end >= app.StartTimeD && end <= app.FinishTimeD)) && app.Room.roomId == roomID)
                     {
                         return false;
                     }
@@ -101,27 +100,6 @@ namespace TechHealth.Repository
                     if ((app.Room.roomId == src || app.Room.roomId == dst) && (date >= app.StartTimeD && date <= app.FinishTimeD))
                     {
                         return false;
-                    }
-                }
-                return true;
-            }
-            else return true;
-        }
-        public bool CanPostpone(Appointment appointment)
-        {
-            if (GetAllToList().Count != 0)
-            {
-                foreach (var app in GetAllToList())
-                {
-                    if ((appointment.Doctor.Jmbg.Equals(app.Doctor.Jmbg)) && (appointment.Date.Equals(app.Date)))
-                    {
-                        if (DateTime.Compare(DateTime.Parse(appointment.StartTimeD.ToString("HH:mm")), DateTime.Parse(app.StartTimeD.ToString("HH:mm"))) >= 0)
-                        {
-                            if (DateTime.Compare(DateTime.Parse(appointment.StartTimeD.ToString("HH:mm")), DateTime.Parse(app.FinishTimeD.ToString("HH:mm"))) <= 0)
-                            {
-                                return false;
-                            }
-                        }
                     }
                 }
                 return true;

@@ -21,7 +21,6 @@ namespace TechHealth.View.ManagerView.ViewModel
         public RelayCommand AddMedicineCommand { get; set; }
         public RelayCommand UpdateMedicineCommand { get; set; }
         public RelayCommand DeleteMedicineCommand { get; set; }
-        public RelayCommand RejectReasonCommand { get; set; }
 
         public Medicine SelectedItem
         {
@@ -52,28 +51,12 @@ namespace TechHealth.View.ManagerView.ViewModel
             AddMedicineCommand = new RelayCommand(param => ExecuteAdd(), param => CanExecuteAdd());
             UpdateMedicineCommand = new RelayCommand(param => ExecuteUpdate(), param => CanExecuteUpdate());
             DeleteMedicineCommand = new RelayCommand(param => ExecuteDelete(), param => CanExecuteDelete());
-            RejectReasonCommand = new RelayCommand(param => ExecuteRejectReason(), param => CanExecuteRejectReason());
-        }
-
-        private bool CanExecuteRejectReason()
-        {
-            if (selectedItem == null || selectedItem.MedicineStatus != MedicineStatus.Rejected)
-            {
-                return false;
-            }
-
-            return true;
-        }
-
-        private void ExecuteRejectReason()
-        {
-            var RejectReasonVm = new RejectReasonViewModel(selectedItem);
-            MainViewModel.Instance().CurrentView = RejectReasonVm;
         }
 
         private bool CanExecuteDelete()
         {
-            if (selectedItem == null || selectedItem.MedicineStatus == MedicineStatus.Approved)
+            //mozda ubaciti uslov da lek ne moze da se izbrise ako je approved
+            if (selectedItem == null)
             {
                 return false;
             }
@@ -85,11 +68,6 @@ namespace TechHealth.View.ManagerView.ViewModel
         {
             medicineController.Delete(selectedItem);
             medicines.Remove(selectedItem);
-            //if (selectedItem.MedicineStatus == MedicineStatus.Rejected)
-            //{
-            //    RejectedMedicine rm = RejectedMedicineRepository.Instance.GetByMedicineId(selectedItem.MedicineId);
-            //    RejectedMedicineRepository.Instance.Delete(rm.RejectedMedicineId);
-            //}
             MessageBox.Show("You have successfully deleted the medicine!");
         }
 

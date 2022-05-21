@@ -5,7 +5,6 @@ using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -34,12 +33,8 @@ namespace TechHealth.View.ManagerView.VieW
         private ObservableCollection<Room> rooms;
 
         private RoomController roomController = new RoomController();
-        private RoomMergingController roomMergingController = new RoomMergingController();
-        private RoomSeparationController roomSeparationController = new RoomSeparationController();
         private Room selectedItem;
         public event PropertyChangedEventHandler PropertyChanged;
-        public static Timer timer;
-        public static Timer timer1;
         public RelayCommand AddRoomCommand { get; set; }
         public RelayCommand DeleteRoomCommand { get; set; }
         public RelayCommand UpdateRoomCommand { get; set; }
@@ -75,8 +70,6 @@ namespace TechHealth.View.ManagerView.VieW
         }
         public RoomView()
         {
-            timer = new Timer(new TimerCallback(roomMergingController.MergeOnDate), null, 1000, 60000);
-            //timer1 = new Timer(new TimerCallback(roomSeparationController.SeparateOnDate), null, 1000, 60000);
             InitializeComponent();
             DataContext = this;
             rooms = new ObservableCollection<Room>(RoomRepository.Instance.GetAll().Values);

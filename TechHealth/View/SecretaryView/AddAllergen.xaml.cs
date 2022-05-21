@@ -27,11 +27,6 @@ namespace TechHealth.View.SecretaryView
             jmbg1 = jmbg;
             InitializeComponent();
         }
-        private void Button_Click_Main(object sender, RoutedEventArgs e)
-        {
-            new SecretaryMainWindow().Show();
-            this.Close();
-        }
         private void Button_Click_Confirm(object sender, RoutedEventArgs e)
         {
             int allergenId = 1;
@@ -53,12 +48,10 @@ namespace TechHealth.View.SecretaryView
             pa.AllergenDescription = allergenDescription.Text;
             patientAllergensController.Create(pa);
             this.Close();
-            new AllergensView(PatientRepository.Instance.GetById(jmbg1)).Show();
         }
         private void Button_Click_Cancel(object sender, RoutedEventArgs e)
         {
             this.Close();
-            new AllergensView(PatientRepository.Instance.GetById(jmbg1)).Show();
         }
     }
 }
