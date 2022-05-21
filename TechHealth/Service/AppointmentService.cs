@@ -42,8 +42,19 @@ namespace TechHealth.Service
          }
          return temp1;
       }
+        public void Postpone(Appointment appointment)
+        {
+            for (int daysPostponed = 1; daysPostponed <= 5; daysPostponed++)
+            {
+                appointment.Date = appointment.Date.AddDays(1);
+                appointment.StartTimeD = appointment.StartTimeD.AddDays(1);
+                appointment.FinishTimeD = appointment.FinishTimeD.AddDays(1);
+                if (AppointmentRepository.Instance.CanPostpone(appointment)) break;
+            }
+            AppointmentRepository.Instance.Update(appointment);
+        }
 
-      public List<Appointment> GetAllNotEvident()
+        public List<Appointment> GetAllNotEvident()
       {
          var notEvidentAppointments = new List<Appointment>();
          foreach (var vAppointment in GetAll())

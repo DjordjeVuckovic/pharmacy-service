@@ -14,12 +14,14 @@ namespace TechHealth.Controller
       private readonly  DoctorService doctorService = new DoctorService();
       private readonly  PatientService patientService = new PatientService();
 
-      
-      
-      public Appointment GetById(string idAppointment)
-      {
+        public void Postpone(Appointment appointment)
+        {
+            appointmentService.Postpone(appointment);
+        }
+        public Appointment GetById(string idAppointment)
+        {
           return appointmentService.GetById(idAppointment);
-      }
+        }
       
       public ObservableCollection<Appointment> GetAll()
       {

@@ -70,30 +70,9 @@ namespace TechHealth.View.SecretaryView
             }
             AppointmentsDTO a = (AppointmentsDTO)examinationList.SelectedItems[0];
             Appointment appointment = AppointmentRepository.Instance.GetById(a.idAppointment);
-            Postpone(appointment);
+            appointmentController.Postpone(appointment);
             new EmergencyExamination().Show();
             Close();
-        }
-        private void Postpone(Appointment appointment)
-        {
-            for (int daysPostponed = 1; daysPostponed <= 5; daysPostponed++)
-            {
-                appointment.Date = appointment.Date.AddDays(1);
-                appointment.StartTimeD = appointment.StartTimeD.AddDays(1);
-                appointment.FinishTimeD = appointment.FinishTimeD.AddDays(1);
-                if (CanPostone(appointment)) break;
-            }
-            appointmentController.Update(appointment);
-        }
-
-        private static bool CanPostone(Appointment appointment)
-        {
-            if (AppointmentRepository.Instance.CanPostpone(appointment))
-            {
-                return true;
-            }
-
-            return false;
         }
     }
 }
