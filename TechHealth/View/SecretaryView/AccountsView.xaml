@@ -1,0 +1,38 @@
+﻿<Window x:Class="TechHealth.View.SecretaryView.AccountsView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TechHealth.View.SecretaryView"
+        mc:Ignorable="d"
+        Title="AccountsView" Height="650" Width="400"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <ListView x:Name="accountList" Margin="67,100,67,250">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Name" Width="125" DisplayMemberBinding="{Binding Name}" />
+                    <GridViewColumn Header="Surname" Width="125" DisplayMemberBinding="{Binding Surname}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Label Content="Accounts" HorizontalAlignment="Center" Margin="0,58,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
+        <Button x:Name="addAccount" Background="Black" Foreground="White" Content="Add" HorizontalAlignment="Center" Margin="0,419,0,0" VerticalAlignment="Top" Width="266" Click="Button_Click_Add" Height="32" FontWeight="Bold" FontSize="16"/>
+        <Button x:Name="deleteAccount" Background="Black" Foreground="White" Content="Delete" HorizontalAlignment="Center" Margin="0,493,0,0" VerticalAlignment="Top" Width="266" Click="Button_Click_Delete" Height="32" FontSize="16" FontWeight="Bold"/>
+        <Button x:Name="editAccount" Background="Black" Foreground="White" Content="Edit" HorizontalAlignment="Center" Margin="0,456,0,0" VerticalAlignment="Top" Width="266" Click="Button_Click_Edit" Height="32" FontSize="16" FontWeight="Bold"/>
+        <Rectangle HorizontalAlignment="Center" Height="63" Stroke="Black" VerticalAlignment="Top" Width="430"/>
+        <Button Click="Button_Click_Main" HorizontalAlignment="Left" Margin="28,10,0,0" VerticalAlignment="Top" Height="44" Width="55" BorderBrush="#FFFBFBFB" Foreground="White" Background="White">
+            <Image Source="resources/bars.png"/>
+            <Button.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Home"/>
+                    <MenuItem Header="Log Out"/>
+                </ContextMenu>
+            </Button.ContextMenu>
+        </Button>
+        <Label Content="TechHealth" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="28" FontWeight="Bold" Margin="0,7,0,0"/>
+        <TextBox HorizontalAlignment="Left" Margin="300,23,0,0" TextWrapping="Wrap" Text="Search..." VerticalAlignment="Top" Width="90"/>
+        <Button Background="Black" Foreground="White" Content="Allergens" HorizontalAlignment="Center" Margin="0,530,0,0" VerticalAlignment="Top" Width="266" Click="Button_Click_Allergens" Height="32" FontSize="16" FontWeight="Bold"/>
+        <Button Background="Black" Foreground="White" Content="Medical Record" HorizontalAlignment="Center" Margin="0,567,0,0" VerticalAlignment="Top" Width="266" Click="Button_Click_MedicalRecord" Height="32" FontSize="16" FontWeight="Bold"/>
+    </Grid>
+</Window>

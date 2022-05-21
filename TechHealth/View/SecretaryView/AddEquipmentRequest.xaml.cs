@@ -11,28 +11,17 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using TechHealth.Model;
 using TechHealth.Controller;
 using TechHealth.Repository;
+using TechHealth.Model;
 
 namespace TechHealth.View.SecretaryView
 {
-    /// <summary>
-    /// Interaction logic for UpdateGuest.xaml
-    /// </summary>
-    public partial class UpdateGuest : Window
+    public partial class AddEquipmentRequest : Window
     {
-        private PatientController patientController = new PatientController();
-        private string guestId;
-        public UpdateGuest(Patient patient)
+        public AddEquipmentRequest()
         {
-            Patient p = PatientRepository.Instance.GetById(patient.Jmbg);
             InitializeComponent();
-            this.DataContext = this;
-
-            guestUsername.Text = p.Username;
-            guestPassword.Text = p.Password;
-            guestId = p.Jmbg;
         }
         private void Button_Click_Main(object sender, RoutedEventArgs e)
         {
@@ -41,15 +30,15 @@ namespace TechHealth.View.SecretaryView
         }
         private void Button_Click_Confirm(object sender, RoutedEventArgs e)
         {
-            patientController.Update("", "", null, null, guestId, 0, false, guestUsername.Text, guestPassword.Text, "", false, true, "");
-
-            Close();
-            new GuestsView().Show();
+            EquipmentRequest er = new EquipmentRequest(Guid.NewGuid().ToString("N"), equipmentName.Text, Int32.Parse(quantity.Text));
+            EquipmentRequestRepository.Instance.Create(er);
+            new AddEquipmentRequest().Show();
+            this.Close();
         }
         private void Button_Click_Cancel(object sender, RoutedEventArgs e)
         {
-            Close();
-            new GuestsView().Show();
+            new EquipmentRequestsView().Show();
+            this.Close();
         }
     }
 }

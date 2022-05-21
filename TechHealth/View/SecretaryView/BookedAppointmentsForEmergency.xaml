@@ -1,24 +1,25 @@
-﻿<Window x:Class="TechHealth.View.SecretaryView.AllergensView"
+﻿<Window x:Class="TechHealth.View.SecretaryView.BookedAppointmentsForEmergency"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TechHealth.View.SecretaryView"
         mc:Ignorable="d"
-        Title="AllergensView" Height="650" Width="400"
+        Title="BookedAppointmentsForEmergency" Height="650" Width="400"
         WindowStartupLocation="CenterScreen">
     <Grid>
-        <Button x:Name="addAllergen" Background="Black" Foreground="White" Content="Add" HorizontalAlignment="Center" Margin="0,470,0,0" VerticalAlignment="Top" Width="272" Click="Button_Click_Add" FontSize="16" FontWeight="Bold" Height="32"/>
-        <Button x:Name="deleteAllergen" Background="Black" Foreground="White" Content="Delete" HorizontalAlignment="Center" Margin="0,544,0,0" VerticalAlignment="Top" Width="272" Click="Button_Click_Delete" FontSize="16" FontWeight="Bold" Height="32"/>
-        <Button x:Name="editAllergen" Background="Black" Foreground="White" Content="Edit" HorizontalAlignment="Center" Margin="0,507,0,0" VerticalAlignment="Top" Width="272" Click="Button_Click_Edit" Height="32" FontSize="16" FontWeight="Bold"/>
-
-        <ListView x:Name="allergenList" Margin="64,155,64,169">
+        <ListView x:Name="examinationList" Margin="10,117,10,133">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Name" Width="250" DisplayMemberBinding="{Binding AllergenName}" />
+                    <GridViewColumn Header="Start" Width="65" DisplayMemberBinding="{Binding start,StringFormat=t}" />
+                    <GridViewColumn Header="Finish" Width="65" DisplayMemberBinding="{Binding end,StringFormat=t}" />
+                    <GridViewColumn Header="Patient" Width="100" DisplayMemberBinding="{Binding patient}" />
+                    <GridViewColumn Header="Doctor" Width="160" DisplayMemberBinding="{Binding doctor}" />
                 </GridView>
             </ListView.View>
         </ListView>
+        <Label x:Name="pickedDate" Content="date" HorizontalAlignment="Center" Margin="0,78,0,0" VerticalAlignment="Top" FontSize="22" FontWeight="Bold"/>
+        <Button Content="Postpone" HorizontalAlignment="Center" Margin="0,527,0,0" VerticalAlignment="Top" Background="Black" Foreground="White" Width="272" Click="Button_Click_Postpone" Height="32" FontSize="16" FontWeight="Bold"/>
         <Rectangle HorizontalAlignment="Center" Height="63" Stroke="Black" VerticalAlignment="Top" Width="430"/>
         <Button Click="Button_Click_Main" HorizontalAlignment="Left" Margin="28,10,0,0" VerticalAlignment="Top" Height="44" Width="55" BorderBrush="#FFFBFBFB" Foreground="White" Background="White">
             <Image Source="resources/bars.png"/>
@@ -31,7 +32,5 @@
         </Button>
         <Label Content="TechHealth" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="28" FontWeight="Bold" Margin="0,7,0,0"/>
         <TextBox HorizontalAlignment="Left" Margin="300,23,0,0" TextWrapping="Wrap" Text="Search..." VerticalAlignment="Top" Width="90"/>
-        <Label x:Name="allergensLabel" Content="Allergens" HorizontalAlignment="Center" Margin="0,93,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
-        <Button x:Name="back" Background="Black" Foreground="White" Content="Cancel" HorizontalAlignment="Center" Margin="0,581,0,0" VerticalAlignment="Top" Width="272" Click="Button_Click_Cancel" FontSize="16" FontWeight="Bold" Height="32"/>
     </Grid>
 </Window>

@@ -25,6 +25,11 @@ namespace TechHealth.View.SecretaryView
         {
             InitializeComponent();
         }
+        private void Button_Click_Main(object sender, RoutedEventArgs e)
+        {
+            new SecretaryMainWindow().Show();
+            this.Close();
+        }
         private void Button_Click_Confirm(object sender, RoutedEventArgs e)
         {
             var address = new Address();
@@ -79,10 +84,12 @@ namespace TechHealth.View.SecretaryView
             medicalRecordController.Create(accountName.Text+accountSurname.Text+accountJmbg.Text, Bloodtype.None, p, "", "", "", "", "", ed);
 
             this.Close();
+            new AccountsView().Show();
         }
         private void Button_Click_Cancel(object sender, RoutedEventArgs e)
         {
             this.Close();
+            new AccountsView().Show();
         }
 
         private void accountStreet_TextChanged(object sender, TextChangedEventArgs e)

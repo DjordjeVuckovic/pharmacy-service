@@ -40,5 +40,10 @@ namespace TechHealth.Controller
         {
             roomSeparationService.SeparateRooms(rs);
         }
+
+        public void SeparateOnDate(object state)
+        {
+            roomSeparationService.SeparateOnDate(state);
+        }
     }
 }

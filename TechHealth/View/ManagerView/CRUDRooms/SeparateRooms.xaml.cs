@@ -53,6 +53,16 @@ namespace TechHealth.View.ManagerView.CRUDRooms
             rs.RoomTwo = roomTwo;
             rs.SeparationID = Guid.NewGuid().ToString("N");
 
+            //if (DateTime.Compare(DateTime.Now, rs.SeparationEnd) == 0)
+            //{
+            //    roomController.Create(roomTwo);
+            //    roomController.Update(rs.RoomOne);
+            //    roomSeparationController.SeparateRooms(rs);               
+            //}
+            //else
+            //{
+            //    roomSeparationController.Create(rs);
+            //}
             roomController.Create(roomTwo);
             roomController.Update(rs.RoomOne);
             roomSeparationController.Create(rs);

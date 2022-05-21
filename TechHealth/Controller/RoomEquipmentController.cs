@@ -16,5 +16,12 @@ namespace TechHealth.Controller
         {
             return roomInventoryService.Create(re);
         }
+        public void UpdateQuantityWithRequest(EquipmentRequest er)
+        {
+            RoomEquipment re = new RoomEquipment();
+            re.EquipmentName = er.EquipmentName;
+            re.Quantity = er.Quantity;
+            roomInventoryService.UpdateQuantity(re);
+        }
     }
 }
