@@ -7,9 +7,7 @@
         mc:Ignorable="d"
         Title="AppointmensFuture" Height="450" Width="800">
     <Grid>
-        <DataGrid x:Name="RecommendedAppointmentsTable"
-                  AutoGenerateColumns="False" ItemsSource="{Binding MyList}"
-                  Margin="0,68,0,0" IsReadOnly="True" SelectionMode="Single" >
+        <DataGrid x:Name="RecommendedAppointmentsTable" AutoGenerateColumns="False" ItemsSource="{Binding MyList}" Margin="0,68,0,0" IsReadOnly="True" SelectionMode="Single" >
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Doctor" Binding="{Binding Doctor.FullName}" Width="1.2*"  CanUserResize="False" IsReadOnly="True"/>
                 <DataGridTextColumn Header="Date" Binding="{Binding Date,StringFormat=d}" Width="*"  CanUserResize="False" IsReadOnly="True" />

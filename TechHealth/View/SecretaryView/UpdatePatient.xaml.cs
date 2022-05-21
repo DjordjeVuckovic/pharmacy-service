@@ -54,11 +54,6 @@ namespace TechHealth.View.SecretaryView
                 accountPostcode.Text = "";
             }
         }
-        private void Button_Click_Main(object sender, RoutedEventArgs e)
-        {
-            new SecretaryMainWindow().Show();
-            this.Close();
-        }
         private void Button_Click_Confirm(object sender, RoutedEventArgs e)
         {
             var address = new Address();
@@ -81,12 +76,10 @@ namespace TechHealth.View.SecretaryView
             patientController.Update(accountName.Text, accountSurname.Text, address, null, accountJmbg.Text, Int32.Parse(accountLbo.Text), false, accountUsername.Text, accountPassword.Text, accountEmail.Text, false, false, accountPhone.Text);
 
             this.Close();
-            new AccountsView().Show();
         }
         private void Button_Click_Cancel(object sender, RoutedEventArgs e)
         {
             this.Close();
-            new AccountsView().Show();
         }
     }
 }

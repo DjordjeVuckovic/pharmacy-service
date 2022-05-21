@@ -41,10 +41,5 @@ namespace TechHealth.Controller
         {
             roomMergingService.MergeRooms(rm);
         }
-
-        public void MergeOnDate(object state)
-        {
-            roomMergingService.MergeOnDate(state);
-        }
     }
 }

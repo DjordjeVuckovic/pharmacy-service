@@ -89,13 +89,6 @@ namespace TechHealth.Controller
             return appointmentService.GetAllNotEvident();
         }
 
-        public List<Appointment> GetAllEvident()
-        {
-            return appointmentService.GetAllEvident();
-        }
-
-
-
 
 
     }

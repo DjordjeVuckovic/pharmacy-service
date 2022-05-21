@@ -5,27 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TechHealth.View.SecretaryView"
         mc:Ignorable="d"
-        Title="AddGuest" Height="650" Width="400"
-        WindowStartupLocation="CenterScreen">
+        Title="AddGuest" Height="250" Width="400">
     <Grid>
-        <Label Content="Add Guest" HorizontalAlignment="Center" Margin="0,98,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
-        <Label Content="Username" HorizontalAlignment="Left" Margin="64,150,0,0" VerticalAlignment="Top"/>
-        <Label Content="Password" HorizontalAlignment="Left" Margin="64,219,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="guestUsername" HorizontalAlignment="Center" Margin="0,176,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="266"/>
-        <TextBox x:Name="guestPassword" HorizontalAlignment="Center" Margin="0,245,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="266"/>
-        <Button x:Name="Cancel" Background="Black" Foreground="White" Content="Cancel" HorizontalAlignment="Center" Margin="0,354,0,0" VerticalAlignment="Top" Width="266" Click="Button_Click_Cancel" Height="32" FontSize="16" FontWeight="Bold" />
-        <Button x:Name="Confirm" Background="Black" Foreground="White" Content="Confirm" HorizontalAlignment="Center" Margin="0,317,0,0" VerticalAlignment="Top" Width="266" Click="Button_Click_Confirm" Height="32" FontSize="16" FontWeight="Bold" />
-        <Rectangle HorizontalAlignment="Center" Height="63" Stroke="Black" VerticalAlignment="Top" Width="430"/>
-        <Button Click="Button_Click_Main" HorizontalAlignment="Left" Margin="28,10,0,0" VerticalAlignment="Top" Height="44" Width="55" BorderBrush="#FFFBFBFB" Foreground="White" Background="White">
-            <Image Source="resources/bars.png"/>
-            <Button.ContextMenu>
-                <ContextMenu>
-                    <MenuItem Header="Home"/>
-                    <MenuItem Header="Log Out"/>
-                </ContextMenu>
-            </Button.ContextMenu>
-        </Button>
-        <Label Content="TechHealth" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="28" FontWeight="Bold" Margin="0,7,0,0"/>
-        <TextBox HorizontalAlignment="Left" Margin="300,23,0,0" TextWrapping="Wrap" Text="Search..." VerticalAlignment="Top" Width="90"/>
+        <Label Content="Add Guest" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <Label Content="Username" HorizontalAlignment="Left" Margin="56,62,0,0" VerticalAlignment="Top"/>
+        <Label Content="Password" HorizontalAlignment="Left" Margin="56,0,0,0" VerticalAlignment="Center"/>
+        <TextBox x:Name="guestUsername" HorizontalAlignment="Left" Margin="222,66,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="158"/>
+        <TextBox x:Name="guestPassword" HorizontalAlignment="Left" Margin="222,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="158"/>
+        <Button x:Name="Cancel" Background="Black" Foreground="White" Content="Cancel" HorizontalAlignment="Left" Margin="56,171,0,0" VerticalAlignment="Top" Width="100" Click="Button_Click_Cancel" />
+        <Button x:Name="Confirm" Background="Black" Foreground="White" Content="Confirm" HorizontalAlignment="Left" Margin="251,171,0,0" VerticalAlignment="Top" Width="100" Click="Button_Click_Confirm" />
     </Grid>
 </Window>

@@ -59,10 +59,5 @@ namespace TechHealth.Controller
         {
             return roomService.Delete(roomId);
         }
-
-        public Room GetRoombyId(string idr)
-        {
-            return roomService.GetRoombyId(idr);
-        }
     }
 }

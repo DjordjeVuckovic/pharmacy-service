@@ -5,43 +5,31 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TechHealth.View.SecretaryView"
         mc:Ignorable="d"
-        Title="MedicalRecordView" Height="650" Width="400"
-        WindowStartupLocation="CenterScreen">
+        Title="MedicalRecordView" Height="400" Width="400">
     <Grid>
-        <Label x:Name="name" Content="Medical Record" HorizontalAlignment="Center" Margin="0,63,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
-        <Label Content="Blood Type" HorizontalAlignment="Left" Margin="57,98,0,0" VerticalAlignment="Top" Width="68"/>
-        <Label Content="Weight" HorizontalAlignment="Left" Margin="57,146,0,0" VerticalAlignment="Top" Width="68"/>
-        <Label Content="Height" HorizontalAlignment="Left" Margin="57,190,0,0" VerticalAlignment="Top" Width="68"/>
-        <Label Content="Chronic Diseases" HorizontalAlignment="Left" Margin="57,234,0,0" VerticalAlignment="Top" Width="98"/>
-        <Label Content="Parent Diseases" HorizontalAlignment="Left" Margin="57,278,0,0" VerticalAlignment="Top" Width="98"/>
-        <Label Content="Martial Status" HorizontalAlignment="Left" Margin="57,322,0,0" VerticalAlignment="Top" Width="99"/>
-        <Label Content="Our" HorizontalAlignment="Left" Margin="57,366,0,0" VerticalAlignment="Top" Width="68"/>
-        <Label Content="Profession" HorizontalAlignment="Left" Margin="57,410,0,0" VerticalAlignment="Top" Width="68"/>
-        <Label Content="Workplace" HorizontalAlignment="Left" Margin="57,454,0,0" VerticalAlignment="Top" Width="68"/>
-        <Label Content="Job" HorizontalAlignment="Left" Margin="57,498,0,0" VerticalAlignment="Top" Width="68"/>
-        <ComboBox x:Name="bloodTypeCombo" HorizontalAlignment="Left" Margin="62,124,0,0" VerticalAlignment="Top" Width="272"/>
-        <TextBox x:Name="textboxWeight" HorizontalAlignment="Left" Margin="62,172,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="272"/>
-        <TextBox x:Name="textboxHeight" HorizontalAlignment="Left" Margin="62,216,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="272"/>
-        <TextBox x:Name="textboxChronicDiseases" HorizontalAlignment="Left" Margin="62,260,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="272"/>
-        <TextBox x:Name="textboxParentDiseases" HorizontalAlignment="Left" Margin="62,303,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="272"/>
-        <TextBox x:Name="textboxMartialStatus" HorizontalAlignment="Left" Margin="62,348,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="272"/>
-        <TextBox x:Name="textboxOur" HorizontalAlignment="Left" Margin="62,392,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="272"/>
-        <TextBox x:Name="textboxProfession" HorizontalAlignment="Left" Margin="62,436,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="272"/>
-        <TextBox x:Name="textboxWorkplace" HorizontalAlignment="Left" Margin="62,480,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="272"/>
-        <TextBox x:Name="textboxJob" HorizontalAlignment="Left" Margin="62,524,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="272"/>
-        <Button x:Name="Cancel" Background="Black" Foreground="White" Content="Cancel" HorizontalAlignment="Left" Margin="62,580,0,0" VerticalAlignment="Top" Width="272" Click="Button_Click_Cancel" Height="27" FontSize="16" FontWeight="Bold" />
-        <Button x:Name="Confirm" Background="Black" Foreground="White" Content="Confirm" HorizontalAlignment="Left" Margin="62,548,0,0" VerticalAlignment="Top" Width="272" Click="Button_Click_Confirm" FontSize="16" FontWeight="Bold" Height="27" />
-        <Rectangle HorizontalAlignment="Center" Height="63" Stroke="Black" VerticalAlignment="Top" Width="430"/>
-        <Button Click="Button_Click_Main" HorizontalAlignment="Left" Margin="28,10,0,0" VerticalAlignment="Top" Height="44" Width="55" BorderBrush="#FFFBFBFB" Foreground="White" Background="White">
-            <Image Source="resources/bars.png"/>
-            <Button.ContextMenu>
-                <ContextMenu>
-                    <MenuItem Header="Home"/>
-                    <MenuItem Header="Log Out"/>
-                </ContextMenu>
-            </Button.ContextMenu>
-        </Button>
-        <Label Content="TechHealth" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="28" FontWeight="Bold" Margin="0,7,0,0"/>
-        <TextBox HorizontalAlignment="Left" Margin="300,23,0,0" TextWrapping="Wrap" Text="Search..." VerticalAlignment="Top" Width="90"/>
+        <Label x:Name="name" Content="Medical Record" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <Label Content="Blood Type" HorizontalAlignment="Left" Margin="40,47,0,0" VerticalAlignment="Top" Width="68"/>
+        <Label Content="Weight" HorizontalAlignment="Left" Margin="40,73,0,0" VerticalAlignment="Top" Width="68"/>
+        <Label Content="Height" HorizontalAlignment="Left" Margin="40,99,0,0" VerticalAlignment="Top" Width="68"/>
+        <Label Content="Chronic Diseases" HorizontalAlignment="Left" Margin="40,125,0,0" VerticalAlignment="Top" Width="99"/>
+        <Label Content="Parent Diseases" HorizontalAlignment="Left" Margin="40,151,0,0" VerticalAlignment="Top" Width="99"/>
+        <Label Content="Martial Status" HorizontalAlignment="Left" Margin="40,177,0,0" VerticalAlignment="Top" Width="99"/>
+        <Label Content="Our" HorizontalAlignment="Left" Margin="40,203,0,0" VerticalAlignment="Top" Width="68"/>
+        <Label Content="Profession" HorizontalAlignment="Left" Margin="40,229,0,0" VerticalAlignment="Top" Width="68"/>
+        <Label Content="Workplace" HorizontalAlignment="Left" Margin="40,255,0,0" VerticalAlignment="Top" Width="68"/>
+        <Label Content="Job" HorizontalAlignment="Left" Margin="40,281,0,0" VerticalAlignment="Top" Width="68"/>
+        <ComboBox x:Name="bloodTypeCombo" HorizontalAlignment="Left" Margin="200,49,0,0" VerticalAlignment="Top" Width="171"/>
+        <TextBox x:Name="textboxWeight" HorizontalAlignment="Left" Margin="200,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="171"/>
+        <TextBox x:Name="textboxHeight" HorizontalAlignment="Left" Margin="200,103,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="171"/>
+        <TextBox x:Name="textboxChronicDiseases" HorizontalAlignment="Left" Margin="200,129,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="171"/>
+        <TextBox x:Name="textboxParentDiseases" HorizontalAlignment="Left" Margin="200,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="171"/>
+        <TextBox x:Name="textboxMartialStatus" HorizontalAlignment="Left" Margin="200,181,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="171"/>
+        <TextBox x:Name="textboxOur" HorizontalAlignment="Left" Margin="200,207,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="171"/>
+        <TextBox x:Name="textboxProfession" HorizontalAlignment="Left" Margin="200,233,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="171"/>
+        <TextBox x:Name="textboxWorkplace" HorizontalAlignment="Left" Margin="200,259,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="171"/>
+        <TextBox x:Name="textboxJob" HorizontalAlignment="Left" Margin="200,285,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="171"/>
+        <Button x:Name="Cancel" Background="Black" Foreground="White" Content="Cancel" HorizontalAlignment="Left" Margin="40,335,0,0" VerticalAlignment="Top" Width="100" Click="Button_Click_Cancel" />
+        <Button x:Name="Confirm" Background="Black" Foreground="White" Content="Confirm" HorizontalAlignment="Left" Margin="271,335,0,0" VerticalAlignment="Top" Width="100" Click="Button_Click_Confirm" />
+
     </Grid>
 </Window>
