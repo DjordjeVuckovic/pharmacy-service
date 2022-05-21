@@ -41,36 +41,25 @@ namespace TechHealth.View.SecretaryView
             type = appointment.AppointmentType;
             date = appointment.Date;
             doctor = appointment.Doctor;
-            if (type.Equals(appointment.AppointmentType)) { pickedDate.Content = "Booked Examinations "; } else { pickedDate.Content = "Booked Operations "; }
+            pickedDate.Content = type.Equals(appointment.AppointmentType) ? "Booked Examinations " : "Booked Operations ";
             pickedDate.Content += date.ToString("dd.MM.yyyy.");
         }
         private void GenerateAppointments()
         {
-            foreach (var a in AppointmentRepository.Instance.GetAll().Values)
+            foreach (var a in from a in AppointmentRepository.Instance.GetAll().Values where a.Doctor.Jmbg.Equals(doctor.Jmbg) where a.Date.Equals(date) && a.AppointmentType.Equals(type) where DateTime.Compare(DateTime.Parse(a.StartTimeD.ToString("HH:mm")), DateTime.Now) >= 0 where DateTime.Compare(DateTime.Parse(a.StartTimeD.ToString("HH:mm")), DateTime.Now.AddMinutes(30)) <= 0 select a)
             {
-                if(a.Doctor.Jmbg.Equals(doctor.Jmbg))
-                {
-                    if (a.Date.Equals(date) && a.AppointmentType.Equals(type))
-                    {
-                        if (DateTime.Compare(DateTime.Parse(a.StartTimeD.ToString("HH:mm")), DateTime.Now) >= 0)
-                        {
-                            if (DateTime.Compare(DateTime.Parse(a.StartTimeD.ToString("HH:mm")), DateTime.Now.AddMinutes(30)) <= 0)
-                            {
-                                spec = doctorController.GetById(a.Doctor.Jmbg).FullSpecialization;
-                                name = patientController.GetByPatientId(a.Patient.Jmbg).FullName;
-                                AppointmentsDTO aDTO = new AppointmentsDTO(a.IdAppointment, a.StartTimeD, a.FinishTimeD, spec, name, a.Room.roomId);
-                                list.Add(aDTO);
-                            }
-                        }
-                    }
-                }
+                spec = doctorController.GetById(a.Doctor.Jmbg).FullSpecialization;
+                name = patientController.GetByPatientId(a.Patient.Jmbg).FullName;
+                AppointmentsDTO aDto = new AppointmentsDTO(a.IdAppointment, a.StartTimeD, a.FinishTimeD, spec, name, a.Room.roomId);
+                list.Add(aDto);
             }
+
             examinationList.ItemsSource = list;
         }
         private void Button_Click_Main(object sender, RoutedEventArgs e)
         {
             new SecretaryMainWindow().Show();
-            this.Close();
+            Close();
         }
         private void Button_Click_Postpone(object sender, RoutedEventArgs e)
         {
@@ -83,7 +72,7 @@ namespace TechHealth.View.SecretaryView
             Appointment appointment = AppointmentRepository.Instance.GetById(a.idAppointment);
             Postpone(appointment);
             new EmergencyExamination().Show();
-            this.Close();
+            Close();
         }
         private void Postpone(Appointment appointment)
         {
@@ -92,12 +81,19 @@ namespace TechHealth.View.SecretaryView
                 appointment.Date = appointment.Date.AddDays(1);
                 appointment.StartTimeD = appointment.StartTimeD.AddDays(1);
                 appointment.FinishTimeD = appointment.FinishTimeD.AddDays(1);
-                if (AppointmentRepository.Instance.CanPostpone(appointment))
-                {
-                    break;
-                }
+                if (CanPostone(appointment)) break;
             }
             appointmentController.Update(appointment);
+        }
+
+        private static bool CanPostone(Appointment appointment)
+        {
+            if (AppointmentRepository.Instance.CanPostpone(appointment))
+            {
+                return true;
+            }
+
+            return false;
         }
     }
 }

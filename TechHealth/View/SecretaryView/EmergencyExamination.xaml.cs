@@ -38,13 +38,18 @@ namespace TechHealth.View.SecretaryView
         private void Button_Click_Main(object sender, RoutedEventArgs e)
         {
             new SecretaryMainWindow().Show();
-            this.Close();
+            Close();
         }
         private void Button_Click_Confirm(object sender, RoutedEventArgs e)
         {
             GetClosestTime();
             Appointment appointment = GenerateAppointment();
             Hide();
+            IsBooked(appointment);
+        }
+
+        private void IsBooked(Appointment appointment)
+        {
             if (!appointmentBooked)
             {
                 appointmentController.Create(appointment);
@@ -55,10 +60,11 @@ namespace TechHealth.View.SecretaryView
                 new BookedAppointmentsForEmergency(appointment).Show();
             }
         }
+
         private void Button_Click_Cancel(object sender, RoutedEventArgs e)
         {
             new SecretaryMainWindow().Show();
-            this.Close();
+            Close();
         }
         private void Button_Click_Add_Guest(object sender, RoutedEventArgs e)
         {
@@ -93,22 +99,10 @@ namespace TechHealth.View.SecretaryView
                     isBusy = false;
                     closestStartTime = DateTime.Now.AddMinutes(closestTimeCounter);
                     closestFinishTime = DateTime.Now.AddMinutes(closestTimeCounter + 10);
-                    foreach (var appointment in AppointmentRepository.Instance.GetAll().Values)
+                    foreach (var appointment in from appointment in AppointmentRepository.Instance.GetAll().Values where appointment.Date.Equals(DateTime.Parse(DateTime.Now.ToShortDateString())) where appointment.Doctor.Jmbg.Equals(doctor.Jmbg) where DateTime.Compare(DateTime.Parse(closestStartTime.ToString("HH:mm")), DateTime.Parse(appointment.StartTimeD.ToString("HH:mm"))) >= 0 where DateTime.Compare(DateTime.Parse(closestStartTime.ToString("HH:mm")), DateTime.Parse(appointment.FinishTimeD.ToString("HH:mm"))) <= 0 select appointment)
                     {
-                        if (appointment.Date.Equals(DateTime.Parse(DateTime.Now.ToShortDateString())))
-                        {
-                            if (appointment.Doctor.Jmbg.Equals(doctor.Jmbg))
-                            {
-                                if (DateTime.Compare(DateTime.Parse(closestStartTime.ToString("HH:mm")), DateTime.Parse(appointment.StartTimeD.ToString("HH:mm"))) >= 0)
-                                {
-                                    if (DateTime.Compare(DateTime.Parse(closestStartTime.ToString("HH:mm")), DateTime.Parse(appointment.FinishTimeD.ToString("HH:mm"))) <= 0)
-                                    {
-                                        isBusy = true;
-                                        break;
-                                    }
-                                }
-                            }
-                        }
+                        isBusy = true;
+                        break;
                     }
                     if (!isBusy) { return; }
                 }
