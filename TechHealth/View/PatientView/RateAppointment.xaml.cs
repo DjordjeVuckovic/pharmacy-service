@@ -37,12 +37,12 @@ namespace TechHealth.View.PatientView
         
         private void Button_Click_Confirm(object sender, RoutedEventArgs e)
         {
-            AnketaLekara.Id = Guid.NewGuid().ToString("N");
+            AnketaLekara.Id = Guid.NewGuid().ToString("N"); //foreach za id 
             AnketaLekara.OcenaLekara = BasicRatingBar.Value;
             AnketaLekara.OcenaOsoblje = BasicRatingBarStaff.Value;
-            AnketaLekara.OcenaCistoca = BasicRatingBarClean.Value;
             AnketaLekara.UkupnaOcena = BasicRatingBarTotal.Value;
             GradeRepository.Instance.Create(AnketaLekara);
+            //AnketaLekara.EvidentAppointment.Graded = true;
             Close();
         }
 

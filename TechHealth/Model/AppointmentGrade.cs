@@ -11,7 +11,6 @@ namespace TechHealth.Model
         public string Id { get; set; }
         public int OcenaLekara { get; set; } // OVDE OCENE ZA LEKARA
         public int OcenaOsoblje { get; set; }
-        public int OcenaCistoca { get; set; }
         public int UkupnaOcena { get; set; }
         public Appointment EvidentAppointment { get; set; }
 

@@ -78,6 +78,9 @@
             <DataTemplate DataType="{x:Type viewModelP:AppointmentHistoryViewModel}">
                 <viewP:AppointmentHistory/>
             </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModelP:RateHospitalViewModel}">
+                <viewP:RateHospital/>
+            </DataTemplate>
 
 
         </ResourceDictionary>

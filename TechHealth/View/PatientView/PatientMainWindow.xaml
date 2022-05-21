@@ -86,11 +86,12 @@
                              FontSize="14"
                              Style="{StaticResource MenuButtonTheme}"/>
 
-                <RadioButton Content="Notifications"
+                <RadioButton Content="Rate Hospital"
                              Height="50"
                              Foreground="White"
                              FontSize="14"
                              Style="{StaticResource MenuButtonTheme}"
+                             Command="{Binding RateHospitalCommand}"
                              />
 
             </StackPanel>

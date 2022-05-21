@@ -53,6 +53,27 @@ namespace TechHealth.View.PatientView.View
             DataContext = this;
             Past = new ObservableCollection<Appointment>(appController.GetAllEvident());
             LoadDoctors();
+            GradeAppointmentCommand = new RelayCommand(param => ExecuteGrade());
+            //DetailsCommand = new RelayCommand(param => ExecuteDetail());
+        }
+
+        private void ExecuteDetail()
+        {
+            throw new NotImplementedException();
+        }
+
+        /*private bool CanExecuteGrade()
+        {
+            if (selected == null || selected.Graded)
+            {
+                return false;
+            }
+            return true;
+        }*/
+
+        private void ExecuteGrade()
+        {
+            new RateAppointment(GetSelected).ShowDialog();
         }
 
         private void LoadDoctors()
@@ -63,14 +84,14 @@ namespace TechHealth.View.PatientView.View
             }
         }
 
-        private void Rate_Click(object sender, RoutedEventArgs e)
+        /*private void Rate_Click(object sender, RoutedEventArgs e)
         {
             new RateAppointment(selected).ShowDialog();
-        }
+        }*/
 
-        private void Details_Click(object sender, RoutedEventArgs e)
+/*        private void Details_Click(object sender, RoutedEventArgs e)
         {
-        }
+        }*/
 
         [NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)

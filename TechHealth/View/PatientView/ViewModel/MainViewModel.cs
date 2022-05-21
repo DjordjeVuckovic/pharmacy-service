@@ -15,6 +15,9 @@ namespace TechHealth.View.PatientView.ViewModel
         public AppointmentViewModel AppointmentVm { get; set; }
         public RelayCommand AppointmentHistoryViewCommand { get; set; }
         public AppointmentHistoryViewModel AppointmentHistoryVm { get; set; }
+        //public RelayCommand AppointmentHistoryRateCommand { get; set; }
+        public RateHospitalViewModel RateHospitalVm { get; set; }
+        public RelayCommand RateHospitalCommand { get; set; }
         public static string PatientId { get; set; }
 
         private object _currentView;
@@ -51,6 +54,7 @@ namespace TechHealth.View.PatientView.ViewModel
             HomeVm = new HomeViewModelP();
             AppointmentVm = new AppointmentViewModel();
             AppointmentHistoryVm = new AppointmentHistoryViewModel();
+            RateHospitalVm = new RateHospitalViewModel();
 
             CurrentView = HomeVm;
 
@@ -68,6 +72,12 @@ namespace TechHealth.View.PatientView.ViewModel
             {
                 CurrentView = AppointmentHistoryVm;
             });
+
+            RateHospitalCommand = new RelayCommand(o =>
+            {
+                CurrentView = RateHospitalVm;
+            });
+
         }
 
         

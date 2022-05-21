@@ -45,14 +45,16 @@
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Padding="0" Width="60" Background="Red" Name="Rate" Click="Rate_Click">Rate</Button>
+                            <Button Padding="0" Width="60" Background="Red" Name="Rate"
+                                    Command="{Binding GradeAppointmentCommand}">Rate</Button>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Padding="0" Width="60" Background="Red" Name="Details" Click="Details_Click">Details</Button>
+                            <Button Padding="0" Width="60" Background="Green" Name="Details"
+                                    Command="{Binding GradeAppointmentCommand}" >Details</Button>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>

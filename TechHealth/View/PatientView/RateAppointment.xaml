@@ -64,15 +64,10 @@
             VerticalAlignment="Center"
             Margin="38,251,60,284"
             FontSize="18" Width="123" Height="34"/>
-        <Label Content="Cleanliness" HorizontalAlignment="Center"
-            
-            VerticalAlignment="Center"
-            Margin="38,330,60,205"
-            FontSize="18" Width="123" Height="34"/>
         <Label Content="Total grade:" HorizontalAlignment="Center"
             
             VerticalAlignment="Center"
-            Margin="38,397,60,138"
+            Margin="38,346,60,189"
             FontSize="18" Width="123" Height="34"/>
         <materialDesign:RatingBar x:Name="BasicRatingBarStaff" Value="5"
             Margin="48,251,52,0"
@@ -80,14 +75,8 @@
             VerticalAlignment="Top" 
             Height="34" Width="121" Grid.Column="1" 
                                     />
-        <materialDesign:RatingBar x:Name="BasicRatingBarClean" Value="5"
-            Margin="48,330,52,0"
-            HorizontalAlignment="Center"
-            VerticalAlignment="Top" 
-            Height="34" Width="121" Grid.Column="1" 
-                                    />
         <materialDesign:RatingBar x:Name="BasicRatingBarTotal" Value="5"
-            Margin="48,397,52,0"
+            Margin="48,346,52,0"
             HorizontalAlignment="Center"
             VerticalAlignment="Top" 
             Height="34" Width="121" Grid.Column="1" 
