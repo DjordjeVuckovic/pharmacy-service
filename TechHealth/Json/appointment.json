@@ -22,8 +22,7 @@
       "Jmbg": "2315",
       "ShouldSerialize": false
     },
-    "Evident": false,
-    "Graded": false
+    "Evident": false
   },
   "86771793b2074ed0af6c137913d3e2ca": {
     "ShouldSerialize": true,
@@ -48,8 +47,7 @@
       "Jmbg": "131213121111",
       "ShouldSerialize": false
     },
-    "Evident": true,
-    "Graded": false
+    "Evident": true
   },
   "787aeaed2ea747eeb8f659c05f01cb5c": {
     "ShouldSerialize": true,
@@ -74,8 +72,7 @@
       "Jmbg": "131213121111",
       "ShouldSerialize": false
     },
-    "Evident": true,
-    "Graded": false
+    "Evident": true
   },
   "a736a9653bad485181463fa1e9944eb6": {
     "ShouldSerialize": true,
@@ -100,8 +97,7 @@
       "Jmbg": "131213121111",
       "ShouldSerialize": false
     },
-    "Evident": true,
-    "Graded": false
+    "Evident": true
   },
   "9b2a32b3807349bdb8343c68ff0ed497": {
     "ShouldSerialize": true,
@@ -126,8 +122,7 @@
       "Jmbg": "131213121111",
       "ShouldSerialize": false
     },
-    "Evident": true,
-    "Graded": false
+    "Evident": true
   },
   "6e2ba6f81cc2434d94386dba61f0da3a": {
     "ShouldSerialize": true,
@@ -152,8 +147,7 @@
       "Jmbg": "131213121111",
       "ShouldSerialize": false
     },
-    "Evident": true,
-    "Graded": false
+    "Evident": true
   },
   "3e6e9dd3376f499da17e92994016aebe": {
     "ShouldSerialize": true,
@@ -178,8 +172,7 @@
       "Jmbg": "1313",
       "ShouldSerialize": false
     },
-    "Evident": false,
-    "Graded": false
+    "Evident": false
   },
   "8e7d3bde8207480594d72a6fd45f79b9": {
     "ShouldSerialize": true,
@@ -204,8 +197,7 @@
       "Jmbg": "141314131111",
       "ShouldSerialize": false
     },
-    "Evident": false,
-    "Graded": false
+    "Evident": false
   },
   "2412305c71934bc0ae0ee2acd5a9df60": {
     "ShouldSerialize": true,
@@ -230,8 +222,7 @@
       "Jmbg": "131213124444",
       "ShouldSerialize": false
     },
-    "Evident": false,
-    "Graded": false
+    "Evident": false
   },
   "86b240ffb8e5429e8f29435cbfc71c88": {
     "ShouldSerialize": true,
@@ -256,8 +247,7 @@
       "Jmbg": "131213124444",
       "ShouldSerialize": false
     },
-    "Evident": false,
-    "Graded": false
+    "Evident": false
   },
   "54a4d3f5bce54d3cb2ac80e1ad6c1366": {
     "ShouldSerialize": true,
@@ -282,8 +272,7 @@
       "Jmbg": "1313",
       "ShouldSerialize": false
     },
-    "Evident": false,
-    "Graded": false
+    "Evident": false
   },
   "4d5e1f46e4264fecaf683ca37089f085": {
     "ShouldSerialize": true,
@@ -308,8 +297,7 @@
       "Jmbg": "131213124444",
       "ShouldSerialize": false
     },
-    "Evident": false,
-    "Graded": false
+    "Evident": false
   },
   "08f1cde70ba84c61ad4186b075cf0594": {
     "ShouldSerialize": true,
@@ -334,8 +322,7 @@
       "Jmbg": "131213121111",
       "ShouldSerialize": false
     },
-    "Evident": true,
-    "Graded": false
+    "Evident": true
   },
   "70e90ebbacf2473b915bec50cbf3838f": {
     "ShouldSerialize": true,
@@ -360,8 +347,7 @@
       "Jmbg": "131213121111",
       "ShouldSerialize": false
     },
-    "Evident": false,
-    "Graded": false
+    "Evident": false
   },
   "86ab3a3da1744f2d9807ef42f4058056": {
     "ShouldSerialize": true,
@@ -386,8 +372,7 @@
       "Jmbg": "131213121111",
       "ShouldSerialize": false
     },
-    "Evident": false,
-    "Graded": false
+    "Evident": false
   },
   "b0b54d597d6f4d5bb51c3e3c4fc7bbea": {
     "ShouldSerialize": true,
@@ -412,8 +397,7 @@
       "Jmbg": "131213121111",
       "ShouldSerialize": false
     },
-    "Evident": false,
-    "Graded": false
+    "Evident": false
   },
   "9e5888f4ab064abeaf4b62f8e82e1b3e": {
     "ShouldSerialize": true,
@@ -438,8 +422,7 @@
       "Jmbg": "2315",
       "ShouldSerialize": false
     },
-    "Evident": false,
-    "Graded": false
+    "Evident": false
   },
   "82c3f28a5b76472fbaac37ca72bf3922": {
     "ShouldSerialize": true,
@@ -464,7 +447,6 @@
       "Jmbg": "2315",
       "ShouldSerialize": false
     },
-
     "Evident": false
   },
   "47473016db174b48842c95e454322770": {
@@ -476,26 +458,11 @@
     "StartTime": null,
     "FinishTime": null,
     "IdAppointment": "47473016db174b48842c95e454322770",
-
-    "Evident": false,
-    "Graded": false
-  },
-  "68922f6157cb48d8b3a0eef6194c6349": {
-    "ShouldSerialize": true,
-    "Date": "2022-05-13T00:00:00",
-    "StartTimeD": "0001-01-01T00:00:00",
-    "FinishTimeD": "0001-01-01T00:00:00",
-    "Emergent": false,
-    "StartTime": "1:05 AM",
-    "FinishTime": null,
-    "IdAppointment": "68922f6157cb48d8b3a0eef6194c6349",
-
     "Room": {
       "roomId": "S2",
       "ShouldSerialize": false
     },
     "Patient": {
-
       "Lbo": 657771,
       "Jmbg": "13456",
       "ShouldSerialize": false
@@ -523,10 +490,6 @@
     "Patient": {
       "Lbo": 657771,
       "Jmbg": "13456",
-
-      "Lbo": 73456,
-      "Jmbg": "2456",
-
       "ShouldSerialize": false
     },
     "AppointmentType": 0,
@@ -534,7 +497,6 @@
       "Jmbg": "131213124444",
       "ShouldSerialize": false
     },
-
     "Evident": false
   },
   "8d161f33d4324b528fd43f41676313d8": {
@@ -561,9 +523,5 @@
       "ShouldSerialize": false
     },
     "Evident": false
-
-    "Evident": false,
-    "Graded": false
-
   }
 }

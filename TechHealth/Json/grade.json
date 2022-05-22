@@ -3,33 +3,22 @@
     "Id": "5ac0bdfbb6c44f2b9304e3dca8719c01",
     "OcenaLekara": 0,
     "OcenaOsoblje": 4,
+    "OcenaCistoca": 4,
     "UkupnaOcena": 4,
     "EvidentAppointment": {
       "ShouldSerialize": false,
-      "IdAppointment": "8f4aeb23199d4e21a3ef6467e71f6e3b",
-      "Graded": false
+      "IdAppointment": "8f4aeb23199d4e21a3ef6467e71f6e3b"
     }
   },
   "86771793b2074ed0af6c137913d3e2ca": {
     "Id": "b63cec79a36e4300959074dc4e63ed9f",
     "OcenaLekara": 3,
     "OcenaOsoblje": 3,
+    "OcenaCistoca": 4,
     "UkupnaOcena": 4,
     "EvidentAppointment": {
       "ShouldSerialize": false,
-      "IdAppointment": "86771793b2074ed0af6c137913d3e2ca",
-      "Graded": false
-    }
-  },
-  "787aeaed2ea747eeb8f659c05f01cb5c": {
-    "Id": "5ef21701680a4b2db85d6918be9170f8",
-    "OcenaLekara": 5,
-    "OcenaOsoblje": 4,
-    "UkupnaOcena": 4,
-    "EvidentAppointment": {
-      "ShouldSerialize": false,
-      "IdAppointment": "787aeaed2ea747eeb8f659c05f01cb5c",
-      "Graded": true
+      "IdAppointment": "86771793b2074ed0af6c137913d3e2ca"
     }
   }
 }
