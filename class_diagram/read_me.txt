@@ -1,0 +1,1 @@
+Class Diagram_KontrolnaTacka4 sadrzi doktorove activity i seqence digrame,sekretarov activity i class digram.

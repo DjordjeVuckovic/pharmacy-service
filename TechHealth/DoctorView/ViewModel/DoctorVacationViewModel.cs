@@ -105,8 +105,6 @@ namespace TechHealth.DoctorView.ViewModel
             {
                 CreateNotEmergent();
             }
-
-            OnRequestClose?.Invoke(this, EventArgs.Empty);
         }
 
         private void CreateNotEmergent()
@@ -126,6 +124,7 @@ namespace TechHealth.DoctorView.ViewModel
             {
                 doctorVacationRequestController.CreateNotEmergentVacation(doctorVacationRequest);
                 MessageBox.Show(@"You are successfully scheduled new vacation");
+                OnRequestClose?.Invoke(this, EventArgs.Empty);
             }
             catch(SpecializationException)
             {
@@ -155,6 +154,7 @@ namespace TechHealth.DoctorView.ViewModel
             {
                 doctorVacationRequestController.CreateEmergentVacation(doctorVacationRequest);
                 MessageBox.Show(@"You are successfully scheduled new vacation");
+                OnRequestClose?.Invoke(this, EventArgs.Empty);
             }
             catch (AppointmentVacationException)
             {
