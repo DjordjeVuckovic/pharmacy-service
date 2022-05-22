@@ -53,7 +53,7 @@ namespace TechHealth.View.PatientView.View
             DataContext = this;
             Past = new ObservableCollection<Appointment>(appController.GetAllEvident());
             LoadDoctors();
-            GradeAppointmentCommand = new RelayCommand(param => ExecuteGrade(), param => CanExecuteGrade());
+            GradeAppointmentCommand = new RelayCommand(param => ExecuteGrade());
             //DetailsCommand = new RelayCommand(param => ExecuteDetail());
         }
 
@@ -76,15 +76,6 @@ namespace TechHealth.View.PatientView.View
             new RateAppointment(GetSelected).ShowDialog();
         }
 
-        private bool CanExecuteGrade()
-        {
-            if (selected == null || selected.Graded)
-            {
-                return false;
-            }
-            return true;
-        }
-
         private void LoadDoctors()
         {
             for (int i = 0; i < Past.Count; i++)
@@ -92,7 +83,6 @@ namespace TechHealth.View.PatientView.View
                 Past[i].Doctor = DoctorRepository.Instance.GetDoctorbyId(Past[i].Doctor.Jmbg);
             }
         }
-
 
         /*private void Rate_Click(object sender, RoutedEventArgs e)
         {
@@ -109,6 +99,5 @@ namespace TechHealth.View.PatientView.View
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        
     }
 }

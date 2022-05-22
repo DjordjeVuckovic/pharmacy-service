@@ -41,9 +41,8 @@ namespace TechHealth.View.PatientView
             AnketaLekara.OcenaLekara = BasicRatingBar.Value;
             AnketaLekara.OcenaOsoblje = BasicRatingBarStaff.Value;
             AnketaLekara.UkupnaOcena = BasicRatingBarTotal.Value;
-            AnketaLekara.EvidentAppointment.Graded = true;
             GradeRepository.Instance.Create(AnketaLekara);
-             //ovo ne valja svaki put kad promenim view se refreshuje
+            //AnketaLekara.EvidentAppointment.Graded = true;
             Close();
         }
 
