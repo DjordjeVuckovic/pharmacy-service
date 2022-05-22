@@ -195,6 +195,16 @@ namespace TechHealth.Service
             {
                throw new AppointmentConflictException(existingAppointment,appointment);
             }
+
+            if (existingAppointment.PatientConflicts(appointment))
+            {
+               throw new AppointmentPatientConflictException(existingAppointment, appointment);
+            }
+
+            // if (existingAppointment.RoomConflicts(appointment))
+            // {
+            //    throw new AppointmentRoomConflictException(existingAppointment, appointment);
+            // }
             
          }
          

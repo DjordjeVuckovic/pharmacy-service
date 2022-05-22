@@ -6,6 +6,10 @@ namespace TechHealth.Service
 {
     public class MedicineService
     {
+        public List<Medicine> GetAll()
+        {
+            return MedicineRepository.Instance.GetAllToList();
+        }
         public List<Medicine> GetAllApproved()
         {
             var temp = new List<Medicine>();

@@ -8,8 +8,6 @@
     "StartTime": "12:01 AM",
     "FinishTime": null,
     "IdAppointment": "8f4aeb23199d4e21a3ef6467e71f6e3b",
-    "StartDateRegion": "0001-01-01T00:00:00",
-    "FinishDateRegion": "0001-01-01T00:00:00",
     "Room": {
       "roomId": "S2",
       "ShouldSerialize": false
@@ -35,8 +33,6 @@
     "StartTime": null,
     "FinishTime": null,
     "IdAppointment": "86771793b2074ed0af6c137913d3e2ca",
-    "StartDateRegion": "0001-01-01T00:00:00",
-    "FinishDateRegion": "0001-01-01T00:00:00",
     "Room": {
       "roomId": "Warehouse",
       "ShouldSerialize": false
@@ -62,8 +58,6 @@
     "StartTime": null,
     "FinishTime": null,
     "IdAppointment": "787aeaed2ea747eeb8f659c05f01cb5c",
-    "StartDateRegion": "0001-01-01T00:00:00",
-    "FinishDateRegion": "0001-01-01T00:00:00",
     "Room": {
       "roomId": "Warehouse",
       "ShouldSerialize": false
@@ -89,8 +83,6 @@
     "StartTime": null,
     "FinishTime": null,
     "IdAppointment": "a736a9653bad485181463fa1e9944eb6",
-    "StartDateRegion": "0001-01-01T00:00:00",
-    "FinishDateRegion": "0001-01-01T00:00:00",
     "Room": {
       "roomId": "S2",
       "ShouldSerialize": false
@@ -116,8 +108,6 @@
     "StartTime": null,
     "FinishTime": null,
     "IdAppointment": "9b2a32b3807349bdb8343c68ff0ed497",
-    "StartDateRegion": "0001-01-01T00:00:00",
-    "FinishDateRegion": "0001-01-01T00:00:00",
     "Room": {
       "roomId": "Warehouse",
       "ShouldSerialize": false
@@ -143,8 +133,6 @@
     "StartTime": null,
     "FinishTime": null,
     "IdAppointment": "6e2ba6f81cc2434d94386dba61f0da3a",
-    "StartDateRegion": "0001-01-01T00:00:00",
-    "FinishDateRegion": "0001-01-01T00:00:00",
     "Room": {
       "roomId": "Warehouse",
       "ShouldSerialize": false
@@ -170,8 +158,6 @@
     "StartTime": null,
     "FinishTime": null,
     "IdAppointment": "3e6e9dd3376f499da17e92994016aebe",
-    "StartDateRegion": "0001-01-01T00:00:00",
-    "FinishDateRegion": "0001-01-01T00:00:00",
     "Room": {
       "roomId": "S2",
       "ShouldSerialize": false
@@ -197,8 +183,6 @@
     "StartTime": null,
     "FinishTime": null,
     "IdAppointment": "8e7d3bde8207480594d72a6fd45f79b9",
-    "StartDateRegion": "0001-01-01T00:00:00",
-    "FinishDateRegion": "0001-01-01T00:00:00",
     "Room": {
       "roomId": "S3",
       "ShouldSerialize": false
@@ -224,8 +208,6 @@
     "StartTime": null,
     "FinishTime": null,
     "IdAppointment": "2412305c71934bc0ae0ee2acd5a9df60",
-    "StartDateRegion": "0001-01-01T00:00:00",
-    "FinishDateRegion": "0001-01-01T00:00:00",
     "Room": {
       "roomId": "S2",
       "ShouldSerialize": false
@@ -251,8 +233,6 @@
     "StartTime": null,
     "FinishTime": null,
     "IdAppointment": "86b240ffb8e5429e8f29435cbfc71c88",
-    "StartDateRegion": "0001-01-01T00:00:00",
-    "FinishDateRegion": "0001-01-01T00:00:00",
     "Room": {
       "roomId": "S2",
       "ShouldSerialize": false
@@ -278,8 +258,6 @@
     "StartTime": null,
     "FinishTime": null,
     "IdAppointment": "54a4d3f5bce54d3cb2ac80e1ad6c1366",
-    "StartDateRegion": "0001-01-01T00:00:00",
-    "FinishDateRegion": "0001-01-01T00:00:00",
     "Room": {
       "roomId": "S3",
       "ShouldSerialize": false
@@ -305,8 +283,6 @@
     "StartTime": null,
     "FinishTime": null,
     "IdAppointment": "4d5e1f46e4264fecaf683ca37089f085",
-    "StartDateRegion": "0001-01-01T00:00:00",
-    "FinishDateRegion": "0001-01-01T00:00:00",
     "Room": {
       "roomId": "S2",
       "ShouldSerialize": false
@@ -332,8 +308,6 @@
     "StartTime": null,
     "FinishTime": null,
     "IdAppointment": "08f1cde70ba84c61ad4186b075cf0594",
-    "StartDateRegion": "0001-01-01T00:00:00",
-    "FinishDateRegion": "0001-01-01T00:00:00",
     "Room": {
       "roomId": "S6",
       "ShouldSerialize": false
@@ -359,8 +333,6 @@
     "StartTime": null,
     "FinishTime": null,
     "IdAppointment": "70e90ebbacf2473b915bec50cbf3838f",
-    "StartDateRegion": "0001-01-01T00:00:00",
-    "FinishDateRegion": "0001-01-01T00:00:00",
     "Room": {
       "roomId": "S2",
       "ShouldSerialize": false
@@ -386,8 +358,6 @@
     "StartTime": null,
     "FinishTime": null,
     "IdAppointment": "86ab3a3da1744f2d9807ef42f4058056",
-    "StartDateRegion": "0001-01-01T00:00:00",
-    "FinishDateRegion": "0001-01-01T00:00:00",
     "Room": {
       "roomId": "S4",
       "ShouldSerialize": false
@@ -413,8 +383,6 @@
     "StartTime": null,
     "FinishTime": null,
     "IdAppointment": "b0b54d597d6f4d5bb51c3e3c4fc7bbea",
-    "StartDateRegion": "0001-01-01T00:00:00",
-    "FinishDateRegion": "0001-01-01T00:00:00",
     "Room": {
       "roomId": "S4",
       "ShouldSerialize": false
@@ -440,8 +408,6 @@
     "StartTime": null,
     "FinishTime": null,
     "IdAppointment": "9e5888f4ab064abeaf4b62f8e82e1b3e",
-    "StartDateRegion": "0001-01-01T00:00:00",
-    "FinishDateRegion": "0001-01-01T00:00:00",
     "Room": {
       "roomId": "S2",
       "ShouldSerialize": false
@@ -467,8 +433,6 @@
     "StartTime": null,
     "FinishTime": null,
     "IdAppointment": "82c3f28a5b76472fbaac37ca72bf3922",
-    "StartDateRegion": "0001-01-01T00:00:00",
-    "FinishDateRegion": "0001-01-01T00:00:00",
     "Room": {
       "roomId": "S5",
       "ShouldSerialize": false
@@ -481,6 +445,56 @@
     "AppointmentType": 0,
     "Doctor": {
       "Jmbg": "2315",
+      "ShouldSerialize": false
+    },
+    "Evident": false
+  },
+  "47473016db174b48842c95e454322770": {
+    "ShouldSerialize": true,
+    "Date": "2022-05-23T00:00:00",
+    "StartTimeD": "2022-05-22T02:10:00",
+    "FinishTimeD": "2022-05-22T04:20:00",
+    "Emergent": false,
+    "StartTime": null,
+    "FinishTime": null,
+    "IdAppointment": "47473016db174b48842c95e454322770",
+    "Room": {
+      "roomId": "S2",
+      "ShouldSerialize": false
+    },
+    "Patient": {
+      "Lbo": 657771,
+      "Jmbg": "13456",
+      "ShouldSerialize": false
+    },
+    "AppointmentType": 0,
+    "Doctor": {
+      "Jmbg": "131213121111",
+      "ShouldSerialize": false
+    },
+    "Evident": false
+  },
+  "536825b3816f4509ae4ada7bedeb1821": {
+    "ShouldSerialize": true,
+    "Date": "2022-05-23T00:00:00",
+    "StartTimeD": "2022-05-22T05:24:00",
+    "FinishTimeD": "2022-05-22T05:25:00",
+    "Emergent": false,
+    "StartTime": null,
+    "FinishTime": null,
+    "IdAppointment": "536825b3816f4509ae4ada7bedeb1821",
+    "Room": {
+      "roomId": "S4",
+      "ShouldSerialize": false
+    },
+    "Patient": {
+      "Lbo": 657771,
+      "Jmbg": "13456",
+      "ShouldSerialize": false
+    },
+    "AppointmentType": 0,
+    "Doctor": {
+      "Jmbg": "131213124444",
       "ShouldSerialize": false
     },
     "Evident": false

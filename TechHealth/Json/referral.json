@@ -3,9 +3,7 @@
     "ReferralId": "25cedb0bba874db5a579d1210447b72a",
     "Appointment": {
       "ShouldSerialize": false,
-      "IdAppointment": "9b2a32b3807349bdb8343c68ff0ed497",
-      "StartDateRegion": "0001-01-01T00:00:00",
-      "FinishDateRegion": "0001-01-01T00:00:00"
+      "IdAppointment": "9b2a32b3807349bdb8343c68ff0ed497"
     },
     "ReferralDoctor": {
       "Jmbg": "131213124444",
@@ -19,9 +17,7 @@
     "ReferralId": "49874f1e793043d7b024aea3226cc310",
     "Appointment": {
       "ShouldSerialize": false,
-      "IdAppointment": "9b2a32b3807349bdb8343c68ff0ed497",
-      "StartDateRegion": "0001-01-01T00:00:00",
-      "FinishDateRegion": "0001-01-01T00:00:00"
+      "IdAppointment": "9b2a32b3807349bdb8343c68ff0ed497"
     },
     "ReferralDoctor": {
       "Jmbg": "1313",
@@ -35,9 +31,7 @@
     "ReferralId": "ee8fc7e5dec44cd48ea66cbfcb0a31c4",
     "Appointment": {
       "ShouldSerialize": false,
-      "IdAppointment": "9b2a32b3807349bdb8343c68ff0ed497",
-      "StartDateRegion": "0001-01-01T00:00:00",
-      "FinishDateRegion": "0001-01-01T00:00:00"
+      "IdAppointment": "9b2a32b3807349bdb8343c68ff0ed497"
     },
     "ReferralDoctor": {
       "Jmbg": "141314131111",
@@ -51,9 +45,7 @@
     "ReferralId": "89f319571d5c48e6b4c24bfbcee5416b",
     "Appointment": {
       "ShouldSerialize": false,
-      "IdAppointment": "9b2a32b3807349bdb8343c68ff0ed497",
-      "StartDateRegion": "0001-01-01T00:00:00",
-      "FinishDateRegion": "0001-01-01T00:00:00"
+      "IdAppointment": "9b2a32b3807349bdb8343c68ff0ed497"
     },
     "ReferralDoctor": {
       "Jmbg": "131213124444",
@@ -67,9 +59,7 @@
     "ReferralId": "1e85992150c54ea997945e4caaeb01a0",
     "Appointment": {
       "ShouldSerialize": false,
-      "IdAppointment": "a736a9653bad485181463fa1e9944eb6",
-      "StartDateRegion": "0001-01-01T00:00:00",
-      "FinishDateRegion": "0001-01-01T00:00:00"
+      "IdAppointment": "a736a9653bad485181463fa1e9944eb6"
     },
     "ReferralDoctor": {
       "Jmbg": "131213124444",
@@ -83,9 +73,7 @@
     "ReferralId": "e2a89de861b144f9be20fff81be7dda1",
     "Appointment": {
       "ShouldSerialize": false,
-      "IdAppointment": "a736a9653bad485181463fa1e9944eb6",
-      "StartDateRegion": "0001-01-01T00:00:00",
-      "FinishDateRegion": "0001-01-01T00:00:00"
+      "IdAppointment": "a736a9653bad485181463fa1e9944eb6"
     },
     "ReferralDoctor": {
       "Jmbg": "1313",
@@ -99,9 +87,7 @@
     "ReferralId": "4705ca5ebaee49a3b52e7092234e6569",
     "Appointment": {
       "ShouldSerialize": false,
-      "IdAppointment": "86771793b2074ed0af6c137913d3e2ca",
-      "StartDateRegion": "0001-01-01T00:00:00",
-      "FinishDateRegion": "0001-01-01T00:00:00"
+      "IdAppointment": "86771793b2074ed0af6c137913d3e2ca"
     },
     "ReferralDoctor": {
       "Jmbg": "131213124444",
@@ -115,9 +101,7 @@
     "ReferralId": "d42f62a30f8044e498c3d11379895641",
     "Appointment": {
       "ShouldSerialize": false,
-      "IdAppointment": "9b2a32b3807349bdb8343c68ff0ed497",
-      "StartDateRegion": "0001-01-01T00:00:00",
-      "FinishDateRegion": "0001-01-01T00:00:00"
+      "IdAppointment": "9b2a32b3807349bdb8343c68ff0ed497"
     },
     "ReferralDoctor": {
       "Jmbg": "131213121111",
@@ -131,9 +115,7 @@
     "ReferralId": "a739b968dff74ac087017fc3ff981538",
     "Appointment": {
       "ShouldSerialize": false,
-      "IdAppointment": "6e2ba6f81cc2434d94386dba61f0da3a",
-      "StartDateRegion": "0001-01-01T00:00:00",
-      "FinishDateRegion": "0001-01-01T00:00:00"
+      "IdAppointment": "6e2ba6f81cc2434d94386dba61f0da3a"
     },
     "ReferralDoctor": {
       "Jmbg": "131213121111",
@@ -147,9 +129,7 @@
     "ReferralId": "fc900c37b42f4ce9835e5b53f8ae1b24",
     "Appointment": {
       "ShouldSerialize": false,
-      "IdAppointment": "6e2ba6f81cc2434d94386dba61f0da3a",
-      "StartDateRegion": "0001-01-01T00:00:00",
-      "FinishDateRegion": "0001-01-01T00:00:00"
+      "IdAppointment": "6e2ba6f81cc2434d94386dba61f0da3a"
     },
     "ReferralDoctor": {
       "Jmbg": "131213121111",
@@ -163,9 +143,7 @@
     "ReferralId": "05227910c59b4de09fcc054659cf26e1",
     "Appointment": {
       "ShouldSerialize": false,
-      "IdAppointment": "6e2ba6f81cc2434d94386dba61f0da3a",
-      "StartDateRegion": "0001-01-01T00:00:00",
-      "FinishDateRegion": "0001-01-01T00:00:00"
+      "IdAppointment": "6e2ba6f81cc2434d94386dba61f0da3a"
     },
     "ReferralDoctor": {
       "Jmbg": "2315",
@@ -179,9 +157,7 @@
     "ReferralId": "46dc28e0273448389f97169d151de695",
     "Appointment": {
       "ShouldSerialize": false,
-      "IdAppointment": "08f1cde70ba84c61ad4186b075cf0594",
-      "StartDateRegion": "0001-01-01T00:00:00",
-      "FinishDateRegion": "0001-01-01T00:00:00"
+      "IdAppointment": "08f1cde70ba84c61ad4186b075cf0594"
     },
     "ReferralDoctor": {
       "Jmbg": "2315",
@@ -190,5 +166,33 @@
     "Date": "2022-05-14T00:00:00",
     "StartTime": "2022-05-13T02:09:00",
     "FinishTime": "2022-05-13T05:24:00"
+  },
+  "0e6d474881a543de9e3f56ba8d7e3791": {
+    "ReferralId": "0e6d474881a543de9e3f56ba8d7e3791",
+    "Appointment": {
+      "ShouldSerialize": false,
+      "IdAppointment": "08f1cde70ba84c61ad4186b075cf0594"
+    },
+    "ReferralDoctor": {
+      "Jmbg": "131213121111",
+      "ShouldSerialize": false
+    },
+    "Date": "2022-05-23T00:00:00",
+    "StartTime": "2022-05-22T02:10:00",
+    "FinishTime": "2022-05-22T04:20:00"
+  },
+  "31e7c2fb5aef4c04a35772a0965f7e92": {
+    "ReferralId": "31e7c2fb5aef4c04a35772a0965f7e92",
+    "Appointment": {
+      "ShouldSerialize": false,
+      "IdAppointment": "08f1cde70ba84c61ad4186b075cf0594"
+    },
+    "ReferralDoctor": {
+      "Jmbg": "131213124444",
+      "ShouldSerialize": false
+    },
+    "Date": "2022-05-23T00:00:00",
+    "StartTime": "2022-05-22T05:24:00",
+    "FinishTime": "2022-05-22T05:25:00"
   }
 }

@@ -45,7 +45,7 @@ namespace TechHealth.DoctorView.ViewModel
         public MedicineViewModel(string doctorId)
         {
             DocotorId = doctorId;
-            Medicines = new ObservableCollection<Medicine>(MedicineRepository.Instance.GetAllToList());
+            Medicines = medicineController.GetAll();
             //PrescribeCommand= new RelayCommand(param => Execute(), param => CanExecute());
             ApproveCommand = new RelayCommand(param=>ExecuteApprove(),param=>CanExecuteApprove());
             RejectCommand = new RelayCommand(param => ExecuteReject(), param => CanExecuteReject());

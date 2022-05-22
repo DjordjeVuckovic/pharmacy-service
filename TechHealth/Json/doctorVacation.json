@@ -142,5 +142,17 @@
     "VacationReason": "aaa",
     "Emergent": true,
     "VacationStatus": 0
+  },
+  "0c5e37e3a7d8465ca9afd602860f168b": {
+    "VacationId": "0c5e37e3a7d8465ca9afd602860f168b",
+    "StartDate": "2023-01-04T00:00:00",
+    "FinishDate": "2023-06-24T00:00:00",
+    "Doctor": {
+      "Jmbg": "131213121111",
+      "ShouldSerialize": false
+    },
+    "VacationReason": "aaaa",
+    "Emergent": false,
+    "VacationStatus": 0
   }
 }
