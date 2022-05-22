@@ -157,7 +157,7 @@ namespace TechHealth.Model
             OnPropertyChanged(nameof(Evident));
          }
       }
-      public bool ShouldSerializeDate()
+        public bool ShouldSerializeDate()
       {
          return ShouldSerialize;
       }
