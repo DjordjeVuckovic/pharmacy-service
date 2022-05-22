@@ -151,6 +151,7 @@ namespace TechHealth.DoctorView.ViewModel
                 VacationStatus = VacationStatus.Waiting
             };
             try
+            
             {
                 doctorVacationRequestController.CreateEmergentVacation(doctorVacationRequest);
                 MessageBox.Show(@"You are successfully scheduled new vacation");
