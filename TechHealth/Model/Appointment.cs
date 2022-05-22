@@ -22,7 +22,8 @@ namespace TechHealth.Model
       private AppointmentType appointmentType;
       private Doctor doctor;
       private bool evident;
-      private DateTime startTimeD;
+        private bool graded;
+        private DateTime startTimeD;
       private DateTime finishTimeD;
 
       public Appointment(DateTime date, string idAppointment, Room room, Patient patient, AppointmentType appointmentType, Doctor doctor,
@@ -36,6 +37,7 @@ namespace TechHealth.Model
          this.appointmentType = appointmentType;
          this.doctor = doctor;
          this.evident = false;
+            this.graded = false;
          this.startTimeD = startTimeD;
          this.finishTimeD = finishTimeD;
          ShouldSerialize = true;
@@ -157,6 +159,18 @@ namespace TechHealth.Model
             OnPropertyChanged(nameof(Evident));
          }
       }
+        public bool Graded
+        {
+            get
+            {
+                return graded;
+            }
+            set
+            {
+                graded = value;
+                OnPropertyChanged(nameof(Graded));
+            }
+        }
         public bool ShouldSerializeDate()
       {
          return ShouldSerialize;

@@ -1,2 +1,14 @@
 {
+  "2456": {
+    "Id": "77ce37b7cdb944bb92a00316af051921",
+    "OcenaCistoca": 3,
+    "OcenaDostupnost": 3,
+    "OcenaOprema": 4,
+    "OcenaLakoca": 4,
+    "Patient": {
+      "Lbo": 73456,
+      "Jmbg": "2456",
+      "ShouldSerialize": false
+    }
+  }
 }
