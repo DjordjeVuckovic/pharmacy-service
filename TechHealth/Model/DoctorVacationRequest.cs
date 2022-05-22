@@ -14,6 +14,7 @@ namespace TechHealth.Model
         
         public bool CheckDaysConflict(DoctorVacationRequest doctorVacationRequest)
         {
+            
             return doctorVacationRequest.StartDate < FinishDate && doctorVacationRequest.FinishDate > StartDate;
         }
         
