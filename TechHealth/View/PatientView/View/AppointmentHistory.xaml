@@ -42,23 +42,15 @@
                 <DataGridTextColumn Header="Type"
                                     Binding="{Binding AppointmentType}" Width="*"
                                     CanUserResize="False"/>
-                <DataGridTemplateColumn>
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <Button Padding="0" Width="60" Background="Red" Name="Rate"
-                                    Command="{Binding GradeAppointmentCommand}">Rate</Button>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-                <DataGridTemplateColumn>
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <Button Padding="0" Width="60" Background="Green" Name="Details"
-                                    Command="{Binding GradeAppointmentCommand}" >Details</Button>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
+        <Button Content="Rate" HorizontalAlignment="Left"
+                Margin="20,10,0,0" Grid.Row="3" VerticalAlignment="Top"
+                Width="121" Height="45" 
+                Command="{Binding GradeAppointmentCommand}"
+                Background="Red"/>
+        <Button Content="Details" HorizontalAlignment="Left"
+                Margin="458,10,0,0" Grid.Row="3" VerticalAlignment="Top"
+                Width="121" Height="45"/>
     </Grid>
 </UserControl>
