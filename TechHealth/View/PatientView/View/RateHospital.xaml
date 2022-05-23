@@ -19,7 +19,7 @@
                FontSize="28" Grid.ColumnSpan="2" Height="60"
                Foreground="White"/>
         <materialDesign:RatingBar x:Name="BasicRatingBarClean" Value="5"
-                                  Margin="76,100,90,0"
+                                  Margin="76,70,90,0"
                                   HorizontalAlignment="Center"
                                   VerticalAlignment="Top" 
                                   Height="34" Width="134" Grid.Column="1" 
@@ -27,26 +27,26 @@
         <Label Content="Cleanliness:" HorizontalAlignment="Center"
             Foreground="Black"
             VerticalAlignment="Center"
-            Margin="47,100,72,316"
+            Margin="47,70,72,346"
             FontSize="18" Width="181" Height="34"/>
         <Label Content="Availability:" HorizontalAlignment="Center"
             
             VerticalAlignment="Center"
-            Margin="47,139,72,277"
+            Margin="47,146,72,270"
             FontSize="18" Width="181" Height="34"/>
         <Label Content="Equipment:" HorizontalAlignment="Center"
             
             VerticalAlignment="Center"
-            Margin="47,188,72,228"
+            Margin="47,236,72,180"
             FontSize="18" Width="181" Height="34"/>
         <materialDesign:RatingBar x:Name="BasicRatingBarAvailable" Value="5"
-            Margin="76,139,92,0"
+            Margin="76,146,92,0"
             HorizontalAlignment="Center"
             VerticalAlignment="Top" 
             Height="34" Width="132" Grid.Column="1" 
                                     />
         <materialDesign:RatingBar x:Name="BasicRatingBarEq" Value="5"
-            Margin="76,188,92,0"
+            Margin="76,236,92,0"
             HorizontalAlignment="Center"
             VerticalAlignment="Top" 
             Height="34" Width="132" Grid.Column="1" 
@@ -54,10 +54,10 @@
         <Label Content="Ease of reservation:" HorizontalAlignment="Center"
             
             VerticalAlignment="Center"
-            Margin="47,237,72,179"
+            Margin="47,322,72,94"
             FontSize="18" Width="181" Height="34"/>
         <materialDesign:RatingBar x:Name="BasicRatingBarEasy" Value="5"
-            Margin="76,237,92,0"
+            Margin="76,322,92,0"
             HorizontalAlignment="Center"
             VerticalAlignment="Top" 
             Height="34" Width="132" Grid.Column="1" 
@@ -65,8 +65,6 @@
         <Button Content="Confirm" HorizontalAlignment="Left"
                 FontSize="18"
                 Background="Gray"
-                Margin="226,350,0,0" VerticalAlignment="Top"
-                Width="148" Grid.ColumnSpan="2" Height="50"
-                Command="{Binding RateHospitalCommand}"/>
+                Margin="227,390,0,0" VerticalAlignment="Top" Width="148" Grid.ColumnSpan="2" Height="50" Click="Button_Click"/>
     </Grid>
 </UserControl>

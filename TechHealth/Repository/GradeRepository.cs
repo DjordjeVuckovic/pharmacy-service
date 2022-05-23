@@ -41,6 +41,5 @@ namespace TechHealth.Repository
         {
             entity.EvidentAppointment.ShouldSerialize = false;
         }
-
     }
 }
