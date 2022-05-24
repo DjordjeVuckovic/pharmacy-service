@@ -63,7 +63,7 @@
     },
     "Price": 0.0,
     "MedicineName": "Paracetamol",
-    "MedicineStatus": 0,
+    "MedicineStatus": 1,
     "ShouldSerialize": true
   }
 }

@@ -108,7 +108,7 @@ namespace TechHealth.DoctorView.ViewModel
             DialogResult dialogResult = MessageBox.Show(@"Are you sure about that?", @"Cancel prescription", MessageBoxButtons.YesNo);
             if(dialogResult==(DialogResult) MessageBoxResult.Yes)
             {
-                OnRequestClose(this, new EventArgs());
+                OnRequestClose?.Invoke(this, EventArgs.Empty);
             }
         }
 
@@ -126,12 +126,12 @@ namespace TechHealth.DoctorView.ViewModel
 
         public void Execute()
         {
-            CreatePresription();
+            CreatePrescription();
             //MessageBox.Show(@"You are successfully create new prescription");
             OnRequestClose(this, new EventArgs());
         }
 
-        private void CreatePresription()
+        private void CreatePrescription()
         {
             RandomGenerator randomGenerator = new RandomGenerator();
             //DateTime dateTime = new DateTime(DatePicker.Day);

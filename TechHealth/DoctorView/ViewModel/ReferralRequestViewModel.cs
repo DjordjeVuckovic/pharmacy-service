@@ -240,7 +240,18 @@ namespace TechHealth.DoctorView.ViewModel
             }
             catch (AppointmentConflictException)
             {
-                MessageBox.Show(@"Doctor has already scheduled appointment in that period!Change date or time.",@"Appointment exception",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show(@"Doctor has already scheduled appointment in that period!Change date or time.",
+                    @"Appointment exception", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            // catch (AppointmentRoomConflictException)
+            // {
+            //     MessageBox.Show(@"Room is already scheduled  in that period!Change date or time.",
+            //         @"Appointment exception", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            // }
+            catch (AppointmentPatientConflictException)
+            {
+                MessageBox.Show(@"Patient has already scheduled appointment in that period!Change date or time.",
+                    @"Appointment exception", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }

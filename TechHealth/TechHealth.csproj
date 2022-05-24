@@ -286,6 +286,8 @@
     <Compile Include="DTO\EquipmentReallocationDTO.cs" />
     <Compile Include="DTO\RecommendedAppointmentDTO.cs" />
     <Compile Include="Exceptions\AppointmentConflictException.cs" />
+    <Compile Include="Exceptions\AppointmentPatientConflictException.cs" />
+    <Compile Include="Exceptions\AppointmentRoomConflictException.cs" />
     <Compile Include="Exceptions\AppointmentVacationException.cs" />
     <Compile Include="Exceptions\SpecializationException.cs" />
     <Compile Include="JsonIgnore\ShouldSerializeAppointment.cs" />

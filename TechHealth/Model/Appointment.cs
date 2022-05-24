@@ -217,6 +217,24 @@ namespace TechHealth.Model
 
          return appointment.Date == Date && appointment.StartTimeD < FinishTimeD && appointment.FinishTimeD > StartTimeD;
       }
+      public bool RoomConflicts(Appointment appointment)
+      {
+         if (appointment.Room.roomId != Room.roomId)
+         {
+            return false;
+         }
+
+         return appointment.Date == Date && appointment.StartTimeD < FinishTimeD && appointment.FinishTimeD > StartTimeD;
+      }
+      public bool PatientConflicts(Appointment appointment)
+      {
+         if (appointment.Patient.Jmbg != Patient.Jmbg)
+         {
+            return false;
+         }
+
+         return appointment.Date == Date && appointment.StartTimeD < FinishTimeD && appointment.FinishTimeD > StartTimeD;
+      }
 
         public bool GetIfPast()
         {
