@@ -76,7 +76,7 @@ namespace TechHealth.Service
             }
         }
 
-        private void ExecuteMovement(RoomEquipment roomEq)
+        public void ExecuteMovement(RoomEquipment roomEq)
         {
             RoomEquipment warehouseEq = new RoomEquipment();
             warehouseEq.EquipmentName = roomEq.EquipmentName;
