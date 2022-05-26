@@ -99,6 +99,31 @@ namespace TechHealth.View.SecretaryView
             timePickerStart.Text = appointment.StartTimeD.ToString("hh:mm tt");
             timePickerEnd.Text = appointment.FinishTimeD.ToString("hh:mm tt");
         }
+        private void Button_Guests(object sender, RoutedEventArgs e)
+        {
+            new GuestsView().Show();
+            Close();
+        }
+        private void Button_Accounts(object sender, RoutedEventArgs e)
+        {
+            new AccountsView().Show();
+            Close();
+        }
+        private void Button_Appointments(object sender, RoutedEventArgs e)
+        {
+            new AppointmentsPickDate().Show();
+            Close();
+        }
+        private void Button_Equipment(object sender, RoutedEventArgs e)
+        {
+            new EquipmentRequestsView().Show();
+            Close();
+        }
+        private void Button_EmergencyExamination(object sender, RoutedEventArgs e)
+        {
+            new EmergencyExamination().Show();
+            Close();
+        }
         private void Button_Click_Confirm(object sender, RoutedEventArgs e)
         {
             Doctor dr = new Doctor();
