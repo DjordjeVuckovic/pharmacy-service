@@ -60,8 +60,8 @@ namespace TechHealth.View.SecretaryView
             try
             {
                 DateTime date = DateTime.Parse(datePicker.Text);
-                Hide();
                 new AppointmentsViewSecretary(date, AppointmentType.examination).Show();
+                Close();
             }
             catch
             {
@@ -74,8 +74,8 @@ namespace TechHealth.View.SecretaryView
             try
             {
                 DateTime date = DateTime.Parse(datePicker.Text);
-                Hide();
                 new AppointmentsViewSecretary(date, AppointmentType.operation).Show();
+                Close();
             }
             catch
             {

@@ -90,8 +90,8 @@ namespace TechHealth.View.SecretaryView
         }
         private void Button_Click_Add(object sender, RoutedEventArgs e)
         {
-            Hide();
-            new AddAppointmentSecretary(date1, type1).ShowDialog();
+            new AddAppointmentSecretary(date1, type1).Show();
+            Close();
             Update();
         }
         private void Button_Click_Edit(object sender, RoutedEventArgs e)
@@ -102,8 +102,8 @@ namespace TechHealth.View.SecretaryView
                 return;
             }
             AppointmentsDTO a = (AppointmentsDTO)examinationList.SelectedItems[0];
-            Hide();
-            new UpdateAppointmentSecretary(AppointmentRepository.Instance.GetById(a.idAppointment)).ShowDialog();
+            new UpdateAppointmentSecretary(AppointmentRepository.Instance.GetById(a.idAppointment)).Show();
+            Close();
             Update();
         }
         private void Button_Click_Delete(object sender, RoutedEventArgs e)
