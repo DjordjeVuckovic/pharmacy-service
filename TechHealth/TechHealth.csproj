@@ -624,8 +624,13 @@
     <Content Include="Json\rejectedMedicine.json" />
     <Content Include="Json\secretary.json" />
     <Content Include="Json\specialization.json" />
-    <Resource Include="View\SecretaryView\resources\caduceus_logo_black_and_white.png" />
+    <Resource Include="View\SecretaryView\resources\guest.png" />
+    <Resource Include="View\SecretaryView\resources\equipment.png" />
+    <Resource Include="View\SecretaryView\resources\emergency.png" />
+    <Resource Include="View\SecretaryView\resources\appointment.png" />
+    <Resource Include="View\SecretaryView\resources\account.png" />
     <Resource Include="View\SecretaryView\resources\bars.png" />
+    <Resource Include="View\SecretaryView\resources\caduceus_logo_black_and_white.png" />
     <Resource Include="resources\ZDRAVOicon.png" />
     <Resource Include="resources\appoint.png" />
     <Resource Include="resources\1a.png" />

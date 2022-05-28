@@ -58,6 +58,31 @@ namespace TechHealth.View.SecretaryView
             pickedDate.Content += date.ToString("dd.MM.yyyy.");
             examinationList.ItemsSource = list;
         }
+        private void Button_Guests(object sender, RoutedEventArgs e)
+        {
+            new GuestsView().Show();
+            Close();
+        }
+        private void Button_Accounts(object sender, RoutedEventArgs e)
+        {
+            new AccountsView().Show();
+            Close();
+        }
+        private void Button_Appointments(object sender, RoutedEventArgs e)
+        {
+            new AppointmentsPickDate().Show();
+            Close();
+        }
+        private void Button_Equipment(object sender, RoutedEventArgs e)
+        {
+            new EquipmentRequestsView().Show();
+            Close();
+        }
+        private void Button_EmergencyExamination(object sender, RoutedEventArgs e)
+        {
+            new EmergencyExamination().Show();
+            Close();
+        }
         private void Button_Click_Main(object sender, RoutedEventArgs e)
         {
             new SecretaryMainWindow().Show();
@@ -65,8 +90,8 @@ namespace TechHealth.View.SecretaryView
         }
         private void Button_Click_Add(object sender, RoutedEventArgs e)
         {
-            Hide();
-            new AddAppointmentSecretary(date1, type1).ShowDialog();
+            new AddAppointmentSecretary(date1, type1).Show();
+            Close();
             Update();
         }
         private void Button_Click_Edit(object sender, RoutedEventArgs e)
@@ -77,8 +102,8 @@ namespace TechHealth.View.SecretaryView
                 return;
             }
             AppointmentsDTO a = (AppointmentsDTO)examinationList.SelectedItems[0];
-            Hide();
-            new UpdateAppointmentSecretary(AppointmentRepository.Instance.GetById(a.idAppointment)).ShowDialog();
+            new UpdateAppointmentSecretary(AppointmentRepository.Instance.GetById(a.idAppointment)).Show();
+            Close();
             Update();
         }
         private void Button_Click_Delete(object sender, RoutedEventArgs e)

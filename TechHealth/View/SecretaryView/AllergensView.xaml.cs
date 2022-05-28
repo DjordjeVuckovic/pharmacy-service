@@ -40,6 +40,31 @@ namespace TechHealth.View.SecretaryView
             allergenList.ItemsSource = allergens;
             allergensLabel.Content = patient.Name + " " + patient.Surname + "'s Allergens";
         }
+        private void Button_Guests(object sender, RoutedEventArgs e)
+        {
+            new GuestsView().Show();
+            Close();
+        }
+        private void Button_Accounts(object sender, RoutedEventArgs e)
+        {
+            new AccountsView().Show();
+            Close();
+        }
+        private void Button_Appointments(object sender, RoutedEventArgs e)
+        {
+            new AppointmentsPickDate().Show();
+            Close();
+        }
+        private void Button_Equipment(object sender, RoutedEventArgs e)
+        {
+            new EquipmentRequestsView().Show();
+            Close();
+        }
+        private void Button_EmergencyExamination(object sender, RoutedEventArgs e)
+        {
+            new EmergencyExamination().Show();
+            Close();
+        }
         private void Button_Click_Main(object sender, RoutedEventArgs e)
         {
             new SecretaryMainWindow().Show();

@@ -8,7 +8,7 @@
         Title="AddPatient" Height="650" Width="400" WindowStartupLocation="CenterScreen">
     <Grid>
         <Label Content="Edit Patient" HorizontalAlignment="Center" Margin="0,63,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
-        <ScrollViewer Margin="0,100,0,0">
+        <ScrollViewer Margin="0,100,0,89">
             <Grid>
                 <Label Content="Name" HorizontalAlignment="Left" Margin="56,12,0,0" VerticalAlignment="Top"/>
                 <Label Content="Surname" HorizontalAlignment="Left" Margin="56,56,0,0" VerticalAlignment="Top"/>
@@ -52,5 +52,36 @@
         </Button>
         <Label Content="TechHealth" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="28" FontWeight="Bold" Margin="0,7,0,0"/>
         <TextBox HorizontalAlignment="Left" Margin="300,23,0,0" TextWrapping="Wrap" Text="Search..." VerticalAlignment="Top" Width="90"/>
+        <Rectangle HorizontalAlignment="Center" Height="78" Stroke="Black" VerticalAlignment="Top" Width="430" Margin="0,550,0,0"/>
+        <Button Click="Button_Accounts" HorizontalAlignment="Left" Margin="3,552,0,0" VerticalAlignment="Top" Height="60" Width="57" BorderBrush="#FFFBFBFB" Foreground="Black" Background="White">
+            <StackPanel>
+                <Image Source="/View/SecretaryView/resources/account.png" Height="39" Width="44"/>
+                <TextBlock HorizontalAlignment="Center" RenderTransformOrigin="0.674,-0.373"><Run Text="Accounts"/></TextBlock>
+            </StackPanel>
+        </Button>
+        <Button Click="Button_Guests" HorizontalAlignment="Left" Margin="81,552,0,0" VerticalAlignment="Top" Height="60" Width="57" BorderBrush="#FFFBFBFB" Foreground="Black" Background="White">
+            <StackPanel>
+                <Image Source="/View/SecretaryView/resources/guest.png" Height="39" Width="44"/>
+                <TextBlock HorizontalAlignment="Center" RenderTransformOrigin="0.674,-0.373"><Run Text="Guests"/></TextBlock>
+            </StackPanel>
+        </Button>
+        <Button Click="Button_Appointments" HorizontalAlignment="Center" Margin="0,552,0,0" VerticalAlignment="Top" Height="60" Width="92" BorderBrush="#FFFBFBFB" Foreground="Black" Background="White">
+            <StackPanel>
+                <Image Source="/View/SecretaryView/resources/appointment.png" Height="39" Width="44"/>
+                <TextBlock HorizontalAlignment="Center" RenderTransformOrigin="0.674,-0.373"><Run Text="Appointments"/></TextBlock>
+            </StackPanel>
+        </Button>
+        <Button Click="Button_Equipment" HorizontalAlignment="Left" Margin="245,552,0,0" VerticalAlignment="Top" Height="60" Width="61" BorderBrush="#FFFBFBFB" Foreground="Black" Background="White">
+            <StackPanel>
+                <Image Source="/View/SecretaryView/resources/equipment.png" Height="39" Width="44"/>
+                <TextBlock HorizontalAlignment="Center" RenderTransformOrigin="0.674,-0.373"><Run Text="Equipment"/></TextBlock>
+            </StackPanel>
+        </Button>
+        <Button Click="Button_EmergencyExamination" HorizontalAlignment="Left" Margin="322,552,0,0" VerticalAlignment="Top" Height="60" Width="61" BorderBrush="#FFFBFBFB" Foreground="Black" Background="White">
+            <StackPanel>
+                <Image Source="/View/SecretaryView/resources/emergency.png" Height="39" Width="44"/>
+                <TextBlock HorizontalAlignment="Center" RenderTransformOrigin="0.674,-0.373"><Run Text="Emergency"/></TextBlock>
+            </StackPanel>
+        </Button>
     </Grid>
 </Window>
