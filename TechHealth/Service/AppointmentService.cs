@@ -70,32 +70,27 @@ namespace TechHealth.Service
 
         public List<Appointment> GetAllEvident()
         {
-            var EvidentAppointments = new List<Appointment>();
+            var evidentAppointments = new List<Appointment>();
             foreach (var vAppointment in GetAll())
             {
                 if (vAppointment.Evident)
                 {
-                    EvidentAppointments.Add(vAppointment);
+                    evidentAppointments.Add(vAppointment);
                 }
 
             }
-            return EvidentAppointments;
+            return evidentAppointments;
         }
 
         public List<Appointment> GetAllFuture(DateTime startDateRegion, DateTime finishDateRegion, Doctor doctor,Patient patient, Room room)
       {
          List<Appointment> ret = new List<Appointment>();
 
-            DateTime myStart = startDateRegion;
-            DateTime myFinish = finishDateRegion;
-
             DateTime startTime = startDateRegion;
             DateTime endTime = startDateRegion.AddMinutes(30);
-
             TimeSpan duration = new TimeSpan(0, 0, 30, 0);
             TimeSpan startduration = new TimeSpan(0, 8, 0, 0);
             TimeSpan finishduration = new TimeSpan(0, 24, 0, 0);
-
             DateTime endDate = finishDateRegion;
             while (startDateRegion <= endDate) // <endDate
             {
@@ -198,24 +193,37 @@ namespace TechHealth.Service
       {
          foreach (var existingAppointment in GetAllNotEvident())
          {
-            if (existingAppointment.DoctorConflicts(appointment))
-            {
-               throw new AppointmentConflictException(existingAppointment,appointment);
-            }
-
-            if (existingAppointment.PatientConflicts(appointment))
-            {
-               throw new AppointmentPatientConflictException(existingAppointment, appointment);
-            }
-
-            // if (existingAppointment.RoomConflicts(appointment))
-            // {
-            //    throw new AppointmentRoomConflictException(existingAppointment, appointment);
-            // }
-            
+            IsDoctorConflict(appointment, existingAppointment);
+            IsPatientConflict(appointment, existingAppointment);
+            IsRoomConflict(appointment, existingAppointment);
          }
          
       }
+
+      private static void IsRoomConflict(Appointment appointment, Appointment existingAppointment)
+      {
+         if (existingAppointment.RoomConflicts(appointment))
+         {
+            throw new AppointmentRoomConflictException(existingAppointment, appointment);
+         }
+      }
+
+      private static void IsPatientConflict(Appointment appointment, Appointment existingAppointment)
+      {
+         if (existingAppointment.PatientConflicts(appointment))
+         {
+            throw new AppointmentPatientConflictException(existingAppointment, appointment);
+         }
+      }
+
+      private static void IsDoctorConflict(Appointment appointment, Appointment existingAppointment)
+      {
+         if (existingAppointment.DoctorConflicts(appointment))
+         {
+            throw new AppointmentConflictException(existingAppointment, appointment);
+         }
+      }
+
       private bool CheckAvailabilityForFuture(Appointment appointment)
       {
          bool ret = true;

@@ -29,21 +29,14 @@ namespace TechHealth.Service
 
         public List<Therapy> GetAllByPatientId(string patientId)
         {
-            List<Therapy> therapies = GetAll();
             List<Therapy> ret = new List<Therapy>();
-            foreach (var therapy in therapies)
+            foreach (var therapy in GetAll())
             {
-                if (therapy.Appointment != null)
+                if (therapy.Appointment != null && therapy.Appointment.Patient.Jmbg.Equals(patientId))
                 {
-                    {
-                        if (therapy.Appointment.Patient.Jmbg.Equals(patientId))
-                        {
-                            ret.Add(therapy);
-                            BindDataForAppointment(therapy.Appointment);
-                        }
-                    }
+                    ret.Add(therapy);
+                    BindDataForAppointment(therapy.Appointment);
                 }
-
             }
 
             return ret;

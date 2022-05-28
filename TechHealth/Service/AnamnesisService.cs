@@ -21,6 +21,13 @@ namespace TechHealth.Service
             
         }
 
+        public List<Anamnesis> GetAll()
+        {
+            var anamneses = AnamnesisRepository.Instance.GetAllToList();
+            BindDataForAnamneses(anamneses);
+            return anamneses;
+        }
+
         public bool Create(Anamnesis anamnesis)
         {
             return AnamnesisRepository.Instance.Create(anamnesis);
@@ -32,29 +39,21 @@ namespace TechHealth.Service
 
         public List<Anamnesis> GetAllAnamnesisSurgeriesByPatient(string patientId)
         {
-            var anamneses = AnamnesisRepository.Instance.GetAllToList();
-            BindDataForAnamneses(anamneses);
             var temp = new List<Anamnesis>();
-            foreach (var an in anamneses )
+            foreach (var an in GetAll() )
             {
-                if (an.Appointment != null)
+                if (an.Appointment != null && an.Appointment.AppointmentType == AppointmentType.operation && an.Appointment.Patient.Jmbg.Equals(patientId))
                 {
-                    if (an.Appointment.AppointmentType == AppointmentType.operation &&
-                        an.Appointment.Patient.Jmbg.Equals(patientId))
-                    {
-                        temp.Add(an);
-                        BindDataForAppointment(an.Appointment);
-                    }
+                    temp.Add(an);
+                    BindDataForAppointment(an.Appointment);
                 }
             }
             return temp;
         }
         public List<Anamnesis> GetAllAnamnesisExaminationsByPatient(string patientId)
         {
-            var anamneses = AnamnesisRepository.Instance.GetAllToList();
-            BindDataForAnamneses(anamneses);
             var temp = new List<Anamnesis>();
-            foreach (var an in anamneses)
+            foreach (var an in GetAll())
             {
                 if (an.Appointment != null && an.Appointment.AppointmentType == AppointmentType.examination && an.Appointment.Patient.Jmbg.Equals(patientId))
                 {

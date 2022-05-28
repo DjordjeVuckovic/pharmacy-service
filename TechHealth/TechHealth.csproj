@@ -224,6 +224,7 @@
     <Compile Include="DoctorView\ViewModel\TherapyViewModel.cs" />
     <Compile Include="DoctorView\ViewModel\UpdateAnamnesisViewModel.cs" />
     <Compile Include="DoctorView\ViewModel\UpdateAppointmentViewModel.cs" />
+    <Compile Include="DoctorView\ViewModel\VacationHistoryDetailsViewModel.cs" />
     <Compile Include="DoctorView\ViewModel\VacationHistoryViewModel.cs" />
     <Compile Include="DoctorView\ViewModel\ViewModelAppointment.cs" />
     <Compile Include="DoctorView\View\AccountView.xaml.cs">
@@ -285,6 +286,9 @@
     </Compile>
     <Compile Include="DoctorView\Windows\TherapyWindow.xaml.cs">
       <DependentUpon>TherapyWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DoctorView\Windows\VacationHistoryDetailsWindow.xaml.cs">
+      <DependentUpon>VacationHistoryDetailsWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="DTO\AppointmentsDTO.cs" />
     <Compile Include="DTO\EquipmentReallocationDTO.cs" />
@@ -378,7 +382,6 @@
     <Compile Include="Service\SpecializationService.cs" />
     <Compile Include="Service\SubstanceService.cs" />
     <Compile Include="Service\TherapyService.cs" />
-    <Compile Include="Store\NavigationStore.cs" />
     <Compile Include="ValidationRules\FutureDateValidationRule.cs" />
     <Compile Include="ValidationRules\NotEmptyValidationRule.cs" />
     <Compile Include="ValidationRules\SimpleDateValidationRule.cs" />
@@ -689,6 +692,7 @@
     <Page Include="DoctorView\Windows\RejectWindow.xaml" />
     <Page Include="DoctorView\Windows\TherapyPreview.xaml" />
     <Page Include="DoctorView\Windows\TherapyWindow.xaml" />
+    <Page Include="DoctorView\Windows\VacationHistoryDetailsWindow.xaml" />
     <Page Include="LoginWindow.xaml" />
     <Page Include="MainWindow.xaml">
       <SubType>Designer</SubType>

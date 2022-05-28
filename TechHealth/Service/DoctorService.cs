@@ -38,15 +38,6 @@ namespace TechHealth.Service
         return DoctorRepository.Instance.GetAllToList();
       }
       
-      public List<Doctor> GetAllGeneral()
-      {
-         throw new NotImplementedException();
-      }
-      
-      public List<Doctor> GetAllSpecialist()
-      {
-         throw new NotImplementedException();
-      }
    
    }
 }

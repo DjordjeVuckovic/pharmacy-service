@@ -52,16 +52,13 @@ namespace TechHealth.Service
             BindDataForMedicine(allPrescription);
             foreach (var prescription in allPrescription)
             {
-                if (prescription.Appointment != null)
-                {
-                    if (prescription.Appointment.Patient.Jmbg.Equals(id))
+                
+                    if (prescription.Appointment != null && prescription.Appointment.Patient.Jmbg.Equals(id))
                     {
                         prescriptions.Add(prescription);
                         BindDataForAppointment(prescription.Appointment);
                     }
-                }
             }
-
             return prescriptions;
         }
         private void BindDataForAppointments(List<Prescription> prescriptions)
