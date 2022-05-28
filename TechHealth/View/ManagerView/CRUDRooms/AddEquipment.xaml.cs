@@ -46,8 +46,8 @@ namespace TechHealth.View.ManagerView.CRUDRooms
             equipment.id = Guid.NewGuid().ToString("N");
             equipment.type = ManagerConversions.StringToEquipmentType(CbEqType.Text);
             equipment.quantity = Int32.Parse(TxtQuantity.Text);
-
             re = new RoomEquipment();
+            
             bool createRe = true;
             foreach (var re in reList)
             {

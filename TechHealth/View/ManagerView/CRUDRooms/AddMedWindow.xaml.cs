@@ -58,7 +58,7 @@ namespace TechHealth.View.ManagerView.CRUDRooms
             med.MainSubstance = ManagerConversions.StringToSubstance(TxtMainSubstance.Text);
             med.Price = 0;
             med.MedicineStatus = MedicineStatus.Waiting;
-            //med.Composition = SubstanceRepository.Instance.GetAllToList();
+            
 
             var selectedItems = substanceList.SelectedItems;
             var collection = selectedItems.Cast<String>();

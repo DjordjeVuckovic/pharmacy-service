@@ -227,6 +227,7 @@
     <Compile Include="DoctorView\ViewModel\TherapyViewModel.cs" />
     <Compile Include="DoctorView\ViewModel\UpdateAnamnesisViewModel.cs" />
     <Compile Include="DoctorView\ViewModel\UpdateAppointmentViewModel.cs" />
+    <Compile Include="DoctorView\ViewModel\VacationHistoryViewModel.cs" />
     <Compile Include="DoctorView\ViewModel\ViewModelAppointment.cs" />
     <Compile Include="DoctorView\View\AccountView.xaml.cs">
       <DependentUpon>AccountView.xaml</DependentUpon>
@@ -258,8 +259,14 @@
     <Compile Include="DoctorView\View\RecordView.xaml.cs">
       <DependentUpon>RecordView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DoctorView\View\VactionHistoryView.xaml.cs">
+      <DependentUpon>VactionHistoryView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DoctorView\Windows\AppointRefferalWindow.xaml.cs">
       <DependentUpon>AppointRefferalWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DoctorView\Windows\DoctorVacationHistoryWindow.xaml.cs">
+      <DependentUpon>DoctorVacationHistoryWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="DoctorView\Windows\DoctorVacationWindow.xaml.cs">
       <DependentUpon>DoctorVacationWindow.xaml</DependentUpon>
@@ -285,6 +292,7 @@
     <Compile Include="DTO\AppointmentsDTO.cs" />
     <Compile Include="DTO\EquipmentReallocationDTO.cs" />
     <Compile Include="DTO\RecommendedAppointmentDTO.cs" />
+    <Compile Include="Exceptions\AllergenException.cs" />
     <Compile Include="Exceptions\AppointmentConflictException.cs" />
     <Compile Include="Exceptions\AppointmentPatientConflictException.cs" />
     <Compile Include="Exceptions\AppointmentRoomConflictException.cs" />
@@ -673,7 +681,9 @@
     <Page Include="DoctorView\View\MedicineView.xaml" />
     <Page Include="DoctorView\View\PatientView.xaml" />
     <Page Include="DoctorView\View\RecordView.xaml" />
+    <Page Include="DoctorView\View\VactionHistoryView.xaml" />
     <Page Include="DoctorView\Windows\AppointRefferalWindow.xaml" />
+    <Page Include="DoctorView\Windows\DoctorVacationHistoryWindow.xaml" />
     <Page Include="DoctorView\Windows\DoctorVacationWindow.xaml" />
     <Page Include="DoctorView\Windows\ReferralWindow.xaml" />
     <Page Include="DoctorView\Windows\PrescriptionPreview.xaml" />

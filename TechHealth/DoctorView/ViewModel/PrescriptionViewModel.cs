@@ -126,9 +126,18 @@ namespace TechHealth.DoctorView.ViewModel
 
         public void Execute()
         {
-            CreatePrescription();
+            if (prescribeMedicineController.CheckAllergens(MedicineData, SelectedAppointment.Patient))
+            {
+                MessageBox.Show(@"Patient is allergic on selected medicine!",
+                    @"Allergen exception", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                CreatePrescription();
+            }
+
             //MessageBox.Show(@"You are successfully create new prescription");
-            OnRequestClose(this, new EventArgs());
+            if (OnRequestClose != null) OnRequestClose(this, EventArgs.Empty);
         }
 
         private void CreatePrescription()

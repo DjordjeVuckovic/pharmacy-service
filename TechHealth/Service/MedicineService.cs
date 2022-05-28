@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using TechHealth.Exceptions;
 using TechHealth.Model;
 using TechHealth.Repository;
 
@@ -10,6 +11,7 @@ namespace TechHealth.Service
         {
             return MedicineRepository.Instance.GetAllToList();
         }
+        
         public List<Medicine> GetAllApproved()
         {
             var temp = new List<Medicine>();

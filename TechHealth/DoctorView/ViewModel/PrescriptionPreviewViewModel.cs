@@ -23,6 +23,7 @@ namespace TechHealth.DoctorView.ViewModel
         public string Usage { get; set; }
         public string DoctorName { get; set; }
         public string RoomID { get; set; }
+        
 
 
         public PrescriptionPreviewViewModel(Patient selectedPatient, Prescription selectedPrescription)

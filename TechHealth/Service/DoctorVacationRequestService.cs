@@ -91,6 +91,20 @@ namespace TechHealth.Service
             }
         }
 
-        
+        public List<DoctorVacationRequest> GetAllByDoctorId(string doctorId)
+        {
+            List<DoctorVacationRequest> doctorVacationRequests = new List<DoctorVacationRequest>();
+            foreach (var doctorVacationRequest in GetAll())
+            {
+                if (doctorVacationRequest.Doctor.Jmbg.Equals(doctorId))
+                {
+                    doctorVacationRequests.Add(doctorVacationRequest);
+                }
+            }
+
+            return doctorVacationRequests;
+        }
+
+
     }
 }

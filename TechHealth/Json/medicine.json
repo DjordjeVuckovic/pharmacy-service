@@ -48,12 +48,21 @@
     },
     "Price": 100.0,
     "MedicineName": "Paracetamol Uno",
-    "MedicineStatus": 2,
+    "MedicineStatus": 1,
     "ShouldSerialize": true
   },
   "97653f9d4f7b4e069cda4fbbf48a92c1": {
     "MedicineId": "97653f9d4f7b4e069cda4fbbf48a92c1",
-    "Composition": [],
+    "Composition": [
+      {
+        "SubstanceId": "116",
+        "SubstanceName": "paracetamol"
+      },
+      {
+        "SubstanceId": "115",
+        "SubstanceName": "magnezijum"
+      }
+    ],
     "Quantity": 100,
     "Units": "tablete",
     "SideEffects": "/",
@@ -65,5 +74,6 @@
     "MedicineName": "Paracetamol",
     "MedicineStatus": 1,
     "ShouldSerialize": true
+    
   }
 }

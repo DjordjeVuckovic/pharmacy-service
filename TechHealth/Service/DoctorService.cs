@@ -16,6 +16,7 @@ namespace TechHealth.Service
       public Doctor GetById(string doctorId)
       {
          return  DoctorRepository.Instance.GetDoctorbyId(doctorId);
+         
       }
 
       public List<Doctor> GetAllBySpecializationId(int id)

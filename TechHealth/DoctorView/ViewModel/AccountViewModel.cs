@@ -1,6 +1,7 @@
 ﻿using MaterialDesignThemes.Wpf;
 using TechHealth.Controller;
 using TechHealth.Core;
+using TechHealth.DoctorView.View;
 using TechHealth.DoctorView.Windows;
 using TechHealth.Model;
 
@@ -11,10 +12,12 @@ namespace TechHealth.DoctorView.ViewModel
         private readonly DoctorController doctorController = new DoctorController();
         private Doctor Doctor { get; set; }
         public RelayCommand VacationCommand { get; set; }
+        public RelayCommand VacationHistoryCommand { get; set; }
         public AccountViewModel(string doctorId)
         {
             Doctor = doctorController.GetById(doctorId);
             VacationCommand = new RelayCommand(param => ExecuteVacation());
+            VacationHistoryCommand = new RelayCommand(param => ExecuteVacationHistory());
         }
 
         private void ExecuteVacation()
@@ -26,6 +29,12 @@ namespace TechHealth.DoctorView.ViewModel
             };
             vm.OnRequestClose += (s, e) => vacationView.Close();
             vacationView.ShowDialog();
+        }
+
+        private void ExecuteVacationHistory()
+        {
+            var vm = new VacationHistoryViewModel(Doctor);
+            MainViewModel.GetInstance().CurrentView = vm;
         }
         
     }

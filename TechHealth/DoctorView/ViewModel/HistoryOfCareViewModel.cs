@@ -76,7 +76,7 @@ namespace TechHealth.DoctorView.ViewModel
             PatientLabel = selectedItem.FullName;
             AnamnesesSurgeries = anamnesisController.GetAllAnamnesisSurgeriesByPatient(selectedItem.Jmbg);
             AnamnesesExaminations = anamnesisController.GetAllAnamnesisExaminationsByPatient(selectedItem.Jmbg);
-            Prescriptions = prescribeMedicineController.GetAllByPatientId(selectedItem.Jmbg);
+            Prescriptions = new ObservableCollection<Prescription>(prescribeMedicineController.GetAllByPatientId(selectedItem.Jmbg));
             Therapies = therapyController.GetAllByPatientId(selectedItem.Jmbg);
             SelectedIndex = 0;
             PreviewCommand = new RelayCommand(param => Execute(), param => CanExecute());

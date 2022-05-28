@@ -208,5 +208,19 @@
     "Date": "2022-05-23T00:00:00",
     "StartTime": "2022-05-22T07:35:00",
     "FinishTime": "2022-05-22T10:50:00"
+  },
+  "223def2616564ef18ce3d2f3cf09c3e0": {
+    "ReferralId": "223def2616564ef18ce3d2f3cf09c3e0",
+    "Appointment": {
+      "ShouldSerialize": false,
+      "IdAppointment": "08f1cde70ba84c61ad4186b075cf0594"
+    },
+    "ReferralDoctor": {
+      "Jmbg": "131213121111",
+      "ShouldSerialize": false
+    },
+    "Date": "2022-10-19T00:00:00",
+    "StartTime": "2022-05-24T03:15:00",
+    "FinishTime": "2022-05-24T03:30:00"
   }
 }

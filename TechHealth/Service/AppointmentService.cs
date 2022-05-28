@@ -101,20 +101,7 @@ namespace TechHealth.Service
             {
                 while (startduration <= finishduration)
                 {
-                    Appointment appointment = new Appointment
-                    {
-                        Date = startDateRegion,
-                        Emergent = false,
-                        IdAppointment = null,
-                        //Room = RoomRepository.Instance.GetById("S2"),
-                        Room = room,
-                        Patient = patient,
-                        AppointmentType = AppointmentType.examination,
-                        Doctor = doctor,
-                        Evident = false,
-                        StartTimeD = startTime,
-                        FinishTimeD = endTime
-                    };
+                    var appointment = AppointmentSuggestedAppointment(startDateRegion, doctor, patient, room, startTime, endTime);
                     if (CheckAvailabilityForFuture(appointment))
                     {
                         ret.Add(appointment);
@@ -130,8 +117,28 @@ namespace TechHealth.Service
             return ret;
         }
 
+        private static Appointment AppointmentSuggestedAppointment(DateTime startDateRegion, Doctor doctor, Patient patient,
+           Room room, DateTime startTime, DateTime endTime)
+        {
+           Appointment appointment = new Appointment
+           {
+              Date = startDateRegion,
+              Emergent = false,
+              IdAppointment = null,
+              //Room = RoomRepository.Instance.GetById("S2"),
+              Room = room,
+              Patient = patient,
+              AppointmentType = AppointmentType.examination,
+              Doctor = doctor,
+              Evident = false,
+              StartTimeD = startTime,
+              FinishTimeD = endTime
+           };
+           return appointment;
+        }
 
-      public bool Create(Appointment appointment)
+
+        public bool Create(Appointment appointment)
       {
          CheckAvailability(appointment);
          return AppointmentRepository.Instance.Create(appointment);

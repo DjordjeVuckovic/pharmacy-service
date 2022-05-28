@@ -13,13 +13,18 @@ namespace TechHealth.Controller
             prescribeMedicineService.Create(prescription);
         }
 
-        public ObservableCollection<Prescription> GetAllByPatientId(string patientId)
+        public List<Prescription> GetAllByPatientId(string patientId)
         {
-            return new ObservableCollection<Prescription>(prescribeMedicineService.GetAllByPatientId(patientId));
+            return  prescribeMedicineService.GetAllByPatientId(patientId);
         }
         public List<Prescription> GetAll()
         {
             return prescribeMedicineService.GetAll();
+        }
+
+        public bool CheckAllergens(Medicine medicine, Patient patient)
+        {
+            return prescribeMedicineService.CheckAllergens(medicine, patient);
         }
     }
 }

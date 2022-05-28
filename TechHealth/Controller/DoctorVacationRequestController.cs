@@ -1,4 +1,6 @@
-﻿using TechHealth.Model;
+﻿using System.Collections.Generic;
+using TechHealth.Model;
+using TechHealth.Repository;
 using TechHealth.Service;
 
 namespace TechHealth.Controller
@@ -14,6 +16,15 @@ namespace TechHealth.Controller
         public void CreateEmergentVacation(DoctorVacationRequest doctorVacationRequest)
         {
             doctorVacationRequestService.CreateEmergentVacation(doctorVacationRequest);
+        }
+        public List<DoctorVacationRequest> GetAll()
+        {
+            return doctorVacationRequestService.GetAll();
+        }
+
+        public List<DoctorVacationRequest> GetAllByDoctorId(string doctorId)
+        {
+            return doctorVacationRequestService.GetAllByDoctorId(doctorId);
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using TechHealth.Exceptions;
 using TechHealth.Model;
 using TechHealth.Repository;
 
@@ -10,7 +11,34 @@ namespace TechHealth.Service
         {
             return  PrescribeMedicineRepository.Instance.Create(prescription);
         }
+        public bool CheckAllergens(Medicine medicine, Patient patient)
+        {
+            bool isAllergic = false;
+            foreach (var substance in medicine.Composition)
+            {
+                if (CompareAllergens(substance.SubstanceName, patient))
+                {
+                    isAllergic = true;
+                }
+            }
 
+            return isAllergic;
+        }
+
+        private bool CompareAllergens(string allergen,Patient patient)
+        {
+            bool isAllergic = false;
+            foreach (var allergenCompare in PatientAllergensRepository.Instance.PatientAllergensList(patient.Jmbg))
+            {
+                if (allergenCompare.Equals(allergen))
+                {
+                    isAllergic = true;
+                    break;
+                }
+            }
+
+            return isAllergic;
+        }
         public List<Prescription> GetAll()
         {
             return PrescribeMedicineRepository.Instance.GetAllToList();
