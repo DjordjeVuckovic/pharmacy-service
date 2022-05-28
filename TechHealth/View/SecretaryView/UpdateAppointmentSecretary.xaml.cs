@@ -96,8 +96,8 @@ namespace TechHealth.View.SecretaryView
             roomCombo.SelectedItem = appointment.Room.roomId;
 
             datePick.Text = appointment.Date.ToString();
-            timePickerStart.Text = appointment.StartTimeD.ToString("hh:mm tt");
-            timePickerEnd.Text = appointment.FinishTimeD.ToString("hh:mm tt");
+            timePickerStart.Text = appointment.StartTime.ToString("hh:mm tt");
+            timePickerEnd.Text = appointment.FinishTime.ToString("hh:mm tt");
         }
         private void Button_Guests(object sender, RoutedEventArgs e)
         {
@@ -148,8 +148,8 @@ namespace TechHealth.View.SecretaryView
                 Date = DateTime.Parse(datePick.Text),
                 Doctor = dr,
                 Emergent = true,
-                FinishTimeD = DateTime.Parse(timePickerEnd.Text),
-                StartTimeD = DateTime.Parse(timePickerStart.Text),
+                FinishTime = DateTime.Parse(timePickerEnd.Text),
+                StartTime = DateTime.Parse(timePickerStart.Text),
                 IdAppointment = id,
                 Patient = pa,
                 Room = rooms[roomCombo.SelectedIndex],
@@ -161,9 +161,9 @@ namespace TechHealth.View.SecretaryView
                 {
                     if (a.Date.Equals(app.Date))
                     {
-                        if (DateTime.Compare(DateTime.Parse(a.StartTimeD.ToString("HH:mm")), DateTime.Parse(app.StartTimeD.ToString("HH:mm"))) >= 0)
+                        if (DateTime.Compare(DateTime.Parse(a.StartTime.ToString("HH:mm")), DateTime.Parse(app.StartTime.ToString("HH:mm"))) >= 0)
                         {
-                            if (DateTime.Compare(DateTime.Parse(a.StartTimeD.ToString("HH:mm")), DateTime.Parse(app.FinishTimeD.ToString("HH:mm"))) <= 0)
+                            if (DateTime.Compare(DateTime.Parse(a.StartTime.ToString("HH:mm")), DateTime.Parse(app.FinishTime.ToString("HH:mm"))) <= 0)
                             {
                                 if (a.IdAppointment != app.IdAppointment)
                                 {
@@ -181,9 +181,9 @@ namespace TechHealth.View.SecretaryView
                 {
                     if (a.Date.Equals(app.Date))
                     {
-                        if (DateTime.Compare(DateTime.Parse(a.StartTimeD.ToString("HH:mm")), DateTime.Parse(app.StartTimeD.ToString("HH:mm"))) >= 0)
+                        if (DateTime.Compare(DateTime.Parse(a.StartTime.ToString("HH:mm")), DateTime.Parse(app.StartTime.ToString("HH:mm"))) >= 0)
                         {
-                            if (DateTime.Compare(DateTime.Parse(a.StartTimeD.ToString("HH:mm")), DateTime.Parse(app.FinishTimeD.ToString("HH:mm"))) <= 0)
+                            if (DateTime.Compare(DateTime.Parse(a.StartTime.ToString("HH:mm")), DateTime.Parse(app.FinishTime.ToString("HH:mm"))) <= 0)
                             {
                                 if (a.IdAppointment != app.IdAppointment)
                                 {

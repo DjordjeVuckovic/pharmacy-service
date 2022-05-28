@@ -39,7 +39,7 @@ namespace TechHealth.View.PatientView
             doctors = DoctorRepository.Instance.GetAllToList();
 
             CbDoctor.ItemsSource = doctors;
-            TxtTime.Text = selected.StartTime;
+            TxtTime.Text = selected.StartTime.ToString("d");
             Date.SelectedDate = selected.Date;
             BlackoutDates();
             
@@ -78,7 +78,7 @@ namespace TechHealth.View.PatientView
 
         private bool ValidateDate()
         {
-            return (Date.SelectedDate.Value > selected.StartTimeD.AddDays(4)) || (Date.SelectedDate.Value < selected.StartTimeD.AddDays(-4));
+            return (Date.SelectedDate.Value > selected.StartTime.AddDays(4)) || (Date.SelectedDate.Value < selected.StartTime.AddDays(-4));
         }
 
         private bool Validate()
@@ -94,7 +94,7 @@ namespace TechHealth.View.PatientView
         private void Button_Click_Confirm(object sender, RoutedEventArgs e)
         {
             selected.Date = DateTime.Parse(Date.Text);
-            selected.StartTime = TxtTime.Text;
+            selected.StartTime = DateTime.Parse(TxtTime.Text);
             selected.AppointmentType = AppointmentType.examination;
             selected.Doctor = doctors[CbDoctor.SelectedIndex];
 

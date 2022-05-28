@@ -70,11 +70,11 @@ namespace TechHealth.DoctorView.ViewModel
                 Date = Date,
                 Doctor = doctor,
                 Emergent = false,
-                FinishTimeD = DateTime.Parse(EndDate),
+                FinishTime = DateTime.Parse(EndDate),
                 IdAppointment = Guid.NewGuid().ToString("N"),
                 Patient = PatientData,
                 Room = RoomData,
-                StartTimeD = DateTime.Parse(StartDate),
+                StartTime = DateTime.Parse(StartDate),
                 ShouldSerialize = true
             };
             try

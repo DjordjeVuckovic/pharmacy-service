@@ -43,8 +43,8 @@ namespace TechHealth.DoctorView.ViewModel
             PatientData = appointment.Patient;
             RoomData = appointment.Room;
             Date = appointment.Date;
-            StartDate = appointment.StartTimeD.ToString("t");
-            EndDate = appointment.FinishTimeD.ToString("t");
+            StartDate = appointment.StartTime.ToString("t");
+            EndDate = appointment.FinishTime.ToString("t");
             FinishCommand = new RelayCommand(param => Execute(), param => CanExecute());
             CancelCommand = new RelayCommand(param => CloseWindow());
 
@@ -54,7 +54,7 @@ namespace TechHealth.DoctorView.ViewModel
             DialogResult dialogResult = MessageBox.Show(@"Are you sure about that?", @"Cancel appointment", MessageBoxButtons.YesNo);
             if(dialogResult==(DialogResult) MessageBoxResult.Yes)
             {
-                OnRequestClose(this, new EventArgs());
+                OnRequestClose?.Invoke(this, EventArgs.Empty);
             }
         }
 
@@ -74,14 +74,15 @@ namespace TechHealth.DoctorView.ViewModel
         {
             
             appointment.Date = Date;
-            appointment.FinishTimeD = DateTime.Parse(EndDate);
-            appointment.StartTimeD = DateTime.Parse(StartDate);;
+            appointment.FinishTime = DateTime.Parse(EndDate);
+            appointment.StartTime = DateTime.Parse(StartDate);;
             appointment.Patient = PatientData;
             appointment.Room = RoomData;
             appointmentController.Update(appointment);
             RecordViewModel.GetInstance().RefreshView();
+            ViewModelAppointment.GetInstance().RefreshView();
             MessageBox.Show(@"You are successfully create update appointment");
-            OnRequestClose(this, new EventArgs());
+            OnRequestClose?.Invoke(this, EventArgs.Empty);
         }
 
         public string DoctorFullName { get; set; }

@@ -10,23 +10,21 @@ using TechHealth.Core;
 namespace TechHealth.Model
 {
    
-   public class Appointment:ViewModelBase
+   public class Appointment
    {
       private DateTime date;
       private bool emergent;
-      private string startTime;
-      private string finishTime;
       private string idAppointment;
       private Room room;
       private Patient patient;
       private AppointmentType appointmentType;
       private Doctor doctor;
       private bool evident;
-      private DateTime startTimeD;
-      private DateTime finishTimeD;
+      private DateTime startTime;
+      private DateTime finishTime;
 
       public Appointment(DateTime date, string idAppointment, Room room, Patient patient, AppointmentType appointmentType, Doctor doctor,
-          DateTime startTimeD, DateTime finishTimeD)
+          DateTime startTime, DateTime finishTime)
       {
          this.date = date;
          emergent = false;
@@ -36,8 +34,8 @@ namespace TechHealth.Model
          this.appointmentType = appointmentType;
          this.doctor = doctor;
          this.evident = false;
-         this.startTimeD = startTimeD;
-         this.finishTimeD = finishTimeD;
+         this.startTime = startTime;
+         this.finishTime = finishTime;
          ShouldSerialize = true;
       }
 
@@ -52,125 +50,55 @@ namespace TechHealth.Model
       public DateTime Date
       {
          get => date;
-         set
-         {
-            date = value;
-            OnPropertyChanged(nameof(Date));
-         }
+         set => date = value;
       }
 
-      public DateTime StartTimeD
+      public DateTime StartTime
       {
-         get => startTimeD;
-         set
-         {
-            startTimeD = value;
-            OnPropertyChanged(nameof(StartTimeD));
-         } 
+         get => startTime;
+         set => startTime = value;
       }
-      public DateTime FinishTimeD
+      public DateTime FinishTime
       {
-         get => finishTimeD;
-         set
-         {
-            finishTimeD = value;
-            OnPropertyChanged(nameof(FinishTimeD));
-         } 
+         get => finishTime;
+         set => finishTime = value;
       }
 
       public bool Emergent
       {
          get => emergent;
-         set
-         {
-            emergent = value;
-            OnPropertyChanged(nameof(Emergent));
-         }
+         set => emergent = value;
       }
 
-      public string StartTime
-      {
-         get => startTime;
-         set
-         {
-            startTime = value;
-            OnPropertyChanged(nameof(StartTime));
-         }
-      }
-
-      public string FinishTime {
-         get => finishTime;
-         set
-         {
-            finishTime = value;
-            OnPropertyChanged(nameof(FinishTime));
-         }
-      }
       public string IdAppointment{
          get => idAppointment;
-         set
-         {
-            idAppointment = value;
-            OnPropertyChanged(nameof(IdAppointment));
-         }
+         set => idAppointment = value;
       }
         public Room Room{
          get => room;
-         set
-         {
-            room = value;
-            OnPropertyChanged(nameof(Room));
-         }
-      }
+         set => room = value;
+        }
       public Patient Patient{
          get => patient;
-         set
-         {
-            patient = value;
-            OnPropertyChanged(nameof(Patient));
-         }
+         set => patient = value;
       }
       public AppointmentType AppointmentType{
          get => appointmentType;
-         set
-         {
-            appointmentType = value;
-            OnPropertyChanged(nameof(AppointmentType));
-         }
+         set => appointmentType = value;
       }
       public Doctor Doctor{
          get => doctor;
-         set
-         {
-            doctor = value;
-            OnPropertyChanged(nameof(Doctor));
-         }
+         set => doctor = value;
       }
       public bool Evident {
-         get
-         {
-            return evident;
-         }
-         set
-         {
-            evident = value;
-            OnPropertyChanged(nameof(Evident));
-         }
+         get => evident;
+         set => evident = value;
       }
         public bool ShouldSerializeDate()
       {
          return ShouldSerialize;
       }
-
-      public bool ShouldSerializeStartTimeD()
-      {
-         return ShouldSerialize;
-      }
-        
-      public bool ShouldSerializeFinishTimeD()
-      {
-         return ShouldSerialize;
-      }
+      
 
       public bool ShouldSerializeAppointmentType()
       {
@@ -215,7 +143,7 @@ namespace TechHealth.Model
             return false;
          }
 
-         return appointment.Date == Date && appointment.StartTimeD < FinishTimeD && appointment.FinishTimeD > StartTimeD;
+         return appointment.Date == Date && appointment.StartTime < FinishTime && appointment.FinishTime > StartTime;
       }
       public bool RoomConflicts(Appointment appointment)
       {
@@ -224,7 +152,7 @@ namespace TechHealth.Model
             return false;
          }
 
-         return appointment.Date == Date && appointment.StartTimeD < FinishTimeD && appointment.FinishTimeD > StartTimeD;
+         return appointment.Date == Date && appointment.StartTime < FinishTime && appointment.FinishTime > StartTime;
       }
       public bool PatientConflicts(Appointment appointment)
       {
@@ -233,12 +161,12 @@ namespace TechHealth.Model
             return false;
          }
 
-         return appointment.Date == Date && appointment.StartTimeD < FinishTimeD && appointment.FinishTimeD > StartTimeD;
+         return appointment.Date == Date && appointment.StartTime < FinishTime && appointment.FinishTime > StartTime;
       }
 
         public bool GetIfPast()
         {
-            return FinishTimeD < DateTime.Now;
+            return FinishTime < DateTime.Now;
         }
 
     }

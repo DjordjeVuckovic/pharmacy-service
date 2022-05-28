@@ -15,6 +15,7 @@ namespace TechHealth.DoctorView.ViewModel
         private Medicine selectedItem;
         private PrescriptionWindow prescriptionWindow;
         private  readonly  MedicineController medicineController = new MedicineController();
+        private static MedicineViewModel instance;
         public  RelayCommand ApproveCommand { get; set; }
         public  RelayCommand RejectCommand { get; set; }
         public RelayCommand DetailsCommand { get; set; }
@@ -42,8 +43,14 @@ namespace TechHealth.DoctorView.ViewModel
             }
         }
 
+        public static MedicineViewModel GetInstance()
+        {
+            return instance;
+        }
+
         public MedicineViewModel(string doctorId)
         {
+            instance = this;
             DocotorId = doctorId;
             Medicines = medicineController.GetAll();
             //PrescribeCommand= new RelayCommand(param => Execute(), param => CanExecute());
@@ -51,7 +58,7 @@ namespace TechHealth.DoctorView.ViewModel
             RejectCommand = new RelayCommand(param => ExecuteReject(), param => CanExecuteReject());
             DetailsCommand = new RelayCommand(param => ExecuteDetails(), param => CanExecuteDetails());
         }
-
+        
         private bool CanExecuteReject()
         {
             if (selectedItem == null || SelectedItem.MedicineStatus != MedicineStatus.Waiting)
@@ -62,6 +69,11 @@ namespace TechHealth.DoctorView.ViewModel
             return true;
         }
 
+        public void RefreshView()
+        {
+            Medicines.Clear();
+            Medicines = medicineController.GetAll();
+        }
         private void ExecuteReject()
         {
             var vm = new RejectViewModel(SelectedItem,DocotorId);
@@ -88,6 +100,7 @@ namespace TechHealth.DoctorView.ViewModel
             SelectedItem.MedicineStatus= MedicineStatus.Approved;
             medicineController.Update(SelectedItem);
             MessageBox.Show(@"Yor are successfully approve medicine: " + SelectedItem.MedicineName);
+            RefreshView();
         }
         private bool CanExecuteDetails()
         {

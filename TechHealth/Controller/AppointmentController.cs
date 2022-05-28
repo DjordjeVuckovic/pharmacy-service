@@ -38,34 +38,13 @@ namespace TechHealth.Controller
           appointmentService.Create(appointment);
       }
 
-      public bool Create(DateTime date, string startTime, AppointmentType appointmentType, Doctor doctor, string idApointment)
-      {
-            var appointment = new Appointment();
-            appointment.Date = date;
-            appointment.StartTime = startTime;
-            appointment.AppointmentType = appointmentType;
-            appointment.Doctor = doctor;
-            appointment.IdAppointment = idApointment;
-
-            return appointmentService.Create(appointment);
-        }
+      
 
         public bool Update(string doctorId, string patientId, DateTime date, DateTime startTime, DateTime finishTime, string roomId, AppointmentType type)
         {
             throw new NotImplementedException();
         }
-
-        public bool Update(DateTime date, string startTime, AppointmentType appointmentType, Doctor doctor, string idApointment)
-        {
-            var appointment = new Appointment();
-            appointment.Date = date;
-            appointment.StartTime = startTime;
-            appointment.AppointmentType = appointmentType;
-            appointment.Doctor = doctor;
-            appointment.IdAppointment = idApointment;
-
-            return appointmentService.Create(appointment);
-        }
+       
 
         public void Update(Appointment appointment)
         {

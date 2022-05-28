@@ -63,7 +63,7 @@ namespace TechHealth.View.PatientView       //dodati IDappointment
                 Patient = patient,
                 Room = room,
                 Date = DateTime.Parse(Date.Text),
-                StartTime = TxtTime.Text,
+                StartTime = DateTime.Parse(TxtTime.Text),
                 AppointmentType = AppointmentType.examination,
                 Doctor = doctors[CbDoctor.SelectedIndex],
                 IdAppointment = Guid.NewGuid().ToString("N"),

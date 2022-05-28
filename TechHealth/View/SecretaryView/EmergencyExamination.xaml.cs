@@ -104,8 +104,8 @@ namespace TechHealth.View.SecretaryView
                 AppointmentType = AppointmentType.examination,
                 Doctor = doctor,
                 Date = DateTime.Parse(DateTime.Now.ToShortDateString()),
-                StartTimeD = closestStartTime,
-                FinishTimeD = closestFinishTime,
+                StartTime = closestStartTime,
+                FinishTime = closestFinishTime,
                 Emergent = true,
                 IdAppointment = Guid.NewGuid().ToString("N"),
                 Patient = GetPatientFromComboBox(),
@@ -124,7 +124,7 @@ namespace TechHealth.View.SecretaryView
                     isBusy = false;
                     closestStartTime = DateTime.Now.AddMinutes(closestTimeCounter);
                     closestFinishTime = DateTime.Now.AddMinutes(closestTimeCounter + 10);
-                    foreach (var appointment in from appointment in AppointmentRepository.Instance.GetAll().Values where appointment.Date.Equals(DateTime.Parse(DateTime.Now.ToShortDateString())) where appointment.Doctor.Jmbg.Equals(doctor.Jmbg) where DateTime.Compare(DateTime.Parse(closestStartTime.ToString("HH:mm")), DateTime.Parse(appointment.StartTimeD.ToString("HH:mm"))) >= 0 where DateTime.Compare(DateTime.Parse(closestStartTime.ToString("HH:mm")), DateTime.Parse(appointment.FinishTimeD.ToString("HH:mm"))) <= 0 select appointment)
+                    foreach (var appointment in from appointment in AppointmentRepository.Instance.GetAll().Values where appointment.Date.Equals(DateTime.Parse(DateTime.Now.ToShortDateString())) where appointment.Doctor.Jmbg.Equals(doctor.Jmbg) where DateTime.Compare(DateTime.Parse(closestStartTime.ToString("HH:mm")), DateTime.Parse(appointment.StartTime.ToString("HH:mm"))) >= 0 where DateTime.Compare(DateTime.Parse(closestStartTime.ToString("HH:mm")), DateTime.Parse(appointment.FinishTime.ToString("HH:mm"))) <= 0 select appointment)
                     {
                         isBusy = true;
                         break;

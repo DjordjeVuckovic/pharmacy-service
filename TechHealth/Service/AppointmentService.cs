@@ -47,8 +47,8 @@ namespace TechHealth.Service
             for (int daysPostponed = 1; daysPostponed <= 5; daysPostponed++)
             {
                 appointment.Date = appointment.Date.AddDays(1);
-                appointment.StartTimeD = appointment.StartTimeD.AddDays(1);
-                appointment.FinishTimeD = appointment.FinishTimeD.AddDays(1);
+                appointment.StartTime = appointment.StartTime.AddDays(1);
+                appointment.FinishTime = appointment.FinishTime.AddDays(1);
                 if (AppointmentRepository.Instance.CanPostpone(appointment)) break;
             }
             AppointmentRepository.Instance.Update(appointment);
@@ -131,8 +131,8 @@ namespace TechHealth.Service
               AppointmentType = AppointmentType.examination,
               Doctor = doctor,
               Evident = false,
-              StartTimeD = startTime,
-              FinishTimeD = endTime
+              StartTime = startTime,
+              FinishTime = endTime
            };
            return appointment;
         }

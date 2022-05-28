@@ -68,7 +68,8 @@ namespace TechHealth.DoctorView.ViewModel
             medicineController.Update(SelectedMedicine);
             CreateRejectedMedicine();
             MessageBox.Show(@"You are successfully reject medicine: " + MedicineName);
-            OnRequestClose?.Invoke(this, new EventArgs());
+            MedicineViewModel.GetInstance().RefreshView();
+            OnRequestClose?.Invoke(this, EventArgs.Empty);
         }
         private void CloseWindow()
         {

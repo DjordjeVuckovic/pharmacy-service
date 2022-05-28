@@ -181,9 +181,6 @@
     <Compile Include="Core\IClosable.cs" />
     <Compile Include="Core\RelayCommand.cs" />
     <Compile Include="Core\ViewModelBase.cs" />
-    <Compile Include="DoctorView\CRUDAppointments\AppointmentsUpdate.xaml.cs">
-      <DependentUpon>AppointmentsUpdate.xaml</DependentUpon>
-    </Compile>
     <Compile Include="DoctorView\CRUDAppointments\CreateExamination.xaml.cs">
       <DependentUpon>CreateExamination.xaml</DependentUpon>
     </Compile>
@@ -569,7 +566,6 @@
     <Compile Include="Model\Specialist.cs" />
     <Compile Include="Model\Specialization.cs" />
     <Compile Include="Model\User.cs" />
-    <Compile Include="Model\Warehouse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -656,9 +652,6 @@
     <Content Include="resources\favicon.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="DoctorView\CRUDAppointments\AppointmentsUpdate.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="DoctorView\CRUDAppointments\CreateExamination.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -44,14 +44,14 @@ namespace TechHealth.View.SecretaryView
             {
                 pickedDate.Content = "Operations ";
             }
-            tempList.Sort((x, y) => DateTime.Compare(x.StartTimeD, y.StartTimeD));
+            tempList.Sort((x, y) => DateTime.Compare(x.StartTime, y.StartTime));
             foreach (var a in tempList)
             {
                 if (a.Date.Equals(date) && a.AppointmentType.Equals(type))
                 {
                     spec = doctorController.GetById(a.Doctor.Jmbg).FullSpecialization;
                     name = patientController.GetByPatientId(a.Patient.Jmbg).FullName;
-                    AppointmentsDTO aDTO = new AppointmentsDTO(a.IdAppointment, a.StartTimeD, a.FinishTimeD, spec, name, a.Room.roomId);
+                    AppointmentsDTO aDTO = new AppointmentsDTO(a.IdAppointment, a.StartTime, a.FinishTime, spec, name, a.Room.roomId);
                     list.Add(aDTO);
                 }
             }
@@ -126,7 +126,7 @@ namespace TechHealth.View.SecretaryView
                 {
                     spec = doctorController.GetById(a.Doctor.Jmbg).FullSpecialization;
                     name = patientController.GetByPatientId(a.Patient.Jmbg).FullName;
-                    AppointmentsDTO aDTO = new AppointmentsDTO(a.IdAppointment, a.StartTimeD, a.FinishTimeD, spec, name, a.Room.roomId);
+                    AppointmentsDTO aDTO = new AppointmentsDTO(a.IdAppointment, a.StartTime, a.FinishTime, spec, name, a.Room.roomId);
                     list.Add(aDTO);
                 }
             }

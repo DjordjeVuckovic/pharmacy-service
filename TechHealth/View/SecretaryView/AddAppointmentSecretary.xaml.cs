@@ -101,8 +101,8 @@ namespace TechHealth.View.SecretaryView
                 Date = DateTime.Parse(datePick.Text),
                 Doctor = dr,
                 Emergent = true,
-                FinishTimeD = DateTime.Parse(timePickerEnd.Text),
-                StartTimeD = DateTime.Parse(timePickerStart.Text),
+                FinishTime = DateTime.Parse(timePickerEnd.Text),
+                StartTime = DateTime.Parse(timePickerStart.Text),
                 IdAppointment = Guid.NewGuid().ToString("N"),
                 Patient = pa,
                 Room = rooms[roomCombo.SelectedIndex],
@@ -114,9 +114,9 @@ namespace TechHealth.View.SecretaryView
                 {
                     if (a.Date.Equals(app.Date))
                     {
-                        if (DateTime.Compare(DateTime.Parse(a.StartTimeD.ToString("HH:mm")), DateTime.Parse(app.StartTimeD.ToString("HH:mm"))) >= 0)
+                        if (DateTime.Compare(DateTime.Parse(a.StartTime.ToString("HH:mm")), DateTime.Parse(app.StartTime.ToString("HH:mm"))) >= 0)
                         {
-                            if (DateTime.Compare(DateTime.Parse(a.StartTimeD.ToString("HH:mm")), DateTime.Parse(app.FinishTimeD.ToString("HH:mm"))) <= 0)
+                            if (DateTime.Compare(DateTime.Parse(a.StartTime.ToString("HH:mm")), DateTime.Parse(app.FinishTime.ToString("HH:mm"))) <= 0)
                             {
                                 MessageBox.Show("Doctor already has an appointment.");
                                 return;
@@ -131,9 +131,9 @@ namespace TechHealth.View.SecretaryView
                 {
                     if (a.Date.Equals(app.Date))
                     {
-                        if (DateTime.Compare(DateTime.Parse(a.StartTimeD.ToString("HH:mm")), DateTime.Parse(app.StartTimeD.ToString("HH:mm"))) >= 0)
+                        if (DateTime.Compare(DateTime.Parse(a.StartTime.ToString("HH:mm")), DateTime.Parse(app.StartTime.ToString("HH:mm"))) >= 0)
                         {
-                            if (DateTime.Compare(DateTime.Parse(a.StartTimeD.ToString("HH:mm")), DateTime.Parse(app.FinishTimeD.ToString("HH:mm"))) <= 0)
+                            if (DateTime.Compare(DateTime.Parse(a.StartTime.ToString("HH:mm")), DateTime.Parse(app.FinishTime.ToString("HH:mm"))) <= 0)
                             {
                                 MessageBox.Show("Patient already has an appointment.");
                                 return;

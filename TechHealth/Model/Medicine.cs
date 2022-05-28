@@ -10,7 +10,7 @@ using TechHealth.Core;
 
 namespace TechHealth.Model
 {
-    public class Medicine:ViewModelBase
+    public class Medicine
     {
         private MedicineStatus medicineStatus;
         public string MedicineId{ get; set; }
@@ -25,11 +25,7 @@ namespace TechHealth.Model
         public MedicineStatus MedicineStatus
         {
             get => medicineStatus;
-            set
-            {
-                medicineStatus = value;
-                OnPropertyChanged(nameof(MedicineStatus));
-            }
+            set => medicineStatus = value;
         }
 
         public bool ShouldSerialize { get; set; }

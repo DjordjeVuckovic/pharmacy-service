@@ -225,8 +225,8 @@ namespace TechHealth.DoctorView.ViewModel
                 AppointmentType = AppointmentType.examination,
                 Doctor = DoctorData,
                 Evident = false,
-                StartTimeD = DateTime.Parse(StartDate),
-                FinishTimeD = DateTime.Parse(EndDate),
+                StartTime = DateTime.Parse(StartDate),
+                FinishTime = DateTime.Parse(EndDate),
                 ShouldSerialize = true
             };
             try

@@ -71,11 +71,11 @@ namespace TechHealth.View.SecretaryView
         }
         private void GenerateAppointments()
         {
-            foreach (var a in from a in AppointmentRepository.Instance.GetAll().Values where a.Doctor.Jmbg.Equals(doctor.Jmbg) where a.Date.Equals(date) && a.AppointmentType.Equals(type) where DateTime.Compare(DateTime.Parse(a.StartTimeD.ToString("HH:mm")), DateTime.Now) >= 0 where DateTime.Compare(DateTime.Parse(a.StartTimeD.ToString("HH:mm")), DateTime.Now.AddMinutes(30)) <= 0 select a)
+            foreach (var a in from a in AppointmentRepository.Instance.GetAll().Values where a.Doctor.Jmbg.Equals(doctor.Jmbg) where a.Date.Equals(date) && a.AppointmentType.Equals(type) where DateTime.Compare(DateTime.Parse(a.StartTime.ToString("HH:mm")), DateTime.Now) >= 0 where DateTime.Compare(DateTime.Parse(a.StartTime.ToString("HH:mm")), DateTime.Now.AddMinutes(30)) <= 0 select a)
             {
                 spec = doctorController.GetById(a.Doctor.Jmbg).FullSpecialization;
                 name = patientController.GetByPatientId(a.Patient.Jmbg).FullName;
-                AppointmentsDTO aDto = new AppointmentsDTO(a.IdAppointment, a.StartTimeD, a.FinishTimeD, spec, name, a.Room.roomId);
+                AppointmentsDTO aDto = new AppointmentsDTO(a.IdAppointment, a.StartTime, a.FinishTime, spec, name, a.Room.roomId);
                 list.Add(aDto);
             }
 

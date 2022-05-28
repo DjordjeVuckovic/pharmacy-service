@@ -51,8 +51,8 @@ namespace TechHealth.DoctorView.ViewModel
             DoctorLabel = "Doctor:  " + SelectedItemAppointment.Doctor.FullSpecialization;
             RoomLabel = "Room:  " + SelectedItemAppointment.Room.roomId;
             AppointmentDateLabel= "Appointment Date:  " + SelectedItemAppointment.Date.ToString("d");
-            AppointmentStartTime= "Appointment StartTime:  " + SelectedItemAppointment.StartTimeD.ToString("t");
-            AppointmentFinishTime = "Appointment FinishTime:  " + SelectedItemAppointment.FinishTimeD.ToString("t");
+            AppointmentStartTime= "Appointment StartTime:  " + SelectedItemAppointment.StartTime.ToString("t");
+            AppointmentFinishTime = "Appointment FinishTime:  " + SelectedItemAppointment.FinishTime.ToString("t");
             AnamesisDate="Anamesis Date:  " + SelectedAnamnesis.AnamnesisDate.ToString("d");
             MainSymptom = "Main Symptom:  " + SelectedAnamnesis.MainSymptom;
             OtherSymptoms = "Other Symptoms:  " + SelectedAnamnesis.OtherSymptoms;

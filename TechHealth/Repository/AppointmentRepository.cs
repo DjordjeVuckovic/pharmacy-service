@@ -81,8 +81,8 @@ namespace TechHealth.Repository
             {
                 foreach (var app in GetAllToList())
                 {
-                    if(((start >= app.StartTimeD && start <= app.FinishTimeD) || (end >= app.StartTimeD && end <= app.FinishTimeD)
-                        || (start <= app.StartTimeD && end >= app.FinishTimeD)) && app.Room.roomId == roomID)
+                    if(((start >= app.StartTime && start <= app.FinishTime) || (end >= app.StartTime && end <= app.FinishTime)
+                        || (start <= app.StartTime && end >= app.FinishTime)) && app.Room.roomId == roomID)
                     {
                         return false;
                     }
@@ -98,7 +98,7 @@ namespace TechHealth.Repository
             {
                 foreach (var app in GetAllToList())
                 {
-                    if ((app.Room.roomId == src || app.Room.roomId == dst) && (date >= app.StartTimeD && date <= app.FinishTimeD))
+                    if ((app.Room.roomId == src || app.Room.roomId == dst) && (date >= app.StartTime && date <= app.FinishTime))
                     {
                         return false;
                     }
@@ -115,9 +115,9 @@ namespace TechHealth.Repository
                 {
                     if ((appointment.Doctor.Jmbg.Equals(app.Doctor.Jmbg)) && (appointment.Date.Equals(app.Date)))
                     {
-                        if (DateTime.Compare(DateTime.Parse(appointment.StartTimeD.ToString("HH:mm")), DateTime.Parse(app.StartTimeD.ToString("HH:mm"))) >= 0)
+                        if (DateTime.Compare(DateTime.Parse(appointment.StartTime.ToString("HH:mm")), DateTime.Parse(app.StartTime.ToString("HH:mm"))) >= 0)
                         {
-                            if (DateTime.Compare(DateTime.Parse(appointment.StartTimeD.ToString("HH:mm")), DateTime.Parse(app.FinishTimeD.ToString("HH:mm"))) <= 0)
+                            if (DateTime.Compare(DateTime.Parse(appointment.StartTime.ToString("HH:mm")), DateTime.Parse(app.FinishTime.ToString("HH:mm"))) <= 0)
                             {
                                 return false;
                             }
