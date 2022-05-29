@@ -52,7 +52,7 @@ namespace TechHealth.DoctorView.ViewModel
         {
             instance = this;
             DocotorId = doctorId;
-            Medicines = medicineController.GetAll();
+            Medicines = new ObservableCollection<Medicine>(medicineController.GetAll());
             //PrescribeCommand= new RelayCommand(param => Execute(), param => CanExecute());
             ApproveCommand = new RelayCommand(param=>ExecuteApprove(),param=>CanExecuteApprove());
             RejectCommand = new RelayCommand(param => ExecuteReject(), param => CanExecuteReject());
@@ -72,7 +72,7 @@ namespace TechHealth.DoctorView.ViewModel
         public void RefreshView()
         {
             Medicines.Clear();
-            Medicines = medicineController.GetAll();
+            Medicines = new ObservableCollection<Medicine>(medicineController.GetAll());
         }
         private void ExecuteReject()
         {

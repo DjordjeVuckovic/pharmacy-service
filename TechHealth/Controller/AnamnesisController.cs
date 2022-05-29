@@ -22,13 +22,13 @@ namespace TechHealth.Controller
              anamnesisService.Update(anamnesis);
         }
 
-        public ObservableCollection<Anamnesis> GetAllAnamnesisExaminationsByPatient(string patientId)
+        public List<Anamnesis> GetAllAnamnesisExaminationsByPatient(string patientId)
         {
-            return new ObservableCollection<Anamnesis>(anamnesisService.GetAllAnamnesisExaminationsByPatient(patientId));
+            return anamnesisService.GetAllAnamnesisExaminationsByPatient(patientId);
         }
-        public ObservableCollection<Anamnesis> GetAllAnamnesisSurgeriesByPatient(string patientId)
+        public List<Anamnesis> GetAllAnamnesisSurgeriesByPatient(string patientId)
         {
-            return new ObservableCollection<Anamnesis>(anamnesisService.GetAllAnamnesisSurgeriesByPatient(patientId));
+            return anamnesisService.GetAllAnamnesisSurgeriesByPatient(patientId);
         }
     }
 }

@@ -11,10 +11,8 @@ namespace TechHealth.Controller
    {
       
       private readonly AppointmentService appointmentService = new AppointmentService();
-      private readonly  DoctorService doctorService = new DoctorService();
-      private readonly  PatientService patientService = new PatientService();
 
-        public void Postpone(Appointment appointment)
+      public void Postpone(Appointment appointment)
         {
             appointmentService.Postpone(appointment);
         }
@@ -27,26 +25,13 @@ namespace TechHealth.Controller
       {
          return new ObservableCollection<Appointment>(appointmentService.GetAll());
       }
-      
-      public bool Create(string doctorId, string patientId, DateTime date, DateTime startTime, DateTime finishTime, string roomId, AppointmentType type)
-      {
-            throw new NotImplementedException();
-        }
 
       public void Create(Appointment appointment)
       {
           appointmentService.Create(appointment);
       }
 
-      
-
-        public bool Update(string doctorId, string patientId, DateTime date, DateTime startTime, DateTime finishTime, string roomId, AppointmentType type)
-        {
-            throw new NotImplementedException();
-        }
-       
-
-        public void Update(Appointment appointment)
+      public void Update(Appointment appointment)
         {
             appointmentService.Update(appointment);
         }
@@ -55,14 +40,14 @@ namespace TechHealth.Controller
         {
             return appointmentService.Delete(idAppointment);
         }
-        public ObservableCollection<Appointment> GetByDoctorId(string doctorId)
+        public List<Appointment> GetByDoctorId(string doctorId)
         {
 
-            return new ObservableCollection<Appointment>(appointmentService.GetByDoctorId(doctorId));
+            return appointmentService.GetByDoctorId(doctorId);
         }
-        public ObservableCollection<Appointment> GetAllNotEvidentByDoctorId(string doctorId)
+        public List<Appointment> GetAllNotEvidentByDoctorId(string doctorId)
         {
-            return new ObservableCollection<Appointment>(appointmentService.GetAllNotEvidentByDoctorId(doctorId));
+            return appointmentService.GetAllNotEvidentByDoctorId(doctorId);
         }
 
         public List<Appointment> GetAllNotEvident()

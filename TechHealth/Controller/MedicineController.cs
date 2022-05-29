@@ -10,9 +10,9 @@ namespace TechHealth.Controller
     {
         private  readonly  MedicineService medicineService = new MedicineService();
 
-        public ObservableCollection<Medicine> GetAll()
+        public List<Medicine> GetAll()
         {
-            return new ObservableCollection<Medicine>(medicineService.GetAll());
+            return medicineService.GetAll();
         }
         public List<Medicine> GetAllApproved()
         {

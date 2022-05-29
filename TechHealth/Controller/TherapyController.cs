@@ -17,9 +17,9 @@ namespace TechHealth.Controller
         {
             return therapyService.GetAll();
         }
-        public ObservableCollection<Therapy> GetAllByPatientId(string patientId)
+        public List<Therapy> GetAllByPatientId(string patientId)
         {
-            return new ObservableCollection<Therapy>(therapyService.GetAllByPatientId(patientId));
+            return therapyService.GetAllByPatientId(patientId);
         }
     }
 }

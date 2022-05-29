@@ -27,7 +27,11 @@ namespace TechHealth.DoctorView.ViewModel
         public DoctorVacationRequest SelectedVacation
         {
             get => selectedVacation;
-            set => selectedVacation = value;
+            set
+            {
+                selectedVacation = value;
+                OnPropertyChanged(nameof(SelectedVacation));
+            }
         }
 
         public VacationHistoryViewModel(Doctor doctor)

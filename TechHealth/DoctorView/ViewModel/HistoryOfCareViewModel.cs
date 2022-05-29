@@ -74,10 +74,10 @@ namespace TechHealth.DoctorView.ViewModel
         {
             selectedItemPatient = selectedItem;
             PatientLabel = selectedItem.FullName;
-            AnamnesesSurgeries = anamnesisController.GetAllAnamnesisSurgeriesByPatient(selectedItem.Jmbg);
-            AnamnesesExaminations = anamnesisController.GetAllAnamnesisExaminationsByPatient(selectedItem.Jmbg);
+            AnamnesesSurgeries = new ObservableCollection<Anamnesis>(anamnesisController.GetAllAnamnesisSurgeriesByPatient(selectedItem.Jmbg));
+            AnamnesesExaminations = new ObservableCollection<Anamnesis>(anamnesisController.GetAllAnamnesisExaminationsByPatient(selectedItem.Jmbg));
             Prescriptions = new ObservableCollection<Prescription>(prescribeMedicineController.GetAllByPatientId(selectedItem.Jmbg));
-            Therapies = therapyController.GetAllByPatientId(selectedItem.Jmbg);
+            Therapies = new ObservableCollection<Therapy>(therapyController.GetAllByPatientId(selectedItem.Jmbg));
             SelectedIndex = 0;
             PreviewCommand = new RelayCommand(param => Execute(), param => CanExecute());
             LabelFullName ="History of care for patient: "+ selectedItemPatient.FullName;
