@@ -14,9 +14,6 @@ namespace TechHealth.Service
    public class AppointmentService
    {
       
-      private PatientService patientService = new PatientService();
-      private DoctorService doctorService = new DoctorService();
-      private RoomService roomService = new RoomService();
       public Appointment GetById(string idAppointment)
       {
          return AppointmentRepository.Instance.GetById(idAppointment);
@@ -172,21 +169,34 @@ namespace TechHealth.Service
 
       private void BindDataForAppointments(List<Appointment> appointments)
       {
-         foreach (var appointment in appointments)
-         {
-            appointment.Doctor = DoctorRepository.Instance.GetDoctorbyId(appointment.Doctor.Jmbg);
-         }
+         BindAppointmentsDoctor(appointments);
+         BindAppointmentPatient(appointments);
+         BindAppointmentsRoom(appointments);
 
-         foreach (var appointment in appointments)
-         {
-            appointment.Patient = PatientRepository.Instance.GetPatientbyId(appointment.Patient.Jmbg);
-         }
+      }
 
+      private static void BindAppointmentsRoom(List<Appointment> appointments)
+      {
          foreach (var appointment in appointments)
          {
             appointment.Room = RoomRepository.Instance.GetRoombyId(appointment.Room.roomId);
          }
+      }
 
+      private static void BindAppointmentPatient(List<Appointment> appointments)
+      {
+         foreach (var appointment in appointments)
+         {
+            appointment.Patient = PatientRepository.Instance.GetPatientbyId(appointment.Patient.Jmbg);
+         }
+      }
+
+      private static void BindAppointmentsDoctor(List<Appointment> appointments)
+      {
+         foreach (var appointment in appointments)
+         {
+            appointment.Doctor = DoctorRepository.Instance.GetDoctorbyId(appointment.Doctor.Jmbg);
+         }
       }
 
       private void CheckAvailability(Appointment appointment)

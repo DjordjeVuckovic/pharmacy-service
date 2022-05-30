@@ -6,7 +6,6 @@ namespace TechHealth.Service
 {
     public class AnamnesisService
     {
-        private readonly AppointmentService appointmentService = new AppointmentService();
         public Anamnesis GetByAppointmentId(string appointmentId)
         {
           var anamnesis = AnamnesisRepository.Instance.GetByAppointmentId(appointmentId);
