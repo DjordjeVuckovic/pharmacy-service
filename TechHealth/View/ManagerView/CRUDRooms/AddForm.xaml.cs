@@ -45,7 +45,7 @@ namespace TechHealth.View.ManagerView.CRUDRooms
             room.roomTypes = ManagerConversions.StringToRoomType(CbType.Text);
             room.availability = ManagerConversions.StringToAvailability(CbAvailability.Text);
 
-            if (RoomRepository.Instance.WarehouseExists() && room.roomTypes == RoomTypes.warehouse)
+            if (roomController.WarehouseExists() && room.roomTypes == RoomTypes.warehouse)
             {
                 MessageBox.Show("There can only be one warehouse!");
                 this.Close();

@@ -44,7 +44,7 @@ namespace TechHealth.Service
         public void SeparateOnDate(object state)
         {
             List<RoomSeparation> roomSeparation = new List<RoomSeparation>();
-            roomSeparation = RoomSeparationRepository.Instance.GetAllToList();
+            roomSeparation = GetAll();
             foreach (var rs in roomSeparation)
             {
                 if (DateTime.Compare(DateTime.Now, rs.SeparationEnd) == 0 || DateTime.Compare(rs.SeparationEnd, DateTime.Now) < 0)

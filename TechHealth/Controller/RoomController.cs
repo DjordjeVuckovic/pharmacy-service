@@ -64,5 +64,20 @@ namespace TechHealth.Controller
         {
             return roomService.GetRoombyId(idr);
         }
+
+        public List<String> GetRoomIDs()
+        {
+            return roomService.GetRoomIDs();
+        }
+
+        public List<String> GetRoomNames()
+        {
+            return roomService.GetRoomNames();
+        }
+
+        public bool WarehouseExists()
+        {
+            return roomService.WarehouseExists();
+        }
     }
 }

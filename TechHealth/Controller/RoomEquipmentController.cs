@@ -10,18 +10,60 @@ namespace TechHealth.Controller
 {
     public class RoomEquipmentController
     {
-        private RoomEquipmentService roomInventoryService = new RoomEquipmentService();
+        private RoomEquipmentService roomEquipmentService = new RoomEquipmentService();
 
+        public List<RoomEquipment> GetAllToList()
+        {
+            return roomEquipmentService.GetAllToList();
+        }
         public bool Create(RoomEquipment re)
         {
-            return roomInventoryService.Create(re);
+            return roomEquipmentService.Create(re);
         }
+        public bool Update(RoomEquipment re)
+        {
+            return roomEquipmentService.Update(re);
+        }
+
+        public bool Delete(string reID)
+        {
+            return roomEquipmentService.Delete(reID);
+        }
+
         public void UpdateQuantityWithRequest(EquipmentRequest er)
         {
             RoomEquipment re = new RoomEquipment();
             re.EquipmentName = er.EquipmentName;
             re.Quantity = er.Quantity;
-            roomInventoryService.ExecuteMovement(re);
+            roomEquipmentService.ExecuteMovement(re);
+        }
+
+        public List<RoomEquipment> GetRoomEqListByRoomID(string roomID)
+        {
+            return roomEquipmentService.GetRoomEqListByRoomID(roomID);
+        }
+
+        public List<RoomEquipment> GetRoomEqListByEqName(string eqName)
+        {
+            return roomEquipmentService.GetRoomEqListByEqName(eqName);
+        }
+        public bool ReEqExists(string eqName, string roomID)
+        {
+            return roomEquipmentService.ReEqExists(eqName, roomID);
+        }
+
+        public RoomEquipment GetReByKey(string eqName, string roomID)
+        {
+            return roomEquipmentService.GetReByKey(eqName, roomID);
+        }
+        public void DeleteRoomEqByEqName(List<RoomEquipment> reList)
+        {
+            roomEquipmentService.DeleteRoomEqByEqName(reList);
+        }
+
+        public void UpdateRoomEqByEqName(List<RoomEquipment> reList, string eqName)
+        {
+            roomEquipmentService.UpdateRoomEqByEqName(reList, eqName);
         }
     }
 }

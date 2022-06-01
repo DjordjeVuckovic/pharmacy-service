@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TechHealth.Controller;
 using TechHealth.Core;
 using TechHealth.Model;
 using TechHealth.Repository;
@@ -13,6 +14,7 @@ namespace TechHealth.View.ManagerView.ViewModel
     {
         private Medicine medicine;
         private RejectedMedicine rejectedMedicine;
+        private RejectedMedicineController rejectedMedicineController = new RejectedMedicineController();
 
         public RelayCommand CloseCommand { get; set; }
         public string RejectedMedicineId { get; set; }
@@ -23,7 +25,7 @@ namespace TechHealth.View.ManagerView.ViewModel
         {
             CloseCommand = new RelayCommand(param => ExecuteClose());
             medicine = med;
-            rejectedMedicine = RejectedMedicineRepository.Instance.GetByMedicineId(medicine.MedicineId);
+            rejectedMedicine = rejectedMedicineController.GetByMedicineId(medicine.MedicineId);
 
             RejectedMedicineId = "Id:   " + rejectedMedicine.RejectedMedicineId;
             Medicine = "Medicine name:  " + medicine.MedicineName;

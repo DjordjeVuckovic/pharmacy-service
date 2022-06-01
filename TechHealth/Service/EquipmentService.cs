@@ -10,10 +10,29 @@ namespace TechHealth.Service
 {
     public class EquipmentService
     {
+        public List<Equipment> GetAllToList()
+        {
+            return EquipmentRepository.Instance.GetAllToList();
+        }
+        public bool Create(Equipment eq)
+        {
+            return EquipmentRepository.Instance.Create(eq);
+        }
+
+        public bool Update(Equipment eq)
+        {
+            return EquipmentRepository.Instance.Update(eq);
+        }
+
+        public bool Delete(string eqID)
+        {
+            return EquipmentRepository.Instance.Delete(eqID);
+        }
+
         public List<Equipment> GetEquipmentByEqType(EquipmentType type)
         {
             List<Equipment> equipmentList = new List<Equipment>();
-            foreach (var eq in EquipmentRepository.Instance.GetAllToList())
+            foreach (var eq in GetAllToList())
             {
                 if (eq.type == type)
                 {

@@ -40,7 +40,7 @@ namespace TechHealth.Service
 
        public Room GetRoombyId(string idr)
        {
-           foreach (var room in RoomRepository.Instance.GetAllToList())
+           foreach (var room in GetAll())
            {
                if (room.roomId.Equals(idr))
                {
@@ -49,5 +49,41 @@ namespace TechHealth.Service
            }
            return null;
        }
+
+        public List<String> GetRoomIDs()
+        {
+            List<String> roomIDs = new List<String>();
+
+            foreach (var room in GetAll())
+            {
+                roomIDs.Add(room.roomId);
+            }
+
+            return roomIDs;
+        }
+
+        public List<String> GetRoomNames()
+        {
+            List<String> roomNames = new List<String>();
+
+            foreach (var room in GetAll())
+            {
+                roomNames.Add(room.roomId);
+            }
+
+            return roomNames;
+        }
+
+        public bool WarehouseExists()
+        {
+            foreach (var room in GetAll())
+            {
+                if (room.roomTypes == RoomTypes.warehouse)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 }

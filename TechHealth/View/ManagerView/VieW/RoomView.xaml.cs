@@ -79,7 +79,7 @@ namespace TechHealth.View.ManagerView.VieW
             //timer1 = new Timer(new TimerCallback(roomSeparationController.SeparateOnDate), null, 1000, 60000);
             InitializeComponent();
             DataContext = this;
-            rooms = new ObservableCollection<Room>(RoomRepository.Instance.GetAll().Values);
+            rooms = new ObservableCollection<Room>(roomController.GetAll());
             AddRoomCommand = new RelayCommand(param => ExecuteAdd(), param => CanExecuteAdd());
             DeleteRoomCommand = new RelayCommand(param => ExecuteDel(), param => CanExecuteDel());
             UpdateRoomCommand = new RelayCommand(param => ExecuteUpdate(), param => CanExecuteUpdate());

@@ -50,7 +50,7 @@ namespace TechHealth.Service
         public void MergeOnDate(object state)
         {
             List<RoomMerging> roomMergings = new List<RoomMerging>();
-            roomMergings = RoomMergingRepository.Instance.GetAllToList();
+            roomMergings = GetAll();
             foreach (var rm in roomMergings)
             {
                 if (DateTime.Compare(DateTime.Now, rm.MergeEnd) == 0 || DateTime.Compare(rm.MergeEnd, DateTime.Now) < 0)

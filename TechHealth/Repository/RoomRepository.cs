@@ -46,54 +46,17 @@ namespace TechHealth.Repository
             entity.ShouldSerialize = true;
         }
 
-        public List<String> GetRoomIDs()
-        {
-            List<String> roomIDs = new List<String>();
+        //public List<String> GetRoomNames(List<Room> rooms)
+        //{
+        //    List<String> roomNames = new List<String>();
 
-            foreach (var room in GetAllToList())
-            {
-                roomIDs.Add(room.roomId);
-            }
+        //    foreach (var room in rooms)
+        //    {
+        //        roomNames.Add(room.roomId);
+        //    }
 
-            return roomIDs;
-        }
-
-        public List<String> GetRoomNames()
-        {
-            List<String> roomNames = new List<String>();
-
-            foreach (var room in GetAllToList())
-            {
-                roomNames.Add(room.roomId);
-            }
-
-            return roomNames;
-        }
-
-        public List<String> GetRoomNames(List<Room> rooms)
-        {
-            List<String> roomNames = new List<String>();
-
-            foreach (var room in rooms)
-            {
-                roomNames.Add(room.roomId);
-            }
-
-            return roomNames;
-        }
-
-        public bool WarehouseExists()
-        {
-            foreach (var room in GetAllToList())
-            {
-                if (room.roomTypes == RoomTypes.warehouse)
-                {
-                    return true;
-                }
-            }
-
-            return false;
-        }
+        //    return roomNames;
+        //}
 
         public Room GetRoombyId(string idr)
         {
