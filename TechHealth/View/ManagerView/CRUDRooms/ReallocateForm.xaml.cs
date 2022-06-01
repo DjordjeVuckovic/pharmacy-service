@@ -29,14 +29,16 @@ namespace TechHealth.View.ManagerView.CRUDRooms
         private Equipment selected;
         private List<Room> eqs;
         private EquipmentReallocationController reallocationController = new EquipmentReallocationController();
+        private RoomEquipmentController roomEquipmentController = new RoomEquipmentController();
         private EquipmentController equipmentController = new EquipmentController();
         private RoomController roomController = new RoomController();
+        private RoomRenovationController roomRenovationController = new RoomRenovationController();
         public ReallocateForm(Equipment eq)
         {
             InitializeComponent();
             DataContext = this;
             selected = EquipmentRepository.Instance.GetById(eq.id);
-            rooms = RoomRepository.Instance.GetRoomNames();
+            rooms = roomController.GetRoomNames();
             //eqList = EquipmentRepository.Instance.GetAllToList();
             //eqs = RoomRepository.Instance.GetRoomsByEq(selected.name);
             //dstRooms = RoomRepository.Instance.GetRoomNames(eqs);
@@ -60,8 +62,8 @@ namespace TechHealth.View.ManagerView.CRUDRooms
 
             RoomEquipment reDst = new RoomEquipment();
             RoomEquipment reSrc = new RoomEquipment();
-            reDst = RoomEquipmentRepository.Instance.GetReByKey(dto.EquipmentName, dto.DestinationRoomID);
-            reSrc = RoomEquipmentRepository.Instance.GetReByKey(dto.EquipmentName, dto.SourceRoomID);
+            reDst = roomEquipmentController.GetReByKey(dto.EquipmentName, dto.DestinationRoomID);
+            reSrc = roomEquipmentController.GetReByKey(dto.EquipmentName, dto.SourceRoomID);
 
             if (!(reSrc.Quantity >= dto.AmountMoving))
             {
@@ -72,7 +74,7 @@ namespace TechHealth.View.ManagerView.CRUDRooms
             {
                 if (AppointmentRepository.Instance.CanDoReallocation(dto.ReallocationTime, dto.SourceRoomID, dto.DestinationRoomID))
                 {
-                    if (RoomRenovationRepository.Instance.IsValidDate(dto.ReallocationTime, dto.SourceRoomID, dto.DestinationRoomID))
+                    if (roomRenovationController.IsValidDate(dto.ReallocationTime, dto.SourceRoomID, dto.DestinationRoomID))
                     {
                         if (DateTime.Compare(DateTime.Now, dto.ReallocationTime) == 0)
                         {
@@ -80,7 +82,7 @@ namespace TechHealth.View.ManagerView.CRUDRooms
                         }
                         else
                         {
-                            EquipmentReallocationRepository.Instance.Create(dto);
+                            reallocationController.Create(dto);
                         }
                     }
                     else

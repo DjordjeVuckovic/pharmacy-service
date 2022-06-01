@@ -12,32 +12,48 @@ namespace TechHealth.Service
 {
     public class EquipmentReallocationService
     {
+        private RoomEquipmentService roomEquipmentService = new RoomEquipmentService();
+
+        public List<EquipmentReallocationDTO> GetAllToList()
+        {
+            return EquipmentReallocationRepository.Instance.GetAllToList();
+        }
         public bool Create(EquipmentReallocationDTO dto)
         {
             return EquipmentReallocationRepository.Instance.Create(dto);
+        }
+
+        public bool Update(EquipmentReallocationDTO dto)
+        {
+            return EquipmentReallocationRepository.Instance.Update(dto);
+        }
+
+        public bool Delete(string dtoID)
+        {
+            return EquipmentReallocationRepository.Instance.Delete(dtoID);
         }
 
         public void SubmitReallocation(EquipmentReallocationDTO dto)
         {
             RoomEquipment reDst = new RoomEquipment();
             RoomEquipment reSrc = new RoomEquipment();
-            reDst = RoomEquipmentRepository.Instance.GetReByKey(dto.EquipmentName, dto.DestinationRoomID);
-            reSrc = RoomEquipmentRepository.Instance.GetReByKey(dto.EquipmentName, dto.SourceRoomID);
-            if (RoomEquipmentRepository.Instance.ReEqExists(dto.EquipmentName, dto.DestinationRoomID))
+            reDst = roomEquipmentService.GetReByKey(dto.EquipmentName, dto.DestinationRoomID);
+            reSrc = roomEquipmentService.GetReByKey(dto.EquipmentName, dto.SourceRoomID);
+            if (roomEquipmentService.ReEqExists(dto.EquipmentName, dto.DestinationRoomID))
             {
                 if (reSrc.Quantity >= dto.AmountMoving)
                 { 
                     reDst.Quantity += dto.AmountMoving;
-                    RoomEquipmentRepository.Instance.Update(reDst);
+                    roomEquipmentService.Update(reDst);
 
                     reSrc.Quantity -= dto.AmountMoving;
                     if (reSrc.Quantity == 0)
                     {
-                        RoomEquipmentRepository.Instance.Delete(reSrc.RoomID + "-" + reSrc.EquipmentName);
+                        roomEquipmentService.Delete(reSrc.RoomID + "-" + reSrc.EquipmentName);
                     }
                     else
                     {
-                        RoomEquipmentRepository.Instance.Update(reSrc);
+                        roomEquipmentService.Update(reSrc);
                     }
                 }
                 else
@@ -52,20 +68,20 @@ namespace TechHealth.Service
                     reDst.EquipmentName = dto.EquipmentName;
                     reDst.RoomID = dto.DestinationRoomID;
                     reDst.Quantity = dto.AmountMoving;
-                    RoomEquipmentRepository.Instance.Create(reDst);
+                    roomEquipmentService.Create(reDst);
 
-                    reSrc = RoomEquipmentRepository.Instance.GetReByKey(dto.EquipmentName, dto.SourceRoomID);
+                    reSrc = roomEquipmentService.GetReByKey(dto.EquipmentName, dto.SourceRoomID);
 
                     reSrc.EquipmentName = dto.EquipmentName;
                     reSrc.RoomID = dto.SourceRoomID;
                     reSrc.Quantity -= dto.AmountMoving;
                     if (reSrc.Quantity == 0)
                     {
-                        RoomEquipmentRepository.Instance.Delete(reSrc.RoomID + "-" + reSrc.EquipmentName);
+                        roomEquipmentService.Delete(reSrc.RoomID + "-" + reSrc.EquipmentName);
                     }
                     else
                     {
-                        RoomEquipmentRepository.Instance.Update(reSrc);
+                        roomEquipmentService.Update(reSrc);
                     }
                 }
                 else
@@ -78,7 +94,7 @@ namespace TechHealth.Service
         public void ReallocateOnDate(object state)
         {
             List<EquipmentReallocationDTO> reallocations = new List<EquipmentReallocationDTO>();
-            reallocations = EquipmentReallocationRepository.Instance.GetAllToList();
+            reallocations = GetAllToList();
             foreach (var r in reallocations)
             {
                 if (DateTime.Compare(DateTime.Now, r.ReallocationTime) == 0 || DateTime.Compare(r.ReallocationTime, DateTime.Now) < 0)
@@ -86,10 +102,22 @@ namespace TechHealth.Service
                     App.Current.Dispatcher.Invoke((Action)delegate
                     {
                         SubmitReallocation(r);
-                        EquipmentReallocationRepository.Instance.Delete(r.ReallocationID);
+                        Delete(r.ReallocationID);
                     });
                 }
             }
+        }
+
+        public bool IsReallocationHappening(DateTime start, DateTime end, string roomID)
+        {
+            foreach (var er in GetAllToList())
+            {
+                if (er.ReallocationTime >= start && er.ReallocationTime <= end && (er.DestinationRoomID == roomID || er.SourceRoomID == roomID))
+                {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }

@@ -41,17 +41,5 @@ namespace TechHealth.Repository
         {
             entity.ShouldSerialize = true;
         }
-
-        public bool IsReallocationHappening(DateTime start, DateTime end, string roomID)
-        {
-            foreach (var er in GetAllToList())
-            {
-                if (er.ReallocationTime >= start && er.ReallocationTime <= end && (er.DestinationRoomID == roomID || er.SourceRoomID == roomID))
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
     }
 }

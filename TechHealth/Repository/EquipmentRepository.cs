@@ -42,43 +42,30 @@ namespace TechHealth.Repository
             //skip
         }
 
-        public List<String> GetEqNames()
-        {
-            List<String> eqNames = new List<String>();
-
-            foreach (var eq in GetAllToList())
-            {
-                eqNames.Add(eq.name);
-            }
-            return eqNames;
-        }
-
-        public int GetEqIndex(string eqName, List<Equipment> eqList)
-        {
-            int index = 0;
-            for (int i = 0; i < eqList.Count; i++)
-            {
-                if (eqList[i].name == eqName)
-                {
-                    index = i;
-                    break;
-                }
-                i++;
-            }
-            return index;
-        }
-
-        //public List<Equipment> GetEqListByRoomID(string roomID)
+        //public List<String> GetEqNames()
         //{
-        //    List<Equipment> eqList = new List<Equipment>();
+        //    List<String> eqNames = new List<String>();
+
         //    foreach (var eq in GetAllToList())
         //    {
-        //        if (eq.roomID == roomID)
-        //        {
-        //            eqList.Add(eq);
-        //        }
+        //        eqNames.Add(eq.name);
         //    }
-        //    return eqList;
+        //    return eqNames;
+        //}
+
+        //public int GetEqIndex(string eqName, List<Equipment> eqList)
+        //{
+        //    int index = 0;
+        //    for (int i = 0; i < eqList.Count; i++)
+        //    {
+        //        if (eqList[i].name == eqName)
+        //        {
+        //            index = i;
+        //            break;
+        //        }
+        //        i++;
+        //    }
+        //    return index;
         //}
     }
 }

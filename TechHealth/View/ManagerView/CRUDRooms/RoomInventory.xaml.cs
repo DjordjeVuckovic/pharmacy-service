@@ -31,6 +31,7 @@ namespace TechHealth.View.ManagerView.CRUDRooms
         public event PropertyChangedEventHandler PropertyChanged;
         public static Timer timer;
         private EquipmentReallocationController eqReallocationController = new EquipmentReallocationController();
+        private RoomEquipmentController roomEquipmentController = new RoomEquipmentController();
 
         public ObservableCollection<RoomEquipment> ReList
         {
@@ -50,7 +51,7 @@ namespace TechHealth.View.ManagerView.CRUDRooms
             timer = new Timer(new TimerCallback(eqReallocationController.ReallocateOnDate), null, 1000, 60000);
             InitializeComponent();
             DataContext = this;
-            reList = new ObservableCollection<RoomEquipment>(RoomEquipmentRepository.Instance.GetRoomEqListByRoomID(room.roomId));
+            reList = new ObservableCollection<RoomEquipment>(roomEquipmentController.GetRoomEqListByRoomID(room.roomId));
         }
 
         [NotifyPropertyChangedInvocator]

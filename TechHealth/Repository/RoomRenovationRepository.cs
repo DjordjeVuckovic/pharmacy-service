@@ -41,54 +41,5 @@ namespace TechHealth.Repository
         {
             entity.ShouldSerialize = true;
         }
-
-        public RoomRenovation GetRrByRoomID(string roomID)
-        {
-            RoomRenovation r = new RoomRenovation();
-            foreach (var rr in GetAllToList())
-            {
-                if (rr.RoomID == roomID)
-                {
-                    r = rr;
-                    break;
-                }
-            }
-            return r;
-        }
-
-        public bool ExistsInRenovations(string roomID)
-        {
-            if (GetAllToList().Count != 0)
-            {
-                foreach (var rr in GetAllToList())
-                {
-                    if (rr.RoomID == roomID)
-                    {
-                        return false;
-                    }
-                }
-                return true;
-            }
-            else return true;
-        }
-
-        public bool IsValidDate(DateTime date, string src, string dst)
-        {
-            if (GetAllToList().Count != 0)
-            {
-                foreach (var rr in GetAllToList())
-                {
-                    if (rr.RoomID == src || rr.RoomID == dst)
-                    {
-                        if (date >= rr.RenovationStart && date <= rr.RenovationEnd)
-                        {
-                            return false;
-                        }
-                    }
-                }
-                return true;
-            }
-            else return true;
-        }
     }
 }

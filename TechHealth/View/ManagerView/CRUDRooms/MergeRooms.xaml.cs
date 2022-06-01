@@ -32,7 +32,7 @@ namespace TechHealth.View.ManagerView.CRUDRooms
             InitializeComponent();
             DataContext = this;
             selected = rm;
-            rooms = RoomRepository.Instance.GetRoomIDs();
+            rooms = roomController.GetRoomIDs();
             TxtRoomID.Text = selected.roomId;
         }
 

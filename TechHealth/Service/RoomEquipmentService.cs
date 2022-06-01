@@ -10,15 +10,29 @@ namespace TechHealth.Service
 {
     public class RoomEquipmentService
     {
+        public List<RoomEquipment> GetAllToList()
+        {
+            return RoomEquipmentRepository.Instance.GetAllToList();
+        }
         public bool Create(RoomEquipment re)
         {
             return RoomEquipmentRepository.Instance.Create(re);
         }
 
+        public bool Update(RoomEquipment re)
+        {
+            return RoomEquipmentRepository.Instance.Update(re);
+        }
+
+        public bool Delete(string reID)
+        {
+            return RoomEquipmentRepository.Instance.Delete(reID);
+        }
+
         public List<RoomEquipment> GetRoomEqListByRoomID(string roomID)
         {
             List<RoomEquipment> eqList = new List<RoomEquipment>();
-            foreach (var eq in RoomEquipmentRepository.Instance.GetAllToList())
+            foreach (var eq in GetAllToList())
             {
                 if (eq.RoomID == roomID)
                 {
@@ -26,6 +40,61 @@ namespace TechHealth.Service
                 }
             }
             return eqList;
+        }
+
+        public List<RoomEquipment> GetRoomEqListByEqName(string eqName)
+        {
+            List<RoomEquipment> eqList = new List<RoomEquipment>();
+            foreach (var eq in GetAllToList())
+            {
+                if (eq.EquipmentName == eqName)
+                {
+                    eqList.Add(eq);
+                }
+            }
+            return eqList;
+        }
+        public bool ReEqExists(string eqName, string roomID)
+        {
+            foreach (var re in GetAllToList())
+            {
+                if (re.EquipmentName == eqName && re.RoomID == roomID)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public RoomEquipment GetReByKey(string eqName, string roomID)
+        {
+            RoomEquipment re = new RoomEquipment();
+            foreach (var r in GetAllToList())
+            {
+                if (r.RoomID == roomID && r.EquipmentName == eqName)
+                {
+                    re = r;
+                    break;
+                }
+            }
+            return re;
+        }
+
+        public void DeleteRoomEqByEqName(List<RoomEquipment> reList)
+        {
+            foreach (var re in reList)
+            {
+                Delete(re.RoomID + " " + re.EquipmentName);
+            }
+        }
+
+        public void UpdateRoomEqByEqName(List<RoomEquipment> reList, string eqName)
+        {
+            foreach (var re in reList)
+            {
+                re.EquipmentName = eqName;
+                Update(re);
+            }
         }
 
         public void MoveEquipmentToWarehouse(string room1, string room2)
@@ -70,7 +139,7 @@ namespace TechHealth.Service
                 if (wEq.EquipmentName.Equals(warehouseEq.EquipmentName))
                 {
                     wEq.Quantity += warehouseEq.Quantity;
-                    RoomEquipmentRepository.Instance.Update(wEq);
+                    Update(wEq);
                     return;
                 }
             }
@@ -88,9 +157,9 @@ namespace TechHealth.Service
             }
             else
             {
-                RoomEquipmentRepository.Instance.Create(warehouseEq);
+                Create(warehouseEq);
             }
-            RoomEquipmentRepository.Instance.Delete(roomEq.RoomID + "-" + roomEq.EquipmentName);
+                Delete(roomEq.RoomID + "-" + roomEq.EquipmentName);
         }
     }
 }

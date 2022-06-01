@@ -169,6 +169,7 @@
     <Compile Include="Controller\RoomController.cs" />
     <Compile Include="Controller\RoomEquipmentController.cs" />
     <Compile Include="Controller\RoomMergingController.cs" />
+    <Compile Include="Controller\RoomRenovationController.cs" />
     <Compile Include="Controller\RoomSeparationController.cs" />
     <Compile Include="Controller\SpecializationController.cs" />
     <Compile Include="Controller\SubstanceController.cs" />
@@ -377,6 +378,7 @@
     <Compile Include="Service\RejectedMedicineService.cs" />
     <Compile Include="Service\RoomEquipmentService.cs" />
     <Compile Include="Service\RoomMergingService.cs" />
+    <Compile Include="Service\RoomRenovationService.cs" />
     <Compile Include="Service\RoomSeparationService.cs" />
     <Compile Include="Service\RoomService.cs" />
     <Compile Include="Service\SpecializationService.cs" />

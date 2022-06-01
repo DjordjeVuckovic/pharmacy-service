@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using TechHealth.Controller;
 using TechHealth.Core;
 using TechHealth.Model;
 using TechHealth.Repository;
@@ -25,29 +26,32 @@ namespace TechHealth.View.ManagerView.CRUDRooms
         private List<String> rooms;
         private Room selected;
         private RoomRenovation rr;
+        private EquipmentReallocationController equipmentReallocationController = new EquipmentReallocationController();
+        private RoomRenovationController roomRenovationContoller = new RoomRenovationController();
+        private RoomController roomController = new RoomController();
         public RelayCommand CancelRenovationCommand { get; set; }
         public AddRenovation(Room rm)
         {
             InitializeComponent();
             DataContext = this;
             selected = rm;
-            rooms = RoomRepository.Instance.GetRoomIDs();
+            rooms = roomController.GetRoomIDs();
             TxtRoomID.Text = selected.roomId;
             CancelRenovationCommand = new RelayCommand(param => ExeceuteCancel(), param =>CanExecuteCancel());
 
-            rr = RoomRenovationRepository.Instance.GetRrByRoomID(selected.roomId);
+            rr = roomRenovationContoller.GetRrByRoomID(selected.roomId);
             RStart.SelectedDate = rr.RenovationStart;
             REnd.SelectedDate = rr.RenovationEnd;
         }
 
         private bool CanExecuteCancel()
         {
-            return !RoomRenovationRepository.Instance.ExistsInRenovations(selected.roomId);     
+            return !roomRenovationContoller.ExistsInRenovations(selected.roomId);     
         }
 
         private void ExeceuteCancel()
         {
-            RoomRenovationRepository.Instance.Delete(rr.RenovationID);
+            roomRenovationContoller.Delete(rr.RenovationID);
             this.Close();
         }
 
@@ -68,13 +72,13 @@ namespace TechHealth.View.ManagerView.CRUDRooms
                      //r.RenovationEnd = (DateTime)REnd.SelectedDate;
                      r.RenovationID = Guid.NewGuid().ToString("N");
          
-                     if (RoomRenovationRepository.Instance.ExistsInRenovations(selected.roomId))     //da li je vec zakazano renoviranje te sobe
+                     if (roomRenovationContoller.ExistsInRenovations(selected.roomId))     //da li je vec zakazano renoviranje te sobe
                      {
                          if (AppointmentRepository.Instance.CanSetRenovation(r.RenovationStart, r.RenovationEnd, r.RoomID))  //da li ima app zakazan u tom periodu
                          {
-                             if (!EquipmentReallocationRepository.Instance.IsReallocationHappening(r.RenovationStart, r.RenovationEnd, r.RoomID))
+                             if (!equipmentReallocationController.IsReallocationHappening(r.RenovationStart, r.RenovationEnd, r.RoomID))
                              {
-                                 RoomRenovationRepository.Instance.Create(r);
+                                 roomRenovationContoller.Create(r);
                                  this.Close();
                              }
                              else

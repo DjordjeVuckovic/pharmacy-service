@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using TechHealth.Controller;
 using TechHealth.Conversions;
 using TechHealth.Model;
 using TechHealth.Repository;
@@ -24,10 +25,11 @@ namespace TechHealth.View.ManagerView.CRUDRooms
     {
         private Equipment selected;
         private List<RoomEquipment> reList;
+        private RoomEquipmentController roomEquipmentController = new RoomEquipmentController();
         public UpdateEquipment(Equipment eq)
         {
             selected = EquipmentRepository.Instance.GetById(eq.id);
-            reList = RoomEquipmentRepository.Instance.GetRoomEqListByEqName(selected.name);
+            reList = roomEquipmentController.GetRoomEqListByEqName(selected.name);
             InitializeComponent();
 
             TxtName.Text = selected.name;
@@ -42,7 +44,7 @@ namespace TechHealth.View.ManagerView.CRUDRooms
             selected.quantity = Int32.Parse(TxtQuantity.Text);
 
             EquipmentRepository.Instance.Update(selected);
-            RoomEquipmentRepository.Instance.UpdateRoomEqByEqName(reList, selected.name);
+            roomEquipmentController.UpdateRoomEqByEqName(reList, selected.name);
             this.Close();
         }
 

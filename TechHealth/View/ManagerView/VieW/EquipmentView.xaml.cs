@@ -34,6 +34,7 @@ namespace TechHealth.View.ManagerView.VieW
         private Equipment selectedItem;
         private string type;
         private EquipmentController equipmentController = new EquipmentController();
+        private RoomEquipmentController roomEquipmentController = new RoomEquipmentController();
         public event PropertyChangedEventHandler PropertyChanged;
         public RelayCommand AddEquipmentCommand { get; set; }
         public RelayCommand DeleteEquipmentCommand { get; set; }
@@ -120,10 +121,10 @@ namespace TechHealth.View.ManagerView.VieW
         private void ExecuteDelete()
         {
             Equipment eq = (Equipment)dataEquipment.SelectedItem;
-            EquipmentRepository.Instance.Delete(eq.id);
+            equipmentController.Delete(eq.id);
             Equipment.Remove(eq);
-            List<RoomEquipment> reList = RoomEquipmentRepository.Instance.GetRoomEqListByEqName(eq.name);
-            RoomEquipmentRepository.Instance.DeleteRoomEqByEqName(reList);
+            List<RoomEquipment> reList = roomEquipmentController.GetRoomEqListByEqName(eq.name);
+            roomEquipmentController.DeleteRoomEqByEqName(reList);
             MessageBox.Show("You have successfully deleted the equipment");
         }
 
@@ -145,14 +146,14 @@ namespace TechHealth.View.ManagerView.VieW
 
             if (search.Text.Equals(""))
             {
-                foreach (var eq in EquipmentRepository.Instance.GetAllToList())
+                foreach (var eq in equipmentController.GetAllToList())
                 {
                     eqlist.Add(eq);
                 }
             }
             else
             {
-                foreach (var eq in EquipmentRepository.Instance.GetAllToList())
+                foreach (var eq in equipmentController.GetAllToList())
                 {
                     if (eq.name.ToLower().Contains(search.Text.ToLower()) || eq.quantity.ToString().ToLower().Contains(search.Text.ToLower()) || eq.id.ToLower().Contains(search.Text.ToLower()) || eq.type.ToString().ToLower().Contains(search.Text.ToLower()))
                     {
@@ -176,7 +177,7 @@ namespace TechHealth.View.ManagerView.VieW
             }
             else
             {
-                eqlist = new ObservableCollection<Equipment>(EquipmentRepository.Instance.GetAllToList());
+                eqlist = new ObservableCollection<Equipment>(equipmentController.GetAllToList());
             }
             dataEquipment.ItemsSource = eqlist;
         }
