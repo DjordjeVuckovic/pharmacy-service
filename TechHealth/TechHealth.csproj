@@ -174,7 +174,7 @@
     <Compile Include="Controller\SpecializationController.cs" />
     <Compile Include="Controller\SubstanceController.cs" />
     <Compile Include="Controller\TherapyController.cs" />
-    <Compile Include="Controller\VacationNotificationController.cs" />
+    <Compile Include="Controller\SecretaryNotificationController.cs" />
     <Compile Include="Conversions\AddressConverter.cs" />
     <Compile Include="Conversions\ManagerConversions.cs" />
     <Compile Include="Conversions\TimeConverter.cs" />
@@ -332,7 +332,7 @@
     <Compile Include="Model\MainIssue.cs" />
     <Compile Include="Model\RandomGenerator.cs" />
     <Compile Include="Model\Therapy.cs" />
-    <Compile Include="Model\VacationNotification.cs" />
+    <Compile Include="Model\SecretaryNotification.cs" />
     <Compile Include="Model\VacationStatus.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Repository\AccountRepository.cs" />
@@ -363,7 +363,7 @@
     <Compile Include="Repository\SpecializationRepository.cs" />
     <Compile Include="Repository\SubstanceRepository.cs" />
     <Compile Include="Repository\TherapyRepository.cs" />
-    <Compile Include="Repository\VacationNotificationRepository.cs" />
+    <Compile Include="Repository\SecretaryNotificationRepository.cs" />
     <Compile Include="Service\AccountService.cs" />
     <Compile Include="Service\AllergenService.cs" />
     <Compile Include="Service\AnamnesisService.cs" />
@@ -387,7 +387,7 @@
     <Compile Include="Service\SpecializationService.cs" />
     <Compile Include="Service\SubstanceService.cs" />
     <Compile Include="Service\TherapyService.cs" />
-    <Compile Include="Service\VacationNotificationService.cs" />
+    <Compile Include="Service\SecretaryNotificationService.cs" />
     <Compile Include="ValidationRules\FutureDateValidationRule.cs" />
     <Compile Include="ValidationRules\NotEmptyValidationRule.cs" />
     <Compile Include="ValidationRules\SimpleDateValidationRule.cs" />
@@ -617,7 +617,7 @@
     <None Include="Json\roomRenovation.json" />
     <None Include="Json\roomSeparation.json" />
     <None Include="Json\substance.json" />
-    <None Include="Json\vacationNotification.json" />
+    <None Include="Json\secretaryNotification.json" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

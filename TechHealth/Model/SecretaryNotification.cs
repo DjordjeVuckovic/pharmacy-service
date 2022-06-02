@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace TechHealth.Model
 {
-    public class VacationNotification
+    public class SecretaryNotification
     {
         public string Id { get; set; }
-        public Doctor Doctor { get; set; }
+        public Person Person { get; set; }
         public string NotificationText { get; set; }
-        public VacationNotification()
+        public SecretaryNotification()
         {
 
         }
