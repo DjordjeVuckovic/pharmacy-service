@@ -83,7 +83,8 @@ namespace TechHealth.View.SecretaryView
             }
             DoctorVacationRequest dVR = (DoctorVacationRequest)vacationRequestList.SelectedItems[0];
             doctorVacationRequestController.ApproveOrRejectVacation(dVR, VacationStatus.Approved);
-            GenerateRequests();
+            new NotificationReason(dVR).Show();
+            Close();
         }
         private void Button_Click_Reject(object sender, RoutedEventArgs e)
         {
@@ -94,7 +95,8 @@ namespace TechHealth.View.SecretaryView
             }
             DoctorVacationRequest dVR = (DoctorVacationRequest)vacationRequestList.SelectedItems[0];
             doctorVacationRequestController.ApproveOrRejectVacation(dVR, VacationStatus.Rejected);
-            GenerateRequests();
+            new NotificationReason(dVR).Show();
+            Close();
         }
     }
 }
