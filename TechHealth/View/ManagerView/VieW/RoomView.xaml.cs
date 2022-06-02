@@ -102,7 +102,9 @@ namespace TechHealth.View.ManagerView.VieW
 
         private void ExecuteSeparation()
         {
-            new SeparateRooms(selectedItem).ShowDialog();
+            //new SeparateRooms(selectedItem).ShowDialog();
+            var SeparateRoomsVm = new SeparateRoomsViewModel(selectedItem);
+            MainViewModel.Instance().CurrentView = SeparateRoomsVm;
         }
 
         private bool CanExecuteMerge()
@@ -117,7 +119,9 @@ namespace TechHealth.View.ManagerView.VieW
 
         private void ExecuteMerge()
         {
-            new MergeRooms(selectedItem).ShowDialog();
+            //new MergeRooms(selectedItem).ShowDialog();
+            var MergeVm = new MergeRoomsViewModel(selectedItem);
+            MainViewModel.Instance().CurrentView = MergeVm;
         }
 
         private bool CanExecuteRenovation()
@@ -149,7 +153,9 @@ namespace TechHealth.View.ManagerView.VieW
 
         private void ExecuteInventory()
         {
-            new RoomInventory(selectedItem).ShowDialog();
+            //new RoomInventory(selectedItem).ShowDialog();
+            var RoomInventoryVm = new RoomInventoryViewModel(selectedItem);
+            MainViewModel.Instance().CurrentView = RoomInventoryVm;
         }
 
         private bool CanExecuteUpdate()
@@ -164,7 +170,9 @@ namespace TechHealth.View.ManagerView.VieW
 
         private void ExecuteUpdate()
         {
-            new UpdateForm(selectedItem).ShowDialog();
+            //new UpdateForm(selectedItem).ShowDialog();
+            var UpdateRoomVm = new UpdateRoomViewModel(selectedItem);
+            MainViewModel.Instance().CurrentView = UpdateRoomVm;
         }
 
         private bool CanExecuteDel()

@@ -80,6 +80,27 @@
             <DataTemplate DataType="{x:Type viewmodel:AddRenovationViewModel}">
                 <vieW:AddRenovationView/>
             </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodel:MergeRoomsViewModel}">
+                <vieW:MergeRoomsView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodel:ReallocateViewModel}">
+                <vieW:ReallocateView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodel:RoomInventoryViewModel}">
+                <vieW:RoomInventoryView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodel:SeparateRoomsViewModel}">
+                <vieW:SeparateRoomsView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodel:UpdateEquipmentViewModel}">
+                <vieW:UpdateEquipmentView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodel:UpdateRoomViewModel}">
+                <vieW:UpdateRoomView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodel:UpdateMedViewModel}">
+                <vieW:UpdateMedView/>
+            </DataTemplate>
             <!--patient data template-->
             <DataTemplate DataType="{x:Type viewModelP:HomeViewModelP}">
                 <viewP:HomeViewP/>
