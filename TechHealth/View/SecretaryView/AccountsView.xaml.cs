@@ -36,11 +36,15 @@ namespace TechHealth.View.SecretaryView
             }
             accountList.ItemsSource = users;
         }
+        private void Button_LogOut(object sender, RoutedEventArgs e)
+        {
+            new LoginWindow().Show();
+            Close();
+        }
         private void Button_Click_Add(object sender, RoutedEventArgs e)
         {
-            Hide();
-            new AddPatient().ShowDialog();
-            Update();
+            new AddPatient().Show();
+            Close();
         }
         private void Button_Click_Delete(object sender, RoutedEventArgs e)
         {
@@ -72,9 +76,8 @@ namespace TechHealth.View.SecretaryView
                 return;
             }
             Patient patient = (Patient)accountList.SelectedItems[0];
-            Hide();
-            new UpdatePatient(patient).ShowDialog();
-            Update();
+            new UpdatePatient(patient).Show();
+            Close();
         }
         private void Button_Click_Allergens(object sender, RoutedEventArgs e)
         {
@@ -84,9 +87,8 @@ namespace TechHealth.View.SecretaryView
                 return;
             }
             Patient patient = (Patient)accountList.SelectedItems[0];
-            Hide();
-            new AllergensView(patient).ShowDialog();
-            Update();
+            new AllergensView(patient).Show();
+            Close();
         }
         private void Button_Click_MedicalRecord(object sender, RoutedEventArgs e)
         {
@@ -104,9 +106,8 @@ namespace TechHealth.View.SecretaryView
                     medicalRecord = mr;
                 }
             }
-            Hide();
-            new MedicalRecordView(medicalRecord).ShowDialog();
-            Update();
+            new MedicalRecordView(medicalRecord).Show();
+            Close();
         }
         public void Update()
         {

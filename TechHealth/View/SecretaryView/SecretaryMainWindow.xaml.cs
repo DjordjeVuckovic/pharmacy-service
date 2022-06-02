@@ -58,5 +58,10 @@ namespace TechHealth.View.SecretaryView
             new VacationRequestsView().Show();
             Close();
         }
+        private void Button_LogOut(object sender, RoutedEventArgs e)
+        {
+            new LoginWindow().Show();
+            Close();
+        }
     }
 }

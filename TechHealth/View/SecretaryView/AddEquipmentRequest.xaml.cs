@@ -23,6 +23,11 @@ namespace TechHealth.View.SecretaryView
         {
             InitializeComponent();
         }
+        private void Button_LogOut(object sender, RoutedEventArgs e)
+        {
+            new LoginWindow().Show();
+            Close();
+        }
         private void Button_Meetings(object sender, RoutedEventArgs e)
         {
             new MeetingsPickDate().Show();

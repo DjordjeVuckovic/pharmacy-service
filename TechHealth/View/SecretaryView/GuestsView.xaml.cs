@@ -34,6 +34,11 @@ namespace TechHealth.View.SecretaryView
             }
             guestList.ItemsSource = guests;
         }
+        private void Button_LogOut(object sender, RoutedEventArgs e)
+        {
+            new LoginWindow().Show();
+            Close();
+        }
         private void Button_Meetings(object sender, RoutedEventArgs e)
         {
             new MeetingsPickDate().Show();
@@ -61,9 +66,8 @@ namespace TechHealth.View.SecretaryView
         }
         private void Button_Click_Add_Guest(object sender, RoutedEventArgs e)
         {
-            Hide();
-            new AddGuest(false).ShowDialog();
-            Update();
+            new AddGuest(false).Show();
+            Close();
         }
         private void Button_Click_Delete_Guest(object sender, RoutedEventArgs e)
         {
@@ -87,9 +91,8 @@ namespace TechHealth.View.SecretaryView
                 return;
             }
             Patient patient = (Patient)guestList.SelectedItems[0];
-            Hide();
-            new UpdateGuest(patient).ShowDialog();
-            Update();
+            new UpdateGuest(patient).Show();
+            Close();
         }
         private void LogOut(object sender, RoutedEventArgs e)
         {

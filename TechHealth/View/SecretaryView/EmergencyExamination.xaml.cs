@@ -35,6 +35,11 @@ namespace TechHealth.View.SecretaryView
             isBusy = false;
             appointmentBooked = false;
         }
+        private void Button_LogOut(object sender, RoutedEventArgs e)
+        {
+            new LoginWindow().Show();
+            Close();
+        }
         private void Button_Meetings(object sender, RoutedEventArgs e)
         {
             new MeetingsPickDate().Show();

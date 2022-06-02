@@ -25,6 +25,11 @@ namespace TechHealth.View.SecretaryView
             InitializeComponent();
             pickedDate.Content = "Meetings " + date.ToString("dd.MM.yyyy.");
         }
+        private void Button_LogOut(object sender, RoutedEventArgs e)
+        {
+            new LoginWindow().Show();
+            Close();
+        }
         private void Button_Meetings(object sender, RoutedEventArgs e)
         {
             new MeetingsPickDate().Show();

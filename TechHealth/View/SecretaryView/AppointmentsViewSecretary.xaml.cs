@@ -58,6 +58,11 @@ namespace TechHealth.View.SecretaryView
             pickedDate.Content += date.ToString("dd.MM.yyyy.");
             examinationList.ItemsSource = list;
         }
+        private void Button_LogOut(object sender, RoutedEventArgs e)
+        {
+            new LoginWindow().Show();
+            Close();
+        }
         private void Button_Meetings(object sender, RoutedEventArgs e)
         {
             new MeetingsPickDate().Show();
