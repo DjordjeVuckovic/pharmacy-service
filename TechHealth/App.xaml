@@ -71,6 +71,15 @@
             <DataTemplate DataType="{x:Type viewmodel:RejectReasonViewModel}">
                 <vieW:RejectReasonView/>
             </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodel:AddRoomViewModel}">
+                <vieW:AddRoomView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodel:AddEquipmentViewModel}">
+                <vieW:AddEquipmentView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodel:AddRenovationViewModel}">
+                <vieW:AddRenovationView/>
+            </DataTemplate>
             <!--patient data template-->
             <DataTemplate DataType="{x:Type viewModelP:HomeViewModelP}">
                 <viewP:HomeViewP/>

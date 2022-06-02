@@ -23,6 +23,7 @@ using TechHealth.Core;
 using TechHealth.Model;
 using TechHealth.Repository;
 using TechHealth.View.ManagerView.CRUDRooms;
+using TechHealth.View.ManagerView.ViewModel;
 
 namespace TechHealth.View.ManagerView.VieW
 {
@@ -131,7 +132,9 @@ namespace TechHealth.View.ManagerView.VieW
 
         private void ExecuteRenovation()
         {
-            new AddRenovation(selectedItem).ShowDialog();
+            //new AddRenovation(selectedItem).ShowDialog();
+            var RenovationVm = new AddRenovationViewModel(selectedItem);
+            MainViewModel.Instance().CurrentView = RenovationVm;
         }
 
         private bool CanExecuteInventory()
@@ -188,7 +191,9 @@ namespace TechHealth.View.ManagerView.VieW
 
         private void ExecuteAdd()
         {
-            new AddForm(rooms).ShowDialog();
+            //new AddForm(rooms).ShowDialog();
+            var AddRoomVm = new AddRoomViewModel();
+            MainViewModel.Instance().CurrentView = AddRoomVm;
         }
 
         [NotifyPropertyChangedInvocator]
