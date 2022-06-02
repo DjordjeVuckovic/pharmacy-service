@@ -443,8 +443,15 @@
     <Compile Include="View\ManagerView\ViewModel\HomeViewModel.cs" />
     <Compile Include="View\ManagerView\ViewModel\MainViewModel.cs" />
     <Compile Include="View\ManagerView\ViewModel\MedViewModel.cs" />
+    <Compile Include="View\ManagerView\ViewModel\MergeRoomsViewModel.cs" />
+    <Compile Include="View\ManagerView\ViewModel\ReallocateViewModel.cs" />
     <Compile Include="View\ManagerView\ViewModel\RejectReasonViewModel.cs" />
+    <Compile Include="View\ManagerView\ViewModel\RoomInventoryViewModel.cs" />
     <Compile Include="View\ManagerView\ViewModel\RoomViewModel.cs" />
+    <Compile Include="View\ManagerView\ViewModel\SeparateRoomsViewModel.cs" />
+    <Compile Include="View\ManagerView\ViewModel\UpdateEquipmentViewModel.cs" />
+    <Compile Include="View\ManagerView\ViewModel\UpdateMedViewModel.cs" />
+    <Compile Include="View\ManagerView\ViewModel\UpdateRoomViewModel.cs" />
     <Compile Include="View\ManagerView\VieW\AddEquipmentView.xaml.cs">
       <DependentUpon>AddEquipmentView.xaml</DependentUpon>
     </Compile>
@@ -466,11 +473,32 @@
     <Compile Include="View\ManagerView\VieW\MedView.xaml.cs">
       <DependentUpon>MedView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\ManagerView\VieW\MergeRoomsView.xaml.cs">
+      <DependentUpon>MergeRoomsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ManagerView\VieW\ReallocateView.xaml.cs">
+      <DependentUpon>ReallocateView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\ManagerView\VieW\RejectReasonView.xaml.cs">
       <DependentUpon>RejectReasonView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\ManagerView\VieW\RoomInventoryView.xaml.cs">
+      <DependentUpon>RoomInventoryView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\ManagerView\VieW\RoomView.xaml.cs">
       <DependentUpon>RoomView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ManagerView\VieW\SeparateRoomsView.xaml.cs">
+      <DependentUpon>SeparateRoomsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ManagerView\VieW\UpdateEquipmentView.xaml.cs">
+      <DependentUpon>UpdateEquipmentView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ManagerView\VieW\UpdateMedView.xaml.cs">
+      <DependentUpon>UpdateMedView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ManagerView\VieW\UpdateRoomView.xaml.cs">
+      <DependentUpon>UpdateRoomView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\PatientView\AddAppointment.xaml.cs">
       <DependentUpon>AddAppointment.xaml</DependentUpon>
@@ -824,11 +852,39 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\ManagerView\VieW\MergeRoomsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ManagerView\VieW\ReallocateView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\ManagerView\VieW\RejectReasonView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\ManagerView\VieW\RoomInventoryView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\ManagerView\VieW\RoomView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ManagerView\VieW\SeparateRoomsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ManagerView\VieW\UpdateEquipmentView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ManagerView\VieW\UpdateMedView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ManagerView\VieW\UpdateRoomView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

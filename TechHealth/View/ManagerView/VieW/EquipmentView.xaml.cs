@@ -90,7 +90,9 @@ namespace TechHealth.View.ManagerView.VieW
 
         private void ExecuteView()
         {
-            new UpdateEquipment(selectedItem).ShowDialog();
+            //new UpdateEquipment(selectedItem).ShowDialog();
+            var UpdateEquipmentVm = new UpdateEquipmentViewModel(selectedItem);
+            MainViewModel.Instance().CurrentView = UpdateEquipmentVm;
         }
 
         private bool CanExecuteReallocate()
@@ -105,7 +107,9 @@ namespace TechHealth.View.ManagerView.VieW
 
         private void ExecuteReallocate()
         {
-            new ReallocateForm(selectedItem).ShowDialog();
+            //new ReallocateForm(selectedItem).ShowDialog();
+            var ReallocateVm = new ReallocateViewModel(selectedItem);
+            MainViewModel.Instance().CurrentView = ReallocateVm;
         }
 
         private bool CanExecuteDelete()
