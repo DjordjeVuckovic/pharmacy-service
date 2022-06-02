@@ -23,5 +23,10 @@
     "RoomID": "Warehouse",
     "EquipmentName": "oprema dinamicka",
     "Quantity": 20
+  },
+  "Warehouse-jaja": {
+    "RoomID": "Warehouse",
+    "EquipmentName": "jaja",
+    "Quantity": 200
   }
 }

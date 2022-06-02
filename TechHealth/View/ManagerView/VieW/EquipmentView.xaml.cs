@@ -130,7 +130,9 @@ namespace TechHealth.View.ManagerView.VieW
 
         private void ExecuteAdd()
         {
-            new AddEquipment(eqlist).ShowDialog();
+            //new AddEquipment(eqlist).ShowDialog();
+            var AddEqVm = new AddEquipmentViewModel();
+            MainViewModel.Instance().CurrentView = AddEqVm;
         }
 
         [NotifyPropertyChangedInvocator]

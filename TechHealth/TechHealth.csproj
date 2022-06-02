@@ -435,15 +435,27 @@
     <Compile Include="View\ManagerView\ManagerMainWindow.xaml.cs">
       <DependentUpon>ManagerMainWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\ManagerView\ViewModel\AddEquipmentViewModel.cs" />
     <Compile Include="View\ManagerView\ViewModel\AddMedViewModel.cs" />
+    <Compile Include="View\ManagerView\ViewModel\AddRenovationViewModel.cs" />
+    <Compile Include="View\ManagerView\ViewModel\AddRoomViewModel.cs" />
     <Compile Include="View\ManagerView\ViewModel\EquipmentViewModel.cs" />
     <Compile Include="View\ManagerView\ViewModel\HomeViewModel.cs" />
     <Compile Include="View\ManagerView\ViewModel\MainViewModel.cs" />
     <Compile Include="View\ManagerView\ViewModel\MedViewModel.cs" />
     <Compile Include="View\ManagerView\ViewModel\RejectReasonViewModel.cs" />
     <Compile Include="View\ManagerView\ViewModel\RoomViewModel.cs" />
+    <Compile Include="View\ManagerView\VieW\AddEquipmentView.xaml.cs">
+      <DependentUpon>AddEquipmentView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\ManagerView\VieW\AddMedView.xaml.cs">
       <DependentUpon>AddMedView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ManagerView\VieW\AddRenovationView.xaml.cs">
+      <DependentUpon>AddRenovationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ManagerView\VieW\AddRoomView.xaml.cs">
+      <DependentUpon>AddRoomView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ManagerView\VieW\EquipmentView.xaml.cs">
       <DependentUpon>EquipmentView.xaml</DependentUpon>
@@ -784,7 +796,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\ManagerView\VieW\AddEquipmentView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\ManagerView\VieW\AddMedView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ManagerView\VieW\AddRenovationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ManagerView\VieW\AddRoomView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

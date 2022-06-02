@@ -115,9 +115,9 @@ namespace TechHealth.View.ManagerView.ViewModel
 
         private void ExecuteAdd()
         {
-            //var AddMedVm = new AddMedViewModel();
-            //MainViewModel.Instance().CurrentView = AddMedVm;
-            new AddMedWindow(medicines).ShowDialog();
+            var AddMedVm = new AddMedViewModel();
+            MainViewModel.Instance().CurrentView = AddMedVm;
+            //new AddMedWindow(medicines).ShowDialog();
         }
     }
 }
