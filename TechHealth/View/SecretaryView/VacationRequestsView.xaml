@@ -13,8 +13,8 @@
                 <GridView>
                     <GridViewColumn Header="Start" Width="70" DisplayMemberBinding="{Binding StartDate,StringFormat='dd.MM.yyyy'}" />
                     <GridViewColumn Header="Finish" Width="70" DisplayMemberBinding="{Binding FinishDate,StringFormat='dd.MM.yyyy'}" />
-                    <GridViewColumn Header="Reason" Width="90" DisplayMemberBinding="{Binding VacationReason}" />
                     <GridViewColumn Header="Doctor" Width="160" DisplayMemberBinding="{Binding Doctor.FullSpecialization}" />
+                    <GridViewColumn Header="Reason" Width="160" DisplayMemberBinding="{Binding VacationReason}" />
                 </GridView>
             </ListView.View>
         </ListView>
