@@ -21,7 +21,11 @@ namespace TechHealth.Controller
         {
             return doctorVacationRequestService.GetAll();
         }
-
+        public void ApproveOrRejectVacation(DoctorVacationRequest doctorVacationRequest, VacationStatus vacationStatus)
+        {
+            doctorVacationRequest.VacationStatus = vacationStatus;
+            doctorVacationRequestService.ApproveOrRejectVacation(doctorVacationRequest);
+        }
         public List<DoctorVacationRequest> GetAllByDoctorId(string doctorId)
         {
             return doctorVacationRequestService.GetAllByDoctorId(doctorId);

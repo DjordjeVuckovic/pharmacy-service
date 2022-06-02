@@ -53,5 +53,10 @@ namespace TechHealth.View.SecretaryView
             new MeetingsPickDate().Show();
             Close();
         }
+        private void Button_Vacation(object sender, RoutedEventArgs e)
+        {
+            new VacationRequestsView().Show();
+            Close();
+        }
     }
 }

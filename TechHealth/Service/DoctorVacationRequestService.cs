@@ -14,7 +14,10 @@ namespace TechHealth.Service
             BindDataForDoctor(vacationRequests);
             return vacationRequests;
         }
-
+        public void ApproveOrRejectVacation(DoctorVacationRequest doctorVacationRequest)
+        {
+            DoctorVacationRequestRepository.Instance.Update(doctorVacationRequest);
+        }
         public void CreateNotEmergentVacation(DoctorVacationRequest doctorVacationRequest)
         {
             CheckAvailabilityForSpecialization(doctorVacationRequest);

@@ -551,6 +551,9 @@
     <Compile Include="View\SecretaryView\UpdatePatient.xaml.cs">
       <DependentUpon>UpdatePatient.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\SecretaryView\VacationRequestsView.xaml.cs">
+      <DependentUpon>VacationRequestsView.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\Address.cs" />
@@ -916,6 +919,10 @@
     <Page Include="View\SecretaryView\UpdatePatient.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\SecretaryView\VacationRequestsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
