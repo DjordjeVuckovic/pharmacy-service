@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,15 +18,20 @@ using TechHealth.Controller;
 
 namespace TechHealth.View.SecretaryView
 {
-    public partial class SecretaryMainWindow : Window
+    public partial class MeetingsPickDate : Window
     {
-        public SecretaryMainWindow()
+        public MeetingsPickDate()
         {
             InitializeComponent();
         }
-        private void Button_Guests(object sender, RoutedEventArgs e)
+        private void Button_Click_Main(object sender, RoutedEventArgs e)
         {
-            new GuestsView().Show();
+            new SecretaryMainWindow().Show();
+            this.Close();
+        }
+        private void Button_Meetings(object sender, RoutedEventArgs e)
+        {
+            new MeetingsPickDate().Show();
             Close();
         }
         private void Button_Accounts(object sender, RoutedEventArgs e)
@@ -48,10 +54,20 @@ namespace TechHealth.View.SecretaryView
             new EmergencyExamination().Show();
             Close();
         }
-        private void Button_Meetings(object sender, RoutedEventArgs e)
+
+        private void Button_Click_Meetings(object sender, RoutedEventArgs e)
         {
-            new MeetingsPickDate().Show();
-            Close();
+            try
+            {
+                DateTime date = DateTime.Parse(datePicker.Text);
+                new MeetingsView(date).Show();
+                Close();
+            }
+            catch
+            {
+                MessageBox.Show("You didn't select a date.");
+                return;
+            }
         }
     }
 }

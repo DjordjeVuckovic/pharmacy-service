@@ -99,9 +99,9 @@ namespace TechHealth.View.SecretaryView
             timePickerStart.Text = appointment.StartTime.ToString("hh:mm tt");
             timePickerEnd.Text = appointment.FinishTime.ToString("hh:mm tt");
         }
-        private void Button_Guests(object sender, RoutedEventArgs e)
+        private void Button_Meetings(object sender, RoutedEventArgs e)
         {
-            new GuestsView().Show();
+            new MeetingsPickDate().Show();
             Close();
         }
         private void Button_Accounts(object sender, RoutedEventArgs e)

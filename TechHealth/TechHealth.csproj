@@ -530,6 +530,12 @@
     <Compile Include="View\SecretaryView\AppointmentsPickDate.xaml.cs">
       <DependentUpon>AppointmentsPickDate.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\SecretaryView\MeetingsPickDate.xaml.cs">
+      <DependentUpon>MeetingsPickDate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SecretaryView\MeetingsView.xaml.cs">
+      <DependentUpon>MeetingsView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\SecretaryView\SecretaryMainWindow.xaml.cs">
       <DependentUpon>SecretaryMainWindow.xaml</DependentUpon>
     </Compile>
@@ -625,7 +631,12 @@
     <Content Include="Json\rejectedMedicine.json" />
     <Content Include="Json\secretary.json" />
     <Content Include="Json\specialization.json" />
-    <Resource Include="View\SecretaryView\resources\guest.png" />
+    <Resource Include="View\SecretaryView\resources\appointment_filled.png" />
+    <Resource Include="View\SecretaryView\resources\emergency_filled.png" />
+    <Resource Include="View\SecretaryView\resources\equipment_filled.png" />
+    <Resource Include="View\SecretaryView\resources\meeting.png" />
+    <Resource Include="View\SecretaryView\resources\meeting_filled.png" />
+    <Resource Include="View\SecretaryView\resources\account_filled.png" />
     <Resource Include="View\SecretaryView\resources\equipment.png" />
     <Resource Include="View\SecretaryView\resources\emergency.png" />
     <Resource Include="View\SecretaryView\resources\appointment.png" />
@@ -877,6 +888,14 @@
     <Page Include="View\SecretaryView\AppointmentsPickDate.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\SecretaryView\MeetingsPickDate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SecretaryView\MeetingsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\SecretaryView\SecretaryMainWindow.xaml">
       <SubType>Designer</SubType>

@@ -40,9 +40,9 @@ namespace TechHealth.View.SecretaryView
             allergenList.ItemsSource = allergens;
             allergensLabel.Content = patient.Name + " " + patient.Surname + "'s Allergens";
         }
-        private void Button_Guests(object sender, RoutedEventArgs e)
+        private void Button_Meetings(object sender, RoutedEventArgs e)
         {
-            new GuestsView().Show();
+            new MeetingsPickDate().Show();
             Close();
         }
         private void Button_Accounts(object sender, RoutedEventArgs e)
