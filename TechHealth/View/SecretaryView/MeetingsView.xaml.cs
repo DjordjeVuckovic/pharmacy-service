@@ -75,9 +75,23 @@ namespace TechHealth.View.SecretaryView
         }
         private void Button_Click_Delete(object sender, RoutedEventArgs e)
         {
+            if (meetingList.SelectedIndex == -1)
+            {
+                MessageBox.Show("You didn't select a meeting.");
+                return;
+            }
+            Meeting m = (Meeting)meetingList.SelectedItems[0];
+            MeetingRepository.Instance.Delete(m.Id);
+            Update();
         }
         private void Update()
         {
+            meetings.Clear();
+            foreach (var m in MeetingRepository.Instance.GetAll().Values)
+            {
+                meetings.Add(m);
+            }
+            meetingList.ItemsSource = meetings;
         }
     }
 }

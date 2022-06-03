@@ -99,6 +99,31 @@ namespace TechHealth.View.SecretaryView
                 }
             }
             GenerateMeeting(lista);
+
+            foreach (var p in meeting.Attendants)
+            {
+                foreach (var m in MeetingRepository.Instance.GetAll().Values)
+                {
+                    foreach (var a in m.Attendants)
+                    {
+                        if (p.Jmbg.Equals(a.Jmbg))
+                        {
+                            if (meeting.Date.Equals(m.Date))
+                            {
+                                if (DateTime.Compare(DateTime.Parse(meeting.StartTime.ToString("HH:mm")), DateTime.Parse(m.StartTime.ToString("HH:mm"))) >= 0)
+                                {
+                                    if (DateTime.Compare(DateTime.Parse(meeting.StartTime.ToString("HH:mm")), DateTime.Parse(m.FinishTime.ToString("HH:mm"))) <= 0)
+                                    {
+                                        MessageBox.Show(p.FullName + " already has a meeting.");
+                                        return;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
             MeetingRepository.Instance.Create(meeting);
             SendNotifications(lista);
             new MeetingsView(d).Show();
