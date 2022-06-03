@@ -320,6 +320,7 @@
     <Compile Include="Model\EquipmentType.cs" />
     <Compile Include="Model\HospitalGrade.cs" />
     <Compile Include="Model\MedicineStatus.cs" />
+    <Compile Include="Model\Meeting.cs" />
     <Compile Include="Model\PatientAllergens.cs" />
     <Compile Include="Model\PatientRecommendType.cs" />
     <Compile Include="Model\RejectedMedicine.cs" />
@@ -349,6 +350,7 @@
     <Compile Include="Repository\ManagerRepository.cs" />
     <Compile Include="Repository\MedicalRecordRepository.cs" />
     <Compile Include="Repository\MedicineRepository.cs" />
+    <Compile Include="Repository\MeetingRepository.cs" />
     <Compile Include="Repository\PatientAllergensRepository.cs" />
     <Compile Include="Repository\PatientRepository.cs" />
     <Compile Include="Repository\PrescribeMedicineRepository.cs" />
@@ -547,6 +549,9 @@
     <Compile Include="View\SecretaryView\AddGuest.xaml.cs">
       <DependentUpon>AddGuest.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\SecretaryView\AddMeeting.xaml.cs">
+      <DependentUpon>AddMeeting.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\SecretaryView\AddPatient.xaml.cs">
       <DependentUpon>AddPatient.xaml</DependentUpon>
     </Compile>
@@ -649,6 +654,7 @@
     <None Include="Json\grade.json" />
     <None Include="Json\hospitalrating.json" />
     <None Include="Json\medicalrecord.json" />
+    <None Include="Json\meeting.json" />
     <None Include="Json\patientAllergens.json" />
     <None Include="Json\room.json" />
     <None Include="Json\equipment.json" />
@@ -943,6 +949,10 @@
     <Page Include="View\SecretaryView\AddGuest.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\SecretaryView\AddMeeting.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\SecretaryView\AddPatient.xaml">
       <Generator>MSBuild:Compile</Generator>

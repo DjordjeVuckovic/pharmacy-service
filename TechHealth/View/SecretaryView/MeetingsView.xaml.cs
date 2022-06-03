@@ -20,10 +20,18 @@ namespace TechHealth.View.SecretaryView
 {
     public partial class MeetingsView : Window
     {
+        private ObservableCollection<Meeting> meetings = new ObservableCollection<Meeting>();
+        private DateTime d;
         public MeetingsView(DateTime date)
         {
             InitializeComponent();
+            d = date;
             pickedDate.Content = "Meetings " + date.ToString("dd.MM.yyyy.");
+            foreach (var m in MeetingRepository.Instance.GetAll().Values)
+            {
+                meetings.Add(m);
+            }
+            meetingList.ItemsSource = meetings;
         }
         private void Button_LogOut(object sender, RoutedEventArgs e)
         {
@@ -62,6 +70,8 @@ namespace TechHealth.View.SecretaryView
         }
         private void Button_Click_Add(object sender, RoutedEventArgs e)
         {
+            new AddMeeting(d).Show();
+            Close();
         }
         private void Button_Click_Delete(object sender, RoutedEventArgs e)
         {
