@@ -41,17 +41,17 @@ namespace TechHealth.View.ManagerView.VieW
             Room rm = AddRenovationViewModel.Instance().getSelectedRoom();
             selected = rm;
             rooms = roomController.GetRoomIDs();
-            TxtRoomID.Text = selected.roomId;
+            TxtRoomID.Text = selected.RoomId;
             CancelRenovationCommand = new RelayCommand(param => ExeceuteCancel(), param => CanExecuteCancel());
 
-            rr = roomRenovationContoller.GetRrByRoomID(selected.roomId);
+            rr = roomRenovationContoller.GetRrByRoomID(selected.RoomId);
             RStart.SelectedDate = rr.RenovationStart;
             REnd.SelectedDate = rr.RenovationEnd;
         }
 
         private bool CanExecuteCancel()
         {
-            return !roomRenovationContoller.ExistsInRenovations(selected.roomId);
+            return !roomRenovationContoller.ExistsInRenovations(selected.RoomId);
         }
 
         private void ExeceuteCancel()
@@ -64,7 +64,7 @@ namespace TechHealth.View.ManagerView.VieW
         private void Button_Click_Confirm(object sender, RoutedEventArgs e)
         {
             RoomRenovation r = new RoomRenovation();
-            r.RoomID = selected.roomId;
+            r.RoomID = selected.RoomId;
             //string date = DpDateTime.Text;
             //string dateTime = date + " " + TxtTime.Text;
             //dto.ReallocationTime = DateTime.Parse(dateTime);
@@ -78,7 +78,7 @@ namespace TechHealth.View.ManagerView.VieW
             //r.RenovationEnd = (DateTime)REnd.SelectedDate;
             r.RenovationID = Guid.NewGuid().ToString("N");
 
-            if (roomRenovationContoller.ExistsInRenovations(selected.roomId))     //da li je vec zakazano renoviranje te sobe
+            if (roomRenovationContoller.ExistsInRenovations(selected.RoomId))     //da li je vec zakazano renoviranje te sobe
             {
                 if (AppointmentRepository.Instance.CanSetRenovation(r.RenovationStart, r.RenovationEnd, r.RoomID))  //da li ima app zakazan u tom periodu
                 {

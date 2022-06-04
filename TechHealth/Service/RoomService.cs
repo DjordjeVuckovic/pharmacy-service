@@ -43,7 +43,7 @@ namespace TechHealth.Service
             Room r = new Room();
            foreach (var room in GetAll())
            {
-               if (room.roomId.Equals(idr))
+               if (room.RoomId.Equals(idr))
                {
                     r = room;
                }
@@ -57,7 +57,7 @@ namespace TechHealth.Service
 
             foreach (var room in GetAll())
             {
-                roomIDs.Add(room.roomId);
+                roomIDs.Add(room.RoomId);
             }
 
             return roomIDs;
@@ -69,7 +69,7 @@ namespace TechHealth.Service
 
             foreach (var room in GetAll())
             {
-                roomNames.Add(room.roomId);
+                roomNames.Add(room.RoomId);
             }
 
             return roomNames;
@@ -80,7 +80,7 @@ namespace TechHealth.Service
             bool exists = false;
             foreach (var room in GetAll())
             {
-                if (room.roomTypes == RoomTypes.warehouse)
+                if (room.RoomTypes == RoomTypes.warehouse)
                 {
                     exists = true;
                     break;

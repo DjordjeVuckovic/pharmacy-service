@@ -29,7 +29,7 @@ namespace TechHealth.DoctorView.ViewModel
             CancelCommand = new RelayCommand(param => CloseWindow());
             DoctorLabel = "Doctor:  " + SelectedAppointment.Doctor.FullSpecialization;
             PatientLabel = "Patient:  " + SelectedAppointment.Patient.FullName;
-            RoomLabel = "Room: " + SelectedAppointment.Room.roomId;
+            RoomLabel = "Room: " + SelectedAppointment.Room.RoomId;
         }
 
         public string Frequency

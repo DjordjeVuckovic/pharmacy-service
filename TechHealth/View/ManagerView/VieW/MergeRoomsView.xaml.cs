@@ -35,13 +35,13 @@ namespace TechHealth.View.ManagerView.VieW
             Room rm = MergeRoomsViewModel.Instance().getSelectedRoom();
             selected = rm;
             rooms = roomController.GetRoomIDs();
-            TxtRoomID.Text = selected.roomId;
+            TxtRoomID.Text = selected.RoomId;
         }
 
         private void Button_Click_Confirm(object sender, RoutedEventArgs e)
         {
             RoomMerging rm = new RoomMerging();
-            rm.RoomOne = selected.roomId;
+            rm.RoomOne = selected.RoomId;
             string dateStart = RStart.Text;
             string dateStartTime = dateStart + " " + TxtStartTime.Text;
             rm.MergeStart = DateTime.Parse(dateStartTime);
@@ -55,7 +55,7 @@ namespace TechHealth.View.ManagerView.VieW
             Room roomOne = roomController.GetRoombyId(rm.RoomOne);
             Room roomTwo = roomController.GetRoombyId(rm.RoomTwo);
 
-            if (roomOne.floor != roomTwo.floor)
+            if (roomOne.Floor != roomTwo.Floor)
             {
                 MessageBox.Show("Can't perform merging because rooms aren't on the same floor");
                 return;

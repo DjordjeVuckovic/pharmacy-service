@@ -179,7 +179,7 @@ namespace TechHealth.Service
       {
          foreach (var appointment in appointments)
          {
-            appointment.Room = RoomRepository.Instance.GetRoombyId(appointment.Room.roomId);
+            appointment.Room = RoomRepository.Instance.GetRoombyId(appointment.Room.RoomId);
          }
       }
 

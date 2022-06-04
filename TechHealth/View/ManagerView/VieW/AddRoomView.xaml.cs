@@ -47,12 +47,12 @@ namespace TechHealth.View.ManagerView.VieW
             room = new Room();
             var RoomVm = new RoomViewModel();
 
-            room.roomId = TxtRoomId.Text;
-            room.floor = ManagerConversions.StringToFloor(CbFloor.Text);
-            room.roomTypes = ManagerConversions.StringToRoomType(CbType.Text);
-            room.availability = ManagerConversions.StringToAvailability(CbAvailability.Text);
+            room.RoomId = TxtRoomId.Text;
+            room.Floor = ManagerConversions.StringToFloor(CbFloor.Text);
+            room.RoomTypes = ManagerConversions.StringToRoomType(CbType.Text);
+            room.Availability = ManagerConversions.StringToAvailability(CbAvailability.Text);
 
-            if (roomController.WarehouseExists() && room.roomTypes == RoomTypes.warehouse)
+            if (roomController.WarehouseExists() && room.RoomTypes == RoomTypes.warehouse)
             {
                 MessageBox.Show("There can only be one warehouse!");
                 MainViewModel.Instance().CurrentView = RoomVm;

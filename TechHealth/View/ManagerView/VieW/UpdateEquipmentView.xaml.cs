@@ -32,23 +32,23 @@ namespace TechHealth.View.ManagerView.VieW
         public UpdateEquipmentView()
         {
             var eq = UpdateEquipmentViewModel.Instance().getSelectedEquipment();
-            selected = EquipmentRepository.Instance.GetById(eq.id);
-            reList = roomEquipmentController.GetRoomEqListByEqName(selected.name);
+            selected = EquipmentRepository.Instance.GetById(eq.Id);
+            reList = roomEquipmentController.GetRoomEqListByEqName(selected.Name);
             InitializeComponent();
 
-            TxtName.Text = selected.name;
-            CbEqType.Text = ManagerConversions.EquipmentTypeToString(selected.type);
-            TxtQuantity.Text = selected.quantity.ToString();
+            TxtName.Text = selected.Name;
+            CbEqType.Text = ManagerConversions.EquipmentTypeToString(selected.Type);
+            TxtQuantity.Text = selected.Quantity.ToString();
         }
 
         private void Button_Click_Confirm(object sender, RoutedEventArgs e)
         {
-            selected.name = TxtName.Text;
-            selected.type = ManagerConversions.StringToEquipmentType(CbEqType.Text);
-            selected.quantity = Int32.Parse(TxtQuantity.Text);
+            selected.Name = TxtName.Text;
+            selected.Type = ManagerConversions.StringToEquipmentType(CbEqType.Text);
+            selected.Quantity = Int32.Parse(TxtQuantity.Text);
 
             equipmentController.Update(selected);
-            roomEquipmentController.UpdateRoomEqByEqName(reList, selected.name);
+            roomEquipmentController.UpdateRoomEqByEqName(reList, selected.Name);
 
             var EqVm = new EquipmentViewModel();
             MainViewModel.Instance().CurrentView = EqVm;

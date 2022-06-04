@@ -46,10 +46,10 @@ namespace TechHealth.View.ManagerView.VieW
             equipment = new Equipment();
             var EquipmentVm = new EquipmentViewModel();
 
-            equipment.name = TxtName.Text;
-            equipment.id = Guid.NewGuid().ToString("N");
-            equipment.type = ManagerConversions.StringToEquipmentType(CbEqType.Text);
-            equipment.quantity = Int32.Parse(TxtQuantity.Text);
+            equipment.Name = TxtName.Text;
+            equipment.Id = Guid.NewGuid().ToString("N");
+            equipment.Type = ManagerConversions.StringToEquipmentType(CbEqType.Text);
+            equipment.Quantity = Int32.Parse(TxtQuantity.Text);
             re = new RoomEquipment();
 
             //bool createRe = true;

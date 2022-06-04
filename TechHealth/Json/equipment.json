@@ -1,32 +1,32 @@
 {
   "c4dfd6d92af644c882d64fc6667c1a42": {
-    "name": "Gaza",
-    "id": "c4dfd6d92af644c882d64fc6667c1a42",
-    "type": 0,
-    "quantity": 90
+    "Name": "Gaza",
+    "Id": "c4dfd6d92af644c882d64fc6667c1a42",
+    "Type": 0,
+    "Quantity": 90
   },
   "6d18384af0474b0da9affa2db33cec5d": {
-    "name": "Skalpel",
-    "id": "6d18384af0474b0da9affa2db33cec5d",
-    "type": 0,
-    "quantity": 37
+    "Name": "Skalpel",
+    "Id": "6d18384af0474b0da9affa2db33cec5d",
+    "Type": 0,
+    "Quantity": 37
   },
   "d8a964ed64cd440aa40a238fc1dc2daa": {
-    "name": "Krevet",
-    "id": "d8a964ed64cd440aa40a238fc1dc2daa",
-    "type": 0,
-    "quantity": 9
+    "Name": "Krevet",
+    "Id": "d8a964ed64cd440aa40a238fc1dc2daa",
+    "Type": 0,
+    "Quantity": 9
   },
   "a33413ceb22c4b0db537f2ec7749a30b": {
-    "name": "Bandazer",
-    "id": "a33413ceb22c4b0db537f2ec7749a30b",
-    "type": 0,
-    "quantity": 60
+    "Name": "Bandazer",
+    "Id": "a33413ceb22c4b0db537f2ec7749a30b",
+    "Type": 0,
+    "Quantity": 60
   },
   "940543c56616499eb2dabe89e5492f6f": {
-    "name": "oprema dinamicka",
-    "id": "940543c56616499eb2dabe89e5492f6f",
-    "type": 1,
-    "quantity": 20
+    "Name": "oprema dinamicka",
+    "Id": "940543c56616499eb2dabe89e5492f6f",
+    "Type": 1,
+    "Quantity": 20
   }
 }

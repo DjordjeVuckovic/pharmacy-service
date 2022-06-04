@@ -87,9 +87,9 @@ namespace TechHealth.Service
             bool createRe = true;
             foreach (var re in reList)
             {
-                if (re.EquipmentName == equipment.name && re.RoomID == ManagerConversions.RoomTypesToString(RoomTypes.warehouse))
+                if (re.EquipmentName == equipment.Name && re.RoomID == ManagerConversions.RoomTypesToString(RoomTypes.warehouse))
                 {
-                    re.Quantity += equipment.quantity;
+                    re.Quantity += equipment.Quantity;
                     Update(re);
                     createRe = false;
                     break;
@@ -100,9 +100,9 @@ namespace TechHealth.Service
 
         public void CreateWarehouseRoomEquipment(RoomEquipment re, Equipment equipment)
         {
-            re.EquipmentName = equipment.name;
+            re.EquipmentName = equipment.Name;
             re.RoomID = ManagerConversions.RoomTypesToString(RoomTypes.warehouse);
-            re.Quantity = equipment.quantity;
+            re.Quantity = equipment.Quantity;
             Create(re);
         }
 

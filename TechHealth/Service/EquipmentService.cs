@@ -34,7 +34,7 @@ namespace TechHealth.Service
             List<Equipment> equipmentList = new List<Equipment>();
             foreach (var eq in GetAllToList())
             {
-                if (eq.type == type)
+                if (eq.Type == type)
                 {
                     equipmentList.Add(eq);
                 }
@@ -47,9 +47,9 @@ namespace TechHealth.Service
             bool createEq = true;
             foreach (var eq in eqList)
             {
-                if (eq.name == equipment.name)
+                if (eq.Name == equipment.Name)
                 {
-                    eq.quantity += equipment.quantity;
+                    eq.Quantity += equipment.Quantity;
                     Update(eq);
                     createEq = false;
                 }

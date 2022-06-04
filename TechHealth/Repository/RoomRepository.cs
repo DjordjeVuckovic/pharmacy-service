@@ -33,7 +33,7 @@ namespace TechHealth.Repository
 
         protected override string GetKey(Room entity)
         {
-            return entity.roomId;
+            return entity.RoomId;
         }
 
         protected override void RemoveAllReference(string key)
@@ -62,7 +62,7 @@ namespace TechHealth.Repository
         {
             foreach (var room in GetAllToList())
             {
-                if (room.roomId.Equals(idr))
+                if (room.RoomId.Equals(idr))
                 {
                     return room;
                 }

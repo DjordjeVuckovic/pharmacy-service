@@ -62,7 +62,7 @@ namespace TechHealth.View.SecretaryView
             }
             foreach (var r in RoomRepository.Instance.GetAll().Values)
             {
-                if (!r.roomId.Equals("Warehouse"))
+                if (!r.RoomId.Equals("Warehouse"))
                 {
                     rooms.Add(r);
                 }
@@ -70,7 +70,7 @@ namespace TechHealth.View.SecretaryView
             List<String> roomsForCombo = new List<String>();
             foreach (var r in rooms)
             {
-                roomsForCombo.Add(r.roomId);
+                roomsForCombo.Add(r.RoomId);
             }
             doctorCombo.ItemsSource = doctorsForCombo;
             patientCombo.ItemsSource = patientsForCombo;
@@ -93,7 +93,7 @@ namespace TechHealth.View.SecretaryView
                     break;
                 }
             }
-            roomCombo.SelectedItem = appointment.Room.roomId;
+            roomCombo.SelectedItem = appointment.Room.RoomId;
 
             datePick.Text = appointment.Date.ToString();
             timePickerStart.Text = appointment.StartTime.ToString("hh:mm tt");

@@ -125,9 +125,9 @@ namespace TechHealth.View.ManagerView.VieW
         private void ExecuteDelete()
         {
             Equipment eq = (Equipment)dataEquipment.SelectedItem;
-            equipmentController.Delete(eq.id);
+            equipmentController.Delete(eq.Id);
             Equipment.Remove(eq);
-            List<RoomEquipment> reList = roomEquipmentController.GetRoomEqListByEqName(eq.name);
+            List<RoomEquipment> reList = roomEquipmentController.GetRoomEqListByEqName(eq.Name);
             roomEquipmentController.DeleteRoomEqByEqName(reList);
             MessageBox.Show("You have successfully deleted the equipment");
         }
@@ -161,7 +161,7 @@ namespace TechHealth.View.ManagerView.VieW
             {
                 foreach (var eq in equipmentController.GetAllToList())
                 {
-                    if (eq.name.ToLower().Contains(search.Text.ToLower()) || eq.quantity.ToString().ToLower().Contains(search.Text.ToLower()) || eq.id.ToLower().Contains(search.Text.ToLower()) || eq.type.ToString().ToLower().Contains(search.Text.ToLower()))
+                    if (eq.Name.ToLower().Contains(search.Text.ToLower()) || eq.Quantity.ToString().ToLower().Contains(search.Text.ToLower()) || eq.Id.ToLower().Contains(search.Text.ToLower()) || eq.Type.ToString().ToLower().Contains(search.Text.ToLower()))
                     {
                         eqlist.Add(eq);
                     }

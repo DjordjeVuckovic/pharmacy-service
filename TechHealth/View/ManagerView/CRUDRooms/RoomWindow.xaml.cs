@@ -51,7 +51,7 @@ namespace TechHealth.View.ManagerView.CRUDRooms
             else
             {
                 Room selected = (Room)lvUsers.SelectedItems[0];
-                roomController.Delete(selected.roomId);
+                roomController.Delete(selected.RoomId);
                 rooms = new ObservableCollection<Room>(RoomRepository.Instance.GetAll().Values);
                 lvUsers.ItemsSource = rooms;
             }

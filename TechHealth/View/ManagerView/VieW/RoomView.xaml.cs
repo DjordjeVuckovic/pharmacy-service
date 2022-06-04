@@ -187,7 +187,7 @@ namespace TechHealth.View.ManagerView.VieW
 
         private void ExecuteDel()
         {
-            roomController.Delete(selectedItem.roomId);
+            roomController.Delete(selectedItem.RoomId);
             rooms.Remove(selectedItem);
             MessageBox.Show("You have successfully deleted the room");
         }

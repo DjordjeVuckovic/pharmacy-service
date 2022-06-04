@@ -173,7 +173,7 @@ namespace TechHealth.DoctorView.ViewModel
 
             foreach (var r in roomController.GetAll())
             {
-                roomComboBox.Add(new ComboBoxGeneric<Room>(){DisplayText = r.roomId , Entity = r});
+                roomComboBox.Add(new ComboBoxGeneric<Room>(){DisplayText = r.RoomId , Entity = r});
             }
         }
 
@@ -194,7 +194,7 @@ namespace TechHealth.DoctorView.ViewModel
             cnt = 0;
             foreach (var combo in roomComboBox)
             {
-                if (combo.Entity.roomId.Equals(appointment.Room.roomId))
+                if (combo.Entity.RoomId.Equals(appointment.Room.RoomId))
                 {
                     break;
                 }

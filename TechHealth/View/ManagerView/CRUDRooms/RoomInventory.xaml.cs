@@ -51,7 +51,7 @@ namespace TechHealth.View.ManagerView.CRUDRooms
             timer = new Timer(new TimerCallback(eqReallocationController.ReallocateOnDate), null, 1000, 60000);
             InitializeComponent();
             DataContext = this;
-            reList = new ObservableCollection<RoomEquipment>(roomEquipmentController.GetRoomEqListByRoomID(room.roomId));
+            reList = new ObservableCollection<RoomEquipment>(roomEquipmentController.GetRoomEqListByRoomID(room.RoomId));
         }
 
         [NotifyPropertyChangedInvocator]

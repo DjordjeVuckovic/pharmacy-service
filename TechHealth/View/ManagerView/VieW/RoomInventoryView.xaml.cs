@@ -53,7 +53,7 @@ namespace TechHealth.View.ManagerView.VieW
             InitializeComponent();
             DataContext = this;
             var room = RoomInventoryViewModel.Instance().getSelectedRoom();
-            reList = new ObservableCollection<RoomEquipment>(roomEquipmentController.GetRoomEqListByRoomID(room.roomId));
+            reList = new ObservableCollection<RoomEquipment>(roomEquipmentController.GetRoomEqListByRoomID(room.RoomId));
         }
 
         [NotifyPropertyChangedInvocator]

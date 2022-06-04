@@ -24,7 +24,7 @@ namespace TechHealth.Repository
         public static EquipmentRepository Instance => instance;
         protected override string GetKey(Equipment entity)
         {
-            return entity.id;
+            return entity.Id;
         }
 
         protected override string GetPath()
