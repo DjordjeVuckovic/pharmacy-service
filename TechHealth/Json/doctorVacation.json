@@ -9,7 +9,7 @@
     },
     "VacationReason": "aaaaaaa",
     "Emergent": false,
-    "VacationStatus": 0
+    "VacationStatus": 1
   },
   "33d263cd483e4354b888426843ff0b8e": {
     "VacationId": "33d263cd483e4354b888426843ff0b8e",

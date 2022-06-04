@@ -195,6 +195,9 @@
     <Compile Include="DoctorView\DoctorWindow.xaml.cs">
       <DependentUpon>DoctorWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DoctorView\GeneratePdf\GeneratePdfWindow.xaml.cs">
+      <DependentUpon>GeneratePdfWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DoctorView\MedicalHistory\NewAnamnesis.xaml.cs">
       <DependentUpon>NewAnamnesis.xaml</DependentUpon>
     </Compile>
@@ -210,6 +213,7 @@
     <Compile Include="DoctorView\ViewModel\CreateSurgeryViewModel.cs" />
     <Compile Include="DoctorView\ViewModel\DashBoardViewModel.cs" />
     <Compile Include="DoctorView\ViewModel\DoctorVacationViewModel.cs" />
+    <Compile Include="DoctorView\ViewModel\GeneratePdfViewModel.cs" />
     <Compile Include="DoctorView\ViewModel\HistoryOfCareViewModel.cs" />
     <Compile Include="DoctorView\ViewModel\MainViewModel.cs" />
     <Compile Include="DoctorView\ViewModel\MedicalRecordViewModel.cs" />
@@ -687,6 +691,7 @@
     </Page>
     <Page Include="DoctorView\CRUDAppointments\UpdateAppointment.xaml" />
     <Page Include="DoctorView\DoctorWindow.xaml" />
+    <Page Include="DoctorView\GeneratePdf\GeneratePdfWindow.xaml" />
     <Page Include="DoctorView\MedicalHistory\NewAnamnesis.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

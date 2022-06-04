@@ -2,6 +2,7 @@
 using System.Windows;
 using TechHealth.Controller;
 using TechHealth.Core;
+using TechHealth.DoctorView.GeneratePdf;
 using TechHealth.DoctorView.MedicalHistory;
 using TechHealth.DoctorView.Windows;
 using TechHealth.Model;
@@ -22,6 +23,7 @@ namespace TechHealth.DoctorView.ViewModel
         private ReviewAnamnesis reviewAnamnesis { get; set; }
         private int selectedIndex;
         public RelayCommand PreviewCommand { get; set; }
+        public RelayCommand GenerateCommand { get; set; }
         private Anamnesis selectedAnamnesis;
         private Therapy selectedTherapy;
         private Prescription selectedPrescription;
@@ -81,7 +83,18 @@ namespace TechHealth.DoctorView.ViewModel
             SelectedIndex = 0;
             PreviewCommand = new RelayCommand(param => Execute(), param => CanExecute());
             LabelFullName ="History of care for patient: "+ selectedItemPatient.FullName;
+            GenerateCommand = new RelayCommand(param => ExecuteGenerate());
 
+        }
+
+        private void ExecuteGenerate()
+        {
+            var vm = new GeneratePdfViewModel(selectedItemPatient);
+            var window = new GeneratePdfWindow()
+            {
+                DataContext = vm
+            };
+            window.ShowDialog();
         }
         
 

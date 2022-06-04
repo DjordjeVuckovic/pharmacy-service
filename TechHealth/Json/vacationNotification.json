@@ -1,2 +1,10 @@
 {
+  "5160080cbc17477588a7ee6e7f5e4835": {
+    "Id": "5160080cbc17477588a7ee6e7f5e4835",
+    "Doctor": {
+      "Jmbg": "131213121111",
+      "ShouldSerialize": false
+    },
+    "NotificationText": "Vacation request from 10.05.2022 to 11.05.2022 is approved.\r\naaaaa"
+  }
 }

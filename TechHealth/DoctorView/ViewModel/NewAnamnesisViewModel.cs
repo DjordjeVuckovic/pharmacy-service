@@ -222,7 +222,7 @@ namespace TechHealth.DoctorView.ViewModel
             DateLabel = "Appointment Date: " + Appointment.Date.ToString("d");
 
         }
-        public bool CanExecute()
+        private bool CanExecute()
         {
             if (MainSymptom != null && OtherSymptoms != null && GeneralAmnesis != null )
             {
@@ -234,20 +234,21 @@ namespace TechHealth.DoctorView.ViewModel
 
         }
 
-        public void Execute()
+        private void Execute()
         {
             CreateAnamnesis();
             Appointment.Evident = true;
             appointmentController.Update(Appointment);
             ViewModelAppointment.GetInstance().RefreshView();
-            OnRequestClose(this, new EventArgs());
+            RecordViewModel.GetInstance().RefreshView();
+            OnRequestClose?.Invoke(this, EventArgs.Empty);
         }
         private void CloseWindow()
         {
             DialogResult dialogResult = MessageBox.Show(@"Are you sure about that?", @"Cancel appointment", MessageBoxButtons.YesNo);
             if(dialogResult==(DialogResult) MessageBoxResult.Yes)
             {
-                OnRequestClose(this, new EventArgs());
+                OnRequestClose?.Invoke(this, EventArgs.Empty);
             }
         }
         private void CreateAnamnesis()
