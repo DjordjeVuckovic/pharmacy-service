@@ -21,5 +21,97 @@
       "ShouldSerialize": false
     },
     "Evident": false
+  },
+  "c3db0793f59f4088b494ddfa4d610f11": {
+    "ShouldSerialize": true,
+    "Date": "2022-06-05T00:00:00",
+    "StartTime": "2022-06-04T01:05:00",
+    "FinishTime": "0001-01-01T00:00:00",
+    "Emergent": false,
+    "IdAppointment": "c3db0793f59f4088b494ddfa4d610f11",
+    "Room": {
+      "roomId": "S2",
+      "ShouldSerialize": false
+    },
+    "Patient": {
+      "Lbo": 73456,
+      "Jmbg": "2456",
+      "ShouldSerialize": false
+    },
+    "AppointmentType": 0,
+    "Doctor": {
+      "Jmbg": "131213121111",
+      "ShouldSerialize": false
+    },
+    "Evident": false
+  },
+  "2122a305e4214c57a78770befb59f79f": {
+    "ShouldSerialize": true,
+    "Date": "2022-06-03T00:00:00",
+    "StartTime": "2022-06-04T01:09:00",
+    "FinishTime": "0001-01-01T00:00:00",
+    "Emergent": false,
+    "IdAppointment": "2122a305e4214c57a78770befb59f79f",
+    "Room": {
+      "roomId": "S2",
+      "ShouldSerialize": false
+    },
+    "Patient": {
+      "Lbo": 73456,
+      "Jmbg": "2456",
+      "ShouldSerialize": false
+    },
+    "AppointmentType": 0,
+    "Doctor": {
+      "Jmbg": "1313",
+      "ShouldSerialize": false
+    },
+    "Evident": false
+  },
+  "6691a6553fc147ecaced7fa7a3458faa": {
+    "ShouldSerialize": true,
+    "Date": "2022-06-08T00:00:00",
+    "StartTime": "2022-06-04T01:05:00",
+    "FinishTime": "2022-06-04T01:21:00",
+    "Emergent": false,
+    "IdAppointment": "6691a6553fc147ecaced7fa7a3458faa",
+    "Room": {
+      "roomId": "S2",
+      "ShouldSerialize": false
+    },
+    "Patient": {
+      "Lbo": 73456,
+      "Jmbg": "2456",
+      "ShouldSerialize": false
+    },
+    "AppointmentType": 0,
+    "Doctor": {
+      "Jmbg": "131213121111",
+      "ShouldSerialize": false
+    },
+    "Evident": false
+  },
+  "9fffbf7fd649425485cf39c939d70de6": {
+    "ShouldSerialize": true,
+    "Date": "2022-06-18T00:00:00",
+    "StartTime": "2022-06-04T02:10:00",
+    "FinishTime": "0001-01-01T00:00:00",
+    "Emergent": false,
+    "IdAppointment": "9fffbf7fd649425485cf39c939d70de6",
+    "Room": {
+      "roomId": "S2",
+      "ShouldSerialize": false
+    },
+    "Patient": {
+      "Lbo": 73456,
+      "Jmbg": "2456",
+      "ShouldSerialize": false
+    },
+    "AppointmentType": 0,
+    "Doctor": {
+      "Jmbg": "1313",
+      "ShouldSerialize": false
+    },
+    "Evident": false
   }
 }

@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using TechHealth.Model;
 using TechHealth.Controller;
 using TechHealth.Repository;
+using TechHealth.Core;
 
 namespace TechHealth.View.PatientView
 {
@@ -27,20 +28,26 @@ namespace TechHealth.View.PatientView
         private Patient patient;
         public string PatientFullName { get; set; }
         private AppointmentController appointmentController = new AppointmentController();
+        private DoctorController doctorController = new DoctorController();
+        private List<ComboBoxGeneric<Doctor>> doctorComboBox = new List<ComboBoxGeneric<Doctor>>();
+        public int DoctorIndex { get; set; }
+        public string StartDate { get; set; }
+        public Doctor DoctorData { get; set; }
 
         public UpdateAppointment(Appointment newAppointment)
         {
             InitializeComponent();
             DataContext = this;
-            //selected = AppointmentRepository.Instance.GetById(newAppointment.IdAppointment);
             selected = newAppointment;
             patient = PatientRepository.Instance.GetPatientbyId("2456");
             PatientFullName = patient.FullName;
             doctors = DoctorRepository.Instance.GetAllToList();
-
+            FillComboData();
+            FillIndex();
+            DoctorData = selected.Doctor;
             CbDoctor.ItemsSource = doctors;
-            TxtTime.Text = selected.StartTime.ToString("d");
             Date.SelectedDate = selected.Date;
+            StartDate = selected.StartTime.ToString("t");
             BlackoutDates();
             
 
@@ -96,7 +103,7 @@ namespace TechHealth.View.PatientView
             selected.Date = DateTime.Parse(Date.Text);
             selected.StartTime = DateTime.Parse(TxtTime.Text);
             selected.AppointmentType = AppointmentType.examination;
-            selected.Doctor = doctors[CbDoctor.SelectedIndex];
+            selected.Doctor = DoctorData;
 
             if (!Validate())
             {
@@ -114,7 +121,33 @@ namespace TechHealth.View.PatientView
             Close();
         }
 
-        
+        private void FillComboData()
+        {
+
+            foreach (var d in DoctorRepository.Instance.GetAllToList())
+            {
+                doctorComboBox.Add(new ComboBoxGeneric<Doctor>() { DisplayText = d.Name + " " + d.Surname, Entity = d });
+            }
+        }
+
+        private void FillIndex()
+        {
+            int cnt = 0;
+            foreach (var combo in doctorComboBox)
+            {
+                if (combo.Entity.Jmbg.Equals(selected.Doctor.Jmbg))
+                {
+                    break;
+                }
+
+                cnt++;
+            }
+
+            DoctorIndex = cnt;
+
+        }
+
+
 
 
     }
