@@ -15,6 +15,11 @@ namespace TechHealth.Service
             return MedicalRecordRepository.Instance.GetAllToList();
         }
 
+        public MedicalRecord GetByPatientId(string patientId)
+        {
+            return MedicalRecordRepository.Instance.GetByPatientId(patientId);
+        }
+
         public bool Create(MedicalRecord medicalRecord)
         {
             return MedicalRecordRepository.Instance.Create(medicalRecord);

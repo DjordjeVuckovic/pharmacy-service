@@ -1,14 +1,17 @@
 ﻿using System;
 using TechHealth.Controller;
 using TechHealth.Core;
+using TechHealth.DoctorView.GeneratePdf;
 using TechHealth.Model;
 
 namespace TechHealth.DoctorView.ViewModel
 {
     public class GeneratePdfViewModel:ViewModelBase
     {
-        private Patient patient;
+        private Patient selectedPatient;
         private readonly PatientController patientController = new PatientController();
+        private readonly DoctorController doctorController = new DoctorController();
+        public event EventHandler OnRequestClose;
 
         public String LabelPatientName { get; set; }
         public String LabelDoctorName { get; set; }
@@ -36,8 +39,8 @@ namespace TechHealth.DoctorView.ViewModel
 
         public GeneratePdfViewModel(Patient patient)
         {
-            patient = patientController.GetByPatientId(patient.Jmbg);
-            LabelDoctorName = "John Black";
+            selectedPatient = patientController.GetByPatientId(patient.Jmbg);
+            LabelDoctorName = doctorController.GetById(MainViewModel.DoctorId).FullSpecialization;
             LabelPatientName = patient.FullName;
             AcceptCommand = new RelayCommand(param => ExecutePdf(),param => CanExecutePdf());
         }
@@ -54,7 +57,9 @@ namespace TechHealth.DoctorView.ViewModel
 
         private void ExecutePdf()
         {
-            
+            new PdfForPateintCare(selectedPatient, StartDate, EndDate);
+            OnRequestClose?.Invoke(this, EventArgs.Empty);
+
         }
         
     }

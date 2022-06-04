@@ -21,15 +21,6 @@
                               SelectionMode="Single" AutoGenerateColumns="False" FontSize="15" 
                               FontStyle="Normal"
                               CanUserResizeRows="False"  Background="#333545">
-                        <!--<DataGrid.RowStyle>
-                            <Style TargetType="DataGridRow">
-                                <Style.Triggers>
-                                    <Trigger Property="IsSelected" Value="True">
-                                        <Setter Property="Background" Value="black" />
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </DataGrid.RowStyle>-->
 
                         <DataGrid.Columns>
 
@@ -37,7 +28,7 @@
                             <DataGridTextColumn Header="StartTime" Binding="{Binding StartTime,StringFormat=t}" Width="*"  CanUserResize="False"/>
                             <DataGridTextColumn Header="FinishTime" Binding="{Binding FinishTime,StringFormat=t}" Width="1.2*"  CanUserResize="False"/>
                             <DataGridTextColumn Header="Patient" Binding="{Binding Patient.FullName}" Width="150"  CanUserResize="False"/>
-                            <DataGridTextColumn Header="Room" Binding="{Binding Room.roomId}" Width="*"  CanUserResize="False"/>
+                            <DataGridTextColumn Header="Room" Binding="{Binding Room.RoomId}" Width="*"  CanUserResize="False"/>
                             <DataGridTextColumn Header="Type" Binding="{Binding AppointmentType}" Width="*"  CanUserResize="False"/>
                             <!--<DataGridTextColumn Header="Emergent?"  Binding="{Binding Emergent}"  Width="*"  CanUserResize="False"/>-->
                             <DataGridTemplateColumn Header="Emergent?">

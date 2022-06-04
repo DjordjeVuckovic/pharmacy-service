@@ -7,7 +7,10 @@
     "Emergent": false,
     "IdAppointment": "97c07e7ab12e49a8b6707dbc98ccc14d",
     "Room": {
+      "RoomTypes": 0,
       "RoomId": "S4",
+      "Floor": 0,
+      "Availability": false,
       "ShouldSerialize": false
     },
     "Patient": {
@@ -21,5 +24,83 @@
       "ShouldSerialize": false
     },
     "Evident": true
+  },
+  "6553d6f128d946bb88a635940146141e": {
+    "ShouldSerialize": true,
+    "Date": "2022-06-25T00:00:00",
+    "StartTime": "2022-06-04T05:26:00",
+    "FinishTime": "2022-06-04T05:50:00",
+    "Emergent": false,
+    "IdAppointment": "6553d6f128d946bb88a635940146141e",
+    "Room": {
+      "RoomTypes": 0,
+      "RoomId": "S4",
+      "Floor": 3,
+      "Availability": true,
+      "ShouldSerialize": false
+    },
+    "Patient": {
+      "Lbo": 657771,
+      "Jmbg": "13456",
+      "ShouldSerialize": false
+    },
+    "AppointmentType": 0,
+    "Doctor": {
+      "Jmbg": "131213121111",
+      "ShouldSerialize": false
+    },
+    "Evident": true
+  },
+  "5e843bc4ba594e999c0bcef655482560": {
+    "ShouldSerialize": true,
+    "Date": "2022-06-29T00:00:00",
+    "StartTime": "2022-06-04T09:45:00",
+    "FinishTime": "2022-06-04T12:00:00",
+    "Emergent": false,
+    "IdAppointment": "5e843bc4ba594e999c0bcef655482560",
+    "Room": {
+      "RoomTypes": 0,
+      "RoomId": "S4",
+      "Floor": 3,
+      "Availability": true,
+      "ShouldSerialize": false
+    },
+    "Patient": {
+      "Lbo": 657771,
+      "Jmbg": "13456",
+      "ShouldSerialize": false
+    },
+    "AppointmentType": 0,
+    "Doctor": {
+      "Jmbg": "131213121111",
+      "ShouldSerialize": false
+    },
+    "Evident": true
+  },
+  "2c2d62cb4a5a477483e96c5bc6809ace": {
+    "ShouldSerialize": true,
+    "Date": "2022-06-30T00:00:00",
+    "StartTime": "2022-06-04T03:16:00",
+    "FinishTime": "2022-06-04T06:30:00",
+    "Emergent": false,
+    "IdAppointment": "2c2d62cb4a5a477483e96c5bc6809ace",
+    "Room": {
+      "RoomTypes": 1,
+      "RoomId": "S5",
+      "Floor": 3,
+      "Availability": true,
+      "ShouldSerialize": false
+    },
+    "Patient": {
+      "Lbo": 657771,
+      "Jmbg": "13456",
+      "ShouldSerialize": false
+    },
+    "AppointmentType": 0,
+    "Doctor": {
+      "Jmbg": "131213121111",
+      "ShouldSerialize": false
+    },
+    "Evident": false
   }
 }

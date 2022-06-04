@@ -11,7 +11,7 @@ namespace TechHealth.Controller
 {
     public class MedicalRecordController
     {
-        private readonly MedicalRecordService MedicalRecordService = new MedicalRecordService();
+        private readonly MedicalRecordService medicalRecordService = new MedicalRecordService();
         public List<MedicalRecord> GetAll()
         {
             return MedicalRecordRepository.Instance.GetAllToList();
@@ -30,29 +30,34 @@ namespace TechHealth.Controller
             medicalRecord.MartialStatus = martialStatus;
             medicalRecord.EmlpoymentData = emlpoymentData;
 
-            return MedicalRecordService.Create(medicalRecord);
+            return medicalRecordService.Create(medicalRecord);
         }
 
         public bool Update(string id, Bloodtype bloodType, Patient patient, string weight, string height, string chronicDiseases, string parentDiseases, string martialStatus, EmlpoymentData emlpoymentData)
         {
-            var medicalRecord = new MedicalRecord();
+            var medicalRecord = new MedicalRecord
+            {
+                RecordId = id,
+                BloodType = bloodType,
+                Patient = patient,
+                Weight = weight,
+                Height = height,
+                ChronicDiseases = chronicDiseases,
+                ParentDiseases = parentDiseases,
+                MartialStatus = martialStatus,
+                EmlpoymentData = emlpoymentData
+            };
 
-            medicalRecord.RecordId = id;
-            medicalRecord.BloodType = bloodType;
-            medicalRecord.Patient = patient;
-            medicalRecord.Weight = weight;
-            medicalRecord.Height = height;
-            medicalRecord.ChronicDiseases = chronicDiseases;
-            medicalRecord.ParentDiseases = parentDiseases;
-            medicalRecord.MartialStatus = martialStatus;
-            medicalRecord.EmlpoymentData = emlpoymentData;
-
-            return MedicalRecordService.Update(medicalRecord);
+            return medicalRecordService.Update(medicalRecord);
         }
 
         public bool Delete(string id)
         {
-            return MedicalRecordService.Delete(id);
+            return medicalRecordService.Delete(id);
+        }
+        public MedicalRecord GetByPatientId(string patientId)
+        {
+            return medicalRecordService.GetByPatientId(patientId);
         }
     }
 }

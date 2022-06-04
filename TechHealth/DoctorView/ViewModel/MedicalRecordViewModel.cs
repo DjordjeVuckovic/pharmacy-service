@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using TechHealth.Controller;
 using TechHealth.Core;
 using TechHealth.Model;
 using TechHealth.Repository;
@@ -11,6 +12,7 @@ namespace TechHealth.DoctorView.ViewModel
         private Patient selectedItemPatient;
         private string name;
         private MedicalRecord medicalRecord;
+        private MedicalRecordController medicalRecordController = new MedicalRecordController();
         public String LabelName { get; set; }
         public String LabelSurName { get; set; }
         public String LabelFullName { get; set; }
@@ -58,7 +60,7 @@ namespace TechHealth.DoctorView.ViewModel
         {
             SelectedItemPatient = selectedItem;
             LabelFullName = selectedItem.FullName;
-            medicalRecord = MedicalRecordRepository.Instance.GetByPatientId(selectedItem.Jmbg);
+            medicalRecord = medicalRecordController.GetByPatientId(selectedItem.Jmbg);
             MedicalRecord = medicalRecord;
             LabelBirth ="Birthday:  " + SelectedItemPatient.Birthday.ToShortDateString();
             LabelEmail = "Email:  " + SelectedItemPatient.Email;

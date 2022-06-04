@@ -25,7 +25,7 @@
                 <DataGridTextColumn Header="Date" Binding="{Binding Date,StringFormat=d}" Width="1.2*"  CanUserResize="False" />
                 <DataGridTextColumn Header="StartTime" Binding="{Binding StartTime,StringFormat=t}" Width="1.4*"  CanUserResize="False"/>
                 <DataGridTextColumn Header="FinishTime" Binding="{Binding FinishTime,StringFormat=t}" Width="1.4*"  CanUserResize="False"/>
-                <DataGridTextColumn Header="Room" Binding="{Binding Room.roomId}" Width="1.4*"  CanUserResize="False"/>
+                <DataGridTextColumn Header="Room" Binding="{Binding Room.RoomId}" Width="1.4*"  CanUserResize="False"/>
                 <DataGridTextColumn Header="Patient" Binding="{Binding Patient.FullName}" Width="1.8*"  CanUserResize="False"/>
                 <DataGridTextColumn Header="Type" Binding="{Binding AppointmentType}" Width="1.5*"  CanUserResize="False"/>
                 <DataGridTemplateColumn Header="Evident?">

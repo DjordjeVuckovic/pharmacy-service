@@ -94,6 +94,7 @@ namespace TechHealth.DoctorView.ViewModel
             {
                 DataContext = vm
             };
+            vm.OnRequestClose += (s, e) => window.Close();
             window.ShowDialog();
         }
         

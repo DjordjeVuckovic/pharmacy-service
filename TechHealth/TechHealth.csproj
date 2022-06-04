@@ -14,8 +14,7 @@
     <WarningLevel>4</WarningLevel>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
-    <ApplicationIcon>
-    </ApplicationIcon>
+    <ApplicationIcon>resources\favicon.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -197,6 +196,9 @@
     </Compile>
     <Compile Include="DoctorView\GeneratePdf\GeneratePdfWindow.xaml.cs">
       <DependentUpon>GeneratePdfWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DoctorView\GeneratePdf\PdfForPatieintCare.xaml.cs">
+      <DependentUpon>PdfForPatieintCare.xaml</DependentUpon>
     </Compile>
     <Compile Include="DoctorView\MedicalHistory\NewAnamnesis.xaml.cs">
       <DependentUpon>NewAnamnesis.xaml</DependentUpon>
@@ -738,6 +740,7 @@
     <Page Include="DoctorView\CRUDAppointments\UpdateAppointment.xaml" />
     <Page Include="DoctorView\DoctorWindow.xaml" />
     <Page Include="DoctorView\GeneratePdf\GeneratePdfWindow.xaml" />
+    <Page Include="DoctorView\GeneratePdf\PdfForPatieintCare.xaml" />
     <Page Include="DoctorView\MedicalHistory\NewAnamnesis.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

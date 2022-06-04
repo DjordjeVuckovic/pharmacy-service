@@ -21,5 +21,51 @@
     "Respiratory": null,
     "Mouth": null,
     "Gi": null
+  },
+  "ca7d26cce61b401abae0ce2808307c86": {
+    "Appointment": {
+      "ShouldSerialize": false,
+      "IdAppointment": "6553d6f128d946bb88a635940146141e"
+    },
+    "MainSymptom": "skolioza",
+    "AnamnesisDate": "2022-06-04T20:20:31.2756209+02:00",
+    "AnamnesisId": "ca7d26cce61b401abae0ce2808307c86",
+    "OtherSymptoms": "/",
+    "GeneralAmnesis": "bol u ledjima",
+    "Cns": null,
+    "Eye": null,
+    "Neck": null,
+    "Mss": null,
+    "Skin": null,
+    "Ear": null,
+    "Cus": null,
+    "Infectious": null,
+    "Ugs": null,
+    "Respiratory": null,
+    "Mouth": null,
+    "Gi": null
+  },
+  "339e6aecd6f744b1a9e8b645c7a26852": {
+    "Appointment": {
+      "ShouldSerialize": false,
+      "IdAppointment": "5e843bc4ba594e999c0bcef655482560"
+    },
+    "MainSymptom": "katarakta",
+    "AnamnesisDate": "2022-06-04T21:30:55.4454834+02:00",
+    "AnamnesisId": "339e6aecd6f744b1a9e8b645c7a26852",
+    "OtherSymptoms": "bol u oku",
+    "GeneralAmnesis": "Diagnostikovana katarakta pacijent treba da nosi naocare",
+    "Cns": null,
+    "Eye": null,
+    "Neck": null,
+    "Mss": null,
+    "Skin": null,
+    "Ear": null,
+    "Cus": null,
+    "Infectious": null,
+    "Ugs": null,
+    "Respiratory": null,
+    "Mouth": null,
+    "Gi": null
   }
 }

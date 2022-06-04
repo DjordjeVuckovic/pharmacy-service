@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using TechHealth.Model;
 using TechHealth.Service;
@@ -29,6 +30,11 @@ namespace TechHealth.Controller
         public List<Anamnesis> GetAllAnamnesisSurgeriesByPatient(string patientId)
         {
             return anamnesisService.GetAllAnamnesisSurgeriesByPatient(patientId);
+        }
+
+        public List<Anamnesis> GetAllAnamnesisByDate(string patientId, DateTime startDate, DateTime finishDate)
+        {
+            return anamnesisService.GetAllAnamnesisByDate(patientId, startDate, finishDate);
         }
     }
 }

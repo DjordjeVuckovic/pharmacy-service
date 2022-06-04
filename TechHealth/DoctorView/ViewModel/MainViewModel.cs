@@ -31,31 +31,6 @@ namespace TechHealth.DoctorView.ViewModel
                 OnPropertyChanged(nameof(CurrentView));
             }
         }
-
-        /*
-        public MainViewModel()
-        {
-            DashBoardViewModel = new DashBoardView();
-            //RecordView = new RecordView();
-            //AppointmentsWindow = AppointmentsWindow.GetInstance();
-
-            CurrentView = DashBoardViewModel;
-            DashCommand = new RelayCommand(o =>
-                {
-                    CurrentView = DashBoardViewModel;
-                }
-            );
-            RecordCommand = new RelayCommand(o =>
-                {
-                    CurrentView = RecordView;
-                }
-            );
-            AppointmentCommand = new RelayCommand(o =>
-                {
-                    //
-                }
-            );
-        }*/
         private static MainViewModel _instance;
 
         public static MainViewModel GetInstance(string doctorId)
@@ -74,16 +49,12 @@ namespace TechHealth.DoctorView.ViewModel
         }
         private MainViewModel()
         {
-            //_instance = this;
-            //DoctorId = doctorJmbg;
             PatientsViewModel = new PatientsViewModel();
-            //AppointmentsView = new AppointmentsView(DoctorId);
             RecordViewModel = new RecordViewModel(DoctorId);
             MedicineViewModel = new MedicineViewModel(DoctorId);
             DashBoardViewModel = new DashBoardViewModel();
             viewModelAppointment = new ViewModelAppointment(DoctorId);
-            this.AccountViewModel = new AccountViewModel(DoctorId);
-            //RecordViewModel.DoctorId = doctorJmbg;
+            AccountViewModel = new AccountViewModel(DoctorId);
 
             CurrentView = DashBoardViewModel;
             DashCommand = new RelayCommand(o =>
