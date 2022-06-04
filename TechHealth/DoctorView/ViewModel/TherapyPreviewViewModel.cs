@@ -29,7 +29,7 @@ namespace TechHealth.DoctorView.ViewModel
             Frequency = selectedTherapy.Frequency;
             DoctorName = "Doctor: " + selectedTherapy.Appointment.Doctor.FullSpecialization;
             PatientName = "Patient: " + selectedItemPatient.FullName;
-            RoomId = "AppointmentRoom: " + selectedTherapy.Appointment.Room.roomId;
+            RoomId = "AppointmentRoom: " + selectedTherapy.Appointment.Room.RoomId;
 
         }
     }

@@ -33,8 +33,8 @@ namespace TechHealth.View.ManagerView.VieW
             DataContext = this;
             var rm = SeparateRoomsViewModel.Instance().getSelectedRoom();
             selected = rm;
-            TxtRoomID.Text = selected.roomId;
-            TxtSeparationType.Text = ManagerConversions.RoomTypesToString(selected.roomTypes);
+            TxtRoomID.Text = selected.RoomId;
+            TxtSeparationType.Text = ManagerConversions.RoomTypesToString(selected.RoomTypes);
         }
 
         private void Button_Click_Confirm(object sender, RoutedEventArgs e)
@@ -47,12 +47,12 @@ namespace TechHealth.View.ManagerView.VieW
             string dateEndTime = dateEnd + " " + TxtEndTime.Text;
             rs.SeparationEnd = DateTime.Parse(dateEndTime);
             rs.RoomOne = selected;
-            rs.RoomOne.roomTypes = ManagerConversions.StringToRoomType(TxtSeparationType.Text);
+            rs.RoomOne.RoomTypes = ManagerConversions.StringToRoomType(TxtSeparationType.Text);
             Room roomTwo = new Room();
-            roomTwo.roomId = TxtNewRoom.Text;
-            roomTwo.floor = selected.floor;
-            roomTwo.availability = true;
-            roomTwo.roomTypes = ManagerConversions.StringToRoomType(CbType.Text);
+            roomTwo.RoomId = TxtNewRoom.Text;
+            roomTwo.Floor = selected.Floor;
+            roomTwo.Availability = true;
+            roomTwo.RoomTypes = ManagerConversions.StringToRoomType(CbType.Text);
             rs.RoomTwo = roomTwo;
             rs.SeparationID = Guid.NewGuid().ToString("N");
 

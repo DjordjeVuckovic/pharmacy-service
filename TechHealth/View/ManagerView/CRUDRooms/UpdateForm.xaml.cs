@@ -25,23 +25,23 @@ namespace TechHealth.View.ManagerView.CRUDRooms
         private RoomController roomController = new RoomController();
         public UpdateForm(Room room)
         {
-            selected = RoomRepository.Instance.GetById(room.roomId);
+            selected = RoomRepository.Instance.GetById(room.RoomId);
             InitializeComponent();
 
             //this.DataContext = this;
 
-            TxtRoomId.Text = selected.roomId;
-            CbFloor.Text = ManagerConversions.FloorToString(selected.floor);
-            CbType.Text = ManagerConversions.RoomTypesToString(selected.roomTypes);
-            CbAvailability.Text = ManagerConversions.AvailabilityToString(selected.availability);
+            TxtRoomId.Text = selected.RoomId;
+            CbFloor.Text = ManagerConversions.FloorToString(selected.Floor);
+            CbType.Text = ManagerConversions.RoomTypesToString(selected.RoomTypes);
+            CbAvailability.Text = ManagerConversions.AvailabilityToString(selected.Availability);
             
         } 
 
         private void Button_Click_Confirm(object sender, RoutedEventArgs e)
         {
-            selected.floor = ManagerConversions.StringToFloor(CbFloor.Text);
-            selected.roomTypes = ManagerConversions.StringToRoomType(CbType.Text);
-            selected.availability = ManagerConversions.StringToAvailability(CbAvailability.Text);
+            selected.Floor = ManagerConversions.StringToFloor(CbFloor.Text);
+            selected.RoomTypes = ManagerConversions.StringToRoomType(CbType.Text);
+            selected.Availability = ManagerConversions.StringToAvailability(CbAvailability.Text);
 
             //roomController.Update(selected.roomId, selected.floor, selected.availability,selected.roomTypes, selected.equipment);
             roomController.Update(selected);

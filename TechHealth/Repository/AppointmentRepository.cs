@@ -65,7 +65,7 @@ namespace TechHealth.Repository
             {
                 if (r.Room != null)
                 {
-                    if (roomId.Equals(r.Room.roomId))
+                    if (roomId.Equals(r.Room.RoomId))
                     {
                         appointments.Add(r);
                     }
@@ -82,7 +82,7 @@ namespace TechHealth.Repository
                 foreach (var app in GetAllToList())
                 {
                     if(((start >= app.StartTime && start <= app.FinishTime) || (end >= app.StartTime && end <= app.FinishTime)
-                        || (start <= app.StartTime && end >= app.FinishTime)) && app.Room.roomId == roomID)
+                        || (start <= app.StartTime && end >= app.FinishTime)) && app.Room.RoomId == roomID)
                     {
                         return false;
                     }
@@ -98,7 +98,7 @@ namespace TechHealth.Repository
             {
                 foreach (var app in GetAllToList())
                 {
-                    if ((app.Room.roomId == src || app.Room.roomId == dst) && (date >= app.StartTime && date <= app.FinishTime))
+                    if ((app.Room.RoomId == src || app.Room.RoomId == dst) && (date >= app.StartTime && date <= app.FinishTime))
                     {
                         return false;
                     }

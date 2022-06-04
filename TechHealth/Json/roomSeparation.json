@@ -1,15 +1,2 @@
 {
-  "a0e62cfafc9a4e5e96c682d29a3ddc54": {
-    "SeparationStart": "2022-05-14T11:00:00",
-    "SeparationEnd": "2022-05-28T11:00:00",
-    "RoomOne": {
-      "roomId": "S6",
-      "ShouldSerialize": false
-    },
-    "RoomTwo": {
-      "roomId": "S7",
-      "ShouldSerialize": false
-    },
-    "SeparationID": "a0e62cfafc9a4e5e96c682d29a3ddc54"
-  }
 }

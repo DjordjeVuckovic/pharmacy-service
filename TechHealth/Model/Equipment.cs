@@ -10,20 +10,20 @@ namespace TechHealth.Model
 {
    public class Equipment
    {
-        public string name { get; set; }
-        public string id { get; set; }
+        public string Name { get; set; }
+        public string Id { get; set; }
 
-        public EquipmentType type { get; set; }
-        public int quantity { get; set; }
+        public EquipmentType Type { get; set; }
+        public int Quantity { get; set; }
 
 
         public Equipment() { }
         public Equipment(string name, string id, EquipmentType type, int quantity)
         {
-            this.name = name;
-            this.id = id;
-            this.type = type;
-            this.quantity = quantity;
+            this.Name = name;
+            this.Id = id;
+            this.Type = type;
+            this.Quantity = quantity;
         }
     }
 }

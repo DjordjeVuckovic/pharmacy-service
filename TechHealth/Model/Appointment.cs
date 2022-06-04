@@ -147,7 +147,7 @@ namespace TechHealth.Model
       }
       public bool RoomConflicts(Appointment appointment)
       {
-         if (appointment.Room.roomId != Room.roomId)
+         if (appointment.Room.RoomId != Room.RoomId)
          {
             return false;
          }

@@ -33,7 +33,7 @@ namespace TechHealth.DoctorView.ViewModel
             var appointment = appointmentController.GetById(prescription.Appointment.IdAppointment);
             var doctor = doctorController.GetById(appointment.Doctor.Jmbg);
             DoctorName = "Doctor: " +doctor.FullSpecialization;
-            RoomID = "AppointmentRoom: " + appointment.Room.roomId;
+            RoomID = "AppointmentRoom: " + appointment.Room.RoomId;
             StartDate = prescription.StartDate;
             FinishDate = prescription.FinishDate;
             medicine = medicineController.GetById(prescription.Medicine.MedicineId);

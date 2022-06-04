@@ -7,7 +7,7 @@
     "Emergent": false,
     "IdAppointment": "97c07e7ab12e49a8b6707dbc98ccc14d",
     "Room": {
-      "roomId": "S4",
+      "RoomId": "S4",
       "ShouldSerialize": false
     },
     "Patient": {

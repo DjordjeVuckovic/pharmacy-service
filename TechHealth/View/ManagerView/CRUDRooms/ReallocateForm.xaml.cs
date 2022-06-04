@@ -37,14 +37,14 @@ namespace TechHealth.View.ManagerView.CRUDRooms
         {
             InitializeComponent();
             DataContext = this;
-            selected = EquipmentRepository.Instance.GetById(eq.id);
+            selected = EquipmentRepository.Instance.GetById(eq.Id);
             rooms = roomController.GetRoomNames();
             //eqList = EquipmentRepository.Instance.GetAllToList();
             //eqs = RoomRepository.Instance.GetRoomsByEq(selected.name);
             //dstRooms = RoomRepository.Instance.GetRoomNames(eqs);
             CbSourceRoom.ItemsSource = rooms;
             CbDestinationRoom.ItemsSource = rooms;
-            TxtEqId.Text = selected.name;
+            TxtEqId.Text = selected.Name;
         }
 
         private void Button_Click_Confirm(object sender, RoutedEventArgs e)

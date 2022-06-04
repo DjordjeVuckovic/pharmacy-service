@@ -41,7 +41,7 @@ namespace TechHealth.DoctorView.MedicalHistory
             DoctorLabel = "Doctor: " + myappointment.Doctor.FullSpecialization;
             PateintLabel = "Patient: " + myappointment.Patient.FullName;
             PateintLboLabel = "Patient Lbo: " + myappointment.Patient.Lbo;
-            RoomLabel = "Room: " + myappointment.Room.roomId;
+            RoomLabel = "Room: " + myappointment.Room.RoomId;
             DateLabel = "Appointment Date: " + myappointment.Date.ToString("d");
             FillUpFields();
             

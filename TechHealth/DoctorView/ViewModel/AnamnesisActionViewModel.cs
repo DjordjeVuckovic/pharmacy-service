@@ -49,7 +49,7 @@ namespace TechHealth.DoctorView.ViewModel
             SelectedAnamnesis=anamnesisController.GetByAppointmentId(appointment.IdAppointment);
             PatientLabel = "Patient:  " + SelectedItemAppointment.Patient.FullName;
             DoctorLabel = "Doctor:  " + SelectedItemAppointment.Doctor.FullSpecialization;
-            RoomLabel = "Room:  " + SelectedItemAppointment.Room.roomId;
+            RoomLabel = "Room:  " + SelectedItemAppointment.Room.RoomId;
             AppointmentDateLabel= "Appointment Date:  " + SelectedItemAppointment.Date.ToString("d");
             AppointmentStartTime= "Appointment StartTime:  " + SelectedItemAppointment.StartTime.ToString("t");
             AppointmentFinishTime = "Appointment FinishTime:  " + SelectedItemAppointment.FinishTime.ToString("t");

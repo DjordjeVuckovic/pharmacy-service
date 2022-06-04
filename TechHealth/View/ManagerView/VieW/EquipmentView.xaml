@@ -47,10 +47,10 @@
                       Margin="10,10,10,50"
                       Background="#272537" Grid.ColumnSpan="2">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Name" Binding="{Binding name}" Width="*"  CanUserResize="False"/>
-                    <DataGridTextColumn Header="ID" Binding="{Binding id}" Width="*"  CanUserResize="False"/>
-                    <DataGridTextColumn Header="Type" Binding="{Binding type}" Width="*"  CanUserResize="False"/>
-                    <DataGridTextColumn Header="Amount" Binding="{Binding quantity}" Width="*"  CanUserResize="False"/>
+                    <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="*"  CanUserResize="False"/>
+                    <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="*"  CanUserResize="False"/>
+                    <DataGridTextColumn Header="Type" Binding="{Binding Type}" Width="*"  CanUserResize="False"/>
+                    <DataGridTextColumn Header="Amount" Binding="{Binding Quantity}" Width="*"  CanUserResize="False"/>
                     <DataGridTextColumn Header="More info" Width="*"  CanUserResize="False"/>
                 </DataGrid.Columns>
             </DataGrid>

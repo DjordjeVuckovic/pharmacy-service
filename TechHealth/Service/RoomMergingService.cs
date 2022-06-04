@@ -40,7 +40,7 @@ namespace TechHealth.Service
         public void MergeRooms(RoomMerging rm)
         {
             Room room = roomService.GetRoombyId(rm.RoomOne);
-            room.roomTypes = rm.RoomType;
+            room.RoomTypes = rm.RoomType;
             roomService.Update(room);
             roomService.Delete(rm.RoomTwo);
 

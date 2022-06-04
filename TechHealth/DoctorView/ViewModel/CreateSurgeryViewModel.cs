@@ -171,7 +171,7 @@ namespace TechHealth.DoctorView.ViewModel
 
             foreach (var r in roomController.GetAll())
             {
-                roomComboBox.Add(new ComboBoxGeneric<Room>(){DisplayText = r.roomId , Entity = r});
+                roomComboBox.Add(new ComboBoxGeneric<Room>(){DisplayText = r.RoomId , Entity = r});
             }
         }
     }

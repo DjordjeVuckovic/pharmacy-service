@@ -27,10 +27,10 @@ namespace TechHealth.Controller
         public bool Create(string roomId, int floor, bool available, RoomTypes type)
         {
             var room = new Room();
-            room.roomId = roomId;
-            room.floor = floor;
-            room.availability = available;
-            room.roomTypes = type;
+            room.RoomId = roomId;
+            room.Floor = floor;
+            room.Availability = available;
+            room.RoomTypes = type;
 
             return roomService.Create(room);
         }
@@ -43,10 +43,10 @@ namespace TechHealth.Controller
         public bool Update(string roomId, int floor, bool available, RoomTypes type)
         {
             var room = new Room();
-            room.roomId = roomId;
-            room.floor = floor;
-            room.availability = available;
-            room.roomTypes = type;
+            room.RoomId = roomId;
+            room.Floor = floor;
+            room.Availability = available;
+            room.RoomTypes = type;
 
             return roomService.Update(room);
         }
