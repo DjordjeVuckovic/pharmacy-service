@@ -1,0 +1,61 @@
+﻿<UserControl x:Class="TechHealth.View.ManagerView.VieW.SurveyView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TechHealth.View.ManagerView.VieW" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="710">
+    <StackPanel Background="LightGray">
+        <TextBlock Text="Surveys"
+                   Foreground="Black"
+                   FontSize="28"
+                   HorizontalAlignment="Center"
+                   Margin="0,5,0,0"/>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="150"/>
+                <RowDefinition Height="150"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="Hospital" Content="Hospital" Margin="235,25,0,25" HorizontalAlignment="Left" Width="120" Height="50"  Grid.Row="0" Grid.Column="0"/>
+            <Button x:Name="Doctor" Content="Doctor" Margin="0,25,0,25" HorizontalAlignment="Left" Width="120" Height="50"  Grid.Row="0" Grid.Column="1"/>
+
+            <StackPanel Grid.Row="1" Grid.Column="0" Background="#272537">
+                <TextBlock Margin="10" Text="Staff grades" Foreground="White" FontSize="15"
+                           HorizontalAlignment="Center"/>
+
+                <StackPanel Width="200" HorizontalAlignment="Left">
+                    <materialDesign:RatingBar x:Name="ratingbar5" Value="5" Height="20" Width="120"
+                                          Foreground="Yellow" HorizontalAlignment="Left"
+                                          Margin="50,0,0,0"/>
+                    <materialDesign:RatingBar x:Name="ratingbar4" Value="4" Height="20" Width="120"
+                                              Foreground="Yellow" HorizontalAlignment="Left"
+                                              Margin="50,0,0,0"/>
+                    <materialDesign:RatingBar x:Name="ratingbar3" Value="3" Height="20" Width="120"
+                                              Foreground="Yellow" HorizontalAlignment="Left"
+                                              Margin="50,0,0,0"/>
+                    <materialDesign:RatingBar x:Name="ratingbar2" Value="2" Height="20" Width="120"
+                                              Foreground="Yellow" HorizontalAlignment="Left"
+                                              Margin="50,0,0,0"/>
+                    <materialDesign:RatingBar x:Name="ratingbar1" Value="1" Height="20" Width="120"
+                                              Foreground="Yellow" HorizontalAlignment="Left"
+                                              Margin="50,0,0,0"/>
+                </StackPanel>
+                <StackPanel x:Name="gradesNum" Width="100" HorizontalAlignment="Right" VerticalAlignment="Top">
+                    <Label Content="(20)" Margin="-50,0,0,0" Foreground="White" Background="White"
+                       Height="20" Width="60" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+                <Label Content="(20)"/>
+                <Label Content="(20)"/>
+                <Label Content="(20)"/>
+                <Label Content="(20)"/>
+                </StackPanel>
+    </StackPanel>
+
+        </Grid>
+    </StackPanel>
+</UserControl>

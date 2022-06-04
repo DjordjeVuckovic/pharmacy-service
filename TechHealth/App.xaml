@@ -101,6 +101,9 @@
             <DataTemplate DataType="{x:Type viewmodel:UpdateMedViewModel}">
                 <vieW:UpdateMedView/>
             </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodel:SurveyViewModel}">
+                <vieW:SurveyView/>
+            </DataTemplate>
             <!--patient data template-->
             <DataTemplate DataType="{x:Type viewModelP:HomeViewModelP}">
                 <viewP:HomeViewP/>
