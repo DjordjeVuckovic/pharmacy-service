@@ -25,12 +25,12 @@ namespace TechHealth.View.PatientView
         public PatientMainWindow()
         {
             InitializeComponent();
-            /*DataContext = MainViewModel.GetInstance(patientJmbg);
-            _patientId = patientJmbg;*/
+            //DataContext = MainViewModel.GetInstance(patientJmbg);
+            //_patientId = patientJmbg;
         }
-        /*public static string GetPatientId()
+        public static string GetPatientId()
         {
             return _patientId;
-        }*/
+        }
     }
 }
