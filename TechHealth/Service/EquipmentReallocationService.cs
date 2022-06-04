@@ -33,6 +33,61 @@ namespace TechHealth.Service
             return EquipmentReallocationRepository.Instance.Delete(dtoID);
         }
 
+        public void UpdateSrcRoomEquipmentDependingOnQuantity(RoomEquipment reSrc, EquipmentReallocationDTO dto)
+        {
+            reSrc.Quantity -= dto.AmountMoving;
+            if (reSrc.Quantity == 0)
+            {
+                roomEquipmentService.Delete(reSrc.RoomID + "-" + reSrc.EquipmentName);
+            }
+            else
+            {
+                roomEquipmentService.Update(reSrc);
+            }
+        }
+
+        public void MoveEquipmentToExistingDstRoom(RoomEquipment reSrc, RoomEquipment reDst, EquipmentReallocationDTO dto)
+        {
+            if (reSrc.Quantity >= dto.AmountMoving)
+            {
+                reDst.Quantity += dto.AmountMoving;
+                roomEquipmentService.Update(reDst);
+
+                UpdateSrcRoomEquipmentDependingOnQuantity(reSrc, dto);
+            }
+            else
+            {
+                MessageBox.Show("Can't transfer that much!");
+            }
+        }
+
+        public void CreateDstRoomEquipment(RoomEquipment reDst, EquipmentReallocationDTO dto)
+        {
+            reDst.EquipmentName = dto.EquipmentName;
+            reDst.RoomID = dto.DestinationRoomID;
+            reDst.Quantity = dto.AmountMoving;
+            roomEquipmentService.Create(reDst);
+        }
+
+        public void MoveEquipmentToNewDstRoom(RoomEquipment reSrc, RoomEquipment reDst, EquipmentReallocationDTO dto)
+        {
+            if (reSrc.Quantity >= dto.AmountMoving)
+            {
+                CreateDstRoomEquipment(reDst, dto);
+
+                reSrc = roomEquipmentService.GetReByKey(dto.EquipmentName, dto.SourceRoomID);
+
+                reSrc.EquipmentName = dto.EquipmentName;
+                reSrc.RoomID = dto.SourceRoomID;
+
+                UpdateSrcRoomEquipmentDependingOnQuantity(reSrc, dto);
+            }
+            else
+            {
+                MessageBox.Show("Can't transfer that much!");
+            }
+        }
+
         public void SubmitReallocation(EquipmentReallocationDTO dto)
         {
             RoomEquipment reDst = new RoomEquipment();
@@ -41,53 +96,11 @@ namespace TechHealth.Service
             reSrc = roomEquipmentService.GetReByKey(dto.EquipmentName, dto.SourceRoomID);
             if (roomEquipmentService.ReEqExists(dto.EquipmentName, dto.DestinationRoomID))
             {
-                if (reSrc.Quantity >= dto.AmountMoving)
-                { 
-                    reDst.Quantity += dto.AmountMoving;
-                    roomEquipmentService.Update(reDst);
-
-                    reSrc.Quantity -= dto.AmountMoving;
-                    if (reSrc.Quantity == 0)
-                    {
-                        roomEquipmentService.Delete(reSrc.RoomID + "-" + reSrc.EquipmentName);
-                    }
-                    else
-                    {
-                        roomEquipmentService.Update(reSrc);
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Can't transfer that much!");
-                }
+                MoveEquipmentToExistingDstRoom(reSrc, reDst, dto);
             }
             else
             {
-                if (reSrc.Quantity >= dto.AmountMoving)
-                {
-                    reDst.EquipmentName = dto.EquipmentName;
-                    reDst.RoomID = dto.DestinationRoomID;
-                    reDst.Quantity = dto.AmountMoving;
-                    roomEquipmentService.Create(reDst);
-
-                    reSrc = roomEquipmentService.GetReByKey(dto.EquipmentName, dto.SourceRoomID);
-
-                    reSrc.EquipmentName = dto.EquipmentName;
-                    reSrc.RoomID = dto.SourceRoomID;
-                    reSrc.Quantity -= dto.AmountMoving;
-                    if (reSrc.Quantity == 0)
-                    {
-                        roomEquipmentService.Delete(reSrc.RoomID + "-" + reSrc.EquipmentName);
-                    }
-                    else
-                    {
-                        roomEquipmentService.Update(reSrc);
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Can't transfer that much!");
-                }
+                MoveEquipmentToNewDstRoom(reSrc, reDst, dto);
             }
         }
 
@@ -110,14 +123,15 @@ namespace TechHealth.Service
 
         public bool IsReallocationHappening(DateTime start, DateTime end, string roomID)
         {
+            bool isHappening = false;
             foreach (var er in GetAllToList())
             {
                 if (er.ReallocationTime >= start && er.ReallocationTime <= end && (er.DestinationRoomID == roomID || er.SourceRoomID == roomID))
                 {
-                    return true;
+                    isHappening = true;
                 }
             }
-            return false;
+            return isHappening;
         }
     }
 }

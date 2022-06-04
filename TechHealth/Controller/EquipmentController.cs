@@ -36,5 +36,10 @@ namespace TechHealth.Controller
 
 
         }
+
+        public bool UpdateEquipmentQuantityIfItExists(List<Equipment> eqList, Equipment equipment)
+        {
+            return equipmentService.UpdateEquipmentQuantityIfItExists(eqList, equipment);
+        }
     }
 }

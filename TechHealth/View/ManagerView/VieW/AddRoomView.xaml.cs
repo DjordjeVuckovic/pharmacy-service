@@ -56,6 +56,7 @@ namespace TechHealth.View.ManagerView.VieW
             {
                 MessageBox.Show("There can only be one warehouse!");
                 MainViewModel.Instance().CurrentView = RoomVm;
+                return;
             }
             roomController.Create(room);
             //rooms.Add(room);

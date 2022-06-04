@@ -26,5 +26,10 @@ namespace TechHealth.Controller
         {
             return substanceService.GetSubstanceListFromNames(names);
         }
+
+        public void AddSubstancesToCompositionList(List<Substance> selectedSubstances, List<Substance> medSubstances)
+        {
+            substanceService.AddSubstancesToCompositionList(selectedSubstances, medSubstances);
+        }
     }
 }

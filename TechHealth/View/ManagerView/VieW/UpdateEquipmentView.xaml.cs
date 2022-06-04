@@ -28,6 +28,7 @@ namespace TechHealth.View.ManagerView.VieW
         private Equipment selected;
         private List<RoomEquipment> reList;
         private RoomEquipmentController roomEquipmentController = new RoomEquipmentController();
+        private EquipmentController equipmentController = new EquipmentController();
         public UpdateEquipmentView()
         {
             var eq = UpdateEquipmentViewModel.Instance().getSelectedEquipment();
@@ -46,7 +47,7 @@ namespace TechHealth.View.ManagerView.VieW
             selected.type = ManagerConversions.StringToEquipmentType(CbEqType.Text);
             selected.quantity = Int32.Parse(TxtQuantity.Text);
 
-            EquipmentRepository.Instance.Update(selected);
+            equipmentController.Update(selected);
             roomEquipmentController.UpdateRoomEqByEqName(reList, selected.name);
 
             var EqVm = new EquipmentViewModel();

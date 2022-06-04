@@ -41,5 +41,20 @@ namespace TechHealth.Service
             }
             return equipmentList;
         }
+
+        public bool UpdateEquipmentQuantityIfItExists(List<Equipment> eqList, Equipment equipment)
+        {
+            bool createEq = true;
+            foreach (var eq in eqList)
+            {
+                if (eq.name == equipment.name)
+                {
+                    eq.quantity += equipment.quantity;
+                    Update(eq);
+                    createEq = false;
+                }
+            }
+            return createEq;
+        }
     }
 }

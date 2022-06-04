@@ -39,6 +39,15 @@ namespace TechHealth.Service
             return substance;
         }
 
+        public void AddSubstancesToCompositionList(List<Substance> selectedSubstances, List<Substance> medSubstances)
+        {
+            foreach (var selected in selectedSubstances)
+            {
+                Substance sub = selected;
+                medSubstances.Add(sub);
+            }
+        }
+
         public List<Substance> GetSubstanceListFromNames(List<string> names)
         {
             List<Substance> substances = new List<Substance>();
