@@ -8,15 +8,15 @@ using TechHealth.Repository;
 
 namespace TechHealth.Service
 {
-    public class VacationNotificationService
+    public class SecretaryNotificationService
     {
-        public bool Create(VacationNotification vacationNotification)
+        public bool Create(SecretaryNotification secretaryNotification)
         {
-            return VacationNotificationRepository.Instance.Create(vacationNotification);
+            return SecretaryNotificationRepository.Instance.Create(secretaryNotification);
         }
         public bool Delete(string id)
         {
-            return VacationNotificationRepository.Instance.Delete(id);
+            return SecretaryNotificationRepository.Instance.Delete(id);
         }
     }
 }

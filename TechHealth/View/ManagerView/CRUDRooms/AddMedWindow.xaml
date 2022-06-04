@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:TechHealth.View.ManagerView.CRUDRooms"
         mc:Ignorable="d"
         Title="AddMedWindow" Height="450" Width="550">
-    <Grid Background="#272537">
+    <Grid Background="#252337">
         <Label Content="Medicine name:" HorizontalAlignment="Left" Margin="30,78,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White"/>
         <Label Content="Main substance:" HorizontalAlignment="Left" Margin="30,155,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White"/>
         <Label Content="Quantity:" HorizontalAlignment="Left" Margin="30,257,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White"/>
@@ -15,7 +15,7 @@
         <Label Content="Price:" HorizontalAlignment="Left" Margin="398,78,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White"/>
         <Label Content="Substances:" HorizontalAlignment="Left" Margin="398,155,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White"/>
         <TextBox HorizontalAlignment="Left" Margin="30,112,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="22" x:Name="TxtMedName"/>
-        <TextBox HorizontalAlignment="Left" Margin="233,204,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="125" x:Name="TxtSideEffects"/>
+        <TextBox HorizontalAlignment="Left" Margin="233,204,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="125" x:Name="TxtSideEffects" Background="AntiqueWhite"/>
         <TextBox HorizontalAlignment="Left" Margin="30,0,0,0" VerticalAlignment="Center" Width="120" Height="22" x:Name="TxtMainSubstance">
         </TextBox>
         <TextBox HorizontalAlignment="Left" Margin="30,307,0,0" VerticalAlignment="Top" Width="120" Height="22" x:Name="TxtQuantity">

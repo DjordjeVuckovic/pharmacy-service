@@ -80,7 +80,7 @@ namespace TechHealth.View.SecretaryView
             {
                 spec = doctorController.GetById(a.Doctor.Jmbg).FullSpecialization;
                 name = patientController.GetByPatientId(a.Patient.Jmbg).FullName;
-                AppointmentsDTO aDto = new AppointmentsDTO(a.IdAppointment, a.StartTime, a.FinishTime, spec, name, a.Room.roomId);
+                AppointmentsDTO aDto = new AppointmentsDTO(a.IdAppointment, a.StartTime, a.FinishTime, spec, name, a.Room.RoomId);
                 list.Add(aDto);
             }
 

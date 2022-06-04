@@ -105,7 +105,9 @@ namespace TechHealth.View.ManagerView.ViewModel
 
         private void ExecuteUpdate()
         {
-            new UpdateMedWindow(selectedItem).ShowDialog();
+            //new UpdateMedWindow(selectedItem).ShowDialog();
+            var UpdateMedVm = new UpdateMedViewModel(selectedItem);
+            MainViewModel.Instance().CurrentView = UpdateMedVm;
         }
 
         private bool CanExecuteAdd()
@@ -115,9 +117,9 @@ namespace TechHealth.View.ManagerView.ViewModel
 
         private void ExecuteAdd()
         {
-            //var AddMedVm = new AddMedViewModel();
-            //MainViewModel.Instance().CurrentView = AddMedVm;
-            new AddMedWindow(medicines).ShowDialog();
+            var AddMedVm = new AddMedViewModel();
+            MainViewModel.Instance().CurrentView = AddMedVm;
+            //new AddMedWindow(medicines).ShowDialog();
         }
     }
 }

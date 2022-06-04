@@ -38,7 +38,7 @@ namespace TechHealth.Service
 
         public void SeparateRooms(RoomSeparation rs)
         {
-            roomEquipmentService.MoveEquipmentToWarehouse(rs.RoomOne.roomId);
+            roomEquipmentService.MoveEquipmentToWarehouse(rs.RoomOne.RoomId);
         }
 
         public void SeparateOnDate(object state)

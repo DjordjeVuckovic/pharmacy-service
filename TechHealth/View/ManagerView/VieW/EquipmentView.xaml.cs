@@ -90,7 +90,9 @@ namespace TechHealth.View.ManagerView.VieW
 
         private void ExecuteView()
         {
-            new UpdateEquipment(selectedItem).ShowDialog();
+            //new UpdateEquipment(selectedItem).ShowDialog();
+            var UpdateEquipmentVm = new UpdateEquipmentViewModel(selectedItem);
+            MainViewModel.Instance().CurrentView = UpdateEquipmentVm;
         }
 
         private bool CanExecuteReallocate()
@@ -105,7 +107,9 @@ namespace TechHealth.View.ManagerView.VieW
 
         private void ExecuteReallocate()
         {
-            new ReallocateForm(selectedItem).ShowDialog();
+            //new ReallocateForm(selectedItem).ShowDialog();
+            var ReallocateVm = new ReallocateViewModel(selectedItem);
+            MainViewModel.Instance().CurrentView = ReallocateVm;
         }
 
         private bool CanExecuteDelete()
@@ -121,16 +125,18 @@ namespace TechHealth.View.ManagerView.VieW
         private void ExecuteDelete()
         {
             Equipment eq = (Equipment)dataEquipment.SelectedItem;
-            equipmentController.Delete(eq.id);
+            equipmentController.Delete(eq.Id);
             Equipment.Remove(eq);
-            List<RoomEquipment> reList = roomEquipmentController.GetRoomEqListByEqName(eq.name);
+            List<RoomEquipment> reList = roomEquipmentController.GetRoomEqListByEqName(eq.Name);
             roomEquipmentController.DeleteRoomEqByEqName(reList);
             MessageBox.Show("You have successfully deleted the equipment");
         }
 
         private void ExecuteAdd()
         {
-            new AddEquipment(eqlist).ShowDialog();
+            //new AddEquipment(eqlist).ShowDialog();
+            var AddEqVm = new AddEquipmentViewModel();
+            MainViewModel.Instance().CurrentView = AddEqVm;
         }
 
         [NotifyPropertyChangedInvocator]
@@ -155,7 +161,7 @@ namespace TechHealth.View.ManagerView.VieW
             {
                 foreach (var eq in equipmentController.GetAllToList())
                 {
-                    if (eq.name.ToLower().Contains(search.Text.ToLower()) || eq.quantity.ToString().ToLower().Contains(search.Text.ToLower()) || eq.id.ToLower().Contains(search.Text.ToLower()) || eq.type.ToString().ToLower().Contains(search.Text.ToLower()))
+                    if (eq.Name.ToLower().Contains(search.Text.ToLower()) || eq.Quantity.ToString().ToLower().Contains(search.Text.ToLower()) || eq.Id.ToLower().Contains(search.Text.ToLower()) || eq.Type.ToString().ToLower().Contains(search.Text.ToLower()))
                     {
                         eqlist.Add(eq);
                     }

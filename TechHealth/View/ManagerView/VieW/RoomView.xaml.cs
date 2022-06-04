@@ -23,6 +23,7 @@ using TechHealth.Core;
 using TechHealth.Model;
 using TechHealth.Repository;
 using TechHealth.View.ManagerView.CRUDRooms;
+using TechHealth.View.ManagerView.ViewModel;
 
 namespace TechHealth.View.ManagerView.VieW
 {
@@ -101,7 +102,9 @@ namespace TechHealth.View.ManagerView.VieW
 
         private void ExecuteSeparation()
         {
-            new SeparateRooms(selectedItem).ShowDialog();
+            //new SeparateRooms(selectedItem).ShowDialog();
+            var SeparateRoomsVm = new SeparateRoomsViewModel(selectedItem);
+            MainViewModel.Instance().CurrentView = SeparateRoomsVm;
         }
 
         private bool CanExecuteMerge()
@@ -116,7 +119,9 @@ namespace TechHealth.View.ManagerView.VieW
 
         private void ExecuteMerge()
         {
-            new MergeRooms(selectedItem).ShowDialog();
+            //new MergeRooms(selectedItem).ShowDialog();
+            var MergeVm = new MergeRoomsViewModel(selectedItem);
+            MainViewModel.Instance().CurrentView = MergeVm;
         }
 
         private bool CanExecuteRenovation()
@@ -131,7 +136,9 @@ namespace TechHealth.View.ManagerView.VieW
 
         private void ExecuteRenovation()
         {
-            new AddRenovation(selectedItem).ShowDialog();
+            //new AddRenovation(selectedItem).ShowDialog();
+            var RenovationVm = new AddRenovationViewModel(selectedItem);
+            MainViewModel.Instance().CurrentView = RenovationVm;
         }
 
         private bool CanExecuteInventory()
@@ -146,7 +153,9 @@ namespace TechHealth.View.ManagerView.VieW
 
         private void ExecuteInventory()
         {
-            new RoomInventory(selectedItem).ShowDialog();
+            //new RoomInventory(selectedItem).ShowDialog();
+            var RoomInventoryVm = new RoomInventoryViewModel(selectedItem);
+            MainViewModel.Instance().CurrentView = RoomInventoryVm;
         }
 
         private bool CanExecuteUpdate()
@@ -161,7 +170,9 @@ namespace TechHealth.View.ManagerView.VieW
 
         private void ExecuteUpdate()
         {
-            new UpdateForm(selectedItem).ShowDialog();
+            //new UpdateForm(selectedItem).ShowDialog();
+            var UpdateRoomVm = new UpdateRoomViewModel(selectedItem);
+            MainViewModel.Instance().CurrentView = UpdateRoomVm;
         }
 
         private bool CanExecuteDel()
@@ -176,7 +187,7 @@ namespace TechHealth.View.ManagerView.VieW
 
         private void ExecuteDel()
         {
-            roomController.Delete(selectedItem.roomId);
+            roomController.Delete(selectedItem.RoomId);
             rooms.Remove(selectedItem);
             MessageBox.Show("You have successfully deleted the room");
         }
@@ -188,7 +199,9 @@ namespace TechHealth.View.ManagerView.VieW
 
         private void ExecuteAdd()
         {
-            new AddForm(rooms).ShowDialog();
+            //new AddForm(rooms).ShowDialog();
+            var AddRoomVm = new AddRoomViewModel();
+            MainViewModel.Instance().CurrentView = AddRoomVm;
         }
 
         [NotifyPropertyChangedInvocator]

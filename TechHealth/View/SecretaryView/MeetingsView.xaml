@@ -8,12 +8,12 @@
         Title="MeetingsView" Height="650" Width="400"
         WindowStartupLocation="CenterScreen">
     <Grid>
-        <ListView x:Name="meetingList" Margin="10,117,10,195">
+        <ListView x:Name="meetingList" Margin="82,117,82,195">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Start" Width="65" DisplayMemberBinding="{Binding start,StringFormat=t}" />
-                    <GridViewColumn Header="Finish" Width="65" DisplayMemberBinding="{Binding end,StringFormat=t}" />
-                    <GridViewColumn Header="Room" Width="80" DisplayMemberBinding="{Binding room}" />
+                    <GridViewColumn Header="Start" Width="65" DisplayMemberBinding="{Binding StartTime,StringFormat=t}" />
+                    <GridViewColumn Header="Finish" Width="65" DisplayMemberBinding="{Binding FinishTime,StringFormat=t}" />
+                    <GridViewColumn Header="Room" Width="80" DisplayMemberBinding="{Binding Room.roomId}" />
                 </GridView>
             </ListView.View>
         </ListView>

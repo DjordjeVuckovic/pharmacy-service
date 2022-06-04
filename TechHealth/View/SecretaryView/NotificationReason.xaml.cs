@@ -20,9 +20,9 @@ namespace TechHealth.View.SecretaryView
 {
     public partial class NotificationReason : Window
     {
-        private VacationNotificationController vacationNotificationController = new VacationNotificationController();
+        private SecretaryNotificationController secretaryNotificationController = new SecretaryNotificationController();
         private DoctorVacationRequest doctorVacationRequest;
-        private VacationNotification vacationNotification = new VacationNotification();
+        private SecretaryNotification secretaryNotification = new SecretaryNotification();
         public NotificationReason(DoctorVacationRequest dVR)
         {
             InitializeComponent();
@@ -31,16 +31,16 @@ namespace TechHealth.View.SecretaryView
         private void Button_Click_Confirm(object sender, RoutedEventArgs e)
         {
             GenerateNotification();
-            vacationNotificationController.Create(vacationNotification);
+            secretaryNotificationController.Create(secretaryNotification);
             new VacationRequestsView().Show();
             Close();
         }
         private void GenerateNotification()
         {
-            vacationNotification.Id = Guid.NewGuid().ToString("N");
-            vacationNotification.Doctor = doctorVacationRequest.Doctor;
-            vacationNotification.NotificationText = "Vacation request from " + doctorVacationRequest.StartDate.ToString("dd.MM.yyyy") + " to " + doctorVacationRequest.FinishDate.ToString("dd.MM.yyyy") + " is " + doctorVacationRequest.VacationStatus.ToString().ToLower() + ".";
-            vacationNotification.NotificationText += System.Environment.NewLine + reason.Text;
+            secretaryNotification.Id = Guid.NewGuid().ToString("N");
+            secretaryNotification.Person = doctorVacationRequest.Doctor;
+            secretaryNotification.NotificationText = "Vacation request from " + doctorVacationRequest.StartDate.ToString("dd.MM.yyyy") + " to " + doctorVacationRequest.FinishDate.ToString("dd.MM.yyyy") + " is " + doctorVacationRequest.VacationStatus.ToString().ToLower() + ".";
+            secretaryNotification.NotificationText += System.Environment.NewLine + reason.Text;
         }
         private void Button_LogOut(object sender, RoutedEventArgs e)
         {

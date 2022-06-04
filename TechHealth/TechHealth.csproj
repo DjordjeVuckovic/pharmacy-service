@@ -174,7 +174,7 @@
     <Compile Include="Controller\SpecializationController.cs" />
     <Compile Include="Controller\SubstanceController.cs" />
     <Compile Include="Controller\TherapyController.cs" />
-    <Compile Include="Controller\VacationNotificationController.cs" />
+    <Compile Include="Controller\SecretaryNotificationController.cs" />
     <Compile Include="Conversions\AddressConverter.cs" />
     <Compile Include="Conversions\ManagerConversions.cs" />
     <Compile Include="Conversions\TimeConverter.cs" />
@@ -324,6 +324,7 @@
     <Compile Include="Model\EquipmentType.cs" />
     <Compile Include="Model\HospitalGrade.cs" />
     <Compile Include="Model\MedicineStatus.cs" />
+    <Compile Include="Model\Meeting.cs" />
     <Compile Include="Model\PatientAllergens.cs" />
     <Compile Include="Model\PatientRecommendType.cs" />
     <Compile Include="Model\RejectedMedicine.cs" />
@@ -336,7 +337,7 @@
     <Compile Include="Model\MainIssue.cs" />
     <Compile Include="Model\RandomGenerator.cs" />
     <Compile Include="Model\Therapy.cs" />
-    <Compile Include="Model\VacationNotification.cs" />
+    <Compile Include="Model\SecretaryNotification.cs" />
     <Compile Include="Model\VacationStatus.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Repository\AccountRepository.cs" />
@@ -353,6 +354,7 @@
     <Compile Include="Repository\ManagerRepository.cs" />
     <Compile Include="Repository\MedicalRecordRepository.cs" />
     <Compile Include="Repository\MedicineRepository.cs" />
+    <Compile Include="Repository\MeetingRepository.cs" />
     <Compile Include="Repository\PatientAllergensRepository.cs" />
     <Compile Include="Repository\PatientRepository.cs" />
     <Compile Include="Repository\PrescribeMedicineRepository.cs" />
@@ -367,7 +369,7 @@
     <Compile Include="Repository\SpecializationRepository.cs" />
     <Compile Include="Repository\SubstanceRepository.cs" />
     <Compile Include="Repository\TherapyRepository.cs" />
-    <Compile Include="Repository\VacationNotificationRepository.cs" />
+    <Compile Include="Repository\SecretaryNotificationRepository.cs" />
     <Compile Include="Service\AccountService.cs" />
     <Compile Include="Service\AllergenService.cs" />
     <Compile Include="Service\AnamnesisService.cs" />
@@ -391,7 +393,7 @@
     <Compile Include="Service\SpecializationService.cs" />
     <Compile Include="Service\SubstanceService.cs" />
     <Compile Include="Service\TherapyService.cs" />
-    <Compile Include="Service\VacationNotificationService.cs" />
+    <Compile Include="Service\SecretaryNotificationService.cs" />
     <Compile Include="ValidationRules\FutureDateValidationRule.cs" />
     <Compile Include="ValidationRules\NotEmptyValidationRule.cs" />
     <Compile Include="ValidationRules\SimpleDateValidationRule.cs" />
@@ -439,15 +441,34 @@
     <Compile Include="View\ManagerView\ManagerMainWindow.xaml.cs">
       <DependentUpon>ManagerMainWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\ManagerView\ViewModel\AddEquipmentViewModel.cs" />
     <Compile Include="View\ManagerView\ViewModel\AddMedViewModel.cs" />
+    <Compile Include="View\ManagerView\ViewModel\AddRenovationViewModel.cs" />
+    <Compile Include="View\ManagerView\ViewModel\AddRoomViewModel.cs" />
     <Compile Include="View\ManagerView\ViewModel\EquipmentViewModel.cs" />
     <Compile Include="View\ManagerView\ViewModel\HomeViewModel.cs" />
     <Compile Include="View\ManagerView\ViewModel\MainViewModel.cs" />
     <Compile Include="View\ManagerView\ViewModel\MedViewModel.cs" />
+    <Compile Include="View\ManagerView\ViewModel\MergeRoomsViewModel.cs" />
+    <Compile Include="View\ManagerView\ViewModel\ReallocateViewModel.cs" />
     <Compile Include="View\ManagerView\ViewModel\RejectReasonViewModel.cs" />
+    <Compile Include="View\ManagerView\ViewModel\RoomInventoryViewModel.cs" />
     <Compile Include="View\ManagerView\ViewModel\RoomViewModel.cs" />
+    <Compile Include="View\ManagerView\ViewModel\SeparateRoomsViewModel.cs" />
+    <Compile Include="View\ManagerView\ViewModel\UpdateEquipmentViewModel.cs" />
+    <Compile Include="View\ManagerView\ViewModel\UpdateMedViewModel.cs" />
+    <Compile Include="View\ManagerView\ViewModel\UpdateRoomViewModel.cs" />
+    <Compile Include="View\ManagerView\VieW\AddEquipmentView.xaml.cs">
+      <DependentUpon>AddEquipmentView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\ManagerView\VieW\AddMedView.xaml.cs">
       <DependentUpon>AddMedView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ManagerView\VieW\AddRenovationView.xaml.cs">
+      <DependentUpon>AddRenovationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ManagerView\VieW\AddRoomView.xaml.cs">
+      <DependentUpon>AddRoomView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ManagerView\VieW\EquipmentView.xaml.cs">
       <DependentUpon>EquipmentView.xaml</DependentUpon>
@@ -458,11 +479,32 @@
     <Compile Include="View\ManagerView\VieW\MedView.xaml.cs">
       <DependentUpon>MedView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\ManagerView\VieW\MergeRoomsView.xaml.cs">
+      <DependentUpon>MergeRoomsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ManagerView\VieW\ReallocateView.xaml.cs">
+      <DependentUpon>ReallocateView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\ManagerView\VieW\RejectReasonView.xaml.cs">
       <DependentUpon>RejectReasonView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\ManagerView\VieW\RoomInventoryView.xaml.cs">
+      <DependentUpon>RoomInventoryView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\ManagerView\VieW\RoomView.xaml.cs">
       <DependentUpon>RoomView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ManagerView\VieW\SeparateRoomsView.xaml.cs">
+      <DependentUpon>SeparateRoomsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ManagerView\VieW\UpdateEquipmentView.xaml.cs">
+      <DependentUpon>UpdateEquipmentView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ManagerView\VieW\UpdateMedView.xaml.cs">
+      <DependentUpon>UpdateMedView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ManagerView\VieW\UpdateRoomView.xaml.cs">
+      <DependentUpon>UpdateRoomView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\PatientView\AddAppointment.xaml.cs">
       <DependentUpon>AddAppointment.xaml</DependentUpon>
@@ -510,6 +552,9 @@
     </Compile>
     <Compile Include="View\SecretaryView\AddGuest.xaml.cs">
       <DependentUpon>AddGuest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SecretaryView\AddMeeting.xaml.cs">
+      <DependentUpon>AddMeeting.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\SecretaryView\AddPatient.xaml.cs">
       <DependentUpon>AddPatient.xaml</DependentUpon>
@@ -613,6 +658,7 @@
     <None Include="Json\grade.json" />
     <None Include="Json\hospitalrating.json" />
     <None Include="Json\medicalrecord.json" />
+    <None Include="Json\meeting.json" />
     <None Include="Json\patientAllergens.json" />
     <None Include="Json\room.json" />
     <None Include="Json\equipment.json" />
@@ -621,7 +667,7 @@
     <None Include="Json\roomRenovation.json" />
     <None Include="Json\roomSeparation.json" />
     <None Include="Json\substance.json" />
-    <None Include="Json\vacationNotification.json" />
+    <None Include="Json\secretaryNotification.json" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -789,7 +835,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\ManagerView\VieW\AddEquipmentView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\ManagerView\VieW\AddMedView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ManagerView\VieW\AddRenovationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ManagerView\VieW\AddRoomView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -805,11 +863,39 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\ManagerView\VieW\MergeRoomsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ManagerView\VieW\ReallocateView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\ManagerView\VieW\RejectReasonView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\ManagerView\VieW\RoomInventoryView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\ManagerView\VieW\RoomView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ManagerView\VieW\SeparateRoomsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ManagerView\VieW\UpdateEquipmentView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ManagerView\VieW\UpdateMedView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ManagerView\VieW\UpdateRoomView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -868,6 +954,10 @@
     <Page Include="View\SecretaryView\AddGuest.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\SecretaryView\AddMeeting.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\SecretaryView\AddPatient.xaml">
       <Generator>MSBuild:Compile</Generator>

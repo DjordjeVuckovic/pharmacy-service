@@ -218,7 +218,7 @@ namespace TechHealth.DoctorView.ViewModel
             DoctorLabel = "Doctor: " + Appointment.Doctor.FullSpecialization;
             PateintLabel = "Patient: " + Appointment.Patient.FullName;
             PateintLboLabel = "Patient Lbo: " + Appointment.Patient.Lbo;
-            RoomLabel = "Room: " + Appointment.Room.roomId;
+            RoomLabel = "Room: " + Appointment.Room.RoomId;
             DateLabel = "Appointment Date: " + Appointment.Date.ToString("d");
 
         }

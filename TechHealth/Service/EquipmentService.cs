@@ -34,12 +34,27 @@ namespace TechHealth.Service
             List<Equipment> equipmentList = new List<Equipment>();
             foreach (var eq in GetAllToList())
             {
-                if (eq.type == type)
+                if (eq.Type == type)
                 {
                     equipmentList.Add(eq);
                 }
             }
             return equipmentList;
+        }
+
+        public bool UpdateEquipmentQuantityIfItExists(List<Equipment> eqList, Equipment equipment)
+        {
+            bool createEq = true;
+            foreach (var eq in eqList)
+            {
+                if (eq.Name == equipment.Name)
+                {
+                    eq.Quantity += equipment.Quantity;
+                    Update(eq);
+                    createEq = false;
+                }
+            }
+            return createEq;
         }
     }
 }

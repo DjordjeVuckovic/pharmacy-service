@@ -42,18 +42,18 @@ namespace TechHealth.View.ManagerView.CRUDRooms
         {
             equipment = new Equipment();
 
-            equipment.name = TxtName.Text;
-            equipment.id = Guid.NewGuid().ToString("N");
-            equipment.type = ManagerConversions.StringToEquipmentType(CbEqType.Text);
-            equipment.quantity = Int32.Parse(TxtQuantity.Text);
+            equipment.Name = TxtName.Text;
+            equipment.Id = Guid.NewGuid().ToString("N");
+            equipment.Type = ManagerConversions.StringToEquipmentType(CbEqType.Text);
+            equipment.Quantity = Int32.Parse(TxtQuantity.Text);
             re = new RoomEquipment();
             
             bool createRe = true;
             foreach (var re in reList)
             {
-                if (re.EquipmentName == equipment.name && re.RoomID == ManagerConversions.RoomTypesToString(RoomTypes.warehouse))
+                if (re.EquipmentName == equipment.Name && re.RoomID == ManagerConversions.RoomTypesToString(RoomTypes.warehouse))
                 {
-                    re.Quantity += equipment.quantity;
+                    re.Quantity += equipment.Quantity;
                     RoomEquipmentRepository.Instance.Update(re);
                     createRe = false;
                     break;
@@ -61,17 +61,17 @@ namespace TechHealth.View.ManagerView.CRUDRooms
             }
             if (createRe)
             {
-                re.EquipmentName = equipment.name;
+                re.EquipmentName = equipment.Name;
                 re.RoomID = ManagerConversions.RoomTypesToString(RoomTypes.warehouse);
-                re.Quantity = equipment.quantity;
+                re.Quantity = equipment.Quantity;
                 RoomEquipmentRepository.Instance.Create(re);
             }
 
             foreach (var eq in eqList)
             {
-                if (eq.name == equipment.name)
+                if (eq.Name == equipment.Name)
                 {
-                    eq.quantity += equipment.quantity;
+                    eq.Quantity += equipment.Quantity;
                     EquipmentRepository.Instance.Update(eq);
                     this.Close();
                     return;

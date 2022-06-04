@@ -1,37 +1,30 @@
 {
   "Warehouse": {
-    "roomTypes": 4,
-    "roomId": "Warehouse",
-    "floor": 1,
-    "availability": true,
+    "RoomTypes": 4,
+    "RoomId": "Warehouse",
+    "Floor": 1,
+    "Availability": true,
     "ShouldSerialize": true
   },
   "S2": {
-    "roomTypes": 1,
-    "roomId": "S2",
-    "floor": 2,
-    "availability": false,
+    "RoomTypes": 1,
+    "RoomId": "S2",
+    "Floor": 2,
+    "Availability": false,
     "ShouldSerialize": true
   },
   "S4": {
-    "roomTypes": 0,
-    "roomId": "S4",
-    "floor": 3,
-    "availability": true,
+    "RoomTypes": 0,
+    "RoomId": "S4",
+    "Floor": 3,
+    "Availability": true,
     "ShouldSerialize": true
   },
   "S5": {
-    "roomTypes": 0,
-    "roomId": "S5",
-    "floor": 3,
-    "availability": true,
-    "ShouldSerialize": true
-  },
-  "S6": {
-    "roomTypes": 2,
-    "roomId": "S6",
-    "floor": 3,
-    "availability": true,
+    "RoomTypes": 1,
+    "RoomId": "S5",
+    "Floor": 3,
+    "Availability": true,
     "ShouldSerialize": true
   }
 }

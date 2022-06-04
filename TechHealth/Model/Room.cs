@@ -14,18 +14,18 @@ namespace TechHealth.Model
     public class Room
     {
 
-        public RoomTypes roomTypes { get; set; }
-        public string roomId { get; set; }
-        public int floor { get; set; }
-        public bool availability { get; set; }
+        public RoomTypes RoomTypes { get; set; }
+        public string RoomId { get; set; }
+        public int Floor { get; set; }
+        public bool Availability { get; set; }
         public bool ShouldSerialize { get; set; }
         public Room() { }
         public Room(RoomTypes rt, string id, int flr, bool available)
         {
-            roomTypes = rt;
-            roomId = id;
-            floor = flr;
-            availability = available;
+            RoomTypes = rt;
+            RoomId = id;
+            Floor = flr;
+            Availability = available;
         }
 
         public bool ShouldSerializeroomTypes()

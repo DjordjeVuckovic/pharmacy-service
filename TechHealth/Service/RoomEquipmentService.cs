@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TechHealth.Conversions;
 using TechHealth.Model;
 using TechHealth.Repository;
 
@@ -56,14 +57,15 @@ namespace TechHealth.Service
         }
         public bool ReEqExists(string eqName, string roomID)
         {
+            bool exists = false;
             foreach (var re in GetAllToList())
             {
                 if (re.EquipmentName == eqName && re.RoomID == roomID)
                 {
-                    return true;
+                    exists = true;
                 }
             }
-            return false;
+            return exists;
         }
 
         public RoomEquipment GetReByKey(string eqName, string roomID)
@@ -80,11 +82,35 @@ namespace TechHealth.Service
             return re;
         }
 
+        public bool UpdateWarehouseRoomEquipment(List<RoomEquipment> reList, Equipment equipment)
+        {
+            bool createRe = true;
+            foreach (var re in reList)
+            {
+                if (re.EquipmentName == equipment.Name && re.RoomID == ManagerConversions.RoomTypesToString(RoomTypes.warehouse))
+                {
+                    re.Quantity += equipment.Quantity;
+                    Update(re);
+                    createRe = false;
+                    break;
+                }
+            }
+            return createRe;
+        }
+
+        public void CreateWarehouseRoomEquipment(RoomEquipment re, Equipment equipment)
+        {
+            re.EquipmentName = equipment.Name;
+            re.RoomID = ManagerConversions.RoomTypesToString(RoomTypes.warehouse);
+            re.Quantity = equipment.Quantity;
+            Create(re);
+        }
+
         public void DeleteRoomEqByEqName(List<RoomEquipment> reList)
         {
             foreach (var re in reList)
             {
-                Delete(re.RoomID + " " + re.EquipmentName);
+                Delete(re.RoomID + "-" + re.EquipmentName);
             }
         }
 

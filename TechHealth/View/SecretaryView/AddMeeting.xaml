@@ -1,0 +1,90 @@
+﻿<Window x:Class="TechHealth.View.SecretaryView.AddMeeting"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TechHealth.View.SecretaryView" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="AddMeeting" Height="650" Width="400"
+        WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <Label Content="Add Meeting" HorizontalAlignment="Center" Margin="0,72,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
+        <Label Content="Attendants" HorizontalAlignment="Left" Margin="57,112,0,0" VerticalAlignment="Top"/>
+        <Label Content="Room" HorizontalAlignment="Left" Margin="57,237,0,0" VerticalAlignment="Top"/>
+        <Label Content="Date" HorizontalAlignment="Left" Margin="57,288,0,0" VerticalAlignment="Top"/>
+        <Label Content="Start Time" HorizontalAlignment="Left" Margin="57,337,0,0" VerticalAlignment="Top"/>
+        <Label Content="Finish Time" HorizontalAlignment="Left" Margin="57,386,0,0" VerticalAlignment="Top"/>
+        <ListBox x:Name="attendantsList" SelectionMode="Multiple" HorizontalAlignment="Center" Margin="0,136,0,0" VerticalAlignment="Top" Width="280" Height="101"/>
+        <ComboBox x:Name="roomCombo" HorizontalAlignment="Center" Margin="0,263,0,0" VerticalAlignment="Top" Width="280"/>
+        <DatePicker x:Name="datePick" HorizontalAlignment="Center" Margin="0,312,0,0" VerticalAlignment="Top" Width="280"/>
+        <Button x:Name="Cancel" Content="Cancel" HorizontalAlignment="Center" Margin="0,487,0,0" VerticalAlignment="Top" Width="280" Click="Button_Click_Cancel" Background="Black" Foreground="White" FontSize="16" FontWeight="Bold" />
+        <Button x:Name="Confirm" Content="Confirm" HorizontalAlignment="Center" Margin="0,450,0,0" VerticalAlignment="Top" Width="280" Click="Button_Click_Confirm" Foreground="White" Background="Black" FontSize="16" FontWeight="Bold" Height="32" />
+        <materialDesign:TimePicker x:Name="timePickerStart"  HorizontalAlignment="Center" Margin="0,361,0,0" VerticalAlignment="Top" Width="280">
+            <materialDesign:TimePicker.Text>
+                <Binding
+                    Path="StartDate"
+                    UpdateSourceTrigger="PropertyChanged">
+                </Binding>
+            </materialDesign:TimePicker.Text>
+        </materialDesign:TimePicker>
+        <materialDesign:TimePicker x:Name="timePickerEnd"  HorizontalAlignment="Center" Margin="0,410,0,0" VerticalAlignment="Top" Width="280">
+            <materialDesign:TimePicker.Text>
+                <Binding
+                    Path="EndDate"
+                    UpdateSourceTrigger="PropertyChanged">
+                </Binding>
+            </materialDesign:TimePicker.Text>
+        </materialDesign:TimePicker>
+        <Rectangle HorizontalAlignment="Center" Height="63" Stroke="Black" VerticalAlignment="Top" Width="430"/>
+        <Button Click="Button_Click_Main" HorizontalAlignment="Left" Margin="28,10,0,0" VerticalAlignment="Top" Height="44" Width="55" BorderBrush="#FFFBFBFB" Foreground="White" Background="White">
+            <Image Source="resources/bars.png"/>
+            <Button.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Home"/>
+                    <MenuItem Header="Log Out"/>
+                </ContextMenu>
+            </Button.ContextMenu>
+        </Button>
+        <Label Content="TechHealth" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="28" FontWeight="Bold" Margin="0,7,0,0"/>
+        <Rectangle HorizontalAlignment="Center" Height="78" Stroke="Black" VerticalAlignment="Top" Width="430" Margin="0,550,0,0"/>
+        <Button Click="Button_Accounts" HorizontalAlignment="Left" Margin="3,552,0,0" VerticalAlignment="Top" Height="60" Width="57" BorderBrush="#FFFBFBFB" Foreground="Black" Background="White">
+            <StackPanel>
+                <Image Source="/View/SecretaryView/resources/account.png" Height="30" Width="27"/>
+                <TextBlock HorizontalAlignment="Center" RenderTransformOrigin="0.674,-0.373"><Run Text="Accounts"/></TextBlock>
+            </StackPanel>
+        </Button>
+        <Button Click="Button_Meetings" HorizontalAlignment="Left" Margin="81,552,0,0" VerticalAlignment="Top" Height="60" Width="57" BorderBrush="#FFFBFBFB" Foreground="Black" Background="White">
+            <StackPanel>
+                <Image Source="/View/SecretaryView/resources/meeting.png" Height="29" Width="39"/>
+                <TextBlock HorizontalAlignment="Center" RenderTransformOrigin="0.674,-0.373"><Run Text="Meetings"/></TextBlock>
+            </StackPanel>
+        </Button>
+        <Button Click="Button_Appointments" HorizontalAlignment="Center" Margin="0,552,0,0" VerticalAlignment="Top" Height="60" Width="92" BorderBrush="#FFFBFBFB" Foreground="Black" Background="White">
+            <StackPanel>
+                <Image Source="/View/SecretaryView/resources/appointment.png" Height="32" Width="41"/>
+                <TextBlock HorizontalAlignment="Center" RenderTransformOrigin="0.674,-0.373"><Run Text="Appointments"/></TextBlock>
+            </StackPanel>
+        </Button>
+        <Button Click="Button_Equipment" HorizontalAlignment="Left" Margin="245,552,0,0" VerticalAlignment="Top" Height="60" Width="61" BorderBrush="#FFFBFBFB" Foreground="Black" Background="White">
+            <StackPanel>
+                <Image Source="/View/SecretaryView/resources/equipment.png" Height="37" Width="28"/>
+                <TextBlock HorizontalAlignment="Center" RenderTransformOrigin="0.674,-0.373"><Run Text="Equipment"/></TextBlock>
+            </StackPanel>
+        </Button>
+        <Button Click="Button_EmergencyExamination" HorizontalAlignment="Left" Margin="322,552,0,0" VerticalAlignment="Top" Height="60" Width="61" BorderBrush="#FFFBFBFB" Foreground="Black" Background="White">
+            <StackPanel>
+                <Image Source="/View/SecretaryView/resources/emergency.png" Height="32" Width="33"/>
+                <TextBlock HorizontalAlignment="Center" RenderTransformOrigin="0.674,-0.373"><Run Text="Emergency"/></TextBlock>
+            </StackPanel>
+        </Button>
+        <Button Content="LogOut" Click="Button_LogOut" HorizontalAlignment="Left" Margin="304,20,0,0" VerticalAlignment="Top" FontWeight="Bold" Background="White" BorderBrush="White" Width="79" HorizontalContentAlignment="Left" Height="23" Grid.RowSpan="1" FontSize="12"/>
+    </Grid>
+</Window>

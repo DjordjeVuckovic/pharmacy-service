@@ -30,10 +30,10 @@
                       Margin="10,10,10,69"
                       Background="#272537">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="ID" Binding="{Binding roomId}" Width="*"  CanUserResize="False"/>
-                    <DataGridTextColumn Header="Floor" Binding="{Binding floor}" Width="*"  CanUserResize="False"/>
-                    <DataGridTextColumn Header="Availability" Binding="{Binding availability}" Width="*"  CanUserResize="False"/>
-                    <DataGridTextColumn Header="Type" Binding="{Binding roomTypes}" Width="*"  CanUserResize="False"/>
+                    <DataGridTextColumn Header="ID" Binding="{Binding RoomId}" Width="*"  CanUserResize="False"/>
+                    <DataGridTextColumn Header="Floor" Binding="{Binding Floor}" Width="*"  CanUserResize="False"/>
+                    <DataGridTextColumn Header="Availability" Binding="{Binding Availability}" Width="*"  CanUserResize="False"/>
+                    <DataGridTextColumn Header="Type" Binding="{Binding RoomTypes}" Width="*"  CanUserResize="False"/>
                 </DataGrid.Columns>
             </DataGrid>
 
