@@ -455,6 +455,7 @@
     <Compile Include="View\ManagerView\ViewModel\RoomInventoryViewModel.cs" />
     <Compile Include="View\ManagerView\ViewModel\RoomViewModel.cs" />
     <Compile Include="View\ManagerView\ViewModel\SeparateRoomsViewModel.cs" />
+    <Compile Include="View\ManagerView\ViewModel\SurveyViewModel.cs" />
     <Compile Include="View\ManagerView\ViewModel\UpdateEquipmentViewModel.cs" />
     <Compile Include="View\ManagerView\ViewModel\UpdateMedViewModel.cs" />
     <Compile Include="View\ManagerView\ViewModel\UpdateRoomViewModel.cs" />
@@ -496,6 +497,9 @@
     </Compile>
     <Compile Include="View\ManagerView\VieW\SeparateRoomsView.xaml.cs">
       <DependentUpon>SeparateRoomsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ManagerView\VieW\SurveyView.xaml.cs">
+      <DependentUpon>SurveyView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ManagerView\VieW\UpdateEquipmentView.xaml.cs">
       <DependentUpon>UpdateEquipmentView.xaml</DependentUpon>
@@ -884,6 +888,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\ManagerView\VieW\SeparateRoomsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ManagerView\VieW\SurveyView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

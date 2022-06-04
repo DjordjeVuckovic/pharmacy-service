@@ -13,10 +13,12 @@ namespace TechHealth.View.ManagerView.ViewModel
         public RelayCommand EquipmentViewCommand { get; set; }
         public RelayCommand RoomViewCommand { get; set; }
         public RelayCommand MedicineViewCommand { get; set; }
+        public RelayCommand SurveyViewCommand { get; set; }
         public HomeViewModel HomeVm { get; set; }
         public EquipmentViewModel EquipmentVm { get; set; }
         public RoomViewModel RoomVm { get; set; }
         public MedViewModel MedVm { get; set; }
+        public SurveyViewModel SurveyVm { get; set; }
 
         private static MainViewModel _instance;
 
@@ -44,6 +46,7 @@ namespace TechHealth.View.ManagerView.ViewModel
             EquipmentVm = new EquipmentViewModel();
             RoomVm = new RoomViewModel();
             MedVm = new MedViewModel();
+            SurveyVm = new SurveyViewModel();
 
             CurrentView = HomeVm;
 
@@ -65,6 +68,11 @@ namespace TechHealth.View.ManagerView.ViewModel
             MedicineViewCommand = new RelayCommand(o =>
             {
                 CurrentView = MedVm;
+            });
+
+            SurveyViewCommand = new RelayCommand(o =>
+            {
+                CurrentView = SurveyVm;
             });
         }
     }
