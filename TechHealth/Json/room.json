@@ -21,15 +21,8 @@
     "ShouldSerialize": true
   },
   "S5": {
-    "roomTypes": 0,
+    "roomTypes": 1,
     "roomId": "S5",
-    "floor": 3,
-    "availability": true,
-    "ShouldSerialize": true
-  },
-  "S6": {
-    "roomTypes": 2,
-    "roomId": "S6",
     "floor": 3,
     "availability": true,
     "ShouldSerialize": true

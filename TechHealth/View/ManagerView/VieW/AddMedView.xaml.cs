@@ -67,12 +67,13 @@ namespace TechHealth.View.ManagerView.VieW
             var collection = selectedItems.Cast<String>();
             var selectedCollection = collection.ToList();
             selectedSubstances = substanceController.GetSubstanceListFromNames(selectedCollection);
-            foreach (var selected in selectedSubstances)
-            {
-                Substance sub = selected;
-                medSubstances.Add(sub);
-            }
-            med.Composition = medSubstances;
+            //foreach (var selected in selectedSubstances)
+            //{
+            //    Substance sub = selected;
+            //    medSubstances.Add(sub);
+            //}
+            substanceController.AddSubstancesToCompositionList(selectedSubstances, medSubstances);
+            med.Composition = medSubstances;         
 
             medicineController.Create(med);
             //medicines.Add(med);

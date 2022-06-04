@@ -65,5 +65,15 @@ namespace TechHealth.Controller
         {
             roomEquipmentService.UpdateRoomEqByEqName(reList, eqName);
         }
+
+        public bool UpdateWarehouseRoomEquipment(List<RoomEquipment> reList, Equipment equipment)
+        {
+            return roomEquipmentService.UpdateWarehouseRoomEquipment(reList, equipment);
+        }
+
+        public void CreateWarehouseRoomEquipment(RoomEquipment re, Equipment equipment)
+        {
+            roomEquipmentService.CreateWarehouseRoomEquipment(re, equipment);
+        }
     }
 }

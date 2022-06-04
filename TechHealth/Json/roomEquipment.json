@@ -2,7 +2,7 @@
   "Warehouse-Gaza": {
     "RoomID": "Warehouse",
     "EquipmentName": "Gaza",
-    "Quantity": 90
+    "Quantity": 80
   },
   "Warehouse-Skalpel": {
     "RoomID": "Warehouse",
@@ -24,9 +24,9 @@
     "EquipmentName": "oprema dinamicka",
     "Quantity": 20
   },
-  "Warehouse-jaja": {
-    "RoomID": "Warehouse",
-    "EquipmentName": "jaja",
-    "Quantity": 200
+  "S2-Gaza": {
+    "RoomID": "S2",
+    "EquipmentName": "Gaza",
+    "Quantity": 10
   }
 }

@@ -40,14 +40,15 @@ namespace TechHealth.Service
 
        public Room GetRoombyId(string idr)
        {
+            Room r = new Room();
            foreach (var room in GetAll())
            {
                if (room.roomId.Equals(idr))
                {
-                    return room;
+                    r = room;
                }
            }
-           return null;
+           return r;
        }
 
         public List<String> GetRoomIDs()
@@ -76,14 +77,16 @@ namespace TechHealth.Service
 
         public bool WarehouseExists()
         {
+            bool exists = false;
             foreach (var room in GetAll())
             {
                 if (room.roomTypes == RoomTypes.warehouse)
                 {
-                    return true;
+                    exists = true;
+                    break;
                 }
             }
-            return false;
+            return exists;
         }
     }
 }
