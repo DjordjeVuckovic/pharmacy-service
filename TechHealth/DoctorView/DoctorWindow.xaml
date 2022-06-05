@@ -13,15 +13,17 @@
         WindowStartupLocation="CenterScreen"
         WindowStyle="ThreeDBorderWindow"
 >
-    <!--<Window.DataContext>
-        <vm:MainViewModel />
-    </Window.DataContext>-->
+    <WindowChrome.WindowChrome>
+        <WindowChrome GlassFrameThickness="0" CornerRadius="0" CaptionHeight="0" UseAeroCaptionButtons="False" ResizeBorderThickness="7"/>
+    </WindowChrome.WindowChrome>
     <Window.InputBindings>
         <KeyBinding Command="{Binding AppointmentCommand}" Key="F2"/>
         <KeyBinding Command="{Binding DashCommand}" Key="F1"/>
         <KeyBinding Command="{Binding RecordCommand}" Key="F3"/>
         <KeyBinding Command="{Binding PateintCommand}" Key="F4"/>
         <KeyBinding Command="{Binding MedicineCommand}" Key="F5"/>
+        <KeyBinding Command="{Binding AccountCommand}" Key="F6"/>
+        <KeyBinding Command="{Binding HelpCommand}" Key="H" Modifiers="Control"/>
     </Window.InputBindings>
     <Window.Resources>
         <ResourceDictionary>
@@ -34,13 +36,14 @@
         </ResourceDictionary>
     </Window.Resources>
     <Grid>
-        <!--WindowStyle="None"
-            Background="Transparent"
-            AllowsTransparency="True"
-            CornerRadius="5"-->
-
         <Border Background="#282a36" >
             <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Frame Grid.Row="0" Name="WindowBarFrame" NavigationUIVisibility="Hidden" MouseDown="OnDragMoveWindow" MouseDoubleClick="MinimizeWindow"/>
+                <Grid Grid.Row="1">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="210"/>
                     <ColumnDefinition/>
@@ -90,7 +93,7 @@
                         <ImageBrush ImageSource="C:\Users\djord\OneDrive\Documents\GitHub\PharmacyService\TechHealth\resources\notification.png" />
                     </Button.Background>
                 </Button>
-                <Button  Grid.Row="0" Grid.Column="1" Margin="675.4,19,73.6,9.8" Height="Auto" BorderThickness="0" ToolTip="Help">
+                <Button  Grid.Row="0" Grid.Column="1" Margin="675.4,19,73.6,9.8" Height="Auto" BorderThickness="0" ToolTip="Help" Command="{Binding HelpCommand}">
                     <Button.Background>
                         <ImageBrush ImageSource="C:\Users\djord\OneDrive\Documents\GitHub\PharmacyService\TechHealth\resources\help.png" />
                     </Button.Background>
@@ -100,13 +103,14 @@
                         <ImageBrush ImageSource="C:\Users\djord\OneDrive\Documents\GitHub\PharmacyService\TechHealth\resources\t2.png" />
                     </Button.Background>
                 </Button>
-                <Button   Grid.Column="0" Margin="13,610.2,134.6,10.4" Grid.Row="1" Height="Auto" BorderThickness="0">
+                <Button   Grid.Column="0" Margin="13,610.2,134.6,10.4" Grid.Row="1" Height="Auto" BorderThickness="0" ToolTip="Log out" Click="ButtonBase_OnClick">
                     <Button.Background>
                         <ImageBrush ImageSource="C:\Users\djord\OneDrive\Documents\GitHub\PharmacyService\TechHealth\resources\logout.png" />
                     </Button.Background>
                 </Button>
 
                 <ContentControl Grid.Row="1" Grid.Column="1" Margin="10" Content="{Binding CurrentView}"/>
+                </Grid>
             </Grid>
         </Border>
     </Grid>

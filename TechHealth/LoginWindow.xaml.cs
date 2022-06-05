@@ -60,11 +60,6 @@ namespace TechHealth
 
         }
 
-        // public static string GetDoctorId()
-        // {
-        //     return _doctorId;
-        // }
 
-        
     }
 }

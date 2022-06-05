@@ -248,6 +248,9 @@
     <Compile Include="DoctorView\View\DashBoardView.xaml.cs">
       <DependentUpon>DashBoardView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DoctorView\View\HelpView.xaml.cs">
+      <DependentUpon>HelpView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DoctorView\View\HistoryOfCare.xaml.cs">
       <DependentUpon>HistoryOfCare.xaml</DependentUpon>
     </Compile>
@@ -268,6 +271,9 @@
     </Compile>
     <Compile Include="DoctorView\View\VactionHistoryView.xaml.cs">
       <DependentUpon>VactionHistoryView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DoctorView\WindowBar.xaml.cs">
+      <DependentUpon>WindowBar.xaml</DependentUpon>
     </Compile>
     <Compile Include="DoctorView\Windows\AppointRefferalWindow.xaml.cs">
       <DependentUpon>AppointRefferalWindow.xaml</DependentUpon>
@@ -724,8 +730,14 @@
     <Resource Include="resources\1f.png" />
     <Content Include="Json\therapy.json" />
     <Content Include="resources\body-scan.png" />
+    <Resource Include="resources\close.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Content Include="resources\diagnosis.png" />
     <Resource Include="resources\logout.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\keyboard.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Content Include="resources\medicine.png" />
@@ -766,6 +778,7 @@
     <Page Include="DoctorView\View\AnamnesisActionView.xaml" />
     <Page Include="DoctorView\View\AppointmentsView.xaml" />
     <Page Include="DoctorView\View\DashBoardView.xaml" />
+    <Page Include="DoctorView\View\HelpView.xaml" />
     <Page Include="DoctorView\View\HistoryOfCare.xaml" />
     <Page Include="DoctorView\View\MedicalRecordView.xaml" />
     <Page Include="DoctorView\View\MedicineDetailsView.xaml" />
@@ -773,6 +786,7 @@
     <Page Include="DoctorView\View\PatientView.xaml" />
     <Page Include="DoctorView\View\RecordView.xaml" />
     <Page Include="DoctorView\View\VactionHistoryView.xaml" />
+    <Page Include="DoctorView\WindowBar.xaml" />
     <Page Include="DoctorView\Windows\AppointRefferalWindow.xaml" />
     <Page Include="DoctorView\Windows\DoctorVacationHistoryWindow.xaml" />
     <Page Include="DoctorView\Windows\DoctorVacationWindow.xaml" />

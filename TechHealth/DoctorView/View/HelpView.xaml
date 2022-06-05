@@ -1,0 +1,60 @@
+﻿<UserControl x:Class="TechHealth.DoctorView.View.HelpView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:TechHealth.DoctorView.View"
+             mc:Ignorable="d"
+             d:DesignHeight="500" d:DesignWidth="800">
+    <Grid>
+        <Grid >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="5"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="1" Margin="0,0,0,20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="5*"/>
+                </Grid.RowDefinitions>
+
+                <Rectangle Fill="#1FC192" Margin="10,0,0,0.2"/>
+
+                <Label Grid.Row="0" Content="Keyboard navigation" Foreground="#f8f8f2" Margin="230,13,0,13.2" VerticalAlignment="Center"
+                   FontSize="32" />
+
+                <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="10,9.8,245,0.2" Padding="20" BorderThickness="10" Background="#282a36"
+                              Grid.Row="1" >
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock TextWrapping="Wrap" Foreground="#f8f8f2" FontSize="18" Width="443">
+                            Welcome to the application mode without a mouse. You can easily navigate the main tabs with the keyboard
+                            applications, as well as their buttons and options.All application functions are binded to keyboard. Shortcuts to access application functionality:
+                        </TextBlock>
+
+                        <TextBlock TextWrapping="Wrap" Foreground="#f8f8f2" FontSize="22" Margin="20,10,0,0" Width="456">
+                        F1 - Dashboard Tab<LineBreak/>
+                        F2 - Appointments Tab<LineBreak/>
+                        F3 - Record Tab<LineBreak/>
+                        F4 - Patients Tab<LineBreak/>
+                        F5 - Medicine Tab<LineBreak/>
+                        F6 - Account Tab<LineBreak/>
+                        F6 - Account Tab <LineBreak/>
+                        Ctr+H - Help Button <LineBreak/> <LineBreak/>
+                        TAB - Change of active element <LineBreak/>
+                        ENTER - Finish <LineBreak/>
+                        Alt+F4 - Log out
+                        </TextBlock>
+                    </StackPanel>
+
+                </ScrollViewer>
+
+            </Grid>
+
+            <Image Grid.Row="1" Source="../../resources/keyboard.png" HorizontalAlignment="Right" Margin="0,78.8,10,10"
+               Cursor="Pen" Width="205" />
+
+
+        </Grid>
+    </Grid>
+</UserControl>
