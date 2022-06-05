@@ -1,1 +1,25 @@
-{}
+{
+  "80e431b57dc84aaf9394700fa5eedc3e": {
+    "Appointment": {
+      "ShouldSerialize": false,
+      "IdAppointment": "6691a6553fc147ecaced7fa7a3458faa"
+    },
+    "MainSymptom": "da",
+    "AnamnesisDate": "2022-06-05T11:28:24.9270989+02:00",
+    "AnamnesisId": "80e431b57dc84aaf9394700fa5eedc3e",
+    "OtherSymptoms": "da",
+    "GeneralAmnesis": "da",
+    "Cns": "sadsd",
+    "Eye": "sad",
+    "Neck": "ds",
+    "Mss": "asda",
+    "Skin": "as",
+    "Ear": "d",
+    "Cus": "adasdsd",
+    "Infectious": null,
+    "Ugs": null,
+    "Respiratory": null,
+    "Mouth": null,
+    "Gi": null
+  }
+}

@@ -11,8 +11,13 @@ namespace TechHealth.Model
    {
       public string noteId;
       public string content;
-      
+        public DateTime notificationTime;
+        public bool Checked { get; set; }
+
       public Patient patient;
-   
-   }
+
+
+
+
+    }
 }
