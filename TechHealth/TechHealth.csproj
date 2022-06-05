@@ -349,6 +349,7 @@
     <Compile Include="Repository\EquipmentRequestRepository.cs" />
     <Compile Include="Repository\GenericRepository.cs" />
     <Compile Include="Repository\GradeRepository.cs" />
+    <Compile Include="Repository\HospitalGradeRepository.cs" />
     <Compile Include="Repository\ManagerRepository.cs" />
     <Compile Include="Repository\MedicalRecordRepository.cs" />
     <Compile Include="Repository\MedicineRepository.cs" />
@@ -372,6 +373,7 @@
     <Compile Include="Service\AccountService.cs" />
     <Compile Include="Service\AllergenService.cs" />
     <Compile Include="Service\AnamnesisService.cs" />
+    <Compile Include="Service\AppointmentGradeService.cs" />
     <Compile Include="Service\AppointmentService.cs" />
     <Compile Include="Service\DoctorService.cs" />
     <Compile Include="Service\DoctorVacationRequestService.cs" />
@@ -509,6 +511,9 @@
     <Compile Include="View\PatientView\AddAppointment.xaml.cs">
       <DependentUpon>AddAppointment.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\PatientView\Note.xaml.cs">
+      <DependentUpon>Note.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\PatientView\RateAppointment.xaml.cs">
       <DependentUpon>RateAppointment.xaml</DependentUpon>
     </Compile>
@@ -625,7 +630,7 @@
     <Compile Include="Model\Hospitalization.cs" />
     <Compile Include="Model\Manager.cs" />
     <Compile Include="Model\Medicine.cs" />
-    <Compile Include="Model\Note.cs" />
+    <Compile Include="Model\Beleska.cs" />
     <Compile Include="Model\Patient.cs" />
     <Compile Include="Model\Person.cs" />
     <Compile Include="Model\Prescription.cs" />
@@ -902,6 +907,10 @@
     <Page Include="View\PatientView\AddAppointment.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PatientView\Note.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="View\PatientView\RateAppointment.xaml">
       <SubType>Designer</SubType>
