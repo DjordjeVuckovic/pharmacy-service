@@ -20,5 +20,16 @@
       "ShouldSerialize": false,
       "IdAppointment": "86771793b2074ed0af6c137913d3e2ca"
     }
+  },
+  "08f1cde70ba84c61ad4186b075cf0594": {
+    "Id": "dc078f821d9e41e0898294c56792ce30",
+    "OcenaLekara": 2,
+    "OcenaOsoblje": 4,
+    "UkupnaOcena": 4,
+    "EvidentAppointment": {
+      "ShouldSerialize": false,
+      "IdAppointment": "08f1cde70ba84c61ad4186b075cf0594",
+      "Graded": true
+    }
   }
 }
