@@ -720,6 +720,9 @@
     <Content Include="Json\therapy.json" />
     <Content Include="resources\body-scan.png" />
     <Content Include="resources\diagnosis.png" />
+    <Resource Include="resources\logout.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Content Include="resources\medicine.png" />
     <Content Include="resources\mydoctor.png" />
     <Content Include="resources\ph.png" />

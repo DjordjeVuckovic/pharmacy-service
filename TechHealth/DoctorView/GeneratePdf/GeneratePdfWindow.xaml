@@ -58,6 +58,9 @@
             <DatePicker Grid.Column="1" Grid.Row="0" Margin="30,0,0,0" VerticalAlignment="Center" Width="200" FirstDayOfWeek="Monday" HorizontalAlignment="Left" Height="30" >
                 <DatePicker.SelectedDate>
                     <Binding Path="StartDate" Mode="OneWayToSource" UpdateSourceTrigger="PropertyChanged">
+                        <Binding.ValidationRules>
+                            <validationRules:SimpleDateValidationRule ValidatesOnTargetUpdated="True"/>
+                        </Binding.ValidationRules>
                     </Binding>
                 </DatePicker.SelectedDate>
             </DatePicker>
@@ -65,7 +68,7 @@
                 <DatePicker.SelectedDate>
                     <Binding Path="EndDate" Mode="OneWayToSource" UpdateSourceTrigger="PropertyChanged">
                         <Binding.ValidationRules>
-                            <validationRules:FutureDateValidationRule ValidatesOnTargetUpdated="True"/>
+                            <validationRules:SimpleDateValidationRule ValidatesOnTargetUpdated="True"/>
                         </Binding.ValidationRules>
                     </Binding>
                 </DatePicker.SelectedDate>
