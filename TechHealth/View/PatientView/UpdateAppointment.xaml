@@ -46,7 +46,10 @@
 
         <ComboBox HorizontalAlignment="Left" Margin="38,312,0,0"
                   VerticalAlignment="Top" Width="147" Height="29"
-                  x:Name="CbDoctor" Grid.Column="1" DisplayMemberPath="FullName"/>
+                  x:Name="CbDoctor"
+                  Grid.Column="1"
+                  DisplayMemberPath="DisplayText"
+                  SelectedValuePath="Entity" ItemsSource="{Binding Path=DoctorComboBox}" SelectedValue = "{Binding Path = DoctorData}" SelectedIndex="{Binding DoctorIndex}"/>
         <Button Content="Confirm" HorizontalAlignment="Left"
                 Margin="47,529,0,0" VerticalAlignment="Top"
                 FontSize="16" FontWeight="Normal" Height="30"

@@ -33,6 +33,7 @@ namespace TechHealth.View.PatientView       //dodati IDappointment
         private List<Doctor> doctors;
         private List<Appointment> apList;
         private ObservableCollection<Appointment> Apt { get; set; }
+        //private String patientId { get; set; }
 
         public AddAppointment(ObservableCollection<Appointment> listAppointment)
         {

@@ -38,7 +38,7 @@
                                     Binding="{Binding Date,StringFormat=d}" Width="*"
                                     CanUserResize="False" />
                 <DataGridTextColumn Header="Time"
-                                    Binding="{Binding StartTimeD, StringFormat=t}" Width="*"
+                                    Binding="{Binding StartTime, StringFormat=t}" Width="*"
                                     CanUserResize="False" />
                 <DataGridTextColumn Header="Room"
                                     Binding="{Binding Room.roomId}" Width="*"
