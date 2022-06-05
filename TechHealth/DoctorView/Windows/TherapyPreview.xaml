@@ -18,63 +18,62 @@
         </ResourceDictionary>
     </Window.Resources>
     <Border Background="#282a36" >
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="60"/>
-            <RowDefinition Height="150"/>
-            <RowDefinition/>
-            <RowDefinition Height="43.4"/>
-        </Grid.RowDefinitions>
-        <Label Grid.Row="0" Content="Therapy View" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="32" Margin="0,5,0,1" Foreground="#50fa7b"/>
-        <StackPanel Grid.Row="1" HorizontalAlignment="Left" Margin="41.578,10,0,50" Width="290">
-            <Label Content="{Binding DoctorName}" x:Name="LabelDoctor1" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="5,0,5,0" FontSize="14" />
-            <Label Content="{Binding PatientName}" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14"/>
-            <Label Content="{Binding RoomId}"  HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14"/>
-        </StackPanel>
-        <GridSplitter HorizontalAlignment="Left" Height="170" Margin="225.747,0,0,50" Grid.Row="1" VerticalAlignment="Top" Width="0" Grid.RowSpan="2"/>
-        <Grid Grid.Row="2" Margin="0,2,0,40">
+        <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="50"/>
-                <RowDefinition Height="50"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="150"/>
                 <RowDefinition/>
-                <RowDefinition Height="100"/>
+                <RowDefinition Height="43.4"/>
             </Grid.RowDefinitions>
-            <GridSplitter HorizontalAlignment="Left" Height="170" Margin="225.747,0,0,0" Grid.Row="1" VerticalAlignment="Top" Width="0" Grid.RowSpan="2"/>
+            <Label Grid.Row="0" Content="Therapy View" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="32" Margin="0,5,0,1" Foreground="#1FC192"/>
+            <StackPanel Grid.Row="1" HorizontalAlignment="Left" Margin="41.578,10,0,50" Width="290">
+                <Label Content="{Binding DoctorName}" x:Name="LabelDoctor1" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="5,0,5,0" FontSize="14" />
+                <Label Content="{Binding PatientName}" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14"/>
+                <Label Content="{Binding RoomId}"  HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14"/>
+            </StackPanel>
+            <GridSplitter HorizontalAlignment="Left" Height="170" Margin="225.747,0,0,50" Grid.Row="1" VerticalAlignment="Top" Width="0" Grid.RowSpan="2"/>
+            <Grid Grid.Row="2" Margin="0,2,0,40">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition/>
+                    <RowDefinition Height="100"/>
+                </Grid.RowDefinitions>
+                <GridSplitter HorizontalAlignment="Left" Height="170" Margin="225.747,0,0,0" Grid.Row="1" VerticalAlignment="Top" Width="0" Grid.RowSpan="2"/>
 
 
+            </Grid>
+            <Rectangle Grid.Row="2" RadiusX="5" RadiusY="5"  Margin="10,0,10,34.96" Grid.RowSpan="2"/>
+
+            <Grid Grid.Row="2" HorizontalAlignment="Center" Margin="29.53,20,29.53,10" Width="434.54">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Label Content="Start time: " HorizontalAlignment="Left" Margin="0,0,10,0" Grid.Column="0" Grid.Row="0" VerticalAlignment="Center"/>
+                <TextBox Name="Txt1" Text="{Binding StartDate,StringFormat=d}" Grid.Column="1" Grid.Row="0" Margin="30,4.291,10,2.454" VerticalContentAlignment="Center" Padding="5,0,10,0" FontSize="14"  IsReadOnly="True" Foreground="#f8f8f2" TextWrapping="Wrap"/>
+
+                <Label Content="Finsih time: " HorizontalAlignment="Left" Margin="0,0,10,0" Grid.Column="0" Grid.Row="1" VerticalAlignment="Center"/>
+                <TextBox Name="Txt2" Text="{Binding FinishDate,StringFormat=d}"   Grid.Column="1" Grid.Row="1" Margin="30,4.292,10,3.253" VerticalContentAlignment="Center" Padding="5,0,10,0" FontSize="14"  IsReadOnly="True" Foreground="#f8f8f2" TextWrapping="Wrap"/>
+
+                <Label Content="Frequency: " HorizontalAlignment="Left" Margin="0,0,10,0" Grid.Column="0" Grid.Row="2" VerticalAlignment="Center"/>
+                <TextBox Name="Txt3"  Text="{Binding Frequency}"  Grid.Column="1" Grid.Row="2" Margin="30,4.292,10,3.253" VerticalContentAlignment="Center" Padding="5,0,10,0" FontSize="14"   IsReadOnly="True" Foreground="#f8f8f2" TextWrapping="Wrap"/>
+
+                <Label Content="Description: " HorizontalAlignment="Left" Margin="0,0,10,0" Grid.Column="0" Grid.Row="3" VerticalAlignment="Center"/>
+                <TextBox Name="Txt4" Text="{Binding Description}"  Grid.Column="1" Grid.Row="3" Margin="30,4.291,10,3.254" VerticalContentAlignment="Center" Padding="5,0,10,0" FontSize="14"  IsReadOnly="True" Foreground="#f8f8f2" TextWrapping="Wrap"/>
+
+                <Border Grid.Row="0" Grid.RowSpan="4" BorderThickness="0,0,1,0" BorderBrush="#1FC192"/>
+            </Grid>
+            <Button Grid.Row="3" Content="Close"  HorizontalAlignment="Left" VerticalAlignment="Stretch" Width="100" Margin="190,0.4,0,10.8" />
         </Grid>
-        <Rectangle Grid.Row="2" RadiusX="5" RadiusY="5"  Margin="10,0,10,34.96" Grid.RowSpan="2"/>
-
-        <Grid Grid.Row="2" HorizontalAlignment="Center" Margin="29.53,20,29.53,10" Width="434.54">
-
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            <Label Content="Start time: " HorizontalAlignment="Left" Margin="0,0,10,0" Grid.Column="0" Grid.Row="0" VerticalAlignment="Center"/>
-            <TextBox Name="Txt1" Text="{Binding StartDate,StringFormat=d}" Grid.Column="1" Grid.Row="0" Margin="30,4.291,10,2.454" VerticalContentAlignment="Center" Padding="5,0,10,0" FontSize="14"  IsReadOnly="True"/>
-
-            <Label Content="Finsih time: " HorizontalAlignment="Left" Margin="0,0,10,0" Grid.Column="0" Grid.Row="1" VerticalAlignment="Center"/>
-            <TextBox Name="Txt2" Text="{Binding FinishDate,StringFormat=d}"   Grid.Column="1" Grid.Row="1" Margin="30,4.292,10,3.253" VerticalContentAlignment="Center" Padding="5,0,10,0" FontSize="14"  IsReadOnly="True"/>
-
-            <Label Content="Frequency: " HorizontalAlignment="Left" Margin="0,0,10,0" Grid.Column="0" Grid.Row="2" VerticalAlignment="Center"/>
-            <TextBox Name="Txt3"  Text="{Binding Frequency}"  Grid.Column="1" Grid.Row="2" Margin="30,4.292,10,3.253" VerticalContentAlignment="Center" Padding="5,0,10,0" FontSize="14"   IsReadOnly="True"/>
-
-            <Label Content="Description: " HorizontalAlignment="Left" Margin="0,0,10,0" Grid.Column="0" Grid.Row="3" VerticalAlignment="Center"/>
-            <TextBox Name="Txt4" Text="{Binding Description}"  Grid.Column="1" Grid.Row="3" Margin="30,4.291,10,3.254" VerticalContentAlignment="Center" Padding="5,0,10,0" FontSize="14"  IsReadOnly="True"/>
-            
-            <Border Grid.Row="0" Grid.RowSpan="4" BorderThickness="0,0,1,0" BorderBrush="#50fa7b"/>
-        </Grid>
-        <Button Grid.Row="3" Content="Print"  HorizontalAlignment="Right" VerticalAlignment="Stretch" Width="100" Margin="0,0,85.53,10" />
-        <Button Grid.Row="3" Content="Close"  HorizontalAlignment="Left" VerticalAlignment="Stretch" Width="100" Margin="83.947,0,0,10" />
-    </Grid>
-        </Border>
+    </Border>
 </Window>

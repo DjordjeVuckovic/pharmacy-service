@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Windows;
 using System.Windows.Forms;
 using TechHealth.Controller;
 using TechHealth.Core;
@@ -9,6 +10,7 @@ using TechHealth.DoctorView.View;
 using TechHealth.Model;
 using TechHealth.Repository;
 using TechHealth.Service;
+using MessageBox = System.Windows.Forms.MessageBox;
 
 namespace TechHealth.DoctorView.ViewModel
 {
@@ -146,10 +148,14 @@ namespace TechHealth.DoctorView.ViewModel
 
         private void Execute3()
         {
-            appointmentController.Delete(SelectedItem.IdAppointment);
-            Appointments.Remove(SelectedItem);
-            RecordViewModel.GetInstance().RefreshView();
-            MessageBox.Show(@"You are successfully deleted an appointment");
+            DialogResult dialogResult = MessageBox.Show(@"Are you sure?", @"Delete appointment", MessageBoxButtons.YesNo);
+            if(dialogResult==(DialogResult) MessageBoxResult.Yes)
+            {
+                appointmentController.Delete(SelectedItem.IdAppointment);
+                Appointments.Remove(SelectedItem);
+                RecordViewModel.GetInstance().RefreshView();
+                MessageBox.Show(@"You are successfully deleted an appointment");
+            }
 
         }
     }

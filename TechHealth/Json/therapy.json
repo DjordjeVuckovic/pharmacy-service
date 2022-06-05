@@ -7,9 +7,7 @@
     "Description": "aaaa",
     "Appointment": {
       "ShouldSerialize": false,
-      "IdAppointment": "31890aaae47c4166a31ccbdeb306bb82",
-      "StartDateRegion": "0001-01-01T00:00:00",
-      "FinishDateRegion": "0001-01-01T00:00:00"
+      "IdAppointment": "31890aaae47c4166a31ccbdeb306bb82"
     },
     "ShouldSerialize": true
   },
@@ -21,9 +19,7 @@
     "Description": "aaa",
     "Appointment": {
       "ShouldSerialize": false,
-      "IdAppointment": "ab4d42dfc8e847a4b0ab5acddd24183f",
-      "StartDateRegion": "0001-01-01T00:00:00",
-      "FinishDateRegion": "0001-01-01T00:00:00"
+      "IdAppointment": "ab4d42dfc8e847a4b0ab5acddd24183f"
     },
     "ShouldSerialize": true
   },
@@ -35,9 +31,7 @@
     "Description": "aaa",
     "Appointment": {
       "ShouldSerialize": false,
-      "IdAppointment": "1ef1b43af5b548c7b4a982aef3ce5cc9",
-      "StartDateRegion": "0001-01-01T00:00:00",
-      "FinishDateRegion": "0001-01-01T00:00:00"
+      "IdAppointment": "1ef1b43af5b548c7b4a982aef3ce5cc9"
     },
     "ShouldSerialize": true
   },
@@ -49,9 +43,7 @@
     "Description": "aa",
     "Appointment": {
       "ShouldSerialize": false,
-      "IdAppointment": "2b5137f394a84737bce6ce8629dd3991",
-      "StartDateRegion": "0001-01-01T00:00:00",
-      "FinishDateRegion": "0001-01-01T00:00:00"
+      "IdAppointment": "2b5137f394a84737bce6ce8629dd3991"
     },
     "ShouldSerialize": true
   },
@@ -63,9 +55,7 @@
     "Description": "fizikalna terapija",
     "Appointment": {
       "ShouldSerialize": false,
-      "IdAppointment": "86771793b2074ed0af6c137913d3e2ca",
-      "StartDateRegion": "0001-01-01T00:00:00",
-      "FinishDateRegion": "0001-01-01T00:00:00"
+      "IdAppointment": "86771793b2074ed0af6c137913d3e2ca"
     },
     "ShouldSerialize": true
   },
@@ -77,9 +67,31 @@
     "Description": "asasddd",
     "Appointment": {
       "ShouldSerialize": false,
-      "IdAppointment": "a736a9653bad485181463fa1e9944eb6",
-      "StartDateRegion": "0001-01-01T00:00:00",
-      "FinishDateRegion": "0001-01-01T00:00:00"
+      "IdAppointment": "a736a9653bad485181463fa1e9944eb6"
+    },
+    "ShouldSerialize": true
+  },
+  "24e89b8b62a4437f91692862f934d86c": {
+    "TherapyId": "24e89b8b62a4437f91692862f934d86c",
+    "StartDate": "2022-06-08T00:00:00",
+    "FinishDate": "2022-06-09T00:00:00",
+    "Frequency": "zz",
+    "Description": "zz",
+    "Appointment": {
+      "ShouldSerialize": false,
+      "IdAppointment": "97c07e7ab12e49a8b6707dbc98ccc14d"
+    },
+    "ShouldSerialize": true
+  },
+  "25456e4c59764d029229acf0447aeec3": {
+    "TherapyId": "25456e4c59764d029229acf0447aeec3",
+    "StartDate": "2022-06-07T00:00:00",
+    "FinishDate": "2022-06-15T00:00:00",
+    "Frequency": "aaaa",
+    "Description": "aaa",
+    "Appointment": {
+      "ShouldSerialize": false,
+      "IdAppointment": "97c07e7ab12e49a8b6707dbc98ccc14d"
     },
     "ShouldSerialize": true
   }

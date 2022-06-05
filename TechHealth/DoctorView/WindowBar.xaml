@@ -5,7 +5,9 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:local="clr-namespace:TechHealth.DoctorView"
       mc:Ignorable="d"
-      Title="WindowBar" d:DesignHeight="30" d:DesignWidth="1050">
+      Title="WindowBar" d:DesignHeight="30" d:DesignWidth="1050"
+      KeyDown="WindowKeyListener"
+      >
     <Grid>
         <Grid Background="#282a36">
             <Grid.ColumnDefinitions>
@@ -16,9 +18,9 @@
                 <ColumnDefinition Width="40"/>
             </Grid.ColumnDefinitions>
 
-            <Label Grid.Column="0" Content="Tech Health" FontFamily="RobotoBold" FontWeight="Black" FontSize="16" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0" Padding="0,0,0,0" Foreground="#FF51565F"/>
+            <Label Grid.Column="0" Content="Tech Health" FontFamily="RobotoBold" FontWeight="Black" FontSize="16" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0" Padding="0,0,0,0" Foreground="#1FC192"/>
 
-            <Button Grid.Column="4" Style="{StaticResource SideMenuButtonRed}"  Click="Button_Close">
+            <Button Grid.Column="4" Style="{StaticResource SideMenuButtonRed}"  Click="Button_Close" >
                 <Image Source="../resources/close.png" Grid.Column="4" Width="15"/>
             </Button>
 

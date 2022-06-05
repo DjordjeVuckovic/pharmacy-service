@@ -25,7 +25,7 @@
             <RowDefinition/>
             <RowDefinition Height="43.4"/>
         </Grid.RowDefinitions>
-        <Label Grid.Row="0" Content="Prescription Preview" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="32" Margin="0,5,0,1" Foreground="#50fa7b"/>
+            <Label Grid.Row="0" Content="Prescription Preview" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="32" Margin="0,5,0,1" Foreground="#1FC192"/>
         <StackPanel Grid.Row="1" HorizontalAlignment="Left" Margin="41.578,10,0,0" Width="290">
             <Label Content="{Binding DoctorName}" x:Name="LabelDoctor1" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="5,0,5,0" FontSize="14" />
             <Label Content="{Binding PatientName}" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14"/>
@@ -62,30 +62,29 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
            <Label Content="Start time: " HorizontalAlignment="Left" Margin="0,0,10,0" Grid.Column="0" Grid.Row="0" VerticalAlignment="Center"/>
-            <TextBox Name="Txt1" Text="{Binding StartDate,StringFormat=d}" Grid.Column="1" Grid.Row="0" Margin="30,4.291,10,2.454" VerticalContentAlignment="Center" Padding="5,0,10,0" FontSize="14" IsReadOnly="True"/>
+            <TextBox Name="Txt1" Text="{Binding StartDate,StringFormat=d}" Grid.Column="1" Grid.Row="0" Margin="30,4.291,10,2.454" VerticalContentAlignment="Center" Padding="5,0,10,0" FontSize="14" IsReadOnly="True" Foreground="#f8f8f2" TextWrapping="Wrap"/>
 
             <Label Content="Finish time: " HorizontalAlignment="Left" Margin="0,0,10,0" Grid.Column="0" Grid.Row="1" VerticalAlignment="Center"/>
-            <TextBox Name="Txt2" Text="{Binding FinishDate,StringFormat=d}"   Grid.Column="1" Grid.Row="1" Margin="30,4.292,10,3.253" VerticalContentAlignment="Center" Padding="5,0,10,0" FontSize="14" IsReadOnly="True"/>
+            <TextBox Name="Txt2" Text="{Binding FinishDate,StringFormat=d}"   Grid.Column="1" Grid.Row="1" Margin="30,4.292,10,3.253" VerticalContentAlignment="Center" Padding="5,0,10,0" FontSize="14" IsReadOnly="True" Foreground="#f8f8f2" TextWrapping="Wrap"/>
 
             <Label Content="Medicine: " HorizontalAlignment="Left" Margin="0,0,10,0" Grid.Column="0" Grid.Row="2" VerticalAlignment="Center"/>
-            <TextBox Name="Txt3"  Text="{Binding MedicineName}"  Grid.Column="1" Grid.Row="2" Margin="30,4.292,10,3.253" VerticalContentAlignment="Center" Padding="5,0,10,0" FontSize="14"  IsReadOnly="True"/>
+            <TextBox Name="Txt3"  Text="{Binding MedicineName}"  Grid.Column="1" Grid.Row="2" Margin="30,4.292,10,3.253" VerticalContentAlignment="Center" Padding="5,0,10,0" FontSize="14"  IsReadOnly="True" Foreground="#f8f8f2" TextWrapping="Wrap"/>
 
             <Label Content="Medicine id: " HorizontalAlignment="Left" Margin="0,0,10,0" Grid.Column="0" Grid.Row="3" VerticalAlignment="Center"/>
-            <TextBox  Text="{Binding MedicineId}"  Grid.Column="1" Grid.Row="3" Margin="30,4.291,10,3.254" VerticalContentAlignment="Center" Padding="5,0,10,0" FontSize="14" IsReadOnly="True"/>
+            <TextBox  Text="{Binding MedicineId}"  Grid.Column="1" Grid.Row="3" Margin="30,4.291,10,3.254" VerticalContentAlignment="Center" Padding="5,0,10,0" FontSize="14" IsReadOnly="True" Foreground="#f8f8f2" TextWrapping="Wrap"/>
             <Label Content="Medicine side effects: " HorizontalAlignment="Left" Margin="0,0,10,0" Grid.Column="0" Grid.Row="4" VerticalAlignment="Center"/>
-            <TextBox  Text="{Binding MedicineSide}"  Grid.Column="1" Grid.Row="4" Margin="30,4.291,10,3.254" VerticalContentAlignment="Center" Padding="5,0,10,0" FontSize="14" IsReadOnly="True"/>
+            <TextBox  Text="{Binding MedicineSide}"  Grid.Column="1" Grid.Row="4" Margin="30,4.291,10,3.254" VerticalContentAlignment="Center" Padding="5,0,10,0" FontSize="14" IsReadOnly="True" Foreground="#f8f8f2" TextWrapping="Wrap"/>
             <Label Content="Medicine substances : " HorizontalAlignment="Left" Margin="0,0,10,0" Grid.Column="0" Grid.Row="5" VerticalAlignment="Center"/>
-            <TextBox  Text="{Binding MedicineAlg}"  Grid.Column="1" Grid.Row="5" Margin="30,4.291,10,3.254" VerticalContentAlignment="Center" Padding="5,0,10,0" FontSize="14" IsReadOnly="True"/>
+            <TextBox  Text="{Binding MedicineAlg}"  Grid.Column="1" Grid.Row="5" Margin="30,4.291,10,3.254" VerticalContentAlignment="Center" Padding="5,0,10,0" FontSize="14" IsReadOnly="True" Foreground="#f8f8f2" TextWrapping="Wrap"/>
             <Label Content="Usage: " HorizontalAlignment="Left" Margin="0,0,10,0" Grid.Column="0" Grid.Row="6" VerticalAlignment="Center"/>
-            <TextBox  Text="{Binding Usage}"  Grid.Column="1" Grid.Row="6" Margin="30,4.291,10,3.254" VerticalContentAlignment="Center" Padding="5,0,10,0" FontSize="14" IsReadOnly="True"/>
+            <TextBox  Text="{Binding Usage}"  Grid.Column="1" Grid.Row="6" Margin="30,4.291,10,3.254" VerticalContentAlignment="Center" Padding="5,0,10,0" FontSize="14" IsReadOnly="True" Foreground="#f8f8f2" TextWrapping="Wrap"/>
             <Label Content="Frequency: " HorizontalAlignment="Left" Margin="0,0,10,0" Grid.Column="0" Grid.Row="7" VerticalAlignment="Center"/>
-            <TextBox  Text="{Binding Frequency}"  Grid.Column="1" Grid.Row="7" Margin="30,4.291,10,3.254" VerticalContentAlignment="Center" Padding="5,0,10,0" FontSize="14" IsReadOnly="True"/>
-           
-            
-            <Border Grid.Row="0" Grid.RowSpan="8" BorderThickness="0,0,1,0" BorderBrush="#50fa7b"/>
+            <TextBox  Text="{Binding Frequency}"  Grid.Column="1" Grid.Row="7" Margin="30,4.291,10,3.254" VerticalContentAlignment="Center" Padding="5,0,10,0" FontSize="14" IsReadOnly="True" Foreground="#f8f8f2" TextWrapping="Wrap"/>
+
+
+                <Border Grid.Row="0" Grid.RowSpan="8" Grid.Column="0" BorderThickness="0,0,1,0" BorderBrush="#1FC192"/>
         </Grid>
-        <Button Grid.Row="3" Content="Print"  HorizontalAlignment="Right" VerticalAlignment="Stretch" Width="100" Margin="0,0,85.53,10" />
-        <Button Grid.Row="3" Content="Close"  HorizontalAlignment="Left" VerticalAlignment="Stretch" Width="100" Margin="83.947,0,0,10" />
+            <Button Grid.Row="3" Content="Close"  HorizontalAlignment="Left" VerticalAlignment="Stretch" Width="100" Margin="195,8.2,0,3" />
     </Grid>
         </Border>
 </Window>

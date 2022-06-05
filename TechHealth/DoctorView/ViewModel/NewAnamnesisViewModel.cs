@@ -224,7 +224,7 @@ namespace TechHealth.DoctorView.ViewModel
         }
         private bool CanExecute()
         {
-            if (MainSymptom != null && OtherSymptoms != null && GeneralAmnesis != null )
+            if (!String.IsNullOrEmpty(MainSymptom) && !String.IsNullOrEmpty(OtherSymptoms)  && !String.IsNullOrEmpty(GeneralAmnesis) )
             {
                
                     return true;

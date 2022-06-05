@@ -8,7 +8,7 @@
         xmlns:validationRules="clr-namespace:TechHealth.ValidationRules"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         WindowStartupLocation="CenterScreen"
-        Title="UpdateAppointment" Height="550" Width="450">
+        Title="UpdateAppointment" Height="550" Width="500">
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -30,7 +30,7 @@
                 <RowDefinition/>
                 <RowDefinition Height="81.4"/>
             </Grid.RowDefinitions>
-            <Label Grid.Row="0" Content="Update Appointment"  HorizontalAlignment="Center" FontSize="26"  FontWeight="Light" Foreground="#50fa7b"  Width="250" Grid.ColumnSpan="2"/>
+            <Label Grid.Row="0" Content="Update Appointment"  HorizontalAlignment="Center" FontSize="26"  FontWeight="Light" Foreground="#1FC192"  Width="250" Grid.ColumnSpan="2"/>
             <Grid Grid.Row="1"  Margin="10,0,0,0" Grid.ColumnSpan="2">
                 <Grid.RowDefinitions>
                     <RowDefinition/>
@@ -53,12 +53,10 @@
                 <Label Grid.Column="0" Grid.Row="3"  Content="Date:" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top"  FontSize="16" FontFamily="Roboto" Width="54" RenderTransformOrigin="0.483,0.677" Margin="0,10,0,0"/>
                 <Label Grid.Column="0" Grid.Row="5" Content="Finish time:" HorizontalAlignment="Left" Height="30"  VerticalAlignment="Top" Width="124.8" RenderTransformOrigin="0.548,2.84" FontSize="16" FontFamily="Roboto" Margin="0,9.117,0,0"/>
                 <Label  Grid.Column="0" Grid.Row="4"  Content="Start  time:" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="124.8" RenderTransformOrigin="0.548,2.84" FontSize="16" FontFamily="Roboto" Margin="0,10,0,0"/>
-                <TextBox Grid.Column="1" Grid.Row="0"  Text="{Binding DoctorFullName}"  VerticalAlignment="Center" IsReadOnly = "True" Height="24.96" Margin="0,19.22,32,19.22" Grid.ColumnSpan="2" />
-                <ComboBox Grid.Row="1"  x:Name="PatentCombo"  HorizontalAlignment="Left" DisplayMemberPath="DisplayText" SelectedValuePath="Entity" ItemsSource="{Binding Path=PatientComboBox}" SelectedValue = "{Binding Path = PatientData}" SelectedIndex="{Binding PatientIndex}"  VerticalAlignment="Top" Height="36.734" Width="201.6" Grid.Column="1" Grid.ColumnSpan="2" />
-                <ComboBox Grid.Column="1" Grid.Row="2"  x:Name="RoomCombo"  HorizontalAlignment="Left" Height="36.733"  VerticalAlignment="Top" Width="201.6"  DisplayMemberPath="DisplayText" SelectedValuePath="Entity" ItemsSource="{Binding Path=RoomComboBox}" SelectedValue = "{Binding Path = RoomData}" SelectedIndex="{Binding RoomIndex}"   Grid.ColumnSpan="2"/>
-                <DatePicker Grid.Column="1" Grid.Row="3" x:Name="Picker" HorizontalAlignment="Left" Height="30"  VerticalAlignment="Top" Width="201.6"
-                   
-                   Grid.ColumnSpan="2">
+                <TextBox Grid.Column="2" Grid.Row="0"  Text="{Binding DoctorFullName}"  VerticalAlignment="Center" IsReadOnly = "True" Height="25" Margin="0.4,19,24,17.6" Foreground="#f8f8f2"/>
+                <ComboBox Grid.Row="1"  x:Name="PatentCombo"  HorizontalAlignment="Left" DisplayMemberPath="DisplayText" SelectedValuePath="Entity" ItemsSource="{Binding Path=PatientComboBox}" SelectedValue = "{Binding Path = PatientData}" SelectedIndex="{Binding PatientIndex}"  VerticalAlignment="Top" Height="36" Width="201" Grid.Column="2" Margin="0.4,0.4,0,0" Foreground="#f8f8f2"/>
+                <ComboBox Grid.Column="2" Grid.Row="1"  x:Name="RoomCombo"  HorizontalAlignment="Left" Height="37"  VerticalAlignment="Top" Width="202"  DisplayMemberPath="DisplayText" SelectedValuePath="Entity" ItemsSource="{Binding Path=RoomComboBox}" SelectedValue = "{Binding Path = RoomData}" SelectedIndex="{Binding RoomIndex}" Margin="0.4,61.4,0,0" Grid.RowSpan="2" Foreground="#f8f8f2"/>
+                <DatePicker Grid.Column="2" Grid.Row="3" x:Name="Picker" HorizontalAlignment="Left" Height="30"  VerticalAlignment="Top" Width="202" Margin="0.4,0.2,0,0" Foreground="#f8f8f2">
                     <DatePicker.SelectedDate>
                         <Binding Path="Date" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged">
                             <Binding.ValidationRules>
@@ -67,10 +65,10 @@
                         </Binding>
                     </DatePicker.SelectedDate>
                 </DatePicker>
-                <materialDesign:TimePicker Grid.Column="1" Grid.Row="4"
+                <materialDesign:TimePicker Grid.Column="2" Grid.Row="4"
                                    x:Name="Timepicker1" 
-            materialDesign:HintAssist.Hint="Select start time" Foreground="White"
-            IsInvalidTextAllowed="True" Height="30" Margin="0,8.333,38,25.067" Grid.ColumnSpan="2" >
+            materialDesign:HintAssist.Hint="Select start time" Foreground="#f8f8f2"
+            IsInvalidTextAllowed="True" Height="30" Margin="0.4,9.6,48,22" >
                     <materialDesign:TimePicker.Text>
                         <Binding
                     Path="StartDate"
@@ -82,9 +80,9 @@
                         </Binding>
                     </materialDesign:TimePicker.Text>
                 </materialDesign:TimePicker>
-                <materialDesign:TimePicker Grid.Column="1" Grid.Row="5" 
-                                           materialDesign:HintAssist.Hint="Select finish time" Foreground="White"
-                IsInvalidTextAllowed="True" Height="27.175" Margin="0,11.942,38,24.283" Grid.ColumnSpan="2" >
+                <materialDesign:TimePicker Grid.Column="2" Grid.Row="5" 
+                                           materialDesign:HintAssist.Hint="Select finish time" Foreground="#f8f8f2"
+                IsInvalidTextAllowed="True" Height="27" Margin="0.4,12,48,22.6" >
                     <materialDesign:TimePicker.Text>
                         <Binding
                         Path="EndDate"
@@ -96,7 +94,7 @@
                         </Binding>
                     </materialDesign:TimePicker.Text>
                 </materialDesign:TimePicker>
-                <Border Grid.Row="0" Grid.RowSpan="6" Grid.Column="0" BorderThickness="0,0,2,0" BorderBrush="#50fa7b" Margin="0,10,28.8,0" />
+                <Border Grid.Row="0" Grid.RowSpan="6" Grid.Column="0" BorderThickness="0,0,2,0" BorderBrush="#1FC192" Margin="0,10,40.6,-0.4" Grid.ColumnSpan="2" />
             </Grid>
             <Button Grid.Column="0" Content="Cancel" HorizontalAlignment="Center" Height="Auto" VerticalAlignment="Stretch" Width="105.9" Command="{Binding CancelCommand}"   Grid.Row="2" Margin="45.017,23.5,25.816,23.5" />
             <Button Content="Finish" HorizontalAlignment="Right" Height="Auto"  VerticalAlignment="Stretch" Width="105.9" Command="{Binding FinishCommand}"   Grid.Row="2" Margin="0,23.5,66,23.5" Grid.Column="1"/>

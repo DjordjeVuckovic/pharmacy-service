@@ -302,9 +302,6 @@
     <Compile Include="DoctorView\Windows\TherapyWindow.xaml.cs">
       <DependentUpon>TherapyWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DoctorView\Windows\VacationHistoryDetailsWindow.xaml.cs">
-      <DependentUpon>VacationHistoryDetailsWindow.xaml</DependentUpon>
-    </Compile>
     <Compile Include="DTO\AppointmentsDTO.cs" />
     <Compile Include="DTO\EquipmentReallocationDTO.cs" />
     <Compile Include="DTO\RecommendedAppointmentDTO.cs" />
@@ -796,7 +793,6 @@
     <Page Include="DoctorView\Windows\RejectWindow.xaml" />
     <Page Include="DoctorView\Windows\TherapyPreview.xaml" />
     <Page Include="DoctorView\Windows\TherapyWindow.xaml" />
-    <Page Include="DoctorView\Windows\VacationHistoryDetailsWindow.xaml" />
     <Page Include="LoginWindow.xaml" />
     <Page Include="MainWindow.xaml">
       <SubType>Designer</SubType>

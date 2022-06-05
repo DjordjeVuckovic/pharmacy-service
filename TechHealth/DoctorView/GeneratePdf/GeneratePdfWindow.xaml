@@ -42,7 +42,7 @@
                 <Label Content="{Binding LabelPatientName}" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="5,0,5,0" Foreground="#FFC1C1C1"/>
             </StackPanel>
         </StackPanel>
-        <Grid Grid.Row="2" HorizontalAlignment="Left" Margin="20,0,0,0">
+        <Grid Grid.Row="2" HorizontalAlignment="Left" Margin="20,0,0,0.4" Width="425">
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>
@@ -53,9 +53,9 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <Label Content="Start date:" HorizontalAlignment="Right" Margin="10,0,10,0" Grid.Column="0" Grid.Row="0" VerticalAlignment="Center" Foreground="White"/>
-            <Label Content="Finish date:" HorizontalAlignment="Right" Margin="10,0,10,0" Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" Foreground="White"/>
-            <DatePicker Grid.Column="1" Grid.Row="0" Margin="30,0,0,0" VerticalAlignment="Center" Width="200" FirstDayOfWeek="Monday" HorizontalAlignment="Left" Height="30" >
+            <Label Content="Start date:" HorizontalAlignment="Right" Margin="0,19,10,19.6" Grid.Column="0" Grid.Row="0" VerticalAlignment="Center" Foreground="White" Width="182"/>
+            <Label Content="Finish date:" HorizontalAlignment="Right" Margin="0,18.4,10,18.4" Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" Foreground="White" Width="182"/>
+            <DatePicker Grid.Column="1" Grid.Row="0" Margin="13,19,-0.2,16.6" VerticalAlignment="Center" Width="200" FirstDayOfWeek="Monday" HorizontalAlignment="Left" Height="30" >
                 <DatePicker.SelectedDate>
                     <Binding Path="StartDate" Mode="OneWayToSource" UpdateSourceTrigger="PropertyChanged">
                         <Binding.ValidationRules>
@@ -64,7 +64,7 @@
                     </Binding>
                 </DatePicker.SelectedDate>
             </DatePicker>
-            <DatePicker Grid.Column="1" Grid.Row="1" Margin="30,0,0,0" VerticalAlignment="Center" Width="200" FirstDayOfWeek="Monday" >
+            <DatePicker Grid.Column="1" Grid.Row="1" Margin="13,18.4,-0.2,18.4" VerticalAlignment="Center" Width="200" FirstDayOfWeek="Monday" >
                 <DatePicker.SelectedDate>
                     <Binding Path="EndDate" Mode="OneWayToSource" UpdateSourceTrigger="PropertyChanged">
                         <Binding.ValidationRules>
@@ -73,7 +73,7 @@
                     </Binding>
                 </DatePicker.SelectedDate>
             </DatePicker>
-            <Border Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" BorderThickness="0,0,1,0"  BorderBrush="#1FC192"/>
+            <Border Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" BorderThickness="0,0,1,0"  BorderBrush="#1FC192" Margin="5,0,207.8,0.4" Grid.ColumnSpan="2"/>
         </Grid>
         <Button Grid.Row="3" Content="Finish" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,70,0" Width="100" Command="{Binding AcceptCommand}"/>
         <Button Grid.Row="3" Content="Cancel" Margin="70,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Left" Width="100"/>

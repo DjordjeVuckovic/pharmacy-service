@@ -41,9 +41,10 @@
                 <Label Margin="20,0,0,0" Content="Doctor: " Grid.Column="0" Grid.Row="0" VerticalAlignment="Center"/>
                 <Label Margin="20,0,0,0" Content="Medicine: " Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" />
                 <Label Margin="20,0,0,0" Content="Reject reason: " Grid.Column="0" Grid.Row="2" VerticalAlignment="Center" />
-                <TextBox  Grid.Row="0" Grid.Column="1" Text="{Binding DoctorName}" VerticalAlignment="Center" Height="39.714" Margin="0,25.753,10,10" IsReadOnly="True"/>
-                <TextBox  Grid.Row="1" Grid.Column="1" Text="{Binding MedicineName}" VerticalAlignment="Center" Height="39.713" Margin="0,25.753,10,10" IsReadOnly="True"/>
-                <TextBox  Grid.Row="2" Grid.Column="1" Text="{Binding Details,UpdateSourceTrigger= PropertyChanged}" VerticalAlignment="Center" Height="61.8" Margin="0,0,10,13.667"  TextWrapping="Wrap"/>
+                <TextBox  Grid.Row="0" Grid.Column="1" Text="{Binding DoctorName}" VerticalAlignment="Center" Height="40" Margin="5,26,10,10" IsReadOnly="True" Foreground="#f8f8f2" TextWrapping="Wrap"/>
+                <TextBox  Grid.Row="1" Grid.Column="1" Text="{Binding MedicineName}" VerticalAlignment="Center" Height="40" Margin="5,26,10,10" IsReadOnly="True" Foreground="#f8f8f2" TextWrapping="Wrap"/>
+                <TextBox  Grid.Row="2" Grid.Column="1" Text="{Binding Details,UpdateSourceTrigger= PropertyChanged}" VerticalAlignment="Center" Height="62" Margin="5,0,10,13.2"  Foreground="#f8f8f2" TextWrapping="Wrap"/>
+                <Border Grid.Row="0" Grid.RowSpan="3" Grid.Column="0" BorderThickness="0,0,2,0" BorderBrush="#1FC192" Margin="0,10,10,-0.8" />
             </Grid>
             <Button Grid.Row="3" Content="Finish"  HorizontalAlignment="Right" VerticalAlignment="Stretch" Width="80" Margin="0,0,30,0" Command="{Binding FinishCommand}" />
             <Button Grid.Row="3" Content="Close"  HorizontalAlignment="Left" VerticalAlignment="Stretch" Width="80" Margin="30,0,0,0"  Command="{Binding CancelCommand}" />

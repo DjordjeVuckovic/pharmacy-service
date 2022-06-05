@@ -1,92 +1,117 @@
 {
-
-    "4c4cf2d4b7334142bf56f08211492f9d": {
-        "Appointment": {
-            "ShouldSerialize": false,
-            "IdAppointment": "97c07e7ab12e49a8b6707dbc98ccc14d"
-        },
-        "MainSymptom": "aa",
-        "AnamnesisDate": "2022-06-04T18:44:34.410091+02:00",
-        "AnamnesisId": "4c4cf2d4b7334142bf56f08211492f9d",
-        "OtherSymptoms": "aa",
-        "GeneralAmnesis": "aa",
-        "Cns": null,
-        "Eye": null,
-        "Neck": null,
-        "Mss": null,
-        "Skin": null,
-        "Ear": null,
-        "Cus": null,
-        "Infectious": null,
-        "Ugs": null,
-        "Respiratory": null,
-        "Mouth": null,
-        "Gi": null
+  "4c4cf2d4b7334142bf56f08211492f9d": {
+    "Appointment": {
+      "ShouldSerialize": false,
+      "IdAppointment": "97c07e7ab12e49a8b6707dbc98ccc14d"
     },
-    "ca7d26cce61b401abae0ce2808307c86": {
-        "Appointment": {
-            "ShouldSerialize": false,
-            "IdAppointment": "6553d6f128d946bb88a635940146141e"
-        },
-        "MainSymptom": "skolioza",
-        "AnamnesisDate": "2022-06-04T20:20:31.2756209+02:00",
-        "AnamnesisId": "ca7d26cce61b401abae0ce2808307c86",
-        "OtherSymptoms": "/",
-        "GeneralAmnesis": "bol u ledjima",
-        "Cns": null,
-        "Eye": null,
-        "Neck": null,
-        "Mss": null,
-        "Skin": null,
-        "Ear": null,
-        "Cus": null,
-        "Infectious": null,
-        "Ugs": null,
-        "Respiratory": null,
-        "Mouth": null,
-        "Gi": null
+    "MainSymptom": "aa",
+    "AnamnesisDate": "2022-06-04T18:44:34.410091+02:00",
+    "AnamnesisId": "4c4cf2d4b7334142bf56f08211492f9d",
+    "OtherSymptoms": "aa",
+    "GeneralAmnesis": "aa",
+    "Cns": null,
+    "Eye": null,
+    "Neck": null,
+    "Mss": null,
+    "Skin": null,
+    "Ear": null,
+    "Cus": null,
+    "Infectious": null,
+    "Ugs": null,
+    "Respiratory": null,
+    "Mouth": null,
+    "Gi": null
+  },
+  "ca7d26cce61b401abae0ce2808307c86": {
+    "Appointment": {
+      "ShouldSerialize": false,
+      "IdAppointment": "6553d6f128d946bb88a635940146141e"
     },
-    "339e6aecd6f744b1a9e8b645c7a26852": {
-        "Appointment": {
-            "ShouldSerialize": false,
-            "IdAppointment": "5e843bc4ba594e999c0bcef655482560"
-        },
-        "MainSymptom": "katarakta",
-        "AnamnesisDate": "2022-06-04T21:30:55.4454834+02:00",
-        "AnamnesisId": "339e6aecd6f744b1a9e8b645c7a26852",
-        "OtherSymptoms": "bol u oku",
-        "GeneralAmnesis": "Diagnostikovana katarakta pacijent treba da nosi naocare",
-        "Cns": null,
-        "Eye": null,
-        "Neck": null,
-        "Mss": null,
-        "Skin": null,
-        "Ear": null,
-        "Cus": null,
-
-        "80e431b57dc84aaf9394700fa5eedc3e": {
-            "Appointment": {
-                "ShouldSerialize": false,
-                "IdAppointment": "6691a6553fc147ecaced7fa7a3458faa"
-            },
-            "MainSymptom": "da",
-            "AnamnesisDate": "2022-06-05T11:28:24.9270989+02:00",
-            "AnamnesisId": "80e431b57dc84aaf9394700fa5eedc3e",
-            "OtherSymptoms": "da",
-            "GeneralAmnesis": "da",
-            "Cns": "sadsd",
-            "Eye": "sad",
-            "Neck": "ds",
-            "Mss": "asda",
-            "Skin": "as",
-            "Ear": "d",
-            "Cus": "adasdsd",
-
-            "Infectious": null,
-            "Ugs": null,
-            "Respiratory": null,
-            "Mouth": null,
-            "Gi": null
-        }
-    }
+    "MainSymptom": "skolioza",
+    "AnamnesisDate": "2022-06-04T20:20:31.2756209+02:00",
+    "AnamnesisId": "ca7d26cce61b401abae0ce2808307c86",
+    "OtherSymptoms": "/",
+    "GeneralAmnesis": "bol u ledjima",
+    "Cns": null,
+    "Eye": null,
+    "Neck": null,
+    "Mss": null,
+    "Skin": null,
+    "Ear": null,
+    "Cus": null,
+    "Infectious": null,
+    "Ugs": null,
+    "Respiratory": null,
+    "Mouth": null,
+    "Gi": null
+  },
+  "339e6aecd6f744b1a9e8b645c7a26852": {
+    "Appointment": {
+      "ShouldSerialize": false,
+      "IdAppointment": "5e843bc4ba594e999c0bcef655482560"
+    },
+    "MainSymptom": "katarakta",
+    "AnamnesisDate": "2022-06-04T21:30:55.4454834+02:00",
+    "AnamnesisId": "339e6aecd6f744b1a9e8b645c7a26852",
+    "OtherSymptoms": "bol u oku",
+    "GeneralAmnesis": "Diagnostikovana katarakta pacijent treba da nosi naocare",
+    "Cns": null,
+    "Eye": null,
+    "Neck": null,
+    "Mss": null,
+    "Skin": null,
+    "Ear": null,
+    "Cus": null,
+    "Infectious": null,
+    "Ugs": null,
+    "Respiratory": null,
+    "Mouth": null,
+    "Gi": null
+  },
+  "d8f6b4f5c8a94b82aeda8f35f8fc6d4d": {
+    "Appointment": {
+      "ShouldSerialize": false,
+      "IdAppointment": "2c2d62cb4a5a477483e96c5bc6809ace"
+    },
+    "MainSymptom": "aaaa",
+    "AnamnesisDate": "2022-06-05T23:51:22.3567294+02:00",
+    "AnamnesisId": "d8f6b4f5c8a94b82aeda8f35f8fc6d4d",
+    "OtherSymptoms": "aaa",
+    "GeneralAmnesis": "aaaa",
+    "Cns": null,
+    "Eye": null,
+    "Neck": null,
+    "Mss": null,
+    "Skin": null,
+    "Ear": null,
+    "Cus": null,
+    "Infectious": null,
+    "Ugs": null,
+    "Respiratory": null,
+    "Mouth": null,
+    "Gi": null
+  },
+  "db0d8f497a9e436bb9c05c3a4195fc9e": {
+    "Appointment": {
+      "ShouldSerialize": false,
+      "IdAppointment": "fb0d5e3e17bd45eeafe325e78bebfb12"
+    },
+    "MainSymptom": "aaaa",
+    "AnamnesisDate": "2022-06-06T00:10:30.868987+02:00",
+    "AnamnesisId": "db0d8f497a9e436bb9c05c3a4195fc9e",
+    "OtherSymptoms": "aaa",
+    "GeneralAmnesis": "zzzz",
+    "Cns": null,
+    "Eye": null,
+    "Neck": null,
+    "Mss": null,
+    "Skin": null,
+    "Ear": null,
+    "Cus": null,
+    "Infectious": null,
+    "Ugs": null,
+    "Respiratory": null,
+    "Mouth": null,
+    "Gi": null
+  }
 }

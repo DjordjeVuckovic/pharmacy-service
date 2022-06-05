@@ -1,2 +1,30 @@
 {
+  "3a9303913dcb45bda538dd62b9415d17": {
+    "ReferralId": "3a9303913dcb45bda538dd62b9415d17",
+    "Appointment": {
+      "ShouldSerialize": false,
+      "IdAppointment": "97c07e7ab12e49a8b6707dbc98ccc14d"
+    },
+    "ReferralDoctor": {
+      "Jmbg": "1313",
+      "ShouldSerialize": false
+    },
+    "Date": "2022-06-14T00:00:00",
+    "StartTime": "2022-06-05T04:20:00",
+    "FinishTime": "2022-06-05T05:25:00"
+  },
+  "56f0648d568242cc8786d105127f54ee": {
+    "ReferralId": "56f0648d568242cc8786d105127f54ee",
+    "Appointment": {
+      "ShouldSerialize": false,
+      "IdAppointment": "6553d6f128d946bb88a635940146141e"
+    },
+    "ReferralDoctor": {
+      "Jmbg": "131213121111",
+      "ShouldSerialize": false
+    },
+    "Date": "2022-06-23T00:00:00",
+    "StartTime": "2022-06-05T05:25:00",
+    "FinishTime": "2022-06-05T07:35:00"
+  }
 }

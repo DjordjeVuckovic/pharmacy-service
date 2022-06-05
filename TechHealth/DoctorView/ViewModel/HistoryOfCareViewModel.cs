@@ -20,7 +20,7 @@ namespace TechHealth.DoctorView.ViewModel
         public ObservableCollection<Prescription> Prescriptions { get; set; }
         public ObservableCollection<Therapy> Therapies { get; set; }
         private string PatientLabel { get; set; }
-        private ReviewAnamnesis reviewAnamnesis { get; set; }
+        private ReviewAnamnesis ReviewAnamnesis { get; set; }
         private int selectedIndex;
         public RelayCommand PreviewCommand { get; set; }
         public RelayCommand GenerateCommand { get; set; }
@@ -125,8 +125,8 @@ namespace TechHealth.DoctorView.ViewModel
         {
             if (SelectedIndex == 0 || SelectedIndex == 1)
             {
-                reviewAnamnesis= new ReviewAnamnesis(SelectedAnamnesis.Appointment);
-                reviewAnamnesis.ShowDialog();
+                ReviewAnamnesis= new ReviewAnamnesis(SelectedAnamnesis.Appointment);
+                ReviewAnamnesis.ShowDialog();
             }
             if (SelectedIndex == 3)
             {

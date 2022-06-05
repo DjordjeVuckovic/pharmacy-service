@@ -59,9 +59,9 @@
                 <Label Content="Finish Date :" HorizontalAlignment="Left" Margin="10,0,10,0" Grid.Column="0" Grid.Row="2" VerticalAlignment="Center"/>
                 <Label Content="Reason :" HorizontalAlignment="Left" Margin="10,0,10,0" Grid.Column="0" Grid.Row="3" VerticalAlignment="Center"/>
                 <Label Content="Emergent :" HorizontalAlignment="Left" Margin="10,0,10,0" Grid.Column="0" Grid.Row="4" VerticalAlignment="Center"/>
-                <TextBox  Text="{Binding DoctorTxt}" Grid.Row="0" Grid.Column="1" Margin="20,0,20,0" VerticalAlignment="Center" Height="30" IsReadOnly="True">
+                <TextBox  Text="{Binding DoctorTxt}" Grid.Row="0" Grid.Column="1" Margin="20,0,20,0" VerticalAlignment="Center" Height="30" IsReadOnly="True" Foreground="#f8f8f2">
                 </TextBox>
-                <DatePicker  Grid.Row="1" Grid.Column="1" Margin="20,0,20,0" VerticalAlignment="Center" SelectedDateFormat="Short" >
+                <DatePicker  Grid.Row="1" Grid.Column="1" Margin="20,0,20,0" VerticalAlignment="Center" SelectedDateFormat="Short" Foreground="#f8f8f2">
                     <DatePicker.SelectedDate>
                         <Binding Path="StartDate" Mode="OneWayToSource" UpdateSourceTrigger="PropertyChanged">
                             <Binding.ValidationRules>
@@ -70,7 +70,7 @@
                         </Binding>
                     </DatePicker.SelectedDate>
                 </DatePicker>
-                <DatePicker x:Name="DatePicker1" Grid.Row="2" Grid.Column="1" Margin="20,0,20,0" VerticalAlignment="Center" SelectedDateFormat="Short">
+                <DatePicker x:Name="DatePicker1" Grid.Row="2" Grid.Column="1" Margin="20,0,20,0" VerticalAlignment="Center" SelectedDateFormat="Short" Foreground="#f8f8f2">
                     <DatePicker.SelectedDate>
                         <Binding Path="FinishDate" Mode="OneWayToSource" UpdateSourceTrigger="PropertyChanged">
                             <Binding.ValidationRules>
@@ -79,7 +79,7 @@
                         </Binding>
                     </DatePicker.SelectedDate>
                 </DatePicker>
-                <TextBox x:Name="TextBox1" Grid.Row="3" Text="{Binding Reason,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Grid.Column="1" Margin="20,0,20,5" VerticalAlignment="Center" Height="65.08" TextWrapping="Wrap"/>
+                <TextBox x:Name="TextBox1" Grid.Row="3" Text="{Binding Reason,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Grid.Column="1" Margin="20,0,20,5" VerticalAlignment="Center" Height="65.08" TextWrapping="Wrap" Foreground="#f8f8f2"/>
                 <ToggleButton Grid.Row="4" Grid.Column="1" VerticalAlignment="Stretch" Margin="0,0,86,0" IsChecked="{Binding Emergent}"/>
                 <Border Grid.Row="0" Grid.RowSpan="5" Grid.Column="0" BorderThickness="0,0,2,0" Margin="0,10,0,0" BorderBrush="#1FC192" />
 

@@ -18,12 +18,13 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="500"/>
+            <ColumnDefinition Width="470.4"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <TextBlock Text="Details for medicine: "  VerticalAlignment="Center" Margin="150,0,0,0" FontSize="32" Foreground="#1FC192"></TextBlock>
-        <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding MedicineNameD}" VerticalAlignment="Center" Margin="0,0,0,0" FontSize="32" Foreground="#1FC192"/>
-        <StackPanel Grid.Row="1" Grid.Column="0" Margin="20,0,0,0">
+        <TextBlock Text="Details for medicine: "  VerticalAlignment="Center" Margin="150,21,1.4,21" FontSize="32" Foreground="#1FC192" Height="38"></TextBlock>
+        <TextBlock Grid.Row="0" Text="{Binding MedicineNameD}" VerticalAlignment="Center" Margin="455,21,45,21" FontSize="32" Foreground="#1FC192" Height="38" Grid.ColumnSpan="2"
+                   Grid.Column="0" />
+        <StackPanel Grid.Row="1" Grid.Column="0" Margin="20,0,1.4,0">
             <Label Content="{Binding MedicineName}" VerticalAlignment="Center" Margin="0,20,0,0"/>
             <Label Content="{Binding MedicineId}" VerticalAlignment="Center" Margin="0,20,0,0"/>
             <Label Content="{Binding MainSubstance}" VerticalAlignment="Center" Margin="0,20,0,0"/>
@@ -34,6 +35,6 @@
             <Label Content="{Binding Price}" VerticalAlignment="Center" Margin="0,20,0,0"/>
             <Label Content="{Binding MedicineStatus}" VerticalAlignment="Center" Margin="0,20,0,0"/>
         </StackPanel>
-        <Image Grid.Row="1" Grid.Column="1" Source="C:\Users\djord\OneDrive\Documents\GitHub\PharmacyService\TechHealth\resources\medicine.png" Margin="0,0,20,0"/>
+        <Image Grid.Row="1" Grid.Column="1" Source="C:\Users\djord\OneDrive\Documents\GitHub\PharmacyService\TechHealth\resources\medicine.png" Margin="4.6,0,20,0"/>
     </Grid>
 </UserControl>

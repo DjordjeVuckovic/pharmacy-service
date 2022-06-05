@@ -47,7 +47,7 @@ namespace TechHealth.DoctorView.ViewModel
             DialogResult dialogResult = MessageBox.Show(@"Are you sure about that?", @"Cancel appointment", MessageBoxButtons.YesNo);
             if(dialogResult==(DialogResult) MessageBoxResult.Yes)
             {
-                OnRequestClose(this, new EventArgs());
+                OnRequestClose?.Invoke(this, EventArgs.Empty);
             }
         }
 
@@ -63,7 +63,7 @@ namespace TechHealth.DoctorView.ViewModel
 
         }
 
-        public void Execute()
+        private void Execute()
         {
             
             Appointment appointment = new Appointment
