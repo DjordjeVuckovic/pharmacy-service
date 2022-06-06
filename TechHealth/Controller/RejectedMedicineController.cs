@@ -10,7 +10,7 @@ namespace TechHealth.Controller
 
         public List<RejectedMedicine> GetAllToList()
         {
-            return rejectedMedicineService.GetAllToList();
+            return rejectedMedicineService.GetAll();
         }
         public void Create(RejectedMedicine rejectedMedicine)
         {

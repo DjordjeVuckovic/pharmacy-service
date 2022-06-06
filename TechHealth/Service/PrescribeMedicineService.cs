@@ -2,15 +2,32 @@
 using TechHealth.Exceptions;
 using TechHealth.Model;
 using TechHealth.Repository;
+using TechHealth.Service.IService;
 
 namespace TechHealth.Service
 {
-    public class PrescribeMedicineService
+    public class PrescribeMedicineService:IPrescribeMedicineService
     {
         public bool Create(Prescription prescription)
         {
             return  PrescribeMedicineRepository.Instance.Create(prescription);
         }
+
+        public bool Update(Prescription entity)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public Prescription GetById(string key)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public bool Delete(string key)
+        {
+            throw new System.NotImplementedException();
+        }
+
         public bool CheckAllergens(Medicine medicine, Patient patient)
         {
             bool isAllergic = false;

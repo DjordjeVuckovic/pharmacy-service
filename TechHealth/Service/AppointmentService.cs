@@ -8,10 +8,11 @@ using System.Collections.Generic;
 using TechHealth.Exceptions;
 using TechHealth.Model;
 using TechHealth.Repository;
+using TechHealth.Service.IService;
 
 namespace TechHealth.Service
 {
-   public class AppointmentService
+   public class AppointmentService:IAppointmentService
    {
       
       public Appointment GetById(string idAppointment)
@@ -199,7 +200,7 @@ namespace TechHealth.Service
          }
       }
 
-      private void CheckAvailability(Appointment appointment)
+      public void CheckAvailability(Appointment appointment)
       {
          foreach (var existingAppointment in GetAllNotEvident())
          {

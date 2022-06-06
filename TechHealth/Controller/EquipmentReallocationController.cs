@@ -14,7 +14,7 @@ namespace TechHealth.Controller
 
         public List<EquipmentReallocationDTO> GetAllToList()
         {
-            return eqReallocationService.GetAllToList();
+            return eqReallocationService.GetAll();
         }
         public bool Create(EquipmentReallocationDTO dto)
         {

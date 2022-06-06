@@ -5,12 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using TechHealth.Model;
 using TechHealth.Repository;
+using TechHealth.Service.IService;
 
 namespace TechHealth.Service
 {
-    public class EquipmentService
+    public class EquipmentService:IEquipmentService
     {
-        public List<Equipment> GetAllToList()
+        public List<Equipment> GetAll()
         {
             return EquipmentRepository.Instance.GetAllToList();
         }
@@ -24,6 +25,11 @@ namespace TechHealth.Service
             return EquipmentRepository.Instance.Update(eq);
         }
 
+        public Equipment GetById(string key)
+        {
+            throw new NotImplementedException();
+        }
+
         public bool Delete(string eqID)
         {
             return EquipmentRepository.Instance.Delete(eqID);
@@ -32,7 +38,7 @@ namespace TechHealth.Service
         public List<Equipment> GetEquipmentByEqType(EquipmentType type)
         {
             List<Equipment> equipmentList = new List<Equipment>();
-            foreach (var eq in GetAllToList())
+            foreach (var eq in GetAll())
             {
                 if (eq.Type == type)
                 {

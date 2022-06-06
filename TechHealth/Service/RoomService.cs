@@ -7,13 +7,13 @@ using System;
 using System.Collections.Generic;
 using TechHealth.Model;
 using TechHealth.Repository;
+using TechHealth.Service.IService;
 
 namespace TechHealth.Service
 {
-   public class RoomService
+   public class RoomService:IRoomService
    {
-        private RoomEquipmentService roomEquipmentService = new RoomEquipmentService();
-      public Room GetById(string roomId)
+       public Room GetById(string roomId)
       {
           return RoomRepository.Instance.GetById(roomId);
       }

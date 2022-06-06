@@ -1,18 +1,13 @@
 ﻿using System.Collections.Generic;
-using System.Windows.Documents;
 
-namespace TechHealth.Repository
+namespace TechHealth.Service.IService
 {
-    public interface IRepository<TEntity,TKey>
+    public interface IService<TEntity,TKey>
     {
-        List<TEntity> GetAllToList();
+        List<TEntity> GetAll();
         bool Create(TEntity entity);
         bool Update(TEntity entity);
         TEntity GetById(TKey key);
         bool Delete(TKey key);
-
-
-
-
     }
 }

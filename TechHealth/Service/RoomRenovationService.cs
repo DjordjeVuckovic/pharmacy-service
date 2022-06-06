@@ -5,12 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using TechHealth.Model;
 using TechHealth.Repository;
+using TechHealth.Service.IService;
 
 namespace TechHealth.Service
 {
-    public class RoomRenovationService
+    public class RoomRenovationService:IRoomRenovationService
     {
-        public List<RoomRenovation> GetAllToList()
+        public List<RoomRenovation> GetAll()
         {
             return RoomRenovationRepository.Instance.GetAllToList();
         }
@@ -24,6 +25,11 @@ namespace TechHealth.Service
             return RoomRenovationRepository.Instance.Update(rr);
         }
 
+        public RoomRenovation GetById(string key)
+        {
+            throw new NotImplementedException();
+        }
+
         public bool Delete(string renovationId)
         {
             return RoomRenovationRepository.Instance.Delete(renovationId);
@@ -31,7 +37,7 @@ namespace TechHealth.Service
         public RoomRenovation GetRrByRoomID(string roomID)
         {
             RoomRenovation r = new RoomRenovation();
-            foreach (var rr in GetAllToList())
+            foreach (var rr in GetAll())
             {
                 if (rr.RoomID == roomID)
                 {
@@ -44,9 +50,9 @@ namespace TechHealth.Service
 
         public bool ExistsInRenovations(string roomID)
         {
-            if (GetAllToList().Count != 0)
+            if (GetAll().Count != 0)
             {
-                foreach (var rr in GetAllToList())
+                foreach (var rr in GetAll())
                 {
                     if (rr.RoomID == roomID)
                     {
@@ -60,9 +66,9 @@ namespace TechHealth.Service
 
         public bool IsValidDate(DateTime date, string src, string dst)
         {
-            if (GetAllToList().Count != 0)
+            if (GetAll().Count != 0)
             {
-                foreach (var rr in GetAllToList())
+                foreach (var rr in GetAll())
                 {
                     if (rr.RoomID == src || rr.RoomID == dst)
                     {

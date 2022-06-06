@@ -5,10 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using TechHealth.Model;
 using TechHealth.Repository;
+using TechHealth.Service.IService;
 
 namespace TechHealth.Service
 {
-    public class RoomSeparationService
+    public class RoomSeparationService:IRoomSeparationService
     {
         private RoomEquipmentService roomEquipmentService = new RoomEquipmentService();
         public RoomSeparation GetById(string mergeId)

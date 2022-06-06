@@ -2,10 +2,11 @@
 using TechHealth.Exceptions;
 using TechHealth.Model;
 using TechHealth.Repository;
+using TechHealth.Service.IService;
 
 namespace TechHealth.Service
 {
-    public class MedicineService
+    public class MedicineService:IMedicineService
     {
         public List<Medicine> GetAll()
         {
@@ -29,19 +30,20 @@ namespace TechHealth.Service
         {
             return MedicineRepository.Instance.GetById(id);
         }
+        
 
-        public void Create(Medicine medicine)
+        public bool Create(Medicine medicine)
         {
-            MedicineRepository.Instance.Create(medicine);
+            return  MedicineRepository.Instance.Create(medicine);
         }
-        public void Update(Medicine medicine)
+        public bool Update(Medicine medicine)
         {
-            MedicineRepository.Instance.Update(medicine);
+            return MedicineRepository.Instance.Update(medicine);
         }
 
-        public void Delete(Medicine medicine)
+        public bool Delete(string medicineId)
         {
-            MedicineRepository.Instance.Delete(medicine.MedicineId);
+            return  MedicineRepository.Instance.Delete(medicineId);
         }
     }
 }

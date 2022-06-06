@@ -159,5 +159,28 @@
     "Respiratory": null,
     "Mouth": null,
     "Gi": null
+  },
+  "6bec036d88634dbaabf17e44d7d0e733": {
+    "Appointment": {
+      "ShouldSerialize": false,
+      "IdAppointment": "34fe15fd749e457d9f9dbd7c333f3008"
+    },
+    "MainSymptom": "dulo",
+    "AnamnesisDate": "2022-06-06T18:46:24.0842135+02:00",
+    "AnamnesisId": "6bec036d88634dbaabf17e44d7d0e733",
+    "OtherSymptoms": "dulo",
+    "GeneralAmnesis": "dulo",
+    "Cns": null,
+    "Eye": null,
+    "Neck": null,
+    "Mss": null,
+    "Skin": null,
+    "Ear": null,
+    "Cus": null,
+    "Infectious": null,
+    "Ugs": null,
+    "Respiratory": null,
+    "Mouth": null,
+    "Gi": null
   }
 }

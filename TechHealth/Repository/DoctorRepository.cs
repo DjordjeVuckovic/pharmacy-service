@@ -9,7 +9,7 @@ using TechHealth.Model;
 
 namespace TechHealth.Repository
 {
-   public class DoctorRepository:GenericRepository<string,Doctor>
+   public class DoctorRepository:GenericRepository<string,Doctor>,IDoctorRepository
    {
       private static readonly DoctorRepository instance = new DoctorRepository();
 

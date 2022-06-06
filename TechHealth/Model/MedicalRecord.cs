@@ -10,7 +10,7 @@ using TechHealth.Core;
 
 namespace TechHealth.Model
 {
-   public class MedicalRecord:ViewModelBase
+   public class MedicalRecord
    {
       private string recordId;
 
@@ -31,7 +31,6 @@ namespace TechHealth.Model
          set
          {
             recordId = value;
-            OnPropertyChanged(nameof(RecordId));
          }
       }
 
@@ -40,7 +39,6 @@ namespace TechHealth.Model
          set
          {
             bloodType = value;
-            OnPropertyChanged(nameof(BloodType));
          }
       }
       public Patient Patient{
@@ -48,7 +46,6 @@ namespace TechHealth.Model
          set
          {
             patient = value;
-            OnPropertyChanged(nameof(Patient));
          }
       }
       public string Weight{
@@ -56,7 +53,6 @@ namespace TechHealth.Model
          set
          {
             weight = value;
-            OnPropertyChanged(nameof(Weight));
          }
       }
       public string Height{
@@ -64,7 +60,6 @@ namespace TechHealth.Model
          set
          {
             height = value;
-            OnPropertyChanged(nameof(Height));
          }
       }
       public string ChronicDiseases{
@@ -72,7 +67,6 @@ namespace TechHealth.Model
          set
          {
             chronicDiseases = value;
-            OnPropertyChanged(nameof(ChronicDiseases));
          }
       }
       public string ParentDiseases{
@@ -80,7 +74,6 @@ namespace TechHealth.Model
          set
          {
             parentDiseases = value;
-            OnPropertyChanged(nameof(ParentDiseases));
          }
       }
       public EmlpoymentData EmlpoymentData{
@@ -88,7 +81,6 @@ namespace TechHealth.Model
          set
          {
             emlpoymentData = value;
-            OnPropertyChanged(nameof(EmlpoymentData));
          }
       }
 
@@ -98,7 +90,6 @@ namespace TechHealth.Model
          set
          {
             martialStatus = value;
-            OnPropertyChanged(nameof(MartialStatus));
          }
       }
       public Gender Gender { get; set; }

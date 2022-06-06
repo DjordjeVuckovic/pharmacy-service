@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 using TechHealth.Model;
 using TechHealth.Repository;
 using TechHealth.Service;
+using TechHealth.Service.IService;
 
 namespace TechHealth.Controller
 {
     public class MedicalRecordController
     {
-        private readonly MedicalRecordService medicalRecordService = new MedicalRecordService();
+        private readonly IMedicalRecordService medicalRecordService = new MedicalRecordService();
         public List<MedicalRecord> GetAll()
         {
             return MedicalRecordRepository.Instance.GetAllToList();

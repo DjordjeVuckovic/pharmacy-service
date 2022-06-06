@@ -7,22 +7,17 @@ using System;
 using System.Collections.Generic;
 using TechHealth.Model;
 using TechHealth.Service;
+using TechHealth.Service.IService;
 
 namespace TechHealth.Controller
 {
    public class RoomController
    {
-        private readonly RoomService roomService = new RoomService();
+        private readonly IRoomService roomService = new RoomService();
 
-        public Room GetById(string roomId)
-        {
-            return  roomService.GetById(roomId);
-        }
+        public Room GetById(string roomId) => roomService.GetById(roomId);
 
-        public List<Room> GetAll()
-        {
-            return roomService.GetAll();
-        }
+        public List<Room> GetAll() => roomService.GetAll();
 
         public bool Create(string roomId, int floor, bool available, RoomTypes type)
         {

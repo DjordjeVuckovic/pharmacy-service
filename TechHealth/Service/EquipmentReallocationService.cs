@@ -7,14 +7,15 @@ using System.Windows;
 using TechHealth.DTO;
 using TechHealth.Model;
 using TechHealth.Repository;
+using TechHealth.Service.IService;
 
 namespace TechHealth.Service
 {
-    public class EquipmentReallocationService
+    public class EquipmentReallocationService:IEquipmentReallocationService
     {
         private RoomEquipmentService roomEquipmentService = new RoomEquipmentService();
 
-        public List<EquipmentReallocationDTO> GetAllToList()
+        public List<EquipmentReallocationDTO> GetAll()
         {
             return EquipmentReallocationRepository.Instance.GetAllToList();
         }
@@ -28,12 +29,17 @@ namespace TechHealth.Service
             return EquipmentReallocationRepository.Instance.Update(dto);
         }
 
+        public EquipmentReallocationDTO GetById(string key)
+        {
+            throw new NotImplementedException();
+        }
+
         public bool Delete(string dtoID)
         {
             return EquipmentReallocationRepository.Instance.Delete(dtoID);
         }
 
-        public void UpdateSrcRoomEquipmentDependingOnQuantity(RoomEquipment reSrc, EquipmentReallocationDTO dto)
+        private void UpdateSrcRoomEquipmentDependingOnQuantity(RoomEquipment reSrc, EquipmentReallocationDTO dto)
         {
             reSrc.Quantity -= dto.AmountMoving;
             if (reSrc.Quantity == 0)
@@ -46,7 +52,7 @@ namespace TechHealth.Service
             }
         }
 
-        public void MoveEquipmentToExistingDstRoom(RoomEquipment reSrc, RoomEquipment reDst, EquipmentReallocationDTO dto)
+        private void MoveEquipmentToExistingDstRoom(RoomEquipment reSrc, RoomEquipment reDst, EquipmentReallocationDTO dto)
         {
             if (reSrc.Quantity >= dto.AmountMoving)
             {
@@ -61,7 +67,7 @@ namespace TechHealth.Service
             }
         }
 
-        public void CreateDstRoomEquipment(RoomEquipment reDst, EquipmentReallocationDTO dto)
+        private void CreateDstRoomEquipment(RoomEquipment reDst, EquipmentReallocationDTO dto)
         {
             reDst.EquipmentName = dto.EquipmentName;
             reDst.RoomID = dto.DestinationRoomID;
@@ -69,7 +75,7 @@ namespace TechHealth.Service
             roomEquipmentService.Create(reDst);
         }
 
-        public void MoveEquipmentToNewDstRoom(RoomEquipment reSrc, RoomEquipment reDst, EquipmentReallocationDTO dto)
+        private void MoveEquipmentToNewDstRoom(RoomEquipment reSrc, RoomEquipment reDst, EquipmentReallocationDTO dto)
         {
             if (reSrc.Quantity >= dto.AmountMoving)
             {
@@ -107,7 +113,7 @@ namespace TechHealth.Service
         public void ReallocateOnDate(object state)
         {
             List<EquipmentReallocationDTO> reallocations = new List<EquipmentReallocationDTO>();
-            reallocations = GetAllToList();
+            reallocations = GetAll();
             foreach (var r in reallocations)
             {
                 if (DateTime.Compare(DateTime.Now, r.ReallocationTime) == 0 || DateTime.Compare(r.ReallocationTime, DateTime.Now) < 0)
@@ -124,7 +130,7 @@ namespace TechHealth.Service
         public bool IsReallocationHappening(DateTime start, DateTime end, string roomID)
         {
             bool isHappening = false;
-            foreach (var er in GetAllToList())
+            foreach (var er in GetAll())
             {
                 if (er.ReallocationTime >= start && er.ReallocationTime <= end && (er.DestinationRoomID == roomID || er.SourceRoomID == roomID))
                 {

@@ -2,12 +2,13 @@
 using System.Collections.ObjectModel;
 using TechHealth.Model;
 using TechHealth.Service;
+using TechHealth.Service.IService;
 
 namespace TechHealth.Controller
 {
     public class PrescribeMedicineController
     {
-        private readonly PrescribeMedicineService prescribeMedicineService = new PrescribeMedicineService();
+        private readonly IPrescribeMedicineService prescribeMedicineService = new PrescribeMedicineService();
         public void Create(Prescription prescription)
         {
             prescribeMedicineService.Create(prescription);

@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using TechHealth.Model;
 using TechHealth.Repository;
+using TechHealth.Service.IService;
 
 namespace TechHealth.Service
 {
-    public class AnamnesisService
+    public class AnamnesisService:IAnamnesisService
     {
         public Anamnesis GetByAppointmentId(string appointmentId)
         {
@@ -35,6 +36,16 @@ namespace TechHealth.Service
         public bool Update(Anamnesis anamnesis)
         {
             return AnamnesisRepository.Instance.Update(anamnesis);
+        }
+
+        public Anamnesis GetById(string key)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool Delete(string key)
+        {
+            throw new NotImplementedException();
         }
 
         public List<Anamnesis> GetAllAnamnesisSurgeriesByPatient(string patientId)

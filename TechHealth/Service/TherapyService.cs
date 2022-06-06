@@ -1,15 +1,30 @@
 ﻿using System.Collections.Generic;
 using TechHealth.Model;
 using TechHealth.Repository;
+using TechHealth.Service.IService;
 
 namespace TechHealth.Service
 {
-    public class TherapyService
+    public class TherapyService:ITherapyService
     {
-        private AppointmentService appointmentService = new AppointmentService();
-        public void Create(Therapy therapy)
+        public bool Create(Therapy therapy)
         {
-            TherapyRepository.Instance.Create(therapy);
+            return TherapyRepository.Instance.Create(therapy);
+        }
+
+        public bool Update(Therapy entity)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public Therapy GetById(string key)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public bool Delete(string key)
+        {
+            throw new System.NotImplementedException();
         }
 
         public List<Therapy> GetAll()

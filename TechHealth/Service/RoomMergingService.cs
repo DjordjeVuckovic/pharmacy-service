@@ -5,13 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using TechHealth.Model;
 using TechHealth.Repository;
+using TechHealth.Service.IService;
 
 namespace TechHealth.Service
 {
-    public class RoomMergingService
+    public class RoomMergingService:IRoomMergingService
     {
-        private RoomService roomService = new RoomService();
-        private RoomEquipmentService roomEquipmentService = new RoomEquipmentService();
+        private IRoomService roomService = new RoomService();
+        private IRoomEquipmentService roomEquipmentService = new RoomEquipmentService();
         public RoomMerging GetById(string mergeId)
         {
             return RoomMergingRepository.Instance.GetById(mergeId);

@@ -14,7 +14,7 @@ namespace TechHealth.Controller
 
         public List<Equipment> GetAllToList()
         {
-            return equipmentService.GetAllToList();
+            return equipmentService.GetAll();
         }
         public bool Create(Equipment eq)
         {

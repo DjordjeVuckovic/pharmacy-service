@@ -2,12 +2,13 @@
 using TechHealth.Model;
 using TechHealth.Repository;
 using TechHealth.Service;
+using TechHealth.Service.IService;
 
 namespace TechHealth.Controller
 {
     public class DoctorVacationRequestController
     {
-        private readonly DoctorVacationRequestService doctorVacationRequestService = new DoctorVacationRequestService();
+        private readonly IDoctorVacationRequestService doctorVacationRequestService = new DoctorVacationRequestService();
 
         public void CreateNotEmergentVacation(DoctorVacationRequest doctorVacationRequest)
         {

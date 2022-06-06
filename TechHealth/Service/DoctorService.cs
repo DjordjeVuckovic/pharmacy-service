@@ -7,16 +7,26 @@ using System;
 using System.Collections.Generic;
 using TechHealth.Model;
 using TechHealth.Repository;
+using TechHealth.Service.IService;
 
 namespace TechHealth.Service
 {
-   public class DoctorService
+   public class DoctorService:IDoctorService
    {
+      public bool Update(Doctor entity)
+      {
+         throw new NotImplementedException();
+      }
 
       public Doctor GetById(string doctorId)
       {
          return  DoctorRepository.Instance.GetDoctorbyId(doctorId);
          
+      }
+
+      public bool Delete(string key)
+      {
+         throw new NotImplementedException();
       }
 
       public List<Doctor> GetAllBySpecializationId(int id)
@@ -37,7 +47,10 @@ namespace TechHealth.Service
       {
         return DoctorRepository.Instance.GetAllToList();
       }
-      
-   
+
+      public bool Create(Doctor entity)
+      {
+         throw new NotImplementedException();
+      }
    }
 }

@@ -14,7 +14,7 @@ namespace TechHealth.Controller
 
         public List<RoomRenovation> GetAllToList()
         {
-            return roomRenovationService.GetAllToList();
+            return roomRenovationService.GetAll();
         }
         public bool Create(RoomRenovation rr)
         {

@@ -2,10 +2,11 @@
 using TechHealth.Exceptions;
 using TechHealth.Model;
 using TechHealth.Repository;
+using TechHealth.Service.IService;
 
 namespace TechHealth.Service
 {
-    public class DoctorVacationRequestService
+    public class DoctorVacationRequestService:IDoctorVacationRequestService
     {
         private readonly AppointmentService appointmentService = new AppointmentService();
         public List<DoctorVacationRequest> GetAll()
@@ -14,6 +15,27 @@ namespace TechHealth.Service
             BindDataForDoctor(vacationRequests);
             return vacationRequests;
         }
+
+        public bool Create(DoctorVacationRequest entity)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public bool Update(DoctorVacationRequest entity)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public DoctorVacationRequest GetById(string key)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public bool Delete(string key)
+        {
+            throw new System.NotImplementedException();
+        }
+
         public void ApproveOrRejectVacation(DoctorVacationRequest doctorVacationRequest)
         {
             DoctorVacationRequestRepository.Instance.Update(doctorVacationRequest);

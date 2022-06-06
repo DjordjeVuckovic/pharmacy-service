@@ -3,12 +3,13 @@ using System.Collections.ObjectModel;
 using TechHealth.Model;
 using TechHealth.Repository;
 using TechHealth.Service;
+using TechHealth.Service.IService;
 
 namespace TechHealth.Controller
 {
     public class MedicineController
     {
-        private  readonly  MedicineService medicineService = new MedicineService();
+        private  readonly  IMedicineService medicineService = new MedicineService();
 
         public List<Medicine> GetAll()
         {
@@ -36,7 +37,7 @@ namespace TechHealth.Controller
 
         public void Delete(Medicine medicine)
         {
-            medicineService.Delete(medicine);
+            medicineService.Delete(medicine.MedicineId);
         }
     }
 }

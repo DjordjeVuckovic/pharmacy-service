@@ -5,12 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using TechHealth.Model;
 using TechHealth.Service;
+using TechHealth.Service.IService;
 
 namespace TechHealth.Controller
 {
     public class RoomMergingController
     {
-        private readonly RoomMergingService roomMergingService = new RoomMergingService();
+        private readonly IRoomMergingService roomMergingService = new RoomMergingService();
 
         public RoomMerging GetById(string mergeId)
         {

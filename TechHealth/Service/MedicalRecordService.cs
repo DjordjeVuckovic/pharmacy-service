@@ -5,10 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using TechHealth.Model;
 using TechHealth.Repository;
+using TechHealth.Service.IService;
 
 namespace TechHealth.Service
 {
-    public class MedicalRecordService
+    public class MedicalRecordService:IMedicalRecordService
     {
         public List<MedicalRecord> GetAll()
         {
@@ -28,6 +29,11 @@ namespace TechHealth.Service
         public bool Update(MedicalRecord medicalRecord)
         {
             return MedicalRecordRepository.Instance.Update(medicalRecord);
+        }
+
+        public MedicalRecord GetById(string key)
+        {
+            throw new NotImplementedException();
         }
 
         public bool Delete(string id)
