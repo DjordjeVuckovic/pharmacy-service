@@ -25,36 +25,36 @@
             <Button x:Name="Hospital" Content="Hospital" Margin="235,25,0,25" HorizontalAlignment="Left" Width="120" Height="50"  Grid.Row="0" Grid.Column="0"/>
             <Button x:Name="Doctor" Content="Doctor" Margin="0,25,0,25" HorizontalAlignment="Left" Width="120" Height="50"  Grid.Row="0" Grid.Column="1"/>
 
-            <StackPanel Grid.Row="1" Grid.Column="0" Background="#272537">
-                <TextBlock Margin="10" Text="Staff grades" Foreground="White" FontSize="15"
+            <Grid Grid.Row="1" Grid.Column="0" Background="#272537">
+                <TextBlock Margin="0,10,0,115" Text="Staff grades" Foreground="White" FontSize="15"
                            HorizontalAlignment="Center"/>
 
-                <StackPanel Width="200" HorizontalAlignment="Left">
-                    <materialDesign:RatingBar x:Name="ratingbar5" Value="5" Height="20" Width="120"
+                <materialDesign:RatingBar x:Name="ratingbar5" Value="5" Height="20" Width="120"
                                           Foreground="Yellow" HorizontalAlignment="Left"
-                                          Margin="50,0,0,0"/>
-                    <materialDesign:RatingBar x:Name="ratingbar4" Value="4" Height="20" Width="120"
+                                          Margin="27,35,0,95" IsReadOnly="True"/>
+                <materialDesign:RatingBar x:Name="ratingbar4" Value="4" Height="20" Width="120"
                                               Foreground="Yellow" HorizontalAlignment="Left"
-                                              Margin="50,0,0,0"/>
-                    <materialDesign:RatingBar x:Name="ratingbar3" Value="3" Height="20" Width="120"
+                                              Margin="27,50,0,70" IsReadOnly="True"/>
+                <materialDesign:RatingBar x:Name="ratingbar3" Value="3" Height="20" Width="120"
                                               Foreground="Yellow" HorizontalAlignment="Left"
-                                              Margin="50,0,0,0"/>
-                    <materialDesign:RatingBar x:Name="ratingbar2" Value="2" Height="20" Width="120"
+                                              Margin="27,65,0,42" IsReadOnly="True"/>
+                <materialDesign:RatingBar x:Name="ratingbar2" Value="2" Height="20" Width="120"
                                               Foreground="Yellow" HorizontalAlignment="Left"
-                                              Margin="50,0,0,0"/>
-                    <materialDesign:RatingBar x:Name="ratingbar1" Value="1" Height="20" Width="120"
+                                              Margin="27,80,0,17" IsReadOnly="True"/>
+                <materialDesign:RatingBar x:Name="ratingbar1" Value="1" Height="20" Width="120"
                                               Foreground="Yellow" HorizontalAlignment="Left"
-                                              Margin="50,0,0,0"/>
-                </StackPanel>
-                <StackPanel x:Name="gradesNum" Width="100" HorizontalAlignment="Right" VerticalAlignment="Top">
-                    <Label Content="(20)" Margin="-50,0,0,0" Foreground="White" Background="White"
-                       Height="20" Width="60" HorizontalAlignment="Right" VerticalAlignment="Top"/>
-                <Label Content="(20)"/>
-                <Label Content="(20)"/>
-                <Label Content="(20)"/>
-                <Label Content="(20)"/>
-                </StackPanel>
-    </StackPanel>
+                                              Margin="27,110,0,8" IsReadOnly="True"/>
+                <Label x:Name="fiveStarStaff" Content="{Binding FiveStarStaffGrade}" Margin="0,35,117,0" Foreground="White"
+                       Height="24" Width="60" HorizontalAlignment="Right" VerticalAlignment="Top" Visibility="Visible"/>
+                <Label Content="{Binding FourStarStaffGrade}" Margin="0,50,117,0" Foreground="White"
+                       Height="24" Width="60" HorizontalAlignment="Right" VerticalAlignment="Top" Visibility="Visible"/>
+                <Label Content="{Binding ThreeStarStaffGrade}" Margin="178,75,0,0" Foreground="White"
+                       Height="24" Width="60" HorizontalAlignment="Left" VerticalAlignment="Top" Visibility="Visible"/>
+                <Label Content="{Binding TwoStarStaffGrade}" Margin="0,100,117,0" Foreground="White"
+                       Height="24" Width="60" HorizontalAlignment="Right" VerticalAlignment="Top" Visibility="Visible"/>
+                <Label Content="{Binding OneStarStaffGrade}" Margin="0,120,117,0" Foreground="White"
+                       Height="24" Width="60" HorizontalAlignment="Right" VerticalAlignment="Top" Visibility="Visible"/>
+            </Grid>
 
         </Grid>
     </StackPanel>

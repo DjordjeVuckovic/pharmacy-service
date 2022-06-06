@@ -158,6 +158,7 @@
     <Compile Include="Controller\DoctorVacationRequestController.cs" />
     <Compile Include="Controller\EquipmentController.cs" />
     <Compile Include="Controller\EquipmentReallocationController.cs" />
+    <Compile Include="Controller\GradeController.cs" />
     <Compile Include="Controller\MedicalRecordController.cs" />
     <Compile Include="Controller\MedicineController.cs" />
     <Compile Include="Controller\PatientAllergensController.cs" />
@@ -389,6 +390,7 @@
     <Compile Include="Service\DoctorVacationRequestService.cs" />
     <Compile Include="Service\EquipmentReallocationService.cs" />
     <Compile Include="Service\EquipmentService.cs" />
+    <Compile Include="Service\GradeService.cs" />
     <Compile Include="Service\MedicalRecordService.cs" />
     <Compile Include="Service\MedicineService.cs" />
     <Compile Include="Service\PatientAllergensService.cs" />
