@@ -85,6 +85,11 @@
                 <TextBlock HorizontalAlignment="Center" RenderTransformOrigin="0.674,-0.373"><Run Text="Emergency"/></TextBlock>
             </StackPanel>
         </Button>
-        <Button Content="LogOut" Click="Button_LogOut" HorizontalAlignment="Left" Margin="304,20,0,0" VerticalAlignment="Top" FontWeight="Bold" Background="White" BorderBrush="White" Width="79" HorizontalContentAlignment="Left" Height="23" Grid.RowSpan="1" FontSize="12"/>
+        <Button Click="Button_LogOut" HorizontalAlignment="Left" Margin="301,2,0,0" VerticalAlignment="Top" FontWeight="Bold" Background="White" BorderBrush="White" Width="82" HorizontalContentAlignment="Left" Height="56">
+            <StackPanel>
+                <Image Source="/View/SecretaryView/resources/logout.png" Height="27" Width="33"/>
+                <TextBlock HorizontalAlignment="Center" RenderTransformOrigin="0.674,-0.373"><Run Text="LogOut"/></TextBlock>
+            </StackPanel>
+        </Button>
     </Grid>
 </Window>

@@ -8,15 +8,17 @@
         Title="VacationRequestsView" Height="650" Width="400"
         WindowStartupLocation="CenterScreen">
     <Grid>
-        <ListView x:Name="vacationRequestList" Margin="10,117,10,195">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="Start" Width="70" DisplayMemberBinding="{Binding StartDate,StringFormat='dd.MM.yyyy'}" />
-                    <GridViewColumn Header="Finish" Width="70" DisplayMemberBinding="{Binding FinishDate,StringFormat='dd.MM.yyyy'}" />
-                    <GridViewColumn Header="Doctor" Width="160" DisplayMemberBinding="{Binding Doctor.FullSpecialization}" />
-                    <GridViewColumn Header="Reason" Width="160" DisplayMemberBinding="{Binding VacationReason}" />
-                </GridView>
-            </ListView.View>
+        <ListView x:Name="vacationRequestList" Margin="64,117,64,195">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding StartDate,StringFormat='dd.MM.yyyy'}" />
+                        <TextBlock Text="{Binding FinishDate,StringFormat='dd.MM.yyyy'}" />
+                        <TextBlock Text="{Binding Doctor.FullSpecialization}" />
+                        <TextBlock Text="{Binding VacationReason}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
         </ListView>
         <Label Content="Vacation Requests" HorizontalAlignment="Center" Margin="0,73,0,0" VerticalAlignment="Top" FontSize="22" FontWeight="Bold"/>
         <Button Content="Approve" HorizontalAlignment="Center" Margin="0,454,0,0" VerticalAlignment="Top" Background="Black" Foreground="White" Width="272" Click="Button_Click_Approve" FontWeight="Bold" FontSize="16" Height="32"/>
@@ -63,6 +65,11 @@
                 <TextBlock HorizontalAlignment="Center" RenderTransformOrigin="0.674,-0.373"><Run Text="Emergency"/></TextBlock>
             </StackPanel>
         </Button>
-        <Button Content="LogOut" Click="Button_LogOut" HorizontalAlignment="Left" Margin="322,22,0,0" VerticalAlignment="Top" FontWeight="Bold" Background="White" BorderBrush="White" Width="50" HorizontalContentAlignment="Left" Height="19"/>
+        <Button Click="Button_LogOut" HorizontalAlignment="Left" Margin="322,7,0,0" VerticalAlignment="Top" FontWeight="Bold" Background="White" BorderBrush="White" Width="50" HorizontalContentAlignment="Left" Height="47">
+            <StackPanel>
+                <Image Source="/View/SecretaryView/resources/logout.png" Height="27" Width="33"/>
+                <TextBlock HorizontalAlignment="Center" RenderTransformOrigin="0.674,-0.373"><Run Text="LogOut"/></TextBlock>
+            </StackPanel>
+        </Button>
     </Grid>
 </Window>

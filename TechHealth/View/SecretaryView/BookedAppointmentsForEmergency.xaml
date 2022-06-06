@@ -9,14 +9,16 @@
         WindowStartupLocation="CenterScreen">
     <Grid>
         <ListView x:Name="examinationList" Margin="10,117,10,198">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="Start" Width="65" DisplayMemberBinding="{Binding start,StringFormat=t}" />
-                    <GridViewColumn Header="Finish" Width="65" DisplayMemberBinding="{Binding end,StringFormat=t}" />
-                    <GridViewColumn Header="Patient" Width="100" DisplayMemberBinding="{Binding patient}" />
-                    <GridViewColumn Header="Doctor" Width="160" DisplayMemberBinding="{Binding doctor}" />
-                </GridView>
-            </ListView.View>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding start,StringFormat=t}" />
+                        <TextBlock Text="{Binding end,StringFormat=t}" />
+                        <TextBlock Text="{Binding patient}" />
+                        <TextBlock Text="{Binding doctor}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
         </ListView>
         <Label x:Name="pickedDate" Content="date" HorizontalAlignment="Center" Margin="0,78,0,0" VerticalAlignment="Top" FontSize="22" FontWeight="Bold"/>
         <Button Content="Postpone" HorizontalAlignment="Center" Margin="0,469,0,0" VerticalAlignment="Top" Background="Black" Foreground="White" Width="272" Click="Button_Click_Postpone" Height="32" FontSize="16" FontWeight="Bold"/>
@@ -62,6 +64,11 @@
                 <TextBlock HorizontalAlignment="Center" RenderTransformOrigin="0.674,-0.373"><Run Text="Emergency"/></TextBlock>
             </StackPanel>
         </Button>
-        <Button Content="LogOut" Click="Button_LogOut" HorizontalAlignment="Left" Margin="322,22,0,0" VerticalAlignment="Top" FontWeight="Bold" Background="White" BorderBrush="White" Width="50" HorizontalContentAlignment="Left" Height="19"/>
+        <Button Click="Button_LogOut" HorizontalAlignment="Left" Margin="322,7,0,0" VerticalAlignment="Top" FontWeight="Bold" Background="White" BorderBrush="White" Width="50" HorizontalContentAlignment="Left" Height="47">
+            <StackPanel>
+                <Image Source="/View/SecretaryView/resources/logout.png" Height="27" Width="33"/>
+                <TextBlock HorizontalAlignment="Center" RenderTransformOrigin="0.674,-0.373"><Run Text="LogOut"/></TextBlock>
+            </StackPanel>
+        </Button>
     </Grid>
 </Window>

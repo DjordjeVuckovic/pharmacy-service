@@ -206,13 +206,13 @@ namespace TechHealth.View.SecretaryView
         }
         private void Button_Click_Cancel(object sender, RoutedEventArgs e)
         {
-            this.Close();
             new AppointmentsViewSecretary(d, t).Show();
+            Close();
         }
         private void Button_Click_Main(object sender, RoutedEventArgs e)
         {
             new SecretaryMainWindow().Show();
-            this.Close();
+            Close();
         }
     }
 }

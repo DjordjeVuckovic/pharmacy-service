@@ -709,6 +709,7 @@
     <Content Include="Json\rejectedMedicine.json" />
     <Content Include="Json\secretary.json" />
     <Content Include="Json\specialization.json" />
+    <Resource Include="View\SecretaryView\resources\logout.png" />
     <Resource Include="View\SecretaryView\resources\appointment_filled.png" />
     <Resource Include="View\SecretaryView\resources\emergency_filled.png" />
     <Resource Include="View\SecretaryView\resources\equipment_filled.png" />
