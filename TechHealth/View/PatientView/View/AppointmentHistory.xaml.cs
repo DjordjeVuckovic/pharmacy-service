@@ -99,5 +99,15 @@ namespace TechHealth.View.PatientView.View
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
+
+        private void Button_Click_Details(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click_Note(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

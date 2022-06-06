@@ -15,6 +15,7 @@ using TechHealth.Model;
 using TechHealth.Controller;
 using TechHealth.Repository;
 using TechHealth.Core;
+using TechHealth.View.PatientView.View;
 
 namespace TechHealth.View.PatientView
 {
@@ -52,6 +53,7 @@ namespace TechHealth.View.PatientView
             
 
         }
+
 
         /*public string TypeToString(AppointmentType type)
         {
@@ -113,6 +115,7 @@ namespace TechHealth.View.PatientView
             AppointmentRepository.Instance.Update(selected);
             //appointmentController.Update(selected.Date, selected.StartTime, selected.AppointmentType, selected.Doctor, selected.IdAppointment);
             Close();
+            
         }
 
 

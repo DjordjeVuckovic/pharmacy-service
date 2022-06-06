@@ -113,5 +113,28 @@
     "Respiratory": null,
     "Mouth": null,
     "Gi": null
+  },
+  "6c0de892a69949a489935864f7f6e7d9": {
+    "Appointment": {
+      "ShouldSerialize": false,
+      "IdAppointment": "c3db0793f59f4088b494ddfa4d610f11"
+    },
+    "MainSymptom": "sds",
+    "AnamnesisDate": "2022-06-05T11:58:19.2681678+02:00",
+    "AnamnesisId": "6c0de892a69949a489935864f7f6e7d9",
+    "OtherSymptoms": "sdasd",
+    "GeneralAmnesis": "ds",
+    "Cns": "asdsdd",
+    "Eye": "s",
+    "Neck": "ds",
+    "Mss": null,
+    "Skin": null,
+    "Ear": null,
+    "Cus": null,
+    "Infectious": null,
+    "Ugs": null,
+    "Respiratory": null,
+    "Mouth": null,
+    "Gi": null
   }
 }
