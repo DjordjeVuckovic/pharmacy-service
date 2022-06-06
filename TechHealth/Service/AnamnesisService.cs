@@ -98,7 +98,7 @@ namespace TechHealth.Service
 
         private void BindDataForAppointment(Appointment appointment)
         {
-            appointment.Doctor = DoctorRepository.Instance.GetDoctorbyId(appointment.Doctor.Jmbg);
+            appointment.Doctor = DoctorRepository.Instance.GetDoctorById(appointment.Doctor.Jmbg);
         }
         public  List<Anamnesis> GetAllAnamnesisByDate(string patientId,DateTime startDate, DateTime finishDate)
         {

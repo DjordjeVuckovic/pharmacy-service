@@ -8,19 +8,9 @@ using TechHealth.Core;
 
 namespace TechHealth.Model
 {
-   public class Specialization:ViewModelBase
+   public class Specialization
    {
-      private int idSpecialization;
-
-      public int IdSpecialization
-      {
-         get => idSpecialization;
-         set
-         { 
-            idSpecialization = value;
-            OnPropertyChanged(nameof(IdSpecialization));
-         }
-      }
+      public int IdSpecialization { get; set; }
 
       public string NameSpecialization{ get; set; }
       

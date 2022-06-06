@@ -1,9 +1,11 @@
 ﻿using System;
 using TechHealth.Model;
+using TechHealth.Repository.IRepository;
+using TechHealth.Service.IService;
 
 namespace TechHealth.Repository
 {
-    public class TherapyRepository : GenericRepository<string, Therapy>
+    public class TherapyRepository : GenericRepository<string, Therapy>,ITherapyRepository
     {
         private static readonly TherapyRepository instance = new TherapyRepository();
 

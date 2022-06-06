@@ -12,39 +12,22 @@ namespace TechHealth.Model
    
    public class Person : User
    {
-      private string name;
       private string surname;
       private string email;
       public Address Address { get; set; }
 
-      public string Name
-      {
-         get => name;
-         set
-         {
-            name = value;
-            OnPropertyChanged(nameof(Name));
-         }
-      }
+      public string Name { get; set; }
 
       public string Surname
       {
          get => surname;
-         set
-         {
-            surname = value; 
-            OnPropertyChanged(nameof(Surname));
-         }
+         set => surname = value;
       }
 
       public string Email
       {
          get => email;
-         set
-         {
-            email = value;
-            OnPropertyChanged(nameof(Email));
-         }
+         set => email = value;
       }
 
       public string Jmbg{ get; set; }

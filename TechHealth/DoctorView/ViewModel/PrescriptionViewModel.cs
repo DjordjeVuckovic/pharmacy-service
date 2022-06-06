@@ -114,7 +114,7 @@ namespace TechHealth.DoctorView.ViewModel
 
         private bool CanExecute()
         {
-            if (String.IsNullOrEmpty(Frequency)  && String.IsNullOrEmpty(Usage)  && MedicineData !=null)
+            if (!String.IsNullOrEmpty(Frequency)  && !String.IsNullOrEmpty(Usage)  && MedicineData !=null)
             {
                 if(StartDate<FinishDate)
                     return true;

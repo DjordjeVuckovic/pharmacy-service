@@ -10,14 +10,8 @@ namespace TechHealth.Controller
     {
         private readonly IDoctorService doctorService = new DoctorService();
 
-        public Doctor GetById(string doctorId)
-        {
-            return doctorService.GetById(doctorId);
-        }
+        public Doctor GetById(string doctorId) => doctorService.GetById(doctorId);
 
-        public List<Doctor> GetAllBySpecializationId(int id)
-        {
-            return doctorService.GetAllBySpecializationId(id);
-        }
+        public virtual List<Doctor> GetAllBySpecializationId(int id) => doctorService.GetAllBySpecializationId(id);
     }
 }

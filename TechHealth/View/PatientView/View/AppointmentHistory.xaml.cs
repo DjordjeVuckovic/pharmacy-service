@@ -80,7 +80,7 @@ namespace TechHealth.View.PatientView.View
         {
             for (int i = 0; i < Past.Count; i++)
             {
-                Past[i].Doctor = DoctorRepository.Instance.GetDoctorbyId(Past[i].Doctor.Jmbg);
+                Past[i].Doctor = DoctorRepository.Instance.GetDoctorById(Past[i].Doctor.Jmbg);
             }
         }
 

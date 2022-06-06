@@ -1,8 +1,9 @@
 ﻿using TechHealth.Model;
+using TechHealth.Repository.IRepository;
 
 namespace TechHealth.Repository
 {
-    public class SpecializationRepository:GenericRepository<int,Specialization>
+    public class SpecializationRepository:GenericRepository<int,Specialization>,ISpecializationRepository
     {
         private static readonly SpecializationRepository instance = new SpecializationRepository();
 

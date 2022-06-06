@@ -345,7 +345,6 @@
     <Compile Include="Model\RoomSeparation.cs" />
     <Compile Include="Model\Substance.cs" />
     <Compile Include="Model\EmlpoymentData.cs" />
-    <Compile Include="Model\MainIssue.cs" />
     <Compile Include="Model\RandomGenerator.cs" />
     <Compile Include="Model\Therapy.cs" />
     <Compile Include="Model\SecretaryNotification.cs" />
@@ -362,8 +361,11 @@
     <Compile Include="Repository\EquipmentRequestRepository.cs" />
     <Compile Include="Repository\GenericRepository.cs" />
     <Compile Include="Repository\GradeRepository.cs" />
-    <Compile Include="Repository\IDoctorRepository.cs" />
-    <Compile Include="Repository\IRepository.cs" />
+    <Compile Include="Repository\IRepository\IAnamnesisRepository.cs" />
+    <Compile Include="Repository\IRepository\IDoctorRepository.cs" />
+    <Compile Include="Repository\IRepository\IRepository.cs" />
+    <Compile Include="Repository\IRepository\ISpecializationRepository.cs" />
+    <Compile Include="Repository\IRepository\ITherapyRepository.cs" />
     <Compile Include="Repository\ManagerRepository.cs" />
     <Compile Include="Repository\MedicalRecordRepository.cs" />
     <Compile Include="Repository\MedicineRepository.cs" />
@@ -661,7 +663,6 @@
     <Compile Include="Model\Excuse.cs" />
     <Compile Include="Model\Gender.cs" />
     <Compile Include="Model\MedicalRecord.cs" />
-    <Compile Include="Model\Hospitalization.cs" />
     <Compile Include="Model\Manager.cs" />
     <Compile Include="Model\Medicine.cs" />
     <Compile Include="Model\Note.cs" />
@@ -672,7 +673,6 @@
     <Compile Include="Model\Room.cs" />
     <Compile Include="Model\RoomTypes.cs" />
     <Compile Include="Model\Secretary.cs" />
-    <Compile Include="Model\Specialist.cs" />
     <Compile Include="Model\Specialization.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">

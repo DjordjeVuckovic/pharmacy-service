@@ -112,7 +112,7 @@ namespace TechHealth.Service
         {
             foreach (var vac in doctorVacationRequests)
             {
-                vac.Doctor = DoctorRepository.Instance.GetDoctorbyId(vac.Doctor.Jmbg);
+                vac.Doctor = DoctorRepository.Instance.GetDoctorById(vac.Doctor.Jmbg);
             }
         }
 

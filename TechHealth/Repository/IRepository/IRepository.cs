@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
-using System.Windows.Documents;
 
-namespace TechHealth.Repository
+namespace TechHealth.Repository.IRepository
 {
     public interface IRepository<TEntity,TKey>
     {

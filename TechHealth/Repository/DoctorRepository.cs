@@ -6,6 +6,7 @@
 using System;
 using System.Collections.Generic;
 using TechHealth.Model;
+using TechHealth.Repository.IRepository;
 
 namespace TechHealth.Repository
 {
@@ -59,7 +60,7 @@ namespace TechHealth.Repository
          return null;
       }
 
-      public Doctor GetDoctorbyId(string id)
+      public Doctor GetDoctorById(string id)
       {
          foreach (var doc in GetAllToList())
          {

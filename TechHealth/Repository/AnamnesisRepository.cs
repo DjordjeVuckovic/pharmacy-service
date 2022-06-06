@@ -1,9 +1,9 @@
-﻿using System.Collections.Generic;
-using TechHealth.Model;
+﻿using TechHealth.Model;
+using TechHealth.Repository.IRepository;
 
 namespace TechHealth.Repository
 {
-    public class AnamnesisRepository:GenericRepository<string,Anamnesis>
+    public class AnamnesisRepository:GenericRepository<string,Anamnesis>,IAnamnesisRepository
     {
         private static readonly AnamnesisRepository instance = new AnamnesisRepository();
         
@@ -33,19 +33,6 @@ namespace TechHealth.Repository
         protected override void ShouldSerialize(Anamnesis entity)
         {
             entity.Appointment.ShouldSerialize = false;
-        }
-
-        public List<Anamnesis> GetByDoctorId(string id)
-        {
-            List<Anamnesis> anamneses = new List<Anamnesis>();
-            foreach (var t in GetAllToList())
-            {
-                if (id.Equals(t.Appointment.Doctor.Jmbg))
-                {
-                    anamneses.Add(t);
-                }
-            }
-            return anamneses;
         }
 
         public Anamnesis GetByAppointmentId(string appointmentId)

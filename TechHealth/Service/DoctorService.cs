@@ -20,7 +20,7 @@ namespace TechHealth.Service
 
       public Doctor GetById(string doctorId)
       {
-         return  DoctorRepository.Instance.GetDoctorbyId(doctorId);
+         return  DoctorRepository.Instance.GetDoctorById(doctorId);
          
       }
 

@@ -56,7 +56,7 @@ namespace TechHealth.View.PatientView.View
         {
             for (int i = 0; i < Appointment.Count; i++)
             {
-                Appointment[i].Doctor = DoctorRepository.Instance.GetDoctorbyId(Appointment[i].Doctor.Jmbg);
+                Appointment[i].Doctor = DoctorRepository.Instance.GetDoctorById(Appointment[i].Doctor.Jmbg);
             }
         }
 

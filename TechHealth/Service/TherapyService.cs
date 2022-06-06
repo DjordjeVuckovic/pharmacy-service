@@ -58,7 +58,7 @@ namespace TechHealth.Service
         }
         private void BindDataForAppointment(Appointment appointment)
         {
-            appointment.Doctor = DoctorRepository.Instance.GetDoctorbyId(appointment.Doctor.Jmbg);
+            appointment.Doctor = DoctorRepository.Instance.GetDoctorById(appointment.Doctor.Jmbg);
             appointment.Room = RoomRepository.Instance.GetById(appointment.Room.RoomId);
         }
     }

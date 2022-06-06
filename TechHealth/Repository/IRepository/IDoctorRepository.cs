@@ -1,6 +1,6 @@
 ﻿using TechHealth.Model;
 
-namespace TechHealth.Repository
+namespace TechHealth.Repository.IRepository
 {
     public interface IDoctorRepository:IRepository<Doctor,string>
     {

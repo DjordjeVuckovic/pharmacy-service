@@ -196,7 +196,7 @@ namespace TechHealth.Service
       {
          foreach (var appointment in appointments)
          {
-            appointment.Doctor = DoctorRepository.Instance.GetDoctorbyId(appointment.Doctor.Jmbg);
+            appointment.Doctor = DoctorRepository.Instance.GetDoctorById(appointment.Doctor.Jmbg);
          }
       }
 

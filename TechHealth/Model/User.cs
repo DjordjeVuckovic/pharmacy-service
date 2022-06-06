@@ -10,32 +10,13 @@ using TechHealth.Core;
 namespace TechHealth.Model
 {
    
-   public class User:ViewModelBase
+   public class User
    {
-      private string password;
-      private string username;
-
-      public string Username
-      {
-         get => username;
-         set
-         {
-            username = value;
-            OnPropertyChanged(nameof(Username));
-         }
-      }
+      public string Username { get; set; }
 
 
-      public string Password
-      {
-         get => password;
-         set
-         {
-            password = value; 
-            OnPropertyChanged(nameof(Password));
-         }
-      }
-      
+      public string Password { get; set; }
+
       public bool ShouldSerialize { get; set; }
 
       public bool ShouldSerializeUsername()
