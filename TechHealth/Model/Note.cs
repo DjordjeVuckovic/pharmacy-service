@@ -7,15 +7,14 @@ using System;
 
 namespace TechHealth.Model
 {
-   public class Beleska
+   public class Note
    {
       public string noteId;
-        public string naslov;
       public string content;
         public DateTime notificationTime;
         public bool Checked { get; set; }
-        public Appointment selectedAppointment;
-        public Patient patient;
+
+      public Patient patient;
 
 
 

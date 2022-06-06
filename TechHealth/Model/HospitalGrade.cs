@@ -13,7 +13,7 @@ namespace TechHealth.Model
         public int OcenaDostupnost { get; set; }
         public int OcenaOprema { get; set; }
         public int OcenaLakoca { get; set; }
-        public Patient LoggedPatient { get; set; }
+        public Patient Patient { get; set; }
 
     }
 }

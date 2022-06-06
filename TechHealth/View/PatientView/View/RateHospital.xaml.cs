@@ -13,7 +13,6 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using TechHealth.Model;
-using TechHealth.Repository;
 
 namespace TechHealth.View.PatientView.View
 {
@@ -22,7 +21,7 @@ namespace TechHealth.View.PatientView.View
     /// </summary>
     public partial class RateHospital : UserControl
     {
-        public HospitalGrade AnketaBolnica { get; set; }
+        //public HospitalGrade AnketaBolnica { get; set; }
         public RateHospital()
         {
             InitializeComponent();
