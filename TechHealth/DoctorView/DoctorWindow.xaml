@@ -94,12 +94,12 @@
                         <ImageBrush ImageSource="C:\Users\djord\OneDrive\Documents\GitHub\PharmacyService\TechHealth\resources\notification.png" />
                     </Button.Background>
                 </Button>
-                <Button  Grid.Row="0" Grid.Column="1" Margin="675.4,19,73.6,9.8" Height="Auto" BorderThickness="0" ToolTip="Help" Command="{Binding HelpCommand}">
+                <Button  Grid.Row="0" Grid.Column="1" Margin="690.4,19,73.6,9.8" Height="Auto" BorderThickness="0" ToolTip="Help" Command="{Binding HelpCommand}">
                     <Button.Background>
                         <ImageBrush ImageSource="C:\Users\djord\OneDrive\Documents\GitHub\PharmacyService\TechHealth\resources\help.png" />
                     </Button.Background>
                 </Button>
-                <Button  Grid.Row="0" Grid.Column="1" Margin="739.4,19,9.6,9.8" Height="Auto" BorderThickness="0" ToolTip="Tutorial">
+                <Button  Grid.Row="0" Grid.Column="1" Margin="752.4,19,9.6,9.8" Height="Auto" BorderThickness="0" ToolTip="Tutorial">
                     <Button.Background>
                         <ImageBrush ImageSource="C:\Users\djord\OneDrive\Documents\GitHub\PharmacyService\TechHealth\resources\t2.png" />
                     </Button.Background>

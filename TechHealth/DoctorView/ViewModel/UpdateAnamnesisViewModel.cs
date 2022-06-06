@@ -241,7 +241,7 @@ namespace TechHealth.DoctorView.ViewModel
         }
         public bool CanExecute()
         {
-            if (MainSymptom != null && OtherSymptoms != null && GeneralAmnesis != null )
+            if (!String.IsNullOrEmpty(MainSymptom) && !String.IsNullOrEmpty(OtherSymptoms)  && !String.IsNullOrEmpty(GeneralAmnesis) )
             {
                
                     return true;
@@ -251,17 +251,18 @@ namespace TechHealth.DoctorView.ViewModel
 
         }
 
-        public void Execute()
+        private void Execute()
         {
             UpdateAnamnesis();
-            OnRequestClose(this, new EventArgs());
+            MessageBox.Show(@"You are successfully update  anamnesis");
+            OnRequestClose?.Invoke(this, EventArgs.Empty);
         }
         private void CloseWindow()
         {
             DialogResult dialogResult = MessageBox.Show(@"Are you sure about that?", @"Cancel appointment", MessageBoxButtons.YesNo);
             if(dialogResult==(DialogResult) MessageBoxResult.Yes)
             {
-                OnRequestClose(this, new EventArgs());
+                OnRequestClose?.Invoke(this, EventArgs.Empty);
             }
         }
         private void UpdateAnamnesis()

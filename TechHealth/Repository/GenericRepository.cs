@@ -12,11 +12,6 @@ namespace TechHealth.Repository
         protected abstract TKey GetKey(TEntity entity);
         protected abstract void RemoveAllReference(TKey key);
         protected abstract void ShouldSerialize(TEntity entity);
-        public virtual TEntity Search(string search)
-        {
-            throw new NotImplementedException();
-        }
-
         private Dictionary<TKey, TEntity> Deserialize()
         {
             

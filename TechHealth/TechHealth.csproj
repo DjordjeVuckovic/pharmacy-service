@@ -362,6 +362,8 @@
     <Compile Include="Repository\EquipmentRequestRepository.cs" />
     <Compile Include="Repository\GenericRepository.cs" />
     <Compile Include="Repository\GradeRepository.cs" />
+    <Compile Include="Repository\IDoctorRepository.cs" />
+    <Compile Include="Repository\IRepository.cs" />
     <Compile Include="Repository\ManagerRepository.cs" />
     <Compile Include="Repository\MedicalRecordRepository.cs" />
     <Compile Include="Repository\MedicineRepository.cs" />

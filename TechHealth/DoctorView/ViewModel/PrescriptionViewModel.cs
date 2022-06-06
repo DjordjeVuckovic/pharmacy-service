@@ -112,9 +112,9 @@ namespace TechHealth.DoctorView.ViewModel
             }
         }
 
-        public bool CanExecute()
+        private bool CanExecute()
         {
-            if (Frequency != null && Usage != null && MedicineData !=null)
+            if (String.IsNullOrEmpty(Frequency)  && String.IsNullOrEmpty(Usage)  && MedicineData !=null)
             {
                 if(StartDate<FinishDate)
                     return true;
@@ -124,20 +124,18 @@ namespace TechHealth.DoctorView.ViewModel
 
         }
 
-        public void Execute()
+        private void Execute()
         {
             if (prescribeMedicineController.CheckAllergens(MedicineData, SelectedAppointment.Patient))
             {
-                MessageBox.Show(@"Patient is allergic on selected medicine!",
+                MessageBox.Show(@"Patient is allergic on selected medicine!Prescribe another similar medicine.",
                     @"Allergen exception", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
                 CreatePrescription();
+                if (OnRequestClose != null) OnRequestClose(this, EventArgs.Empty);
             }
-
-            //MessageBox.Show(@"You are successfully create new prescription");
-            if (OnRequestClose != null) OnRequestClose(this, EventArgs.Empty);
         }
 
         private void CreatePrescription()

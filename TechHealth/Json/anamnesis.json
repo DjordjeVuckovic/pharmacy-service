@@ -113,5 +113,51 @@
     "Respiratory": null,
     "Mouth": null,
     "Gi": null
+  },
+  "b9771b9b063c45fc843ece7e5398a974": {
+    "Appointment": {
+      "ShouldSerialize": false,
+      "IdAppointment": "aec85ecf55ae4691be34ba8698b62d81"
+    },
+    "MainSymptom": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "AnamnesisDate": "2022-06-06T15:58:55.7856712+02:00",
+    "AnamnesisId": "b9771b9b063c45fc843ece7e5398a974",
+    "OtherSymptoms": "aaaaaaa",
+    "GeneralAmnesis": "vvvvv",
+    "Cns": null,
+    "Eye": null,
+    "Neck": null,
+    "Mss": null,
+    "Skin": null,
+    "Ear": null,
+    "Cus": null,
+    "Infectious": null,
+    "Ugs": null,
+    "Respiratory": null,
+    "Mouth": null,
+    "Gi": null
+  },
+  "7116e49c1d3a4b6489e2292e7884ac4b": {
+    "Appointment": {
+      "ShouldSerialize": false,
+      "IdAppointment": "a76f87707b0b4888b8a741375009e870"
+    },
+    "MainSymptom": "bol u grlu",
+    "AnamnesisDate": "2022-06-06T15:59:34.4885047+02:00",
+    "AnamnesisId": "7116e49c1d3a4b6489e2292e7884ac4b",
+    "OtherSymptoms": "povisena temeratura",
+    "GeneralAmnesis": "propisan analgin zbog bola u glavi",
+    "Cns": null,
+    "Eye": null,
+    "Neck": null,
+    "Mss": null,
+    "Skin": null,
+    "Ear": null,
+    "Cus": null,
+    "Infectious": null,
+    "Ugs": null,
+    "Respiratory": null,
+    "Mouth": null,
+    "Gi": null
   }
 }

@@ -241,6 +241,7 @@ namespace TechHealth.DoctorView.ViewModel
             appointmentController.Update(Appointment);
             ViewModelAppointment.GetInstance().RefreshView();
             RecordViewModel.GetInstance().RefreshView();
+            MessageBox.Show(@"You are successfully create new anamnesis");
             OnRequestClose?.Invoke(this, EventArgs.Empty);
         }
         private void CloseWindow()
