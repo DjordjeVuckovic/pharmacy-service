@@ -13,9 +13,11 @@ namespace TechHealth.DoctorView.ViewModel
         private Doctor Doctor { get; set; }
         public RelayCommand VacationCommand { get; set; }
         public RelayCommand VacationHistoryCommand { get; set; }
+        public string DoctorFullName { get; set; }
         public AccountViewModel(string doctorId)
         {
             Doctor = doctorController.GetById(doctorId);
+            DoctorFullName = "Current user: " + Doctor.FullSpecialization;
             VacationCommand = new RelayCommand(param => ExecuteVacation());
             VacationHistoryCommand = new RelayCommand(param => ExecuteVacationHistory());
         }

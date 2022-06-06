@@ -19,7 +19,7 @@
                     <RowDefinition Height="5*"/>
                 </Grid.RowDefinitions>
 
-                <Rectangle Fill="#FF3A475F" Margin="10,0,0,0.2"/>
+                <Rectangle RadiusX="15" RadiusY="15" Fill="#FF3A475F" Margin="10,0,0,0.2"/>
 
                 <Label Grid.Row="0" Content="Keyboard navigation" Foreground="#1FC192" Margin="230,13,0,13.2" VerticalAlignment="Center"
                    FontSize="32" />

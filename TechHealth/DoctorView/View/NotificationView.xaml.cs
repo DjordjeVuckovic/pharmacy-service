@@ -11,21 +11,13 @@ namespace TechHealth.DoctorView.View
 {
     public partial class NotificationView : UserControl
     {
-        private ObservableCollection<SecretaryNotification> notifications;
-
-        private readonly SecretaryNotificationController secretaryNotificationController =
-            new SecretaryNotificationController();
+        
         public NotificationView()
         {
             InitializeComponent();
-            BindDataForNotifications();
-            NotificationViewer.ItemsSource = notifications;
+            var vm = new DoctorNotificationsViewModel();
+            DataContext = vm;
         }
-        private void BindDataForNotifications()
-        {
-            List<SecretaryNotification> notificationList = secretaryNotificationController.GetByPersonId(MainViewModel.DoctorId);
-            notificationList.Reverse();
-            notifications = new ObservableCollection<SecretaryNotification>(notificationList);
-        }
+        
     }
 }

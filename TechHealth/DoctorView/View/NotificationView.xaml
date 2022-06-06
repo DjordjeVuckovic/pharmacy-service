@@ -11,16 +11,16 @@
             <RowDefinition Height="55"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Rectangle Fill="#FF3A475F" RadiusY="25" Margin="40,0,30,0.2"/>
+        <Rectangle Fill="#FF3A475F" RadiusX="15" RadiusY="15" Margin="40,0,30,0.2"/>
         <Label Content="Notifications"  VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="32" Margin="300,0,90,7.2" Width="410" Foreground="#1FC192"/>
 
         <Grid Grid.Row="1" Margin="40,9.8,30,10">
 
-            <Rectangle RadiusX="25" RadiusY="25" Fill="#FF38455D" Margin="0,0,0,-0.2"/>
+            <Rectangle RadiusX="15" RadiusY="15" Fill="#FF38455D" Margin="0,0,0,-0.2"/>
 
 
             <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="30,20,30,20">
-                <ItemsControl x:Name="NotificationViewer">
+                <ItemsControl x:Name="NotificationViewer" ItemsSource="{Binding Notifications}">
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
 

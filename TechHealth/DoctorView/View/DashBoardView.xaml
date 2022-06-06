@@ -6,12 +6,45 @@
              xmlns:local="clr-namespace:TechHealth.DoctorView.View"
              mc:Ignorable="d"
              d:DesignHeight="450" d:DesignWidth="800">
-    <Border  BorderBrush="MediumSpringGreen" BorderThickness="1">
-    <StackPanel> 
-        <TextBlock Text="Welcome back" Foreground="#f8f8f2" FontSize="24" HorizontalAlignment="Left" Margin="300,0,0,0" />
-        <StackPanel Orientation="Horizontal">
-            <Border Width="400" Height="200"/>
+    <StackPanel>
+        <TextBlock Text="Welcom back.We hope you have a good experience using our app."
+                   Foreground="White"
+                   FontSize="27"
+                   HorizontalAlignment="Left"
+                   Margin="0,0,0,20" Width="800"/>
+        <StackPanel Orientation="Horizontal" Height="399" >
+
+            <Border Width="390"
+                    
+                    CornerRadius="10" Margin="0,34,20,25.2"
+                    >
+
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                        <GradientStop Color="Yellow" Offset="0"/>
+                        <GradientStop Color="Red" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+
+                <TextBlock
+                    Text="Create appointments,anamensis,therapy,prescriptons and more"
+                            TextWrapping="Wrap"
+                           Foreground="White"
+                           HorizontalAlignment="Right"
+                           FontSize="28"
+                           Margin="0,17,10,195"
+                           TextAlignment="Right" Width="360" RenderTransformOrigin="0.5,0.5">
+                    <TextBlock.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="0"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </TextBlock.RenderTransform>
+                </TextBlock>
+            </Border>
+            <Image Source="../../resources/hospital_my.png" Margin="0,0,0,0.2" Width="385"/>
         </StackPanel>
     </StackPanel>
-        </Border>
 </UserControl>

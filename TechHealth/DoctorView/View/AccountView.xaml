@@ -12,14 +12,14 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="60"/>
         </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" Text="Doctor:" FontSize="32" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+        <TextBlock Grid.Row="0" Text="{Binding DoctorFullName}" FontSize="32" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center"/>
         <Grid Grid.Row="1" Margin="0,0,0,40">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions> 
-            
-            <Image Grid.Column="1" Source="C:\Users\djord\OneDrive\Documents\GitHub\PharmacyService\TechHealth\resources\mydoctor.png"></Image>
+            <Image Grid.Column="0" Source="../../resources/mydoctor.png"/>
+            <Image Grid.Column="1" Source="../../resources/doctor.png"/>
         </Grid>
         <Button  Content="Vacation Request" HorizontalAlignment="Center" Margin="135,5,515,5" Width="150" Height="50" Grid.Row="2" Command="{Binding VacationCommand}"/>
         <Button Content="Vacation History" HorizontalAlignment="Right" Margin="0,5,145,5" Width="150" Height="50" Grid.Row="2" Command="{Binding VacationHistoryCommand}"/>

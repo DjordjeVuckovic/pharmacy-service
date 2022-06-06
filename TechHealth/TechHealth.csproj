@@ -215,6 +215,7 @@
     <Compile Include="DoctorView\ViewModel\CreateExaminationViewModel.cs" />
     <Compile Include="DoctorView\ViewModel\CreateSurgeryViewModel.cs" />
     <Compile Include="DoctorView\ViewModel\DashBoardViewModel.cs" />
+    <Compile Include="DoctorView\ViewModel\DoctorNotificationsViewModel.cs" />
     <Compile Include="DoctorView\ViewModel\DoctorVacationViewModel.cs" />
     <Compile Include="DoctorView\ViewModel\GeneratePdfViewModel.cs" />
     <Compile Include="DoctorView\ViewModel\HistoryOfCareViewModel.cs" />
@@ -728,7 +729,9 @@
     <Resource Include="resources\1e.png" />
     <Resource Include="resources\1f.png" />
     <Content Include="Json\therapy.json" />
-    <Content Include="resources\body-scan.png" />
+    <Resource Include="resources\body-scan.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="resources\close.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
@@ -739,8 +742,16 @@
     <Resource Include="resources\keyboard.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="resources\hospital_my.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\doctor.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Content Include="resources\medicine.png" />
-    <Content Include="resources\mydoctor.png" />
+    <Resource Include="resources\mydoctor.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Content Include="resources\ph.png" />
     <Resource Include="resources\hospital.png" />
     <Resource Include="resources\ambulance.png" />
