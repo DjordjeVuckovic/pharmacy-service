@@ -20,5 +20,27 @@
       "ShouldSerialize": false,
       "IdAppointment": "86771793b2074ed0af6c137913d3e2ca"
     }
+  },
+  "86771793b2074ed0af6c13793d3e2cad": {
+    "Id": "b63cec79a36e4300959074dc4e63ed9f",
+    "OcenaLekara": 3,
+    "OcenaOsoblje": 5,
+    "OcenaCistoca": 4,
+    "UkupnaOcena": 4,
+    "EvidentAppointment": {
+      "ShouldSerialize": false,
+      "IdAppointment": "86771793b2074ed0af6c13793d3e2cad"
+    }
+  },
+  "86771793b2074ed0af6c137913d32cad": {
+    "Id": "b63cec79a36e4300959074dc4e63ed9f",
+    "OcenaLekara": 3,
+    "OcenaOsoblje": 5,
+    "OcenaCistoca": 5,
+    "UkupnaOcena": 5,
+    "EvidentAppointment": {
+      "ShouldSerialize": false,
+      "IdAppointment": "86771793b2074ed0af6c137913d32cad"
+    }
   }
 }
