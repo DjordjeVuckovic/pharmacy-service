@@ -21,7 +21,7 @@
     },
     "VacationReason": "aaaa",
     "Emergent": false,
-    "VacationStatus": 0
+    "VacationStatus": 1
   },
   "cc57775628e04c86b25eead13bfc7418": {
     "VacationId": "cc57775628e04c86b25eead13bfc7418",
@@ -45,7 +45,7 @@
     },
     "VacationReason": "aaa",
     "Emergent": false,
-    "VacationStatus": 0
+    "VacationStatus": 2
   },
   "47c65d7fe364478b9b054784701528a6": {
     "VacationId": "47c65d7fe364478b9b054784701528a6",

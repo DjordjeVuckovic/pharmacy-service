@@ -18,5 +18,17 @@ namespace TechHealth.Service
         {
             return SecretaryNotificationRepository.Instance.Delete(id);
         }
+        public List<SecretaryNotification> GetByPersonId(string personId)
+        {
+            List<SecretaryNotification> notifications = new List<SecretaryNotification>();
+            foreach (var notification in SecretaryNotificationRepository.Instance.GetAllToList())
+            {
+                if (notification.Person.Jmbg.Equals(personId))
+                {
+                    notifications.Add(notification);
+                }
+            }
+            return notifications;
+        }
     }
 }

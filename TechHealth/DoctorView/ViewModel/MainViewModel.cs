@@ -12,15 +12,17 @@ namespace TechHealth.DoctorView.ViewModel
         public RelayCommand RecordCommand { get; set; }
         public RelayCommand AppointmentCommand { get; set; }
         public static string DoctorId { get; set; }
-        public ViewModelAppointment viewModelAppointment { get; set; }
+        private ViewModelAppointment ViewModelAppointment { get; set; }
         private PatientsViewModel PatientsViewModel { get; set; }
         public RelayCommand PateintCommand { get; set; }
         private MedicineViewModel MedicineViewModel { get; set; }
         public RelayCommand MedicineCommand { get; set; }
         public RelayCommand AccountCommand { get; set; }
         public RelayCommand HelpCommand { get; set; }
+        public RelayCommand NotificationCommand { get; set; }
         private DashBoardViewModel DashBoardViewModel { get; set; }
         private AccountViewModel AccountViewModel { get; set; }
+        private NotificationView NotificationView { get; set; }
         private HelpView HelpView { get; set; }
         
         
@@ -55,9 +57,10 @@ namespace TechHealth.DoctorView.ViewModel
             RecordViewModel = new RecordViewModel(DoctorId);
             MedicineViewModel = new MedicineViewModel(DoctorId);
             DashBoardViewModel = new DashBoardViewModel();
-            viewModelAppointment = new ViewModelAppointment(DoctorId);
+            ViewModelAppointment = new ViewModelAppointment(DoctorId);
             AccountViewModel = new AccountViewModel(DoctorId);
             HelpView = new HelpView();
+            NotificationView = new NotificationView();
 
             CurrentView = DashBoardViewModel;
             DashCommand = new RelayCommand(o =>
@@ -73,7 +76,7 @@ namespace TechHealth.DoctorView.ViewModel
             );
             AppointmentCommand = new RelayCommand(o =>
                 {
-                    CurrentView = viewModelAppointment;
+                    CurrentView = ViewModelAppointment;
                 }
             );
             PateintCommand = new RelayCommand(o =>
@@ -93,6 +96,11 @@ namespace TechHealth.DoctorView.ViewModel
             HelpCommand= new RelayCommand(o =>
                 {
                     CurrentView = HelpView;
+                }
+            );
+            NotificationCommand = new RelayCommand(o =>
+                {
+                    CurrentView = NotificationView;
                 }
             );
             

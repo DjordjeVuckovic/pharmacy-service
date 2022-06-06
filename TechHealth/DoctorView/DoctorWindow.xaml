@@ -12,6 +12,7 @@
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
         WindowStyle="ThreeDBorderWindow"
+        KeyDown="WindowKeyListener"
 >
     <WindowChrome.WindowChrome>
         <WindowChrome GlassFrameThickness="0" CornerRadius="0" CaptionHeight="0" UseAeroCaptionButtons="False" ResizeBorderThickness="7"/>
@@ -42,7 +43,7 @@
                     <RowDefinition Height="30"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <Frame Grid.Row="0" Name="WindowBarFrame" NavigationUIVisibility="Hidden" MouseDown="OnDragMoveWindow" MouseDoubleClick="MinimizeWindow"/>
+                <Frame Grid.Row="0" Name="WindowBarFrame" NavigationUIVisibility="Hidden" MouseDown="OnDragMoveWindow" />
                 <Grid Grid.Row="1">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="210"/>
@@ -88,7 +89,7 @@
                    Grid.Column="0" Width="40"/>
                 <Image Source="../resources/1f.png" RenderTransformOrigin="0.467,0.792" Margin="9,320.2,160.6,323.4" Grid.Row="1"
                    Grid.Column="0" Width="40"/>
-                <Button  Grid.Row="0" Grid.Column="1" Margin="630.4,19,147.6,9.8" Height="Auto" BorderThickness="0" ToolTip="Notifications">
+                <Button  Grid.Row="0" Grid.Column="1" Margin="630.4,19,147.6,9.8" Height="Auto" BorderThickness="0" ToolTip="Notifications" Command="{Binding NotificationCommand}">
                     <Button.Background>
                         <ImageBrush ImageSource="C:\Users\djord\OneDrive\Documents\GitHub\PharmacyService\TechHealth\resources\notification.png" />
                     </Button.Background>
@@ -103,7 +104,7 @@
                         <ImageBrush ImageSource="C:\Users\djord\OneDrive\Documents\GitHub\PharmacyService\TechHealth\resources\t2.png" />
                     </Button.Background>
                 </Button>
-                <Button   Grid.Column="0" Margin="13,615.2,169.6,10.8" Grid.Row="1" Height="Auto" BorderThickness="0" ToolTip="Log out" Click="ButtonBase_OnClick">
+                <Button   Grid.Column="0" Margin="17,615.2,150.6,9.8" Grid.Row="1" Height="Auto" BorderThickness="0" ToolTip="Sign out" Click="ButtonBase_OnClick">
                     <Button.Background>
                         <ImageBrush ImageSource="C:\Users\djord\OneDrive\Documents\GitHub\PharmacyService\TechHealth\resources\logout.png" />
                     </Button.Background>

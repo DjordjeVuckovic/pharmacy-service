@@ -40,7 +40,7 @@ namespace TechHealth.View.SecretaryView
             secretaryNotification.Id = Guid.NewGuid().ToString("N");
             secretaryNotification.Person = doctorVacationRequest.Doctor;
             secretaryNotification.NotificationText = "Vacation request from " + doctorVacationRequest.StartDate.ToString("dd.MM.yyyy") + " to " + doctorVacationRequest.FinishDate.ToString("dd.MM.yyyy") + " is " + doctorVacationRequest.VacationStatus.ToString().ToLower() + ".";
-            secretaryNotification.NotificationText += System.Environment.NewLine + reason.Text;
+            secretaryNotification.NotificationText += System.Environment.NewLine + "Reason: " + reason.Text;
         }
         private void Button_LogOut(object sender, RoutedEventArgs e)
         {

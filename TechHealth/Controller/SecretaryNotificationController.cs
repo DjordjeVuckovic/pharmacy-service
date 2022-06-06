@@ -10,7 +10,7 @@ namespace TechHealth.Controller
 {
     public class SecretaryNotificationController
     {
-        private SecretaryNotificationService secretaryNotificationService = new SecretaryNotificationService();
+        private readonly SecretaryNotificationService secretaryNotificationService = new SecretaryNotificationService();
         public bool Create(SecretaryNotification secretaryNotification)
         {
             return secretaryNotificationService.Create(secretaryNotification);
@@ -18,6 +18,11 @@ namespace TechHealth.Controller
         public bool Delete(string id)
         {
             return secretaryNotificationService.Delete(id);
+        }
+
+        public List<SecretaryNotification> GetByPersonId(string personId)
+        {
+            return secretaryNotificationService.GetByPersonId(personId);
         }
     }
 }

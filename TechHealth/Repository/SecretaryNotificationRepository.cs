@@ -21,6 +21,8 @@ namespace TechHealth.Repository
         {
             return entity.Id;
         }
+        
+
 
         protected override string GetPath()
         {

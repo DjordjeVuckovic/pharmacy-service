@@ -21,7 +21,7 @@
             <Label Grid.Row="0" Content="{Binding PatientLabel}" Name="LabelName" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="32" Foreground="#FF57D6B4" FontWeight="DemiBold"/>
             <TabControl Name="TabbedPanel" Grid.Row="1" Margin="20,20,20,0" SelectedIndex="{Binding SelectedIndex}" >
                 <TabItem Header="Examinations">
-                    <DataGrid  ItemsSource="{Binding Path = AnamnesesExaminations}" SelectedItem="{Binding SelectedAnamnesis}" IsReadOnly="True" SelectionMode="Single" AutoGenerateColumns="False" CanUserResizeColumns="False" Background="#333545">
+                    <DataGrid  ItemsSource="{Binding Path = AnamnesesExaminations}" SelectedItem="{Binding SelectedAnamnesis}" IsReadOnly="True" SelectionMode="Single" AutoGenerateColumns="False" CanUserResizeColumns="False" Background="#333545" Margin="0,0,0.4,-7.8">
                     <DataGrid.Columns>
 
                         <DataGridTextColumn Header="Date" Binding="{Binding AnamnesisDate,StringFormat=d}" Width="*"  DataGridColumn.CanUserResize="False"/>
@@ -80,8 +80,8 @@
                    <ColumnDefinition/>
                    <ColumnDefinition/>
                </Grid.ColumnDefinitions>
-               <Button Grid.Column="0" Content="Preview" Width="150" Height="40" Command="{Binding PreviewCommand}"></Button>
-               <Button Grid.Column="1" Content="Generate report" Width="150" Height="40" Command="{Binding GenerateCommand}"></Button>
+               <Button Grid.Column="0" Content="Preview" Width="150" Height="50" Command="{Binding PreviewCommand}"></Button>
+               <Button Grid.Column="1" Content="Generate report" Width="150" Height="50" Command="{Binding GenerateCommand}"></Button>
            </Grid>
         </Grid>
     </Grid>

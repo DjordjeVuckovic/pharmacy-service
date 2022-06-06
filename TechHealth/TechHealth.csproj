@@ -263,6 +263,9 @@
     <Compile Include="DoctorView\View\MedicineView.xaml.cs">
       <DependentUpon>MedicineView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DoctorView\View\NotificationView.xaml.cs">
+      <DependentUpon>NotificationView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DoctorView\View\PatientView.xaml.cs">
       <DependentUpon>PatientView.xaml</DependentUpon>
     </Compile>
@@ -311,7 +314,6 @@
     <Compile Include="Exceptions\AppointmentRoomConflictException.cs" />
     <Compile Include="Exceptions\AppointmentVacationException.cs" />
     <Compile Include="Exceptions\SpecializationException.cs" />
-    <Compile Include="JsonIgnore\ShouldSerializeAppointment.cs" />
     <Compile Include="LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
     </Compile>
@@ -780,6 +782,7 @@
     <Page Include="DoctorView\View\MedicalRecordView.xaml" />
     <Page Include="DoctorView\View\MedicineDetailsView.xaml" />
     <Page Include="DoctorView\View\MedicineView.xaml" />
+    <Page Include="DoctorView\View\NotificationView.xaml" />
     <Page Include="DoctorView\View\PatientView.xaml" />
     <Page Include="DoctorView\View\RecordView.xaml" />
     <Page Include="DoctorView\View\VactionHistoryView.xaml" />

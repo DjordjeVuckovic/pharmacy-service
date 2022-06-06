@@ -8,7 +8,7 @@ namespace TechHealth.DoctorView
     public partial class DoctorWindow : Window
     {
         private static string _doctorId;
-        private WindowBar bar = new WindowBar();
+        private readonly WindowBar bar = new WindowBar();
 
         public DoctorWindow(string doctorJmbg)
         {
@@ -19,6 +19,11 @@ namespace TechHealth.DoctorView
         }
 
         private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
+        {
+            Signout();
+        }
+
+        private void Signout()
         {
             if (MessageBox.Show("Are you sure you want to log out ?",
                     "Log out", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
@@ -32,10 +37,12 @@ namespace TechHealth.DoctorView
         {
             DragMove();
         }
-
-        private void MinimizeWindow(object sender, MouseButtonEventArgs e)
+        private void WindowKeyListener(object sender, KeyEventArgs e)
         {
-            throw new System.NotImplementedException();
+            if (e.Key == Key.Escape)
+            {
+                Signout();
+            }
         }
     }
 }

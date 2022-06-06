@@ -19,12 +19,12 @@
                     <RowDefinition Height="5*"/>
                 </Grid.RowDefinitions>
 
-                <Rectangle Fill="#1FC192" Margin="10,0,0,0.2"/>
+                <Rectangle Fill="#FF3A475F" Margin="10,0,0,0.2"/>
 
-                <Label Grid.Row="0" Content="Keyboard navigation" Foreground="#f8f8f2" Margin="230,13,0,13.2" VerticalAlignment="Center"
+                <Label Grid.Row="0" Content="Keyboard navigation" Foreground="#1FC192" Margin="230,13,0,13.2" VerticalAlignment="Center"
                    FontSize="32" />
 
-                <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="10,9.8,245,0.2" Padding="20" BorderThickness="10" Background="#282a36"
+                <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="10,9.8,245,0.2" Padding="20" BorderBrush="#1FC192" Background="#FF3A475F"
                               Grid.Row="1" >
                     <StackPanel Orientation="Vertical">
                         <TextBlock TextWrapping="Wrap" Foreground="#f8f8f2" FontSize="18" Width="443">
@@ -39,11 +39,15 @@
                         F4 - Patients Tab<LineBreak/>
                         F5 - Medicine Tab<LineBreak/>
                         F6 - Account Tab<LineBreak/>
-                        F6 - Account Tab <LineBreak/>
-                        Ctr+H - Help Button <LineBreak/> <LineBreak/>
                         TAB - Change of active element <LineBreak/>
-                        ENTER - Finish <LineBreak/>
-                        Alt+F4 - Log out
+                        Ctrl+H - Help Button <LineBreak/>
+                        Ctrl+T - Tutorial Button <LineBreak/>
+                        Ctrl+N - Notifications Button <LineBreak/>
+                        Ctrl+F - Finish Button<LineBreak/>
+                        Ctrl+X - Cancel Button<LineBreak/>
+                        Ctrl+Y - Close Button<LineBreak/>
+                        Escape - Sign out Button<LineBreak/>
+                        Alt+F4 - Terminate application
                         </TextBlock>
                     </StackPanel>
 

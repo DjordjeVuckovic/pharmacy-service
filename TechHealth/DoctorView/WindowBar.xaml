@@ -18,7 +18,7 @@
                 <ColumnDefinition Width="40"/>
             </Grid.ColumnDefinitions>
 
-            <Label Grid.Column="0" Content="Tech Health" FontFamily="RobotoBold" FontWeight="Black" FontSize="16" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0" Padding="0,0,0,0" Foreground="#1FC192"/>
+            <Label Grid.Column="0" Content="Tech Health" FontFamily="Roboto" FontWeight="Black" FontSize="16" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0" Padding="0,0,0,0" Foreground="#1FC192"/>
 
             <Button Grid.Column="4" Style="{StaticResource SideMenuButtonRed}"  Click="Button_Close" >
                 <Image Source="../resources/close.png" Grid.Column="4" Width="15"/>

@@ -35,9 +35,6 @@
                         
                     </DataGrid.Columns>
                 </DataGrid>
-
-               
-                <Button Grid.Row="3" Content="Details"  HorizontalAlignment="Center"   Width="150" Height="50" Margin="0,0,30,0" Command="{Binding DetailsCommand}"/>
             </Grid>
         </Grid>
     </Grid>

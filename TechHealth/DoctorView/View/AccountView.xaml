@@ -21,8 +21,7 @@
             
             <Image Grid.Column="1" Source="C:\Users\djord\OneDrive\Documents\GitHub\PharmacyService\TechHealth\resources\mydoctor.png"></Image>
         </Grid>
-        <Button  Content="Details"  HorizontalAlignment="Left"  Margin="100,0,0,0" Width="150" Height="50"  Grid.Row="2" Command="{Binding NewExaminationCommand}" />
-        <Button  Content="Vacation Request" HorizontalAlignment="Center" Margin="50,0,0,0" Width="150" Height="50" Grid.Row="2" Command="{Binding VacationCommand}"/>
-        <Button Content="Vacation History" HorizontalAlignment="Right" Margin="0,0,50,0" Width="150" Height="50" Grid.Row="2" Command="{Binding VacationHistoryCommand}"/>
+        <Button  Content="Vacation Request" HorizontalAlignment="Center" Margin="135,5,515,5" Width="150" Height="50" Grid.Row="2" Command="{Binding VacationCommand}"/>
+        <Button Content="Vacation History" HorizontalAlignment="Right" Margin="0,5,145,5" Width="150" Height="50" Grid.Row="2" Command="{Binding VacationHistoryCommand}"/>
     </Grid>
 </UserControl>
