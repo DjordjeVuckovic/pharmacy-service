@@ -159,6 +159,16 @@
     <Compile Include="Controller\EquipmentController.cs" />
     <Compile Include="Controller\EquipmentReallocationController.cs" />
     <Compile Include="Controller\GradeController.cs" />
+    <Compile Include="Controller\IController\IAnamnesisController.cs" />
+    <Compile Include="Controller\IController\IAppointmentController.cs" />
+    <Compile Include="Controller\IController\IController.cs" />
+    <Compile Include="Controller\IController\IDoctorController.cs" />
+    <Compile Include="Controller\IController\IDoctorVacationRequestController.cs" />
+    <Compile Include="Controller\IController\IMedicineController.cs" />
+    <Compile Include="Controller\IController\IPrescribeMedicineController.cs" />
+    <Compile Include="Controller\IController\IReferralRequestController.cs" />
+    <Compile Include="Controller\IController\ISpecializationController.cs" />
+    <Compile Include="Controller\IController\ITherapyController.cs" />
     <Compile Include="Controller\MedicalRecordController.cs" />
     <Compile Include="Controller\MedicineController.cs" />
     <Compile Include="Controller\PatientAllergensController.cs" />

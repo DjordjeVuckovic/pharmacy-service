@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using TechHealth.Controller.IController;
 using TechHealth.Model;
 using TechHealth.Repository;
 using TechHealth.Service;
@@ -7,7 +8,7 @@ using TechHealth.Service.IService;
 
 namespace TechHealth.Controller
 {
-    public class MedicineController
+    public class MedicineController:IMedicineController
     {
         private  readonly  IMedicineService medicineService = new MedicineService();
 
@@ -23,6 +24,11 @@ namespace TechHealth.Controller
         public Medicine GetById(string id)
         {
             return MedicineRepository.Instance.GetById(id);
+        }
+
+        public void Delete(string key)
+        {
+            throw new System.NotImplementedException();
         }
 
         public void Create(Medicine medicine)

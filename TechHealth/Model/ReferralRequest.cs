@@ -9,7 +9,7 @@ namespace TechHealth.Model
 {
    public class ReferralRequest
    {
-      public String ReferralId { get; set; }
+      public string ReferralId { get; set; }
       
       public Appointment Appointment { get; set; }
       public Doctor ReferralDoctor { get; set; }
