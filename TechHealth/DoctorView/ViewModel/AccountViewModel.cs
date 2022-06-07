@@ -1,4 +1,5 @@
-﻿using MaterialDesignThemes.Wpf;
+﻿using System;
+using MaterialDesignThemes.Wpf;
 using TechHealth.Controller;
 using TechHealth.Core;
 using TechHealth.DoctorView.View;
@@ -14,10 +15,22 @@ namespace TechHealth.DoctorView.ViewModel
         public RelayCommand VacationCommand { get; set; }
         public RelayCommand VacationHistoryCommand { get; set; }
         public string DoctorFullName { get; set; }
+        public string Specialization { get; set; }
+        public string LabelBirth { get; set; }
+        public string LabelId { get; set; }
+        public string LabelPhone { get; set; }
+        public string LabelEmail { get; set; }
+        public string LabelAddress { get; set; }
         public AccountViewModel(string doctorId)
         {
             Doctor = doctorController.GetById(doctorId);
-            DoctorFullName = "Current user: " + Doctor.FullSpecialization;
+            DoctorFullName = Doctor.FullName;
+            Specialization = Doctor.Specialization.NameSpecialization;
+            LabelBirth = Doctor.Birthday.ToShortDateString();
+            LabelId = Doctor.Jmbg;
+            LabelPhone = Doctor.Phone;
+            LabelEmail = Doctor.Email;
+            LabelAddress = Doctor.Address.Street + "," + Doctor.Address.StreetNumber + "," + Doctor.Address.City + "," + Doctor.Address.Postcode + "," + Doctor.Address.Country;
             VacationCommand = new RelayCommand(param => ExecuteVacation());
             VacationHistoryCommand = new RelayCommand(param => ExecuteVacationHistory());
         }

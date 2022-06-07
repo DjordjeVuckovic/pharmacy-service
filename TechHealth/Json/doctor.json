@@ -46,7 +46,13 @@
       "IdSpecialization": 1,
       "NameSpecialization": "Anesthesiology"
     },
-    "Address": null,
+    "Address": {
+      "City": "Novi Sad",
+      "StreetNumber": "21",
+      "Country": "Srbija",
+      "Street": "Puse Pusica",
+      "Postcode": 21000
+    },
     "Name": "John",
     "Surname": "Black",
     "Email": "spec@spec.com",
@@ -61,7 +67,13 @@
       "IdSpecialization": 4,
       "NameSpecialization": "Neurologist"
     },
-    "Address": null,
+    "Address": {
+      "City": "Novi Sad",
+      "StreetNumber": "21",
+      "Country": "Srbija",
+      "Street": "Puse Pusica",
+      "Postcode": 21000
+    },
     "Name": "Lara",
     "Surname": "Croft",
     "Email": "spec@spec1.com",

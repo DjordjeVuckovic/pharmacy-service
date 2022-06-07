@@ -24,6 +24,10 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
+    <Window.InputBindings>
+        <KeyBinding Command="{Binding FinishCommand}" Key="F" Modifiers="Control"/>
+        <KeyBinding Command="{Binding CancelCommand}" Key="X" Modifiers="Control"/>
+    </Window.InputBindings>
     <Grid Background="#282a36">
         <Grid.RowDefinitions>
             <RowDefinition Height="80"/>
@@ -76,6 +80,6 @@
             <Border Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" BorderThickness="0,0,1,0"  BorderBrush="#1FC192" Margin="5,0,207.8,0.4" Grid.ColumnSpan="2"/>
         </Grid>
         <Button Grid.Row="3" Content="Finish" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,70,0" Width="100" Command="{Binding AcceptCommand}"/>
-        <Button Grid.Row="3" Content="Cancel" Margin="70,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Left" Width="100"/>
+        <Button Grid.Row="3" Content="Cancel" Margin="70,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Left" Width="100" Command="{Binding CancelCommand}"/>
     </Grid>
 </Window>

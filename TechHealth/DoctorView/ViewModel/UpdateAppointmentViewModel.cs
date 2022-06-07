@@ -180,18 +180,17 @@ namespace TechHealth.DoctorView.ViewModel
         private void FillIndex()
         {
             int cnt = 0;
-            foreach (var combo in patientComboBox)
-            {
-                if (combo.Entity.Jmbg.Equals(appointment.Patient.Jmbg))
-                {
-                    break;
-                }
-
-                cnt++;
-            }
+            cnt = FillPateintCount(cnt);
 
             PatientIndex = cnt;
             cnt = 0;
+            cnt = FillRoomCount(cnt);
+
+            RoomIndex = cnt;
+        }
+
+        private int FillRoomCount(int cnt)
+        {
             foreach (var combo in roomComboBox)
             {
                 if (combo.Entity.RoomId.Equals(appointment.Room.RoomId))
@@ -202,7 +201,22 @@ namespace TechHealth.DoctorView.ViewModel
                 cnt++;
             }
 
-            RoomIndex = cnt;
+            return cnt;
+        }
+
+        private int FillPateintCount(int cnt)
+        {
+            foreach (var combo in patientComboBox)
+            {
+                if (combo.Entity.Jmbg.Equals(appointment.Patient.Jmbg))
+                {
+                    break;
+                }
+
+                cnt++;
+            }
+
+            return cnt;
         }
     }
 }

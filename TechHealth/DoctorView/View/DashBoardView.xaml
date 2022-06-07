@@ -5,46 +5,59 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:TechHealth.DoctorView.View"
              mc:Ignorable="d"
-             d:DesignHeight="450" d:DesignWidth="800">
-    <StackPanel>
-        <TextBlock Text="Welcom back.We hope you have a good experience using our app."
-                   Foreground="White"
-                   FontSize="27"
-                   HorizontalAlignment="Left"
-                   Margin="0,0,0,20" Width="800"/>
-        <StackPanel Orientation="Horizontal" Height="399" >
-
-            <Border Width="390"
-                    
-                    CornerRadius="10" Margin="0,34,20,25.2"
-                    >
-
-                <Border.Background>
-                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
-                        <GradientStop Color="Yellow" Offset="0"/>
-                        <GradientStop Color="Red" Offset="1"/>
-                    </LinearGradientBrush>
-                </Border.Background>
-
-                <TextBlock
-                    Text="Create appointments,anamensis,therapy,prescriptons and more"
-                            TextWrapping="Wrap"
-                           Foreground="White"
-                           HorizontalAlignment="Right"
-                           FontSize="28"
-                           Margin="0,17,10,195"
-                           TextAlignment="Right" Width="360" RenderTransformOrigin="0.5,0.5">
-                    <TextBlock.RenderTransform>
-                        <TransformGroup>
-                            <ScaleTransform/>
-                            <SkewTransform/>
-                            <RotateTransform Angle="0"/>
-                            <TranslateTransform/>
-                        </TransformGroup>
-                    </TextBlock.RenderTransform>
-                </TextBlock>
+             d:DesignHeight="500" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="85.6"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Text=" Welcome back,John Black.We are hoping you are enjoying using our app.On dashboard you can acess to some application shortcuts.Enjoy!" FontSize="20" Foreground="White" TextWrapping="Wrap" Margin="0,0,0,406" Grid.RowSpan="2"/>
+        <Grid Grid.Row="1" Margin="0,0.4,10,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200*"/>
+                <ColumnDefinition Width="150*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="59*"/>
+                <RowDefinition Height="282*"/>
+                <RowDefinition Height="69*"/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="Upcoming appointments" Foreground="#1FC192" FontSize="24"  Grid.Row="0" Grid.Column="0" Margin="10,11,122.4,4.6"/>
+            <Border Grid.Row="1" Grid.Column="0" Background="#333545" BorderThickness="2">
+                <ListView Grid.Column="0" ItemsSource="{Binding MyAppointments}" Grid.Row="1" SelectedItem="{Binding SelectedItem}">
+                    <ListView.View>
+                        <GridView AllowsColumnReorder="true" ColumnHeaderToolTip="Upcoming appointments">
+                            <GridViewColumn DisplayMemberBinding="{Binding Path=Date,StringFormat=d}" Header="Date" Width="120"/>
+                            <GridViewColumn DisplayMemberBinding="{Binding Path=StartTime,StringFormat=t}" Width="120" Header="StartTime"/>
+                            <GridViewColumn DisplayMemberBinding="{Binding Path=FinishTime,StringFormat=t}" Header="FinishTime" Width="120"/>
+                            <GridViewColumn DisplayMemberBinding="{Binding Path=Patient.FullName}" Header="Patient" Width="150"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
             </Border>
-            <Image Source="../../resources/hospital_my.png" Margin="0,0,0,0.2" Width="385"/>
-        </StackPanel>
-    </StackPanel>
+            <Button Content="New examination" Grid.Column="0" Grid.Row="2" Width="137" Height="50" HorizontalAlignment="Left" Margin="0,10.2,0,9.4" Command="{Binding NewExaminationCommand}"/>
+            <Button Content="New surgery" Grid.Column="0" Grid.Row="2" Width="136" Height="50" HorizontalAlignment="Center" Click="Button_Click" Margin="155,10.2,161,9.4" Command="{Binding NewSurgeryCommand}"/>
+            <Button Content="New anamnesis"  Grid.Column="0" Grid.Row="2" Width="140" Height="50" HorizontalAlignment="Right" Margin="0,10.2,0,9.4" Command="{Binding NewCommand}"/>
+            <TextBlock Text="Highlights" Foreground="#1FC192" FontSize="24"  Grid.Row="0" Grid.Column="1" Margin="10,9,121.4,6.6"/>
+            <Grid Grid.Row="1" Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Pateint of month:" Foreground="White" FontWeight="Bold" FontSize="18" Height="38" Margin="11,9,9.6,48.2" Grid.Row="0" Grid.Column="0" RenderTransformOrigin="0.602,0.537"/>
+                <TextBlock Text="Dusan Vukovic" Foreground="White" FontSize="18" Height="38"  Margin="10.4,9,-9.6,48.2" Grid.Row="0" Grid.Column="1"/>
+                <TextBlock FontWeight="Bold" Text="Most prescribed medicine:" Foreground="White" FontSize="18" TextWrapping="Wrap" Margin="10,95,10.6,37.4" Grid.Column="0" RenderTransformOrigin="0.602,0.537" Grid.RowSpan="2"/>
+                <TextBlock Text="Paracetamol-Uno" Foreground="White" FontSize="18" Height="38" Margin="10.4,9.8,-9.6,47.4" Grid.Column="1" Grid.Row="1"/>
+                <TextBlock Text="You have three new notifications!" TextWrapping="Wrap" FontWeight="Bold" Foreground="White" FontSize="18" Margin="10,0.6,0.6,34.8" Grid.Row="2" Grid.Column="0" RenderTransformOrigin="0.592,0.371"/>
+                <Button Content="Notifications" Grid.Row="2" Grid.Column="1" Height="30" Margin="10.4,9.6,10.4,54.8" RenderTransformOrigin="0.512,0.68" Command="{Binding NotificationCommand}"/>
+            </Grid>
+            <Button Content="Rate us!" Grid.Column="1" Grid.Row="2"  Width="130" Height="50" />
+        </Grid>
+
+    </Grid>
 </UserControl>

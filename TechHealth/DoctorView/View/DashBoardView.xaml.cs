@@ -1,4 +1,5 @@
-﻿using System.Windows.Controls;
+﻿using System.Windows;
+using System.Windows.Controls;
 
 namespace TechHealth.DoctorView.View
 {
@@ -7,6 +8,16 @@ namespace TechHealth.DoctorView.View
         public DashBoardView()
         {
             InitializeComponent();
+        }
+
+        private void LastNameCM_Click(object sender, RoutedEventArgs e)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

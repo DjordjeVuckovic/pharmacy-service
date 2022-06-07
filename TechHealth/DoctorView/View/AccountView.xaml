@@ -12,14 +12,45 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="60"/>
         </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" Text="{Binding DoctorFullName}" FontSize="32" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Grid.Row="0" Text="Account details" FontSize="32" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="29,10,554,17.4"/>
         <Grid Grid.Row="1" Margin="0,0,0,40">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions> 
-            <Image Grid.Column="0" Source="../../resources/mydoctor.png"/>
-            <Image Grid.Column="1" Source="../../resources/doctor.png"/>
+                <ColumnDefinition Width="103*"/>
+                <ColumnDefinition Width="57*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0" Grid.ColumnSpan="2" Margin="0,0,250,-0.4">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="0" Grid.Column="0" Content="Full name:" Foreground="White" FontWeight="Bold" FontSize="28" Margin="20,0,27.6,0.4"/>
+                <Label Grid.Row="1" Grid.Column="0" Content="Specialization:" Foreground="White" FontWeight="Bold" FontSize="28" Margin="20,0,27.6,0.4"/>
+                <Label Grid.Row="2" Grid.Column="0" Content="Address:" Foreground="White" FontWeight="Bold" FontSize="28" Margin="20,0,27.6,0.4"/>
+                <Label Grid.Row="3" Grid.Column="0" Content="Phone:" Foreground="White" FontWeight="Bold" FontSize="28" Margin="20,0,27.6,0.4"/>
+                <Label Grid.Row="4" Grid.Column="0" Content="Jmbg:" Foreground="White" FontWeight="Bold" FontSize="28" Margin="20,0,27.6,0.4"/>
+                <Label Grid.Row="5" Grid.Column="0" Content="Email:" Foreground="White" FontWeight="Bold" FontSize="28" Margin="20,0,27.6,0.4"/>
+                <Label Grid.Row="6" Grid.Column="0" Content="Birthday:" Foreground="White" FontWeight="Bold" FontSize="28" Margin="20,0,27.6,0.4"/>
+                <Label Grid.Row="0" Grid.Column="1" Content="{Binding DoctorFullName}" Foreground="White" FontSize="24" Margin="0.8,0,0.4,5.2"/>
+                <Label Content="{Binding Specialization}" Foreground="White" FontSize="24" Margin="275,4.6,1.4,5.6" Grid.Row="1" Grid.ColumnSpan="2"/>
+                <Label Grid.Row="2" Content="{Binding LabelAddress}" Foreground="White" FontSize="16" Margin="275,10.4,1.4,47" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+                <Label Grid.Row="3" Grid.Column="1" Content="{Binding LabelPhone}" Foreground="White" FontSize="24" Margin="0.8,5.2,0.4,0"/>
+                <Label Grid.Row="4" Grid.Column="1" Content="{Binding LabelId}" Foreground="White" FontSize="24" Margin="0.8,9,0.4,0.2"/>
+                <Label Grid.Row="5" Content="{Binding LabelEmail}" Foreground="White" FontSize="24" Margin="275,7.8,1.4,1.4" Grid.ColumnSpan="2"/>
+                <Label Grid.Row="6" Grid.Column="1" Content="{Binding LabelBirth}" Foreground="White" FontSize="24" Margin="0.8,7.6,0.4,0.6"/>
+
+
+            </Grid>
+
+            <Image Grid.Column="1" Source="../../resources/mydoctor.png" Margin="0,0,0,-0.4" HorizontalAlignment="Right" Width="232"/>
         </Grid>
         <Button  Content="Vacation Request" HorizontalAlignment="Center" Margin="135,5,515,5" Width="150" Height="50" Grid.Row="2" Command="{Binding VacationCommand}"/>
         <Button Content="Vacation History" HorizontalAlignment="Right" Margin="0,5,145,5" Width="150" Height="50" Grid.Row="2" Command="{Binding VacationHistoryCommand}"/>

@@ -19,6 +19,10 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
+    <Window.InputBindings>
+        <KeyBinding Command="{Binding FinishCommand}" Key="F" Modifiers="Control"/>
+        <KeyBinding Command="{Binding CancelCommand}" Key="X" Modifiers="Control"/>
+    </Window.InputBindings>
     <Border Background="#282a36" >
         <Grid>
             <Grid.ColumnDefinitions>

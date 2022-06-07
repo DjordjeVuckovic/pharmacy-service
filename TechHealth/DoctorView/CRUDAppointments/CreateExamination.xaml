@@ -8,10 +8,9 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="CreateExamination" Height="550" Width="500">
+        Title="CreateExamination" Height="550" Width="500"
+        >
     <Window.Resources>
-
-
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Dark.xaml" />
@@ -21,6 +20,10 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
+    <Window.InputBindings>
+        <KeyBinding Command="{Binding FinishCommand}" Key="F" Modifiers="Control"/>
+        <KeyBinding Command="{Binding CancelCommand}" Key="X" Modifiers="Control"/>
+    </Window.InputBindings>
     <Border Background="#282a36" >
         <Grid>
             <Grid.ColumnDefinitions>

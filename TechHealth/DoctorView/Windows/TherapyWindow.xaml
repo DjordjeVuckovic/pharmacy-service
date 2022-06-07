@@ -15,8 +15,11 @@
         TextOptions.TextFormattingMode="Ideal"
         WindowStartupLocation="CenterScreen"
         TextOptions.TextRenderingMode="Auto">
+    <Window.InputBindings>
+        <KeyBinding Command="{Binding FinishCommand}" Key="F" Modifiers="Control"/>
+        <KeyBinding Command="{Binding CancelCommand}" Key="X" Modifiers="Control"/>
+    </Window.InputBindings>
     <Window.Resources>
-
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Dark.xaml" />

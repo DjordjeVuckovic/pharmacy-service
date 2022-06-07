@@ -15,6 +15,10 @@
         TextOptions.TextRenderingMode="Auto"
         WindowStartupLocation="CenterScreen"
         >
+    <Window.InputBindings>
+        <KeyBinding Command="{Binding FinishCommand}" Key="F" Modifiers="Control"/>
+        <KeyBinding Command="{Binding CancelCommand}" Key="X" Modifiers="Control"/>
+    </Window.InputBindings>
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
