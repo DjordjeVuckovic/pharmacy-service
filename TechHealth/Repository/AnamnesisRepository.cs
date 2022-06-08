@@ -37,17 +37,16 @@ namespace TechHealth.Repository
 
         public Anamnesis GetByAppointmentId(string appointmentId)
         {
-            Anamnesis retval=null;
+            Anamnesis anamnesis=null;
             foreach (var t in GetAllToList())
             {
                 if (appointmentId == t.Appointment.IdAppointment)
                 {
-                    retval = t;
+                    anamnesis = t;
                     break;
                 }
             }
-
-            return retval;
+            return anamnesis;
         }
         
     }

@@ -56,18 +56,19 @@ namespace TechHealth.Service
 
             return isAllergic;
         }
+
         public List<Prescription> GetAll()
         {
-            return PrescribeMedicineRepository.Instance.GetAllToList();
+            List<Prescription> allPrescriptions =  PrescribeMedicineRepository.Instance.GetAllToList();
+            BindDataForAppointments(allPrescriptions);
+            BindDataForMedicine(allPrescriptions);
+            return allPrescriptions;
         }
 
         public List<Prescription> GetAllByPatientId(string id)
         {
             List<Prescription> prescriptions = new List<Prescription>();
-            List<Prescription> allPrescription = GetAll();
-            BindDataForAppointments(allPrescription);
-            BindDataForMedicine(allPrescription);
-            foreach (var prescription in allPrescription)
+            foreach (var prescription in GetAll())
             {
                 
                     if (prescription.Appointment != null && prescription.Appointment.Patient.Jmbg.Equals(id))
@@ -92,9 +93,6 @@ namespace TechHealth.Service
                 prescription1.Medicine = MedicineRepository.Instance.GetById(prescription1.Medicine.MedicineId);   
             }
         }
-        private void BindDataForAppointment(Appointment appointment)
-        {
-            appointment.Doctor = DoctorRepository.Instance.GetDoctorById(appointment.Doctor.Jmbg);
-        }
+        private void BindDataForAppointment(Appointment appointment) => appointment.Doctor = DoctorRepository.Instance.GetDoctorById(appointment.Doctor.Jmbg);
     }
 }

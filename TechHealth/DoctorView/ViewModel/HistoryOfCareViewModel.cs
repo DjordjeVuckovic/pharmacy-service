@@ -1,6 +1,7 @@
 ﻿using System.Collections.ObjectModel;
 using System.Windows;
 using TechHealth.Controller;
+using TechHealth.Controller.IController;
 using TechHealth.Core;
 using TechHealth.DoctorView.GeneratePdf;
 using TechHealth.DoctorView.MedicalHistory;
@@ -13,7 +14,7 @@ namespace TechHealth.DoctorView.ViewModel
     {
         private Patient selectedItemPatient;
         private readonly AnamnesisController anamnesisController = new AnamnesisController();
-        private readonly PrescribeMedicineController prescribeMedicineController = new PrescribeMedicineController();
+        private readonly IPrescribeMedicineController prescribeMedicineController = new PrescribeMedicineController();
         private readonly TherapyController therapyController = new TherapyController();
         public ObservableCollection<Anamnesis> AnamnesesSurgeries { get; set;}
         public ObservableCollection<Anamnesis> AnamnesesExaminations { get; set;}

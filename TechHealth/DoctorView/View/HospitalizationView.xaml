@@ -1,0 +1,69 @@
+﻿<UserControl x:Class="TechHealth.DoctorView.View.HospitalizationView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:TechHealth.DoctorView.View"
+             mc:Ignorable="d"
+             d:DesignHeight="500" d:DesignWidth="800">
+    <Grid Background="#FF323D52">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="1">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="1.5*"/>
+            </Grid.RowDefinitions>
+
+            <Label Grid.Row="0" Content="Dusan Vukovic" Name="LabelName" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="34" Foreground="#FF57D6B4" FontWeight="DemiBold"/>
+
+            <Rectangle Grid.Row="1" Margin="0,20,0,0" Fill="#FF3A475F"/>
+            <StackPanel Grid.Row="1" Orientation="Vertical" Margin="70,20,0,0" VerticalAlignment="Center">
+                <Label Name="LabelLeadDoctor" Content=" Hospitalization doctor: John Black" />
+                <Label Name="LabelRoom" Content="Room: S1" />
+            </StackPanel>
+
+            <Grid Grid.Row="2" Margin="100,50,100,20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1.2*"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Rectangle Grid.Row="0" Grid.Column="0" RadiusX="10" RadiusY="10" Fill="#FF3A475F"/>
+                <Rectangle Grid.Row="0" Grid.Column="2" RadiusX="10" RadiusY="10" Fill="#FF3A475F"/>
+
+                <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <Label Content="Start date"  HorizontalAlignment="Center"/>
+                    <Label Name="LabelStartDate" Content="06.06.2022." HorizontalAlignment="Center" FontFamily="Roboto"/>
+                </StackPanel>
+
+                <StackPanel Grid.Row="0" Grid.Column="2" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <Label Content="Finish date"  HorizontalAlignment="Center"/>
+                    <Label Name="LabelEndDate" Content="16.06.2022."  HorizontalAlignment="Center" FontFamily="Roboto"/>
+                </StackPanel>
+
+                <Button Grid.Column="0" Grid.Row="1" Content="Extend stay" Height="50" Width="150" />
+                <Button Grid.Column="2" Grid.Row="1" Content="Release patient" Height="50" Width="150" />
+
+            </Grid>
+
+            <Image Source="../../resources/hospital-bed.png" Grid.Row="0" Grid.RowSpan="2" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,46,32,0" MaxHeight="200"/>
+
+
+
+        </Grid>
+
+    </Grid>
+</UserControl>

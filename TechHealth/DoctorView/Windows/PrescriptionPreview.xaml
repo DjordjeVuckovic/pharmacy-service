@@ -79,7 +79,7 @@
             <Label Content="Medicine side effects: " HorizontalAlignment="Left" Margin="0,0,10,0" Grid.Column="0" Grid.Row="4" VerticalAlignment="Center"/>
             <TextBox  Text="{Binding MedicineSide}"  Grid.Column="1" Grid.Row="4" Margin="30,4.291,10,3.254" VerticalContentAlignment="Center" Padding="5,0,10,0" FontSize="14" IsReadOnly="True" Foreground="#f8f8f2" TextWrapping="Wrap"/>
             <Label Content="Medicine substances : " HorizontalAlignment="Left" Margin="0,0,10,0" Grid.Column="0" Grid.Row="5" VerticalAlignment="Center"/>
-            <TextBox  Text="{Binding MedicineAlg}"  Grid.Column="1" Grid.Row="5" Margin="30,4.291,10,3.254" VerticalContentAlignment="Center" Padding="5,0,10,0" FontSize="14" IsReadOnly="True" Foreground="#f8f8f2" TextWrapping="Wrap"/>
+            <TextBox  Text="{Binding MedicineAlg}"  Grid.Column="1" Grid.Row="5" Margin="30,4.291,10,3.254" VerticalContentAlignment="Center" Padding="5,0,10,0" FontSize="14" IsReadOnly="True" Foreground="#f8f8f2" />
             <Label Content="Usage: " HorizontalAlignment="Left" Margin="0,0,10,0" Grid.Column="0" Grid.Row="6" VerticalAlignment="Center"/>
             <TextBox  Text="{Binding Usage}"  Grid.Column="1" Grid.Row="6" Margin="30,4.291,10,3.254" VerticalContentAlignment="Center" Padding="5,0,10,0" FontSize="14" IsReadOnly="True" Foreground="#f8f8f2" TextWrapping="Wrap"/>
             <Label Content="Frequency: " HorizontalAlignment="Left" Margin="0,0,10,0" Grid.Column="0" Grid.Row="7" VerticalAlignment="Center"/>

@@ -5,6 +5,7 @@ using TechHealth.Core;
 using TechHealth.DoctorView.CRUDAppointments;
 using TechHealth.DoctorView.MedicalHistory;
 using TechHealth.DoctorView.View;
+using TechHealth.DoctorView.Windows;
 using TechHealth.Model;
 
 namespace TechHealth.DoctorView.ViewModel
@@ -29,6 +30,7 @@ namespace TechHealth.DoctorView.ViewModel
        public RelayCommand NotificationCommand { get; set; }
        private NotificationView NotificationView { get; set; }
        public RelayCommand NewCommand { get; set; }
+       public RelayCommand RateCommand { get; set; }
 
        public DashBoardViewModel()
        {
@@ -42,6 +44,13 @@ namespace TechHealth.DoctorView.ViewModel
                }
            );
            NewCommand = new RelayCommand(param => ExecuteAnamnesis(),param=>CanExecuteAnamnesis());
+           RateCommand = new RelayCommand(param => ExecuteRate());
+       }
+
+       private void ExecuteRate()
+       {
+           var rate = new RateApplicationWindow();
+           rate.ShowDialog();
        }
 
        private bool CanExecuteAnamnesis()

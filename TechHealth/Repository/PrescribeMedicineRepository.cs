@@ -1,8 +1,9 @@
 ﻿using TechHealth.Model;
+using TechHealth.Repository.IRepository;
 
 namespace TechHealth.Repository
 {
-    public class PrescribeMedicineRepository:GenericRepository<string,Prescription>
+    public class PrescribeMedicineRepository:GenericRepository<string,Prescription>,IPrescribeMedicineRepository
     {
         private static readonly PrescribeMedicineRepository instance= new PrescribeMedicineRepository();
         static PrescribeMedicineRepository()

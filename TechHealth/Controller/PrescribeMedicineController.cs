@@ -10,10 +10,7 @@ namespace TechHealth.Controller
     public class PrescribeMedicineController:IPrescribeMedicineController
     {
         private readonly IPrescribeMedicineService prescribeMedicineService = new PrescribeMedicineService();
-        public void Create(Prescription prescription)
-        {
-            prescribeMedicineService.Create(prescription);
-        }
+        public void Create(Prescription prescription) => prescribeMedicineService.Create(prescription);
 
         public void Update(Prescription entity)
         {
@@ -30,18 +27,10 @@ namespace TechHealth.Controller
             throw new System.NotImplementedException();
         }
 
-        public List<Prescription> GetAllByPatientId(string patientId)
-        {
-            return  prescribeMedicineService.GetAllByPatientId(patientId);
-        }
-        public List<Prescription> GetAll()
-        {
-            return prescribeMedicineService.GetAll();
-        }
+        public List<Prescription> GetAllByPatientId(string patientId) => prescribeMedicineService.GetAllByPatientId(patientId);
 
-        public bool CheckAllergens(Medicine medicine, Patient patient)
-        {
-            return prescribeMedicineService.CheckAllergens(medicine, patient);
-        }
+        public List<Prescription> GetAll() => prescribeMedicineService.GetAll();
+
+        public bool CheckAllergens(Medicine medicine, Patient patient) => prescribeMedicineService.CheckAllergens(medicine, patient);
     }
 }

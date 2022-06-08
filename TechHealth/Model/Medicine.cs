@@ -12,7 +12,6 @@ namespace TechHealth.Model
 {
     public class Medicine
     {
-        private MedicineStatus medicineStatus;
         public string MedicineId{ get; set; }
         public List<Substance> Composition { get; set; }
         public int Quantity{ get; set; }
@@ -22,11 +21,7 @@ namespace TechHealth.Model
         public double Price{ get; set; }
         public string MedicineName{ get; set; }
 
-        public MedicineStatus MedicineStatus
-        {
-            get => medicineStatus;
-            set => medicineStatus = value;
-        }
+        public MedicineStatus MedicineStatus { get; set; }
 
         public bool ShouldSerialize { get; set; }
         public bool ShouldSerializeComposition()

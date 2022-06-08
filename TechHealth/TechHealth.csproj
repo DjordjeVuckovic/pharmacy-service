@@ -266,6 +266,9 @@
     <Compile Include="DoctorView\View\HistoryOfCare.xaml.cs">
       <DependentUpon>HistoryOfCare.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DoctorView\View\HospitalizationView.xaml.cs">
+      <DependentUpon>HospitalizationView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DoctorView\View\MedicalRecordView.xaml.cs">
       <DependentUpon>MedicalRecordView.xaml</DependentUpon>
     </Compile>
@@ -298,6 +301,9 @@
     </Compile>
     <Compile Include="DoctorView\Windows\DoctorVacationWindow.xaml.cs">
       <DependentUpon>DoctorVacationWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DoctorView\Windows\RateApplicationWindow.xaml.cs">
+      <DependentUpon>RateApplicationWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="DoctorView\Windows\ReferralWindow.xaml.cs">
       <DependentUpon>ReferralWindow.xaml</DependentUpon>
@@ -373,6 +379,7 @@
     <Compile Include="Repository\GradeRepository.cs" />
     <Compile Include="Repository\IRepository\IAnamnesisRepository.cs" />
     <Compile Include="Repository\IRepository\IDoctorRepository.cs" />
+    <Compile Include="Repository\IRepository\IPrescribeMedicineRepository.cs" />
     <Compile Include="Repository\IRepository\IRepository.cs" />
     <Compile Include="Repository\IRepository\ISpecializationRepository.cs" />
     <Compile Include="Repository\IRepository\ITherapyRepository.cs" />
@@ -782,6 +789,9 @@
     <Resource Include="resources\doctor.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="resources\hospital-bed.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Content Include="resources\medicine.png" />
     <Resource Include="resources\mydoctor.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -824,6 +834,7 @@
     <Page Include="DoctorView\View\DashBoardView.xaml" />
     <Page Include="DoctorView\View\HelpView.xaml" />
     <Page Include="DoctorView\View\HistoryOfCare.xaml" />
+    <Page Include="DoctorView\View\HospitalizationView.xaml" />
     <Page Include="DoctorView\View\MedicalRecordView.xaml" />
     <Page Include="DoctorView\View\MedicineDetailsView.xaml" />
     <Page Include="DoctorView\View\MedicineView.xaml" />
@@ -835,6 +846,7 @@
     <Page Include="DoctorView\Windows\AppointRefferalWindow.xaml" />
     <Page Include="DoctorView\Windows\DoctorVacationHistoryWindow.xaml" />
     <Page Include="DoctorView\Windows\DoctorVacationWindow.xaml" />
+    <Page Include="DoctorView\Windows\RateApplicationWindow.xaml" />
     <Page Include="DoctorView\Windows\ReferralWindow.xaml" />
     <Page Include="DoctorView\Windows\PrescriptionPreview.xaml" />
     <Page Include="DoctorView\Windows\PrescriptionWindow.xaml" />

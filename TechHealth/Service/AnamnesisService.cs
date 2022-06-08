@@ -15,12 +15,7 @@ namespace TechHealth.Service
           return anamnesis;
         }
 
-        private void BindDataForAnamnesis(Anamnesis anamneses)
-        {
-            
-            anamneses.Appointment = AppointmentRepository.Instance.GetById(anamneses.Appointment.IdAppointment);
-            
-        }
+        private void BindDataForAnamnesis(Anamnesis anamnesis) => anamnesis.Appointment = AppointmentRepository.Instance.GetById(anamnesis.Appointment.IdAppointment);
 
         public List<Anamnesis> GetAll()
         {
@@ -29,14 +24,9 @@ namespace TechHealth.Service
             return anamneses;
         }
 
-        public bool Create(Anamnesis anamnesis)
-        {
-            return AnamnesisRepository.Instance.Create(anamnesis);
-        }
-        public bool Update(Anamnesis anamnesis)
-        {
-            return AnamnesisRepository.Instance.Update(anamnesis);
-        }
+        public bool Create(Anamnesis anamnesis) => AnamnesisRepository.Instance.Create(anamnesis);
+
+        public bool Update(Anamnesis anamnesis) => AnamnesisRepository.Instance.Update(anamnesis);
 
         public Anamnesis GetById(string key)
         {
@@ -96,10 +86,8 @@ namespace TechHealth.Service
 
         }
 
-        private void BindDataForAppointment(Appointment appointment)
-        {
-            appointment.Doctor = DoctorRepository.Instance.GetDoctorById(appointment.Doctor.Jmbg);
-        }
+        private void BindDataForAppointment(Appointment appointment) => appointment.Doctor = DoctorRepository.Instance.GetDoctorById(appointment.Doctor.Jmbg);
+
         public  List<Anamnesis> GetAllAnamnesisByDate(string patientId,DateTime startDate, DateTime finishDate)
         {
             var temp = new List<Anamnesis>();

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Forms;
 using TechHealth.Controller;
+using TechHealth.Controller.IController;
 using TechHealth.Core;
 using TechHealth.Model;
 using MessageBox = System.Windows.Forms.MessageBox;
@@ -20,7 +21,7 @@ namespace TechHealth.DoctorView.ViewModel
         private Medicine medicine;
         private List<ComboBoxGeneric<Medicine>> medicineComboBox = new List<ComboBoxGeneric<Medicine>>();
         private readonly MedicineController medicineController = new MedicineController();
-        private readonly PrescribeMedicineController prescribeMedicineController = new PrescribeMedicineController();
+        private readonly IPrescribeMedicineController prescribeMedicineController = new PrescribeMedicineController();
         
 
 
