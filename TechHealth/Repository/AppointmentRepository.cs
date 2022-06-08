@@ -107,6 +107,31 @@ namespace TechHealth.Repository
             }
             else return true;
         }
+
+        public bool CanDoMerge(RoomMerging rm)
+        {
+            foreach (var app in GetAllToList())
+            {
+                if ((app.Room.RoomId == rm.RoomOne || app.Room.RoomId == rm.RoomTwo) && ((rm.MergeStart >= app.StartTime && rm.MergeStart <= app.FinishTime)
+                    || (rm.MergeEnd >= app.StartTime && rm.MergeEnd <= app.FinishTime) || (rm.MergeStart <= app.StartTime && rm.MergeEnd >= app.FinishTime)))
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        public void CancelAppointmentIfThereIsNoRoomAfterMerge(RoomMerging rm)
+        {
+            foreach (var app in GetAllToList())
+            {
+                if (rm.MergeEnd <= app.StartTime && app.Room.RoomId == rm.RoomTwo)
+                {
+                    Delete(app.IdAppointment);
+                }
+            }
+        }
+
         public bool CanPostpone(Appointment appointment)
         {
             if (GetAllToList().Count != 0)

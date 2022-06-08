@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using TechHealth.Controller;
 using TechHealth.Conversions;
 using TechHealth.Model;
+using TechHealth.Repository;
 using TechHealth.View.ManagerView.ViewModel;
 
 namespace TechHealth.View.ManagerView.VieW
@@ -62,16 +63,22 @@ namespace TechHealth.View.ManagerView.VieW
             }
             else
             {
-                if (DateTime.Compare(DateTime.Now, rm.MergeEnd) == 0)
+                if (AppointmentRepository.Instance.CanDoMerge(rm))
                 {
-                    roomMergingController.MergeRooms(rm);
+                    AppointmentRepository.Instance.CancelAppointmentIfThereIsNoRoomAfterMerge(rm);
+                    if (DateTime.Compare(DateTime.Now, rm.MergeEnd) == 0)
+                    {
+                        roomMergingController.MergeRooms(rm);
+                    }
+                    else
+                    {
+                        roomMergingController.Create(rm);
+                    }
                 }
                 else
                 {
-                    roomMergingController.Create(rm);
+                    MessageBox.Show("Can't perform merging because there is an appointment in that period!");
                 }
-                //roomMergingController.Create(rm);
-                //roomMergingController.MergeRooms(rm);
             }
             var RoomVm = new RoomViewModel();
             MainViewModel.Instance().CurrentView = RoomVm;
