@@ -55,7 +55,7 @@
                     <TextBlock FontWeight="Bold" Text="Most prescribed medicine:" Foreground="White" FontSize="18" TextWrapping="Wrap" Margin="20,0.2,0.4,38.6" Grid.Column="0" RenderTransformOrigin="0.602,0.537" Grid.Row="1"/>
                     <TextBlock Text="Paracetamol-Uno" Foreground="White" FontSize="18" Margin="9.6,0.2,-9,56.6" Grid.Column="1" Grid.Row="1"/>
                     <TextBlock Text="You have three new notifications:" TextWrapping="Wrap" FontWeight="Bold" Foreground="White" FontSize="18" Margin="19,4,10,10.6" Grid.Row="2" Grid.Column="0" RenderTransformOrigin="0.592,0.371"/>
-                    <Button Content="Notifications" Grid.Row="2" Grid.Column="1"  Width="130" Height="40" Command="{Binding NotificationCommand}" Margin="10,10,27.2,37.6" />
+                    <Button FontSize="10" Content="Notifications" Grid.Row="2" Grid.Column="1"  Width="110" Height="40" Command="{Binding NotificationCommand}" Margin="10,10,27.2,37.6" />
                 </Grid>
             </Border>
             <Button Content="Rate us!" FontSize="10" Grid.Column="1" Grid.Row="2"  Width="110" Height="40" Command="{Binding RateCommand}"/>

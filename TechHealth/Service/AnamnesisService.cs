@@ -90,16 +90,16 @@ namespace TechHealth.Service
 
         public  List<Anamnesis> GetAllAnamnesisByDate(string patientId,DateTime startDate, DateTime finishDate)
         {
-            var temp = new List<Anamnesis>();
+            var anamnesisByDate = new List<Anamnesis>();
             foreach (Anamnesis anamnesis in GetAllAnamnesisByPatientId(patientId))
             {
                 if (anamnesis.AnamnesisDate >= startDate && anamnesis.AnamnesisDate <=finishDate)
                 {
-                    temp.Add(anamnesis);
+                    anamnesisByDate.Add(anamnesis);
                     BindDataForAppointment(anamnesis.Appointment);
                 }
             }
-            return temp;
+            return anamnesisByDate;
         }
     }
 }

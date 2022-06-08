@@ -1,4 +1,6 @@
-﻿using System.Windows.Controls;
+﻿using System.Windows;
+using System.Windows.Controls;
+using TechHealth.DoctorView.Windows;
 
 namespace TechHealth.DoctorView.View
 {
@@ -7,6 +9,16 @@ namespace TechHealth.DoctorView.View
         public HospitalizationView()
         {
             InitializeComponent();
+        }
+
+        private void Extend(object sender, RoutedEventArgs e)
+        {
+            new ExtendStayWindow().ShowDialog();
+        }
+
+        private void Realse(object sender, RoutedEventArgs e)
+        {
+            new ReleasePatientWindow().ShowDialog();
         }
     }
 }

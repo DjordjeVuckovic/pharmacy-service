@@ -15,11 +15,8 @@ namespace TechHealth.Service
    public class AppointmentService:IAppointmentService
    {
       
-      public Appointment GetById(string idAppointment)
-      {
-         return AppointmentRepository.Instance.GetById(idAppointment);
-      }
-      
+      public Appointment GetById(string idAppointment) => AppointmentRepository.Instance.GetById(idAppointment);
+
       public List<Appointment> GetAll()
       {
          var temp = AppointmentRepository.Instance.GetAllToList();
@@ -28,17 +25,16 @@ namespace TechHealth.Service
       }
       public List<Appointment> GetAllNotEvidentByDoctorId(string doctorId)
       {
-         var temp =  new List<Appointment>(GetByDoctorId(doctorId));
-         var temp1 = new List<Appointment>();
-         foreach (var vAppointment in temp)
+         var notEvidentAppointments = new List<Appointment>();
+         foreach (var vAppointment in GetByDoctorId(doctorId))
          {
             if (!vAppointment.Evident)
             {
-               temp1.Add(vAppointment);
+               notEvidentAppointments.Add(vAppointment);
             }
 
          }
-         return temp1;
+         return notEvidentAppointments;
       }
         public void Postpone(Appointment appointment)
         {

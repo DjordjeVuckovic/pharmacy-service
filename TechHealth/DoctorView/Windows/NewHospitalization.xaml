@@ -1,0 +1,72 @@
+﻿<Window x:Class="TechHealth.DoctorView.Windows.NewHospitalization"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:TechHealth.DoctorView.Windows"
+        mc:Ignorable="d"
+        Title="NewHospitalization" Height="450" Width="500"
+        WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Dark.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/materialdesigncolor.bluegrey.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Grid Background="#282a36">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="83.2"/>
+            <RowDefinition Height="96.8"/>
+            <RowDefinition/>
+            <RowDefinition Height="80"/>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0" Content="New Hospitalization"  HorizontalAlignment="Center" FontSize="32" Margin="126,10,58.6,10.2" Foreground="#1FC192" FontWeight="Light" RenderTransformOrigin="0.51,0.004" Width="309"/>
+
+        <StackPanel Grid.Row="1" VerticalAlignment="Center" Margin="20,0,0,0" Height="50">
+            <Label Content="Doctor: John Black" Name="LabelDoctor" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="5,0,5,0"  Foreground="White" FontSize="16"/>
+            <Label Content="Patient: Dusan Vukovic " Name="LabelPatient" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="5,0,5,0" Foreground="White" FontSize="16"/>
+        </StackPanel>
+
+
+
+        <Grid Grid.Row="2" Margin="20,0,9.6,0">
+
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Label Content="Start date:" HorizontalAlignment="Left" Margin="10,0,10,0" Grid.Column="0" Grid.Row="0" VerticalAlignment="Center"  Foreground="White" FontSize="16"/>
+            <Label Content="End date:" HorizontalAlignment="Left" Margin="10,0,10,0" Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" Foreground="White" FontSize="16"/>
+            <Label Content="Room:" HorizontalAlignment="Left" Margin="10,0,10,0" Grid.Column="0" Grid.Row="2" VerticalAlignment="Center" Foreground="White" FontSize="16"/>
+
+            <DatePicker Name="StartDate" Grid.Column="1" Grid.Row="0" Margin="30,0,0,0" VerticalAlignment="Center" Foreground="White"/>
+            <DatePicker Name="EndDate" Grid.Column="1" Grid.Row="1" Margin="30,0,0,0" VerticalAlignment="Center" Foreground="White"/>
+            <ComboBox Grid.Row="2" Grid.Column="2" Margin="30,0,0,0" x:Name="roomCombo"  DisplayMemberPath="RoomId"  SelectedValuePath="RoomId" 
+                     Width="200" Height="30" HorizontalAlignment="Left" Foreground="White"/>
+
+            <Border Grid.Row="0" Grid.RowSpan="5" BorderThickness="0,0,1,0" BorderBrush="#1FC192"/>
+
+        </Grid>
+
+        <Button Grid.Row="3" Content="Finish" Click="Finish" HorizontalAlignment="Right"
+              Width="100" Margin="0,25,58.6,10" />
+        <Button Grid.Row="3" Content="Cancel" Click="Cancel" HorizontalAlignment="Left"
+              Width="100" Margin="57,25,0,10" />
+
+
+    </Grid>
+</Window>

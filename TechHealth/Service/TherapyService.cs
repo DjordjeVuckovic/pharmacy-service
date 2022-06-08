@@ -7,10 +7,7 @@ namespace TechHealth.Service
 {
     public class TherapyService:ITherapyService
     {
-        public bool Create(Therapy therapy)
-        {
-            return TherapyRepository.Instance.Create(therapy);
-        }
+        public bool Create(Therapy therapy) => TherapyRepository.Instance.Create(therapy);
 
         public bool Update(Therapy entity)
         {

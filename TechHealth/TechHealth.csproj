@@ -231,6 +231,7 @@
     <Compile Include="DoctorView\ViewModel\DoctorVacationViewModel.cs" />
     <Compile Include="DoctorView\ViewModel\GeneratePdfViewModel.cs" />
     <Compile Include="DoctorView\ViewModel\HistoryOfCareViewModel.cs" />
+    <Compile Include="DoctorView\ViewModel\HospitalizationViewModel.cs" />
     <Compile Include="DoctorView\ViewModel\MainViewModel.cs" />
     <Compile Include="DoctorView\ViewModel\MedicalRecordViewModel.cs" />
     <Compile Include="DoctorView\ViewModel\MedicineDetailsViewModel.cs" />
@@ -306,6 +307,9 @@
     <Compile Include="DoctorView\Windows\ExtendStayWindow.xaml.cs">
       <DependentUpon>ExtendStayWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DoctorView\Windows\NewHospitalization.xaml.cs">
+      <DependentUpon>NewHospitalization.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DoctorView\Windows\RateApplicationWindow.xaml.cs">
       <DependentUpon>RateApplicationWindow.xaml</DependentUpon>
     </Compile>
@@ -320,6 +324,9 @@
     </Compile>
     <Compile Include="DoctorView\Windows\RejectWindow.xaml.cs">
       <DependentUpon>RejectWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DoctorView\Windows\ReleasePatientWindow.xaml.cs">
+      <DependentUpon>ReleasePatientWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="DoctorView\Windows\TherapyPreview.xaml.cs">
       <DependentUpon>TherapyPreview.xaml</DependentUpon>
@@ -852,11 +859,13 @@
     <Page Include="DoctorView\Windows\DoctorVacationHistoryWindow.xaml" />
     <Page Include="DoctorView\Windows\DoctorVacationWindow.xaml" />
     <Page Include="DoctorView\Windows\ExtendStayWindow.xaml" />
+    <Page Include="DoctorView\Windows\NewHospitalization.xaml" />
     <Page Include="DoctorView\Windows\RateApplicationWindow.xaml" />
     <Page Include="DoctorView\Windows\ReferralWindow.xaml" />
     <Page Include="DoctorView\Windows\PrescriptionPreview.xaml" />
     <Page Include="DoctorView\Windows\PrescriptionWindow.xaml" />
     <Page Include="DoctorView\Windows\RejectWindow.xaml" />
+    <Page Include="DoctorView\Windows\ReleasePatientWindow.xaml" />
     <Page Include="DoctorView\Windows\TherapyPreview.xaml" />
     <Page Include="DoctorView\Windows\TherapyWindow.xaml" />
     <Page Include="LoginWindow.xaml" />

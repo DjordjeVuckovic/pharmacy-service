@@ -16,7 +16,10 @@ namespace TechHealth.DoctorView.ViewModel
         private HistoryOfCareViewModel historyOfCareViewModel;
         private MedicalRecordViewModel medicalRecordViewModel;
         public string DoctorId { get; set; }
-        public RelayCommand HistoryCommand { get;}
+        public RelayCommand HistoryCommand { get; set; }
+        public RelayCommand StatusCommand { get; set; }
+        public RelayCommand NewHospitalizationCommand { get; set; }
+        
         public Patient SelectedItem
         {
             get
@@ -49,7 +52,42 @@ namespace TechHealth.DoctorView.ViewModel
             //currentViewPatient = this;
             HistoryCommand= new RelayCommand(param => Execute(), param => CanExecute());
             MedicineRecordCommand = new RelayCommand(param => Execute1(), param => CanExecute1());
-            
+            StatusCommand = new RelayCommand(param => ExecuteHospitalization(),param => CanExecuteHospitalization());
+            NewHospitalizationCommand =
+                new RelayCommand(param => ExecuteNewHospitalization(), param => CanExecuteNewHospitalization());
+
+        }
+
+        private bool CanExecuteNewHospitalization()
+        {
+            if (SelectedItem != null)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        private void ExecuteNewHospitalization()
+        {
+            NewHospitalization newHospitalization = new NewHospitalization();
+            newHospitalization.ShowDialog();
+        }
+
+        private bool CanExecuteHospitalization()
+        {
+            if (SelectedItem != null)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        private void ExecuteHospitalization()
+        {
+            HospitalizationView hospitalizationView = new HospitalizationView();
+            MainViewModel.GetInstance().CurrentView = hospitalizationView;
         }
 
         private bool CanExecute()

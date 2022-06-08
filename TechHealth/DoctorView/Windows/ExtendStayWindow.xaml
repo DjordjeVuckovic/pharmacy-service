@@ -5,54 +5,57 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="clr-namespace:TechHealth.DoctorView.Windows"
         mc:Ignorable="d"
-        Title="ExtendStayWindow" Height="350" Width="500"
+        Title="ExtendStayWindow" Height="400" Width="500"
         WindowStartupLocation="CenterScreen">
     <Window.Resources>
-
-        <Style TargetType="Label">
-            <Setter Property="Foreground" Value="White"/>
-            <Setter Property="FontFamily" Value="Candara"/>
-            <Setter Property="FontSize" Value="14"/>
-        </Style>
-
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Dark.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/materialdesigncolor.bluegrey.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Window.Resources>
 
-    <Grid Background="#FF323D52">
+    <Grid Background="#282a36">
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="100"/>
-            <RowDefinition Height="80"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="80"/>
+            <RowDefinition Height="88"/>
+            <RowDefinition Height="92"/>
+            <RowDefinition/>
+            <RowDefinition Height="58.4"/>
         </Grid.RowDefinitions>
 
-        <Label Grid.Row="0" Content="Produžetak boravka" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="32" Margin="0,40,0,0" Foreground="#FF57D6B4" FontWeight="ExtraLight"/>
+        <Label Grid.Row="0" Content="Extend stay"  HorizontalAlignment="Center" FontSize="32" Margin="146,10,69.6,10" Foreground="#1FC192" FontWeight="Light" Width="278"/>
 
-        <StackPanel Grid.Row="1" VerticalAlignment="Center" Margin="70,0,0,0">
-            <Label Content="Doktor: Lucrecia Crescent" Name="LabelDoctor" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="5,0,5,0"  Foreground="#FFC1C1C1"/>
-            <Label Content="Pacijent: Milan Marković" Name="LabelPatient" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="5,0,5,0" Foreground="#FFC1C1C1"/>
+        <StackPanel Grid.Row="1" VerticalAlignment="Center" Margin="20,30,-0.4,10" Height="52">
+            <Label Content="Doctor: John Black" Name="LabelDoctor" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="5,0,5,0"  Foreground="White" FontSize="16"/>
+            <Label Content="Patient: Dusan Vukovic" Name="LabelPatient" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="5,0,5,0" Foreground="White"  FontSize="16"/>
         </StackPanel>
-        
 
-        <Grid Grid.Row="2" HorizontalAlignment="Center" Margin="0,20,0,20">
+
+        <Grid Grid.Row="2" HorizontalAlignment="Center" Margin="10,20,9.6,18" Width="474">
 
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <Label Content="Krajnji datum:" HorizontalAlignment="Right" Margin="10,0,10,0" Grid.Column="0" Grid.Row="0" VerticalAlignment="Center"/>
-    
+            <Label Content="Extend date:" HorizontalAlignment="Left" Margin="20,0,10,0" Grid.Column="0" Grid.Row="0" VerticalAlignment="Center" Foreground="White" FontSize="16"/>
+
             <DatePicker Name="EndDate" Grid.Column="1" Grid.Row="1" Margin="30,0,0,0" VerticalAlignment="Center" Width="200"/>
 
 
-            <Border Grid.Row="0" BorderThickness="0,0,1,0" BorderBrush="#FF292C3B"/>
+            <Border Grid.Row="0" BorderThickness="0,0,1,0" BorderBrush="#1FC192"/>
 
         </Grid>
 
 
-        <Button Grid.Row="3" Content="POTVRDI" Click="ButtonFinish" HorizontalAlignment="Left" VerticalAlignment="Top"
-            Margin="275,17,0,0" />
+        <Button Grid.Row="3" Content="Finish" Click="ButtonFinish" HorizontalAlignment="Right" VerticalAlignment="Top"
+            Margin="0,20,70,0" Height="28" Width="100" />
+        <Button Grid.Row="3" Content="Cancel" Click="ButtonCancel" HorizontalAlignment="Left" VerticalAlignment="Top"
+            Margin="70,20,0,0" Height="28" Width="100" />
 
 
 

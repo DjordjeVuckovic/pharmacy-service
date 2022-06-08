@@ -11,7 +11,13 @@ namespace TechHealth.DoctorView.Windows
 
         private void ButtonFinish(object sender, RoutedEventArgs e)
         {
-            throw new System.NotImplementedException();
+            MessageBox.Show("Your are successfully extended stay for patient Dusan Vukovic.");
+            Close();
+        }
+
+        private void ButtonCancel(object sender, RoutedEventArgs e)
+        {
+            Close();
         }
     }
 }

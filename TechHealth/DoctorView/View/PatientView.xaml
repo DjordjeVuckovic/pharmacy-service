@@ -34,8 +34,10 @@
                         </DataGrid.Columns>
                     </DataGrid>
 
-                    <Button Grid.Row="3" Content="Medical Record"  HorizontalAlignment="Left"  Width="150" Height="50" Margin="173.684,0,0,0" Command="{Binding MedicineRecordCommand }"/>
-                    <Button Grid.Row="3" Content="History of Care"  HorizontalAlignment="Right"   Width="150" Height="50" Margin="0,0,168.947,0" Command="{Binding HistoryCommand}"/>
+                    <Button Grid.Row="3" Content="Medical Record"  HorizontalAlignment="Left"  Width="150" Height="50" Margin="43,10.4,0,10" Command="{Binding MedicineRecordCommand }"/>
+                    <Button Grid.Row="3" Content="History of Care"  HorizontalAlignment="Center"   Width="150" Height="50" Margin="247,10.4,403,10" Command="{Binding HistoryCommand}"/>
+                    <Button Grid.Row="3" Content="Hospitalization status"  HorizontalAlignment="Center"  FontSize="11" Width="150" Height="50" Margin="437,10.4,213,10" Command="{Binding StatusCommand}"/>
+                    <Button Grid.Row="3" Content="New Hospitalization"  HorizontalAlignment="Right"  FontSize="11" Width="150" Height="50" Margin="617,10.4,33,10" Command="{Binding NewHospitalizationCommand}"/>
                     
                 </Grid>
                        
