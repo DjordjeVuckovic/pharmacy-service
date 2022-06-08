@@ -120,6 +120,19 @@ namespace TechHealth.Repository
             }
             return true;
         }
+        public bool CanDoSeparation(RoomSeparation rs)
+        {
+            foreach (var app in GetAllToList())
+            {
+                if ((app.Room.RoomId == rs.RoomOne.RoomId) && ((rs.SeparationStart >= app.StartTime && rs.SeparationStart <= app.FinishTime)
+                    || (rs.SeparationEnd >= app.StartTime && rs.SeparationEnd <= app.FinishTime) || (rs.SeparationStart <= app.StartTime && rs.SeparationEnd >= app.FinishTime)))
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
 
         public void CancelAppointmentIfThereIsNoRoomAfterMerge(RoomMerging rm)
         {
