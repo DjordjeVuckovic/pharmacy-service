@@ -44,7 +44,7 @@
     "SideEffects": "/",
     "MainSubstance": {
       "SubstanceId": "3bb1bb5d21ab468487ee068e2a3bee37",
-      "SubstanceName": "penicilin"
+      "SubstanceName": "paracetamol"
     },
     "Price": 100.0,
     "MedicineName": "Paracetamol Uno",
@@ -83,8 +83,8 @@
         "SubstanceName": "acetaminophen"
       },
       {
-        "SubstanceId": "2",
-        "SubstanceName": "ibuprofen"
+        "SubstanceId": "118",
+        "SubstanceName": "combinate powder"
       }
     ],
     "Quantity": 20,
@@ -92,11 +92,11 @@
     "SideEffects": "//",
     "MainSubstance": {
       "SubstanceId": "590b70e6a0604d48903a13ca833454cd",
-      "SubstanceName": "//"
+      "SubstanceName": "acetaminophen"
     },
     "Price": 0.0,
-    "MedicineName": "test",
-    "MedicineStatus": 0,
+    "MedicineName": "acetaminophen",
+    "MedicineStatus": 1,
     "ShouldSerialize": true
   }
 }
