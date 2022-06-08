@@ -69,6 +69,7 @@ namespace TechHealth.DoctorView.ViewModel
            {
                DataContext = vm
            };
+           MyAppointments.Remove(SelectedItem);
            vm.OnRequestClose += (s, e) => newAnamnesis.Close();
            newAnamnesis.ShowDialog();
        }
