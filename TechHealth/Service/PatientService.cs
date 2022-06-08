@@ -35,5 +35,9 @@ namespace TechHealth.Service
             return PatientRepository.Instance.Delete(jmbg);
         }
 
+        public bool CheckAvailability(string jmbg, string username)
+        {
+            return PatientRepository.Instance.CheckAvailability(jmbg, username);
+        }
     }
 }

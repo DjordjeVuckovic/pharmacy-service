@@ -5,12 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using TechHealth.Model;
 using TechHealth.Service;
+using TechHealth.Service.IService;
 
 namespace TechHealth.Controller
 {
     public class RoomEquipmentController
     {
-        private RoomEquipmentService roomEquipmentService = new RoomEquipmentService();
+        private IRoomEquipmentService roomEquipmentService = new RoomEquipmentService();
 
         public List<RoomEquipment> GetAllToList()
         {

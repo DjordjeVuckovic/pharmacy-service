@@ -68,5 +68,23 @@ namespace TechHealth.Repository
             }
             return true;
         }
+        public bool CheckRoom(Meeting meeting)
+        {
+            foreach (var m in GetAll().Values)
+            {
+                if (m.Date.Equals(meeting.Date))
+                {
+                    if (DateTime.Compare(DateTime.Parse(meeting.StartTime.ToString("HH:mm")), DateTime.Parse(m.StartTime.ToString("HH:mm"))) >= 0)
+                    {
+                        if (DateTime.Compare(DateTime.Parse(meeting.StartTime.ToString("HH:mm")), DateTime.Parse(m.FinishTime.ToString("HH:mm"))) <= 0)
+                        {
+                            MessageBox.Show("Meeting already scheduled.");
+                            return false;
+                        }
+                    }
+                }
+            }
+            return true;
+        }
     }
 }

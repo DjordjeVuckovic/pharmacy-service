@@ -5,6 +5,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Windows;
 using TechHealth.Model;
 
 namespace TechHealth.Repository
@@ -87,5 +88,25 @@ namespace TechHealth.Repository
             return scheduledAppointments;
         }
 
+        public bool CheckAvailability(string jmbg, string username)
+        {
+            foreach (var p in GetAll().Values)
+            {
+                if (p.Jmbg.Equals(jmbg))
+                {
+                    MessageBox.Show("Jmbg already exists.");
+                    return false;
+                }
+            }
+            foreach (var p in GetAll().Values)
+            {
+                if (p.Username.Equals(username))
+                {
+                    MessageBox.Show("Username already exists.");
+                    return false;
+                }
+            }
+            return true;
+        }
     }
 }

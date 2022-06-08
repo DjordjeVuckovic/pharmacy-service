@@ -11,7 +11,7 @@ namespace TechHealth.Service
 {
     public class RoomSeparationService:IRoomSeparationService
     {
-        private RoomEquipmentService roomEquipmentService = new RoomEquipmentService();
+        private IRoomEquipmentService roomEquipmentService = new RoomEquipmentService();
         public RoomSeparation GetById(string mergeId)
         {
             return RoomSeparationRepository.Instance.GetById(mergeId);

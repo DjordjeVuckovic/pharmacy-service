@@ -13,7 +13,7 @@ namespace TechHealth.Service
 {
     public class EquipmentReallocationService:IEquipmentReallocationService
     {
-        private RoomEquipmentService roomEquipmentService = new RoomEquipmentService();
+        private IRoomEquipmentService roomEquipmentService = new RoomEquipmentService();
 
         public List<EquipmentReallocationDTO> GetAll()
         {

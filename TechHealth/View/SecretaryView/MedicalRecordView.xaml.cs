@@ -98,13 +98,13 @@ namespace TechHealth.View.SecretaryView
 
             medicalRecordController.Update(id, lista[bloodTypeCombo.SelectedIndex], p, textboxWeight.Text, textboxHeight.Text, textboxChronicDiseases.Text, textboxParentDiseases.Text, textboxMartialStatus.Text, ed);
 
-            this.Close();
             new AccountsView().Show();
+            Close();
         }
         private void Button_Click_Cancel(object sender, RoutedEventArgs e)
         {
-            this.Close();
             new AccountsView().Show();
+            Close();
         }
     }
 }

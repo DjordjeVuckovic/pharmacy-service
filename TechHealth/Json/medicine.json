@@ -74,5 +74,29 @@
     "MedicineName": "Paracetamol",
     "MedicineStatus": 2,
     "ShouldSerialize": true
+  },
+  "4c7a7d00d2304190963911d084317d3b": {
+    "MedicineId": "4c7a7d00d2304190963911d084317d3b",
+    "Composition": [
+      {
+        "SubstanceId": "1",
+        "SubstanceName": "acetaminophen"
+      },
+      {
+        "SubstanceId": "2",
+        "SubstanceName": "ibuprofen"
+      }
+    ],
+    "Quantity": 20,
+    "Units": "pills",
+    "SideEffects": "//",
+    "MainSubstance": {
+      "SubstanceId": "590b70e6a0604d48903a13ca833454cd",
+      "SubstanceName": "//"
+    },
+    "Price": 0.0,
+    "MedicineName": "test",
+    "MedicineStatus": 0,
+    "ShouldSerialize": true
   }
 }

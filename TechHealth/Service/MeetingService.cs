@@ -22,5 +22,9 @@ namespace TechHealth.Service
         {
             return MeetingRepository.Instance.CheckAttendants(meeting);
         }
+        public bool CheckRoom(Meeting meeting)
+        {
+            return MeetingRepository.Instance.CheckRoom(meeting);
+        }
     }
 }

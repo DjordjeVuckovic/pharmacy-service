@@ -101,7 +101,7 @@ namespace TechHealth.View.SecretaryView
             }
             GenerateMeeting(lista);
 
-            if (!meetingController.CheckAttendants(meeting)){ return; }
+            if (!meetingController.CheckAttendants(meeting) || !meetingController.CheckRoom(meeting)){ return; }
 
             meetingController.Create(meeting);
             SendNotifications(lista);
