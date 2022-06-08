@@ -12,38 +12,16 @@ namespace TechHealth.Controller
     {
         private  readonly  IMedicineService medicineService = new MedicineService();
 
-        public List<Medicine> GetAll()
-        {
-            return medicineService.GetAll();
-        }
-        public List<Medicine> GetAllApproved()
-        {
-            return medicineService.GetAllApproved();
+        public List<Medicine> GetAll() => medicineService.GetAll();
+        public List<Medicine> GetAllApproved() => medicineService.GetAllApproved();
+        public Medicine GetById(string id) => MedicineRepository.Instance.GetById(id);
 
-        }
-        public Medicine GetById(string id)
-        {
-            return MedicineRepository.Instance.GetById(id);
-        }
+        public void Delete(string key) => throw new System.NotImplementedException();
 
-        public void Delete(string key)
-        {
-            throw new System.NotImplementedException();
-        }
+        public void Create(Medicine medicine) => medicineService.Create(medicine);
 
-        public void Create(Medicine medicine)
-        {
-            medicineService.Create(medicine);
-        }
+        public void Update(Medicine medicine) => medicineService.Update(medicine);
 
-        public void Update(Medicine medicine)
-        {
-            medicineService.Update(medicine);
-        }
-
-        public void Delete(Medicine medicine)
-        {
-            medicineService.Delete(medicine.MedicineId);
-        }
+        public void Delete(Medicine medicine) => medicineService.Delete(medicine.MedicineId);
     }
 }

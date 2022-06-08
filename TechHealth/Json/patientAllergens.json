@@ -22,5 +22,12 @@
     "PatientJMBG": "13456",
     "AllergenName": "animal dander",
     "AllergenDescription": "/"
+  },
+  "13456-acetaminophen": {
+    "ShouldSerialize": false,
+    "PatientJMBG": "13456",
+    "AllergenName": "acetaminophen",
+    "AllergenDescription": "/"
   }
+  
 }

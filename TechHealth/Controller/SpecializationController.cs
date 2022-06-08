@@ -10,10 +10,7 @@ namespace TechHealth.Controller
     {
         private readonly ISpecializationService specializationService = new SpecializationService();
 
-        public List<Specialization> GetAll()
-        {
-            return specializationService.GetAll();
-        }
+        public List<Specialization> GetAll() => specializationService.GetAll();
 
         public void Create(Specialization entity)
         {

@@ -2,7 +2,7 @@
 
 namespace TechHealth.Controller.IController
 {
-    public interface IController<TEntity,TKey>
+    public interface IController<TEntity, in TKey>
     {
         List<TEntity> GetAll();
         void Create(TEntity entity);

@@ -2,7 +2,7 @@
 
 namespace TechHealth.Repository.IRepository
 {
-    public interface IRepository<TEntity,TKey>
+    public interface IRepository<TEntity, in TKey>
     {
         List<TEntity> GetAllToList();
         bool Create(TEntity entity);

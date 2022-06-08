@@ -20,10 +20,11 @@
                         <RowDefinition Height="300*"/>
                         <RowDefinition Height="57*"/>
                     </Grid.RowDefinitions>
-                    <Grid Grid.Row="0">
-                        <TextBox Style="{StaticResource SearchText}" VerticalAlignment="Stretch" HorizontalAlignment="Right" Margin="0,0,10,0"></TextBox>
-                    </Grid>
-                    <DataGrid  Grid.Row="2" ItemsSource="{Binding Path=Appointments}" SelectedItem="{Binding SelectedItem }"  IsReadOnly="True" 
+            <Grid Grid.Row="0">
+                <TextBox Style="{StaticResource SearchText}" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,50,0"></TextBox>
+                <Image Source="../../resources/search.png" Height="24" HorizontalAlignment="Right" VerticalAlignment="Center" Cursor="Hand" Margin="0,16,10,9.6" Width="35" />
+            </Grid>
+            <DataGrid  Grid.Row="2" ItemsSource="{Binding Path=Appointments}" SelectedItem="{Binding SelectedItem }"  IsReadOnly="True" 
                               SelectionMode="Single" AutoGenerateColumns="False" FontSize="15" 
                               FontStyle="Normal"
                               CanUserResizeRows="False"  Background="#333545">
