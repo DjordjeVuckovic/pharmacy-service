@@ -25,7 +25,7 @@
             <Button x:Name="Hospital" Content="Hospital" Margin="235,25,0,25" HorizontalAlignment="Left" Width="120" Height="50"  Grid.Row="0" Grid.Column="0"/>
             <Button x:Name="Doctor" Content="Doctor" Margin="0,25,0,25" HorizontalAlignment="Left" Width="120" Height="50"  Grid.Row="0" Grid.Column="1"/>
 
-            <Grid Grid.Row="1" Grid.Column="0" Background="#272537">
+            <Grid Grid.Row="1" Grid.Column="0" Background="#272537" Margin="10,0,5,0">
                 <TextBlock Margin="0,10,0,115" Text="Staff grades" Foreground="White" FontSize="15"
                            HorizontalAlignment="Center"/>
 
@@ -48,12 +48,47 @@
                        Height="24" Width="60" HorizontalAlignment="Right" VerticalAlignment="Top" Visibility="Visible"/>
                 <Label Content="{Binding FourStarStaffGrade}" Margin="0,50,117,0" Foreground="White"
                        Height="24" Width="60" HorizontalAlignment="Right" VerticalAlignment="Top" Visibility="Visible"/>
-                <Label Content="{Binding ThreeStarStaffGrade}" Margin="178,75,0,0" Foreground="White"
+                <Label Content="{Binding ThreeStarStaffGrade}" Margin="163,72,0,0" Foreground="White"
                        Height="24" Width="60" HorizontalAlignment="Left" VerticalAlignment="Top" Visibility="Visible"/>
                 <Label Content="{Binding TwoStarStaffGrade}" Margin="0,100,117,0" Foreground="White"
                        Height="24" Width="60" HorizontalAlignment="Right" VerticalAlignment="Top" Visibility="Visible"/>
                 <Label Content="{Binding OneStarStaffGrade}" Margin="0,120,117,0" Foreground="White"
                        Height="24" Width="60" HorizontalAlignment="Right" VerticalAlignment="Top" Visibility="Visible"/>
+                <Label Content="{Binding AverageStaffGrade}" Margin="0,0,10,24" Foreground="White"
+                       Height="24" Width="100" HorizontalAlignment="Right" VerticalAlignment="Bottom" Visibility="Visible"/>
+            </Grid>
+
+            <Grid Grid.Row="1" Grid.Column="1" Background="#272537" Margin="5,0,10,0">
+                <TextBlock Margin="0,10,0,115" Text="General grades" Foreground="White" FontSize="15"
+                           HorizontalAlignment="Center"/>
+
+                <materialDesign:RatingBar  Value="5" Height="20" Width="120"
+                                          Foreground="Yellow" HorizontalAlignment="Left"
+                                          Margin="27,35,0,95" IsReadOnly="True"/>
+                <materialDesign:RatingBar  Value="4" Height="20" Width="120"
+                                              Foreground="Yellow" HorizontalAlignment="Left"
+                                              Margin="27,50,0,70" IsReadOnly="True"/>
+                <materialDesign:RatingBar  Value="3" Height="20" Width="120"
+                                              Foreground="Yellow" HorizontalAlignment="Left"
+                                              Margin="27,65,0,42" IsReadOnly="True"/>
+                <materialDesign:RatingBar  Value="2" Height="20" Width="120"
+                                              Foreground="Yellow" HorizontalAlignment="Left"
+                                              Margin="27,80,0,17" IsReadOnly="True"/>
+                <materialDesign:RatingBar  Value="1" Height="20" Width="120"
+                                              Foreground="Yellow" HorizontalAlignment="Left"
+                                              Margin="27,110,0,8" IsReadOnly="True"/>
+                <Label Content="{Binding FiveStarGeneralGrade}" Margin="0,35,117,0" Foreground="White"
+                       Height="24" Width="60" HorizontalAlignment="Right" VerticalAlignment="Top" Visibility="Visible"/>
+                <Label Content="{Binding FourStarGeneralGrade}" Margin="0,55,117,0" Foreground="White"
+                       Height="24" Width="60" HorizontalAlignment="Right" VerticalAlignment="Top" Visibility="Visible"/>
+                <Label Content="{Binding ThreeStarGeneralGrade}" Margin="163,79,0,0" Foreground="White"
+                       Height="24" Width="60" HorizontalAlignment="Left" VerticalAlignment="Top" Visibility="Visible"/>
+                <Label Content="{Binding TwoStarGeneralGrade}" Margin="0,100,117,0" Foreground="White"
+                       Height="24" Width="60" HorizontalAlignment="Right" VerticalAlignment="Top" Visibility="Visible"/>
+                <Label Content="{Binding OneStarGeneralGrade}" Margin="0,120,117,0" Foreground="White"
+                       Height="24" Width="60" HorizontalAlignment="Right" VerticalAlignment="Top" Visibility="Visible"/>
+                <Label Content="{Binding AverageGeneralGrade}" Margin="0,0,10,24" Foreground="White"
+                       Height="24" Width="100" HorizontalAlignment="Right" VerticalAlignment="Bottom" Visibility="Visible"/>
             </Grid>
 
         </Grid>

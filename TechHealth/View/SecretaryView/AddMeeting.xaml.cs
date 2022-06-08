@@ -20,6 +20,7 @@ namespace TechHealth.View.SecretaryView
 {
     public partial class AddMeeting : Window
     {
+        private MeetingController meetingController = new MeetingController();
         private List<Room> rooms = new List<Room>();
         private DateTime d;
         private Meeting meeting = new Meeting();
@@ -100,31 +101,9 @@ namespace TechHealth.View.SecretaryView
             }
             GenerateMeeting(lista);
 
-            foreach (var p in meeting.Attendants)
-            {
-                foreach (var m in MeetingRepository.Instance.GetAll().Values)
-                {
-                    foreach (var a in m.Attendants)
-                    {
-                        if (p.Jmbg.Equals(a.Jmbg))
-                        {
-                            if (meeting.Date.Equals(m.Date))
-                            {
-                                if (DateTime.Compare(DateTime.Parse(meeting.StartTime.ToString("HH:mm")), DateTime.Parse(m.StartTime.ToString("HH:mm"))) >= 0)
-                                {
-                                    if (DateTime.Compare(DateTime.Parse(meeting.StartTime.ToString("HH:mm")), DateTime.Parse(m.FinishTime.ToString("HH:mm"))) <= 0)
-                                    {
-                                        MessageBox.Show(p.FullName + " already has a meeting.");
-                                        return;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
+            if (!meetingController.CheckAttendants(meeting)){ return; }
 
-            MeetingRepository.Instance.Create(meeting);
+            meetingController.Create(meeting);
             SendNotifications(lista);
             new MeetingsView(d).Show();
             Close();
