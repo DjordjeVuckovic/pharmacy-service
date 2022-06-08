@@ -244,6 +244,5 @@ namespace TechHealth.Service
          }
          return ret;
       }
-   
    }
 }

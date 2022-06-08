@@ -288,13 +288,13 @@
   "51e714f75e0f495d98e9a0052cbd20fa": {
     "ShouldSerialize": true,
     "Date": "2022-06-22T00:00:00",
-    "StartTime": "2022-06-05T05:25:00",
-    "FinishTime": "2022-06-05T08:39:00",
+    "StartTime": "2022-06-09T11:00:00",
+    "FinishTime": "2022-06-09T13:00:00",
     "Emergent": false,
     "IdAppointment": "51e714f75e0f495d98e9a0052cbd20fa",
     "Room": {
-      "RoomTypes": 0,
-      "RoomId": "S4",
+      "RoomTypes": 1,
+      "RoomId": "S7",
       "Floor": 3,
       "Availability": true,
       "ShouldSerialize": false
@@ -314,8 +314,8 @@
   "fb0d5e3e17bd45eeafe325e78bebfb12": {
     "ShouldSerialize": true,
     "Date": "2022-06-08T00:00:00",
-    "StartTime": "2022-06-08T21:20:00",
-    "FinishTime": "2022-06-05T23:29:00",
+    "StartTime": "2022-06-08T22:20:00",
+    "FinishTime": "2022-06-08T23:20:00",
     "Emergent": false,
     "IdAppointment": "fb0d5e3e17bd45eeafe325e78bebfb12",
     "Room": {

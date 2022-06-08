@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using TechHealth.Controller;
 using TechHealth.Conversions;
 using TechHealth.Model;
+using TechHealth.Repository;
 using TechHealth.View.ManagerView.ViewModel;
 
 namespace TechHealth.View.ManagerView.VieW
@@ -66,10 +67,17 @@ namespace TechHealth.View.ManagerView.VieW
             //{
             //    roomSeparationController.Create(rs);
             //}
-            roomController.Create(roomTwo);
-            roomController.Update(rs.RoomOne);
-            roomSeparationController.Create(rs);
-            roomSeparationController.SeparateRooms(rs);
+            if (AppointmentRepository.Instance.CanDoSeparation(rs))
+            {
+                roomController.Create(roomTwo);
+                roomController.Update(rs.RoomOne);
+                roomSeparationController.Create(rs);
+                roomSeparationController.SeparateRooms(rs);
+            }
+            else
+            {
+                MessageBox.Show("Can't perform separation because there is an appointment in that period!");
+            }
 
             var RoomVm = new RoomViewModel();
             MainViewModel.Instance().CurrentView = RoomVm;
