@@ -9,14 +9,13 @@ namespace TechHealth.Model
 {
    public class Note
    {
-      public string noteId;
-      public string content;
-        public DateTime notificationTime;
+      public string NoteId { get; set; }
+        public string Label { get; set; }
+      public string Content { get; set; }
+        public DateTime NotificationTime { get; set; }
         public bool Checked { get; set; }
 
-      public Patient patient;
-
-
+      public Patient Patient { get; set; }
 
 
     }

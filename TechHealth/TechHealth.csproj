@@ -574,6 +574,7 @@
       <DependentUpon>SuggestAppointment.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\PatientView\ViewModel\AppointmentHistoryViewModel.cs" />
+    <Compile Include="View\PatientView\ViewModel\MedicalRecordViewModel.cs" />
     <Compile Include="View\PatientView\ViewModel\RateHospitalViewModel.cs" />
     <Compile Include="View\PatientView\View\AppointmentHistory.xaml.cs">
       <DependentUpon>AppointmentHistory.xaml</DependentUpon>
@@ -592,6 +593,9 @@
     <Compile Include="View\PatientView\ViewModel\MainViewModel.cs" />
     <Compile Include="View\PatientView\View\HomeViewP.xaml.cs">
       <DependentUpon>HomeViewP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PatientView\View\MedicalRecordView.xaml.cs">
+      <DependentUpon>MedicalRecordView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\PatientView\View\RateHospital.xaml.cs">
       <DependentUpon>RateHospital.xaml</DependentUpon>
@@ -1017,6 +1021,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\PatientView\View\HomeViewP.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PatientView\View\MedicalRecordView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
