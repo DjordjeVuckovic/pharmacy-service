@@ -23,5 +23,9 @@ namespace TechHealth.Controller
         {
             return meetingService.CheckAttendants(meeting);
         }
+        public bool CheckRoom(Meeting meeting)
+        {
+            return meetingService.CheckRoom(meeting);
+        }
     }
 }

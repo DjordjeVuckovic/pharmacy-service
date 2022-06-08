@@ -12,7 +12,10 @@ namespace TechHealth.Controller
         {
             return PatientRepository.Instance.GetAllToList();
         }
-
+        public bool CheckAvailability(string jmbg, string username)
+        {
+            return patientService.CheckAvailability(jmbg, username);
+        }
         public bool Create(string name, string surname, Address address, Doctor chosenDoctor, string jmbg, int lbo, bool isBanned, string username, string password, string email, bool employed, bool guest, string phone)
         {
             var patient = new Patient();

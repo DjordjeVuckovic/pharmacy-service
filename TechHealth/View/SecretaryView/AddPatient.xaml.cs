@@ -70,22 +70,7 @@ namespace TechHealth.View.SecretaryView
             address.Country = accountCountry.Text;
             address.Postcode = Int32.Parse(accountPostcode.Text);
 
-            foreach (var patient in PatientRepository.Instance.GetAll().Values)
-            {
-                if (patient.Jmbg.Equals(accountJmbg.Text))
-                {
-                    MessageBox.Show("Jmbg already exists.");
-                    return;
-                }
-            }
-            foreach (var patient in PatientRepository.Instance.GetAll().Values)
-            {
-                if (patient.Username.Equals(accountUsername.Text))
-                {
-                    MessageBox.Show("Username already exists.");
-                    return;
-                }
-            }
+            if (!patientController.CheckAvailability(accountJmbg.Text, accountUsername.Text)) { return; }
 
             patientController.Create(accountName.Text, accountSurname.Text, address, null, accountJmbg.Text, Int32.Parse(accountLbo.Text), false, accountUsername.Text, accountPassword.Text, accountEmail.Text, false, false, accountPhone.Text);
 
