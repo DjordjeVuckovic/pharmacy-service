@@ -383,8 +383,16 @@
     <Compile Include="Repository\GradeRepository.cs" />
     <Compile Include="Repository\IRepository\IAnamnesisRepository.cs" />
     <Compile Include="Repository\IRepository\IDoctorRepository.cs" />
+    <Compile Include="Repository\IRepository\IEquipmentReallocationRepository.cs" />
+    <Compile Include="Repository\IRepository\IEquipmentRepository.cs" />
     <Compile Include="Repository\IRepository\IPrescribeMedicineRepository.cs" />
+    <Compile Include="Repository\IRepository\IRejectedMedicineRepository.cs" />
     <Compile Include="Repository\IRepository\IRepository.cs" />
+    <Compile Include="Repository\IRepository\IRoomEquipmentRepository.cs" />
+    <Compile Include="Repository\IRepository\IRoomMergingRepository.cs" />
+    <Compile Include="Repository\IRepository\IRoomRenovationRepository.cs" />
+    <Compile Include="Repository\IRepository\IRoomRepository.cs" />
+    <Compile Include="Repository\IRepository\IRoomSeparationRepository.cs" />
     <Compile Include="Repository\IRepository\ISpecializationRepository.cs" />
     <Compile Include="Repository\IRepository\ITherapyRepository.cs" />
     <Compile Include="Repository\ManagerRepository.cs" />

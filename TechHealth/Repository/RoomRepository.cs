@@ -7,10 +7,11 @@ using System;
 using System.Collections.Generic;
 using TechHealth.Conversions;
 using TechHealth.Model;
+using TechHealth.Repository.IRepository;
 
 namespace TechHealth.Repository
 {
-    public class RoomRepository : GenericRepository<string, Room>
+    public class RoomRepository : GenericRepository<string, Room>, IRoomRepository
     {
         private static readonly RoomRepository instance = new RoomRepository();
 
@@ -45,18 +46,6 @@ namespace TechHealth.Repository
         {
             entity.ShouldSerialize = true;
         }
-
-        //public List<String> GetRoomNames(List<Room> rooms)
-        //{
-        //    List<String> roomNames = new List<String>();
-
-        //    foreach (var room in rooms)
-        //    {
-        //        roomNames.Add(room.roomId);
-        //    }
-
-        //    return roomNames;
-        //}
 
         public Room GetRoombyId(string idr)
         {

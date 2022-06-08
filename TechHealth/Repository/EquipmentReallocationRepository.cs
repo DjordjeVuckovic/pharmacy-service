@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TechHealth.DTO;
+using TechHealth.Repository.IRepository;
 
 namespace TechHealth.Repository
 {
-    public class EquipmentReallocationRepository : GenericRepository<string, EquipmentReallocationDTO>
+    public class EquipmentReallocationRepository : GenericRepository<string, EquipmentReallocationDTO>,IEquipmentReallocationRepository
     {
         private static readonly EquipmentReallocationRepository instance = new EquipmentReallocationRepository();
 

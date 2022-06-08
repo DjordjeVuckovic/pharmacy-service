@@ -1,8 +1,9 @@
 ﻿using TechHealth.Model;
+using TechHealth.Repository.IRepository;
 
 namespace TechHealth.Repository
 {
-    public class RejectedMedicineRepository:GenericRepository<string,RejectedMedicine>
+    public class RejectedMedicineRepository:GenericRepository<string,RejectedMedicine>, IRejectedMedicineRepository
     {
         static RejectedMedicineRepository()
         {

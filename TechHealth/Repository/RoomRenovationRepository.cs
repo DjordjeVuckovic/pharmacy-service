@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TechHealth.Model;
+using TechHealth.Repository.IRepository;
 
 namespace TechHealth.Repository
 {
-    public class RoomRenovationRepository : GenericRepository<string, RoomRenovation>
+    public class RoomRenovationRepository : GenericRepository<string, RoomRenovation>, IRoomRenovationRepository
     {
         private static readonly RoomRenovationRepository instance = new RoomRenovationRepository();
 
