@@ -110,13 +110,13 @@ namespace TechHealth.View.SecretaryView
 
             patientController.Update(accountName.Text, accountSurname.Text, address, null, accountJmbg.Text, Int32.Parse(accountLbo.Text), false, accountUsername.Text, accountPassword.Text, accountEmail.Text, false, false, accountPhone.Text);
 
-            this.Close();
             new AccountsView().Show();
+            Close();
         }
         private void Button_Click_Cancel(object sender, RoutedEventArgs e)
         {
-            this.Close();
             new AccountsView().Show();
+            Close();
         }
     }
 }

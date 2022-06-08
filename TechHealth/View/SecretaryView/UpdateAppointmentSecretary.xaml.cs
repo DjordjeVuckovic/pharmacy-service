@@ -201,8 +201,9 @@ namespace TechHealth.View.SecretaryView
                 }
             }
             appointmentController.Update(a);
-            Close();
+            
             new AppointmentsViewSecretary(d, t).Show();
+            Close();
         }
         private void Button_Click_Cancel(object sender, RoutedEventArgs e)
         {
