@@ -13,7 +13,7 @@
                     <RowDefinition Height="50"/>
                     <RowDefinition Height="10"/>
                     <RowDefinition Height="300*"/>
-                    <RowDefinition Height="57*"/>
+                    <RowDefinition Height="37"/>
                 </Grid.RowDefinitions>
                 <Grid Grid.Row="0">
                     <TextBox Style="{StaticResource SearchText}" VerticalAlignment="Stretch" HorizontalAlignment="Right" Margin="0,0,10,0"></TextBox>

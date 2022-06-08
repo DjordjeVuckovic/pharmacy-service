@@ -6,6 +6,11 @@
              xmlns:local="clr-namespace:TechHealth.DoctorView.View"
              mc:Ignorable="d"
              d:DesignHeight="500" d:DesignWidth="800">
+    <UserControl.InputBindings>
+        <KeyBinding Command="{Binding ApproveCommand}" Key="A" Modifiers="Alt"/>
+        <KeyBinding Command="{Binding RejectCommand}" Key="R" Modifiers="Alt"/>
+        <KeyBinding Command="{Binding DetailsCommand}" Key="M" Modifiers="Control"/>
+    </UserControl.InputBindings>
     <Grid>
         <Grid>
             <Grid>

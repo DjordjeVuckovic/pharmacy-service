@@ -8,6 +8,12 @@
              xmlns:vm="clr-namespace:TechHealth.DoctorView.ViewModel"
              mc:Ignorable="d"
              d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.InputBindings>
+        <KeyBinding Command="{Binding MoreAction}" Key="A" Modifiers="Alt"/>
+        <KeyBinding Command="{Binding NewCommand}" Key="N" Modifiers="Alt"/>
+        <KeyBinding Command="{Binding UpdateCommand}" Key="U" Modifiers="Control"/>
+        <KeyBinding Command="{Binding ReviewCommand}" Key="P" Modifiers="Control"/>
+    </UserControl.InputBindings>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
@@ -39,7 +45,7 @@
             </DataGrid.Columns>
         </DataGrid>
         <Button Grid.Row="3" Content="More Action"  HorizontalAlignment="Left"   Width="150" Height="50" Margin="40,0,0,10" Command="{Binding MoreAction}"/>
-        <Button Grid.Row="3" Content="Review Anamnesis"  HorizontalAlignment="Right"  Width="150" Height="50" Margin="0,0,30,10" Command="{Binding ReviewCommand}"/>
+        <Button Grid.Row="3" Content="Preview Anamnesis"  HorizontalAlignment="Right"  Width="150" Height="50" Margin="0,0,30,10" Command="{Binding ReviewCommand}"/>
         <Button Grid.Row="3" Content="Update Anamnesis"  HorizontalAlignment="Center"  Width="150" Height="50" Margin="210,0,30,10" Command="{Binding UpdateCommand}"/>
         <Button Grid.Row="3" Content="New Anamnesis"  HorizontalAlignment="Left"   Width="150" Height="50" Margin="220,0,0,10" Command="{Binding NewCommand}"/>
     </Grid>

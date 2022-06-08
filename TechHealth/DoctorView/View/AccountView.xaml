@@ -6,13 +6,17 @@
              xmlns:local="clr-namespace:TechHealth.DoctorView.View"
              mc:Ignorable="d"
              d:DesignHeight="500" d:DesignWidth="800">
+    <UserControl.InputBindings>
+    <KeyBinding Command="{Binding VacationCommand}" Key="V" Modifiers="Alt"/>
+    <KeyBinding Command="{Binding VacationHistoryCommand}" Key="W" Modifiers="Ctrl"/>
+    </UserControl.InputBindings>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="70"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="60"/>
         </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" Text="Account details" FontSize="32" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="29,10,554,17.4"/>
+        <TextBlock Grid.Row="0" Text="Account details" FontSize="32" Foreground="#1FC192" VerticalAlignment="Center" HorizontalAlignment="Center" />
         <Grid Grid.Row="1" Margin="0,0,0,40">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="103*"/>
@@ -32,13 +36,13 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <Label Grid.Row="0" Grid.Column="0" Content="Full name:" Foreground="White" FontWeight="Bold" FontSize="28" Margin="20,0,27.6,0.4"/>
-                <Label Grid.Row="1" Grid.Column="0" Content="Specialization:" Foreground="White" FontWeight="Bold" FontSize="28" Margin="20,0,27.6,0.4"/>
-                <Label Grid.Row="2" Grid.Column="0" Content="Address:" Foreground="White" FontWeight="Bold" FontSize="28" Margin="20,0,27.6,0.4"/>
-                <Label Grid.Row="3" Grid.Column="0" Content="Phone:" Foreground="White" FontWeight="Bold" FontSize="28" Margin="20,0,27.6,0.4"/>
-                <Label Grid.Row="4" Grid.Column="0" Content="Jmbg:" Foreground="White" FontWeight="Bold" FontSize="28" Margin="20,0,27.6,0.4"/>
-                <Label Grid.Row="5" Grid.Column="0" Content="Email:" Foreground="White" FontWeight="Bold" FontSize="28" Margin="20,0,27.6,0.4"/>
-                <Label Grid.Row="6" Grid.Column="0" Content="Birthday:" Foreground="White" FontWeight="Bold" FontSize="28" Margin="20,0,27.6,0.4"/>
+                <Label Grid.Row="0" Grid.Column="0" Content="Full name:" Foreground="White" FontWeight="Bold" FontSize="24" Margin="20,0,27.6,0.4"/>
+                <Label Grid.Row="1" Grid.Column="0" Content="Specialization:" Foreground="White" FontWeight="Bold" FontSize="24" Margin="20,0,27.6,0.4"/>
+                <Label Grid.Row="2" Grid.Column="0" Content="Address:" Foreground="White" FontWeight="Bold" FontSize="24" Margin="20,0,27.6,0.4"/>
+                <Label Grid.Row="3" Grid.Column="0" Content="Phone:" Foreground="White" FontWeight="Bold" FontSize="24" Margin="20,0,27.6,0.4"/>
+                <Label Grid.Row="4" Grid.Column="0" Content="Jmbg:" Foreground="White" FontWeight="Bold" FontSize="24" Margin="20,0,27.6,0.4"/>
+                <Label Grid.Row="5" Grid.Column="0" Content="Email:" Foreground="White" FontWeight="Bold" FontSize="24" Margin="20,0,27.6,0.4"/>
+                <Label Grid.Row="6" Grid.Column="0" Content="Birthday:" Foreground="White" FontWeight="Bold" FontSize="24" Margin="20,0,27.6,0.4"/>
                 <Label Grid.Row="0" Grid.Column="1" Content="{Binding DoctorFullName}" Foreground="White" FontSize="24" Margin="0.8,0,0.4,5.2"/>
                 <Label Content="{Binding Specialization}" Foreground="White" FontSize="24" Margin="275,4.6,1.4,5.6" Grid.Row="1" Grid.ColumnSpan="2"/>
                 <Label Grid.Row="2" Content="{Binding LabelAddress}" Foreground="White" FontSize="16" Margin="275,10.4,1.4,47" Grid.RowSpan="2" Grid.ColumnSpan="2"/>

@@ -7,6 +7,10 @@
              xmlns:viewModel="clr-namespace:TechHealth.DoctorView.ViewModel"
              mc:Ignorable="d"
              d:DesignHeight="500" d:DesignWidth="800">
+    <UserControl.InputBindings>
+        <KeyBinding Command="{Binding MedicineRecordCommand}" Key="M" Modifiers="Ctrl"/>
+        <KeyBinding Command="{Binding HistoryCommand}" Key="Q" Modifiers="Ctrl"/>
+    </UserControl.InputBindings>
     <Grid>
                 <Grid>
                     <Grid.RowDefinitions>

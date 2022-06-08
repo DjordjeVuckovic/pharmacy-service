@@ -40,13 +40,31 @@
                         F5 - Medicine Tab<LineBreak/>
                         F6 - Account Tab<LineBreak/>
                         TAB - Change of active element <LineBreak/>
-                        Ctrl+H - Help Button <LineBreak/>
-                        Ctrl+T - Tutorial Button <LineBreak/>
-                        Ctrl+N - Notifications Button <LineBreak/>
-                        Ctrl+F - Finish Button<LineBreak/>
-                        Ctrl+X - Cancel Button<LineBreak/>
-                        Ctrl+Y - Close Button<LineBreak/>
-                        Escape - Sign out Button<LineBreak/>
+                        Ctrl+H - Help Command <LineBreak/>
+                        Ctrl+T - Tutorial Command <LineBreak/>
+                        Ctrl+N - Notifications Command <LineBreak/>
+                        Ctrl+F - Finish Command<LineBreak/>
+                        Ctrl+X - Cancel Command<LineBreak/>
+                        Ctrl+Y - Close Command<LineBreak/>
+                        Ctrl+P - Preview Command<LineBreak/>
+                        Ctrl+D - Delete Command<LineBreak/>
+                        Ctrl+U - Update Command<LineBreak/>
+                        Ctrl+M - Medical Record Command<LineBreak/>
+                        Ctrl+Q - History of Care Command<LineBreak/>
+                        Ctrl+W - Vacation History Command<LineBreak/>
+                        Ctrl+R - Refferal Command<LineBreak/>
+                        Ctrl+L - New Prescription Command<LineBreak/>
+                        Alt+M - Details Command<LineBreak/>
+                        Alt+A - Approve Medicine Command<LineBreak/>
+                        Alt+R - Reject Medicine Command<LineBreak/>
+                        Alt+U - Generate Report Command<LineBreak/>
+                        Alt+E - New Examination Command<LineBreak/>
+                        Alt+A - More Action Command<LineBreak/>
+                        Alt+O - New Surgery Command<LineBreak/>
+                        Alt+N - New Anamnesis Command<LineBreak/>
+                        Alt+V - New Vacation Command<LineBreak/>
+                        Alt+T - New Therapy Command<LineBreak/>
+                        Escape - Sign out Command<LineBreak/>
                         Alt+F4 - Terminate application
                         </TextBlock>
                     </StackPanel>
