@@ -45,6 +45,16 @@ namespace TechHealth.Service
             return staffGrades;
         }
 
+        public List<int> GetGeneralGrades()
+        {
+            List<int> staffGrades = new List<int>();
+            foreach (var grade in GetAll())
+            {
+                staffGrades.Add(grade.UkupnaOcena);
+            }
+            return staffGrades;
+        }
+
         public double GetGradesSum(List<int> grades)
         {
             double sum = 0;
@@ -55,10 +65,10 @@ namespace TechHealth.Service
             return sum;
         }
 
-        public int GetGradesNum(int gradeValue)
+        public int GetGradesNum(int gradeValue, List<int> grades)
         {
             int gradeValueCount = 0;
-            foreach (var grade in GetStaffGrades())
+            foreach (var grade in grades)
             {
                 if (grade == gradeValue)
                 {
@@ -66,6 +76,13 @@ namespace TechHealth.Service
                 }
             }
             return gradeValueCount;
+        }
+
+        public double GetAverageGrade(List<int> grades)
+        {
+            double sum = GetGradesSum(grades);
+            double num = grades.Count;
+            return sum / num;
         }
     }
 }
