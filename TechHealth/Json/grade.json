@@ -4,7 +4,7 @@
     "OcenaLekara": 0,
     "OcenaOsoblje": 4,
     "OcenaCistoca": 4,
-    "UkupnaOcena": 4,
+    "UkupnaOcena": 1,
     "EvidentAppointment": {
       "ShouldSerialize": false,
       "IdAppointment": "8f4aeb23199d4e21a3ef6467e71f6e3b"
@@ -26,7 +26,7 @@
     "OcenaLekara": 3,
     "OcenaOsoblje": 5,
     "OcenaCistoca": 4,
-    "UkupnaOcena": 4,
+    "UkupnaOcena": 2,
     "EvidentAppointment": {
       "ShouldSerialize": false,
       "IdAppointment": "86771793b2074ed0af6c13793d3e2cad"

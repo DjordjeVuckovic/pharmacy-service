@@ -46,9 +46,19 @@ namespace TechHealth.Controller
             return gradeService.GetGradesSum(grades);
         }
 
-        public int GetGradesNum(int gradeValue)
+        public int GetGradesNum(int gradeValue, List<int> grades)
         {
-            return gradeService.GetGradesNum(gradeValue);
+            return gradeService.GetGradesNum(gradeValue, grades);
+        }
+
+        public double GetAverageGrade(List<int> grades)
+        {
+            return gradeService.GetAverageGrade(grades);
+        }
+
+        public List<int> GetGeneralGrades()
+        {
+            return gradeService.GetGeneralGrades();
         }
     }
 }
