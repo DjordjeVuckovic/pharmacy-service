@@ -26,7 +26,7 @@
             <Rectangle Grid.Row="1" Margin="0,20,0,0" Fill="#FF3A475F"/>
             <StackPanel Grid.Row="1" Orientation="Vertical" Margin="70,20,0,0" VerticalAlignment="Center">
                 <Label Name="LabelLeadDoctor" Content=" Hospitalization doctor: John Black" />
-                <Label Name="LabelRoom" Content="Room: S1" />
+                <Label Name="LabelRoom" Content=" Room: S1" />
             </StackPanel>
 
             <Grid Grid.Row="2" Margin="100,50,100,20">

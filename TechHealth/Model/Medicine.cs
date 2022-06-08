@@ -81,7 +81,6 @@ namespace TechHealth.Model
             get=>MedicineSubstanceToString();
             set
             {
-                
             }
         }
 
