@@ -1,12 +1,13 @@
 ﻿using System.Collections.Generic;
 using TechHealth.Model;
 using TechHealth.Service;
+using TechHealth.Service.IService;
 
 namespace TechHealth.Controller
 {
     public class RejectedMedicineController
     {
-        private readonly RejectedMedicineService rejectedMedicineService = new RejectedMedicineService();
+        private readonly IRejectedMedicineService rejectedMedicineService = new RejectedMedicineService();
 
         public List<RejectedMedicine> GetAllToList()
         {

@@ -5,12 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using TechHealth.DTO;
 using TechHealth.Service;
+using TechHealth.Service.IService;
 
 namespace TechHealth.Controller
 {
     public class EquipmentReallocationController
     {
-        private EquipmentReallocationService eqReallocationService = new EquipmentReallocationService();
+        private IEquipmentReallocationService eqReallocationService = new EquipmentReallocationService();
 
         public List<EquipmentReallocationDTO> GetAllToList()
         {
