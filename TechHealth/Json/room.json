@@ -26,5 +26,26 @@
     "Floor": 3,
     "Availability": true,
     "ShouldSerialize": true
+  },
+  "S6": {
+    "RoomTypes": 3,
+    "RoomId": "S6",
+    "Floor": 3,
+    "Availability": true,
+    "ShouldSerialize": true
+  },
+  "S7": {
+    "RoomTypes": 1,
+    "RoomId": "S7",
+    "Floor": 3,
+    "Availability": true,
+    "ShouldSerialize": true
+  },
+  "S8": {
+    "RoomTypes": 0,
+    "RoomId": "S8",
+    "Floor": 3,
+    "Availability": true,
+    "ShouldSerialize": true
   }
 }
