@@ -303,6 +303,9 @@
     <Compile Include="DoctorView\Windows\DoctorVacationWindow.xaml.cs">
       <DependentUpon>DoctorVacationWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DoctorView\Windows\ExtendStayWindow.xaml.cs">
+      <DependentUpon>ExtendStayWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DoctorView\Windows\RateApplicationWindow.xaml.cs">
       <DependentUpon>RateApplicationWindow.xaml</DependentUpon>
     </Compile>
@@ -848,6 +851,7 @@
     <Page Include="DoctorView\Windows\AppointRefferalWindow.xaml" />
     <Page Include="DoctorView\Windows\DoctorVacationHistoryWindow.xaml" />
     <Page Include="DoctorView\Windows\DoctorVacationWindow.xaml" />
+    <Page Include="DoctorView\Windows\ExtendStayWindow.xaml" />
     <Page Include="DoctorView\Windows\RateApplicationWindow.xaml" />
     <Page Include="DoctorView\Windows\ReferralWindow.xaml" />
     <Page Include="DoctorView\Windows\PrescriptionPreview.xaml" />
