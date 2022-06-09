@@ -101,7 +101,12 @@ namespace TechHealth.View.PatientView.View
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            new Notes(GetSelected).ShowDialog();
+        }
 
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            new AppointmentDetails(GetSelected).ShowDialog();
         }
     }
 }

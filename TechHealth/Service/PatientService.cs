@@ -13,7 +13,10 @@ namespace TechHealth.Service
    public class PatientService
    {
 
-        public Patient GetById(string patientId) => PatientRepository.Instance.GetPatientbyId(patientId);
+        public Patient GetById(string patientId)
+        {
+            return PatientRepository.Instance.GetPatientbyId(patientId);
+        }
 
         public List<Patient> GetAll()
       {

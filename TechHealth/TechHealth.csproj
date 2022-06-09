@@ -165,15 +165,16 @@
     <Compile Include="Controller\IController\IDoctorController.cs" />
     <Compile Include="Controller\IController\IDoctorVacationRequestController.cs" />
     <Compile Include="Controller\IController\IMedicineController.cs" />
+    <Compile Include="Controller\IController\INoteController.cs" />
     <Compile Include="Controller\IController\IPrescribeMedicineController.cs" />
     <Compile Include="Controller\IController\IReferralRequestController.cs" />
     <Compile Include="Controller\IController\ISpecializationController.cs" />
     <Compile Include="Controller\IController\ITherapyController.cs" />
     <Compile Include="Controller\MedicalRecordController.cs" />
     <Compile Include="Controller\MedicineController.cs" />
+    <Compile Include="Controller\NoteController.cs" />
     <Compile Include="Controller\PatientAllergensController.cs" />
     <Compile Include="Controller\PatientController.cs" />
-    <Compile Include="Controller\PatientNotificationController.cs" />
     <Compile Include="Controller\PrescribeMedicineController.cs" />
     <Compile Include="Controller\ReferralRequestController.cs" />
     <Compile Include="Controller\RejectedMedicineController.cs" />
@@ -352,7 +353,6 @@
     <Compile Include="Model\MedicineStatus.cs" />
     <Compile Include="Model\Meeting.cs" />
     <Compile Include="Model\PatientAllergens.cs" />
-    <Compile Include="Model\PatientNotification.cs" />
     <Compile Include="Model\PatientRecommendType.cs" />
     <Compile Include="Model\RejectedMedicine.cs" />
     <Compile Include="Model\RoomEquipment.cs" />
@@ -379,6 +379,7 @@
     <Compile Include="Repository\GradeRepository.cs" />
     <Compile Include="Repository\IRepository\IAnamnesisRepository.cs" />
     <Compile Include="Repository\IRepository\IDoctorRepository.cs" />
+    <Compile Include="Repository\IRepository\INoteRepository.cs" />
     <Compile Include="Repository\IRepository\IPrescribeMedicineRepository.cs" />
     <Compile Include="Repository\IRepository\IRepository.cs" />
     <Compile Include="Repository\IRepository\ISpecializationRepository.cs" />
@@ -387,8 +388,8 @@
     <Compile Include="Repository\MedicalRecordRepository.cs" />
     <Compile Include="Repository\MedicineRepository.cs" />
     <Compile Include="Repository\MeetingRepository.cs" />
+    <Compile Include="Repository\NoteRepository.cs" />
     <Compile Include="Repository\PatientAllergensRepository.cs" />
-    <Compile Include="Repository\PatientNotificationRepository.cs" />
     <Compile Include="Repository\PatientRepository.cs" />
     <Compile Include="Repository\PrescribeMedicineRepository.cs" />
     <Compile Include="Repository\ReferralRequestRepository.cs" />
@@ -420,6 +421,7 @@
     <Compile Include="Service\IService\IEquipmentService.cs" />
     <Compile Include="Service\IService\IMedicalRecordService.cs" />
     <Compile Include="Service\IService\IMedicineService.cs" />
+    <Compile Include="Service\IService\INoteService.cs" />
     <Compile Include="Service\IService\IPrescribeMedicineService.cs" />
     <Compile Include="Service\IService\IReferralRequestService.cs" />
     <Compile Include="Service\IService\IRejectedMedicineService.cs" />
@@ -433,8 +435,8 @@
     <Compile Include="Service\IService\ITherapyService.cs" />
     <Compile Include="Service\MedicalRecordService.cs" />
     <Compile Include="Service\MedicineService.cs" />
+    <Compile Include="Service\NoteService.cs" />
     <Compile Include="Service\PatientAllergensService.cs" />
-    <Compile Include="Service\PatientNotificationService.cs" />
     <Compile Include="Service\PatientService.cs" />
     <Compile Include="Service\PrescribeMedicineService.cs" />
     <Compile Include="Service\ReferralRequestService.cs" />
@@ -566,6 +568,12 @@
     </Compile>
     <Compile Include="View\PatientView\AddAppointment.xaml.cs">
       <DependentUpon>AddAppointment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PatientView\AppointmentDetails.xaml.cs">
+      <DependentUpon>AppointmentDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PatientView\Notes.xaml.cs">
+      <DependentUpon>Notes.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\PatientView\RateAppointment.xaml.cs">
       <DependentUpon>RateAppointment.xaml</DependentUpon>
@@ -719,8 +727,8 @@
     <None Include="Json\hospitalrating.json" />
     <None Include="Json\medicalrecord.json" />
     <None Include="Json\meeting.json" />
+    <None Include="Json\note.json" />
     <None Include="Json\patientAllergens.json" />
-    <None Include="Json\patientNotification.json" />
     <None Include="Json\room.json" />
     <None Include="Json\equipment.json" />
     <None Include="Json\roomEquipment.json" />
@@ -993,6 +1001,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\PatientView\AddAppointment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PatientView\AppointmentDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PatientView\Notes.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
