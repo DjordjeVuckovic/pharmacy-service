@@ -14,12 +14,14 @@ using System.Windows.Shapes;
 using TechHealth.Model;
 using TechHealth.Repository;
 using TechHealth.Controller;
+using System.Collections.ObjectModel;
+using System.Reflection.Metadata;
 
 namespace TechHealth.View.SecretaryView
 {
-    public partial class SecretaryMainWindow : Window
+    public partial class Report : Window
     {
-        public SecretaryMainWindow()
+        public Report()
         {
             InitializeComponent();
         }
@@ -53,20 +55,39 @@ namespace TechHealth.View.SecretaryView
             new MeetingsPickDate().Show();
             Close();
         }
-        private void Button_Vacation(object sender, RoutedEventArgs e)
-        {
-            new VacationRequestsView().Show();
-            Close();
-        }
         private void Button_LogOut(object sender, RoutedEventArgs e)
         {
             new LoginWindow().Show();
             Close();
         }
-        private void Button_Report(object sender, RoutedEventArgs e)
+        private void Button_Click_Report(object sender, RoutedEventArgs e)
         {
-            new Report().Show();
-            Close();
+            try
+            {
+                DateTime dateFrom = DateTime.Parse(datePickerFrom.Text);
+                DateTime dateTo = DateTime.Parse(datePickerTo.Text);
+            }
+            catch
+            {
+                MessageBox.Show("You didn't select a date.");
+                return;
+            }
+
+            List<Appointment> list = new List<Appointment>();
+            foreach (var a in AppointmentRepository.Instance.GetAllToList())
+            {
+                if (DateTime.Compare(a.Date, DateTime.Parse(datePickerFrom.Text)) >= 0)
+                {
+                    if (DateTime.Compare(a.Date, DateTime.Parse(datePickerTo.Text)) <= 0)
+                    {
+                        list.Add(a);
+                    }
+                }
+            }
+            foreach (var a in list)
+            {
+                
+            }
         }
     }
 }
