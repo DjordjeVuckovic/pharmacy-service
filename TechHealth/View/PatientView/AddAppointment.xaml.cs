@@ -44,7 +44,7 @@ namespace TechHealth.View.PatientView       //dodati IDappointment
             room = roomController.GetById("S2");
             PatientFullName = patient.FullName;
             apList = AppointmentRepository.Instance.GetAllToList();
-            Date.DisplayDateStart = DateTime.Now;
+            
 
             //TxtPatient.Text = patient.FullName;
             doctors = DoctorRepository.Instance.GetAllToList();

@@ -130,9 +130,6 @@
             <DataTemplate DataType="{x:Type viewModelP:RateHospitalViewModel}">
                 <viewP:RateHospital/>
             </DataTemplate>
-            <DataTemplate DataType="{x:Type viewModelP:MedicalRecordViewModel}">
-                <viewP:MedicalRecordView/>
-            </DataTemplate>
 
 
         </ResourceDictionary>

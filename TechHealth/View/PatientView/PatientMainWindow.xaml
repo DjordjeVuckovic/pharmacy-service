@@ -77,8 +77,7 @@
                              Height="50"
                              Foreground="White"
                              FontSize="14"
-                             Style="{StaticResource MenuButtonTheme}"
-                             Command="{Binding MedRecCommand}"/>
+                             Style="{StaticResource MenuButtonTheme}"/>
 
 
                 <RadioButton Content="Therapy"
