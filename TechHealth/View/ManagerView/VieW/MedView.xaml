@@ -35,13 +35,13 @@
                 </DataGrid.Columns>
             </DataGrid>
 
-            <Button x:Name="Add" Content="Add" Margin="20,-45,10,10" HorizontalAlignment="Left" Width="120" Height="50"  Grid.Row="3" Background="Green"
+            <Button x:Name="Add" Content="Add" Margin="20,-45,10,10" HorizontalAlignment="Left" Width="120" Height="50"  Grid.Row="3"
                     Command="{Binding AddMedicineCommand}"/>
             <Button x:Name="View" Content="View/Modify" Margin="198,322,0,38" HorizontalAlignment="Left"  Width="120" Height="50"
                     Command="{Binding UpdateMedicineCommand}" Grid.RowSpan="2"/>
             <Button x:Name="RejectReason" Content="Reject reason" Margin="390,322,0,38" HorizontalAlignment="Left"  Width="120" Height="50"
                     Command="{Binding RejectReasonCommand}" Grid.RowSpan="2"/>
-            <Button x:Name="Delete" Content="Delete" Margin="0,-45,20,10" HorizontalAlignment="Right" Width="120" Height="50"  Grid.Row="3" Background="OrangeRed"
+            <Button x:Name="Delete" Content="Delete" Margin="0,-45,20,10" HorizontalAlignment="Right" Width="120" Height="50"  Grid.Row="3"
                     Command="{Binding DeleteMedicineCommand}"/>
         </Grid>
     </StackPanel>

@@ -37,7 +37,7 @@
                 </DataGrid.Columns>
             </DataGrid>
 
-            <Button x:Name="Add" Content="Add" Margin="20,0,10,10" HorizontalAlignment="Left" Width="120" Height="50"  Grid.Row="3" Background="Green"
+            <Button x:Name="Add" Content="Add" Margin="20,0,10,10" HorizontalAlignment="Left" Width="120" Height="50"  Grid.Row="3" Background="#232735"
                     Command="{Binding AddRoomCommand}"/>
             <Button x:Name="Merging" Content="Merging" Margin="90,280,0,10" HorizontalAlignment="Left" Width="120" Height="50"
                     Command="{Binding MergeRoomsCommand}"/>
