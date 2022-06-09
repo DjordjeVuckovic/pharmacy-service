@@ -20,7 +20,7 @@
         </ResourceDictionary>
     </Window.Resources>
 
-    <Grid>
+    <Grid Background="WhiteSmoke">
         <TextBox x:Name="TitleBox" Background="BlanchedAlmond" HorizontalAlignment="Left"
                  FontSize="22" 
                  Height="36" Margin="10,10,0,0" TextWrapping="Wrap"       
@@ -41,7 +41,7 @@
                    FontSize="18"
                    Foreground="Black"
               
-               Margin="10,300,198,229"/>
+               Margin="10,300,185,229"/>
 
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"
                     Background="BlanchedAlmond"
@@ -64,8 +64,8 @@
         </StackPanel>
         <CheckBox Content="" Background="Black"
                   HorizontalAlignment="Center" x:Name="Radio"
-                  Margin="367,300,10,0" VerticalAlignment="Top" Height="35"
-                  Width="65" IsChecked="False"
+                  Margin="262,300,106,0" VerticalAlignment="Top" Height="40"
+                  Width="74" IsChecked="True"
                   Checked="RadioButton_Click" Click="RadioButton_Click"/>
 
     </Grid>
