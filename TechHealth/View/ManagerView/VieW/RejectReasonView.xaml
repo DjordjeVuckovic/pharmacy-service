@@ -11,18 +11,20 @@
              TextElement.FontFamily="Roboto"
              TextOptions.TextFormattingMode="Ideal"
              TextOptions.TextRenderingMode="Auto">
-    
-    <Grid Background="#252337">
-        <StackPanel Grid.Row="1" Grid.Column="0" Margin="10,10,10,10">
-            <StackPanel Margin="10,10,10,10">
-                <TextBlock Text="Reject details:" VerticalAlignment="Center" Margin="150,0,0,0" FontSize="32" Foreground="#1FC192"/>
-            </StackPanel>
-            <Label Content="{Binding RejectedMedicineId}" VerticalAlignment="Center" Margin="20,20,0,0"/>
-            <Label Content="{Binding Medicine}" VerticalAlignment="Center" Margin="20,20,0,0"/>
-            <Label Content="{Binding Reason}" VerticalAlignment="Center" Margin="20,20,0,0"/>
-            <Label Content="{Binding Doctor}" VerticalAlignment="Center" Margin="20,20,0,0"/>
-            <Button x:Name="View" Content="Close"  Width="120" Height="50" Margin="100,100,300,0"
-                    Command="{Binding CloseCommand}"/>
-        </StackPanel>
+
+    <Grid Background="LightGray">
+        <Grid Background="#252337" Margin="30,30,30,10">
+            <Grid Margin="10,10,10,10">
+                <TextBlock Text="Reject details:" VerticalAlignment="Top" Margin="202,10,202,0" FontSize="32" Foreground="White"/>
+
+                <Label Content="{Binding RejectedMedicineId}" VerticalAlignment="Top" Margin="10,100,10,0"/>
+                <Label Content="{Binding Medicine}" VerticalAlignment="Top" Margin="10,145,10,0"/>
+                <Label Content="{Binding Reason}" VerticalAlignment="Top" Margin="10,190,10,0"/>
+                <Label Content="{Binding Doctor}" VerticalAlignment="Top" Margin="10,235,10,0"/>
+                <Button Content="Close" HorizontalAlignment="Center" Margin="0,340,0,0"
+                        VerticalAlignment="Top" Width="120" Height="50" FontSize="16"
+                        Command="{Binding CloseCommand}"/>
+            </Grid>
+        </Grid>
     </Grid>
 </UserControl>

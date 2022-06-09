@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:TechHealth.View.ManagerView.VieW"
-             xmlns:viewModel="clr-namespace:TechHealth.View.ManagerView.ViewModel"
+             xmlns:viewModel="clr-namespace:TechHealth.View.ManagerView.ViewModel" xmlns:validationRules="clr-namespace:TechHealth.ValidationRules" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="710">
 
@@ -17,7 +17,7 @@
         <Grid>
             <TextBox x:Name="search" TextChanged="search_TextChanged" Width="120" Height="30"
                  HorizontalAlignment="Right" Margin="0,0,11,0" Background="#272537"
-                     Foreground="White"/>
+                     Foreground="White" materialDesign:HintAssist.Hint="Search"/>
             <ComboBox x:Name="CbType" Width="100" Height="30" Background="#272537"
                       Foreground="White"
                       Text="All"
@@ -51,17 +51,16 @@
                     <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="*"  CanUserResize="False"/>
                     <DataGridTextColumn Header="Type" Binding="{Binding Type}" Width="*"  CanUserResize="False"/>
                     <DataGridTextColumn Header="Amount" Binding="{Binding Quantity}" Width="*"  CanUserResize="False"/>
-                    <DataGridTextColumn Header="More info" Width="*"  CanUserResize="False"/>
                 </DataGrid.Columns>
             </DataGrid>
 
-            <Button x:Name="Add" Content="Add" Margin="20,322,0,38" HorizontalAlignment="Left" Width="120" Height="50" Background="Green"
+            <Button x:Name="Add" Content="Add" Margin="20,322,0,38" HorizontalAlignment="Left" Width="120" Height="50"
                     Command="{Binding AddEquipmentCommand}" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
             <Button x:Name="View" Content="View/Modify" Margin="108,322,0,38" HorizontalAlignment="Left"  Width="120" Height="50"
                     Command="{Binding ViewEquipmentCommand}" Grid.Column="1" Grid.RowSpan="2"/>
             <Button x:Name="Reallocate" Content="Reallocate" Margin="303,322,0,38" HorizontalAlignment="Left"  Width="120" Height="50"
                     Command="{Binding ReallocateCommand}" Grid.Column="1" Grid.RowSpan="2"/>
-            <Button x:Name="Delete" Content="Delete" Margin="0,322,20,38" HorizontalAlignment="Right" Width="120" Height="50" Background="OrangeRed"
+            <Button x:Name="Delete" Content="Delete" Margin="0,322,20,38" HorizontalAlignment="Right" Width="120" Height="50"
                     Command="{Binding DeleteEquipmentCommand}" Grid.Column="1" Grid.RowSpan="2"/>
         </Grid>
     </StackPanel>
