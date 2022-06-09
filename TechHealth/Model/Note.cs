@@ -4,20 +4,21 @@
 // Purpose: Definition of Class Note
 
 using System;
+using System.Windows.Controls;
 
 namespace TechHealth.Model
 {
    public class Note
    {
-      public string noteId;
-      public string content;
-        public DateTime notificationTime;
+
+        public string NoteId { get; set; }
+        public string Label { get; set; }
+        public string Content { get; set; }
+        //public DateTime NotificationTime { get; set; }
         public bool Checked { get; set; }
-
-      public Patient patient;
-
-
-
-
+        public Appointment SelectedAppointment { get; set; }
+        public Patient Patient { get; set; }
+        public DateTime RemindDate { get; set; }
+        public DateTime RemindTime { get; set; }
     }
 }
