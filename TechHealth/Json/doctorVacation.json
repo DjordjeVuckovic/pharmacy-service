@@ -33,7 +33,7 @@
     },
     "VacationReason": "aaa",
     "Emergent": false,
-    "VacationStatus": 0
+    "VacationStatus": 1
   },
   "58b4722c3e5646158bc5b6c48345ed3d": {
     "VacationId": "58b4722c3e5646158bc5b6c48345ed3d",
@@ -177,6 +177,6 @@
     },
     "VacationReason": "aaaaaaaaaa",
     "Emergent": false,
-    "VacationStatus": 0
+    "VacationStatus": 1
   }
 }
