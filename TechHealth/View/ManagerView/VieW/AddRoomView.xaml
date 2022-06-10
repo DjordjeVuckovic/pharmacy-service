@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:TechHealth.View.ManagerView.VieW"
+             xmlns:validationRules="clr-namespace:TechHealth.ValidationRules"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="710">
     <Grid Background="LightGray">
@@ -12,8 +13,9 @@
             <Label Content="Floor:" HorizontalAlignment="Left" Margin="126,189,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White"/>
             <Label Content="Type:" HorizontalAlignment="Left" Margin="405,76,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White" RenderTransformOrigin="1.002,0.646"/>
             <Label Content="Availability:" HorizontalAlignment="Left" Margin="405,189,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White" RenderTransformOrigin="0.755,0.681"/>
-            <TextBox HorizontalAlignment="Left" Margin="126,124,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="22" x:Name="TxtRoomId"
-                     Foreground="White"/>
+            <TextBox HorizontalAlignment="Left" Margin="126,124,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="22" x:Name="TxtRoomId"
+                     Foreground="White">
+            </TextBox>
             <ComboBox HorizontalAlignment="Left" Margin="126,248,0,0" VerticalAlignment="Top" Height="22" Width="120" x:Name="CbFloor"
                       Foreground="White">
                 <ComboBoxItem Content="1"/>
@@ -26,10 +28,9 @@
                 <ComboBoxItem Content="Examination"/>
                 <ComboBoxItem Content="Rest"/>
                 <ComboBoxItem Content="Office"/>
-                <ComboBoxItem Content="Warehouse"/>
             </ComboBox>
             <ComboBox HorizontalAlignment="Left" Margin="405,248,0,0" VerticalAlignment="Top" Height="22" Width="120" RenderTransformOrigin="0.033,0.608" x:Name="CbAvailability"
-                      Foreground="White">
+                      Foreground="White" >
                 <ComboBoxItem Content="In function"/>
                 <ComboBoxItem Content="Not in function"/>
             </ComboBox>

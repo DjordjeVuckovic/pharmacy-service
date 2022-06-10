@@ -45,7 +45,15 @@ namespace TechHealth.View.ManagerView.VieW
         {
             selected.Name = TxtName.Text;
             selected.Type = ManagerConversions.StringToEquipmentType(CbEqType.Text);
-            selected.Quantity = Int32.Parse(TxtQuantity.Text);
+            try
+            {
+                selected.Quantity = Int32.Parse(TxtQuantity.Text);
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Please enter a valid number for quantity!");
+            }
 
             equipmentController.Update(selected);
             roomEquipmentController.UpdateRoomEqByEqName(reList, selected.Name);

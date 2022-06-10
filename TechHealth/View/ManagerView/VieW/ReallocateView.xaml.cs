@@ -56,17 +56,40 @@ namespace TechHealth.View.ManagerView.VieW
             dto.EquipmentName = TxtEqId.Text;
             dto.SourceRoomID = CbSourceRoom.Text;
             dto.DestinationRoomID = CbDestinationRoom.Text;
-            dto.AmountMoving = Int32.Parse(TxtAmount.Text);
+            try
+            {
+                dto.AmountMoving = Int32.Parse(TxtAmount.Text);
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Please enter a number for amount moving!");
+                return;
+            }            
             string date = DpDateTime.Text;
             string dateTime = date + " " + TxtTime.Text;
-            dto.ReallocationTime = DateTime.Parse(dateTime);
-            //dto.ReallocationTime = DpDateTime.SelectedDate;
+            try
+            {
+                dto.ReallocationTime = DateTime.Parse(dateTime);
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Invalid date!");
+                return;
+            }
             dto.ReallocationID = Guid.NewGuid().ToString("N");
 
             RoomEquipment reDst = new RoomEquipment();
             RoomEquipment reSrc = new RoomEquipment();
             reDst = roomEquipmentController.GetReByKey(dto.EquipmentName, dto.DestinationRoomID);
             reSrc = roomEquipmentController.GetReByKey(dto.EquipmentName, dto.SourceRoomID);
+
+            if (CbSourceRoom.Text == "" || CbDestinationRoom.Text == "" || TxtTime.Text == "")
+            {
+                MessageBox.Show("All fields have to be filled in order to proceed!");
+                return;
+            }
 
             if (!(reSrc.Quantity >= dto.AmountMoving))
             {

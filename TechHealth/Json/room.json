@@ -47,5 +47,19 @@
     "Floor": 3,
     "Availability": true,
     "ShouldSerialize": true
+  },
+  "S10": {
+    "RoomTypes": 2,
+    "RoomId": "S10",
+    "Floor": 1,
+    "Availability": false,
+    "ShouldSerialize": true
+  },
+  "S23": {
+    "RoomTypes": 3,
+    "RoomId": "S23",
+    "Floor": 3,
+    "Availability": false,
+    "ShouldSerialize": true
   }
 }
