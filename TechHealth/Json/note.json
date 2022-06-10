@@ -31,7 +31,8 @@
       "Password": "1311",
       "ShouldSerialize": true
     },
-    "RemindDate": "0001-01-01T00:00:00"
+    "RemindDate": "0001-01-01T00:00:00",
+    "RemindTime": "0001-01-01T00:00:00"
   },
   "6ace445eb2484f6682344c97a9746980": {
     "NoteId": "6ace445eb2484f6682344c97a9746980",
@@ -43,7 +44,8 @@
       "IdAppointment": "97c07e7ab12e49a8b6707dbc98ccc14d"
     },
     "Patient": null,
-    "RemindDate": "0001-01-01T00:00:00"
+    "RemindDate": "0001-01-01T00:00:00",
+    "RemindTime": "0001-01-01T00:00:00"
   },
   "dbb25283df2e41eb99e237ca6cbf2be8": {
     "NoteId": "dbb25283df2e41eb99e237ca6cbf2be8",
@@ -55,7 +57,8 @@
       "IdAppointment": "97c07e7ab12e49a8b6707dbc98ccc14d"
     },
     "Patient": null,
-    "RemindDate": "0001-01-01T00:00:00"
+    "RemindDate": "0001-01-01T00:00:00",
+    "RemindTime": "0001-01-01T00:00:00"
   },
   "412150f1310748f29732cb52e283a9dc": {
     "NoteId": "412150f1310748f29732cb52e283a9dc",
@@ -89,7 +92,8 @@
       "Password": "dusan",
       "ShouldSerialize": true
     },
-    "RemindDate": "0001-01-01T00:00:00"
+    "RemindDate": "0001-01-01T00:00:00",
+    "RemindTime": "0001-01-01T00:00:00"
   },
   "0f3c84025563454ab0740db06877a8ac": {
     "NoteId": "0f3c84025563454ab0740db06877a8ac",
@@ -123,7 +127,8 @@
       "Password": "dusan",
       "ShouldSerialize": true
     },
-    "RemindDate": "0001-01-01T00:00:00"
+    "RemindDate": "0001-01-01T00:00:00",
+    "RemindTime": "0001-01-01T00:00:00"
   },
   "fa34f41f168d43f29ece083831d73bba": {
     "NoteId": "fa34f41f168d43f29ece083831d73bba",
@@ -157,7 +162,8 @@
       "Password": "dusan",
       "ShouldSerialize": true
     },
-    "RemindDate": "0001-01-01T00:00:00"
+    "RemindDate": "0001-01-01T00:00:00",
+    "RemindTime": "0001-01-01T00:00:00"
   },
   "7c87731b816741948d700ef02559c93f": {
     "NoteId": "7c87731b816741948d700ef02559c93f",
@@ -173,7 +179,8 @@
       "Jmbg": "2456",
       "ShouldSerialize": false
     },
-    "RemindDate": "0001-01-01T00:00:00"
+    "RemindDate": "0001-01-01T00:00:00",
+    "RemindTime": "0001-01-01T00:00:00"
   },
   "89433c8071254535a9893f0d32071aa8": {
     "NoteId": "89433c8071254535a9893f0d32071aa8",
@@ -189,7 +196,8 @@
       "Jmbg": "2456",
       "ShouldSerialize": false
     },
-    "RemindDate": "0001-01-01T00:00:00"
+    "RemindDate": "0001-01-01T00:00:00",
+    "RemindTime": "0001-01-01T00:00:00"
   },
   "e82d501d0c4e483cbd2980f5a2bb58eb": {
     "NoteId": "e82d501d0c4e483cbd2980f5a2bb58eb",
@@ -205,7 +213,8 @@
       "Jmbg": "2456",
       "ShouldSerialize": false
     },
-    "RemindDate": "0001-01-01T00:00:00"
+    "RemindDate": "0001-01-01T00:00:00",
+    "RemindTime": "0001-01-01T00:00:00"
   },
   "beb36fe96f7340a291b6ea82d87a3cbc": {
     "NoteId": "beb36fe96f7340a291b6ea82d87a3cbc",
@@ -221,7 +230,8 @@
       "Jmbg": "2456",
       "ShouldSerialize": false
     },
-    "RemindDate": "0001-01-01T00:00:00"
+    "RemindDate": "0001-01-01T00:00:00",
+    "RemindTime": "0001-01-01T00:00:00"
   },
   "44b5ab92e60447408b281825af686af9": {
     "NoteId": "44b5ab92e60447408b281825af686af9",
@@ -237,7 +247,8 @@
       "Jmbg": "2456",
       "ShouldSerialize": false
     },
-    "RemindDate": "0001-01-01T00:00:00"
+    "RemindDate": "0001-01-01T00:00:00",
+    "RemindTime": "0001-01-01T00:00:00"
   },
   "b321315cc0ed40988379cfdaaaa96f11": {
     "NoteId": "b321315cc0ed40988379cfdaaaa96f11",
@@ -253,7 +264,8 @@
       "Jmbg": "2456",
       "ShouldSerialize": false
     },
-    "RemindDate": "2022-03-02T00:00:00"
+    "RemindDate": "2022-03-02T00:00:00",
+    "RemindTime": "0001-01-01T00:00:00"
   },
   "00be492c4d3840ffa2ed3e1cc828df68": {
     "NoteId": "00be492c4d3840ffa2ed3e1cc828df68",
@@ -269,7 +281,8 @@
       "Jmbg": "2456",
       "ShouldSerialize": false
     },
-    "RemindDate": "0001-01-01T00:00:00"
+    "RemindDate": "0001-01-01T00:00:00",
+    "RemindTime": "0001-01-01T00:00:00"
   },
   "433e400f5ac6433681266d13fb1f2c14": {
     "NoteId": "433e400f5ac6433681266d13fb1f2c14",
@@ -285,6 +298,24 @@
       "Jmbg": "2456",
       "ShouldSerialize": false
     },
-    "RemindDate": "2022-06-11T00:00:00"
+    "RemindDate": "2022-06-11T00:00:00",
+    "RemindTime": "0001-01-01T00:00:00"
+  },
+  "9a300a7b05be4c68be4f573ff457e81b": {
+    "NoteId": "9a300a7b05be4c68be4f573ff457e81b",
+    "Label": "Title",
+    "Content": "Content",
+    "Checked": true,
+    "SelectedAppointment": {
+      "ShouldSerialize": false,
+      "IdAppointment": "97c07e7ab12e49a8b6707dbc98ccc14d"
+    },
+    "Patient": {
+      "Lbo": 73456,
+      "Jmbg": "2456",
+      "ShouldSerialize": false
+    },
+    "RemindDate": "2022-06-11T00:00:00",
+    "RemindTime": "0001-01-01T00:00:00"
   }
 }
