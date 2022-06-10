@@ -32,6 +32,11 @@ namespace TechHealth.View.SecretaryView
         {
             InitializeComponent();
         }
+        private void Button_Click_Main(object sender, RoutedEventArgs e)
+        {
+            new SecretaryMainWindow().Show();
+            Close();
+        }
         private void Button_Guests(object sender, RoutedEventArgs e)
         {
             new GuestsView().Show();
