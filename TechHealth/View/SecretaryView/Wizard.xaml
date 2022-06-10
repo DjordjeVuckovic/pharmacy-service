@@ -1,0 +1,43 @@
+﻿<Window x:Class="TechHealth.View.SecretaryView.Wizard"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TechHealth.View.SecretaryView"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        mc:Ignorable="d"
+        Title="Wizard" Height="650" Width="400"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <xctk:Wizard FinishButtonClosesWindow="True">
+            <xctk:WizardPage x:Name="IntroPage" PageType="Interior" 
+                             Title="Introduction Wizard"
+                             Description="This wizard will walk you through TechHealth app"
+                             NextPage="{Binding ElementName=Page1}">
+                <Grid>
+                    <Image Source="resources/caduceus_logo_black_and_white.png" HorizontalAlignment="Left" Height="167" Margin="77,89,0,0" VerticalAlignment="Top" Width="204"/>
+                    <Label Content="TechHealth" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="28" FontWeight="Bold" Margin="0,25,0,0"/>
+                </Grid>
+            </xctk:WizardPage>
+            <xctk:WizardPage x:Name="Page1" PageType="Interior" 
+                             Title="Main menu"
+                             Description="On the main menu page, you can choose what you want to do. Manage accounts, guest accounts, appointments, meetings, order new equipment for the hospital or get a pdf report about appointments. There is also an option to Logging out of the app in the top right corner."
+                             PreviousPage="{Binding ElementName=IntroPage}"
+                             NextPage="{Binding ElementName=Page2}">
+                <Grid>
+                    <Image Source="resources/mainPage.png" HorizontalAlignment="Center" Height="auto" Margin="0,0,0,0" VerticalAlignment="Top" Width="auto"/>
+                </Grid>
+            </xctk:WizardPage>
+            <xctk:WizardPage x:Name="Page2" PageType="Interior" 
+                             Title="Other"
+                             Description="In every other page, you can return to the main menu by clicking three bars in the top left corner. You can use the action bar at the bottom to quickly go to the page you want. Log out button is also located in the top right corner."
+                             PreviousPage="{Binding ElementName=Page1}"
+                             FinishButtonVisibility="Visible"
+                             CanFinish="True">
+                <Grid>
+                    <Image Source="resources/otherPage.png" HorizontalAlignment="Center" Height="auto" Margin="0,0,0,0" VerticalAlignment="Top" Width="auto"/>
+                </Grid>
+            </xctk:WizardPage>
+        </xctk:Wizard>
+    </Grid>
+</Window>
