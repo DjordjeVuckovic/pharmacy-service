@@ -16,16 +16,16 @@
             <Label Content="End time:" HorizontalAlignment="Left" Margin="265,252,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White" Height="29"/>
             <Label Content="New room" HorizontalAlignment="Left" Margin="460,75,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White" Height="28"/>
             <Label Content="New room type" HorizontalAlignment="Left" Margin="460,169,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White" Height="28"/>
-            <TextBox HorizontalAlignment="Left" Margin="63,109,0,0" VerticalAlignment="Top" Width="120" Height="21.96" x:Name="TxtRoomID" Foreground="White" IsEnabled="False"/>
+            <TextBox HorizontalAlignment="Left" Margin="63,109,0,0" VerticalAlignment="Top" Width="120" Height="22" x:Name="TxtRoomID" Foreground="White" IsEnabled="False"/>
             <TextBox HorizontalAlignment="Left" Margin="63,203,0,0" VerticalAlignment="Top" Width="120" Height="22" x:Name="TxtSeparationType" Foreground="White" IsEnabled="False"/>
             <DatePicker HorizontalAlignment="Left" Margin="63,286,0,0" VerticalAlignment="Top" Width="120" x:Name="RStart" Height="24" Foreground="White">
             </DatePicker>
             <TextBox HorizontalAlignment="Center" Margin="0,205,0,0" VerticalAlignment="Top" Width="120" Height="22" x:Name="TxtStartTime" Foreground="White"/>
             <DatePicker HorizontalAlignment="Center" Margin="0,107,0,0" VerticalAlignment="Top" Width="120" x:Name="REnd" Height="24" Foreground="White">
             </DatePicker>
-            <TextBox HorizontalAlignment="Center" Margin="0,286,0,0" VerticalAlignment="Top" Width="120" Height="23" x:Name="TxtEndTime" Foreground="White"/>
+            <TextBox HorizontalAlignment="Center" Margin="0,286,0,0" VerticalAlignment="Top" Width="120" Height="22" x:Name="TxtEndTime" Foreground="White"/>
             <TextBox HorizontalAlignment="Left" Margin="460,109,0,0" VerticalAlignment="Top" Width="120" Height="22" x:Name="TxtNewRoom" Foreground="White"/>
-            <ComboBox HorizontalAlignment="Left" Margin="460,205,0,0" VerticalAlignment="Top" Width="120" Height="20" x:Name="CbType" Foreground="White">
+            <ComboBox HorizontalAlignment="Left" Margin="460,205,0,0" VerticalAlignment="Top" Width="120" Height="22" x:Name="CbType" Foreground="White">
                 <ComboBoxItem Content="Operation"/>
                 <ComboBoxItem Content="Examination"/>
                 <ComboBoxItem Content="Rest"/>

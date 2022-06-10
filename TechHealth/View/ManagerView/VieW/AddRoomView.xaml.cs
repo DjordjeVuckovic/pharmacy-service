@@ -18,6 +18,9 @@ using TechHealth.View.ManagerView.VieW;
 using TechHealth.Repository;
 using System.Collections.ObjectModel;
 using TechHealth.View.ManagerView.ViewModel;
+using System.ComponentModel;
+using TechHealth.Annotations;
+using System.Runtime.CompilerServices;
 
 namespace TechHealth.View.ManagerView.VieW
 {
@@ -28,12 +31,10 @@ namespace TechHealth.View.ManagerView.VieW
     {
         private Room room;
         private RoomController roomController = new RoomController();
-        //private ObservableCollection<Room> rooms;
-        public AddRoomView(/*ObservableCollection<Room> roomList*/)
+
+        public AddRoomView()
         {
             InitializeComponent();
-            //DataContext = new AddRoomViewModel();
-            //rooms = roomList;
         }
 
         private void Button_Click_Close(object sender, RoutedEventArgs e)
@@ -52,6 +53,21 @@ namespace TechHealth.View.ManagerView.VieW
             room.RoomTypes = ManagerConversions.StringToRoomType(CbType.Text);
             room.Availability = ManagerConversions.StringToAvailability(CbAvailability.Text);
 
+
+            foreach (var r in roomController.GetAll())
+            {
+                if (room.RoomId == r.RoomId)
+                {
+                    MessageBox.Show("Room with this id already exists!");
+                    return;
+                }
+            }
+            if (TxtRoomId.Text == "" || CbFloor.Text == "" || CbAvailability.Text == "" || CbType.Text == "")
+            {
+                MessageBox.Show("All fields have to be filled in order to proceed!");
+                return;
+            }
+
             if (roomController.WarehouseExists() && room.RoomTypes == RoomTypes.warehouse)
             {
                 MessageBox.Show("There can only be one warehouse!");
@@ -59,7 +75,6 @@ namespace TechHealth.View.ManagerView.VieW
                 return;
             }
             roomController.Create(room);
-            //rooms.Add(room);
             MainViewModel.Instance().CurrentView = RoomVm;
         }
     }

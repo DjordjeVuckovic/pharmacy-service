@@ -29,6 +29,7 @@ namespace TechHealth.View.ManagerView.VieW
         private Room selected;
         private RoomMergingController roomMergingController = new RoomMergingController();
         private RoomController roomController = new RoomController();
+        private List<string> possibleMergingRooms = new List<string>();
         public MergeRoomsView()
         {
             InitializeComponent();
@@ -37,6 +38,15 @@ namespace TechHealth.View.ManagerView.VieW
             selected = rm;
             rooms = roomController.GetRoomIDs();
             TxtRoomID.Text = selected.RoomId;
+
+            foreach (var r in roomController.GetAll())
+            {
+                if (r.RoomId != selected.RoomId && r.RoomId != "Warehouse")
+                {
+                    possibleMergingRooms.Add(r.RoomId);
+                }
+            }
+            CbMergeRoom.ItemsSource = possibleMergingRooms;
         }
 
         private void Button_Click_Confirm(object sender, RoutedEventArgs e)
@@ -45,16 +55,32 @@ namespace TechHealth.View.ManagerView.VieW
             rm.RoomOne = selected.RoomId;
             string dateStart = RStart.Text;
             string dateStartTime = dateStart + " " + TxtStartTime.Text;
-            rm.MergeStart = DateTime.Parse(dateStartTime);
             string dateEnd = REnd.Text;
             string dateEndTime = dateEnd + " " + TxtEndTime.Text;
-            rm.MergeEnd = DateTime.Parse(dateEndTime);
-            rm.RoomTwo = TxtMergeRoom.Text;
+
+            try
+            {
+                rm.MergeStart = DateTime.Parse(dateStartTime);
+                rm.MergeEnd = DateTime.Parse(dateEndTime);
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Invalid date");
+            }
+
+            rm.RoomTwo = CbMergeRoom.Text;
             rm.RoomType = ManagerConversions.StringToRoomType(CbType.Text);
             rm.MergeID = Guid.NewGuid().ToString("N");
 
             Room roomOne = roomController.GetRoombyId(rm.RoomOne);
             Room roomTwo = roomController.GetRoombyId(rm.RoomTwo);
+
+            if (TxtStartTime.Text == "" || TxtEndTime.Text == "" || CbMergeRoom.Text == "" || CbType.Text == "")
+            {
+                MessageBox.Show("All fields have to be filled in order to proceed!");
+                return;
+            }
 
             if (roomOne.Floor != roomTwo.Floor)
             {

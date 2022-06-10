@@ -43,10 +43,18 @@ namespace TechHealth.View.ManagerView.VieW
             RoomSeparation rs = new RoomSeparation();
             string dateStart = RStart.Text;
             string dateStartTime = dateStart + " " + TxtStartTime.Text;
-            rs.SeparationStart = DateTime.Parse(dateStartTime);
             string dateEnd = REnd.Text;
             string dateEndTime = dateEnd + " " + TxtEndTime.Text;
-            rs.SeparationEnd = DateTime.Parse(dateEndTime);
+            try
+            {
+                rs.SeparationStart = DateTime.Parse(dateStartTime);
+                rs.SeparationEnd = DateTime.Parse(dateEndTime);
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Invalid date");
+            }
             rs.RoomOne = selected;
             rs.RoomOne.RoomTypes = ManagerConversions.StringToRoomType(TxtSeparationType.Text);
             Room roomTwo = new Room();
@@ -57,16 +65,21 @@ namespace TechHealth.View.ManagerView.VieW
             rs.RoomTwo = roomTwo;
             rs.SeparationID = Guid.NewGuid().ToString("N");
 
-            //if (DateTime.Compare(DateTime.Now, rs.SeparationEnd) == 0)
-            //{
-            //    roomController.Create(roomTwo);
-            //    roomController.Update(rs.RoomOne);
-            //    roomSeparationController.SeparateRooms(rs);               
-            //}
-            //else
-            //{
-            //    roomSeparationController.Create(rs);
-            //}
+            if (TxtStartTime.Text == "" || TxtEndTime.Text == "" || TxtNewRoom.Text == "" || CbType.Text == "")
+            {
+                MessageBox.Show("All fields have to be filled in order to proceed!");
+                return;
+            }
+
+            foreach (var r in roomController.GetAll())
+            {
+                if (roomTwo.RoomId == r.RoomId)
+                {
+                    MessageBox.Show("Room with this id already exists!");
+                    return;
+                }
+            }
+
             if (AppointmentRepository.Instance.CanDoSeparation(rs))
             {
                 roomController.Create(roomTwo);

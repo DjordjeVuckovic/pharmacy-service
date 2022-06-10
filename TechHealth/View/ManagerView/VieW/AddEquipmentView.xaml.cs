@@ -49,20 +49,32 @@ namespace TechHealth.View.ManagerView.VieW
             equipment.Name = TxtName.Text;
             equipment.Id = Guid.NewGuid().ToString("N");
             equipment.Type = ManagerConversions.StringToEquipmentType(CbEqType.Text);
-            equipment.Quantity = Int32.Parse(TxtQuantity.Text);
+            try
+            {
+                equipment.Quantity = Int32.Parse(TxtQuantity.Text);
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Please enter a valid number for quantity!");
+            }
             re = new RoomEquipment();
 
-            //bool createRe = true;
-            //foreach (var re in reList)
-            //{
-            //    if (re.EquipmentName == equipment.name && re.RoomID == ManagerConversions.RoomTypesToString(RoomTypes.warehouse))
-            //    {
-            //        re.Quantity += equipment.quantity;
-            //        RoomEquipmentRepository.Instance.Update(re);
-            //        createRe = false;
-            //        break;
-            //    }
-            //}
+
+            if (TxtName.Text == "" || CbEqType.Text == "" || TxtQuantity.Text == "")
+            {
+                MessageBox.Show("All fields have to be filled in order to proceed!");
+                return;
+            }
+
+            foreach (var eq in equipmentController.GetAllToList())
+            {
+                if (equipment.Name == eq.Name)
+                {
+                    MessageBox.Show("Equipment with this name already exists!");
+                }
+            }
+
             bool createRe = roomEquipmentController.UpdateWarehouseRoomEquipment(reList, equipment);
 
             if (createRe)
@@ -70,35 +82,18 @@ namespace TechHealth.View.ManagerView.VieW
                 roomEquipmentController.CreateWarehouseRoomEquipment(re, equipment);
             }
 
-            //bool createEq = true;
-
-            //foreach (var eq in eqList)
-            //{
-            //    if (eq.name == equipment.name)
-            //    {
-            //        eq.quantity += equipment.quantity;
-            //        EquipmentRepository.Instance.Update(eq);
-            //        //this.Close();
-            //        //return;
-            //        createEq = false;
-            //        MainViewModel.Instance().CurrentView = EquipmentVm;
-            //    }
-            //}
             bool createEq = equipmentController.UpdateEquipmentQuantityIfItExists(eqList, equipment);
 
             if (createEq)
             {
                 equipmentController.Create(equipment);
             }
-            //eqs.Add(equipment);
-            //this.Close();
-            //return;
+ 
             MainViewModel.Instance().CurrentView = EquipmentVm;
         }
 
         private void Button_Click_Close(object sender, RoutedEventArgs e)
         {
-            //this.Close();
             var EquipmentVm = new EquipmentViewModel();
             MainViewModel.Instance().CurrentView = EquipmentVm;
         }

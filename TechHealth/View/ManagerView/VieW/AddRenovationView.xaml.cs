@@ -65,18 +65,27 @@ namespace TechHealth.View.ManagerView.VieW
         {
             RoomRenovation r = new RoomRenovation();
             r.RoomID = selected.RoomId;
-            //string date = DpDateTime.Text;
-            //string dateTime = date + " " + TxtTime.Text;
-            //dto.ReallocationTime = DateTime.Parse(dateTime);
             string dateStart = RStart.Text;
             string dateStartTime = dateStart + " " + TxtStartTime.Text;
-            r.RenovationStart = DateTime.Parse(dateStartTime);
-            //r.RenovationStart = (DateTime)RStart.SelectedDate;
             string dateEnd = REnd.Text;
             string dateEndTime = dateEnd + " " + TxtEndTime.Text;
-            r.RenovationEnd = DateTime.Parse(dateEndTime);
-            //r.RenovationEnd = (DateTime)REnd.SelectedDate;
+            try
+            {
+                r.RenovationStart = DateTime.Parse(dateStartTime);
+                r.RenovationEnd = DateTime.Parse(dateEndTime);
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Invalid date");
+            }
             r.RenovationID = Guid.NewGuid().ToString("N");
+
+            if (TxtStartTime.Text == "" || TxtEndTime.Text == "")
+            {
+                MessageBox.Show("All fields have to be filled in order to proceed!");
+                return;
+            }
 
             if (roomRenovationContoller.ExistsInRenovations(selected.RoomId))     //da li je vec zakazano renoviranje te sobe
             {

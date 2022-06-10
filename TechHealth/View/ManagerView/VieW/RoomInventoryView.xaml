@@ -26,7 +26,8 @@
                       AutoGenerateColumns="False"
                       Margin="70,10,70,10"
                       Grid.Row="1"
-                      Background="#272537">
+                      Background="#272537"
+                      IsReadOnly="True">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Name" Binding="{Binding EquipmentName}" Width="*"  CanUserResize="False"/>
                     <DataGridTextColumn Header="Quantity" Binding="{Binding Quantity}" Width="*"  CanUserResize="False"/>
