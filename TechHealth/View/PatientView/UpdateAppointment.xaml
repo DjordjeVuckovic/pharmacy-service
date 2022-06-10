@@ -70,7 +70,7 @@
                                    Foreground="White"
             IsInvalidTextAllowed="True"
                                    Height="29" 
-                                   Margin="13,391,36,149" >
+                                   Margin="38,391,36,149" >
             <materialDesign:TimePicker.Text>
                 <Binding
                     Path="StartDate"
