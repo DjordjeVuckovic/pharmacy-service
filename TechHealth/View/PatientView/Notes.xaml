@@ -1,0 +1,72 @@
+﻿<Window x:Class="TechHealth.View.PatientView.Notes"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TechHealth.View.PatientView"
+        xmlns:validationRules="clr-namespace:TechHealth.ValidationRules"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="Notes" Height="600" Width="450">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Dark.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/materialdesigncolor.bluegrey.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Grid Background="WhiteSmoke">
+        <TextBox x:Name="TitleBox" Background="BlanchedAlmond" HorizontalAlignment="Left"
+                 FontSize="22" 
+                 Height="36" Margin="10,10,0,0" TextWrapping="Wrap"       
+                 Text="Title" VerticalAlignment="Top" Width="422"/>
+        <TextBox x:Name="ContentBox" HorizontalAlignment="Left" Height="230"
+                 Margin="10,65,0,0" TextWrapping="Wrap"
+                 Background="BlanchedAlmond"
+                 FontSize="18"
+                 Text="Content" VerticalAlignment="Top" Width="422"/>
+        <Button Content="Confirm" HorizontalAlignment="Left" Margin="10,511,0,0" VerticalAlignment="Top" Width="128" Height="48" Click="Button_Click_1"/>
+        <Button Content="Cancel"
+                HorizontalAlignment="Left" Margin="304,511,0,0"
+                VerticalAlignment="Top" Width="128"
+                Background="Red"
+                Height="48" Click="Button_Click"/>
+
+        <Label Content="I want reminder for this note:"
+                   FontSize="18"
+                   Foreground="Black"
+              
+               Margin="10,300,185,229"/>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"
+                    Background="BlanchedAlmond"
+                    Margin="72,345,72,73" Width="298">
+            <DatePicker Margin="10,0,50,0"
+                        Background="Gray"
+                        Foreground="Black"
+                        Text="{Binding Date}"
+                        SelectedDate="{Binding DateReal}"
+                x:Name="DatePicker" Visibility="Collapsed"
+                Width="120"
+                />
+            <materialDesign:TimePicker
+                    x:Name="TimePicker" 
+                    Is24Hours="True" Text="{Binding Time}"
+                    Width="100"  
+                    Foreground="Black"
+                    Background="Gray"
+                    Visibility="Collapsed"/>
+        </StackPanel>
+        <CheckBox Content="" Background="Black"
+                  HorizontalAlignment="Center" x:Name="Radio"
+                  Margin="262,300,106,0" VerticalAlignment="Top" Height="40"
+                  Width="74" IsChecked="True"
+                  Checked="RadioButton_Click" Click="RadioButton_Click"/>
+
+    </Grid>
+</Window>

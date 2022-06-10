@@ -1,0 +1,321 @@
+{
+  "3b0548f630da4690a99244f34139ec98": {
+    "NoteId": "3b0548f630da4690a99244f34139ec98",
+    "Label": "Ne",
+    "Content": "Da",
+    "Checked": false,
+    "SelectedAppointment": {
+      "ShouldSerialize": false,
+      "IdAppointment": "5e843bc4ba594e999c0bcef655482560"
+    },
+    "Patient": {
+      "Guest": false,
+      "ChosenDoctor": null,
+      "Lbo": 657771,
+      "IsBanned": false,
+      "Address": {
+        "City": "Novi Sad",
+        "StreetNumber": "21a",
+        "Country": "Srbija",
+        "Street": "Vojvode Bojovica",
+        "Postcode": 21000
+      },
+      "Name": "Miki",
+      "Surname": "Djuricic",
+      "Email": "dsa@adsa",
+      "Jmbg": "13456",
+      "Phone": "06105111331",
+      "Employed": false,
+      "Birthday": "0001-01-01T00:00:00",
+      "Username": "Djura",
+      "Password": "1311",
+      "ShouldSerialize": true
+    },
+    "RemindDate": "0001-01-01T00:00:00",
+    "RemindTime": "0001-01-01T00:00:00"
+  },
+  "6ace445eb2484f6682344c97a9746980": {
+    "NoteId": "6ace445eb2484f6682344c97a9746980",
+    "Label": "DAAAA",
+    "Content": "Da",
+    "Checked": false,
+    "SelectedAppointment": {
+      "ShouldSerialize": false,
+      "IdAppointment": "97c07e7ab12e49a8b6707dbc98ccc14d"
+    },
+    "Patient": null,
+    "RemindDate": "0001-01-01T00:00:00",
+    "RemindTime": "0001-01-01T00:00:00"
+  },
+  "dbb25283df2e41eb99e237ca6cbf2be8": {
+    "NoteId": "dbb25283df2e41eb99e237ca6cbf2be8",
+    "Label": "N",
+    "Content": "SS",
+    "Checked": false,
+    "SelectedAppointment": {
+      "ShouldSerialize": false,
+      "IdAppointment": "97c07e7ab12e49a8b6707dbc98ccc14d"
+    },
+    "Patient": null,
+    "RemindDate": "0001-01-01T00:00:00",
+    "RemindTime": "0001-01-01T00:00:00"
+  },
+  "412150f1310748f29732cb52e283a9dc": {
+    "NoteId": "412150f1310748f29732cb52e283a9dc",
+    "Label": "Title",
+    "Content": "Content",
+    "Checked": false,
+    "SelectedAppointment": {
+      "ShouldSerialize": false,
+      "IdAppointment": "97c07e7ab12e49a8b6707dbc98ccc14d"
+    },
+    "Patient": {
+      "Guest": false,
+      "ChosenDoctor": null,
+      "Lbo": 73456,
+      "IsBanned": false,
+      "Address": {
+        "City": "Novi Sad",
+        "StreetNumber": "21",
+        "Country": "Srbija",
+        "Street": "Puse Pusica",
+        "Postcode": 21000
+      },
+      "Name": "Dusan",
+      "Surname": "Vukovic",
+      "Email": "dusan@dusan",
+      "Jmbg": "2456",
+      "Phone": "0613411123",
+      "Employed": false,
+      "Birthday": "0001-01-01T00:00:00",
+      "Username": "dusan",
+      "Password": "dusan",
+      "ShouldSerialize": true
+    },
+    "RemindDate": "0001-01-01T00:00:00",
+    "RemindTime": "0001-01-01T00:00:00"
+  },
+  "0f3c84025563454ab0740db06877a8ac": {
+    "NoteId": "0f3c84025563454ab0740db06877a8ac",
+    "Label": "Title",
+    "Content": "Contentda",
+    "Checked": false,
+    "SelectedAppointment": {
+      "ShouldSerialize": false,
+      "IdAppointment": "97c07e7ab12e49a8b6707dbc98ccc14d"
+    },
+    "Patient": {
+      "Guest": false,
+      "ChosenDoctor": null,
+      "Lbo": 73456,
+      "IsBanned": false,
+      "Address": {
+        "City": "Novi Sad",
+        "StreetNumber": "21",
+        "Country": "Srbija",
+        "Street": "Puse Pusica",
+        "Postcode": 21000
+      },
+      "Name": "Dusan",
+      "Surname": "Vukovic",
+      "Email": "dusan@dusan",
+      "Jmbg": "2456",
+      "Phone": "0613411123",
+      "Employed": false,
+      "Birthday": "0001-01-01T00:00:00",
+      "Username": "dusan",
+      "Password": "dusan",
+      "ShouldSerialize": true
+    },
+    "RemindDate": "0001-01-01T00:00:00",
+    "RemindTime": "0001-01-01T00:00:00"
+  },
+  "fa34f41f168d43f29ece083831d73bba": {
+    "NoteId": "fa34f41f168d43f29ece083831d73bba",
+    "Label": "Title",
+    "Content": "SSS",
+    "Checked": false,
+    "SelectedAppointment": {
+      "ShouldSerialize": false,
+      "IdAppointment": "6691a6553fc147ecaced7fa7a3458faa"
+    },
+    "Patient": {
+      "Guest": false,
+      "ChosenDoctor": null,
+      "Lbo": 73456,
+      "IsBanned": false,
+      "Address": {
+        "City": "Novi Sad",
+        "StreetNumber": "21",
+        "Country": "Srbija",
+        "Street": "Puse Pusica",
+        "Postcode": 21000
+      },
+      "Name": "Dusan",
+      "Surname": "Vukovic",
+      "Email": "dusan@dusan",
+      "Jmbg": "2456",
+      "Phone": "0613411123",
+      "Employed": false,
+      "Birthday": "0001-01-01T00:00:00",
+      "Username": "dusan",
+      "Password": "dusan",
+      "ShouldSerialize": true
+    },
+    "RemindDate": "0001-01-01T00:00:00",
+    "RemindTime": "0001-01-01T00:00:00"
+  },
+  "7c87731b816741948d700ef02559c93f": {
+    "NoteId": "7c87731b816741948d700ef02559c93f",
+    "Label": "Title",
+    "Content": "Contentd",
+    "Checked": false,
+    "SelectedAppointment": {
+      "ShouldSerialize": false,
+      "IdAppointment": "97c07e7ab12e49a8b6707dbc98ccc14d"
+    },
+    "Patient": {
+      "Lbo": 73456,
+      "Jmbg": "2456",
+      "ShouldSerialize": false
+    },
+    "RemindDate": "0001-01-01T00:00:00",
+    "RemindTime": "0001-01-01T00:00:00"
+  },
+  "89433c8071254535a9893f0d32071aa8": {
+    "NoteId": "89433c8071254535a9893f0d32071aa8",
+    "Label": "Test",
+    "Content": "Test2",
+    "Checked": false,
+    "SelectedAppointment": {
+      "ShouldSerialize": false,
+      "IdAppointment": "6553d6f128d946bb88a635940146141e"
+    },
+    "Patient": {
+      "Lbo": 73456,
+      "Jmbg": "2456",
+      "ShouldSerialize": false
+    },
+    "RemindDate": "0001-01-01T00:00:00",
+    "RemindTime": "0001-01-01T00:00:00"
+  },
+  "e82d501d0c4e483cbd2980f5a2bb58eb": {
+    "NoteId": "e82d501d0c4e483cbd2980f5a2bb58eb",
+    "Label": "Title",
+    "Content": "Content",
+    "Checked": false,
+    "SelectedAppointment": {
+      "ShouldSerialize": false,
+      "IdAppointment": "97c07e7ab12e49a8b6707dbc98ccc14d"
+    },
+    "Patient": {
+      "Lbo": 73456,
+      "Jmbg": "2456",
+      "ShouldSerialize": false
+    },
+    "RemindDate": "0001-01-01T00:00:00",
+    "RemindTime": "0001-01-01T00:00:00"
+  },
+  "beb36fe96f7340a291b6ea82d87a3cbc": {
+    "NoteId": "beb36fe96f7340a291b6ea82d87a3cbc",
+    "Label": "Title",
+    "Content": "Ne",
+    "Checked": false,
+    "SelectedAppointment": {
+      "ShouldSerialize": false,
+      "IdAppointment": "6553d6f128d946bb88a635940146141e"
+    },
+    "Patient": {
+      "Lbo": 73456,
+      "Jmbg": "2456",
+      "ShouldSerialize": false
+    },
+    "RemindDate": "0001-01-01T00:00:00",
+    "RemindTime": "0001-01-01T00:00:00"
+  },
+  "44b5ab92e60447408b281825af686af9": {
+    "NoteId": "44b5ab92e60447408b281825af686af9",
+    "Label": "Da",
+    "Content": "Da",
+    "Checked": false,
+    "SelectedAppointment": {
+      "ShouldSerialize": false,
+      "IdAppointment": "fb0d5e3e17bd45eeafe325e78bebfb12"
+    },
+    "Patient": {
+      "Lbo": 73456,
+      "Jmbg": "2456",
+      "ShouldSerialize": false
+    },
+    "RemindDate": "0001-01-01T00:00:00",
+    "RemindTime": "0001-01-01T00:00:00"
+  },
+  "b321315cc0ed40988379cfdaaaa96f11": {
+    "NoteId": "b321315cc0ed40988379cfdaaaa96f11",
+    "Label": "Title",
+    "Content": "Content",
+    "Checked": true,
+    "SelectedAppointment": {
+      "ShouldSerialize": false,
+      "IdAppointment": "fb0d5e3e17bd45eeafe325e78bebfb12"
+    },
+    "Patient": {
+      "Lbo": 73456,
+      "Jmbg": "2456",
+      "ShouldSerialize": false
+    },
+    "RemindDate": "2022-03-02T00:00:00",
+    "RemindTime": "0001-01-01T00:00:00"
+  },
+  "00be492c4d3840ffa2ed3e1cc828df68": {
+    "NoteId": "00be492c4d3840ffa2ed3e1cc828df68",
+    "Label": "Title",
+    "Content": "Content",
+    "Checked": true,
+    "SelectedAppointment": {
+      "ShouldSerialize": false,
+      "IdAppointment": "6691a6553fc147ecaced7fa7a3458faa"
+    },
+    "Patient": {
+      "Lbo": 73456,
+      "Jmbg": "2456",
+      "ShouldSerialize": false
+    },
+    "RemindDate": "0001-01-01T00:00:00",
+    "RemindTime": "0001-01-01T00:00:00"
+  },
+  "433e400f5ac6433681266d13fb1f2c14": {
+    "NoteId": "433e400f5ac6433681266d13fb1f2c14",
+    "Label": "Title",
+    "Content": "Content",
+    "Checked": true,
+    "SelectedAppointment": {
+      "ShouldSerialize": false,
+      "IdAppointment": "aec85ecf55ae4691be34ba8698b62d81"
+    },
+    "Patient": {
+      "Lbo": 73456,
+      "Jmbg": "2456",
+      "ShouldSerialize": false
+    },
+    "RemindDate": "2022-06-11T00:00:00",
+    "RemindTime": "0001-01-01T00:00:00"
+  },
+  "9a300a7b05be4c68be4f573ff457e81b": {
+    "NoteId": "9a300a7b05be4c68be4f573ff457e81b",
+    "Label": "Title",
+    "Content": "Content",
+    "Checked": true,
+    "SelectedAppointment": {
+      "ShouldSerialize": false,
+      "IdAppointment": "97c07e7ab12e49a8b6707dbc98ccc14d"
+    },
+    "Patient": {
+      "Lbo": 73456,
+      "Jmbg": "2456",
+      "ShouldSerialize": false
+    },
+    "RemindDate": "2022-06-11T00:00:00",
+    "RemindTime": "0001-01-01T00:00:00"
+  }
+}
