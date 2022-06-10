@@ -1,4 +1,5 @@
-﻿using TechHealth.Model;
+﻿using System;
+using TechHealth.Model;
 
 namespace TechHealth.Repository
 {
@@ -34,6 +35,19 @@ namespace TechHealth.Repository
         protected override void ShouldSerialize(Manager entity)
         {
             //skip
+        }
+
+        public Manager GetManagerByUser(string user)
+        {
+            foreach (var mng in GetAllToList())
+            {
+                if (mng.Username.Equals(user))
+                {
+                    return mng;
+                }
+            }
+
+            return null;
         }
     }
 }

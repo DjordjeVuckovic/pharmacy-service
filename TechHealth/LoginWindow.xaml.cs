@@ -4,6 +4,7 @@ using System.Windows;
 using TechHealth.DoctorView;
 using TechHealth.Model;
 using TechHealth.Repository;
+using TechHealth.View.ManagerView;
 using TechHealth.View.PatientView;
 using TechHealth.View.SecretaryView;
 
@@ -53,6 +54,14 @@ namespace TechHealth
             {
                 new PatientMainWindow().Show();
                 successLogin = true;
+                Close();
+            }
+
+            Manager manager = ManagerRepository.Instance.GetManagerByUser(user);
+            if (manager != null && pass.Equals(manager.Password))
+            {
+                new ManagerMainWindow().Show();
+                successLogin=true;
                 Close();
             }
 
