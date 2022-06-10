@@ -25,70 +25,71 @@ namespace TechHealth.View.PatientView
     {
         private Appointment selected;
         private List<Doctor> doctors;
+        private Doctor doctor;
+        private Room room;
         private Patient patient;
         public string PatientFullName { get; set; }
         private AppointmentController appointmentController = new AppointmentController();
+        private PatientController patientController = new PatientController();
         private DoctorController doctorController = new DoctorController();
-        private List<ComboBoxGeneric<Doctor>> doctorComboBox = new List<ComboBoxGeneric<Doctor>>();
         public int DoctorIndex { get; set; }
+        public DateTime Date { get; set; }
         public string StartDate { get; set; }
-        public Doctor DoctorData { get; set; }
+
+        public RelayCommand FinishCommand { get; set; }
 
         public UpdateAppointment(Appointment newAppointment)
         {
             InitializeComponent();
             DataContext = this;
             selected = newAppointment;
-            patient = PatientRepository.Instance.GetPatientbyId("2456");
+            patient = selected.Patient;
+            room = selected.Room;
             PatientFullName = patient.FullName;
+            Picker.DisplayDateStart = DateTime.Now;
+            Picker.SelectedDate = selected.Date;
+            Timepicker1.SelectedTime = selected.StartTime;
             doctors = DoctorRepository.Instance.GetAllToList();
-            FillComboData();
-            FillIndex();
-            DoctorData = selected.Doctor;
             CbDoctor.ItemsSource = doctors;
-            Date.SelectedDate = selected.Date;
-            StartDate = selected.StartTime.ToString("t");
+            CbDoctor.SelectedItem = selected.Doctor;
             BlackoutDates();
-            
+            FinishCommand = new RelayCommand(param => Execute(), param => CanExecute());
 
         }
 
-        /*public string TypeToString(AppointmentType type)
+        private bool CanExecute()
         {
-            switch (type)
+            if (StartDate != null && CbDoctor.SelectedItem != null)
             {
-                case AppointmentType.examination:
-                    return "Examination";
-                default:
-                    return "Operation";
+                return true;
             }
-        }*/
+            return false;
+        }
 
-        /*public AppointmentType StringToType(string s)
+        private void Execute()
         {
-            switch (s)
-            {
-                case "Examination":
-                    return AppointmentType.examination;
-                default:
-                    return AppointmentType.operation;
-            }
-        }*/
+            selected.Date = Date;
+            selected.StartTime = DateTime.Parse(StartDate);
+            selected.Doctor = doctors[CbDoctor.SelectedIndex];
+            AppointmentRepository.Instance.Update(selected);
+            Close();
+        }
 
         private void BlackoutDates()
         {
             CalendarDateRange d1 = new CalendarDateRange(DateTime.MinValue, selected.Date.AddDays(-4));
             CalendarDateRange d2 = new CalendarDateRange(selected.Date.AddDays(4), DateTime.MaxValue);
-            Date.BlackoutDates.Add(d1);
-            Date.BlackoutDates.Add(d2);
+            Picker.BlackoutDates.Add(d1);
+            Picker.BlackoutDates.Add(d2);
         }
 
-        private bool ValidateDate()
+        /*private bool ValidateDate()
         {
-            return (Date.SelectedDate.Value > selected.StartTime.AddDays(4)) || (Date.SelectedDate.Value < selected.StartTime.AddDays(-4));
-        }
+            return (Picker.SelectedDate.Value > selected.StartTime.AddDays(4)) || (Picker.SelectedDate.Value < selected.StartTime.AddDays(-4));
+        }*/
 
-        private bool Validate()
+
+        /*private bool Validate()
         {
             if (!ValidateDate())
             {
@@ -96,9 +97,11 @@ namespace TechHealth.View.PatientView
                 return false;
             }
             return true; //fali jos validacija za sve ostalo
-        }
+        }*/
 
-        private void Button_Click_Confirm(object sender, RoutedEventArgs e)
+
+
+        /*private void Button_Click_Confirm(object sender, RoutedEventArgs e)
         {
             selected.Date = DateTime.Parse(Date.Text);
             selected.StartTime = DateTime.Parse(TxtTime.Text);
@@ -113,42 +116,13 @@ namespace TechHealth.View.PatientView
             AppointmentRepository.Instance.Update(selected);
             //appointmentController.Update(selected.Date, selected.StartTime, selected.AppointmentType, selected.Doctor, selected.IdAppointment);
             Close();
-        }
+        }*/
 
 
         private void Button_Click_Close(object sender, RoutedEventArgs e)
         {
             Close();
         }
-
-        private void FillComboData()
-        {
-
-            foreach (var d in DoctorRepository.Instance.GetAllToList())
-            {
-                doctorComboBox.Add(new ComboBoxGeneric<Doctor>() { DisplayText = d.Name + " " + d.Surname, Entity = d });
-            }
-        }
-
-        private void FillIndex()
-        {
-            int cnt = 0;
-            foreach (var combo in doctorComboBox)
-            {
-                if (combo.Entity.Jmbg.Equals(selected.Doctor.Jmbg))
-                {
-                    break;
-                }
-
-                cnt++;
-            }
-
-            DoctorIndex = cnt;
-
-        }
-
-
-
 
     }
 }

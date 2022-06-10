@@ -24,15 +24,15 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Label Content="Date:" HorizontalAlignment="Left" Margin="47,225,0,0" VerticalAlignment="Top" FontSize="14" Height="29" Width="120"/>
-        <Label Content="Available hours:" HorizontalAlignment="Left" Margin="47,389,0,0" VerticalAlignment="Top" FontSize="14" Height="29" Width="120"/>
-        <Label Content="Doctor:" HorizontalAlignment="Left" Margin="47,312,0,0" VerticalAlignment="Top" FontSize="14" Height="29" Width="120"/>
-        <DatePicker HorizontalAlignment="Left" Margin="49,225,0,0"
+        <Label Content="Date:" HorizontalAlignment="Left" Margin="47,225,0,0" VerticalAlignment="Top" FontSize="14" Height="40" Width="130"/>
+        <Label Content="Available hours:" HorizontalAlignment="Left" Margin="47,395,0,0" VerticalAlignment="Top" FontSize="14" Height="40" Width="130"/>
+        <Label Content="Doctor:" HorizontalAlignment="Left" Margin="47,312,0,0" VerticalAlignment="Top" FontSize="14" Height="40" Width="130"/>
+        <DatePicker HorizontalAlignment="Left" Margin="39,225,0,0"
                     VerticalAlignment="Top"
-                    Width="120" Height="29"
+                    Width="130" Height="40"
                     Background="#FFC0C0C0"
                     Foreground="BlanchedAlmond"
-                    FontSize="14" x:Name="Date"
+                    FontSize="14" x:Name="Picker"
                     Grid.Column="1">
             <DatePicker.SelectedDate>
                 <Binding Path="Date" Mode="OneWayToSource"  
@@ -44,36 +44,36 @@
             </DatePicker.SelectedDate>
         </DatePicker>
 
-        <ComboBox HorizontalAlignment="Left" Margin="49,312,0,0"
-                  VerticalAlignment="Top" Width="120" Height="29"
+        <ComboBox HorizontalAlignment="Left" Margin="39,312,0,0"
+                  VerticalAlignment="Top" Width="130" Height="40"
                   x:Name="CbDoctor"
                   Grid.Column="1"
-                  DisplayMemberPath="DisplayText"
-                  SelectedValuePath="Entity" ItemsSource="{Binding Path=DoctorComboBox}" SelectedValue = "{Binding Path = DoctorData}" SelectedIndex="{Binding DoctorIndex}"/>
+                  DisplayMemberPath="FullName" 
+                  />
         <Button Content="Confirm" HorizontalAlignment="Left"
-                Margin="47,529,0,0" VerticalAlignment="Top"
+                Margin="47,507,0,0" VerticalAlignment="Top"
                 FontSize="16" FontWeight="Normal" Height="30"
                 Width="95" RenderTransformOrigin="-0.291,0.467"
-                Background="#FF42C130" Click="Button_Click_Confirm" />
+                Background="#FF42C130" />
         <Button Content="Close" HorizontalAlignment="Left"
-                Margin="76,529,0,0" VerticalAlignment="Top"
+                Margin="76,507,0,0" VerticalAlignment="Top"
                 Width="93" Height="30" FontSize="16"
                 Background="#FFEA9292" Click="Button_Click_Close"
                 Grid.Column="1" />
         <Label Content="Update appointment" HorizontalContentAlignment="Center"
                Margin="91,10,90,0" VerticalAlignment="Top" FontWeight="Bold"
-               FontSize="18" Grid.ColumnSpan="2" Height="34"/>
+               FontSize="18" Grid.ColumnSpan="2" Height="40"/>
 
         <materialDesign:TimePicker Grid.Column="1" 
-                                   x:Name="TxtTime" 
+                                   x:Name="Timepicker1" 
             materialDesign:HintAssist.Hint="Select appointment time"
                                    Foreground="White"
             IsInvalidTextAllowed="True"
-                                   Height="30" 
-                                   Margin="49,388,47,146" >
+                                   Height="40" 
+                                   Margin="39,395,47,129" >
             <materialDesign:TimePicker.Text>
                 <Binding
-                    Path="StartDate"
+                    Path="StartDate" Mode="OneWayToSource"
                     UpdateSourceTrigger="PropertyChanged">
                     <Binding.ValidationRules>
                         <validationRules:SimpleDateValidationRule
@@ -82,13 +82,13 @@
                 </Binding>
             </materialDesign:TimePicker.Text>
         </materialDesign:TimePicker>
-        <Label Content="PATIENT" HorizontalAlignment="Center" VerticalAlignment="Center"
-            Margin="38,92,58,426"
-            FontSize="18" Width="120" Height="46"/>
+        <Label Content="Patient:" HorizontalAlignment="Center" VerticalAlignment="Center"
+            Margin="47,108,39,416"
+            FontSize="14" Width="130" Height="40"/>
         <TextBox Grid.Column="1"
             Text="{Binding PatientFullName}" HorizontalAlignment="Left"
-            Height="46" Margin="49,92,0,426" TextWrapping="Wrap"
-            VerticalAlignment="Center" Width="120" FontSize="20"
+            Height="40" Margin="39,108,0,416" TextWrapping="Wrap"
+            VerticalAlignment="Center" Width="130" FontSize="14"
                  
             IsReadOnly="True"/>
     </Grid>
