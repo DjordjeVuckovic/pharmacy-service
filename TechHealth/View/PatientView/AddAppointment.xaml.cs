@@ -16,6 +16,10 @@ using TechHealth.Controller;
 using TechHealth.Repository;
 using System.Collections.ObjectModel;
 using TechHealth.Exceptions;
+using TechHealth.Core;
+using System.Windows.Forms;
+using TechHealth.DoctorView.ViewModel;
+using MessageBox = System.Windows.Forms.MessageBox;
 
 namespace TechHealth.View.PatientView       //dodati IDappointment
 {
@@ -24,15 +28,24 @@ namespace TechHealth.View.PatientView       //dodati IDappointment
     /// </summary>
     public partial class AddAppointment : Window
     {
-        //public event EventHandler OnRequestClose;
+
+        public event EventHandler OnRequestClose;
+        private Doctor doctor;
         private Patient patient;
         private Room room;
         private AppointmentController appointmentController = new AppointmentController();
         private PatientController patientController = new PatientController();
         private RoomController roomController = new RoomController();
+        private DoctorController doctorController = new DoctorController();
         private List<Doctor> doctors;
         private List<Appointment> apList;
         private ObservableCollection<Appointment> Apt { get; set; }
+        public DateTime Date { get; set; }
+        public string StartDate { get; set; }
+        //public Doctor DoctorData { get; set; }
+
+        public RelayCommand FinishCommand { get; set; }
+        //public RelayCommand CancelCommand { get; set; }
         //private String patientId { get; set; }
 
         public AddAppointment(ObservableCollection<Appointment> listAppointment)
@@ -44,20 +57,57 @@ namespace TechHealth.View.PatientView       //dodati IDappointment
             room = roomController.GetById("S2");
             PatientFullName = patient.FullName;
             apList = AppointmentRepository.Instance.GetAllToList();
-            Date.DisplayDateStart = DateTime.Now;
-
+            Picker.DisplayDateStart = DateTime.Now;
+            Picker.SelectedDate = DateTime.Now;
+            Timepicker1.SelectedTime = DateTime.Now;
+            //Date = DateTime.Now;
+            FinishCommand = new RelayCommand(param => Execute(), param => CanExecute());
             //TxtPatient.Text = patient.FullName;
             doctors = DoctorRepository.Instance.GetAllToList();
             CbDoctor.ItemsSource = doctors;
         }
 
 
-        private void Button_Click_Close(object sender, RoutedEventArgs e)
+        private bool CanExecute()
         {
-            Close();
+            if (StartDate != null && CbDoctor.SelectedItem != null)
+            {
+                return true;
+            }
+            return false;
         }
 
-        private void Button_Click_Confirm(object sender, RoutedEventArgs e)
+        private void Execute()
+        {
+            Appointment appointment = new Appointment
+            {
+                AppointmentType = AppointmentType.examination,
+                Date = Date,
+                Patient = patient,
+                Evident = false,
+                StartTime = DateTime.Parse(StartDate),
+                IdAppointment = Guid.NewGuid().ToString("N"),
+                Doctor = doctors[CbDoctor.SelectedIndex],
+                ShouldSerialize = true,
+                Room = room
+            };
+            try
+            {
+                appointmentController.Create(appointment);
+                Apt.Add(appointment);
+                //RecordViewModel.GetInstance().Appointments.Add(appointment);
+                MessageBox.Show(@"You have successfully created a new examination");
+                Close();
+            }
+            catch (AppointmentConflictException)
+            {
+                MessageBox.Show(@"Patient has already booked an appointment in that period!", @"Appointment exception", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            OnRequestClose?.Invoke(this, new EventArgs());
+        }
+
+
+        /*private void Button_Click_Confirm(object sender, RoutedEventArgs e)
         {
             Appointment appointment = new Appointment
             {
@@ -83,15 +133,20 @@ namespace TechHealth.View.PatientView       //dodati IDappointment
             }
             //OnRequestClose(this, new EventArgs());
             Close();
-        }
+        }*/
+
 
         public string PatientFullName { get; set; }
 
-        //AppointmentRepository.Instance.Create(appointment); 
-        //Close();
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        
 
     }
-    }
-
+}
 
 

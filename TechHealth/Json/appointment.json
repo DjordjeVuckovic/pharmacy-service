@@ -363,13 +363,39 @@
     },
     "Evident": false
   },
-  "55478ef1437b43c2b119fbd936d07152": {
+  "0fb48d0b861042e5be5edbe5f35e8151": {
     "ShouldSerialize": true,
-    "Date": "2022-06-10T00:00:00",
-    "StartTime": "2022-06-08T01:08:00",
+    "Date": "2022-06-11T00:00:00",
+    "StartTime": "2022-06-10T01:05:00",
     "FinishTime": "0001-01-01T00:00:00",
     "Emergent": false,
-    "IdAppointment": "55478ef1437b43c2b119fbd936d07152",
+    "IdAppointment": "0fb48d0b861042e5be5edbe5f35e8151",
+    "Room": {
+      "RoomTypes": 1,
+      "RoomId": "S2",
+      "Floor": 2,
+      "Availability": false,
+      "ShouldSerialize": false
+    },
+    "Patient": {
+      "Lbo": 73456,
+      "Jmbg": "2456",
+      "ShouldSerialize": false
+    },
+    "AppointmentType": 0,
+    "Doctor": {
+      "Jmbg": "1312131214201",
+      "ShouldSerialize": false
+    },
+    "Evident": false
+  },
+  "09ac6553eefc4e0b9a04cf49647cf796": {
+    "ShouldSerialize": true,
+    "Date": "2022-06-18T00:00:00",
+    "StartTime": "2022-06-10T02:10:00",
+    "FinishTime": "0001-01-01T00:00:00",
+    "Emergent": false,
+    "IdAppointment": "09ac6553eefc4e0b9a04cf49647cf796",
     "Room": {
       "RoomTypes": 1,
       "RoomId": "S2",
@@ -385,6 +411,32 @@
     "AppointmentType": 0,
     "Doctor": {
       "Jmbg": "141314131111",
+      "ShouldSerialize": false
+    },
+    "Evident": false
+  },
+  "10b45b26ffcc461f96fbc5c894e2ef8c": {
+    "ShouldSerialize": true,
+    "Date": "2022-06-11T00:00:00",
+    "StartTime": "2022-10-06T07:48:00",
+    "FinishTime": "0001-01-01T00:00:00",
+    "Emergent": false,
+    "IdAppointment": "10b45b26ffcc461f96fbc5c894e2ef8c",
+    "Room": {
+      "RoomTypes": 1,
+      "RoomId": "S2",
+      "Floor": 2,
+      "Availability": false,
+      "ShouldSerialize": false
+    },
+    "Patient": {
+      "Lbo": 73456,
+      "Jmbg": "2456",
+      "ShouldSerialize": false
+    },
+    "AppointmentType": 0,
+    "Doctor": {
+      "Jmbg": "2315",
       "ShouldSerialize": false
     },
     "Evident": false

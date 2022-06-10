@@ -19,17 +19,17 @@
         </ResourceDictionary>
     </Window.Resources>
 
-    <Grid Background="Gray">
+    <Grid Background="Gray" Margin="5, 5, 5, 0">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Label Content="Date:" HorizontalAlignment="Left" Margin="38,225,0,0" VerticalAlignment="Top" FontSize="14" Height="29" Width="42"/>
-        <Label Content="Available hours:" HorizontalAlignment="Left" Margin="38,391,0,0" VerticalAlignment="Top" FontSize="14" Height="29" Width="113"/>
-        <Label Content="Doctor:" HorizontalAlignment="Left" Margin="38,312,0,0" VerticalAlignment="Top" FontSize="14" Height="29" Width="55"/>
-        <DatePicker HorizontalAlignment="Left" Margin="38,225,0,0"
+        <Label Content="Date:" HorizontalAlignment="Left" Margin="47,225,0,0" VerticalAlignment="Top" FontSize="14" Height="29" Width="120"/>
+        <Label Content="Available hours:" HorizontalAlignment="Left" Margin="47,389,0,0" VerticalAlignment="Top" FontSize="14" Height="29" Width="120"/>
+        <Label Content="Doctor:" HorizontalAlignment="Left" Margin="47,312,0,0" VerticalAlignment="Top" FontSize="14" Height="29" Width="120"/>
+        <DatePicker HorizontalAlignment="Left" Margin="49,225,0,0"
                     VerticalAlignment="Top"
-                    Width="147" Height="29"
+                    Width="120" Height="29"
                     Background="#FFC0C0C0"
                     Foreground="BlanchedAlmond"
                     FontSize="14" x:Name="Date"
@@ -44,8 +44,8 @@
             </DatePicker.SelectedDate>
         </DatePicker>
 
-        <ComboBox HorizontalAlignment="Left" Margin="38,312,0,0"
-                  VerticalAlignment="Top" Width="147" Height="29"
+        <ComboBox HorizontalAlignment="Left" Margin="49,312,0,0"
+                  VerticalAlignment="Top" Width="120" Height="29"
                   x:Name="CbDoctor"
                   Grid.Column="1"
                   DisplayMemberPath="DisplayText"
@@ -69,8 +69,8 @@
             materialDesign:HintAssist.Hint="Select appointment time"
                                    Foreground="White"
             IsInvalidTextAllowed="True"
-                                   Height="29" 
-                                   Margin="13,391,36,149" >
+                                   Height="30" 
+                                   Margin="49,388,47,146" >
             <materialDesign:TimePicker.Text>
                 <Binding
                     Path="StartDate"
@@ -83,12 +83,12 @@
             </materialDesign:TimePicker.Text>
         </materialDesign:TimePicker>
         <Label Content="PATIENT" HorizontalAlignment="Center" VerticalAlignment="Center"
-            Margin="38,95,79,428"
-            FontSize="20" Width="104" Height="46"/>
+            Margin="38,92,58,426"
+            FontSize="18" Width="120" Height="46"/>
         <TextBox Grid.Column="1"
             Text="{Binding PatientFullName}" HorizontalAlignment="Left"
-            Height="46" Margin="38,95,0,428" TextWrapping="Wrap"
-            VerticalAlignment="Center" Width="147" FontSize="20"
+            Height="46" Margin="49,92,0,426" TextWrapping="Wrap"
+            VerticalAlignment="Center" Width="120" FontSize="20"
                  
             IsReadOnly="True"/>
     </Grid>

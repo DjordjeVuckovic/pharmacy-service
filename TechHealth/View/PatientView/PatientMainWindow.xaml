@@ -60,12 +60,6 @@
                              Style="{StaticResource MenuButtonTheme}"
                              Command="{Binding AppointmentViewCommand}"/>
 
-                <RadioButton Content="My appointments"
-                             Height="50"
-                             Foreground="White"
-                             FontSize="14"
-                             Style="{StaticResource MenuButtonTheme}"/>
-
                 <RadioButton Content="Appointment history"
                              Height="50"
                              Foreground="White"
@@ -80,13 +74,6 @@
                              Style="{StaticResource MenuButtonTheme}"
                              Command="{Binding MedRecCommand}"/>
 
-
-                <RadioButton Content="Therapy"
-                             Height="50"
-                             Foreground="White"
-                             FontSize="14"
-                             Style="{StaticResource MenuButtonTheme}"/>
-
                 <RadioButton Content="Rate Hospital"
                              Height="50"
                              Foreground="White"
@@ -96,14 +83,6 @@
                              />
 
             </StackPanel>
-
-            <TextBox Width="250"
-                     Height="50"
-                     VerticalAlignment="Center"
-                     HorizontalAlignment="Right"
-                     Margin="0,5,10,10"
-                     Grid.Column="1"
-                     Style="{StaticResource SearchText}"/>
 
             <ContentControl Grid.Row="1"
                             Grid.Column="1"

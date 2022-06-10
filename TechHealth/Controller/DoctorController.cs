@@ -13,7 +13,7 @@ namespace TechHealth.Controller
 
         public List<Doctor> GetAll()
         {
-            throw new System.NotImplementedException();
+            return doctorService.GetAll();
         }
 
         public void Create(Doctor entity)
@@ -27,11 +27,16 @@ namespace TechHealth.Controller
         }
 
         public Doctor GetById(string doctorId) => doctorService.GetById(doctorId);
-        public void Delete(string key)
+        public bool Delete(string key)
         {
-            throw new System.NotImplementedException();
+            return doctorService.Delete(key);
         }
 
         public  List<Doctor> GetAllBySpecializationId(int id) => doctorService.GetAllBySpecializationId(id);
+
+        void IController<Doctor, string>.Delete(string key)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
