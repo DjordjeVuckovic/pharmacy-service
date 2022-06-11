@@ -12,6 +12,8 @@ namespace TechHealth.Model
         public int OcenaLekara { get; set; } // OVDE OCENE ZA LEKARA
         public int OcenaOsoblje { get; set; }
         public int UkupnaOcena { get; set; }
+        public string Author { get; set; }
+        public DateTime SubmitDate { get; set; }
         public Appointment EvidentAppointment { get; set; }
 
     }

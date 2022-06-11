@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:TechHealth.View.ManagerView.VieW" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" xmlns:validationRules="clr-namespace:TechHealth.ValidationRules"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="710">
-    <Grid Background="LightGray">
+    <Grid Background="#44475a">
         <Grid Background="#252337" Margin="30,30,30,10">
             <Label Content="Separation room:" HorizontalAlignment="Left" Margin="63,75,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White"/>
             <Label Content="Separation room type:" HorizontalAlignment="Left" Margin="63,169,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White"/>

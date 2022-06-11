@@ -6,9 +6,9 @@
              xmlns:local="clr-namespace:TechHealth.View.ManagerView.VieW" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="710">
-    <StackPanel Background="LightGray">
+    <StackPanel Background="#44475a">
         <TextBlock Text="Surveys"
-                   Foreground="Black"
+                   Foreground="White"
                    FontSize="28"
                    HorizontalAlignment="Center"
                    Margin="0,5,0,0"/>
@@ -22,7 +22,7 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Button x:Name="Hospital" Content="Hospital" Margin="235,25,0,25" HorizontalAlignment="Left" Width="120" Height="50"  Grid.Row="0" Grid.Column="0"/>
+            <Button x:Name="Hospital" Content="Hospital" Margin="235,25,0,25" HorizontalAlignment="Left" Width="120" Height="50"  Grid.Row="0" Grid.Column="0" IsEnabled="False"/>
             <Button x:Name="Doctor" Content="Doctor" Margin="0,25,0,25" HorizontalAlignment="Left" Width="120" Height="50"  Grid.Row="0" Grid.Column="1"/>
 
             <Grid Grid.Row="1" Grid.Column="0" Background="#272537" Margin="10,0,5,0">
@@ -44,15 +44,15 @@
                 <materialDesign:RatingBar x:Name="ratingbar1" Value="1" Height="20" Width="120"
                                               Foreground="Yellow" HorizontalAlignment="Left"
                                               Margin="27,110,0,8" IsReadOnly="True"/>
-                <Label x:Name="fiveStarStaff" Content="{Binding FiveStarStaffGrade}" Margin="0,35,117,0" Foreground="White"
+                <Label x:Name="fiveStarStaff" Content="{Binding FiveStarStaffGrade}" Margin="0,34,117,0" Foreground="White"
                        Height="24" Width="60" HorizontalAlignment="Right" VerticalAlignment="Top" Visibility="Visible"/>
-                <Label Content="{Binding FourStarStaffGrade}" Margin="0,50,117,0" Foreground="White"
+                <Label Content="{Binding FourStarStaffGrade}" Margin="0,54,117,0" Foreground="White"
                        Height="24" Width="60" HorizontalAlignment="Right" VerticalAlignment="Top" Visibility="Visible"/>
-                <Label Content="{Binding ThreeStarStaffGrade}" Margin="163,72,0,0" Foreground="White"
+                <Label Content="{Binding ThreeStarStaffGrade}" Margin="150,75,0,0" Foreground="White"
                        Height="24" Width="60" HorizontalAlignment="Left" VerticalAlignment="Top" Visibility="Visible"/>
-                <Label Content="{Binding TwoStarStaffGrade}" Margin="0,100,117,0" Foreground="White"
+                <Label Content="{Binding TwoStarStaffGrade}" Margin="0,96,117,0" Foreground="White"
                        Height="24" Width="60" HorizontalAlignment="Right" VerticalAlignment="Top" Visibility="Visible"/>
-                <Label Content="{Binding OneStarStaffGrade}" Margin="0,120,117,0" Foreground="White"
+                <Label Content="{Binding OneStarStaffGrade}" Margin="0,116,117,0" Foreground="White"
                        Height="24" Width="60" HorizontalAlignment="Right" VerticalAlignment="Top" Visibility="Visible"/>
                 <Label Content="{Binding AverageStaffGrade}" Margin="0,0,10,24" Foreground="White"
                        Height="24" Width="100" HorizontalAlignment="Right" VerticalAlignment="Bottom" Visibility="Visible"/>
@@ -77,20 +77,21 @@
                 <materialDesign:RatingBar  Value="1" Height="20" Width="120"
                                               Foreground="Yellow" HorizontalAlignment="Left"
                                               Margin="27,110,0,8" IsReadOnly="True"/>
-                <Label Content="{Binding FiveStarGeneralGrade}" Margin="0,35,117,0" Foreground="White"
+                <Label Content="{Binding FiveStarGeneralGrade}" Margin="0,34,117,0" Foreground="White"
                        Height="24" Width="60" HorizontalAlignment="Right" VerticalAlignment="Top" Visibility="Visible"/>
-                <Label Content="{Binding FourStarGeneralGrade}" Margin="0,55,117,0" Foreground="White"
+                <Label Content="{Binding FourStarGeneralGrade}" Margin="0,54,117,0" Foreground="White"
                        Height="24" Width="60" HorizontalAlignment="Right" VerticalAlignment="Top" Visibility="Visible"/>
-                <Label Content="{Binding ThreeStarGeneralGrade}" Margin="163,79,0,0" Foreground="White"
+                <Label Content="{Binding ThreeStarGeneralGrade}" Margin="150,76,0,0" Foreground="White"
                        Height="24" Width="60" HorizontalAlignment="Left" VerticalAlignment="Top" Visibility="Visible"/>
-                <Label Content="{Binding TwoStarGeneralGrade}" Margin="0,100,117,0" Foreground="White"
+                <Label Content="{Binding TwoStarGeneralGrade}" Margin="0,96,117,0" Foreground="White"
                        Height="24" Width="60" HorizontalAlignment="Right" VerticalAlignment="Top" Visibility="Visible"/>
-                <Label Content="{Binding OneStarGeneralGrade}" Margin="0,120,117,0" Foreground="White"
+                <Label Content="{Binding OneStarGeneralGrade}" Margin="0,116,117,0" Foreground="White"
                        Height="24" Width="60" HorizontalAlignment="Right" VerticalAlignment="Top" Visibility="Visible"/>
                 <Label Content="{Binding AverageGeneralGrade}" Margin="0,0,10,24" Foreground="White"
                        Height="24" Width="100" HorizontalAlignment="Right" VerticalAlignment="Bottom" Visibility="Visible"/>
             </Grid>
-
+            <Button x:Name="Pdf" Content="Get PDF" Margin="282,75,0,25" HorizontalAlignment="Left" Width="120" Height="50"  Grid.Row="2" Grid.ColumnSpan="2"
+                    Command="{Binding PdfCommand}"/>
         </Grid>
     </StackPanel>
 </UserControl>

@@ -6,8 +6,8 @@
              xmlns:local="clr-namespace:TechHealth.View.ManagerView.VieW"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="710">
-    <Grid Background="LightGray">
-        <Grid Background="#252337" Margin="30,30,30,10">
+    <Grid Background="#44475a">
+        <Grid Background="#44475a" Margin="30,30,30,10">
             <Grid.RowDefinitions>
                 <RowDefinition Height="50"/>
                 <RowDefinition Height="300"/>

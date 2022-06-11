@@ -545,6 +545,7 @@
     <Compile Include="View\ManagerView\ViewModel\MainViewModel.cs" />
     <Compile Include="View\ManagerView\ViewModel\MedViewModel.cs" />
     <Compile Include="View\ManagerView\ViewModel\MergeRoomsViewModel.cs" />
+    <Compile Include="View\ManagerView\ViewModel\PdfViewModel.cs" />
     <Compile Include="View\ManagerView\ViewModel\ReallocateViewModel.cs" />
     <Compile Include="View\ManagerView\ViewModel\RejectReasonViewModel.cs" />
     <Compile Include="View\ManagerView\ViewModel\RoomInventoryViewModel.cs" />
@@ -577,6 +578,9 @@
     </Compile>
     <Compile Include="View\ManagerView\VieW\MergeRoomsView.xaml.cs">
       <DependentUpon>MergeRoomsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ManagerView\VieW\PdfView.xaml.cs">
+      <DependentUpon>PdfView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ManagerView\VieW\ReallocateView.xaml.cs">
       <DependentUpon>ReallocateView.xaml</DependentUpon>
@@ -796,6 +800,8 @@
     <Content Include="Json\rejectedMedicine.json" />
     <Content Include="Json\secretary.json" />
     <Content Include="Json\specialization.json" />
+    <Resource Include="resources\survey.png" />
+    <Resource Include="resources\signoutoption.png" />
     <Resource Include="View\SecretaryView\resources\mainPage.png" />
     <Resource Include="View\SecretaryView\resources\otherPage.png" />
     <Resource Include="resources\search.png">
@@ -828,6 +834,10 @@
     <Resource Include="resources\close.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="resources\data-management.png" />
+    <Resource Include="resources\demo.png" />
+    <Resource Include="resources\demo-40x40.png" />
+    <Resource Include="resources\demo-24x24.png" />
     <Content Include="resources\diagnosis.png" />
     <Resource Include="resources\logout.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -844,6 +854,11 @@
     <Resource Include="resources\hospital-bed.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="resources\first-aid.png" />
+    <Resource Include="resources\equipment.png" />
+    <Resource Include="resources\help2.png" />
+    <Resource Include="resources\faq.png" />
+    <Resource Include="resources\logout2.png" />
     <Content Include="resources\medicine.png" />
     <Resource Include="resources\mydoctor.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -1004,6 +1019,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\ManagerView\VieW\MergeRoomsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ManagerView\VieW\PdfView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

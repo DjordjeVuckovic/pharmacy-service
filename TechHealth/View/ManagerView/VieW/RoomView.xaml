@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:TechHealth.View.ManagerView.VieW"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="710">
     <!--<UserControl.DataContext>
@@ -16,6 +17,9 @@
                    FontSize="28"
                    HorizontalAlignment="Center"
                    Margin="0,10,0,0"/>
+        <TextBox x:Name="search" Width="120" Height="30"
+                 HorizontalAlignment="Right" Margin="0,0,11,0" Background="#272537"
+                     Foreground="White" materialDesign:HintAssist.Hint="Search"/>
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="340"/>
@@ -27,7 +31,7 @@
                       IsReadOnly="True"
                       SelectionMode="Extended"
                       AutoGenerateColumns="False"
-                      Margin="10,10,10,69"
+                      Margin="10,10,10,89"
                       Background="#272537">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="ID" Binding="{Binding RoomId}" Width="*"  CanUserResize="False"/>
@@ -37,24 +41,20 @@
                 </DataGrid.Columns>
             </DataGrid>
 
-            <Button x:Name="Add" Content="Add" Margin="20,0,10,10" HorizontalAlignment="Left" Width="120" Height="50"  Grid.Row="3"
+            <Button x:Name="Add" Content="Add" Margin="29,256,0,34" HorizontalAlignment="Left" Width="120" Height="50"
                     Command="{Binding AddRoomCommand}"/>
-            <Button x:Name="Merging" Content="Merging" Margin="90,280,0,10" HorizontalAlignment="Left" Width="120" Height="50"
-                    Command="{Binding MergeRoomsCommand}"/>
-            <Button x:Name="Separation" Content="Separation" Margin="495,280,0,10" HorizontalAlignment="Left" Width="120" Height="50"
-                    Command="{Binding SeparateRoomsCommand}"/>
-            <Button x:Name="Renovation" Content="Renovation" Margin="150,0,10,10" HorizontalAlignment="Left" Width="120" Height="50"  Grid.Row="3"
-                    Command="{Binding RenovationCommand}"/>
-            <Button x:Name="View" Content="View/Modify" Margin="-25,0,0,10" HorizontalAlignment="Center"  Width="120" Height="50"  Grid.Row="3"
+            <Button x:Name="Merging" Content="Merging" Margin="29,320,0,40" HorizontalAlignment="Left" Width="120" Height="50"  Background="#23a28f" BorderThickness="0"
+                    Command="{Binding MergeRoomsCommand}" Grid.RowSpan="2"/>
+            <Button x:Name="Separation" Content="Separation" Margin="402,320,0,40" HorizontalAlignment="Left" Width="120" Height="50"
+                    Command="{Binding SeparateRoomsCommand}" Grid.RowSpan="2"/>
+            <Button x:Name="Renovation" Content="Renovation" Margin="162,320,0,40" HorizontalAlignment="Left" Width="120" Height="50"
+                    Command="{Binding RenovationCommand}" Grid.RowSpan="2"/>
+            <Button x:Name="View" Content="View/Modify" Margin="0,256,0,34" HorizontalAlignment="Center"  Width="120" Height="50"
                     Command="{Binding UpdateRoomCommand}"/>
-            <Button x:Name="Inventory" Content="Inventory" Margin="250,0,0,10" HorizontalAlignment="Center"  Width="120" Height="50"  Grid.Row="3"
-                    Command="{Binding InventoryCommand}"/>
-            <Button x:Name="Delete" Content="Delete" Margin="0,0,20,10" HorizontalAlignment="Right" Width="120" Height="50"  Grid.Row="3"
+            <Button x:Name="Inventory" Content="Inventory" Margin="535,320,0,40" HorizontalAlignment="Left"  Width="120" Height="50"
+                    Command="{Binding InventoryCommand}" Grid.RowSpan="2"/>
+            <Button x:Name="Delete" Content="Delete" Margin="0,256,29,34" HorizontalAlignment="Right" Width="120" Height="50"
                     Command="{Binding DeleteRoomCommand}"/>
-
-            <!--<Image Source="/resources/signoutoption.png"
-                   Height="24" HorizontalAlignment="Right" VerticalAlignment="Top"
-                   Cursor="Hand" Margin="0,-41,110,0" Width="36"/>-->
         </Grid>
     </StackPanel>
 </UserControl>

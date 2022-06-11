@@ -12,7 +12,7 @@
              TextOptions.TextFormattingMode="Ideal"
              TextOptions.TextRenderingMode="Auto">
 
-    <Grid Background="LightGray">
+    <Grid Background="#44475a">
         <Grid Background="#252337" Margin="30,30,30,10">
             <Grid Margin="10,10,10,10">
                 <TextBlock Text="Reject details:" VerticalAlignment="Top" Margin="202,10,202,0" FontSize="32" Foreground="White"/>

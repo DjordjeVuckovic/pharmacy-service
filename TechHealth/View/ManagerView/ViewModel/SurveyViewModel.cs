@@ -4,11 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TechHealth.Controller;
+using TechHealth.Core;
 
 namespace TechHealth.View.ManagerView.ViewModel
 {
     public class SurveyViewModel
     {
+        public RelayCommand PdfCommand { get; set; }
         private GradeController gradeController = new GradeController();
         private List<int> staffGrades;
         private List<int> generalGrades;
@@ -29,6 +31,8 @@ namespace TechHealth.View.ManagerView.ViewModel
 
         public SurveyViewModel()
         {
+            PdfCommand = new RelayCommand(param => ExecutePdf());
+
             staffGrades = gradeController.GetStaffGrades();
             FiveStarStaffGrade = "(" + gradeController.GetGradesNum(5, staffGrades) + ")";
             FourStarStaffGrade = "(" + gradeController.GetGradesNum(4, staffGrades) + ")";
@@ -44,6 +48,12 @@ namespace TechHealth.View.ManagerView.ViewModel
             TwoStarGeneralGrade = "(" + gradeController.GetGradesNum(2, generalGrades) + ")";
             OneStarGeneralGrade = "(" + gradeController.GetGradesNum(1, generalGrades) + ")";
             AverageGeneralGrade = "Average: " + gradeController.GetAverageGrade(generalGrades);
+        }
+
+        private void ExecutePdf()
+        {
+            PdfViewModel PdfVm = new PdfViewModel();
+            MainViewModel.Instance().CurrentView = PdfVm;
         }
     }
 }
