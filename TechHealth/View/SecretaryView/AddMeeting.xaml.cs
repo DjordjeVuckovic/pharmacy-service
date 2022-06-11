@@ -99,7 +99,29 @@ namespace TechHealth.View.SecretaryView
                     }
                 }
             }
+            if (lista.Count == 0 || roomCombo.SelectedItem == null || datePick.SelectedDate == null || timePickerStart.SelectedTime == null || timePickerEnd.SelectedTime == null)
+            {
+                MessageBox.Show("Fill out all the fields.");
+                return;
+            }
+            if (lista.Count < 2)
+            {
+                MessageBox.Show("Meeting has to have more than one person.");
+                return;
+            }
+
             GenerateMeeting(lista);
+
+            if (DateTime.Compare(meeting.FinishTime, meeting.StartTime) == 0)
+            {
+                MessageBox.Show("Start time and finish time cannot be equal.");
+                return;
+            }
+            if (DateTime.Compare(meeting.StartTime, meeting.FinishTime) > 0)
+            {
+                MessageBox.Show("Finish time cannot be before start time.");
+                return;
+            }
 
             if (!meetingController.CheckAttendants(meeting) || !meetingController.CheckRoom(meeting)){ return; }
 

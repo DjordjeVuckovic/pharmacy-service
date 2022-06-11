@@ -91,6 +91,12 @@ namespace TechHealth.View.SecretaryView
         }
         private void Button_Click_Confirm(object sender, RoutedEventArgs e)
         {
+            if (accountName.Text == "" || accountSurname.Text == "" || accountJmbg.Text == "" || accountLbo.Text == "" || accountPhone.Text == "" || accountStreet.Text == "" || accountStreetNumber.Text == "" || accountCity.Text == "" || accountCountry.Text == "" || accountPostcode.Text == "" || accountUsername.Text == "" || accountPassword.Text == "")
+            {
+                MessageBox.Show("Fill out all the fields.");
+                return;
+            }
+
             var address = new Address();
 
             address.Street = accountStreet.Text;

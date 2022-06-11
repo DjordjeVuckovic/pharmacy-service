@@ -3,36 +3,37 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:TechHealth.View.ManagerView.VieW"
+             xmlns:local="clr-namespace:TechHealth.View.ManagerView.VieW" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" xmlns:validationRules="clr-namespace:TechHealth.ValidationRules"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="710">
-    <Grid Background="#252337">
-        <Label Content="Separation room:" HorizontalAlignment="Left" Margin="63,75,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White"/>
-        <Label Content="Separation room type:" HorizontalAlignment="Left" Margin="63,152,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White"/>
-        <Label Content="Separation start:" HorizontalAlignment="Left" Margin="63,252,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White" Height="29"/>
-        <Label Content="Start time:" HorizontalAlignment="Left" Margin="315,75,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White" Height="28"/>
-        <Label Content="Separation end:" HorizontalAlignment="Left" Margin="315,152,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White" Height="28"/>
-        <Label Content="End time:" HorizontalAlignment="Left" Margin="315,252,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White" Height="29"/>
-        <Label Content="New room" HorizontalAlignment="Left" Margin="543,75,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White" Height="28"/>
-        <Label Content="New room type" HorizontalAlignment="Left" Margin="543,152,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White" Height="28"/>
-        <TextBox HorizontalAlignment="Left" Margin="63,109,0,0" VerticalAlignment="Top" Width="120" Height="21.96" x:Name="TxtRoomID" Foreground="White"/>
-        <TextBox HorizontalAlignment="Left" Margin="63,186,0,0" VerticalAlignment="Top" Width="120" Height="22" x:Name="TxtSeparationType" Foreground="White"/>
-        <DatePicker HorizontalAlignment="Left" Margin="63,286,0,0" VerticalAlignment="Top" Width="120" x:Name="RStart" Height="24" Foreground="White">
-        </DatePicker>
-        <TextBox HorizontalAlignment="Left" Margin="315,109,0,0" VerticalAlignment="Top" Width="120" Height="22" x:Name="TxtStartTime" Foreground="White"/>
-        <DatePicker HorizontalAlignment="Left" Margin="315,186,0,0" VerticalAlignment="Top" Width="120" x:Name="REnd" Height="24" Foreground="White">
-        </DatePicker>
-        <TextBox HorizontalAlignment="Left" Margin="315,286,0,0" VerticalAlignment="Top" Width="120" Height="23" x:Name="TxtEndTime" Foreground="White"/>
-        <TextBox HorizontalAlignment="Left" Margin="543,109,0,0" VerticalAlignment="Top" Width="120" Height="22" x:Name="TxtNewRoom" Foreground="White"/>
-        <ComboBox HorizontalAlignment="Left" Margin="543,186,0,0" VerticalAlignment="Top" Width="120" Height="21" x:Name="CbType" Foreground="White">
-            <ComboBoxItem Content="Operation"/>
-            <ComboBoxItem Content="Examination"/>
-            <ComboBoxItem Content="Rest"/>
-            <ComboBoxItem Content="Office"/>
-        </ComboBox>
-        <Label Content="Separate rooms" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="20" Foreground="White"/>
-        <Button Content="Confirm" HorizontalAlignment="Left" Margin="168,357,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal" Height="50" Width="120" RenderTransformOrigin="-0.291,0.467" Background="#FF42C130" Click="Button_Click_Confirm"/>
-        <Button Content="Close" HorizontalAlignment="Left" Margin="416,357,0,0" VerticalAlignment="Top" Width="120" Height="50" FontSize="16" Background="#FFEA9292" Click="Button_Click_Close"/>
-
+    <Grid Background="LightGray">
+        <Grid Background="#252337" Margin="30,30,30,10">
+            <Label Content="Separation room:" HorizontalAlignment="Left" Margin="63,75,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White"/>
+            <Label Content="Separation room type:" HorizontalAlignment="Left" Margin="63,169,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White"/>
+            <Label Content="Separation start:" HorizontalAlignment="Left" Margin="63,252,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White" Height="29"/>
+            <Label Content="Start time:" HorizontalAlignment="Left" Margin="265,169,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White" Height="28"/>
+            <Label Content="Separation end:" HorizontalAlignment="Left" Margin="265,75,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White" Height="28"/>
+            <Label Content="End time:" HorizontalAlignment="Left" Margin="265,252,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White" Height="29"/>
+            <Label Content="New room" HorizontalAlignment="Left" Margin="460,75,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White" Height="28"/>
+            <Label Content="New room type" HorizontalAlignment="Left" Margin="460,169,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White" Height="28"/>
+            <TextBox HorizontalAlignment="Left" Margin="63,109,0,0" VerticalAlignment="Top" Width="120" Height="22" x:Name="TxtRoomID" Foreground="White" IsEnabled="False"/>
+            <TextBox HorizontalAlignment="Left" Margin="63,203,0,0" VerticalAlignment="Top" Width="120" Height="22" x:Name="TxtSeparationType" Foreground="White" IsEnabled="False"/>
+            <DatePicker HorizontalAlignment="Left" Margin="63,286,0,0" VerticalAlignment="Top" Width="120" x:Name="RStart" Height="24" Foreground="White">
+            </DatePicker>
+            <TextBox HorizontalAlignment="Center" Margin="0,205,0,0" VerticalAlignment="Top" Width="120" Height="22" x:Name="TxtStartTime" Foreground="White"/>
+            <DatePicker HorizontalAlignment="Center" Margin="0,107,0,0" VerticalAlignment="Top" Width="120" x:Name="REnd" Height="24" Foreground="White">
+            </DatePicker>
+            <TextBox HorizontalAlignment="Center" Margin="0,286,0,0" VerticalAlignment="Top" Width="120" Height="22" x:Name="TxtEndTime" Foreground="White"/>
+            <TextBox HorizontalAlignment="Left" Margin="460,109,0,0" VerticalAlignment="Top" Width="120" Height="22" x:Name="TxtNewRoom" Foreground="White"/>
+            <ComboBox HorizontalAlignment="Left" Margin="460,205,0,0" VerticalAlignment="Top" Width="120" Height="22" x:Name="CbType" Foreground="White">
+                <ComboBoxItem Content="Operation"/>
+                <ComboBoxItem Content="Examination"/>
+                <ComboBoxItem Content="Rest"/>
+                <ComboBoxItem Content="Office"/>
+            </ComboBox>
+            <Label Content="Separate rooms" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="20" Foreground="White"/>
+            <Button Content="Confirm" HorizontalAlignment="Left" Margin="158,357,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal" Height="50" Width="120" RenderTransformOrigin="-0.291,0.467" Click="Button_Click_Confirm"/>
+            <Button Content="Close" HorizontalAlignment="Left" Margin="372,357,0,0" VerticalAlignment="Top" Width="120" Height="50" FontSize="16" Click="Button_Click_Close"/>
+        </Grid>
     </Grid>
 </UserControl>

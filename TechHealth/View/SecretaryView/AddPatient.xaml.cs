@@ -62,12 +62,27 @@ namespace TechHealth.View.SecretaryView
         }
         private void Button_Click_Confirm(object sender, RoutedEventArgs e)
         {
+            if (accountName.Text == "" || accountSurname.Text == "" || accountJmbg.Text == "" || accountLbo.Text == "" || accountPhone.Text == "" || accountStreet.Text == "" || accountStreetNumber.Text == "" || accountCity.Text == "" || accountCountry.Text == "" || accountPostcode.Text == "" || accountUsername.Text == "" || accountPassword.Text == "")
+            {
+                MessageBox.Show("Fill out all the fields.");
+                return;
+            }
+
             var address = new Address();
 
             address.Street = accountStreet.Text;
             address.StreetNumber = accountStreetNumber.Text;
             address.City = accountCity.Text;
             address.Country = accountCountry.Text;
+            try
+            {
+                int ap = Int32.Parse(accountPostcode.Text);
+            }
+            catch
+            {
+                MessageBox.Show("Postcode must have only numbers.");
+                return;
+            }
             address.Postcode = Int32.Parse(accountPostcode.Text);
 
             if (!patientController.CheckAvailability(accountJmbg.Text, accountUsername.Text)) { return; }
@@ -98,13 +113,13 @@ namespace TechHealth.View.SecretaryView
 
             medicalRecordController.Create(accountName.Text+accountSurname.Text+accountJmbg.Text, Bloodtype.None, p, "", "", "", "", "", ed);
 
-            this.Close();
             new AccountsView().Show();
+            Close();
         }
         private void Button_Click_Cancel(object sender, RoutedEventArgs e)
         {
-            this.Close();
             new AccountsView().Show();
+            Close();
         }
 
         private void accountStreet_TextChanged(object sender, TextChangedEventArgs e)

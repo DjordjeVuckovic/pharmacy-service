@@ -39,6 +39,11 @@ namespace TechHealth.View.SecretaryView
         }
         private void Button_Click_Confirm(object sender, RoutedEventArgs e)
         {
+            if (allergenName.Text == "" || allergenDescription.Text == "")
+            {
+                MessageBox.Show("Fill out all the fields.");
+                return;
+            }
             int allergenId = 1;
             foreach (var al in AllergensRepository.Instance.GetAll().Values)
             {

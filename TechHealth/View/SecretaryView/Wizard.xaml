@@ -1,0 +1,79 @@
+﻿<Window x:Class="TechHealth.View.SecretaryView.Wizard"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TechHealth.View.SecretaryView"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        mc:Ignorable="d"
+        Title="Wizard" Height="650" Width="400"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <xctk:Wizard FinishButtonClosesWindow="True">
+            <xctk:WizardPage x:Name="IntroPage" PageType="Interior" 
+                             Title="Introduction Wizard"
+                             Description="This wizard will walk you through TechHealth app"
+                             NextPage="{Binding ElementName=Page1}">
+                <Grid>
+                    <Image Source="resources/caduceus_logo_black_and_white.png" HorizontalAlignment="Left" Height="167" Margin="77,89,0,0" VerticalAlignment="Top" Width="204"/>
+                    <Label Content="TechHealth" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="28" FontWeight="Bold" Margin="0,25,0,0"/>
+                </Grid>
+            </xctk:WizardPage>
+            <xctk:WizardPage x:Name="Page1" PageType="Interior" 
+                             Title="Main menu"
+                             Description="On the main menu page, you can choose what you want to do. Manage accounts, guest accounts, appointments, meetings, order new equipment for the hospital or get a pdf report about appointments. There is also an option to Log out of the app in the top right corner."
+                             PreviousPage="{Binding ElementName=IntroPage}"
+                             NextPage="{Binding ElementName=Page2}">
+                <Grid>
+                    <Image Source="resources/mainPage.png" HorizontalAlignment="Center" Height="auto" Margin="0,0,0,0" VerticalAlignment="Top" Width="auto"/>
+                </Grid>
+            </xctk:WizardPage>
+            <xctk:WizardPage x:Name="Page2" PageType="Interior" 
+                             Title="Accounts"
+                             Description="On accounts page you can manage accounts, their allergens or medical records. You can return to main menu by clicking three bars button in the top left corner."
+                             PreviousPage="{Binding ElementName=Page1}"
+                             NextPage="{Binding ElementName=Page3}">
+                <Grid>
+                    <Image Source="resources/accountPage.png" HorizontalAlignment="Center" Height="auto" Margin="0,0,0,0" VerticalAlignment="Top" Width="auto"/>
+                </Grid>
+            </xctk:WizardPage>
+            <xctk:WizardPage x:Name="Page3" PageType="Interior" 
+                             Title="Appointments"
+                             Description="On appointments page you can manage appointments. First select a date, then you can manage appointments on that date. The same mechanism is used for meetings."
+                             PreviousPage="{Binding ElementName=Page2}"
+                             NextPage="{Binding ElementName=Page4}">
+                <Grid>
+                    <Image Source="resources/appointmentsPage.png" HorizontalAlignment="Center" Height="auto" Margin="0,0,0,0" VerticalAlignment="Top" Width="auto"/>
+                </Grid>
+            </xctk:WizardPage>
+            <xctk:WizardPage x:Name="Page4" PageType="Interior" 
+                             Title="Equipment requests"
+                             Description="On equipment page you can request new equipment by entering name and quantity."
+                             PreviousPage="{Binding ElementName=Page3}"
+                             NextPage="{Binding ElementName=Page5}">
+                <Grid>
+                    <Image Source="resources/equipmentPage.png" HorizontalAlignment="Center" Height="auto" Margin="0,0,0,0" VerticalAlignment="Top" Width="auto"/>
+                </Grid>
+            </xctk:WizardPage>
+            <xctk:WizardPage x:Name="Page5" PageType="Interior" 
+                             Title="Emergency examination"
+                             Description="On emergency page you can create an emergency examination. Choose a patient and a doctor's specialization and the system will find the nearest free time to make an appointment."
+                             PreviousPage="{Binding ElementName=Page4}"
+                             NextPage="{Binding ElementName=Page6}">
+                <Grid>
+                    <Image Source="resources/emergencyPage.png" HorizontalAlignment="Center" Height="auto" Margin="0,0,0,0" VerticalAlignment="Top" Width="auto"/>
+                </Grid>
+            </xctk:WizardPage>
+            <xctk:WizardPage x:Name="Page6" PageType="Interior" 
+                             Title="Vacation requests"
+                             Description="On vacation requests page you can see doctors' requests that are waiting and approve or reject them."
+                             PreviousPage="{Binding ElementName=Page5}"
+                             FinishButtonVisibility="Visible"
+                             CanFinish="True">
+                <Grid>
+                    <Image Source="resources/vacationRequestsPage.png" HorizontalAlignment="Center" Height="auto" Margin="0,0,0,0" VerticalAlignment="Top" Width="auto"/>
+                </Grid>
+            </xctk:WizardPage>
+        </xctk:Wizard>
+    </Grid>
+</Window>

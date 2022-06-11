@@ -63,6 +63,11 @@ namespace TechHealth.View.SecretaryView
         }
         private void Button_Click_Confirm(object sender, RoutedEventArgs e)
         {
+            if (guestUsername.Text == "" || guestPassword.Text == "")
+            {
+                MessageBox.Show("Fill out all the fields.");
+                return;
+            }
             int guestId = 1;
             foreach (var p in PatientRepository.Instance.GetAll().Values)
             {
@@ -89,7 +94,6 @@ namespace TechHealth.View.SecretaryView
             }
             patientController.Create(guestUsername.Text, "", null, null, "guest" + guestId.ToString(), 0, false, guestUsername.Text, guestPassword.Text, "", false, true, "");
             guestId++;
-            Close();
             if (isEmergency)
             {
                 new EmergencyExamination().Show();
@@ -98,10 +102,10 @@ namespace TechHealth.View.SecretaryView
             {
                 new GuestsView().Show();
             }
+            Close();
         }
         private void Button_Click_Cancel(object sender, RoutedEventArgs e)
         {
-            Close();
             if (isEmergency)
             {
                 new EmergencyExamination().Show();
@@ -110,6 +114,7 @@ namespace TechHealth.View.SecretaryView
             {
                 new GuestsView().Show();
             }
+            Close();
         }
     }
 }

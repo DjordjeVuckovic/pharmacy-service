@@ -14,7 +14,7 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Dark.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/materialdesigncolor.bluegrey.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/materialdesigncolor.indigo.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
@@ -73,12 +73,6 @@
                              Style="{StaticResource MenuButtonTheme}"
                              Command="{Binding EquipmentViewCommand}"/>
 
-                <RadioButton Content="Employees"
-                             Height="50"
-                             Foreground="White"
-                             FontSize="14"
-                             Style="{StaticResource MenuButtonTheme}"/>
-
                 <RadioButton Content="Surveys"
                              Height="50"
                              Foreground="White"
@@ -100,13 +94,16 @@
                              Style="{StaticResource MenuButtonTheme}"/>
             </StackPanel>
 
-            <TextBox Width="250"
+            <!--<TextBox Width="250"
                      Height="40"
                      VerticalContentAlignment="Center"
                      HorizontalAlignment="Left"
                      Margin="235,13,0,22"
                      Grid.Column="1"
-                     Style="{StaticResource SearchText}"/>
+                     Style="{StaticResource SearchText}"/>-->
+            <!--<Image Source="../../resources/sign-out-option.png"
+                   Height="24" HorizontalAlignment="Right" VerticalAlignment="Center"
+                   Cursor="Hand" Margin="0,16,10,9.6" Width="35"/>-->
 
             <ContentControl Grid.Row="1"
                             Grid.Column="1"

@@ -6,31 +6,34 @@
              xmlns:local="clr-namespace:TechHealth.View.ManagerView.VieW"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="710">
-    <Grid Background="#252337">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="300"/>
-            <RowDefinition Height="70"/>
-        </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0"
-                   Text="Room inventory"
-                   Foreground="White"
-                   FontSize="22"
-                   HorizontalAlignment="Center"
-                   Margin="0,10,0,0"/>
+    <Grid Background="LightGray">
+        <Grid Background="#252337" Margin="30,30,30,10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="300"/>
+                <RowDefinition Height="70"/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0"
+                       Text="Room inventory"
+                       Foreground="White"
+                       FontSize="22"
+                       HorizontalAlignment="Center"
+                       Margin="0,10,0,0"/>
 
-        <DataGrid x:Name="dataEqForRoom" ItemsSource="{Binding ReList, UpdateSourceTrigger=PropertyChanged}"
-                  CanUserAddRows="False"
-                  SelectionMode="Extended"
-                  AutoGenerateColumns="False"
-                  Margin="70,10,70,10"
-                  Grid.Row="1"
-                  Background="#272537">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Name" Binding="{Binding EquipmentName}" Width="*"  CanUserResize="False"/>
-                <DataGridTextColumn Header="Quantity" Binding="{Binding Quantity}" Width="*"  CanUserResize="False"/>
-            </DataGrid.Columns>
-        </DataGrid>
-        <Button x:Name="Close" Content="Close" Margin="10,10,10,10" HorizontalAlignment="Center" Width="120" Height="50"  Grid.Row="2" Click="Close_Click"/>
+            <DataGrid x:Name="dataEqForRoom" ItemsSource="{Binding ReList, UpdateSourceTrigger=PropertyChanged}"
+                      CanUserAddRows="False"
+                      SelectionMode="Extended"
+                      AutoGenerateColumns="False"
+                      Margin="70,10,70,10"
+                      Grid.Row="1"
+                      Background="#272537"
+                      IsReadOnly="True">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Name" Binding="{Binding EquipmentName}" Width="*"  CanUserResize="False"/>
+                    <DataGridTextColumn Header="Quantity" Binding="{Binding Quantity}" Width="*"  CanUserResize="False"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Button x:Name="Close" Content="Close" Margin="10,10,10,10" HorizontalAlignment="Center" Width="120" Height="50"  Grid.Row="2" Click="Close_Click"/>
+        </Grid>
     </Grid>
 </UserControl>

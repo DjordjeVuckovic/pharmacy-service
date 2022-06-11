@@ -11,12 +11,12 @@
         <Label Content="Add Allergen" HorizontalAlignment="Center" Margin="0,101,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
         <Label Content="Name" HorizontalAlignment="Left" Margin="57,170,0,0" VerticalAlignment="Top"/>
         <Label Content="Description" HorizontalAlignment="Left" Margin="57,235,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="allergenName" HorizontalAlignment="Left" Margin="62,196,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="272"/>
-        <TextBox x:Name="allergenDescription" HorizontalAlignment="Left" Margin="62,261,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="272" Height="64"/>
-        <Button x:Name="Cancel" Background="Black" Foreground="White" Content="Cancel" HorizontalAlignment="Left" Margin="62,399,0,0" VerticalAlignment="Top" Width="272" Click="Button_Click_Cancel" Height="32" FontSize="16" FontWeight="Bold" />
-        <Button x:Name="Confirm" Background="Black" Foreground="White" Content="Confirm" HorizontalAlignment="Left" Margin="62,362,0,0" VerticalAlignment="Top" Width="272" Click="Button_Click_Confirm" FontSize="16" FontWeight="Bold" Height="32" />
+        <TextBox ToolTip="Add a name for the allergen" x:Name="allergenName" HorizontalAlignment="Left" Margin="62,196,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="272"/>
+        <TextBox ToolTip="Add a description for the allergen" x:Name="allergenDescription" HorizontalAlignment="Left" Margin="62,261,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="272" Height="64"/>
+        <Button ToolTip="Go back" x:Name="Cancel" Background="Black" Foreground="White" Content="Cancel" HorizontalAlignment="Left" Margin="62,399,0,0" VerticalAlignment="Top" Width="272" Click="Button_Click_Cancel" Height="32" FontSize="16" FontWeight="Bold" />
+        <Button ToolTip="Create the allergen" x:Name="Confirm" Background="Black" Foreground="White" Content="Confirm" HorizontalAlignment="Left" Margin="62,362,0,0" VerticalAlignment="Top" Width="272" Click="Button_Click_Confirm" FontSize="16" FontWeight="Bold" Height="32" />
         <Rectangle HorizontalAlignment="Center" Height="63" Stroke="Black" VerticalAlignment="Top" Width="430"/>
-        <Button Click="Button_Click_Main" HorizontalAlignment="Left" Margin="28,10,0,0" VerticalAlignment="Top" Height="44" Width="55" BorderBrush="#FFFBFBFB" Foreground="White" Background="White">
+        <Button ToolTip="Main menu" Click="Button_Click_Main" HorizontalAlignment="Left" Margin="28,10,0,0" VerticalAlignment="Top" Height="44" Width="55" BorderBrush="#FFFBFBFB" Foreground="White" Background="White">
             <Image Source="resources/bars.png"/>
             <Button.ContextMenu>
                 <ContextMenu>
@@ -27,37 +27,37 @@
         </Button>
         <Label Content="TechHealth" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="28" FontWeight="Bold" Margin="0,7,0,0"/>
         <Rectangle HorizontalAlignment="Center" Height="78" Stroke="Black" VerticalAlignment="Top" Width="430" Margin="0,550,0,0"/>
-        <Button Click="Button_Accounts" HorizontalAlignment="Left" Margin="3,552,0,0" VerticalAlignment="Top" Height="60" Width="57" BorderBrush="#FFFBFBFB" Foreground="Black" Background="White">
+        <Button ToolTip="Accounts page" Click="Button_Accounts" HorizontalAlignment="Left" Margin="3,552,0,0" VerticalAlignment="Top" Height="60" Width="57" BorderBrush="#FFFBFBFB" Foreground="Black" Background="White">
             <StackPanel>
                 <Image Source="/View/SecretaryView/resources/account.png" Height="39" Width="44"/>
                 <TextBlock HorizontalAlignment="Center" RenderTransformOrigin="0.674,-0.373"><Run Text="Accounts"/></TextBlock>
             </StackPanel>
         </Button>
-        <Button Click="Button_Meetings" HorizontalAlignment="Left" Margin="81,552,0,0" VerticalAlignment="Top" Height="60" Width="57" BorderBrush="#FFFBFBFB" Foreground="Black" Background="White">
+        <Button ToolTip="Meetings page" Click="Button_Meetings" HorizontalAlignment="Left" Margin="81,552,0,0" VerticalAlignment="Top" Height="60" Width="57" BorderBrush="#FFFBFBFB" Foreground="Black" Background="White">
             <StackPanel>
                 <Image Source="/View/SecretaryView/resources/meeting.png" Height="39" Width="44"/>
                 <TextBlock HorizontalAlignment="Center" RenderTransformOrigin="0.674,-0.373"><Run Text="Meetings"/></TextBlock>
             </StackPanel>
         </Button>
-        <Button Click="Button_Appointments" HorizontalAlignment="Center" Margin="0,552,0,0" VerticalAlignment="Top" Height="60" Width="92" BorderBrush="#FFFBFBFB" Foreground="Black" Background="White">
+        <Button ToolTip="Appointments page" Click="Button_Appointments" HorizontalAlignment="Center" Margin="0,552,0,0" VerticalAlignment="Top" Height="60" Width="92" BorderBrush="#FFFBFBFB" Foreground="Black" Background="White">
             <StackPanel>
                 <Image Source="/View/SecretaryView/resources/appointment.png" Height="39" Width="44"/>
                 <TextBlock HorizontalAlignment="Center" RenderTransformOrigin="0.674,-0.373"><Run Text="Appointments"/></TextBlock>
             </StackPanel>
         </Button>
-        <Button Click="Button_Equipment" HorizontalAlignment="Left" Margin="245,552,0,0" VerticalAlignment="Top" Height="60" Width="61" BorderBrush="#FFFBFBFB" Foreground="Black" Background="White">
+        <Button ToolTip="Order new equipment" Click="Button_Equipment" HorizontalAlignment="Left" Margin="245,552,0,0" VerticalAlignment="Top" Height="60" Width="61" BorderBrush="#FFFBFBFB" Foreground="Black" Background="White">
             <StackPanel>
                 <Image Source="/View/SecretaryView/resources/equipment.png" Height="39" Width="44"/>
                 <TextBlock HorizontalAlignment="Center" RenderTransformOrigin="0.674,-0.373"><Run Text="Equipment"/></TextBlock>
             </StackPanel>
         </Button>
-        <Button Click="Button_EmergencyExamination" HorizontalAlignment="Left" Margin="322,552,0,0" VerticalAlignment="Top" Height="60" Width="61" BorderBrush="#FFFBFBFB" Foreground="Black" Background="White">
+        <Button ToolTip="Create an emergency examination" Click="Button_EmergencyExamination" HorizontalAlignment="Left" Margin="322,552,0,0" VerticalAlignment="Top" Height="60" Width="61" BorderBrush="#FFFBFBFB" Foreground="Black" Background="White">
             <StackPanel>
                 <Image Source="/View/SecretaryView/resources/emergency.png" Height="39" Width="44"/>
                 <TextBlock HorizontalAlignment="Center" RenderTransformOrigin="0.674,-0.373"><Run Text="Emergency"/></TextBlock>
             </StackPanel>
         </Button>
-        <Button Click="Button_LogOut" HorizontalAlignment="Left" Margin="322,7,0,0" VerticalAlignment="Top" FontWeight="Bold" Background="White" BorderBrush="White" Width="50" HorizontalContentAlignment="Left" Height="47">
+        <Button ToolTip="Log out of TechHealth" Click="Button_LogOut" HorizontalAlignment="Left" Margin="322,7,0,0" VerticalAlignment="Top" FontWeight="Bold" Background="White" BorderBrush="White" Width="50" HorizontalContentAlignment="Left" Height="47">
             <StackPanel>
                 <Image Source="/View/SecretaryView/resources/logout.png" Height="27" Width="33"/>
                 <TextBlock HorizontalAlignment="Center" RenderTransformOrigin="0.674,-0.373"><Run Text="LogOut"/></TextBlock>
