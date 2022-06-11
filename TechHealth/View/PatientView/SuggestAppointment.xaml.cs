@@ -46,7 +46,8 @@ namespace TechHealth.View.PatientView
 
             patient = patientController.GetByPatientId("2456");
             PatientFullName = patient.FullName;
-
+            StartDatePicker.SelectedDate = DateTime.Now;
+            //FinishDatePicker.SelectedDate = DateTime.Now;
             room = roomController.GetById("S2");
             //apList = AppointmentRepository.Instance.GetAllToList();
             //doctor = DoctorRepository.Instance.GetDoctorbyId("2315");

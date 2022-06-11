@@ -7,7 +7,7 @@
         xmlns:validationRules="clr-namespace:TechHealth.ValidationRules"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="UpdateAppointment" Height="600" Width="450">
+        Title="UpdateAppointment" Height="600" Width="450" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -48,7 +48,7 @@
                   VerticalAlignment="Top" Width="130" Height="40"
                   x:Name="CbDoctor"
                   Grid.Column="1"
-                  DisplayMemberPath="FullName" 
+                  DisplayMemberPath="FullName"  SelectedItem="{Binding Path=Doctor, Mode=OneWayToSource}"
                   />
         <Button Content="Confirm" HorizontalAlignment="Left"
                 Margin="47,507,0,0" VerticalAlignment="Top"

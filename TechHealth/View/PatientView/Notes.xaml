@@ -20,32 +20,25 @@
         </ResourceDictionary>
     </Window.Resources>
 
-    <Grid Background="WhiteSmoke">
-        <TextBox x:Name="TitleBox" Background="BlanchedAlmond" HorizontalAlignment="Left"
-                 FontSize="22" 
-                 Height="36" Margin="10,10,0,0" TextWrapping="Wrap"       
-                 Text="Title" VerticalAlignment="Top" Width="422"/>
+    <Grid Background="Gray" Margin="5,5,5,5">
+        <TextBox x:Name="TitleBox" Background="LightGray" HorizontalAlignment="Left"
+                 FontSize="18" FontWeight="Bold" Foreground="White"
+                 Height="40" Margin="10,10,0,0" TextWrapping="Wrap"       
+                 Text="Title" VerticalAlignment="Top" Width="412"/>
         <TextBox x:Name="ContentBox" HorizontalAlignment="Left" Height="230"
                  Margin="10,65,0,0" TextWrapping="Wrap"
-                 Background="BlanchedAlmond"
-                 FontSize="18"
-                 Text="Content" VerticalAlignment="Top" Width="422"/>
-        <Button Content="Confirm" HorizontalAlignment="Left" Margin="10,511,0,0" VerticalAlignment="Top" Width="128" Height="48" Click="Button_Click_1"/>
-        <Button Content="Cancel"
-                HorizontalAlignment="Left" Margin="304,511,0,0"
-                VerticalAlignment="Top" Width="128"
-                Background="Red"
-                Height="48" Click="Button_Click"/>
+                 Background="LightGray"
+                 FontSize="14"
+                 ToolTip="Content" VerticalAlignment="Top" Width="412"/>
 
         <Label Content="I want reminder for this note:"
-                   FontSize="18"
-                   Foreground="Black"
-              
-               Margin="10,300,185,229"/>
+                   FontSize="14" Height="40"
+                   Foreground="White"
+               Margin="53,300,142,219"/>
 
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"
-                    Background="BlanchedAlmond"
-                    Margin="72,345,72,73" Width="298">
+                    Background="LightGray"
+                    Margin="53,345,41,73" Width="338">
             <DatePicker Margin="10,0,50,0"
                         Background="Gray"
                         Foreground="Black"
@@ -62,11 +55,19 @@
                     Background="Gray"
                     Visibility="Collapsed"/>
         </StackPanel>
-        <CheckBox Content="" Background="Black"
-                  HorizontalAlignment="Center" x:Name="Radio"
-                  Margin="262,300,106,0" VerticalAlignment="Top" Height="40"
-                  Width="74" IsChecked="True"
+        <CheckBox Content="" Background="White"
+                  HorizontalAlignment="Right" x:Name="Radio"
+                  Margin="0,300,41,0" VerticalAlignment="Top" Height="40"
+                  Width="84" IsChecked="True" 
                   Checked="RadioButton_Click" Click="RadioButton_Click"/>
+        <Button Content="Confirm" HorizontalAlignment="Left"
+                Margin="53,508,0,0" Click="Button_Click_1"
+            VerticalAlignment="Top" FontSize="16" FontWeight="Normal" Height="30"
+            Width="95" RenderTransformOrigin="-0.291,0.467" Background="#FF42C130"
+            Command="{Binding FinishCommand}" />
+        <Button Content="Close" HorizontalAlignment="Left" Margin="298,508,0,0"
+            VerticalAlignment="Top" Width="93" Height="30" FontSize="16"
+            Background="#FFEA9292" Click="Button_Click" />
 
     </Grid>
 </Window>
