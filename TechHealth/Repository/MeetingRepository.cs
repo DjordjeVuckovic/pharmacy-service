@@ -74,12 +74,15 @@ namespace TechHealth.Repository
             {
                 if (m.Date.Equals(meeting.Date))
                 {
-                    if (DateTime.Compare(DateTime.Parse(meeting.StartTime.ToString("HH:mm")), DateTime.Parse(m.StartTime.ToString("HH:mm"))) >= 0)
+                    if (m.Room.RoomId.Equals(meeting.Room.RoomId))
                     {
-                        if (DateTime.Compare(DateTime.Parse(meeting.StartTime.ToString("HH:mm")), DateTime.Parse(m.FinishTime.ToString("HH:mm"))) <= 0)
+                        if (DateTime.Compare(DateTime.Parse(meeting.StartTime.ToString("HH:mm")), DateTime.Parse(m.StartTime.ToString("HH:mm"))) >= 0)
                         {
-                            MessageBox.Show("Meeting already scheduled.");
-                            return false;
+                            if (DateTime.Compare(DateTime.Parse(meeting.StartTime.ToString("HH:mm")), DateTime.Parse(m.FinishTime.ToString("HH:mm"))) <= 0)
+                            {
+                                MessageBox.Show("Meeting already scheduled in "+ m.Room.RoomId +".");
+                                return false;
+                            }
                         }
                     }
                 }

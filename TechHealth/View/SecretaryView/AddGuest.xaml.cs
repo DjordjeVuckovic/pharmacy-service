@@ -63,6 +63,11 @@ namespace TechHealth.View.SecretaryView
         }
         private void Button_Click_Confirm(object sender, RoutedEventArgs e)
         {
+            if (guestUsername.Text == "" || guestPassword.Text == "")
+            {
+                MessageBox.Show("Fill out all the fields.");
+                return;
+            }
             int guestId = 1;
             foreach (var p in PatientRepository.Instance.GetAll().Values)
             {

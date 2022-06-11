@@ -21,7 +21,7 @@
             </xctk:WizardPage>
             <xctk:WizardPage x:Name="Page1" PageType="Interior" 
                              Title="Main menu"
-                             Description="On the main menu page, you can choose what you want to do. Manage accounts, guest accounts, appointments, meetings, order new equipment for the hospital or get a pdf report about appointments. There is also an option to Logging out of the app in the top right corner."
+                             Description="On the main menu page, you can choose what you want to do. Manage accounts, guest accounts, appointments, meetings, order new equipment for the hospital or get a pdf report about appointments. There is also an option to Log out of the app in the top right corner."
                              PreviousPage="{Binding ElementName=IntroPage}"
                              NextPage="{Binding ElementName=Page2}">
                 <Grid>

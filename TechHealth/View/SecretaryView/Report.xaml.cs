@@ -96,6 +96,8 @@ namespace TechHealth.View.SecretaryView
                     }
                 }
             }
+            lista.Sort((x, y) => DateTime.Compare(x.Date, y.Date));
+
             Document document = new Document();
             Page page = new Page(PageSize.Letter, PageOrientation.Portrait, 54.0f);
 

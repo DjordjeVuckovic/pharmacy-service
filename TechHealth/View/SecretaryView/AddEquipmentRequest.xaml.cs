@@ -60,6 +60,20 @@ namespace TechHealth.View.SecretaryView
         }
         private void Button_Click_Confirm(object sender, RoutedEventArgs e)
         {
+            if (equipmentName.Text == "" || quantity.Text == "")
+            {
+                MessageBox.Show("Fill out all the fields.");
+                return;
+            }
+            try
+            {
+                int q = Int32.Parse(quantity.Text);
+            }
+            catch
+            {
+                MessageBox.Show("Quantity must have only numbers.");
+                return;
+            }
             EquipmentRequest er = new EquipmentRequest(Guid.NewGuid().ToString("N"), equipmentName.Text, Int32.Parse(quantity.Text));
             EquipmentRequestRepository.Instance.Create(er);
             new AddEquipmentRequest().Show();

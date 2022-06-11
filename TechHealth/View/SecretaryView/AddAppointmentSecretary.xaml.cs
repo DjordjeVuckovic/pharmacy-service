@@ -84,6 +84,11 @@ namespace TechHealth.View.SecretaryView
         }
         private void Button_Click_Confirm(object sender, RoutedEventArgs e)
         {
+            if (doctorCombo.SelectedItem == null || patientCombo.SelectedItem == null || roomCombo.SelectedItem == null || datePick.SelectedDate == null || timePickerStart.SelectedTime == null || timePickerEnd.SelectedTime == null)
+            {
+                MessageBox.Show("Fill out all the fields.");
+                return;
+            }
             Doctor dr = new Doctor();
             foreach (var d in doctors)
             {
@@ -113,6 +118,18 @@ namespace TechHealth.View.SecretaryView
                 Room = rooms[roomCombo.SelectedIndex],
                 ShouldSerialize = true
             };
+
+            if (DateTime.Compare(a.FinishTime, a.StartTime) == 0)
+            {
+                MessageBox.Show("Start time and finish time cannot be equal.");
+                return;
+            }
+            if (DateTime.Compare(a.StartTime, a.FinishTime) > 0)
+            {
+                MessageBox.Show("Finish time cannot be before start time.");
+                return;
+            }
+
             foreach (var app in AppointmentRepository.Instance.GetAll().Values)
             {
                 if (a.Doctor.Jmbg.Equals(app.Doctor.Jmbg))
@@ -148,8 +165,8 @@ namespace TechHealth.View.SecretaryView
                 }
             }
             appointmentController.Create(a);
-            Close();
             new AppointmentsViewSecretary(d, t1).Show();
+            Close();
         }
         private void Button_Click_Cancel(object sender, RoutedEventArgs e)
         {
