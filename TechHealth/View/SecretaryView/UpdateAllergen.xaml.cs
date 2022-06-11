@@ -69,18 +69,23 @@ namespace TechHealth.View.SecretaryView
         }
         private void Button_Click_Confirm(object sender, RoutedEventArgs e)
         {
+            if (allergenName.Text == "" || allergenDescription.Text == "")
+            {
+                MessageBox.Show("Fill out all the fields.");
+                return;
+            }
             PatientAllergens pa = new PatientAllergens();
             pa.PatientJMBG = jmbg1;
             pa.AllergenName = allergenName.Text;
             pa.AllergenDescription = allergenDescription.Text;
             patientAllergensController.Update(pa);
-            this.Close();
             new AllergensView(PatientRepository.Instance.GetById(jmbg1)).Show();
+            Close();
         }
         private void Button_Click_Cancel(object sender, RoutedEventArgs e)
         {
-            this.Close();
             new AllergensView(PatientRepository.Instance.GetById(jmbg1)).Show();
+            Close();
         }
     }
 }

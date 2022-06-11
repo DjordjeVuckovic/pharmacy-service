@@ -71,6 +71,21 @@ namespace TechHealth.View.SecretaryView
         }
         private void Button_Click_Confirm(object sender, RoutedEventArgs e)
         {
+            if (guestUsername.Text == "" || guestPassword.Text == "")
+            {
+                MessageBox.Show("Fill out all the fields.");
+                return;
+            }
+
+            foreach (var patient in PatientRepository.Instance.GetAll().Values)
+            {
+                if (patient.Username.Equals(guestUsername.Text) && patient.Jmbg != (guestId))
+                {
+                    MessageBox.Show("Username already exists.");
+                    return;
+                }
+            }
+
             patientController.Update("", "", null, null, guestId, 0, false, guestUsername.Text, guestPassword.Text, "", false, true, "");
 
             new GuestsView().Show();

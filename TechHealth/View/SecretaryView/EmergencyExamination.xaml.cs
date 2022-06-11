@@ -72,6 +72,11 @@ namespace TechHealth.View.SecretaryView
         }
         private void Button_Click_Confirm(object sender, RoutedEventArgs e)
         {
+            if (patientCombo.SelectedItem == null || specializationCombo.SelectedItem == null)
+            {
+                MessageBox.Show("Fill out all the fields.");
+                return;
+            }
             GetClosestTime();
             Appointment appointment = GenerateAppointment();
             Hide();

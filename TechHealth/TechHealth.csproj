@@ -802,8 +802,12 @@
     <Content Include="Json\specialization.json" />
     <Resource Include="resources\survey.png" />
     <Resource Include="resources\signoutoption.png" />
+    <Resource Include="View\SecretaryView\resources\appointmentsPage.png" />
+    <Resource Include="View\SecretaryView\resources\emergencyPage.png" />
+    <Resource Include="View\SecretaryView\resources\equipmentPage.png" />
+    <Resource Include="View\SecretaryView\resources\vacationRequestsPage.png" />
     <Resource Include="View\SecretaryView\resources\mainPage.png" />
-    <Resource Include="View\SecretaryView\resources\otherPage.png" />
+    <Resource Include="View\SecretaryView\resources\accountPage.png" />
     <Resource Include="resources\search.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
