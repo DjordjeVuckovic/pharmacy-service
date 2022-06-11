@@ -10,20 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
-using TechHealth.View.ManagerView.ViewModel;
 
-namespace TechHealth.View.ManagerView
+namespace TechHealth.View.ManagerView.VieW
 {
     /// <summary>
-    /// Interaction logic for ManagerMainWindow.xaml
+    /// Interaction logic for PdfView.xaml
     /// </summary>
-    public partial class ManagerMainWindow : Window
+    public partial class PdfView : UserControl
     {
-        public ManagerMainWindow()
+        public PdfView()
         {
             InitializeComponent();
-            DataContext = new MainViewModel();
         }
     }
 }

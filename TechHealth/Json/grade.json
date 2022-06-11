@@ -1,43 +1,51 @@
 {
-  "8f4aeb23199d4e21a3ef6467e71f6e3b": {
+  "5ac0bdfbb6c44f2b9304e3dca8719c01": {
     "Id": "5ac0bdfbb6c44f2b9304e3dca8719c01",
     "OcenaLekara": 0,
     "OcenaOsoblje": 4,
     "OcenaCistoca": 4,
     "UkupnaOcena": 1,
+    "Author": "Dusan Vukovic",
+    "SubmitDate": "2022-05-30T00:00:00",
     "EvidentAppointment": {
       "ShouldSerialize": false,
       "IdAppointment": "8f4aeb23199d4e21a3ef6467e71f6e3b"
     }
   },
-  "86771793b2074ed0af6c137913d3e2ca": {
+  "b63cec79a36e4300959074dc4e63ed9f": {
     "Id": "b63cec79a36e4300959074dc4e63ed9f",
     "OcenaLekara": 3,
     "OcenaOsoblje": 3,
     "OcenaCistoca": 4,
     "UkupnaOcena": 4,
+    "Author": "Miki Djuricic",
+    "SubmitDate": "2022-06-05T00:00:00",
     "EvidentAppointment": {
       "ShouldSerialize": false,
       "IdAppointment": "86771793b2074ed0af6c137913d3e2ca"
     }
   },
-  "86771793b2074ed0af6c13793d3e2cad": {
-    "Id": "b63cec79a36e4300959074dc4e63ed9f",
+  "b63cec79a36e4300959074dc4e63ed9ff": {
+    "Id": "b63cec79a36e4300959074dc4e63ed9ff",
     "OcenaLekara": 3,
     "OcenaOsoblje": 5,
     "OcenaCistoca": 4,
     "UkupnaOcena": 2,
+    "Author": "Dusan Vukovic",
+    "SubmitDate": "2022-05-29T00:00:00",
     "EvidentAppointment": {
       "ShouldSerialize": false,
       "IdAppointment": "86771793b2074ed0af6c13793d3e2cad"
     }
   },
-  "86771793b2074ed0af6c137913d32cad": {
-    "Id": "b63cec79a36e4300959074dc4e63ed9f",
+  "cb63cec79a36e4300959074dc4e63ed9f": {
+    "Id": "cb63cec79a36e4300959074dc4e63ed9f",
     "OcenaLekara": 3,
     "OcenaOsoblje": 5,
     "OcenaCistoca": 5,
     "UkupnaOcena": 5,
+    "Author": "Eva Ras",
+    "SubmitDate": "2022-05-27T00:00:00",
     "EvidentAppointment": {
       "ShouldSerialize": false,
       "IdAppointment": "86771793b2074ed0af6c137913d32cad"

@@ -19,9 +19,9 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
-    <Window.DataContext>
+    <!--<Window.DataContext>
         <viewModel:MainViewModel/>
-    </Window.DataContext>
+    </Window.DataContext>-->
 
     <Border Background="#272537"
             CornerRadius="10">
@@ -101,16 +101,29 @@
                      Margin="235,13,0,22"
                      Grid.Column="1"
                      Style="{StaticResource SearchText}"/>-->
-            <!--<Image Source="../../resources/sign-out-option.png"
-                   Height="24" HorizontalAlignment="Right" VerticalAlignment="Center"
-                   Cursor="Hand" Margin="0,16,10,9.6" Width="35"/>-->
 
             <ContentControl Grid.Row="1"
                             Grid.Column="1"
                             Margin="10"
                             Content="{Binding CurrentView}"/>
 
-            <Image Source="C:\Users\nsred\Documents\GitHub\PharmacyService\TechHealth\resources\ZDRAVOicon.png" HorizontalAlignment="Left" Margin="9,0,0,0"/>
+            <Image Source="C:\Users\nsred\Documents\GitHub\PharmacyService\TechHealth\resources\ZDRAVOicon.png" HorizontalAlignment="Left" Margin="20,10,0,10"/>
+            <Image Source="/resources/data-management.png" Margin="10,10,150,459" Grid.Row="1" Height="40" Width="40"/>
+            <Image Source="/resources/first-aid.png" Margin="10,104,150,365" Grid.Row="1" Height="40" Width="40"/>
+            <Image Source="/resources/equipment.png" Margin="10,155,150,314" Grid.Row="1" Height="40" Width="40"/>
+            <Image Source="/resources/survey.png" Margin="10,215,150,254" Grid.Row="1" Height="40" Width="40" RenderTransformOrigin="0.517,0.409"/>
+            <Image Source="/resources/faq.png" Margin="10,395,150,74" Grid.Row="1" Height="40" Width="40"/>
+            <Image Source="/resources/demo-24x24.png" Margin="6,323,150,125" Grid.Row="1"/>
+
+
+
+            <Button Grid.Row="0" Grid.Column="1" Margin="626,18,34,17" Height="40" Width="60" BorderThickness="0">
+                <Button.Background>
+                    <ImageBrush ImageSource="/resources/logout2.png"/>
+                </Button.Background>
+            </Button>
+            <!--<Image Source="/resources/logout2.png" Margin="670,13,10,22" Height="40" Width="40" Grid.Column="1"/>-->
+
 
         </Grid>
 

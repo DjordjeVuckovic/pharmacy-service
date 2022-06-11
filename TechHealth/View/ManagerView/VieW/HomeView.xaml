@@ -6,10 +6,10 @@
              xmlns:local="clr-namespace:TechHealth.View.ManagerView.VieW"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="710">
-    
-    <StackPanel Background="LightGray">
+
+    <StackPanel Background="#44475a">
         <TextBlock Text="Overview"
-                   Foreground="Black"
+                   Foreground="White"
                    FontSize="28"
                    HorizontalAlignment="Center"
                    Margin="0,10,0,0"/>
@@ -35,7 +35,7 @@
                 <Grid>
                     <StackPanel>
                         <TextBlock Text="Tasks"
-                                   Foreground="Black"
+                                   Foreground="White"
                                    FontSize="24"
                                    HorizontalAlignment="Center"
                                    Margin="0,10,0,0"/>
@@ -54,7 +54,7 @@
                         Margin="55,0,0,0">
                     <StackPanel>
                         <TextBlock Text="Room management"
-                                   Foreground="Black"                                
+                                   Foreground="White"                                
                                    FontSize="24"
                                    HorizontalAlignment="Center"
                                    Margin="0,10,0,0"/>
@@ -68,7 +68,7 @@
                         Margin="100,0,0,0">
                     <StackPanel>
                         <TextBlock Text="Schedule"
-                                   Foreground="Black"
+                                   Foreground="White"
                                    FontSize="24"
                                    HorizontalAlignment="Center"
                                    Margin="0,10,0,0"/>
