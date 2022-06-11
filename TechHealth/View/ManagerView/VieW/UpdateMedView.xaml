@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="710">
     <Grid Background="#44475a">
-        <Grid Background="#252337" Margin="30,30,30,10">
+        <Grid Background="#272537" Margin="30,30,30,10">
             <Label Content="Medicine name:" HorizontalAlignment="Left" Margin="63,78,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White"/>
             <Label Content="Main substance:" HorizontalAlignment="Left" Margin="63,155,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White"/>
             <Label Content="Quantity:" HorizontalAlignment="Left" Margin="63,252,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White"/>

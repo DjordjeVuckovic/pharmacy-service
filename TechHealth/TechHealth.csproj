@@ -800,6 +800,7 @@
     <Content Include="Json\rejectedMedicine.json" />
     <Content Include="Json\secretary.json" />
     <Content Include="Json\specialization.json" />
+    <Resource Include="resources\warehouse.png" />
     <Resource Include="resources\survey.png" />
     <Resource Include="resources\signoutoption.png" />
     <Resource Include="View\SecretaryView\resources\appointmentsPage.png" />

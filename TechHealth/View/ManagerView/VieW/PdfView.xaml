@@ -32,7 +32,8 @@
                       AutoGenerateColumns="False"
                       Margin="10,74,10,0"
                       Grid.Row="1"
-                      IsReadOnly="True">
+                      IsReadOnly="True"
+                          Background="#272537">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Survey Id" Binding="{Binding Id}" Width="*"  CanUserResize="False"/>
                         <DataGridTextColumn Header="Author" Binding="{Binding Author}" Width="*"  CanUserResize="False"/>

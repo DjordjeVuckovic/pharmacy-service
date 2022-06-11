@@ -21,7 +21,7 @@
 
                 <Border.Background>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
-                        <GradientStop Color="#5bc3ff" Offset="0.0"/>
+                        <GradientStop Color="#272537" Offset="0.0"/>
                         <GradientStop Color="#3aa0ff" Offset="1"/>
                     </LinearGradientBrush>
                 </Border.Background>
@@ -49,9 +49,9 @@
                         Margin="0,30,0,0">
                 <Border Width="250"
                         Height="170"
-                        Background="#FF3AC588"
+                        Background="#272537"
                         CornerRadius="10"
-                        Margin="55,0,0,0">
+                        Margin="55,-20,0,0">
                     <StackPanel>
                         <TextBlock Text="Room management"
                                    Foreground="White"                                
@@ -63,9 +63,9 @@
 
                 <Border Width="250"
                         Height="170"
-                        Background="#FF3AC588"
+                        Background="#272537"
                         CornerRadius="10"
-                        Margin="100,0,0,0">
+                        Margin="75,-20,0,0">
                     <StackPanel>
                         <TextBlock Text="Schedule"
                                    Foreground="White"
