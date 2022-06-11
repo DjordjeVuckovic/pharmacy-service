@@ -7,14 +7,12 @@ namespace TechHealth.DoctorView
 {
     public partial class DoctorWindow : Window
     {
-        private static string _doctorId;
         private readonly WindowBar bar = new WindowBar();
 
         public DoctorWindow(string doctorJmbg)
         {
             InitializeComponent();
             DataContext = MainViewModel.GetInstance(doctorJmbg);
-            _doctorId = doctorJmbg;
             WindowBarFrame.Content = bar;
         }
 

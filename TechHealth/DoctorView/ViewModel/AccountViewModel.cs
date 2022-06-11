@@ -8,7 +8,7 @@ using TechHealth.Model;
 
 namespace TechHealth.DoctorView.ViewModel
 {
-    public class AccountViewModel
+    public class AccountViewModel:ViewModelBase
     {
         private readonly DoctorController doctorController = new DoctorController();
         private Doctor Doctor { get; set; }
