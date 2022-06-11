@@ -107,17 +107,17 @@
                             Margin="10"
                             Content="{Binding CurrentView}"/>
 
-            <Image Source="C:\Users\nsred\Documents\GitHub\PharmacyService\TechHealth\resources\ZDRAVOicon.png" HorizontalAlignment="Left" Margin="20,10,0,10"/>
-            <Image Source="/resources/data-management.png" Margin="10,10,150,459" Grid.Row="1" Height="40" Width="40"/>
-            <Image Source="/resources/first-aid.png" Margin="10,104,150,365" Grid.Row="1" Height="40" Width="40"/>
-            <Image Source="/resources/equipment.png" Margin="10,155,150,314" Grid.Row="1" Height="40" Width="40"/>
-            <Image Source="/resources/survey.png" Margin="10,215,150,254" Grid.Row="1" Height="40" Width="40" RenderTransformOrigin="0.517,0.409"/>
-            <Image Source="/resources/faq.png" Margin="10,395,150,74" Grid.Row="1" Height="40" Width="40"/>
-            <Image Source="/resources/demo-24x24.png" Margin="6,323,150,125" Grid.Row="1"/>
+            <Image Source="/resources/ZDRAVOicon.png" HorizontalAlignment="Left" Margin="20,10,0,10"/>
+            <Image Source="/resources/data-management.png" Margin="-12,9,123,442" Grid.Row="1" Stretch="Uniform"/>
+            <Image Source="/resources/first-aid.png" Margin="-6,107,128,344" Grid.Row="1"/>
+            <Image Source="/resources/equipment.png" Margin="-18,160,117,292" Grid.Row="1"/>
+            <Image Source="/resources/survey.png" Margin="-2,204,126,235" Grid.Row="1" RenderTransformOrigin="0.517,0.409"/>
+            <Image Source="/resources/faq.png" Margin="-8,383,127,62" Grid.Row="1"/>
+            <Image Source="/resources/demo-24x24.png" Margin="2,340,139,108" Grid.Row="1"/>
+            <Image Source="/resources/warehouse.png" Margin="6,60,140,392" Grid.Row="1"/>
 
-
-
-            <Button Grid.Row="0" Grid.Column="1" Margin="626,18,34,17" Height="40" Width="60" BorderThickness="0">
+            <Button Grid.Row="0" Grid.Column="1" Margin="638,18,10,17" Height="40" Width="50" BorderThickness="0"
+                    Click="Button_Click">
                 <Button.Background>
                     <ImageBrush ImageSource="/resources/logout2.png"/>
                 </Button.Background>
