@@ -114,11 +114,13 @@ namespace TechHealth.View.ManagerView.VieW
                     else
                     {
                         MessageBox.Show("Invalid date!");
+                        return;
                     }
                 }
                 else
                 {
                     MessageBox.Show("There is an appointment scheduled on that date!");
+                    return;
                 }
             }
             else

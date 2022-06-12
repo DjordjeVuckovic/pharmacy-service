@@ -17,6 +17,7 @@ namespace TechHealth.View.ManagerView.ViewModel
     {
         public RelayCommand DownloadCommand { get; set; }
         public RelayCommand GenerateGridCommand { get; set; }
+        public RelayCommand CloseCommand { get; set; }
 
         private BindingList<AppointmentGrade> surveys;
         private DateTime startDate;
@@ -80,6 +81,13 @@ namespace TechHealth.View.ManagerView.ViewModel
             //surveys = CheckDate();
             DownloadCommand = new RelayCommand(param => ExecuteDownload());
             GenerateGridCommand = new RelayCommand(param => ExecuteGenerate());
+            CloseCommand = new RelayCommand(param => ExecuteClose());
+        }
+
+        private void ExecuteClose()
+        {
+            var SurveyVm = new SurveyViewModel();
+            MainViewModel.Instance().CurrentView = SurveyVm;
         }
 
         private void ExecuteGenerate()

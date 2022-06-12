@@ -67,6 +67,7 @@ namespace TechHealth.View.ManagerView.VieW
             {
 
                 MessageBox.Show("Invalid date");
+                return;
             }
 
             rm.RoomTwo = CbMergeRoom.Text;
@@ -104,6 +105,7 @@ namespace TechHealth.View.ManagerView.VieW
                 else
                 {
                     MessageBox.Show("Can't perform merging because there is an appointment in that period!");
+                    return;
                 }
             }
             var RoomVm = new RoomViewModel();
