@@ -47,72 +47,72 @@
                 </Grid.RowDefinitions>
                 <Frame Grid.Row="0" Name="WindowBarFrame" NavigationUIVisibility="Hidden" MouseDown="OnDragMoveWindow" />
                 <Grid Grid.Row="1">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="210"/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="65"/>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
-                <Image  Source="../resources/mylogo.png" Margin="5.2,0,4.8,0"/>
-                <StackPanel Grid.Row="1" Grid.Column="0">
-                    <RadioButton Height="60" Content="DashBoard" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="20" Foreground="#f8f8f2" Style="{StaticResource ResourceKey=MenuButtonTheme}" Width="210">
-                        <i:Interaction.Triggers>
-                            <i:EventTrigger EventName="Checked">
-                                <i:InvokeCommandAction Command="{Binding Path=DashCommand}"></i:InvokeCommandAction>
-                            </i:EventTrigger>
-                        </i:Interaction.Triggers>
-                    </RadioButton>
-                    <RadioButton Height="60" Content="Appointments" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="20" Foreground="#f8f8f2" Style="{StaticResource ResourceKey=MenuButtonTheme}" Width="210" Command="{Binding AppointmentCommand}" />
-                    <RadioButton Height="60" Content="Medical report" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="20" Foreground="#f8f8f2" Style="{StaticResource ResourceKey=MenuButtonTheme}" Width="210" Command="{Binding RecordCommand}" />
-                    <RadioButton Height="60" Content="Patients" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="20" Foreground="#f8f8f2" Style="{StaticResource ResourceKey=MenuButtonTheme}" Width="210" Command="{Binding PateintCommand}"/>
-                    <RadioButton Height="60" Content="Medicine" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="20" Foreground="#f8f8f2" Style="{StaticResource ResourceKey=MenuButtonTheme}" Width="210" Command="{Binding MedicineCommand}"/>
-                    <RadioButton Height="60" Content="Account" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="20" Foreground="#f8f8f2" Style="{StaticResource ResourceKey=MenuButtonTheme}" Width="210" Command="{Binding AccountCommand}" />
-                </StackPanel>
-                <Image Source="../resources/1a.png" Margin="0,15.533,151.8,624.867" RenderTransformOrigin="0.467,0.803"
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="210"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="65"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Image  Source="../resources/mylogo.png" Margin="5.2,0,4.8,0"/>
+                    <StackPanel Grid.Row="1" Grid.Column="0">
+                        <RadioButton Height="60" Content="DashBoard" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="20" Foreground="#f8f8f2" Style="{StaticResource ResourceKey=MenuButtonTheme}" Width="210">
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="Checked">
+                                    <i:InvokeCommandAction Command="{Binding Path=DashCommand}"></i:InvokeCommandAction>
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                        </RadioButton>
+                        <RadioButton Height="60" Content="Appointments" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="20" Foreground="#f8f8f2" Style="{StaticResource ResourceKey=MenuButtonTheme}" Width="210" Command="{Binding AppointmentCommand}" />
+                        <RadioButton Height="60" Content="Medical report" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="20" Foreground="#f8f8f2" Style="{StaticResource ResourceKey=MenuButtonTheme}" Width="210" Command="{Binding RecordCommand}" />
+                        <RadioButton Height="60" Content="Patients" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="20" Foreground="#f8f8f2" Style="{StaticResource ResourceKey=MenuButtonTheme}" Width="210" Command="{Binding PateintCommand}"/>
+                        <RadioButton Height="60" Content="Medicine" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="20" Foreground="#f8f8f2" Style="{StaticResource ResourceKey=MenuButtonTheme}" Width="210" Command="{Binding MedicineCommand}"/>
+                        <RadioButton Height="60" Content="Account" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="20" Foreground="#f8f8f2" Style="{StaticResource ResourceKey=MenuButtonTheme}" Width="210" Command="{Binding AccountCommand}" />
+                    </StackPanel>
+                    <Image Source="../resources/1a.png" Margin="0,15.533,151.8,624.867" RenderTransformOrigin="0.467,0.803"
                    Grid.Column="0" Grid.Row="1" Width="40" />
-                <Image Source="../resources/appoint.png" Margin="9,77.2,150.6,563.4" Grid.Row="1"
+                    <Image Source="../resources/appoint.png" Margin="9,77.2,150.6,563.4" Grid.Row="1"
                    Grid.Column="0" Width="50"/>
-                <Image Source="../resources/1c.png" Margin="13,137.2,156.6,508.4" Grid.Row="1"
+                    <Image Source="../resources/1c.png" Margin="13,137.2,156.6,508.4" Grid.Row="1"
                    Grid.Column="0" RenderTransformOrigin="0.442,0.857" Width="40"/>
-                <Image Source="../resources/1d.png" Margin="15,196.2,154.6,438.4" Grid.Row="1"
+                    <Image Source="../resources/1d.png" Margin="15,196.2,154.6,438.4" Grid.Row="1"
                    Grid.Column="0" RenderTransformOrigin="0.5,0.5" Width="40">
-                    <Image.RenderTransform>
-                        <TransformGroup>
-                            <ScaleTransform/>
-                            <SkewTransform AngleY="0.508" AngleX="-2.44"/>
-                            <RotateTransform/>
-                            <TranslateTransform Y="0.251" X="-0.825"/>
-                        </TransformGroup>
-                    </Image.RenderTransform>
-                </Image>
-                <Image Source="../resources/1e.png"  Margin="13,257.2,156.6,383.4" Grid.Row="1"
+                        <Image.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform AngleY="0.508" AngleX="-2.44"/>
+                                <RotateTransform/>
+                                <TranslateTransform Y="0.251" X="-0.825"/>
+                            </TransformGroup>
+                        </Image.RenderTransform>
+                    </Image>
+                    <Image Source="../resources/1e.png"  Margin="13,257.2,156.6,383.4" Grid.Row="1"
                    Grid.Column="0" Width="40"/>
-                <Image Source="../resources/1f.png" RenderTransformOrigin="0.467,0.792" Margin="9,320.2,160.6,323.4" Grid.Row="1"
+                    <Image Source="../resources/1f.png" RenderTransformOrigin="0.467,0.792" Margin="9,320.2,160.6,323.4" Grid.Row="1"
                    Grid.Column="0" Width="40"/>
-                <Button  Grid.Row="0" Grid.Column="1" Margin="630.4,19,147.6,9.8" Height="Auto" BorderThickness="0" ToolTip="Notifications" Command="{Binding NotificationCommand}">
-                    <Button.Background>
-                        <ImageBrush ImageSource="C:\Users\djord\OneDrive\Documents\GitHub\PharmacyService\TechHealth\resources\notification.png" />
-                    </Button.Background>
-                </Button>
-                <Button  Grid.Row="0" Grid.Column="1" Margin="690.4,19,73.6,9.8" Height="Auto" BorderThickness="0" ToolTip="Help" Command="{Binding HelpCommand}">
-                    <Button.Background>
-                        <ImageBrush ImageSource="C:\Users\djord\OneDrive\Documents\GitHub\PharmacyService\TechHealth\resources\help.png" />
-                    </Button.Background>
-                </Button>
-                <Button  Grid.Row="0" Grid.Column="1" Margin="752.4,19,9.6,9.8" Height="Auto" BorderThickness="0" ToolTip="Tutorial" Command="{Binding TutorialCommand}">
-                    <Button.Background>
-                        <ImageBrush ImageSource="C:\Users\djord\OneDrive\Documents\GitHub\PharmacyService\TechHealth\resources\t2.png" />
-                    </Button.Background>
-                </Button>
-                <Button   Grid.Column="0" Margin="17,611.2,156.6,9.8" Grid.Row="1" Height="Auto" BorderThickness="0" ToolTip="Sign out" Click="ButtonBase_OnClick">
-                    <Button.Background>
-                        <ImageBrush ImageSource="C:\Users\djord\OneDrive\Documents\GitHub\PharmacyService\TechHealth\resources\logout.png" />
-                    </Button.Background>
-                </Button>
+                    <Button  Grid.Row="0" Grid.Column="1" Margin="575.4,19,202.6,9.8" Height="Auto" BorderThickness="0" ToolTip="Notifications" Command="{Binding NotificationCommand}">
+                        <Button.Background>
+                            <ImageBrush ImageSource="C:\Users\djord\OneDrive\Documents\GitHub\PharmacyService\TechHealth\resources\notification.png" />
+                        </Button.Background>
+                    </Button>
+                    <Button  Grid.Row="0" Grid.Column="1" Margin="625.4,19,138.6,9.8" Height="Auto" BorderThickness="0" ToolTip="Help" Command="{Binding HelpCommand}">
+                        <Button.Background>
+                            <ImageBrush ImageSource="C:\Users\djord\OneDrive\Documents\GitHub\PharmacyService\TechHealth\resources\help.png" />
+                        </Button.Background>
+                    </Button>
+                    <Button  Grid.Row="0" Grid.Column="1" Margin="680.4,19,81.6,9.8" Height="Auto" BorderThickness="0" ToolTip="Tutorial" Command="{Binding TutorialCommand}">
+                        <Button.Background>
+                            <ImageBrush ImageSource="C:\Users\djord\OneDrive\Documents\GitHub\PharmacyService\TechHealth\resources\t2.png" />
+                        </Button.Background>
+                    </Button>
+                    <Button   Grid.Column="1" Margin="744.4,25,27.6,16.8" Height="Auto" BorderThickness="0" ToolTip="Sign out" Click="ButtonBase_OnClick">
+                        <Button.Background>
+                            <ImageBrush ImageSource="C:\Users\djord\OneDrive\Documents\GitHub\PharmacyService\TechHealth\resources\logout.png" />
+                        </Button.Background>
+                    </Button>
 
-                <ContentControl Grid.Row="1" Grid.Column="1" Margin="10" Content="{Binding CurrentView}"/>
+                    <ContentControl Grid.Row="1" Grid.Column="1" Margin="10" Content="{Binding CurrentView}"/>
                 </Grid>
             </Grid>
         </Border>
