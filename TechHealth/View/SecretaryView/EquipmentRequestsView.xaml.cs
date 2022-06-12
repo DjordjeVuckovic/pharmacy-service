@@ -77,8 +77,8 @@ namespace TechHealth.View.SecretaryView
         }
         private void Button_Click_Add(object sender, RoutedEventArgs e)
         {
-            Hide();
             new AddEquipmentRequest().Show();
+            Close();
         }
         private void Button_Click_Delete(object sender, RoutedEventArgs e)
         {

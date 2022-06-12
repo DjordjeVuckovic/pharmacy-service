@@ -77,8 +77,8 @@ namespace TechHealth.View.SecretaryView
         }
         private void Button_Click_Add(object sender, RoutedEventArgs e)
         {
-            Hide();
             new AddAllergen(jmbg).ShowDialog();
+            Close();
             Update();
         }
         private void Button_Click_Edit(object sender, RoutedEventArgs e)
@@ -89,8 +89,8 @@ namespace TechHealth.View.SecretaryView
                 return;
             }
             PatientAllergens patientAllergens = (PatientAllergens)allergenList.SelectedItems[0];
-            Hide();
             new UpdateAllergen(patientAllergens).ShowDialog();
+            Close();
             Update();
         }
         private void Button_Click_Delete(object sender, RoutedEventArgs e)
@@ -106,8 +106,8 @@ namespace TechHealth.View.SecretaryView
         }
         private void Button_Click_Cancel(object sender, RoutedEventArgs e)
         {
-            this.Close();
             new AccountsView().Show();
+            Close();
         }
         public void Update()
         {
