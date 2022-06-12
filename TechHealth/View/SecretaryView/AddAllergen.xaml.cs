@@ -62,13 +62,13 @@ namespace TechHealth.View.SecretaryView
             pa.AllergenName = allergenName.Text;
             pa.AllergenDescription = allergenDescription.Text;
             patientAllergensController.Create(pa);
-            this.Close();
             new AllergensView(PatientRepository.Instance.GetById(jmbg1)).Show();
+            Close();
         }
         private void Button_Click_Cancel(object sender, RoutedEventArgs e)
         {
-            this.Close();
             new AllergensView(PatientRepository.Instance.GetById(jmbg1)).Show();
+            Close();
         }
         private void Button_Meetings(object sender, RoutedEventArgs e)
         {

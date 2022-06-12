@@ -12,6 +12,7 @@
         <TextBlock Text="Equipment"
                    Foreground="White"
                    FontSize="28"
+                   FontWeight="Bold"
                    HorizontalAlignment="Center"
                    Margin="0,5,0,0"/>
         <Grid>
