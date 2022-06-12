@@ -57,6 +57,7 @@ namespace TechHealth.View.ManagerView.VieW
             {
 
                 MessageBox.Show("Please enter a valid number for quantity!");
+                return;
             }
             re = new RoomEquipment();
 
@@ -71,7 +72,9 @@ namespace TechHealth.View.ManagerView.VieW
             {
                 if (equipment.Name == eq.Name)
                 {
-                    MessageBox.Show("Equipment with this name already exists!");
+                    if (equipment.Type != eq.Type)
+                    MessageBox.Show("Invalid type!");
+                    return;
                 }
             }
 

@@ -47,17 +47,19 @@
             </ScrollViewer>
         </StackPanel>
 
-        <Label Content="From date:" Margin="555,20,67,403" Foreground="White"/>
-        <DatePicker HorizontalAlignment="Left" Margin="555,52,0,0" VerticalAlignment="Top" Width="120" x:Name="RStart" Height="24" Foreground="White" RenderTransformOrigin="1.079,0.452"
+        <Label Content="From date:" Margin="545,20,67,403" Foreground="White"/>
+        <DatePicker HorizontalAlignment="Left" Margin="545,52,0,0" VerticalAlignment="Top" Width="120" x:Name="RStart" Height="24" Foreground="White" RenderTransformOrigin="1.079,0.452"
                     Text="{Binding StartDate, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}">
         </DatePicker>
-        <Label Content="To date:" Margin="555,106,67,314" Foreground="White"/>
-        <DatePicker HorizontalAlignment="Left" Margin="555,141,0,0" VerticalAlignment="Top" Width="120" x:Name="RStart_Copy" Height="24" Foreground="White" RenderTransformOrigin="1.079,0.452"
+        <Label Content="To date:" Margin="545,106,67,314" Foreground="White"/>
+        <DatePicker HorizontalAlignment="Left" Margin="545,141,0,0" VerticalAlignment="Top" Width="120" x:Name="RStart_Copy" Height="24" Foreground="White" RenderTransformOrigin="1.079,0.452"
                     Text="{Binding EndDate, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
 
-        <Button x:Name="Pdf" Content="Print" Margin="555,277,0,123" HorizontalAlignment="Left" Width="120" Height="50"
+        <Button x:Name="Pdf" Content="Print" Margin="545,277,0,123" HorizontalAlignment="Left" Width="120" Height="50"
                 Command="{Binding DownloadCommand}"/>
-        <Button x:Name="generateGrid" Content="Generate" Margin="555,195,0,205" HorizontalAlignment="Left" Width="120" Height="50"
+        <Button x:Name="generateGrid" Content="Generate" Margin="545,195,0,205" HorizontalAlignment="Left" Width="120" Height="50"
             Command="{Binding GenerateGridCommand}"/>
+        <Button x:Name="Close" Content="Close" Margin="545,352,0,48" HorizontalAlignment="Left" Width="120" Height="50"
+            Command="{Binding CloseCommand}"/>
     </Grid>
 </UserControl>

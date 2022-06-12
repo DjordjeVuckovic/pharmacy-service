@@ -53,6 +53,7 @@ namespace TechHealth.View.ManagerView.VieW
             {
 
                 MessageBox.Show("Please enter a valid number for quantity!");
+                return;
             }
 
             equipmentController.Update(selected);

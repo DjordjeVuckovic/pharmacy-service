@@ -54,6 +54,7 @@ namespace TechHealth.View.ManagerView.VieW
             {
 
                 MessageBox.Show("Invalid date");
+                return;
             }
             rs.RoomOne = selected;
             rs.RoomOne.RoomTypes = ManagerConversions.StringToRoomType(TxtSeparationType.Text);
@@ -90,6 +91,7 @@ namespace TechHealth.View.ManagerView.VieW
             else
             {
                 MessageBox.Show("Can't perform separation because there is an appointment in that period!");
+                return;
             }
 
             var RoomVm = new RoomViewModel();

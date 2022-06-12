@@ -11,9 +11,9 @@
             <Label Content="Separation room:" HorizontalAlignment="Left" Margin="63,75,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White"/>
             <Label Content="Separation room type:" HorizontalAlignment="Left" Margin="63,169,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White"/>
             <Label Content="Separation start:" HorizontalAlignment="Left" Margin="63,252,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White" Height="29"/>
-            <Label Content="Start time:" HorizontalAlignment="Left" Margin="265,169,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White" Height="28"/>
-            <Label Content="Separation end:" HorizontalAlignment="Left" Margin="265,75,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White" Height="28"/>
-            <Label Content="End time:" HorizontalAlignment="Left" Margin="265,252,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White" Height="29"/>
+            <Label Content="Start time:" HorizontalAlignment="Left" Margin="250,169,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White" Height="28"/>
+            <Label Content="Separation end:" HorizontalAlignment="Left" Margin="250,75,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White" Height="28"/>
+            <Label Content="End time:" HorizontalAlignment="Left" Margin="250,252,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White" Height="29"/>
             <Label Content="New room" HorizontalAlignment="Left" Margin="460,75,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White" Height="28"/>
             <Label Content="New room type" HorizontalAlignment="Left" Margin="460,169,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White" Height="28"/>
             <TextBox HorizontalAlignment="Left" Margin="63,109,0,0" VerticalAlignment="Top" Width="120" Height="22" x:Name="TxtRoomID" Foreground="White" IsEnabled="False"/>

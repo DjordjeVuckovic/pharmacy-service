@@ -78,6 +78,7 @@ namespace TechHealth.View.ManagerView.VieW
             {
 
                 MessageBox.Show("Invalid date");
+                return;
             }
             r.RenovationID = Guid.NewGuid().ToString("N");
 
