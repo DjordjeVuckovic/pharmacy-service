@@ -14,7 +14,8 @@ namespace TechHealth.View.ManagerView.ViewModel
     public class MainViewModel : ViewModelBase
     {
         public RelayCommand HomeViewCommand { get; set; }
-        public RelayCommand LogoutCommand { get; set; }
+        public RelayCommand HelpViewCommand { get; set; }
+        //public RelayCommand LogoutCommand { get; set; }
         public RelayCommand EquipmentViewCommand { get; set; }
         public RelayCommand RoomViewCommand { get; set; }
         public RelayCommand MedicineViewCommand { get; set; }
@@ -22,6 +23,7 @@ namespace TechHealth.View.ManagerView.ViewModel
         public HomeViewModel HomeVm { get; set; }
         public EquipmentViewModel EquipmentVm { get; set; }
         public RoomViewModel RoomVm { get; set; }
+        public HelpViewModel HelpVm { get; set; }
         public MedViewModel MedVm { get; set; }
         public SurveyViewModel SurveyVm { get; set; }
 
@@ -52,6 +54,7 @@ namespace TechHealth.View.ManagerView.ViewModel
             RoomVm = new RoomViewModel();
             MedVm = new MedViewModel();
             SurveyVm = new SurveyViewModel();
+            HelpVm = new HelpViewModel();
 
             CurrentView = HomeVm;
 
@@ -80,14 +83,19 @@ namespace TechHealth.View.ManagerView.ViewModel
                 CurrentView = SurveyVm;
             });
 
-            LogoutCommand = new RelayCommand(o =>
+            HelpViewCommand = new RelayCommand(o =>
             {
-                DialogResult dialogResult = MessageBox.Show(@"Are you sure about that?", @"Logout", MessageBoxButtons.YesNo);
-                if (dialogResult == (DialogResult)MessageBoxResult.Yes)
-                {
-                    new LoginWindow().ShowDialog();
-                }
+                CurrentView = HelpVm;
             });
+
+            //LogoutCommand = new RelayCommand(o =>
+            //{
+            //    DialogResult dialogResult = MessageBox.Show(@"Are you sure about that?", @"Logout", MessageBoxButtons.YesNo);
+            //    if (dialogResult == (DialogResult)MessageBoxResult.Yes)
+            //    {
+            //        new LoginWindow().ShowDialog();
+            //    }
+            //});
         }
     }
 }

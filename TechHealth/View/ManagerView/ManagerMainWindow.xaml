@@ -91,7 +91,8 @@
                              Height="50"
                              Foreground="White"
                              FontSize="14"
-                             Style="{StaticResource MenuButtonTheme}"/>
+                             Style="{StaticResource MenuButtonTheme}"
+                             Command="{Binding HelpViewCommand}"/>
             </StackPanel>
 
             <!--<TextBox Width="250"
@@ -112,9 +113,11 @@
             <Image Source="/resources/first-aid.png" Margin="-6,107,128,344" Grid.Row="1"/>
             <Image Source="/resources/equipment.png" Margin="-18,160,117,292" Grid.Row="1"/>
             <Image Source="/resources/survey.png" Margin="-2,204,126,235" Grid.Row="1" RenderTransformOrigin="0.517,0.409"/>
-            <Image Source="/resources/faq.png" Margin="-8,383,127,62" Grid.Row="1"/>
+            <!--<Image Source="/resources/faq.png" Margin="-8,383,127,62" Grid.Row="1"/>-->
+            <Image Source="/resources/helpic.png" Margin="-8,388,127,62" Grid.Row="1"/>
             <Image Source="/resources/demo-24x24.png" Margin="2,340,139,108" Grid.Row="1"/>
             <Image Source="/resources/warehouse.png" Margin="6,60,140,392" Grid.Row="1"/>
+
 
             <Button Grid.Row="0" Grid.Column="1" Margin="638,18,10,17" Height="40" Width="50" BorderThickness="0"
                     Click="Button_Click">

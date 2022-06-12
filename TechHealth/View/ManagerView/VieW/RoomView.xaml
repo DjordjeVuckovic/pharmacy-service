@@ -44,7 +44,7 @@
 
             <Button x:Name="Add" Content="Add" Margin="29,256,0,34" HorizontalAlignment="Left" Width="120" Height="50"
                     Command="{Binding AddRoomCommand}"/>
-            <Button x:Name="Merging" Content="Merging" Margin="29,320,0,40" HorizontalAlignment="Left" Width="120" Height="50"  Background="#23a28f" BorderThickness="0"
+            <Button x:Name="Merging" Content="Merging" Margin="29,320,0,40" HorizontalAlignment="Left" Width="120" Height="50" BorderThickness="0"
                     Command="{Binding MergeRoomsCommand}" Grid.RowSpan="2"/>
             <Button x:Name="Separation" Content="Separation" Margin="402,320,0,40" HorizontalAlignment="Left" Width="120" Height="50"
                     Command="{Binding SeparateRoomsCommand}" Grid.RowSpan="2"/>
