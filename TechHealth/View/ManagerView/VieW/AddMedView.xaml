@@ -17,8 +17,8 @@
             <Label Content="Substances:" HorizontalAlignment="Left" Margin="447,155,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White"/>
             <TextBox HorizontalAlignment="Left" Margin="63,112,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="22" x:Name="TxtMedName" Foreground="White"/>
             <TextBox HorizontalAlignment="Center" Margin="0,204,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="125" x:Name="TxtSideEffects" Foreground="White"/>
-            <TextBox HorizontalAlignment="Left" Margin="63,0,0,0" VerticalAlignment="Center" Width="120" Height="22" x:Name="TxtMainSubstance" Foreground="White">
-            </TextBox>
+            <ComboBox HorizontalAlignment="Left" Margin="63,0,0,0" VerticalAlignment="Center" Width="120" Height="22" x:Name="CbMainSubstance" Foreground="White">
+            </ComboBox>
             <TextBox HorizontalAlignment="Left" Margin="63,307,0,0" VerticalAlignment="Top" Width="120" Height="22" x:Name="TxtQuantity" Foreground="White">
             </TextBox>
             <TextBox HorizontalAlignment="Center" Margin="0,112,0,0" VerticalAlignment="Top" Width="120" Height="22" RenderTransformOrigin="0.033,0.608" x:Name="TxtUnits" Foreground="White">

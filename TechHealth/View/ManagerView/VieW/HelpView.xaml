@@ -6,7 +6,69 @@
              xmlns:local="clr-namespace:TechHealth.View.ManagerView.VieW"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
+    <Grid Background="#44475a">
+        <TextBlock Text="Help"
+                   Foreground="White"
+                   FontSize="28"
+                   FontWeight="Bold"
+                   HorizontalAlignment="Center"
+                   Margin="0,5,0,0"></TextBlock>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.Row="1" Margin="10,50,200,10" Padding="20" Background="#3A475F">
+            <StackPanel Orientation="Vertical" Background="#272537">
+                <TextBlock TextWrapping="Wrap" FontSize="16" Foreground="White" Margin="10">
+                    Welcome to help section of ZDRAVO application. Here you can find everything you want to know about using this app and we hope
+                    that we will make your user experience better!
+                </TextBlock>
+
+                <TextBlock TextWrapping="Wrap" FontSize="16" Foreground="White" Margin="10" FontWeight="Bold">
+                    We advise you to read this before the first use, so you get to know what this app is capable for.
+                </TextBlock>
+                <TextBlock FontSize="18" Foreground="White" HorizontalAlignment="Center">
+                    Dashboard
+                    </TextBlock>
+                <TextBlock TextWrapping="Wrap" FontSize="16" Margin="20,10,10,10" Foreground="White">
+                        It's a home screen of the app(it's displayed every time when app is started), it contains welcome message and quick access to this page and also room management.
+                </TextBlock>
+
+                <TextBlock FontSize="18" Foreground="White" HorizontalAlignment="Center">
+                    Room management
+                </TextBlock>
+                <TextBlock TextWrapping="Wrap" FontSize="16" Margin="20,10,10,10" Foreground="White">
+                    Rooms tab has the most funcionalities, but it actually isn't that complicated. There is a table that represents all rooms in a system. Below are buttons that 
+                    do exactly what their names say. A form will be oppened by pressing them, except if it's a "Delete" or "Inventory" button. Be careful that some actions require a specific element from the table to be selected(after selection, buttons won't be disabled anymore,
+                    as all actions will be doable).
+                </TextBlock>
+                <TextBlock FontSize="18" Foreground="White" HorizontalAlignment="Center">
+                    Medicines
+                </TextBlock>
+                <TextBlock TextWrapping="Wrap" FontSize="16" Margin="20,10,10,10" Foreground="White">
+                    Very similar to rooms tab, even with less actions. If you want to add a medicine, it status will be waiting, as doctor has to approve it first.
+                    You can only delete and modify waiting, and rejected medicines. If you want to see why doctor has rejected your medicine, select a medicine with that status
+                    and then press the "Reject reason" button.
+                </TextBlock>
+                <TextBlock FontSize="18" Foreground="White" HorizontalAlignment="Center">
+                    Equipment
+                </TextBlock>
+                <TextBlock TextWrapping="Wrap" FontSize="16" Margin="20,10,10,10" Foreground="White">
+                    Analog to the previous two, with addition of filtering and searching. In top left corner you can choose to filter displayed equipment by it's type. In top right corner
+                    you can search for speciffic equipment, so you can save your time while working.
+                </TextBlock>
+                <TextBlock FontSize="18" Foreground="White" HorizontalAlignment="Center">
+                    Surveys
+                </TextBlock>
+                <TextBlock TextWrapping="Wrap" FontSize="16" Margin="20,10,10,10" Foreground="White">
+                    In this tab, you can see statistics of hospital and doctor surveys, and generate a pdf file which contains surveys in selected period of time aswell.
+                </TextBlock>
+                <TextBlock FontSize="18" Foreground="White" HorizontalAlignment="Center">
+                    Logout
+                </TextBlock>
+                <TextBlock TextWrapping="Wrap" FontSize="16" Margin="10,10,10,10" Foreground="White">
+                        There is a button in bottom right corner which will perform a logout on press with an additional confirmation message.
+                </TextBlock>
+
+            </StackPanel>
+
+        </ScrollViewer>
+        <Image Source="/resources/technical-support.png" Margin="500,159,16,119"/>
     </Grid>
 </UserControl>

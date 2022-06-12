@@ -23,8 +23,8 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Button x:Name="Hospital" Content="Hospital" Margin="235,25,0,25" HorizontalAlignment="Left" Width="120" Height="50"  Grid.Row="0" Grid.Column="0" IsEnabled="False"/>
-            <Button x:Name="Doctor" Content="Doctor" Margin="0,25,0,25" HorizontalAlignment="Left" Width="120" Height="50"  Grid.Row="0" Grid.Column="1"/>
+            <Button x:Name="Hospital" Content="Hospital" Margin="235,25,0,25" HorizontalAlignment="Left" Width="120" Height="50"  Grid.Row="0" Grid.Column="0" IsEnabled="False" Background="Gray"/>
+            <Button x:Name="Doctor" Content="Doctor" Margin="0,25,0,25" HorizontalAlignment="Left" Width="120" Height="50"  Grid.Row="0" Grid.Column="1" Background="Gray"/>
 
             <Grid Grid.Row="1" Grid.Column="0" Background="#272537" Margin="10,0,5,0">
                 <TextBlock Margin="0,10,0,115" Text="Staff grades" Foreground="White" FontSize="15"
