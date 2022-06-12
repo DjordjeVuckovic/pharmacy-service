@@ -62,12 +62,12 @@
                FontSize="18" Grid.ColumnSpan="2" Height="40" Width="200"/>
 
         <materialDesign:TimePicker
-                                   x:Name="Timepicker1" 
+                                   x:Name="Timepicker1" Is24Hours="True"
             materialDesign:HintAssist.Hint="Select appointment time"
                                    Foreground="White" VerticalAlignment="Bottom"
             IsInvalidTextAllowed="True"
                                    Height="40" Width="130"
-                                   Margin="42,0,44,134" Grid.Column="1" >
+                                   Margin="37,0,44,134" Grid.Column="1" >
             <materialDesign:TimePicker.SelectedTime>
                 <Binding
                     Path="StartDate" Mode="OneWayToSource" 

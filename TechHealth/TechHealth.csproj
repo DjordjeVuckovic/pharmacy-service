@@ -456,6 +456,7 @@
     <Compile Include="Service\SubstanceService.cs" />
     <Compile Include="Service\TherapyService.cs" />
     <Compile Include="Service\SecretaryNotificationService.cs" />
+    <Compile Include="TranslationSource.cs" />
     <Compile Include="ValidationRules\FutureDateValidationRule.cs" />
     <Compile Include="ValidationRules\NotEmptyValidationRule.cs" />
     <Compile Include="ValidationRules\SimpleDateValidationRule.cs" />

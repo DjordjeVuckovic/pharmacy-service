@@ -5,24 +5,25 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:TechHealth.View.PatientView.View"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="600">
+             d:DesignHeight="500" d:DesignWidth="600">
     <Grid >
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="100"/>
-            <RowDefinition Height="320"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="358"/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="400"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition Width="300"/>
         </Grid.ColumnDefinitions>
 
-        <Label Grid.Row="0" Grid.Column="0"  Content="Medical record "  VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18" FontWeight="Bold" Foreground="White" Margin="190,14,10,52" HorizontalContentAlignment="Center" Width="200" />
-        <Rectangle Grid.Column="0" Grid.Row="1" RadiusX="30" RadiusY="30" Fill="Gray" Margin="0,0,77,10"/>
+        <Label Grid.Row="0" Grid.Column="0"  Content="Medical record "  VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18" FontWeight="Bold" Foreground="White" Margin="184,2,216,24" HorizontalContentAlignment="Center" Width="200" Height="34" Grid.ColumnSpan="2" />
+        <Rectangle Grid.Column="0" Grid.Row="1" RadiusX="30" RadiusY="30" Fill="Gray" Margin="10,0,10,10"/>
         <Grid Grid.Column="0"  Grid.Row="1">
             <StackPanel    Margin="20,0,0,0" >
-                <TextBlock Text="Personal data" FontSize="18" VerticalAlignment="Center" Padding="10, 5, 0, 0" HorizontalAlignment="Left"   Foreground="White" Margin="97,10,0,10" Width="130" Height="40"/>
+                <TextBlock Text="Personal data" FontSize="18"
+                           VerticalAlignment="Center" Padding="24, 5, 0, 0"   Foreground="White" Height="40" Margin="51,0,73,0"/>
                 <Label Content="{Binding LabelName}"  HorizontalAlignment="Left" FontSize="14" Foreground="White" FontWeight="Bold" />
                 <Label Content="{Binding LabelSurName}"  HorizontalAlignment="Left" FontSize="14" Foreground="White" FontWeight="Bold" />
                 <Label Content="{Binding LabelId}"  HorizontalAlignment="Left" FontSize="14" Foreground="White" FontWeight="Bold" />
@@ -30,21 +31,20 @@
                 <Label Content="{Binding LabelBirth}"  HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" Foreground="White" FontWeight="Bold" />
                 <Label Content="{Binding LabelPhone}" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" Foreground="White" FontWeight="Bold" />
                 <Label Content="{Binding LabelEmail}" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" Foreground="White" FontWeight="Bold" />
-                <Label Content="{Binding LabelAddress}" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" Foreground="White" FontWeight="Bold" Margin="-70,10,10,50"/>
+                <Label Content="{Binding LabelAddress}" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" Foreground="White" FontWeight="Bold" Margin="0,0,30,0" />
             </StackPanel>
         </Grid>
-        <Rectangle Grid.Row="1" RadiusX="30" RadiusY="30" Fill="Gray" Margin="328,0,10,10" Grid.ColumnSpan="2" />
+        <Rectangle Grid.Row="1" RadiusX="30" RadiusY="30" Fill="Gray" Margin="10,0,10,10" Grid.Column="1" />
         <Grid Grid.Column="1"  Grid.Row="1">
             <StackPanel    Margin="0,0,10,0" >
-                <TextBlock Text="Medical data" FontSize="18" VerticalAlignment="Center"
-                           HorizontalAlignment="Center" Margin="18,10" Padding="10,5,0,0"  Foreground="White"
-                           Width="144" Height="40"
+                <TextBlock Text="Medical data" FontSize="18" Padding="24,8,10,0"    Foreground="White" Height="40"
+                           Margin="76,0,68,20"
                            />
-                <Label Content="{Binding LabelWeight}"  HorizontalAlignment="Left" FontSize="14" Foreground="White" FontWeight="Bold" Margin="-70,10,10,10"/>
-                <Label Content="{Binding LabelHeight}"  HorizontalAlignment="Left" FontSize="14" Foreground="White" FontWeight="Bold" Margin="-70,10,10,10"/>
-                <Label Content="{Binding LabelBloodType}"  HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" Foreground="White" FontWeight="Bold" Margin="-70,10,10,10"/>
-                <Label Content="{Binding LabelHronical}"  HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" Foreground="White" FontWeight="Bold" Margin="-70,10,10,10"/>
-                <Label Content="{Binding LabelAllergens}" HorizontalAlignment="Left"  VerticalAlignment="Center" FontSize="14" Foreground="White" FontWeight="Bold" Margin="-70,10,10,10"/>
+                <Label Content="{Binding LabelWeight}"  HorizontalAlignment="Left" FontSize="14" Foreground="White" FontWeight="Bold" Margin="20,-20" />
+                <Label Content="{Binding LabelHeight}"  HorizontalAlignment="Left" FontSize="14" Foreground="White" FontWeight="Bold" Margin="20,8"/>
+                <Label Content="{Binding LabelBloodType}"  HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" Foreground="White" FontWeight="Bold" Margin="20,13,10,10"/>
+                <Label Content="{Binding LabelHronical}"  HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" Foreground="White" FontWeight="Bold" Margin="20,18,10,10"/>
+                <Label Content="{Binding LabelAllergens}" HorizontalAlignment="Left"  VerticalAlignment="Center" FontSize="14" Foreground="White" FontWeight="Bold" Margin="20,20,10,10"/>
             </StackPanel>
         </Grid>
     </Grid>

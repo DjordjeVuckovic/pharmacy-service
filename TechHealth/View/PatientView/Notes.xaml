@@ -21,15 +21,15 @@
     </Window.Resources>
 
     <Grid Background="Gray" Margin="5,5,5,5">
-        <TextBox x:Name="TitleBox" Background="LightGray" HorizontalAlignment="Left"
+        <TextBox x:Name="TitleBox" Background="LightGray"
                  FontSize="18" FontWeight="Bold" Foreground="White"
-                 Height="40" Margin="10,10,0,0" TextWrapping="Wrap"       
-                 Text="Title" VerticalAlignment="Top" Width="412"/>
+                 Height="40" Margin="53,10,209,0" TextWrapping="Wrap"       
+                 Text="Title" VerticalAlignment="Top"/>
         <TextBox x:Name="ContentBox" HorizontalAlignment="Left" Height="230"
-                 Margin="10,65,0,0" TextWrapping="Wrap"
+                 Margin="53,65,0,0" TextWrapping="Wrap"
                  Background="LightGray"
                  FontSize="14"
-                 ToolTip="Content" VerticalAlignment="Top" Width="412"/>
+                 ToolTip="Content" VerticalAlignment="Top" Width="338"/>
 
         <Label Content="I want reminder for this note:"
                    FontSize="14" Height="40"
@@ -37,22 +37,21 @@
                Margin="53,300,142,219"/>
 
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"
-                    Background="LightGray"
+                    Background="Gray"
                     Margin="53,345,41,73" Width="338">
             <DatePicker Margin="10,0,50,0"
-                        Background="Gray"
-                        Foreground="Black"
+                        Background="LightGray"
+                        Foreground="SlateGray"
                         Text="{Binding Date}"
                         SelectedDate="{Binding DateReal}"
                 x:Name="DatePicker" Visibility="Collapsed"
-                Width="120"
+                Width="130"
                 />
             <materialDesign:TimePicker
                     x:Name="TimePicker" 
                     Is24Hours="True" Text="{Binding Time}"
-                    Width="100"  
-                    Foreground="Black"
-                    Background="Gray"
+                    Width="130" Margin="15,0"
+                    Foreground="White" 
                     Visibility="Collapsed"/>
         </StackPanel>
         <CheckBox Content="" Background="White"
@@ -63,7 +62,7 @@
         <Button Content="Confirm" HorizontalAlignment="Left"
                 Margin="53,508,0,0" Click="Button_Click_1"
             VerticalAlignment="Top" FontSize="16" FontWeight="Normal" Height="30"
-            Width="95" RenderTransformOrigin="-0.291,0.467" Background="#FF42C130"
+            Width="95" RenderTransformOrigin="-0.291,0.467" Background="DarkGray"
             Command="{Binding FinishCommand}" />
         <Button Content="Close" HorizontalAlignment="Left" Margin="298,508,0,0"
             VerticalAlignment="Top" Width="93" Height="30" FontSize="16"

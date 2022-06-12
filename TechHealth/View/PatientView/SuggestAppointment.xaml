@@ -45,8 +45,8 @@
             </DatePicker.SelectedDate>
         </DatePicker>
         <Label Content="Appointment Suggestion" HorizontalContentAlignment="Center"
-               Margin="108,10,109,0" VerticalAlignment="Top" FontWeight="Bold"
-               FontSize="18" Height="34" Grid.ColumnSpan="2"/>
+               Margin="20,10,20,0" VerticalAlignment="Top" FontWeight="Bold"
+               FontSize="18" Height="40" Grid.ColumnSpan="2" Width="300"/>
         <ComboBox HorizontalAlignment="Left" Foreground="White"
                   Margin="53,188,0,0" VerticalAlignment="Top"
                   Width="120" Height="39" x:Name="CbDoctor"

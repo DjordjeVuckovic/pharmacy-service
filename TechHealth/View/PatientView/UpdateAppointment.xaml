@@ -64,13 +64,13 @@
                Margin="91,10,90,0" VerticalAlignment="Top" FontWeight="Bold"
                FontSize="18" Grid.ColumnSpan="2" Height="40"/>
 
-        <materialDesign:TimePicker Grid.Column="1" 
+        <materialDesign:TimePicker Grid.Column="1" Is24Hours="True"
                                    x:Name="Timepicker1" 
             materialDesign:HintAssist.Hint="Select appointment time"
-                                   Foreground="White"
+                                   Foreground="White" VerticalAlignment="Bottom"
             IsInvalidTextAllowed="True"
-                                   Height="40" 
-                                   Margin="39,395,47,129" >
+                                   Height="40" Width="130"
+                                   Margin="35,395,47,129" >
             <materialDesign:TimePicker.Text>
                 <Binding
                     Path="StartDate" Mode="OneWayToSource"
@@ -86,7 +86,7 @@
             Margin="47,108,39,416"
             FontSize="14" Width="130" Height="40"/>
         <TextBox Grid.Column="1"
-            Text="{Binding PatientFullName}" HorizontalAlignment="Left"
+            Text="{Binding PatientFullName}" Foreground="White" HorizontalAlignment="Left"
             Height="40" Margin="39,108,0,416" TextWrapping="Wrap"
             VerticalAlignment="Center" Width="130" FontSize="14"
                  
