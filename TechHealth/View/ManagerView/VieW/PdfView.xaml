@@ -1,0 +1,62 @@
+﻿<UserControl x:Class="TechHealth.View.ManagerView.VieW.PdfView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TechHealth.View.ManagerView.VieW"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="710">
+    <Grid Background="#44475a">
+
+        <StackPanel x:Name="Report" Margin="20,20,160,20" Background="LightGray">
+            <Grid Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="100"/>
+                    <RowDefinition Height="230"/>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+
+                <Image Source="/resources/ZDRAVOicon.png" Margin="10,8,435,21"/>
+                <Label Content="ZDRAVO bolnica" Margin="386,10,10,64" Foreground="Black"/>
+                <Label Content="zdravo@gmail.com" Margin="386,36,10,29" Foreground="Black"/>
+                <Label Content="Novi Sad" Margin="386,62,48,10" Foreground="Black"/>
+
+                <Label Grid.Row="1" Content="Izvestaj anketa u periodu" Foreground="Black"
+                       FontSize="20" HorizontalAlignment="Center" Margin="0,0,0,198"/>
+
+                <Label Content="{Binding StartD, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Margin="10,41,412,161" Foreground="Black" Grid.Row="1"/>
+                <Label Content="{Binding EndD, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Margin="412,41,10,161" Foreground="Black" Grid.Row="1" Width="88"/>
+
+                <DataGrid x:Name="dataSurveys" ItemsSource="{Binding Surveys, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                      CanUserAddRows="False"
+                      AutoGenerateColumns="False"
+                      Margin="10,74,10,0"
+                      Grid.Row="1"
+                      IsReadOnly="True"
+                          Background="#272537">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Survey Id" Binding="{Binding Id}" Width="*"  CanUserResize="False"/>
+                        <DataGridTextColumn Header="Author" Binding="{Binding Author}" Width="*"  CanUserResize="False"/>
+                        <DataGridTextColumn Header="Submit date" Binding="{Binding SubmitDate}" Width="*"  CanUserResize="False"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+                <Label Grid.Row="2" Content="Upravnik bolnice:" Margin="386,0,-386,0" Foreground="Black"/>
+                <Label Grid.Row="2" Content="Nenad Sredojevic" Margin="386,25,-386,-25" Foreground="Black"/>
+            </Grid>
+        </StackPanel>
+
+        <Label Content="From date:" Margin="555,20,67,403" Foreground="White"/>
+        <DatePicker HorizontalAlignment="Left" Margin="555,52,0,0" VerticalAlignment="Top" Width="120" x:Name="RStart" Height="24" Foreground="White" RenderTransformOrigin="1.079,0.452"
+                    Text="{Binding StartDate, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}">
+        </DatePicker>
+        <Label Content="To date:" Margin="555,106,67,314" Foreground="White"/>
+        <DatePicker HorizontalAlignment="Left" Margin="555,141,0,0" VerticalAlignment="Top" Width="120" x:Name="RStart_Copy" Height="24" Foreground="White" RenderTransformOrigin="1.079,0.452"
+                    Text="{Binding EndDate, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+
+        <Button x:Name="Pdf" Content="Print" Margin="555,277,0,123" HorizontalAlignment="Left" Width="120" Height="50"
+                Command="{Binding DownloadCommand}"/>
+        <Button x:Name="generateGrid" Content="Generate" Margin="555,195,0,205" HorizontalAlignment="Left" Width="120" Height="50"
+            Command="{Binding GenerateGridCommand}"/>
+
+    </Grid>
+</UserControl>

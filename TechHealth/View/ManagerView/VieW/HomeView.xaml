@@ -6,10 +6,10 @@
              xmlns:local="clr-namespace:TechHealth.View.ManagerView.VieW"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="710">
-    
-    <StackPanel Background="LightGray">
+
+    <StackPanel Background="#44475a">
         <TextBlock Text="Overview"
-                   Foreground="Black"
+                   Foreground="White"
                    FontSize="28"
                    HorizontalAlignment="Center"
                    Margin="0,10,0,0"/>
@@ -21,7 +21,7 @@
 
                 <Border.Background>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
-                        <GradientStop Color="#5bc3ff" Offset="0.0"/>
+                        <GradientStop Color="#272537" Offset="0.0"/>
                         <GradientStop Color="#3aa0ff" Offset="1"/>
                     </LinearGradientBrush>
                 </Border.Background>
@@ -35,7 +35,7 @@
                 <Grid>
                     <StackPanel>
                         <TextBlock Text="Tasks"
-                                   Foreground="Black"
+                                   Foreground="White"
                                    FontSize="24"
                                    HorizontalAlignment="Center"
                                    Margin="0,10,0,0"/>
@@ -49,12 +49,12 @@
                         Margin="0,30,0,0">
                 <Border Width="250"
                         Height="170"
-                        Background="#FF3AC588"
+                        Background="#272537"
                         CornerRadius="10"
-                        Margin="55,0,0,0">
+                        Margin="55,-20,0,0">
                     <StackPanel>
                         <TextBlock Text="Room management"
-                                   Foreground="Black"                                
+                                   Foreground="White"                                
                                    FontSize="24"
                                    HorizontalAlignment="Center"
                                    Margin="0,10,0,0"/>
@@ -63,12 +63,12 @@
 
                 <Border Width="250"
                         Height="170"
-                        Background="#FF3AC588"
+                        Background="#272537"
                         CornerRadius="10"
-                        Margin="100,0,0,0">
+                        Margin="75,-20,0,0">
                     <StackPanel>
                         <TextBlock Text="Schedule"
-                                   Foreground="Black"
+                                   Foreground="White"
                                    FontSize="24"
                                    HorizontalAlignment="Center"
                                    Margin="0,10,0,0"/>

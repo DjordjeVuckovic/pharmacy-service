@@ -24,7 +24,7 @@ namespace TechHealth.Repository
 
         protected override string GetKey(AppointmentGrade entity)
         {
-            return entity.EvidentAppointment.IdAppointment;
+            return entity.Id;
         }
 
         protected override string GetPath()

@@ -35,30 +35,9 @@
     "ShouldSerialize": true
   },
   "S7": {
-    "RoomTypes": 1,
-    "RoomId": "S7",
-    "Floor": 3,
-    "Availability": true,
-    "ShouldSerialize": true
-  },
-  "S8": {
-    "RoomTypes": 0,
-    "RoomId": "S8",
-    "Floor": 3,
-    "Availability": true,
-    "ShouldSerialize": true
-  },
-  "S10": {
-    "RoomTypes": 2,
-    "RoomId": "S10",
-    "Floor": 1,
-    "Availability": false,
-    "ShouldSerialize": true
-  },
-  "S23": {
     "RoomTypes": 3,
-    "RoomId": "S23",
-    "Floor": 3,
+    "RoomId": "S7",
+    "Floor": 2,
     "Availability": false,
     "ShouldSerialize": true
   }
