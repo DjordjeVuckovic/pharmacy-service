@@ -100,12 +100,12 @@
                         <ImageBrush ImageSource="C:\Users\djord\OneDrive\Documents\GitHub\PharmacyService\TechHealth\resources\help.png" />
                     </Button.Background>
                 </Button>
-                <Button  Grid.Row="0" Grid.Column="1" Margin="752.4,19,9.6,9.8" Height="Auto" BorderThickness="0" ToolTip="Tutorial">
+                <Button  Grid.Row="0" Grid.Column="1" Margin="752.4,19,9.6,9.8" Height="Auto" BorderThickness="0" ToolTip="Tutorial" Command="{Binding TutorialCommand}">
                     <Button.Background>
                         <ImageBrush ImageSource="C:\Users\djord\OneDrive\Documents\GitHub\PharmacyService\TechHealth\resources\t2.png" />
                     </Button.Background>
                 </Button>
-                <Button   Grid.Column="0" Margin="17,615.2,150.6,9.8" Grid.Row="1" Height="Auto" BorderThickness="0" ToolTip="Sign out" Click="ButtonBase_OnClick">
+                <Button   Grid.Column="0" Margin="17,611.2,156.6,9.8" Grid.Row="1" Height="Auto" BorderThickness="0" ToolTip="Sign out" Click="ButtonBase_OnClick">
                     <Button.Background>
                         <ImageBrush ImageSource="C:\Users\djord\OneDrive\Documents\GitHub\PharmacyService\TechHealth\resources\logout.png" />
                     </Button.Background>

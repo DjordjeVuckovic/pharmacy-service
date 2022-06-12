@@ -310,6 +310,9 @@
     <Compile Include="DoctorView\View\RecordView.xaml.cs">
       <DependentUpon>RecordView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DoctorView\View\TutorialView.xaml.cs">
+      <DependentUpon>TutorialView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DoctorView\View\VactionHistoryView.xaml.cs">
       <DependentUpon>VactionHistoryView.xaml</DependentUpon>
     </Compile>
@@ -805,6 +808,15 @@
     <Content Include="Json\secretary.json" />
     <Content Include="Json\specialization.json" />
     <Resource Include="resources\technical-support.png" />
+    <Resource Include="resources\stop.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\play-button.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\Tutorial\tutorial.mp4">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="resources\warehouse.png" />
     <Resource Include="resources\survey.png" />
     <Resource Include="resources\signoutoption.png" />
@@ -875,6 +887,9 @@
     <Resource Include="resources\mydoctor.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="resources\pause.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Content Include="resources\ph.png" />
     <Resource Include="resources\hospital.png" />
     <Resource Include="resources\ambulance.png" />
@@ -920,6 +935,7 @@
     <Page Include="DoctorView\View\NotificationView.xaml" />
     <Page Include="DoctorView\View\PatientView.xaml" />
     <Page Include="DoctorView\View\RecordView.xaml" />
+    <Page Include="DoctorView\View\TutorialView.xaml" />
     <Page Include="DoctorView\View\VactionHistoryView.xaml" />
     <Page Include="DoctorView\WindowBar.xaml" />
     <Page Include="DoctorView\Windows\AppointRefferalWindow.xaml" />

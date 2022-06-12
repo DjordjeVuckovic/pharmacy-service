@@ -23,7 +23,9 @@ namespace TechHealth.DoctorView.ViewModel
         private DashBoardViewModel DashBoardViewModel { get; set; }
         private AccountViewModel AccountViewModel { get; set; }
         private NotificationView NotificationView { get; set; }
+        private TutorialView TutorialView { get; set; }
         private HelpView HelpView { get; set; }
+        public RelayCommand TutorialCommand { get; set; }
         
         
         public object CurrentView
@@ -61,6 +63,7 @@ namespace TechHealth.DoctorView.ViewModel
             AccountViewModel = new AccountViewModel(DoctorId);
             HelpView = new HelpView();
             NotificationView = new NotificationView();
+            TutorialView = new TutorialView();
 
             CurrentView = DashBoardViewModel;
             DashCommand = new RelayCommand(o =>
@@ -101,6 +104,11 @@ namespace TechHealth.DoctorView.ViewModel
             NotificationCommand = new RelayCommand(o =>
                 {
                     CurrentView = NotificationView;
+                }
+            );
+            TutorialCommand =new RelayCommand(o =>
+                {
+                    CurrentView = TutorialView;
                 }
             );
             
