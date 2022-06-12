@@ -7,7 +7,6 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
-using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -29,11 +28,11 @@ namespace TechHealth.View.ManagerView
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            DialogResult dialogResult = System.Windows.Forms.MessageBox.Show(@"Are you sure about that?", @"Logout", MessageBoxButtons.YesNo);
-            if (dialogResult == (DialogResult)MessageBoxResult.Yes)
+            if (MessageBox.Show("Are you sure you want to log out ?",
+                    "Log out", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
             {
-                this.Close();
-                new LoginWindow().Show();               
+                new LoginWindow().Show();
+                Close();
             }
         }
     }

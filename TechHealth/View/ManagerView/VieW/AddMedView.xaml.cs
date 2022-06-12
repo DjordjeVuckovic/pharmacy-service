@@ -55,11 +55,29 @@ namespace TechHealth.View.ManagerView.VieW
             Medicine med = new Medicine();
             med.MedicineId = Guid.NewGuid().ToString("N");
             med.MedicineName = TxtMedName.Text;
-            med.Quantity = Int32.Parse(TxtQuantity.Text);
+            try
+            {
+                med.Quantity = Int32.Parse(TxtQuantity.Text);
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Please enter a valid quantity!");
+                return;
+            }
             med.Units = TxtUnits.Text;
             med.SideEffects = TxtSideEffects.Text;
             med.MainSubstance = ManagerConversions.StringToSubstance(TxtMainSubstance.Text);
-            med.Price = 0;
+            try
+            {
+                med.Price = Int32.Parse(TxtPrice.Text);
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Please enter a valid price!");
+                return;
+            }
             med.MedicineStatus = MedicineStatus.Waiting;
 
 
@@ -73,7 +91,19 @@ namespace TechHealth.View.ManagerView.VieW
             //    medSubstances.Add(sub);
             //}
             substanceController.AddSubstancesToCompositionList(selectedSubstances, medSubstances);
-            med.Composition = medSubstances;         
+            med.Composition = medSubstances;
+
+            if (TxtMedName.Text == "" || TxtMainSubstance.Text == "" || TxtQuantity.Text == "" || TxtPrice.Text == "" || TxtSideEffects.Text == "" || TxtUnits.Text == "")
+            {
+                MessageBox.Show("All fields have to be filled in order to proceed!");
+                return;
+            }
+
+            if (med.Composition.Count == 0)
+            {
+                MessageBox.Show("You must add substances to medicine!");
+                return;
+            }
 
             medicineController.Create(med);
             //medicines.Add(med);

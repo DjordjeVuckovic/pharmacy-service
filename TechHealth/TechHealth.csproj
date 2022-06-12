@@ -541,6 +541,7 @@
     <Compile Include="View\ManagerView\ViewModel\AddRenovationViewModel.cs" />
     <Compile Include="View\ManagerView\ViewModel\AddRoomViewModel.cs" />
     <Compile Include="View\ManagerView\ViewModel\EquipmentViewModel.cs" />
+    <Compile Include="View\ManagerView\ViewModel\HelpViewModel.cs" />
     <Compile Include="View\ManagerView\ViewModel\HomeViewModel.cs" />
     <Compile Include="View\ManagerView\ViewModel\MainViewModel.cs" />
     <Compile Include="View\ManagerView\ViewModel\MedViewModel.cs" />
@@ -569,6 +570,9 @@
     </Compile>
     <Compile Include="View\ManagerView\VieW\EquipmentView.xaml.cs">
       <DependentUpon>EquipmentView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ManagerView\VieW\HelpView.xaml.cs">
+      <DependentUpon>HelpView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ManagerView\VieW\HomeView.xaml.cs">
       <DependentUpon>HomeView.xaml</DependentUpon>
@@ -843,6 +847,7 @@
     <Resource Include="resources\demo.png" />
     <Resource Include="resources\demo-40x40.png" />
     <Resource Include="resources\demo-24x24.png" />
+    <Resource Include="resources\dashboard2.png" />
     <Content Include="resources\diagnosis.png" />
     <Resource Include="resources\logout.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -1012,6 +1017,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\ManagerView\VieW\EquipmentView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ManagerView\VieW\HelpView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
