@@ -16,24 +16,9 @@ namespace TechHealth.DoctorView.CRUDAppointments
     /// </summary>
     public partial class CreateExamination : Window
     {
-        // private Doctor doctor;
-        // private List<Patient> patients;
-        // private List<Room> rooms;
-        // private string doctorId;
-        // private ObservableCollection<Appointment> Appointments { get; set; }
         public CreateExamination()
         {
             InitializeComponent();
-            // DataContext = this;
-            // doctor = DoctorRepository.Instance.GetDoctorbyId(doctorId);
-            // patients = PatientRepository.Instance.GetAllToList();
-            // rooms = RoomRepository.Instance.GetAllToList();
-            // Appointments = observableCollection;
-            //
-            // DoctorTxt.Text = doctor.FullSpecialization;
-            // PatentCombo.ItemsSource = patients;
-            // RoomCombo.ItemsSource = rooms;
-            // this.doctorId = doctorId;
         }
     }
 }

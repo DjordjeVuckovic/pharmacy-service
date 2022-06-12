@@ -70,5 +70,13 @@ namespace TechHealth.DoctorView.MedicalHistory
         {
             Close();
         }
+
+        private void WindowKeyListener(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Y && (e.KeyboardDevice.Modifiers & ModifierKeys.Control) != 0)
+            {
+                Close();
+            }
+        }
     }
 }

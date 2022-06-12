@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:TechHealth.DoctorView.MedicalHistory"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="ReviewAnamnesis" Height="550" Width="750">
+        Title="ReviewAnamnesis" Height="550" Width="750"
+        KeyDown="WindowKeyListener">
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>

@@ -26,6 +26,7 @@
         <KeyBinding Command="{Binding AccountCommand}" Key="F6"/>
         <KeyBinding Command="{Binding HelpCommand}" Key="H" Modifiers="Control"/>
         <KeyBinding Command="{Binding NotificationCommand}" Key="N" Modifiers="Control"/>
+        <KeyBinding Command="{Binding TutorialCommand}" Key="T" Modifiers="Control"/>
     </Window.InputBindings>
     <Window.Resources>
         <ResourceDictionary>
