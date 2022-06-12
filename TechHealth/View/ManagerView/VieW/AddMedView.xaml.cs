@@ -31,6 +31,7 @@ namespace TechHealth.View.ManagerView.VieW
         private ObservableCollection<Substance> substances = new ObservableCollection<Substance>();
         private List<string> substanceNames;
         private List<Substance> selectedSubstances;
+        private List<string> possibleMainSubstances = new List<string>();
         public List<Substance> medSubstances { get; set; }
         public ObservableCollection<Substance> Substances
         {
@@ -46,6 +47,12 @@ namespace TechHealth.View.ManagerView.VieW
             substanceNames = substanceController.GetSubstanceNames();
             substanceList.ItemsSource = substanceNames;
             medSubstances = new List<Substance>();
+
+            foreach (var s in substanceController.GetAllToList())
+            {
+                possibleMainSubstances.Add(s.SubstanceName);
+            }
+            CbMainSubstance.ItemsSource = possibleMainSubstances;
         }
 
         private void Button_Click_Confirm(object sender, RoutedEventArgs e)
@@ -67,7 +74,7 @@ namespace TechHealth.View.ManagerView.VieW
             }
             med.Units = TxtUnits.Text;
             med.SideEffects = TxtSideEffects.Text;
-            med.MainSubstance = ManagerConversions.StringToSubstance(TxtMainSubstance.Text);
+            med.MainSubstance = ManagerConversions.StringToSubstance(CbMainSubstance.Text);
             try
             {
                 med.Price = Int32.Parse(TxtPrice.Text);
@@ -85,15 +92,10 @@ namespace TechHealth.View.ManagerView.VieW
             var collection = selectedItems.Cast<String>();
             var selectedCollection = collection.ToList();
             selectedSubstances = substanceController.GetSubstanceListFromNames(selectedCollection);
-            //foreach (var selected in selectedSubstances)
-            //{
-            //    Substance sub = selected;
-            //    medSubstances.Add(sub);
-            //}
             substanceController.AddSubstancesToCompositionList(selectedSubstances, medSubstances);
             med.Composition = medSubstances;
 
-            if (TxtMedName.Text == "" || TxtMainSubstance.Text == "" || TxtQuantity.Text == "" || TxtPrice.Text == "" || TxtSideEffects.Text == "" || TxtUnits.Text == "")
+            if (TxtMedName.Text == "" || CbMainSubstance.Text == "" || TxtQuantity.Text == "" || TxtPrice.Text == "" || TxtSideEffects.Text == "" || TxtUnits.Text == "")
             {
                 MessageBox.Show("All fields have to be filled in order to proceed!");
                 return;

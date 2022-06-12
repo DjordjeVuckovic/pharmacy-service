@@ -807,6 +807,7 @@
     <Content Include="Json\rejectedMedicine.json" />
     <Content Include="Json\secretary.json" />
     <Content Include="Json\specialization.json" />
+    <Resource Include="resources\technical-support.png" />
     <Resource Include="resources\stop.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
@@ -881,6 +882,7 @@
     <Resource Include="resources\help2.png" />
     <Resource Include="resources\faq.png" />
     <Resource Include="resources\logout2.png" />
+    <Resource Include="resources\helpic.png" />
     <Content Include="resources\medicine.png" />
     <Resource Include="resources\mydoctor.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
