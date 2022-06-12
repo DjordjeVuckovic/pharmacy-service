@@ -61,7 +61,7 @@
                     <TextBlock Text="Dusan Vukovic" Foreground="White" FontSize="18"  Margin="111,17,-2.2,33" Grid.Row="0" Grid.ColumnSpan="2"/>
                     <TextBlock FontWeight="Bold" Text="Most prescribed medicine:" Foreground="White" FontSize="18" TextWrapping="Wrap" Margin="-13,0,3.4,10" Grid.Column="0" RenderTransformOrigin="0.602,0.537" Grid.Row="1"/>
                     <TextBlock Text="Paracetamol" Foreground="White" FontSize="18" Margin="1.8,29,20.8,27" Grid.Row="1" RenderTransformOrigin="0.369,0.569" Grid.Column="1"/>
-                    <TextBlock Text="You have new notifications!" TextWrapping="Wrap" FontWeight="Bold" Foreground="White" FontSize="18" Margin="-13,0,0.4,10.2" Grid.Row="2" Grid.Column="0" RenderTransformOrigin="0.592,0.371"/>
+                    <TextBlock Text="You have new notifications!" TextWrapping="Wrap" FontWeight="Bold" Foreground="White" FontSize="18" Margin="-13,10,0.4,10.2" Grid.Row="2" Grid.Column="0" RenderTransformOrigin="0.544,0.71"/>
                     <Button FontSize="10" Content="Notifications" Grid.Row="2" Grid.Column="1" Command="{Binding NotificationCommand}" Margin="7.6,4,10.2,51.2" />
                 </Grid>
             </Border>
