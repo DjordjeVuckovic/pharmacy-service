@@ -59,7 +59,7 @@
 
             <Label Content="Start date:" HorizontalAlignment="Right" Margin="0,19,10,19.6" Grid.Column="0" Grid.Row="0" VerticalAlignment="Center" Foreground="White" Width="182"/>
             <Label Content="Finish date:" HorizontalAlignment="Right" Margin="0,18.4,10,18.4" Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" Foreground="White" Width="182"/>
-            <DatePicker Grid.Column="1" Grid.Row="0" Margin="13,19,-0.2,16.6" VerticalAlignment="Center" Width="200" FirstDayOfWeek="Monday" HorizontalAlignment="Left" Height="30" >
+            <DatePicker Grid.Column="1" Grid.Row="0" Margin="13,10,0,16.6" VerticalAlignment="Center" Width="200" FirstDayOfWeek="Monday" HorizontalAlignment="Left" Height="30" >
                 <DatePicker.SelectedDate>
                     <Binding Path="StartDate" Mode="OneWayToSource" UpdateSourceTrigger="PropertyChanged">
                         <Binding.ValidationRules>

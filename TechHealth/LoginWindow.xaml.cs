@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Windows;
+using System.Windows.Input;
 using TechHealth.DoctorView;
 using TechHealth.Model;
 using TechHealth.Repository;
@@ -22,9 +23,14 @@ namespace TechHealth
 
         private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
         {
-            if(!Log())
+            Loginmethod();
+        }
+
+        private void Loginmethod()
+        {
+            if (!Log())
             {
-                MessageBox.Show("Wrong credential.Try again!","Error",MessageBoxButton.OK,MessageBoxImage.Error);
+                MessageBox.Show("Wrong credential.Try again!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
@@ -70,5 +76,12 @@ namespace TechHealth
         }
 
 
+        private void WindowKeyListener(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                Loginmethod();
+            }
+        }
     }
 }

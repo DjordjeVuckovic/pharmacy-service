@@ -34,7 +34,7 @@
 
         <Label Grid.Row="2" Content="Describe your experience:" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontSize="20" Foreground="#1FC192" FontWeight="ExtraLight" Margin="40,0,0,0"/>
 
-        <TextBox Grid.Row="3" Text="Enter you message here...." TextWrapping="Wrap" Name="TextBox" Margin="40,10,40,10"  ToolTip="This field is required" Foreground="White"/>
+        <TextBox Grid.Row="3"  TextWrapping="Wrap" Name="TextBox" Margin="40,10,40,10"  ToolTip="Enter you message here...." Foreground="White"/>
         <Button Content="Cancel" Margin="0,0,300,0" Click="ButtonBase_OnClick1" Width="100" Grid.Row="4"/>
         <Button Content="Finish" Width="100"  Margin="377,13.2,116.6,12.4" Grid.Row="4"  Click="ButtonBase_OnClick"/>
     </Grid>

@@ -340,8 +340,8 @@
   "4cf4ae0904a444609f7294c20a0e2a8e": {
     "ShouldSerialize": true,
     "Date": "2022-06-17T00:00:00",
-    "StartTime": "2022-06-08T03:15:00",
-    "FinishTime": "2022-06-08T05:25:00",
+    "StartTime": "2022-06-11T03:15:00",
+    "FinishTime": "2022-06-11T05:25:00",
     "Emergent": false,
     "IdAppointment": "4cf4ae0904a444609f7294c20a0e2a8e",
     "Room": {
