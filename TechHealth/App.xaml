@@ -120,6 +120,9 @@
             <DataTemplate DataType="{x:Type viewmodel:PdfViewModel}">
                 <vieW:PdfView/>
             </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodel:HelpViewModel}">
+                <vieW:HelpView/>
+            </DataTemplate>
             <!--patient data template-->
             <DataTemplate DataType="{x:Type viewModelP:HomeViewModelP}">
                 <viewP:HomeViewP/>
