@@ -10,11 +10,27 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="70"/>
             <RowDefinition/>
+            <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
         <Rectangle RadiusX="15" RadiusY="15" Fill="#FF3A475F" Margin="10,0,0,10.4"/>
 
         <Label Grid.Row="0" Content="Tutorial" Foreground="#1FC192" Margin="336,0,-106,10.4" VerticalAlignment="Center"
                    FontSize="32" Height="60" />
-        <MediaElement Grid.Row="1" LoadedBehavior="Play" Visibility="Visible" Source="../../resources/Tutorial/tutorial.mp4"/>
+        <MediaElement Grid.Row="1" x:Name="MediaElement" LoadedBehavior="Manual" UnloadedBehavior="Stop"  Visibility="Visible" Source="../../resources/Tutorial/tutorial.mp4" Margin="0,9.6,0,0.2"/>
+        <Button Grid.Row="2" x:Name="Stop" HorizontalAlignment="Left" BorderThickness="0"  VerticalAlignment="Top" Width="56" Height="30" Click="stop_Click" Margin="472,5.8,0,0" RenderTransformOrigin="0.315,0.518" >
+            <Button.Background>
+                <ImageBrush ImageSource="../../resources/stop.png"/>
+            </Button.Background>
+        </Button>
+        <Button Grid.Row="2" x:Name="Play" HorizontalAlignment="Left" BorderThickness="0"  VerticalAlignment="Top" Width="58" Height="34" Click="play_Click" Margin="261,5.8,0,0" RenderTransformOrigin="0.22,0.667" >
+            <Button.Background>
+                <ImageBrush ImageSource="../../resources/play-button.png"/>
+            </Button.Background>
+        </Button>
+        <Button Grid.Row="2" x:Name="Puase" BorderThickness="0" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="59" Height="34" Click="pause_Click" Margin="369,5.8,0,0" >
+            <Button.Background>
+                <ImageBrush ImageSource="../../resources/pause.png"/>
+            </Button.Background>
+        </Button>
     </Grid>
 </UserControl>
