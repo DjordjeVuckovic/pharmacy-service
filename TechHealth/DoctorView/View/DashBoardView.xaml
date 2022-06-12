@@ -6,6 +6,13 @@
              xmlns:local="clr-namespace:TechHealth.DoctorView.View"
              mc:Ignorable="d"
              d:DesignHeight="500" d:DesignWidth="800">
+    <UserControl.InputBindings>
+        <KeyBinding Command="{Binding NewSurgeryCommand}" Key="S" Modifiers="Alt"/>
+        <KeyBinding Command="{Binding NewCommand}" Key="N" Modifiers="Alt"/>
+        <KeyBinding Command="{Binding NewExaminationCommand}" Key="E" Modifiers="Alt"/>
+        <KeyBinding Command="{Binding RateCommand}" Key="F7"/>
+        <KeyBinding Command="{Binding NotificationCommand}" Key="N" Modifiers="Control"/>
+    </UserControl.InputBindings>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="85.6"/>
@@ -55,7 +62,7 @@
                     <TextBlock FontWeight="Bold" Text="Most prescribed medicine:" Foreground="White" FontSize="18" TextWrapping="Wrap" Margin="-13,0,3.4,10" Grid.Column="0" RenderTransformOrigin="0.602,0.537" Grid.Row="1"/>
                     <TextBlock Text="Paracetamol" Foreground="White" FontSize="18" Margin="1.8,29,20.8,27" Grid.Row="1" RenderTransformOrigin="0.369,0.569" Grid.Column="1"/>
                     <TextBlock Text="You have new notifications!" TextWrapping="Wrap" FontWeight="Bold" Foreground="White" FontSize="18" Margin="-13,0,0.4,10.2" Grid.Row="2" Grid.Column="0" RenderTransformOrigin="0.592,0.371"/>
-                    <Button FontSize="10" Content="Notifications" Grid.Row="2" Grid.Column="1" Command="{Binding NotificationCommand}" Margin="7.6,4,10.2,44.2" />
+                    <Button FontSize="10" Content="Notifications" Grid.Row="2" Grid.Column="1" Command="{Binding NotificationCommand}" Margin="7.6,4,10.2,51.2" />
                 </Grid>
             </Border>
             <Button Content="Rate app!" FontSize="10" Width="110" Grid.Column="1" Grid.Row="2" Command="{Binding RateCommand}" Margin="100.8,15.2,100.4,14.4" />

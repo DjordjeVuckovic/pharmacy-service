@@ -64,6 +64,7 @@
                         Alt+N - New Anamnesis Command<LineBreak/>
                         Alt+V - New Vacation Command<LineBreak/>
                         Alt+T - New Therapy Command<LineBreak/>
+                        F7 - Rate app Command<LineBreak/>
                         Escape - Sign out Command<LineBreak/>
                         Alt+F4 - Terminate application
                         </TextBlock>
