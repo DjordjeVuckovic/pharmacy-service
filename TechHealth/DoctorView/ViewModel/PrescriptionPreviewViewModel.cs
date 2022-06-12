@@ -7,12 +7,14 @@ namespace TechHealth.DoctorView.ViewModel
 {
     public class PrescriptionPreviewViewModel:ViewModelBase
     {
+        public event EventHandler OnRequestClose;
         public string PatientName { get; set; }
         private readonly  MedicineController medicineController = new MedicineController();
         private readonly AppointmentController appointmentController = new AppointmentController();
         private readonly DoctorController doctorController = new DoctorController();
         private Prescription prescription;
         private Medicine medicine;
+        public RelayCommand CloseCommand {get; set; }
         public DateTime StartDate { get; set; }
         public DateTime FinishDate { get; set; }
         public string Frequency { get; set; }
@@ -44,6 +46,12 @@ namespace TechHealth.DoctorView.ViewModel
             MedicineAlg = medicine.MedicineSubstances;
             Usage = prescription.Usage;
             Frequency = prescription.Frequency;
+            CloseCommand = new RelayCommand(param => CloseWindow());
+        }
+
+        private void CloseWindow()
+        {
+            OnRequestClose?.Invoke(this, EventArgs.Empty);
         }
     }
 }

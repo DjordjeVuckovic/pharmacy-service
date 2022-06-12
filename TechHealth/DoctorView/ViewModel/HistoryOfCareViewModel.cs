@@ -136,7 +136,9 @@ namespace TechHealth.DoctorView.ViewModel
                 {
                     DataContext = vm
                 };
+                vm.OnRequestClose += (s, e) => therapyPreview.Close();
                 therapyPreview.ShowDialog();
+                
             }
             
             if (SelectedIndex == 2)
@@ -146,6 +148,7 @@ namespace TechHealth.DoctorView.ViewModel
                 {
                     DataContext = vm
                 };
+                vm.OnRequestClose += (s, e) => prescriptionPreview.Close();
                 prescriptionPreview.ShowDialog();
             }
             

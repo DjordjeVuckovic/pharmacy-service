@@ -7,6 +7,7 @@ namespace TechHealth.DoctorView.ViewModel
 {
     public class TherapyPreviewViewModel:ViewModelBase
     {
+        public event EventHandler OnRequestClose;
         public DateTime StartDate { get; set; }
         public DateTime FinishDate { get; set; }
         public string Frequency { get; set; }
@@ -16,6 +17,7 @@ namespace TechHealth.DoctorView.ViewModel
         public string RoomId { get; set; }
         public string PatientName { get; set; }
         //private readonly  AppointmentController appointmentController = new AppointmentController();
+        public RelayCommand CloseCommand {get; set; }
         
         
 
@@ -30,7 +32,12 @@ namespace TechHealth.DoctorView.ViewModel
             DoctorName = "Doctor: " + selectedTherapy.Appointment.Doctor.FullSpecialization;
             PatientName = "Patient: " + selectedItemPatient.FullName;
             RoomId = "AppointmentRoom: " + selectedTherapy.Appointment.Room.RoomId;
+            CloseCommand = new RelayCommand(param => CloseWindow());
 
+        }
+        private void CloseWindow()
+        {
+            OnRequestClose?.Invoke(this, EventArgs.Empty);
         }
     }
 }
