@@ -5,16 +5,28 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="clr-namespace:TechHealth.View"
         mc:Ignorable="d"
-        Title="AppointmensFuture" Height="450" Width="800">
-    <Grid>
-        <DataGrid x:Name="RecommendedAppointmentsTable"
+        Title="AppointmensFuture" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Dark.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/materialdesigncolor.bluegrey.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Grid Background="Gray">
+        <DataGrid x:Name="RecommendedAppointmentsTable" Background="Gray" Foreground="White" FontSize="14"
                   AutoGenerateColumns="False" ItemsSource="{Binding MyList}"
                   Margin="0,68,0,0" IsReadOnly="True" SelectionMode="Single" >
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Doctor" Binding="{Binding Doctor.FullName}" Width="1.2*"  CanUserResize="False" IsReadOnly="True"/>
                 <DataGridTextColumn Header="Date" Binding="{Binding Date,StringFormat=d}" Width="*"  CanUserResize="False" IsReadOnly="True" />
-                <DataGridTextColumn Header="StartTime" Binding="{Binding StartTimeD,StringFormat=t}" Width="*"  CanUserResize="False" IsReadOnly="True"/>
-                <DataGridTextColumn Header="FinishTime" Binding="{Binding FinishTimeD,StringFormat=t}" Width="1.2*"  CanUserResize="False" IsReadOnly="True"/>
+                <DataGridTextColumn Header="StartTime" Binding="{Binding StartTime, StringFormat=t}" Width="*"  CanUserResize="False" IsReadOnly="True"/>
+                <DataGridTextColumn Header="FinishTime" Binding="{Binding FinishTime, StringFormat=t}" Width="1.2*"  CanUserResize="False" IsReadOnly="True"/>
 
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
@@ -26,6 +38,7 @@
 
             </DataGrid.Columns>
         </DataGrid>
-        <Label Content="Available appointments" HorizontalAlignment="Center" Margin="10,10,10,10" VerticalAlignment="Top" FontSize="20" FontStyle="Normal"/>
+        <Label Content="Available appointments" Foreground="White" HorizontalAlignment="Center" Margin="10,10,10,10" VerticalAlignment="Top" FontSize="18" FontStyle="Normal" FontWeight="Bold"
+               Background="Gray"/>
     </Grid>
 </Window>

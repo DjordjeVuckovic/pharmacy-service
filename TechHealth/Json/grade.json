@@ -3,10 +3,10 @@
     "Id": "5ac0bdfbb6c44f2b9304e3dca8719c01",
     "OcenaLekara": 0,
     "OcenaOsoblje": 4,
-    "OcenaCistoca": 4,
     "UkupnaOcena": 4,
     "EvidentAppointment": {
       "ShouldSerialize": false,
+      "Graded": false,
       "IdAppointment": "8f4aeb23199d4e21a3ef6467e71f6e3b"
     }
   },
@@ -14,10 +14,10 @@
     "Id": "b63cec79a36e4300959074dc4e63ed9f",
     "OcenaLekara": 3,
     "OcenaOsoblje": 3,
-    "OcenaCistoca": 4,
     "UkupnaOcena": 4,
     "EvidentAppointment": {
       "ShouldSerialize": false,
+      "Graded": false,
       "IdAppointment": "86771793b2074ed0af6c137913d3e2ca"
     }
   },
@@ -25,10 +25,10 @@
     "Id": "b63cec79a36e4300959074dc4e63ed9f",
     "OcenaLekara": 3,
     "OcenaOsoblje": 5,
-    "OcenaCistoca": 4,
     "UkupnaOcena": 4,
     "EvidentAppointment": {
       "ShouldSerialize": false,
+      "Graded": false,
       "IdAppointment": "86771793b2074ed0af6c13793d3e2cad"
     }
   },
@@ -36,11 +36,33 @@
     "Id": "b63cec79a36e4300959074dc4e63ed9f",
     "OcenaLekara": 3,
     "OcenaOsoblje": 5,
-    "OcenaCistoca": 5,
     "UkupnaOcena": 5,
     "EvidentAppointment": {
       "ShouldSerialize": false,
+      "Graded": false,
       "IdAppointment": "86771793b2074ed0af6c137913d32cad"
+    }
+  },
+  "97c07e7ab12e49a8b6707dbc98ccc14d": {
+    "Id": "a73495ded1b246119701f536d2190eb0",
+    "OcenaLekara": 3,
+    "OcenaOsoblje": 4,
+    "UkupnaOcena": 1,
+    "EvidentAppointment": {
+      "ShouldSerialize": false,
+      "Graded": false,
+      "IdAppointment": "97c07e7ab12e49a8b6707dbc98ccc14d"
+    }
+  },
+  "fb0d5e3e17bd45eeafe325e78bebfb12": {
+    "Id": "1a52740633634212b65d003fbdc35019",
+    "OcenaLekara": 3,
+    "OcenaOsoblje": 4,
+    "UkupnaOcena": 5,
+    "EvidentAppointment": {
+      "ShouldSerialize": false,
+      "Graded": false,
+      "IdAppointment": "fb0d5e3e17bd45eeafe325e78bebfb12"
     }
   }
 }

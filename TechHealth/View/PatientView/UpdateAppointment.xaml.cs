@@ -15,6 +15,11 @@ using TechHealth.Model;
 using TechHealth.Controller;
 using TechHealth.Repository;
 using TechHealth.Core;
+using TechHealth.Exceptions;
+using System.Windows.Forms;
+using MessageBox = System.Windows.Forms.MessageBox;
+using System.Collections.ObjectModel;
+using TechHealth.View.PatientView.View;
 
 namespace TechHealth.View.PatientView
 {
@@ -23,6 +28,7 @@ namespace TechHealth.View.PatientView
     /// </summary>
     public partial class UpdateAppointment : Window
     {
+        public event EventHandler OnRequestClose;
         private Appointment selected;
         private List<Doctor> doctors;
         private Doctor doctor;
@@ -35,6 +41,7 @@ namespace TechHealth.View.PatientView
         public int DoctorIndex { get; set; }
         public DateTime Date { get; set; }
         public string StartDate { get; set; }
+        //private ObservableCollection<Appointment> Apt { get; set; }
 
         public RelayCommand FinishCommand { get; set; }
 
@@ -71,14 +78,24 @@ namespace TechHealth.View.PatientView
             selected.Date = Date;
             selected.StartTime = DateTime.Parse(StartDate);
             selected.Doctor = doctors[CbDoctor.SelectedIndex];
-            AppointmentRepository.Instance.Update(selected);
-            Close();
+            try
+            {
+                AppointmentRepository.Instance.Update(selected);
+                AppointmentView.GetInstance().RefreshView();
+                MessageBox.Show(@"You have successfully changed a selected appointment");
+                Close();
+            }
+            catch (AppointmentConflictException)
+            {
+                MessageBox.Show(@"Patient has already booked an appointment in that period!", @"Appointment exception", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            OnRequestClose?.Invoke(this, new EventArgs());
         }
 
         private void BlackoutDates()
         {
-            CalendarDateRange d1 = new CalendarDateRange(DateTime.MinValue, selected.Date.AddDays(-4));
-            CalendarDateRange d2 = new CalendarDateRange(selected.Date.AddDays(4), DateTime.MaxValue);
+            CalendarDateRange d1 = new CalendarDateRange(DateTime.MinValue, selected.Date.AddDays(-3));
+            CalendarDateRange d2 = new CalendarDateRange(selected.Date.AddDays(3), DateTime.MaxValue);
             Picker.BlackoutDates.Add(d1);
             Picker.BlackoutDates.Add(d2);
         }

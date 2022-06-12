@@ -85,6 +85,8 @@ namespace TechHealth.View.PatientView       //dodati IDappointment
                 Date = Date,
                 Patient = patient,
                 Evident = false,
+                Emergent = false,
+                Graded = false,
                 StartTime = DateTime.Parse(StartDate),
                 IdAppointment = Guid.NewGuid().ToString("N"),
                 Doctor = doctors[CbDoctor.SelectedIndex],
@@ -95,6 +97,7 @@ namespace TechHealth.View.PatientView       //dodati IDappointment
             {
                 appointmentController.Create(appointment);
                 Apt.Add(appointment);
+                
                 //RecordViewModel.GetInstance().Appointments.Add(appointment);
                 MessageBox.Show(@"You have successfully created a new examination");
                 Close();

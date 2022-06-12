@@ -15,6 +15,7 @@ namespace TechHealth.View.PatientView.View
 {
     public partial class AppointmentView : UserControl, INotifyPropertyChanged
     {
+        private static AppointmentView _instance;
         private AppointmentController appController = new AppointmentController();
         private Appointment selected;
         public event PropertyChangedEventHandler PropertyChanged;
@@ -22,7 +23,7 @@ namespace TechHealth.View.PatientView.View
         public RelayCommand UpdateAppointmentCommand { get; set; }
         public RelayCommand DeleteAppointmentCommand { get; set; }
         public RelayCommand SuggestAppointmentCommand { get; set; }
-        private Patient currentPatient;
+        private readonly AppointmentController appointmentController = new AppointmentController();
         public string PatientId { get; set; }
         public Doctor doctor;
 
@@ -38,18 +39,49 @@ namespace TechHealth.View.PatientView.View
                 OnPropertyChanged();
             }
         }
+
         public ObservableCollection<Appointment> Appointment { get; set; }
+
+        public static AppointmentView GetInstance()
+        {
+            return _instance;
+        }
 
         public AppointmentView()
         {
             InitializeComponent();
             DataContext = this;
+            _instance = this;
             Appointment = new ObservableCollection<Appointment>(appController.GetAllNotEvident());
             LoadDoctors();
+            LoadRooms();
             AddAppointmentCommand = new RelayCommand(param => ExecuteAdd());
-            DeleteAppointmentCommand = new RelayCommand(param => ExecuteDelete());
-            UpdateAppointmentCommand = new RelayCommand(param => ExecuteUpdate(selected));
-            SuggestAppointmentCommand = new RelayCommand(param => ExecuteSuggest());
+            DeleteAppointmentCommand = new RelayCommand(param => ExecuteDelete(), param => CanExecute1());
+            UpdateAppointmentCommand = new RelayCommand(param => ExecuteUpdate(selected), param => CanExecute2());
+            SuggestAppointmentCommand = new RelayCommand(param => ExecuteSuggest(), param => CanExecute3());
+        }
+
+        private bool CanExecute1()
+        {
+            return GetSelected != null;
+        }
+
+        private bool CanExecute3()
+        {
+            if (GetSelected == null)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        private bool CanExecute2()
+        {
+            if (GetSelected == null)
+            {
+                return false;
+            }
+            return true;
         }
 
         private void LoadDoctors()
@@ -58,6 +90,21 @@ namespace TechHealth.View.PatientView.View
             {
                 Appointment[i].Doctor = DoctorRepository.Instance.GetDoctorById(Appointment[i].Doctor.Jmbg);
             }
+        }
+
+        private void LoadRooms()
+        {
+            for (int i = 0; i < Appointment.Count; i++)
+            {
+                Appointment[i].Room = RoomRepository.Instance.GetRoombyId(Appointment[i].Room.RoomId);
+            }
+        }
+
+        public void RefreshView()
+        {
+            Appointment.Clear();
+            Appointment = new ObservableCollection<Appointment>(appointmentController.GetAllNotEvident());
+
         }
 
         private void ExecuteDelete()
@@ -74,16 +121,6 @@ namespace TechHealth.View.PatientView.View
                 MessageBox.Show("You have successfully deleted selected appointment");
             }
                 
-        }
-
-        private bool CanExecute()
-        {
-            if (selected == null)
-            {
-                return false;
-            }
-
-            return true;
         }
 
         private void ExecuteAdd()

@@ -23,7 +23,7 @@
   "S5": {
     "RoomTypes": 1,
     "RoomId": "S5",
-    "Floor": 3,
+    "Floor": 2,
     "Availability": true,
     "ShouldSerialize": true
   }

@@ -333,6 +333,11 @@
     <Compile Include="Exceptions\AppointmentRoomConflictException.cs" />
     <Compile Include="Exceptions\AppointmentVacationException.cs" />
     <Compile Include="Exceptions\SpecializationException.cs" />
+    <Compile Include="LanguageResources\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
     </Compile>
@@ -377,6 +382,7 @@
     <Compile Include="Repository\EquipmentRequestRepository.cs" />
     <Compile Include="Repository\GenericRepository.cs" />
     <Compile Include="Repository\GradeRepository.cs" />
+    <Compile Include="Repository\IRepository\HospitalGradeRepository.cs" />
     <Compile Include="Repository\IRepository\IAnamnesisRepository.cs" />
     <Compile Include="Repository\IRepository\IDoctorRepository.cs" />
     <Compile Include="Repository\IRepository\INoteRepository.cs" />
@@ -584,6 +590,7 @@
     <Compile Include="View\PatientView\ViewModel\AppointmentHistoryViewModel.cs" />
     <Compile Include="View\PatientView\ViewModel\MedicalRecordViewModel.cs" />
     <Compile Include="View\PatientView\ViewModel\RateHospitalViewModel.cs" />
+    <Compile Include="View\PatientView\ViewModel\UpdateAppointmentViewModel.cs" />
     <Compile Include="View\PatientView\View\AppointmentHistory.xaml.cs">
       <DependentUpon>AppointmentHistory.xaml</DependentUpon>
     </Compile>
@@ -599,9 +606,6 @@
     <Compile Include="View\PatientView\ViewModel\AppointmentViewModel.cs" />
     <Compile Include="View\PatientView\ViewModel\HomeViewModelP.cs" />
     <Compile Include="View\PatientView\ViewModel\MainViewModel.cs" />
-    <Compile Include="View\PatientView\View\HomeViewP.xaml.cs">
-      <DependentUpon>HomeViewP.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\PatientView\View\MedicalRecordView.xaml.cs">
       <DependentUpon>MedicalRecordView.xaml</DependentUpon>
     </Compile>
@@ -717,6 +721,11 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EmbeddedResource Include="LanguageResources\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LanguageResources\Resources.sr-LATN.resx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -1033,10 +1042,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\PatientView\UpdateAppointment.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\PatientView\View\HomeViewP.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

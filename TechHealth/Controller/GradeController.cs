@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TechHealth.Model;
+using TechHealth.Repository;
 using TechHealth.Service;
 
 namespace TechHealth.Controller
@@ -50,5 +51,6 @@ namespace TechHealth.Controller
         {
             return gradeService.GetGradesNum(gradeValue);
         }
+
     }
 }

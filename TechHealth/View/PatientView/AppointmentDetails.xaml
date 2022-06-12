@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TechHealth.View.PatientView"
         mc:Ignorable="d" 
-        Title="Details" Height="550" Width="750"
+        Title="Details" Height="550" Width="750" WindowStartupLocation="CenterScreen"
         >
     <Window.Resources>
         <ResourceDictionary>
@@ -17,7 +17,7 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
-    <Border Background="BlanchedAlmond" >
+    <Border Background="Gray"  >
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="60"/>
@@ -25,13 +25,13 @@
                 <RowDefinition/>
                 <RowDefinition Height="43.4"/>
             </Grid.RowDefinitions>
-            <Label Grid.Row="0" Content="Appointment Details" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="32" Margin="0,5,0,1" Foreground="Black"/>
+            <Label Grid.Row="0" Content="Appointment Details" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" Margin="0,5,0,1" Foreground="White" FontWeight="Bold"/>
             <StackPanel Grid.Row="1" HorizontalAlignment="Left" Margin="26.578,10,0,10" >
-                <Label Content="{Binding DoctorLabel}"  HorizontalAlignment="Left" VerticalAlignment="Center" Padding="5,5,5,5" FontSize="16" FontStyle="Italic" Foreground="Black"/>
-                <Label Content="{Binding PateintLabel}" x:Name="LabelDate1" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="5,5,5,5" FontStyle="Italic" FontSize="16" Foreground="Black"/>
-                <Label Content="{Binding RoomLabel}" x:Name="LabelPatientLbo1" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="5,5,5,5" FontStyle="Italic" FontSize="16" Foreground="Black"/>
+                <Label Content="{Binding DoctorLabel}"  HorizontalAlignment="Left" VerticalAlignment="Center" Padding="5,5,5,5" FontSize="14" FontStyle="Italic" Foreground="White"/>
+                <Label Content="{Binding PateintLabel}" x:Name="LabelDate1" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="5,5,5,5" FontStyle="Italic" FontSize="14" Foreground="White"/>
+                <Label Content="{Binding RoomLabel}" x:Name="LabelPatientLbo1" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="5,5,5,5" FontStyle="Italic" FontSize="14" Foreground="White"/>
                 <Label Content="{Binding DateLabel}" x:Name="LabelPatientDateOfBirth1" HorizontalAlignment="Left" FontStyle="Italic"
-                       VerticalAlignment="Center" FontSize="16" Padding="5,5,5,5" Foreground="Black"/>
+                       VerticalAlignment="Center" FontSize="14" Padding="5,5,5,5" Foreground="White"/>
             </StackPanel>
             <GridSplitter HorizontalAlignment="Left" Height="170" Margin="225.747,0,0,0" Grid.Row="1" VerticalAlignment="Top" Width="0" Grid.RowSpan="2"/>
             <Grid Grid.RowSpan="4">
@@ -63,20 +63,20 @@
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
                     <Label Content="Main Symptom: *" HorizontalAlignment="Center" Margin="0,33,56.2,24.6" Grid.Column="0" Grid.Row="0"
-                           VerticalAlignment="Center" Height="24" Width="99" Foreground="Black"/>
-                    <TextBox TextWrapping="Wrap" Foreground="Black" Name="Txt1" Grid.Column="1" Grid.Row="0" Margin="0,0,0.2,2.6"
+                           VerticalAlignment="Center" Height="24" Width="99" Foreground="White"/>
+                    <TextBox TextWrapping="Wrap" Foreground="White" Name="Txt1" Grid.Column="1" Grid.Row="0" Margin="0,0,0.2,2.6"
                              VerticalContentAlignment="Center" Padding="5,0,10,0" FontSize="14" ToolTip="This field is requered" IsReadOnly="True"/>
 
-                    <Label Content="Other Symptoms: *" HorizontalAlignment="Left" Margin="0,31.4,0,26.2" Grid.Column="0" Foreground="Black"
+                    <Label Content="Other Symptoms: *" HorizontalAlignment="Left" Margin="0,31.4,0,26.2" Grid.Column="0" Foreground="White"
                            Grid.Row="1" VerticalAlignment="Center" Height="24" Width="116" RenderTransformOrigin="0.675,0.7"/>
-                    <TextBox TextWrapping="Wrap" Foreground="Black" Name="Txt2" Grid.Column="1" Margin="0,10.4,0.2,0.2"
+                    <TextBox TextWrapping="Wrap" Foreground="White" Name="Txt2" Grid.Column="1" Margin="0,10.4,0.2,0.2"
                              VerticalContentAlignment="Center" Padding="5,0,10,0" FontSize="14" ToolTip="This field is requered" IsReadOnly="True" Grid.Row="1"/>
 
-                    <Label Content="General Anamnesis: *" HorizontalAlignment="Left" Margin="0,38.8,0,18.8" Grid.Column="0" Grid.Row="2" Foreground="Black"
+                    <Label Content="General Anamnesis: *" HorizontalAlignment="Left" Margin="0,38.8,0,18.8" Grid.Column="0" Grid.Row="2" Foreground="White"
                            VerticalAlignment="Center" Height="24" Width="126"/>
-                    <TextBox TextWrapping="Wrap" Foreground="Black"  Name="Txt3" Grid.Column="1" Grid.Row="2" Margin="0,9.8,0.2,-0.2"
+                    <TextBox TextWrapping="Wrap" Foreground="White"  Name="Txt3" Grid.Column="1" Grid.Row="2" Margin="0,9.8,0.2,-0.2"
                              VerticalContentAlignment="Center" Padding="5,0,10,0" FontSize="14"   ToolTip="This fieled is requered" IsReadOnly="True"/>
-                    <Border Grid.Row="0" Grid.RowSpan="3" BorderThickness="0,0,1,0" BorderBrush="Red" Margin="-27,0,28.4,-1.4"/>
+                    <Border Grid.Row="0" Grid.RowSpan="3" BorderThickness="0,0,1,0" BorderBrush="Firebrick" Margin="-27,0,28.4,-1.4"/>
 
                 </Grid>
                 <Grid Grid.ColumnSpan="2" Margin="227,0,-120.6,0" >
@@ -99,72 +99,72 @@
                         <ColumnDefinition/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
-                    <Label Content="CNS: "   Grid.Column="0" Grid.Row="0" VerticalAlignment="Center" Height="24" Margin="10,2,52.6,14" Grid.RowSpan="2" Foreground="Black"/>
-                    <TextBox TextWrapping="Wrap" Foreground="Black" Name="Txt4" Grid.Column="1" Grid.Row="0" Margin="10.6,0,10,3"
+                    <Label Content="CNS: "   Grid.Column="0" Grid.Row="0" VerticalAlignment="Center" Height="24" Margin="10,2,52.6,14" Grid.RowSpan="2" Foreground="White"/>
+                    <TextBox TextWrapping="Wrap" Foreground="White" Name="Txt4" Grid.Column="1" Grid.Row="0" Margin="10.6,0,10,3"
                              VerticalContentAlignment="Center" Padding="5,0,10,0" FontSize="14" IsReadOnly="True" />
 
-                    <Label Content="Eye:" HorizontalAlignment="Left" Margin="10,19,0,17" Grid.Column="0" VerticalAlignment="Center" Foreground="Black"
+                    <Label Content="Eye:" HorizontalAlignment="Left" Margin="10,19,0,17" Grid.Column="0" VerticalAlignment="Center" Foreground="White"
                            Grid.ColumnSpan="2" Height="24" Width="132" Grid.RowSpan="3"/>
-                    <TextBox TextWrapping="Wrap" Foreground="Black" Name="txt5" Grid.Column="1" Grid.Row="1" Margin="10.6,0,10,0"
+                    <TextBox TextWrapping="Wrap" Foreground="White" Name="txt5" Grid.Column="1" Grid.Row="1" Margin="10.6,0,10,0"
                              VerticalContentAlignment="Center" Padding="5,0,10,0" FontSize="14" IsReadOnly="True" />
 
-                    <Label Content="Neck:" HorizontalAlignment="Left" Margin="10,0,0,13" Grid.Column="0" Grid.Row="2" Foreground="Black"
+                    <Label Content="Neck:" HorizontalAlignment="Left" Margin="10,0,0,13" Grid.Column="0" Grid.Row="2" Foreground="White"
                            VerticalAlignment="Center" Height="27" Width="141" Grid.RowSpan="2"/>
-                    <TextBox TextWrapping="Wrap" Foreground="Black" Name="txt6" Grid.Column="1" Grid.Row="2" Margin="10.6,0,10,1"
+                    <TextBox TextWrapping="Wrap" Foreground="White" Name="txt6" Grid.Column="1" Grid.Row="2" Margin="10.6,0,10,1"
                              VerticalContentAlignment="Center" Padding="5,0,10,0" FontSize="14" IsReadOnly="True"/>
 
-                    <Label Content="MSS:" HorizontalAlignment="Left" Margin="10,0,0,17.2" Grid.Column="0" Grid.Row="3" Foreground="Black"
+                    <Label Content="MSS:" HorizontalAlignment="Left" Margin="10,0,0,17.2" Grid.Column="0" Grid.Row="3" Foreground="White"
                            VerticalAlignment="Center" Grid.ColumnSpan="2" Height="24" Width="138" Grid.RowSpan="2"/>
-                    <TextBox TextWrapping="Wrap" Foreground="Black" Name="txt7" Grid.Column="1" Grid.Row="3"
+                    <TextBox TextWrapping="Wrap" Foreground="White" Name="txt7" Grid.Column="1" Grid.Row="3"
                              Margin="11.6,0,10,2" VerticalContentAlignment="Center" Padding="5,0,10,0" FontSize="14"  IsReadOnly="True"/>
 
-                    <Label Content="Skin:" HorizontalAlignment="Left" Margin="10,20,0,12.8" Grid.Column="0" Foreground="Black"
+                    <Label Content="Skin:" HorizontalAlignment="Left" Margin="10,20,0,12.8" Grid.Column="0" Foreground="White"
                            Grid.Row="3" VerticalAlignment="Center" Grid.ColumnSpan="2" Height="24" Width="136" Grid.RowSpan="3"/>
-                    <TextBox TextWrapping="Wrap" Foreground="Black" Name="txt8" Grid.Column="1" Grid.Row="4"
+                    <TextBox TextWrapping="Wrap" Foreground="White" Name="txt8" Grid.Column="1" Grid.Row="4"
                              Margin="11.6,3,10,0.8" VerticalContentAlignment="Center" Padding="5,0,10,0"
                              FontSize="14" IsReadOnly="True"/>
 
-                    <Label Content="Ear:" HorizontalAlignment="Left" Margin="10,20.6,0,17.4" Grid.Column="0" Foreground="Black"
+                    <Label Content="Ear:" HorizontalAlignment="Left" Margin="10,20.6,0,17.4" Grid.Column="0" Foreground="White"
                            Grid.Row="4" VerticalAlignment="Center" Height="24" Width="130" Grid.RowSpan="4"/>
-                    <TextBox TextWrapping="Wrap" Foreground="Black" Name="txt9" Grid.Column="1" Grid.Row="5"
+                    <TextBox TextWrapping="Wrap" Foreground="White" Name="txt9" Grid.Column="1" Grid.Row="5"
                              Margin="11.6,0.2,10,1.6" VerticalContentAlignment="Center" Padding="5,0,10,0"
                              FontSize="14" IsReadOnly="True" Grid.RowSpan="2"/>
 
-                    <Label Content="CUS:" HorizontalAlignment="Left" Margin="10,3.2,0,18.8" Grid.Column="0" Grid.Row="6" Foreground="Black"
+                    <Label Content="CUS:" HorizontalAlignment="Left" Margin="10,3.2,0,18.8" Grid.Column="0" Grid.Row="6" Foreground="White"
                            VerticalAlignment="Center" Grid.ColumnSpan="2" Height="24" Width="136" Grid.RowSpan="3"/>
-                    <TextBox TextWrapping="Wrap" Foreground="Black" Name="txt10" Grid.Row="6"
+                    <TextBox TextWrapping="Wrap" Foreground="White" Name="txt10" Grid.Row="6"
                              Grid.Column="1" Margin="11.6,3.2,10,1.4" VerticalContentAlignment="Center" Padding="5,0,10,0"
                              FontSize="14"  IsReadOnly="True" Grid.RowSpan="2"/>
 
-                    <Label Content="Infectionus:" HorizontalAlignment="Left" Margin="10,19.4,0,18.6" Grid.Column="0" Foreground="Black"
+                    <Label Content="Infectionus:" HorizontalAlignment="Left" Margin="10,19.4,0,18.6" Grid.Column="0" Foreground="White"
                            Grid.Row="7" VerticalAlignment="Center" Grid.ColumnSpan="2" Height="24" Width="172" Grid.RowSpan="3"/>
-                    <TextBox TextWrapping="Wrap" Foreground="Black" Name="txt11" Grid.Column="1"
+                    <TextBox TextWrapping="Wrap" Foreground="White" Name="txt11" Grid.Column="1"
                              Grid.Row="8" Margin="11.6,3.6,10,0" Height="18" VerticalContentAlignment="Center"
                              Padding="5,0,10,0" FontSize="14" VerticalAlignment="Top" IsReadOnly="True" Grid.RowSpan="2"/>
 
-                    <Label Content="UGS:" HorizontalAlignment="Left" Margin="10,19.6,0,18.4" Grid.Column="0" Foreground="Black"
+                    <Label Content="UGS:" HorizontalAlignment="Left" Margin="10,19.6,0,18.4" Grid.Column="0" Foreground="White"
                            Grid.Row="8" VerticalAlignment="Center" Grid.ColumnSpan="2" Height="24" Width="137" Grid.RowSpan="3"/>
-                    <TextBox TextWrapping="Wrap" Foreground="Black" Name="txt12" Grid.Column="1" Grid.Row="8"
+                    <TextBox TextWrapping="Wrap" Foreground="White" Name="txt12" Grid.Column="1" Grid.Row="8"
                              Margin="11.6,19.6,10,2.2" VerticalContentAlignment="Center" Padding="5,0,10,0" FontSize="14"
                              IsReadOnly="True" Grid.RowSpan="2"/>
 
-                    <Label Content="Respiratory:" HorizontalAlignment="Left" Margin="8,19.2,0,19.2" Grid.Column="0" Grid.Row="9" Foreground="Black"
+                    <Label Content="Respiratory:" HorizontalAlignment="Left" Margin="8,19.2,0,19.2" Grid.Column="0" Grid.Row="9" Foreground="White"
                            VerticalAlignment="Center" Grid.ColumnSpan="2" Height="24" Width="176" Grid.RowSpan="3"/>
 
-                    <TextBox TextWrapping="Wrap" Foreground="Black" Name="txt13" Grid.Column="1" Grid.Row="10" Margin="11.6,2.8,10,2"
+                    <TextBox TextWrapping="Wrap" Foreground="White" Name="txt13" Grid.Column="1" Grid.Row="10" Margin="11.6,2.8,10,2"
                              VerticalContentAlignment="Center" Padding="5,0,10,0" FontSize="14"  IsReadOnly="True"/>
-                    <Label Content="Mouth:" HorizontalAlignment="Left" Margin="10,19.4,0,19" Grid.Column="0" Grid.Row="10" VerticalAlignment="Center" Foreground="Black"
+                    <Label Content="Mouth:" HorizontalAlignment="Left" Margin="10,19.4,0,19" Grid.Column="0" Grid.Row="10" VerticalAlignment="Center" Foreground="White"
                            Grid.ColumnSpan="2" Height="24" Width="150" Grid.RowSpan="3"/>
-                    <TextBox TextWrapping="Wrap" Foreground="Black"  Name="txt14" Grid.Column="1" Grid.Row="11" Margin="11.6,0,10,2.8" VerticalContentAlignment="Center"
+                    <TextBox TextWrapping="Wrap" Foreground="White"  Name="txt14" Grid.Column="1" Grid.Row="11" Margin="11.6,0,10,2.8" VerticalContentAlignment="Center"
                              Padding="5,0,10,0" FontSize="14"  IsReadOnly="True"/>
-                    <Label  Content="GI:" HorizontalAlignment="Left" Margin="10,19.6,0,-2" Grid.Column="0" Grid.Row="11" VerticalAlignment="Center" Height="24" Width="126" Foreground="Black"
+                    <Label  Content="GI:" HorizontalAlignment="Left" Margin="10,19.6,0,-2" Grid.Column="0" Grid.Row="11" VerticalAlignment="Center" Height="24" Width="126" Foreground="White"
                             Grid.RowSpan="2"/>
-                    <TextBox TextWrapping="Wrap" Foreground="Black" Name="txt15" Grid.Column="1" Grid.Row="12" Margin="11.6,0.2,10,2.6" VerticalContentAlignment="Center"
+                    <TextBox TextWrapping="Wrap" Foreground="White" Name="txt15" Grid.Column="1" Grid.Row="12" Margin="11.6,0.2,10,2.6" VerticalContentAlignment="Center"
                              Padding="5,0,10,0" FontSize="14" IsReadOnly="True"/>
-                    <Border Grid.Row="0" Grid.RowSpan="13" BorderThickness="0,0,1,0" BorderBrush="Red" Margin="-27,0,28.4,-1.4"/>
+                    <Border Grid.Row="0" Grid.RowSpan="13" BorderThickness="0,0,1,0" BorderBrush="Firebrick" Margin="-27,0,28.4,-1.4"/>
                 </Grid>
             </Grid>
-            <Button Grid.Row="3" Content="Close" Background="Red" HorizontalAlignment="Left" VerticalAlignment="Stretch" Width="100" Margin="315,8.4,0,2.8" Click="ButtonBase_OnClick"/>
+            <Button Grid.Row="3" Content="Close" Background="#FFEA9292" HorizontalAlignment="Left" VerticalAlignment="Stretch" Width="93" Height="30" Margin="315,8.4,0,2.8" Click="ButtonBase_OnClick"/>
         </Grid>
     </Border>
 </Window>

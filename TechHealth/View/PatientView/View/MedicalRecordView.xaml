@@ -18,33 +18,34 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <Label Grid.Row="0" Grid.Column="0"  Content="Medical record "  VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="32" Foreground="PaleVioletRed" Grid.ColumnSpan="2" Margin="0,27,10,20" />
-        <Label Grid.Row="0"  Content="{Binding LabelFullName}"  VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="18" Foreground="White" Margin="98,10,0,45" Height="45" Width="167"/>
-        <Rectangle Grid.Column="0" Grid.Row="1" RadiusX="30" RadiusY="30" Fill="BlanchedAlmond" Margin="0,0,77,10"/>
+        <Label Grid.Row="0" Grid.Column="0"  Content="Medical record "  VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18" FontWeight="Bold" Foreground="White" Margin="190,14,10,52" HorizontalContentAlignment="Center" Width="200" />
+        <Rectangle Grid.Column="0" Grid.Row="1" RadiusX="30" RadiusY="30" Fill="Gray" Margin="0,0,77,10"/>
         <Grid Grid.Column="0"  Grid.Row="1">
             <StackPanel    Margin="20,0,0,0" >
-                <TextBlock Text="Personal data" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center"   Foreground="PaleVioletRed" Margin="10,10,90,10"/>
-                <Label Content="{Binding LabelName}"  HorizontalAlignment="Left" FontSize="16" Foreground="Black" />
-                <Label Content="{Binding LabelSurName}"  HorizontalAlignment="Left" FontSize="16" Foreground="Black" />
-                <Label Content="{Binding LabelId}"  HorizontalAlignment="Left" FontSize="16" Foreground="Black" />
-                <Label Content="{Binding LabelGender}"  HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" Foreground="Black" />
-                <Label Content="{Binding LabelBirth}"  HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" Foreground="Black" />
-                <Label Content="{Binding LabelPhone}" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" Foreground="Black" />
-                <Label Content="{Binding LabelEmail}" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" Foreground="Black" />
-                <Label Content="{Binding LabelAddress}" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" Foreground="Black" Margin="-70,10,10,50"/>
+                <TextBlock Text="Personal data" FontSize="18" VerticalAlignment="Center" Padding="10, 5, 0, 0" HorizontalAlignment="Left"   Foreground="White" Margin="97,10,0,10" Width="130" Height="40"/>
+                <Label Content="{Binding LabelName}"  HorizontalAlignment="Left" FontSize="14" Foreground="White" FontWeight="Bold" />
+                <Label Content="{Binding LabelSurName}"  HorizontalAlignment="Left" FontSize="14" Foreground="White" FontWeight="Bold" />
+                <Label Content="{Binding LabelId}"  HorizontalAlignment="Left" FontSize="14" Foreground="White" FontWeight="Bold" />
+                <Label Content="{Binding LabelGender}"  HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" Foreground="White" FontWeight="Bold" />
+                <Label Content="{Binding LabelBirth}"  HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" Foreground="White" FontWeight="Bold" />
+                <Label Content="{Binding LabelPhone}" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" Foreground="White" FontWeight="Bold" />
+                <Label Content="{Binding LabelEmail}" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" Foreground="White" FontWeight="Bold" />
+                <Label Content="{Binding LabelAddress}" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" Foreground="White" FontWeight="Bold" Margin="-70,10,10,50"/>
             </StackPanel>
         </Grid>
-        <Rectangle Grid.Row="1" RadiusX="30" RadiusY="30" Fill="BlanchedAlmond" Margin="328,0,10,10" Grid.ColumnSpan="2" />
+        <Rectangle Grid.Row="1" RadiusX="30" RadiusY="30" Fill="Gray" Margin="328,0,10,10" Grid.ColumnSpan="2" />
         <Grid Grid.Column="1"  Grid.Row="1">
-            <StackPanel    Margin="10,0" >
-                <TextBlock Text="Medical data" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10,10,10,10"  Foreground="PaleVioletRed" Width="141" />
-                <Label Content="{Binding LabelWeight}"  HorizontalAlignment="Left" FontSize="16" Foreground="Black" Margin="-70,10,10,10"/>
-                <Label Content="{Binding LabelHeight}"  HorizontalAlignment="Left" FontSize="16" Foreground="Black" Margin="-70,10,10,10"/>
-                <Label Content="{Binding LabelBloodType}"  HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" Foreground="Black" Margin="-70,10,10,10"/>
-                <Label Content="{Binding LabelHronical}"  HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" Foreground="Black" Margin="-70,10,10,10"/>
-                <Label Content="{Binding LabelAllergens}" HorizontalAlignment="Left"  VerticalAlignment="Center" FontSize="16" Foreground="Black" Margin="-70,10,10,10"/>
+            <StackPanel    Margin="0,0,10,0" >
+                <TextBlock Text="Medical data" FontSize="18" VerticalAlignment="Center"
+                           HorizontalAlignment="Center" Margin="18,10" Padding="10,5,0,0"  Foreground="White"
+                           Width="144" Height="40"
+                           />
+                <Label Content="{Binding LabelWeight}"  HorizontalAlignment="Left" FontSize="14" Foreground="White" FontWeight="Bold" Margin="-70,10,10,10"/>
+                <Label Content="{Binding LabelHeight}"  HorizontalAlignment="Left" FontSize="14" Foreground="White" FontWeight="Bold" Margin="-70,10,10,10"/>
+                <Label Content="{Binding LabelBloodType}"  HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" Foreground="White" FontWeight="Bold" Margin="-70,10,10,10"/>
+                <Label Content="{Binding LabelHronical}"  HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" Foreground="White" FontWeight="Bold" Margin="-70,10,10,10"/>
+                <Label Content="{Binding LabelAllergens}" HorizontalAlignment="Left"  VerticalAlignment="Center" FontSize="14" Foreground="White" FontWeight="Bold" Margin="-70,10,10,10"/>
             </StackPanel>
         </Grid>
-        <Label Content="Patient:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="18" Width="88" Height="45"/>
     </Grid>
 </UserControl>

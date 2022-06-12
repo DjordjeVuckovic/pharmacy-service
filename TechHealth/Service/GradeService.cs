@@ -67,5 +67,17 @@ namespace TechHealth.Service
             }
             return gradeValueCount;
         }
+
+        /*public bool IsGraded()
+        {
+            foreach (var g in GradeRepository.Instance.GetAllToList())
+            {
+                if (g.Id.Equals(app.Grade.Id))
+                {
+                    return false;
+                }
+            }
+            return true;
+        }*/
     }
 }

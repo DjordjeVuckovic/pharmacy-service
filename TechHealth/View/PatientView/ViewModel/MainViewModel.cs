@@ -59,7 +59,7 @@ namespace TechHealth.View.PatientView.ViewModel
             RateHospitalVm = new RateHospitalViewModel();
             MedRecVm = new MedicalRecordViewModel();
 
-            CurrentView = HomeVm;
+            CurrentView = AppointmentVm;
 
             HomeViewCommand = new RelayCommand(o =>
             {

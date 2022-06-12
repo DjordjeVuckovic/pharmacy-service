@@ -31,8 +31,8 @@
                     VerticalAlignment="Top"
                     Width="130" Height="40"
                     Background="#FFC0C0C0"
-                    Foreground="BlanchedAlmond"
-                    FontSize="14" x:Name="Picker"
+                    Foreground="White"
+                    FontSize="14" x:Name="Picker" 
                     Grid.Column="1">
             <DatePicker.SelectedDate>
                 <Binding Path="Date" Mode="OneWayToSource"  
@@ -48,13 +48,13 @@
                   VerticalAlignment="Top" Width="130" Height="40"
                   x:Name="CbDoctor"
                   Grid.Column="1"
-                  DisplayMemberPath="FullName"  SelectedItem="{Binding Path=Doctor, Mode=OneWayToSource}"
+                  DisplayMemberPath="FullName"  SelectedItem="{Binding Path=Doctor, Mode=OneWayToSource}" 
                   />
         <Button Content="Confirm" HorizontalAlignment="Left"
                 Margin="47,507,0,0" VerticalAlignment="Top"
                 FontSize="16" FontWeight="Normal" Height="30"
                 Width="95" RenderTransformOrigin="-0.291,0.467"
-                Background="#FF42C130" />
+                Background="DarkGray" Command="{Binding FinishCommand}" />
         <Button Content="Close" HorizontalAlignment="Left"
                 Margin="76,507,0,0" VerticalAlignment="Top"
                 Width="93" Height="30" FontSize="16"

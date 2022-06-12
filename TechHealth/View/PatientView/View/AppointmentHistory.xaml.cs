@@ -32,9 +32,11 @@ namespace TechHealth.View.PatientView.View
         private Patient patient;
         public Appointment selected;
         public AppointmentController appController = new AppointmentController();
+        public GradeController gradeController = new GradeController();
         public event PropertyChangedEventHandler PropertyChanged;
         public RelayCommand GradeAppointmentCommand { get; set; }
         public RelayCommand DetailsCommand { get; set; }
+        public RelayCommand NoteCommand { get; set; }
         
         public Appointment GetSelected
         {
@@ -53,23 +55,39 @@ namespace TechHealth.View.PatientView.View
             DataContext = this;
             Past = new ObservableCollection<Appointment>(appController.GetAllEvident());
             LoadDoctors();
-            GradeAppointmentCommand = new RelayCommand(param => ExecuteGrade());
-            //DetailsCommand = new RelayCommand(param => ExecuteDetail());
+            GradeAppointmentCommand = new RelayCommand(param => ExecuteGrade(), param => CanExecuteGrade());
+            DetailsCommand = new RelayCommand(param => ExecuteDetail(), param => CanExecuteDetails());
+            NoteCommand = new RelayCommand(param => ExecuteNote(), param => CanExecuteNote());
+        }
+
+        private bool CanExecuteNote()
+        {
+            return selected != null;
+        }
+
+        private void ExecuteNote()
+        {
+            new Notes(GetSelected).ShowDialog();
+        }
+
+        private bool CanExecuteDetails()
+        {
+            return selected != null;
         }
 
         private void ExecuteDetail()
         {
-            throw new NotImplementedException();
+            new AppointmentDetails(GetSelected).ShowDialog();
         }
 
-        /*private bool CanExecuteGrade()
+        private bool CanExecuteGrade()
         {
-            if (selected == null || selected.Graded)
+            if (selected == null || selected.Graded == true) //|| gradeController.IsGraded(GetSelected))
             {
                 return false;
             }
             return true;
-        }*/
+        }
 
         private void ExecuteGrade()
         {
@@ -84,14 +102,6 @@ namespace TechHealth.View.PatientView.View
             }
         }
 
-        /*private void Rate_Click(object sender, RoutedEventArgs e)
-        {
-            new RateAppointment(selected).ShowDialog();
-        }*/
-
-/*        private void Details_Click(object sender, RoutedEventArgs e)
-        {
-        }*/
 
         [NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)

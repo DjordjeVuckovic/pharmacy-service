@@ -12,7 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TechHealth.Core;
 using TechHealth.Model;
+using TechHealth.Repository.IRepository;
 
 namespace TechHealth.View.PatientView.View
 {
@@ -21,14 +23,22 @@ namespace TechHealth.View.PatientView.View
     /// </summary>
     public partial class RateHospital : UserControl
     {
+        public RelayCommand ConfirmCommand { get; set; }
+        public Patient patient;
         //public HospitalGrade AnketaBolnica { get; set; }
         public RateHospital()
         {
             InitializeComponent();
-            
+            DataContext = this;
+            ConfirmCommand = new RelayCommand(param => Executed());
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        /*private bool CanExecute()
+        {
+            
+        }*/
+
+        private void Executed()
         {
             HospitalGrade anketaBolnica = new HospitalGrade
             {
@@ -36,8 +46,11 @@ namespace TechHealth.View.PatientView.View
                 OcenaCistoca = BasicRatingBarClean.Value,
                 OcenaDostupnost = BasicRatingBarAvailable.Value,
                 OcenaLakoca = BasicRatingBarEasy.Value,
-                OcenaOprema =  BasicRatingBarEq.Value
+                OcenaOprema = BasicRatingBarEq.Value
             };
+            //HospitalGradeRepository.Instance.Create(anketaBolnica);
+            MessageBox.Show(@"Thank you for your review!");
         }
+
     }
 }

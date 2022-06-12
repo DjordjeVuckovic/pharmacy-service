@@ -5,25 +5,25 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:TechHealth.View.PatientView.View"
              mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="600">
+      d:DesignHeight="500" d:DesignWidth="600">
 
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
             <RowDefinition Height="10"/>
-            <RowDefinition Height="283*"/>
-            <RowDefinition Height="57*"/>
+            <RowDefinition Height="381*"/>
+            <RowDefinition Height="59*"/>
             <RowDefinition Height="0"/>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
             <TextBlock Text="Appointment History"
                    Foreground="White"
-                   FontSize="28"
+                   FontSize="18" FontWeight="Bold"
                    HorizontalAlignment="Center"
                    Margin="0,5,0,0"/>
         </Grid>
 
-        
+
         <DataGrid x:Name="pastAppointments"
                   FontSize="14" Grid.Row="2" Margin="10,0,10,10"
                   ItemsSource="{Binding Past, UpdateSourceTrigger=PropertyChanged}"
@@ -44,8 +44,9 @@
                                     CanUserResize="False"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Content="Rate" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="3" VerticalAlignment="Top" Width="107" Height="45"/>
-        <Button Content="Details" HorizontalAlignment="Left" Margin="483,10,0,0" Grid.Row="3" VerticalAlignment="Top" Width="107" Height="45" Click="Button_Click_1"/>
-        <Button Content="Note" HorizontalAlignment="Left" Margin="239,10,0,0" Grid.Row="3" VerticalAlignment="Top" Width="107" Height="45" Click="Button_Click"/>
+        <Button Content="Rate" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="3"
+                VerticalAlignment="Top" Width="120" Height="33" Foreground="White" Command="{Binding GradeAppointmentCommand}"/>
+        <Button Content="Details" HorizontalAlignment="Left" Margin="456,10,0,0" Grid.Row="3" VerticalAlignment="Top" Width="120" Height="33" Command="{Binding DetailsCommand}" Foreground="White"/>
+        <Button Content="Note" HorizontalAlignment="Left" Margin="239,10,0,0" Grid.Row="3" VerticalAlignment="Top" Width="120" Height="33" Command="{Binding NoteCommand}" Foreground="White"/>
     </Grid>
 </UserControl>

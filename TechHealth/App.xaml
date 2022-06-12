@@ -118,9 +118,6 @@
                 <vieW:SurveyView/>
             </DataTemplate>
             <!--patient data template-->
-            <DataTemplate DataType="{x:Type viewModelP:HomeViewModelP}">
-                <viewP:HomeViewP/>
-            </DataTemplate>
             <DataTemplate DataType="{x:Type viewModelP:AppointmentViewModel}">
                 <viewP:AppointmentView/>
             </DataTemplate>

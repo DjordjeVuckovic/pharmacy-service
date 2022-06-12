@@ -19,6 +19,7 @@ namespace TechHealth.Model
       private Patient patient;
       private AppointmentType appointmentType;
       private Doctor doctor;
+        private bool graded;
       private bool evident;
       private DateTime startTime;
       private DateTime finishTime;
@@ -33,7 +34,8 @@ namespace TechHealth.Model
          this.patient = patient;
          this.appointmentType = appointmentType;
          this.doctor = doctor;
-         this.evident = false;
+         evident = false;
+            graded = false;
          this.startTime = startTime;
          this.finishTime = finishTime;
          ShouldSerialize = true;
@@ -69,8 +71,13 @@ namespace TechHealth.Model
          get => emergent;
          set => emergent = value;
       }
+        public bool Graded
+        {
+            get => graded;
+            set => graded = value;
+        }
 
-      public string IdAppointment{
+        public string IdAppointment{
          get => idAppointment;
          set => idAppointment = value;
       }

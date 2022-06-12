@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using TechHealth.Controller;
 using TechHealth.Model;
 using TechHealth.Repository;
 
@@ -23,6 +24,7 @@ namespace TechHealth.View.PatientView
     {
         public string DoctorName { get; set; }
         public AppointmentGrade AnketaLekara { get; set; }
+        private GradeController gradeController = new GradeController();
 
         public RateAppointment(Appointment termin)
         {
@@ -40,8 +42,10 @@ namespace TechHealth.View.PatientView
             AnketaLekara.Id = Guid.NewGuid().ToString("N"); //foreach za id 
             AnketaLekara.OcenaLekara = BasicRatingBar.Value;
             AnketaLekara.OcenaOsoblje = BasicRatingBarStaff.Value;
-            AnketaLekara.UkupnaOcena = BasicRatingBarTotal.Value;     
-            GradeRepository.Instance.Create(AnketaLekara);
+            AnketaLekara.UkupnaOcena = BasicRatingBarTotal.Value;
+            AnketaLekara.EvidentAppointment.Graded = true;
+            gradeController.Create(AnketaLekara);
+            MessageBox.Show(@"You have successfully graded selected appointment!");
             //AnketaLekara.EvidentAppointment.Graded = true;
             Close();
         }
