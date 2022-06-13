@@ -63,7 +63,7 @@ namespace TechHealth.View.ManagerView.VieW
             catch (Exception)
             {
 
-                MessageBox.Show("Please enter a number for amount moving!");
+                MessageBox.Show("Please enter a valid amount!");
                 return;
             }            
             string date = DpDateTime.Text;
@@ -75,7 +75,7 @@ namespace TechHealth.View.ManagerView.VieW
             catch (Exception)
             {
 
-                MessageBox.Show("Invalid date!");
+                MessageBox.Show("Invalid date or time!");
                 return;
             }
             dto.ReallocationID = Guid.NewGuid().ToString("N");

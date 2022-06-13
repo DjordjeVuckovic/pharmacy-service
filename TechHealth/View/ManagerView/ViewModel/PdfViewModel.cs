@@ -95,11 +95,13 @@ namespace TechHealth.View.ManagerView.ViewModel
             surveys = CheckDate();
             StartD = StartDate.ToString();
             EndD = EndDate.ToString();
+            new PdfToPrint(surveys, StartD, EndD);
         }
 
         private void ExecuteDownload()
         {
-            new PrintDialog().PrintVisual(new PdfView().Report, "PdfView");
+            //new PrintDialog().PrintVisual(new PdfView().Report, "PdfView");
+            new PrintDialog().PrintVisual(new PdfToPrint(surveys, StartD, EndD).Report, "PdfToPrint");
         }
 
         private BindingList<AppointmentGrade> CheckDate()
