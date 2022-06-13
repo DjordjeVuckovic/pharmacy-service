@@ -41,7 +41,7 @@
 
             <StackPanel Grid.Row="1">
 
-                <RadioButton Content="Appointment reservation" x:Name="Home" IsChecked="True"
+                <RadioButton Content="Appointment reservation" x:Name="Home" IsChecked="True" 
                              Height="50"
                              Foreground="White"
                              FontSize="16"
@@ -78,14 +78,6 @@
                             Margin="10"
                             Content="{Binding CurrentView}"/>
 
-            <Button x:Name="ButtonLanguage" Content="SR" Foreground="White" Height="30" Margin="0,411,210,0" HorizontalAlignment="Right"
-                    VerticalAlignment="Top" Width="28" Click="Language_Click" 
-                     Grid.Row="1" />
-
-            <Button x:Name="ButtonTheme" Height="30" Margin="0,411,120,0" HorizontalAlignment="Right" VerticalAlignment="Top" Width="28" Click="Theme_Click" Grid.Row="1"
-                     >
-            </Button>
-
             <Image x:Name="LogoImage" Source="/src/logo_standalone_light.png" Height="80" Width="80" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10, 10, 0, 0"/>
 
 
@@ -95,16 +87,17 @@
             <materialDesign:PackIcon Kind="Book" Width="30" Height="30" Margin="20,10,0,0" Grid.Row="1" Background="White" RenderTransformOrigin="0.502,0.49"/>
             <Image HorizontalAlignment="Left" Height="74" Margin="20,20,0,0" VerticalAlignment="Top" Width="88" Source="C:\Users\KrecimStanove\Documents\GitHub\PharmacyService\TechHealth\resources\ph.png" />
             <TextBlock HorizontalAlignment="Left" Margin="113,20,0,26" TextWrapping="Wrap" Foreground="White" FontWeight="Bold" Text="ZDRAVO HOSPITAL" FontSize="25" VerticalAlignment="Center" Height="74" Width="177"/>
-            <Label 
+            <TextBlock 
                 Grid.Column="1" HorizontalAlignment="Left" Margin="360,10,0,70"  VerticalAlignment="Center" 
-                       FontSize="16" Name ="Caption"
-                       Foreground="White" Height="40" Width="244">
+                       FontSize="16" Name ="Caption" TextWrapping="Wrap"
+                       Foreground="White" Height="40" Width="239">
                 <Run Text="Patient: Dusan Vukovic"/>
-            </Label>
+            </TextBlock>
             <TextBlock TextWrapping="Wrap" Foreground="White" FontSize="16" Text="LBO: 24556" Grid.Column="1" Margin="360,33,10,53"/>
             <TextBlock TextWrapping="Wrap" Foreground="White" FontSize="16" Text="Favorite doctor: Djordje Vuckovic" Grid.Column="1" Margin="360,55,10,31"/>
             <TextBlock TextWrapping="Wrap" Foreground="White" FontSize="16" Text="Blood type: A-" Grid.Column="1" Margin="360,77,10,9"/>
 
+            
         </Grid>
     </Border>
 </Window>

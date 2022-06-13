@@ -6,6 +6,7 @@
     "Checked": false,
     "SelectedAppointment": {
       "ShouldSerialize": false,
+      "Graded": false,
       "IdAppointment": "5e843bc4ba594e999c0bcef655482560"
     },
     "Patient": {
@@ -41,6 +42,7 @@
     "Checked": false,
     "SelectedAppointment": {
       "ShouldSerialize": false,
+      "Graded": false,
       "IdAppointment": "97c07e7ab12e49a8b6707dbc98ccc14d"
     },
     "Patient": null,
@@ -54,6 +56,7 @@
     "Checked": false,
     "SelectedAppointment": {
       "ShouldSerialize": false,
+      "Graded": false,
       "IdAppointment": "97c07e7ab12e49a8b6707dbc98ccc14d"
     },
     "Patient": null,
@@ -67,6 +70,7 @@
     "Checked": false,
     "SelectedAppointment": {
       "ShouldSerialize": false,
+      "Graded": false,
       "IdAppointment": "97c07e7ab12e49a8b6707dbc98ccc14d"
     },
     "Patient": {
@@ -102,6 +106,7 @@
     "Checked": false,
     "SelectedAppointment": {
       "ShouldSerialize": false,
+      "Graded": false,
       "IdAppointment": "97c07e7ab12e49a8b6707dbc98ccc14d"
     },
     "Patient": {
@@ -137,6 +142,7 @@
     "Checked": false,
     "SelectedAppointment": {
       "ShouldSerialize": false,
+      "Graded": false,
       "IdAppointment": "6691a6553fc147ecaced7fa7a3458faa"
     },
     "Patient": {
@@ -172,6 +178,7 @@
     "Checked": false,
     "SelectedAppointment": {
       "ShouldSerialize": false,
+      "Graded": false,
       "IdAppointment": "97c07e7ab12e49a8b6707dbc98ccc14d"
     },
     "Patient": {
@@ -189,6 +196,7 @@
     "Checked": false,
     "SelectedAppointment": {
       "ShouldSerialize": false,
+      "Graded": false,
       "IdAppointment": "6553d6f128d946bb88a635940146141e"
     },
     "Patient": {
@@ -206,6 +214,7 @@
     "Checked": false,
     "SelectedAppointment": {
       "ShouldSerialize": false,
+      "Graded": false,
       "IdAppointment": "97c07e7ab12e49a8b6707dbc98ccc14d"
     },
     "Patient": {
@@ -223,6 +232,7 @@
     "Checked": false,
     "SelectedAppointment": {
       "ShouldSerialize": false,
+      "Graded": false,
       "IdAppointment": "6553d6f128d946bb88a635940146141e"
     },
     "Patient": {
@@ -240,6 +250,7 @@
     "Checked": false,
     "SelectedAppointment": {
       "ShouldSerialize": false,
+      "Graded": false,
       "IdAppointment": "fb0d5e3e17bd45eeafe325e78bebfb12"
     },
     "Patient": {
@@ -257,6 +268,7 @@
     "Checked": true,
     "SelectedAppointment": {
       "ShouldSerialize": false,
+      "Graded": false,
       "IdAppointment": "fb0d5e3e17bd45eeafe325e78bebfb12"
     },
     "Patient": {
@@ -274,6 +286,7 @@
     "Checked": true,
     "SelectedAppointment": {
       "ShouldSerialize": false,
+      "Graded": false,
       "IdAppointment": "6691a6553fc147ecaced7fa7a3458faa"
     },
     "Patient": {
@@ -291,6 +304,7 @@
     "Checked": true,
     "SelectedAppointment": {
       "ShouldSerialize": false,
+      "Graded": false,
       "IdAppointment": "aec85ecf55ae4691be34ba8698b62d81"
     },
     "Patient": {
@@ -308,6 +322,7 @@
     "Checked": true,
     "SelectedAppointment": {
       "ShouldSerialize": false,
+      "Graded": false,
       "IdAppointment": "97c07e7ab12e49a8b6707dbc98ccc14d"
     },
     "Patient": {
@@ -316,6 +331,42 @@
       "ShouldSerialize": false
     },
     "RemindDate": "2022-06-11T00:00:00",
+    "RemindTime": "0001-01-01T00:00:00"
+  },
+  "ca2a4f25fb414419a3a3ba5f5a5fca24": {
+    "NoteId": "ca2a4f25fb414419a3a3ba5f5a5fca24",
+    "Label": "Title",
+    "Content": "Nesto",
+    "Checked": true,
+    "SelectedAppointment": {
+      "ShouldSerialize": false,
+      "Graded": false,
+      "IdAppointment": "2c2d62cb4a5a477483e96c5bc6809ace"
+    },
+    "Patient": {
+      "Lbo": 73456,
+      "Jmbg": "2456",
+      "ShouldSerialize": false
+    },
+    "RemindDate": "2022-06-13T00:00:00",
+    "RemindTime": "0001-01-01T00:00:00"
+  },
+  "b0ac38a29e2e4e03a16dad102e86ee82": {
+    "NoteId": "b0ac38a29e2e4e03a16dad102e86ee82",
+    "Label": "Title",
+    "Content": "",
+    "Checked": false,
+    "SelectedAppointment": {
+      "ShouldSerialize": false,
+      "Graded": false,
+      "IdAppointment": "2c2d62cb4a5a477483e96c5bc6809ace"
+    },
+    "Patient": {
+      "Lbo": 73456,
+      "Jmbg": "2456",
+      "ShouldSerialize": false
+    },
+    "RemindDate": "0001-01-01T00:00:00",
     "RemindTime": "0001-01-01T00:00:00"
   }
 }

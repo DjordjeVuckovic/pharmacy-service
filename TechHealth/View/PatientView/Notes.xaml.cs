@@ -107,6 +107,7 @@ namespace TechHealth.View.PatientView
             {
                 Beleska.Checked = false;
                 NoteRepository.Instance.Create(Beleska);
+                
             }
             else
             {
@@ -117,6 +118,7 @@ namespace TechHealth.View.PatientView
                 NoteRepository.Instance.Create(Beleska);
             }
             //NoteRepository.Instance.Create(Beleska);
+            MessageBox.Show(@"Sucessfuly created a note for selected appointment");
             Close();
         }
     }
