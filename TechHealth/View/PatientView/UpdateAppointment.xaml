@@ -27,7 +27,7 @@
         <Label Content="Date:" HorizontalAlignment="Left" Margin="47,225,0,0" VerticalAlignment="Top" FontSize="14" Height="40" Width="130"/>
         <Label Content="Available hours:" HorizontalAlignment="Left" Margin="47,395,0,0" VerticalAlignment="Top" FontSize="14" Height="40" Width="130"/>
         <Label Content="Doctor:" HorizontalAlignment="Left" Margin="47,312,0,0" VerticalAlignment="Top" FontSize="14" Height="40" Width="130"/>
-        <DatePicker HorizontalAlignment="Left" Margin="39,225,0,0" ToolTip="Select Appointment Date"
+        <DatePicker HorizontalAlignment="Left" Margin="39,225,0,0"
                     VerticalAlignment="Top"
                     Width="130" Height="40"
                     Background="#FFC0C0C0"
@@ -64,7 +64,7 @@
                Margin="91,10,90,0" VerticalAlignment="Top" FontWeight="Bold"
                FontSize="18" Grid.ColumnSpan="2" Height="40"/>
 
-        <materialDesign:TimePicker Grid.Column="1" Is24Hours="True" ToolTip="Select Start time"
+        <materialDesign:TimePicker Grid.Column="1" Is24Hours="True"
                                    x:Name="Timepicker1" 
             materialDesign:HintAssist.Hint="Select appointment time"
                                    Foreground="White" VerticalAlignment="Bottom"

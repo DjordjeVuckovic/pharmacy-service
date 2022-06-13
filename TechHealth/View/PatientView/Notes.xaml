@@ -25,7 +25,7 @@
                  FontSize="18" FontWeight="Bold" Foreground="White"
                  Height="40" Margin="53,10,209,0" TextWrapping="Wrap"       
                  Text="Title" VerticalAlignment="Top"/>
-        <TextBox x:Name="ContentBox" HorizontalAlignment="Left" Height="230" 
+        <TextBox x:Name="ContentBox" HorizontalAlignment="Left" Height="230"
                  Margin="53,65,0,0" TextWrapping="Wrap"
                  Background="LightGray"
                  FontSize="14"

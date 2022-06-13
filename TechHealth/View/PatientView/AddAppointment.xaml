@@ -31,7 +31,7 @@
         <Label Content="Doctor:" HorizontalAlignment="Left" Margin="50,292,0,0" VerticalAlignment="Top"
                FontSize="14" Height="40" Width="130"/>
         <DatePicker HorizontalAlignment="Left" Margin="42,202,0,0" 
-                    VerticalAlignment="Top" ToolTip="Select Appointment Date"
+                    VerticalAlignment="Top"
                     Width="130" Height="40"
                     Background="#FFC0C0C0"
                     Foreground="White"
@@ -61,7 +61,7 @@
                Margin="91,10,90,0" VerticalAlignment="Top" FontWeight="Bold"
                FontSize="18" Grid.ColumnSpan="2" Height="40" Width="200"/>
 
-        <materialDesign:TimePicker ToolTip="Select start time"
+        <materialDesign:TimePicker
                                    x:Name="Timepicker1" Is24Hours="True"
             materialDesign:HintAssist.Hint="Select appointment time"
                                    Foreground="White" VerticalAlignment="Bottom"
