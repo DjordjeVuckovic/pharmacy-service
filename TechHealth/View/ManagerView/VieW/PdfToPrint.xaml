@@ -1,0 +1,48 @@
+﻿<Window x:Class="TechHealth.View.ManagerView.VieW.PdfToPrint"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TechHealth.View.ManagerView.VieW"
+        mc:Ignorable="d"
+        Title="PdfToPrint" Height="845" Width="595">
+    <ScrollViewer>
+        <StackPanel x:Name="Report" >
+            <Grid Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="100"/>
+                    <RowDefinition Height="230"/>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+
+                <Image Source="/resources/ZDRAVOicon.png" Margin="10,8,435,21"/>
+                <Label Content="ZDRAVO bolnica" Margin="448,8,-52,66" Foreground="Black"/>
+                <Label Content="zdravo@gmail.com" Margin="448,39,-52,36" Foreground="Black"/>
+                <Label Content="Novi Sad" Margin="448,69,7,2" Foreground="Black"/>
+
+                <Label Grid.Row="1" Content="Izvestaj anketa u periodu" Foreground="Black"
+                       FontSize="20" HorizontalAlignment="Center" Margin="140,0,140.4,191.4"/>
+
+                <Label x:Name="startLabel" Content="{Binding StartD, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Margin="10,41,412,161" Foreground="Black" Grid.Row="1"/>
+                <Label x:Name="endLabel" Content="{Binding EndD, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Margin="414,41,8.4,161.4" Foreground="Black" Grid.Row="1" Width="88"/>
+
+                <DataGrid x:Name="dataSurveys" ItemsSource="{Binding Surveys, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                      CanUserAddRows="False"
+                      AutoGenerateColumns="False"
+                      Margin="10,74.2,9.6,-27.6"
+                      Grid.Row="1"
+                      IsReadOnly="True"
+                          Background="LightGray"
+                              Foreground="Black" Grid.RowSpan="2">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Survey Id" Binding="{Binding Id}" Width="150"  CanUserResize="False"/>
+                        <DataGridTextColumn Header="Author" Binding="{Binding Author}" Width="150"  CanUserResize="False"/>
+                        <DataGridTextColumn Header="Submit date" Binding="{Binding SubmitDate}" Width="150"  CanUserResize="False"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+                <Label Grid.Row="2" Content="Upravnik bolnice:" Margin="448,430,-448,-407" Foreground="Black"/>
+                <Label Grid.Row="2" Content="Nenad Sredojevic" Margin="448,457,-448,-458" Foreground="Black"/>
+            </Grid>
+        </StackPanel>
+    </ScrollViewer>
+</Window>

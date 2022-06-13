@@ -586,6 +586,9 @@
     <Compile Include="View\ManagerView\VieW\MergeRoomsView.xaml.cs">
       <DependentUpon>MergeRoomsView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\ManagerView\VieW\PdfToPrint.xaml.cs">
+      <DependentUpon>PdfToPrint.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\ManagerView\VieW\PdfView.xaml.cs">
       <DependentUpon>PdfView.xaml</DependentUpon>
     </Compile>
@@ -1051,6 +1054,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\ManagerView\VieW\MergeRoomsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ManagerView\VieW\PdfToPrint.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

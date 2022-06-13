@@ -66,7 +66,7 @@ namespace TechHealth.View.ManagerView.VieW
             catch (Exception)
             {
 
-                MessageBox.Show("Invalid date");
+                MessageBox.Show("Invalid date or time!");
                 return;
             }
 
