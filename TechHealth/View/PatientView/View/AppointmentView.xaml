@@ -29,7 +29,7 @@
                   SelectedItem="{Binding GetSelected}"
                   CanUserResizeColumns="False"
                   SelectionMode="Extended" AutoGenerateColumns="False"
-                  Background="#333545" IsReadOnly="True">
+                  Background="Gray" IsReadOnly="True">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Doctor"
                                     Binding="{Binding Doctor.FullName}" Width="*"

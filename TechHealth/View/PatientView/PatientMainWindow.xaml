@@ -78,7 +78,7 @@
                             Margin="10"
                             Content="{Binding CurrentView}"/>
 
-            <Image x:Name="LogoImage" Source="/src/logo_standalone_light.png" Height="80" Width="80" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10, 10, 0, 0"/>
+            <Image x:Name="LogoImage" Source="C:\Users\Isidora\Documents\GitHub\PharmacyService\TechHealth\resources\ph.png" Height="80" Width="80" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10, 10, 0, 0"/>
 
 
             <materialDesign:PackIcon Kind="RateReview" Width="30" Height="30" Margin="20,160,0,0" Grid.Row="1" Background="White" RenderTransformOrigin="0.502,0.49"/>
