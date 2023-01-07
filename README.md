@@ -20,5 +20,6 @@ In the "class_diagram" folder, there are the main class diagram, as well as sequ
 - Balsamiq Wireframes
 - Microsoft Visual Studio
 
-##Screenshots
+## Screenshots
+!(assets/Screenshot_1.png =250x250)
 
