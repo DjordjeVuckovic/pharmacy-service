@@ -21,12 +21,12 @@ In the "class_diagram" folder, there are the main class diagram, as well as sequ
 - Microsoft Visual Studio
 
 ## Screenshots
-![Screenshot of my project](assets/Screenshot_1.png =250x250)
-![Screenshot of my project](assets/Screenshot_2.png =250x250)
-![Screenshot of my project](assets/Screenshot_3.png =250x250)
-![Screenshot of my project](assets/Screenshot_4.png =250x250)
-![Screenshot of my project](assets/Screenshot_5.png =250x250)
-![Screenshot of my project](assets/Screenshot_6.png =250x250)
-![Screenshot of my project](assets/Screenshot_7.png =250x250)
-![Screenshot of my project](assets/Screenshot_8.png =250x250)
+![Screenshot of my project](assets/Screenshot_1.png)
+![Screenshot of my project](assets/Screenshot_2.png)
+![Screenshot of my project](assets/Screenshot_3.png)
+![Screenshot of my project](assets/Screenshot_4.png)
+![Screenshot of my project](assets/Screenshot_5.png)
+![Screenshot of my project](assets/Screenshot_6.png)
+![Screenshot of my project](assets/Screenshot_7.png)
+![Screenshot of my project](assets/Screenshot_8.png)
 
