@@ -18,7 +18,7 @@ In the "class_diagram" folder, there are the main class diagram, as well as sequ
 
 - PowerDesigner 16.5
 - Balsamiq Wireframes
-- Microsoft Visual Studio
+- Jetbrains Rider
 
 ## Screenshots
 ![Screenshot of my project](assets/Screenshot_1.png)
